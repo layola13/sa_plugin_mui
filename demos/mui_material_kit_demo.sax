@@ -2,8 +2,23 @@
   <state>
     action_count = 0
     sort_changes = 0
-    sort_value = alloc 64
-    sort_value_len = 0
+    sort_menu_open = 0 as i1
+    sort_featured_selected = 1 as i1
+    sort_newest_selected = 0 as i1
+    sort_price_desc_selected = 0 as i1
+    sort_price_asc_selected = 0 as i1
+    filter_open = 0 as i1
+    filter_updates = 0
+    gender_men = 1 as i1
+    gender_women = 0 as i1
+    gender_kids = 0 as i1
+    category_all_selected = 1 as i1
+    category_shose_selected = 0 as i1
+    category_apparel_selected = 0 as i1
+    category_accessories_selected = 0 as i1
+    price_below_selected = 1 as i1
+    price_between_selected = 0 as i1
+    price_above_selected = 0 as i1
     conversion = 44
     slider_changes = 0
     slider_value = alloc 16
@@ -202,16 +217,86 @@
       </section>
 
       <section id="products" className="mk-section">
+        <a className="mk-cart-widget" href="#products" onClick={record_action}>
+          <Badge color="error" badgeContent={8} showZero><span className="mk-cart-glyph">Cart</span></Badge>
+        </a>
         <div className="mk-heading-row">
           <div><p>Catalog</p><h2>Products</h2></div>
-          <div className="mk-filter-row"><Button onClick={record_action}>Filters</Button><NativeSelect onChange={set_sort}><option value="featured">Featured</option><option value="newest">Newest</option><option value="price-low">Price low</option></NativeSelect><span className="mk-inline-status">Sort changes: {sort_changes}</span><span className="mk-inline-status">Selected: {sort_value}</span></div>
+          <div className="mk-filter-row">
+            <Button color="inherit" onClick={open_filters}>Filters <Badge color="error" variant="dot" badgeContent={filter_updates}><span></span></Badge></Button>
+            <div className="mk-sort-box{sort_menu_open ? ' mk-sort-open' : ''}">
+              <Button color="inherit" onClick={toggle_sort_menu}>Sort By</Button>
+              <div className="mk-sort-menu">
+                <MenuList disablePadding>
+                  <MenuItem selected={sort_featured_selected} onClick={sort_featured}>Featured</MenuItem>
+                  <MenuItem selected={sort_newest_selected} onClick={sort_newest}>Newest</MenuItem>
+                  <MenuItem selected={sort_price_desc_selected} onClick={sort_price_desc}>Price: High-Low</MenuItem>
+                  <MenuItem selected={sort_price_asc_selected} onClick={sort_price_asc}>Price: Low-High</MenuItem>
+                </MenuList>
+              </div>
+            </div>
+            <span className="mk-inline-status">Sort changes: {sort_changes}</span>
+            <span className="mk-inline-status">Filter updates: {filter_updates}</span>
+          </div>
         </div>
-        <div className="mk-product-grid">
-          <div className="mk-product"><Card><div className="mk-product-img"><Chip color="secondary">sale</Chip><img src="assets/images/product/product-1.webp" alt="Nike Air Force" /></div><div><strong>Nike Air Force 1 NDESTRUKT</strong><p>$35.17</p><span><i></i><i></i><i></i></span></div></Card></div>
-          <div className="mk-product"><Card><div className="mk-product-img"><img src="assets/images/product/product-2.webp" alt="Nike Space Hippie" /></div><div><strong>Nike Space Hippie 04</strong><p>$57.22</p><span><i></i><i></i><i></i></span></div></Card></div>
-          <div className="mk-product"><Card><div className="mk-product-img"><Chip>new</Chip><img src="assets/images/product/product-4.webp" alt="Nike Blazer" /></div><div><strong>Nike Blazer Low 77 Vintage</strong><p>$50.79</p><span><i></i><i></i><i></i></span></div></Card></div>
-          <div className="mk-product"><Card><div className="mk-product-img"><img src="assets/images/product/product-7.webp" alt="Nike Air Max" /></div><div><strong>Nike Air Max Zephyr</strong><p>$96.73</p><span><i></i><i></i><i></i></span></div></Card></div>
+
+        <div className="mk-filter-shell{filter_open ? ' mk-filter-open' : ''}">
+          <Drawer anchor="right" open={filter_open}>
+            <div className="mk-filter-drawer">
+              <div className="mk-filter-title"><h3>Filters</h3><div><IconButton onClick={reset_filters}>R</IconButton><IconButton onClick={close_filters}>X</IconButton></div></div>
+              <Divider />
+              <div className="mk-filter-body">
+                <section>
+                  <h4>Gender</h4>
+                  <FormGroup>
+                    <FormControlLabel><Checkbox checked={gender_men} onChange={toggle_gender_men} />Men</FormControlLabel>
+                    <FormControlLabel><Checkbox checked={gender_women} onChange={toggle_gender_women} />Women</FormControlLabel>
+                    <FormControlLabel><Checkbox checked={gender_kids} onChange={toggle_gender_kids} />Kids</FormControlLabel>
+                  </FormGroup>
+                </section>
+                <section>
+                  <h4>Category</h4>
+                  <RadioGroup>
+                    <FormControlLabel><Radio checked={category_all_selected} onChange={category_all} />All</FormControlLabel>
+                    <FormControlLabel><Radio checked={category_shose_selected} onChange={category_shose} />Shose</FormControlLabel>
+                    <FormControlLabel><Radio checked={category_apparel_selected} onChange={category_apparel} />Apparel</FormControlLabel>
+                    <FormControlLabel><Radio checked={category_accessories_selected} onChange={category_accessories} />Accessories</FormControlLabel>
+                  </RadioGroup>
+                </section>
+                <section>
+                  <h4>Colors</h4>
+                  <div className="mk-color-picker">
+                    <button type="button" className="mk-color-option mk-swatch-green" onClick={update_filter}></button>
+                    <button type="button" className="mk-color-option mk-swatch-black" onClick={update_filter}></button>
+                    <button type="button" className="mk-color-option mk-swatch-white" onClick={update_filter}></button>
+                    <button type="button" className="mk-color-option mk-swatch-pink" onClick={update_filter}></button>
+                    <button type="button" className="mk-color-option mk-swatch-red" onClick={update_filter}></button>
+                    <button type="button" className="mk-color-option mk-swatch-blue" onClick={update_filter}></button>
+                    <button type="button" className="mk-color-option mk-swatch-lime" onClick={update_filter}></button>
+                    <button type="button" className="mk-color-option mk-swatch-amber" onClick={update_filter}></button>
+                  </div>
+                </section>
+                <section>
+                  <h4>Price</h4>
+                  <RadioGroup>
+                    <FormControlLabel><Radio checked={price_below_selected} onChange={price_below} />Below $25</FormControlLabel>
+                    <FormControlLabel><Radio checked={price_between_selected} onChange={price_between} />Between $25 - $75</FormControlLabel>
+                    <FormControlLabel><Radio checked={price_above_selected} onChange={price_above} />Above $75</FormControlLabel>
+                  </RadioGroup>
+                </section>
+                <section>
+                  <h4>Rating</h4>
+                  <button className="mk-rating-row" onClick={update_filter}><Rating value={4} readOnly /> and Up</button>
+                  <button className="mk-rating-row" onClick={update_filter}><Rating value={3} readOnly /> and Up</button>
+                  <button className="mk-rating-row" onClick={update_filter}><Rating value={2} readOnly /> and Up</button>
+                  <button className="mk-rating-row" onClick={update_filter}><Rating value={1} readOnly /> and Up</button>
+                </section>
+              </div>
+            </div>
+          </Drawer>
         </div>
+
+        <MaterialKitProductGrid />
       </section>
 
       <section id="blog" className="mk-section">
@@ -267,14 +352,210 @@
     call @render()
     ret
 
-  @set_sort:
+  @toggle_sort_menu:
   L_ENTRY:
-    sort_value = load state+MuiMaterialKitDemo_sort_value as ptr
-    sort_value_len = call @sax_event_target_value(*sort_value, 64)
-    store state+MuiMaterialKitDemo_sort_value_len, sort_value_len as i64
+    store state+MuiMaterialKitDemo_sort_menu_open, 1 as i1
+    call @render()
+    ret
+
+  @sort_featured:
+  L_ENTRY:
+    store state+MuiMaterialKitDemo_sort_featured_selected, 1 as i1
+    store state+MuiMaterialKitDemo_sort_newest_selected, 0 as i1
+    store state+MuiMaterialKitDemo_sort_price_desc_selected, 0 as i1
+    store state+MuiMaterialKitDemo_sort_price_asc_selected, 0 as i1
+    store state+MuiMaterialKitDemo_sort_menu_open, 0 as i1
     sort_changes = load state+MuiMaterialKitDemo_sort_changes as i64
     sort_changes = add sort_changes, 1
     store state+MuiMaterialKitDemo_sort_changes, sort_changes as i64
+    call @render()
+    ret
+
+  @sort_newest:
+  L_ENTRY:
+    store state+MuiMaterialKitDemo_sort_featured_selected, 0 as i1
+    store state+MuiMaterialKitDemo_sort_newest_selected, 1 as i1
+    store state+MuiMaterialKitDemo_sort_price_desc_selected, 0 as i1
+    store state+MuiMaterialKitDemo_sort_price_asc_selected, 0 as i1
+    store state+MuiMaterialKitDemo_sort_menu_open, 0 as i1
+    sort_changes = load state+MuiMaterialKitDemo_sort_changes as i64
+    sort_changes = add sort_changes, 1
+    store state+MuiMaterialKitDemo_sort_changes, sort_changes as i64
+    call @render()
+    ret
+
+  @sort_price_desc:
+  L_ENTRY:
+    store state+MuiMaterialKitDemo_sort_featured_selected, 0 as i1
+    store state+MuiMaterialKitDemo_sort_newest_selected, 0 as i1
+    store state+MuiMaterialKitDemo_sort_price_desc_selected, 1 as i1
+    store state+MuiMaterialKitDemo_sort_price_asc_selected, 0 as i1
+    store state+MuiMaterialKitDemo_sort_menu_open, 0 as i1
+    sort_changes = load state+MuiMaterialKitDemo_sort_changes as i64
+    sort_changes = add sort_changes, 1
+    store state+MuiMaterialKitDemo_sort_changes, sort_changes as i64
+    call @render()
+    ret
+
+  @sort_price_asc:
+  L_ENTRY:
+    store state+MuiMaterialKitDemo_sort_featured_selected, 0 as i1
+    store state+MuiMaterialKitDemo_sort_newest_selected, 0 as i1
+    store state+MuiMaterialKitDemo_sort_price_desc_selected, 0 as i1
+    store state+MuiMaterialKitDemo_sort_price_asc_selected, 1 as i1
+    store state+MuiMaterialKitDemo_sort_menu_open, 0 as i1
+    sort_changes = load state+MuiMaterialKitDemo_sort_changes as i64
+    sort_changes = add sort_changes, 1
+    store state+MuiMaterialKitDemo_sort_changes, sort_changes as i64
+    call @render()
+    ret
+
+  @open_filters:
+  L_ENTRY:
+    store state+MuiMaterialKitDemo_filter_open, 1 as i1
+    call @render()
+    ret
+
+  @close_filters:
+  L_ENTRY:
+    store state+MuiMaterialKitDemo_filter_open, 0 as i1
+    call @render()
+    ret
+
+  @reset_filters:
+  L_ENTRY:
+    store state+MuiMaterialKitDemo_gender_men, 1 as i1
+    store state+MuiMaterialKitDemo_gender_women, 0 as i1
+    store state+MuiMaterialKitDemo_gender_kids, 0 as i1
+    store state+MuiMaterialKitDemo_category_all_selected, 1 as i1
+    store state+MuiMaterialKitDemo_category_shose_selected, 0 as i1
+    store state+MuiMaterialKitDemo_category_apparel_selected, 0 as i1
+    store state+MuiMaterialKitDemo_category_accessories_selected, 0 as i1
+    store state+MuiMaterialKitDemo_price_below_selected, 1 as i1
+    store state+MuiMaterialKitDemo_price_between_selected, 0 as i1
+    store state+MuiMaterialKitDemo_price_above_selected, 0 as i1
+    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
+    filter_updates = add filter_updates, 1
+    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
+    call @render()
+    ret
+
+  @toggle_gender_men:
+  L_ENTRY:
+    checked = call @sax_event_target_checked()
+    store state+MuiMaterialKitDemo_gender_men, checked as i1
+    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
+    filter_updates = add filter_updates, 1
+    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
+    call @render()
+    ret
+
+  @toggle_gender_women:
+  L_ENTRY:
+    checked = call @sax_event_target_checked()
+    store state+MuiMaterialKitDemo_gender_women, checked as i1
+    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
+    filter_updates = add filter_updates, 1
+    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
+    call @render()
+    ret
+
+  @toggle_gender_kids:
+  L_ENTRY:
+    checked = call @sax_event_target_checked()
+    store state+MuiMaterialKitDemo_gender_kids, checked as i1
+    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
+    filter_updates = add filter_updates, 1
+    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
+    call @render()
+    ret
+
+  @category_all:
+  L_ENTRY:
+    store state+MuiMaterialKitDemo_category_all_selected, 1 as i1
+    store state+MuiMaterialKitDemo_category_shose_selected, 0 as i1
+    store state+MuiMaterialKitDemo_category_apparel_selected, 0 as i1
+    store state+MuiMaterialKitDemo_category_accessories_selected, 0 as i1
+    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
+    filter_updates = add filter_updates, 1
+    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
+    call @render()
+    ret
+
+  @category_shose:
+  L_ENTRY:
+    store state+MuiMaterialKitDemo_category_all_selected, 0 as i1
+    store state+MuiMaterialKitDemo_category_shose_selected, 1 as i1
+    store state+MuiMaterialKitDemo_category_apparel_selected, 0 as i1
+    store state+MuiMaterialKitDemo_category_accessories_selected, 0 as i1
+    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
+    filter_updates = add filter_updates, 1
+    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
+    call @render()
+    ret
+
+  @category_apparel:
+  L_ENTRY:
+    store state+MuiMaterialKitDemo_category_all_selected, 0 as i1
+    store state+MuiMaterialKitDemo_category_shose_selected, 0 as i1
+    store state+MuiMaterialKitDemo_category_apparel_selected, 1 as i1
+    store state+MuiMaterialKitDemo_category_accessories_selected, 0 as i1
+    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
+    filter_updates = add filter_updates, 1
+    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
+    call @render()
+    ret
+
+  @category_accessories:
+  L_ENTRY:
+    store state+MuiMaterialKitDemo_category_all_selected, 0 as i1
+    store state+MuiMaterialKitDemo_category_shose_selected, 0 as i1
+    store state+MuiMaterialKitDemo_category_apparel_selected, 0 as i1
+    store state+MuiMaterialKitDemo_category_accessories_selected, 1 as i1
+    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
+    filter_updates = add filter_updates, 1
+    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
+    call @render()
+    ret
+
+  @update_filter:
+  L_ENTRY:
+    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
+    filter_updates = add filter_updates, 1
+    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
+    call @render()
+    ret
+
+  @price_below:
+  L_ENTRY:
+    store state+MuiMaterialKitDemo_price_below_selected, 1 as i1
+    store state+MuiMaterialKitDemo_price_between_selected, 0 as i1
+    store state+MuiMaterialKitDemo_price_above_selected, 0 as i1
+    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
+    filter_updates = add filter_updates, 1
+    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
+    call @render()
+    ret
+
+  @price_between:
+  L_ENTRY:
+    store state+MuiMaterialKitDemo_price_below_selected, 0 as i1
+    store state+MuiMaterialKitDemo_price_between_selected, 1 as i1
+    store state+MuiMaterialKitDemo_price_above_selected, 0 as i1
+    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
+    filter_updates = add filter_updates, 1
+    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
+    call @render()
+    ret
+
+  @price_above:
+  L_ENTRY:
+    store state+MuiMaterialKitDemo_price_below_selected, 0 as i1
+    store state+MuiMaterialKitDemo_price_between_selected, 0 as i1
+    store state+MuiMaterialKitDemo_price_above_selected, 1 as i1
+    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
+    filter_updates = add filter_updates, 1
+    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
     call @render()
     ret
 
@@ -373,5 +654,68 @@
     call @render()
     ret
 
-  !action_count !sort_changes !sort_value !sort_value_len !conversion !slider_changes !slider_value !slider_value_len !task_updates !task0 !task1 !task2 !task3
+  !action_count !sort_changes !sort_menu_open !sort_featured_selected !sort_newest_selected !sort_price_desc_selected !sort_price_asc_selected !filter_open !filter_updates !gender_men !gender_women !gender_kids !category_all_selected !category_shose_selected !category_apparel_selected !category_accessories_selected !price_below_selected !price_between_selected !price_above_selected !conversion !slider_changes !slider_value !slider_value_len !task_updates !task0 !task1 !task2 !task3
+</Component>
+
+<Component name="MaterialKitProductGrid">
+  <div className="mk-product-grid">
+    <MaterialKitProductCard image="assets/images/product/product-1.webp" name="Nike Air Force 1 NDESTRUKT" oldPrice="$57.17" price="$35.17" label="sale" labelClass="mk-product-label mk-product-label-sale"><i className="mk-swatch-green"></i><i className="mk-swatch-black"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-2.webp" name="Nike Space Hippie 04" price="$57.22" labelClass="mk-product-label"><i className="mk-swatch-black"></i><i className="mk-swatch-white"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-3.webp" name="Nike Air Zoom Pegasus 37 A.I.R. Chaz Bear" oldPrice="$64.18" price="$64.18" label="sale" labelClass="mk-product-label mk-product-label-sale"><i className="mk-swatch-white"></i><i className="mk-swatch-pink"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-4.webp" name="Nike Blazer Low 77 Vintage" price="$50.79" label="new" labelClass="mk-product-label mk-product-label-new"><i className="mk-swatch-pink"></i><i className="mk-swatch-red"></i><i className="mk-swatch-blue"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-5.webp" name="Nike ZoomX SuperRep Surge" price="$9.57" label="sale" labelClass="mk-product-label mk-product-label-sale"><i className="mk-swatch-green"></i><i className="mk-swatch-black"></i><i className="mk-swatch-white"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-6.webp" name="Zoom Freak 2" oldPrice="$61.46" price="$61.46" labelClass="mk-product-label"><i className="mk-swatch-red"></i><i className="mk-swatch-blue"></i><i className="mk-swatch-lime"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-7.webp" name="Nike Air Max Zephyr" price="$96.73" labelClass="mk-product-label"><i className="mk-swatch-green"></i><i className="mk-swatch-black"></i><i className="mk-swatch-amber"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-8.webp" name="Jordan Delta" price="$63.04" label="new" labelClass="mk-product-label mk-product-label-new"><i className="mk-swatch-white"></i><i className="mk-swatch-blue"></i><i className="mk-swatch-amber"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-9.webp" name="Air Jordan XXXV PF" oldPrice="$33.30" price="$33.30" labelClass="mk-product-label"><i className="mk-swatch-green"></i><i className="mk-swatch-black"></i><i className="mk-swatch-red"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-10.webp" name="Nike Waffle Racer Crater" price="$39.17" labelClass="mk-product-label"><i className="mk-swatch-pink"></i><i className="mk-swatch-lime"></i><i className="mk-swatch-amber"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-11.webp" name="Kyrie 7 EP Sisterhood" price="$35.71" labelClass="mk-product-label"><i className="mk-swatch-green"></i><i className="mk-swatch-blue"></i><i className="mk-swatch-amber"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-12.webp" name="Nike Air Zoom BB NXT" oldPrice="$45.91" price="$45.91" label="new" labelClass="mk-product-label mk-product-label-new"><i className="mk-swatch-black"></i><i className="mk-swatch-white"></i><i className="mk-swatch-red"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-13.webp" name="Nike Air Force 1 07 LX" price="$42.09" labelClass="mk-product-label"><i className="mk-swatch-green"></i><i className="mk-swatch-pink"></i><i className="mk-swatch-blue"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-14.webp" name="Nike Air Force 1 Shadow SE" price="$98.14" labelClass="mk-product-label"><i className="mk-swatch-white"></i><i className="mk-swatch-lime"></i><i className="mk-swatch-amber"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-15.webp" name="Nike Air Zoom Tempo NEXT%" oldPrice="$88.74" price="$88.74" labelClass="mk-product-label"><i className="mk-swatch-green"></i><i className="mk-swatch-black"></i><i className="mk-swatch-red"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-16.webp" name="Nike DBreak-Type" price="$17.83" labelClass="mk-product-label"><i className="mk-swatch-pink"></i><i className="mk-swatch-blue"></i><i className="mk-swatch-amber"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-17.webp" name="Nike Air Max Up" price="$57.18" labelClass="mk-product-label"><i className="mk-swatch-green"></i><i className="mk-swatch-white"></i><i className="mk-swatch-lime"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-18.webp" name="Nike Air Max 270 React ENG" oldPrice="$19.34" price="$19.34" labelClass="mk-product-label"><i className="mk-swatch-black"></i><i className="mk-swatch-red"></i><i className="mk-swatch-blue"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-19.webp" name="NikeCourt Royale" price="$60.98" labelClass="mk-product-label"><i className="mk-swatch-pink"></i><i className="mk-swatch-lime"></i><i className="mk-swatch-amber"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-20.webp" name="Nike Air Zoom Pegasus 37 Premium" price="$96.57" labelClass="mk-product-label"><i className="mk-swatch-green"></i><i className="mk-swatch-blue"></i><i className="mk-swatch-amber"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-21.webp" name="Nike Air Zoom SuperRep" oldPrice="$68.39" price="$68.39" labelClass="mk-product-label"><i className="mk-swatch-black"></i><i className="mk-swatch-white"></i><i className="mk-swatch-red"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-22.webp" name="NikeCourt Royale" price="$88.98" labelClass="mk-product-label"><i className="mk-swatch-green"></i><i className="mk-swatch-pink"></i><i className="mk-swatch-blue"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-23.webp" name="Nike React Art3mis" price="$93.39" labelClass="mk-product-label"><i className="mk-swatch-red"></i><i className="mk-swatch-blue"></i></MaterialKitProductCard>
+    <MaterialKitProductCard image="assets/images/product/product-24.webp" name="Nike React Infinity Run Flyknit A.I.R. Chaz Bear" oldPrice="$10.64" price="$10.64" labelClass="mk-product-label"><i className="mk-swatch-blue"></i></MaterialKitProductCard>
+  </div>
+  <div className="mk-product-pagination"><Pagination count={10} color="primary" /></div>
+</Component>
+
+<Component name="MaterialKitProductCard">
+  <state>
+    image = alloc 128
+    image_len = 0
+    name = alloc 160
+    name_len = 0
+    price = alloc 32
+    price_len = 0
+    oldPrice = alloc 32
+    oldPrice_len = 0
+    label = alloc 16
+    label_len = 0
+    labelClass = alloc 80
+    labelClass_len = 0
+  </state>
+  <article className="mk-product">
+    <div className="mk-product-card">
+      <div className="mk-product-img">
+        <span className="{labelClass}">{label}</span>
+        <img src="{image}" alt="{name}" />
+      </div>
+      <div>
+        <strong>{name}</strong>
+        <div className="mk-product-meta">
+          <span className="mk-product-colors"><Slot /></span>
+          <p><s>{oldPrice}</s>{price}</p>
+        </div>
+      </div>
+    </div>
+  </article>
+  !image !image_len !name !name_len !price !price_len !oldPrice !oldPrice_len !label !label_len !labelClass !labelClass_len
 </Component>

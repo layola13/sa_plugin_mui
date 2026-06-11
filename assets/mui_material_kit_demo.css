@@ -129,7 +129,7 @@ a { color: inherit; text-decoration: none; }
 }
 .mk-stat .MuiCard-root,
 .mk-panel .MuiCard-root,
-.mk-product .MuiCard-root,
+.mk-product-card,
 .mk-blog-grid .MuiCard-root,
 .mk-user-card .MuiCard-root,
 .mk-signin-card .MuiCard-root {
@@ -343,26 +343,153 @@ a { color: inherit; text-decoration: none; }
 .mk-inline-status { color: #6b7280; font-size: 12px; font-weight: 800; }
 .mk-tasks .MuiFormControlLabel-root { min-height: 42px; display: flex; align-items: center; gap: 10px; color: #374151; font-size: 14px; }
 
-.mk-filter-row { gap: 10px; flex-wrap: wrap; }
-.mk-filter-row .MuiNativeSelect-root { min-width: 150px; }
+.mk-cart-widget {
+  position: fixed;
+  right: 0;
+  top: 112px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  border-radius: 16px 0 0 16px;
+  background: #ffffff;
+  padding: 10px 22px 10px 16px;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, .16);
+  transition: opacity .16s ease, transform .16s ease;
+}
+.mk-cart-widget:hover { opacity: .72; transform: translateX(-2px); }
+.mk-cart-glyph { font-weight: 900; color: #111827; }
+.mk-filter-row { gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
 .mk-filter-row .mk-inline-status { min-height: 40px; display: inline-flex; align-items: center; padding: 0 10px; border: 1px solid #e5e7eb; border-radius: 8px; background: #ffffff; }
+.mk-sort-box { position: relative; }
+.mk-sort-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 25;
+  width: 178px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 5px;
+  box-shadow: 0 16px 34px rgba(15, 23, 42, .16);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: opacity .14s ease, transform .14s ease;
+}
+.mk-sort-open .mk-sort-menu { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.mk-sort-menu .MuiList-root { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; }
+.mk-filter-shell .MuiDrawer-root {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease;
+}
+.mk-filter-open .MuiDrawer-root { opacity: 1; pointer-events: auto; }
+.mk-filter-shell .MuiBackdrop-root {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, .28);
+}
+.mk-filter-shell .MuiDrawer-paper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: min(320px, 92vw);
+  height: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: -18px 0 34px rgba(15, 23, 42, .18);
+  transform: translateX(100%);
+  transition: transform .2s ease;
+}
+.mk-filter-open .MuiDrawer-paper { transform: translateX(0); }
+.mk-filter-drawer { height: 100%; display: flex; flex-direction: column; }
+.mk-filter-title { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 14px 14px 22px; }
+.mk-filter-title h3 { margin: 0; font-size: 18px; }
+.mk-filter-title > div { display: flex; gap: 6px; }
+.mk-filter-drawer .MuiDivider-root { border: 0; border-top: 1px solid #e5e7eb; }
+.mk-filter-body { overflow-y: auto; padding: 20px 22px 28px; display: grid; gap: 26px; }
+.mk-filter-body section { margin: 0; padding: 0; border: 0; border-radius: 0; box-shadow: none; overflow: visible; }
+.mk-filter-body h4 { margin: 0 0 12px; color: #111827; font-size: 14px; }
+.mk-filter-body .MuiFormGroup-root { display: grid; gap: 9px; }
+.mk-filter-body .MuiFormControlLabel-root { min-height: 34px; display: flex; align-items: center; gap: 10px; color: #374151; font-size: 14px; }
+.mk-color-picker { display: grid; grid-template-columns: repeat(4, 30px); gap: 10px; }
+.mk-color-option {
+  appearance: none;
+  min-width: 30px;
+  width: 30px;
+  height: 30px;
+  min-height: 30px;
+  border-radius: 50%;
+  padding: 0;
+  border: 1px solid #e5e7eb;
+  box-shadow: none;
+  cursor: pointer;
+}
+.mk-color-selected { outline: 3px solid rgba(0, 167, 111, .22); outline-offset: 2px; }
+.mk-rating-row {
+  width: 100%;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #374151;
+  padding: 4px 8px;
+  font: inherit;
+  cursor: pointer;
+}
+.mk-rating-row:hover,
+.mk-rating-selected { background: rgba(0, 167, 111, .10); color: #007867; }
 .mk-product-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
 }
-.mk-product .MuiCard-root { transition: transform .16s ease, box-shadow .16s ease; }
-.mk-product .MuiCard-root:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(15, 23, 42, .14); }
+.mk-product-card { transition: transform .16s ease, box-shadow .16s ease; }
+.mk-product-card:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(15, 23, 42, .14); }
 .mk-product-img { position: relative; aspect-ratio: 1; background: #f3f4f6; }
 .mk-product-img img { width: 100%; height: 100%; object-fit: cover; }
-.mk-product-img .MuiChip-root { position: absolute; right: 12px; top: 12px; z-index: 2; }
-.mk-product .MuiCard-root > div:last-child { padding: 18px; display: grid; gap: 12px; }
-.mk-product strong { min-height: 42px; font-size: 14px; line-height: 1.45; }
-.mk-product p { margin: 0; font-weight: 800; color: #111827; }
-.mk-product span { display: flex; gap: 5px; }
-.mk-product i { width: 13px; height: 13px; border-radius: 50%; background: #00a76f; border: 1px solid #e5e7eb; }
-.mk-product i:nth-child(2) { background: #111827; }
-.mk-product i:nth-child(3) { background: #f59e0b; }
+.mk-product-label {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 2;
+  min-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0 9px;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.mk-product-label-sale { background: #fff1f2; color: #be123c; border: 1px solid #fecdd3; }
+.mk-product-label-new { background: #ecfdf5; color: #007867; border: 1px solid #bbf7d0; }
+.mk-product-label:empty,
+.mk-product s:empty { display: none; }
+.mk-product-card > div:last-child { padding: 18px; display: grid; gap: 16px; }
+.mk-product strong { min-height: 42px; color: #111827; font-size: 14px; line-height: 1.45; }
+.mk-product-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.mk-product p { margin: 0; display: flex; gap: 7px; align-items: center; justify-content: flex-end; font-weight: 800; color: #111827; white-space: nowrap; }
+.mk-product s { color: #9ca3af; font-weight: 700; }
+.mk-product-colors { display: flex; gap: 5px; flex-wrap: wrap; }
+.mk-product-colors i { width: 13px; height: 13px; border-radius: 50%; border: 1px solid #e5e7eb; }
+.mk-swatch-green { background: #00ab55 !important; }
+.mk-swatch-black { background: #000000 !important; }
+.mk-swatch-white { background: #ffffff !important; }
+.mk-swatch-pink { background: #ffc0cb !important; }
+.mk-swatch-red { background: #ff4842 !important; }
+.mk-swatch-blue { background: #1890ff !important; }
+.mk-swatch-lime { background: #94d82d !important; }
+.mk-swatch-amber { background: #ffc107 !important; }
+.mk-product-pagination { margin-top: 54px; display: flex; justify-content: center; }
 
 .mk-blog-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 18px; }
 .mk-blog-grid .MuiCard-root { position: relative; min-height: 320px; }
@@ -518,6 +645,40 @@ a { color: inherit; text-decoration: none; }
   font-weight: 800;
 }
 
+.MuiBadge-root {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MuiBadge-badge {
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  min-width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #ffffff;
+  padding: 0 5px;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.MuiBadge-dot {
+  min-width: 8px;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+}
+
+.MuiBadge-invisible { display: none; }
+
 .MuiChip-root {
   min-height: 24px;
   display: inline-flex;
@@ -557,7 +718,8 @@ a { color: inherit; text-decoration: none; }
   color: #007867;
 }
 
-.MuiCheckbox-root {
+.MuiCheckbox-root,
+.MuiRadio-root {
   position: relative;
   width: 22px;
   height: 22px;
@@ -573,12 +735,16 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 1px 2px rgba(15, 23, 42, .04);
 }
 
-.MuiCheckbox-root.Mui-checked {
+.MuiRadio-root { border-radius: 50%; }
+
+.MuiCheckbox-root.Mui-checked,
+.MuiRadio-root.Mui-checked {
   border-color: #00a76f;
   background: #00a76f;
 }
 
-.MuiCheckbox-root .MuiSwitchBase-input {
+.MuiCheckbox-root .MuiSwitchBase-input,
+.MuiRadio-root .MuiSwitchBase-input {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -601,6 +767,33 @@ a { color: inherit; text-decoration: none; }
 }
 
 .MuiCheckbox-root.Mui-checked .MuiCheckbox-icon::after { transform: rotate(45deg) scale(1); }
+
+.MuiRadio-root .MuiRadio-icon::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+  transform: scale(0);
+  transition: transform .12s ease;
+}
+
+.MuiRadio-root.Mui-checked .MuiRadio-icon::after { transform: scale(1); }
+
+.MuiRating-root {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: #f59e0b;
+  font-size: 18px;
+}
+
+.MuiRating-label { display: inline-flex; }
+.MuiRating-icon { display: inline-flex; width: 18px; height: 18px; }
+.MuiRating-icon svg { width: 18px; height: 18px; fill: currentColor; }
+.MuiRating-iconEmpty { color: #cbd5e1; }
+.MuiRating-visuallyHidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 .MuiSlider-root {
   display: block;
@@ -729,6 +922,31 @@ a { color: inherit; text-decoration: none; }
   appearance: auto;
   cursor: pointer;
 }
+
+.MuiPagination-root { display: inline-flex; }
+.MuiPagination-ul { margin: 0; padding: 0; display: flex; align-items: center; gap: 6px; list-style: none; }
+.MuiPaginationItem-root {
+  min-width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  color: #374151;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+}
+.MuiPaginationItem-root:hover,
+.MuiPaginationItem-root.Mui-selected {
+  border-color: rgba(0, 167, 111, .28);
+  background: rgba(0, 167, 111, .12);
+  color: #007867;
+}
+.MuiPaginationItem-icon { display: inline-flex; width: 18px; height: 18px; }
+.MuiPaginationItem-icon svg { width: 18px; height: 18px; fill: currentColor; }
 
 .Mui-disabled,
 [disabled] {
