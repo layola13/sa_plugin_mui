@@ -1,0 +1,324 @@
+<Component name="MuiMaterialKitDemo">
+  <state>
+    action_count = 0
+    sort_changes = 0
+    sort_value = alloc 64
+    sort_value_len = 0
+    conversion = 44
+    slider_changes = 0
+    slider_value = alloc 16
+    slider_value_len = 0
+    task_updates = 0
+    task0 = 1 as i1
+    task1 = 0 as i1
+    task2 = 1 as i1
+    task3 = 0 as i1
+  </state>
+
+  <section className="mk-app">
+    <InitColorSchemeScript />
+    <GlobalStyles />
+    <CssBaseline />
+
+    <aside className="mk-sidebar">
+      <div className="mk-logo-row">
+        <div className="mk-logo">M</div>
+        <div>
+          <h1>Minimal</h1>
+          <p>SA dashboard</p>
+        </div>
+      </div>
+      <nav className="mk-nav">
+        <a className="mk-nav-active" href="#overview"><img src="assets/icons/navbar/ic-analytics.svg" alt="Overview" />Overview</a>
+        <a href="#products"><img src="assets/icons/navbar/ic-cart.svg" alt="Products" />Products</a>
+        <a href="#blog"><img src="assets/icons/navbar/ic-blog.svg" alt="Blog" />Blog</a>
+        <a href="#users"><img src="assets/icons/navbar/ic-user.svg" alt="Users" />Users</a>
+        <a href="#signin"><img src="assets/icons/navbar/ic-lock.svg" alt="Sign in" />Sign in</a>
+      </nav>
+      <div className="mk-upgrade">
+        <img src="assets/illustrations/illustration-dashboard.webp" alt="Dashboard illustration" />
+        <strong>SA-MUI workspace</strong>
+        <span>React-style components compiled through SA.</span>
+      </div>
+    </aside>
+
+    <main className="mk-main">
+      <header className="mk-topbar">
+        <div className="mk-search">Search dashboards, users, orders</div>
+        <div className="mk-topbar-actions">
+          <Chip>Actions: {action_count}</Chip>
+          <IconButton color="inherit" onClick={record_action}><img className="mk-topbar-icon" src="assets/icons/flags/ic-flag-en.svg" alt="Language" /></IconButton>
+          <IconButton color="inherit" onClick={record_action}><img className="mk-topbar-icon" src="assets/icons/notification/ic-notification-mail.svg" alt="Notifications" /></IconButton>
+          <Avatar>J</Avatar>
+        </div>
+      </header>
+
+      <section id="overview" className="mk-section mk-overview">
+        <div className="mk-heading-row">
+          <div>
+            <p>Dashboard</p>
+            <h2>Hi, Welcome back</h2>
+          </div>
+          <Button variant="contained" color="inherit" onClick={record_action}>Export report</Button>
+        </div>
+
+        <div className="mk-stat-grid">
+          <div className="mk-stat mk-stat-green">
+            <Card>
+              <img src="assets/icons/glass/ic-glass-bag.svg" alt="Weekly sales" />
+              <span>Weekly sales</span>
+              <strong>$714k</strong>
+              <p>+2.6% this week</p>
+            </Card>
+          </div>
+          <div className="mk-stat mk-stat-blue">
+            <Card>
+              <img src="assets/icons/glass/ic-glass-users.svg" alt="New users" />
+              <span>New users</span>
+              <strong>1.35m</strong>
+              <p>-0.1% this week</p>
+            </Card>
+          </div>
+          <div className="mk-stat mk-stat-amber">
+            <Card>
+              <img src="assets/icons/glass/ic-glass-buy.svg" alt="Purchase orders" />
+              <span>Purchase orders</span>
+              <strong>1.72m</strong>
+              <p>+2.8% this week</p>
+            </Card>
+          </div>
+          <div className="mk-stat mk-stat-red">
+            <Card>
+              <img src="assets/icons/glass/ic-glass-message.svg" alt="Messages" />
+              <span>Messages</span>
+              <strong>234</strong>
+              <p>+3.6% this week</p>
+            </Card>
+          </div>
+        </div>
+
+        <div className="mk-analytics-grid">
+          <div className="mk-panel mk-visits">
+            <Card>
+              <div className="mk-card-head"><h3>Website visits</h3><span>+43% than last year</span></div>
+              <div className="mk-bar-chart">
+                <i className="mk-bar-1"></i><i className="mk-bar-2"></i><i className="mk-bar-3"></i><i className="mk-bar-4"></i><i className="mk-bar-5"></i><i className="mk-bar-6"></i><i className="mk-bar-7"></i><i className="mk-bar-8"></i>
+              </div>
+            </Card>
+          </div>
+          <div className="mk-panel mk-current">
+            <Card>
+              <div className="mk-card-head"><h3>Current visits</h3><span>Regional split</span></div>
+              <div className="mk-donut"><b>44%</b></div>
+              <div className="mk-legend"><span>America</span><span>Asia</span><span>Europe</span><span>Africa</span></div>
+              <div className="mk-slider-panel">
+                <span>Conversion target: {conversion}%</span>
+                <Slider value={conversion} onChange={change_conversion} />
+                <small>Slider changes: {slider_changes}</small>
+              </div>
+              <div className="mk-menu-sample">
+                <MenuList disablePadding>
+                  <MenuItem selected onClick={record_action}>Direct traffic</MenuItem>
+                  <MenuItem onClick={record_action}>Search traffic</MenuItem>
+                  <MenuItem disabled>Referral paused</MenuItem>
+                </MenuList>
+              </div>
+            </Card>
+          </div>
+          <div className="mk-panel mk-news">
+            <Card>
+              <div className="mk-card-head"><h3>News</h3><span>Latest posts</span></div>
+              <div className="mk-news-list">
+                <article><img src="assets/images/cover/cover-1.webp" alt="Cover" /><div><strong>Whiteboard Templates By Industry Leaders</strong><span>11/08/2023</span></div></article>
+                <article><img src="assets/images/cover/cover-2.webp" alt="Cover" /><div><strong>Tesla Cybertruck-inspired camper trailer</strong><span>04/09/2024</span></div></article>
+                <article><img src="assets/images/cover/cover-3.webp" alt="Cover" /><div><strong>Designify Agency Landing Page Design</strong><span>09/12/2023</span></div></article>
+              </div>
+            </Card>
+          </div>
+          <div className="mk-panel mk-tasks">
+            <Card>
+              <div className="mk-card-head"><h3>Tasks</h3><span>Team queue</span></div>
+              <span className="mk-task-status">Task updates: {task_updates}</span>
+              <FormControlLabel><Checkbox checked={task0} onChange={toggle_task0} />Prepare Monthly Financial Report</FormControlLabel>
+              <FormControlLabel><Checkbox checked={task1} onChange={toggle_task1} />Design New Marketing Campaign</FormControlLabel>
+              <FormControlLabel><Checkbox checked={task2} onChange={toggle_task2} />Analyze Customer Feedback</FormControlLabel>
+              <FormControlLabel><Checkbox checked={task3} onChange={toggle_task3} />Update Website Content</FormControlLabel>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="products" className="mk-section">
+        <div className="mk-heading-row">
+          <div><p>Catalog</p><h2>Products</h2></div>
+          <div className="mk-filter-row"><Button onClick={record_action}>Filters</Button><NativeSelect onChange={set_sort}><option value="featured">Featured</option><option value="newest">Newest</option><option value="price-low">Price low</option></NativeSelect><span className="mk-inline-status">Sort changes: {sort_changes}</span><span className="mk-inline-status">Selected: {sort_value}</span></div>
+        </div>
+        <div className="mk-product-grid">
+          <div className="mk-product"><Card><div className="mk-product-img"><Chip color="secondary">sale</Chip><img src="assets/images/product/product-1.webp" alt="Nike Air Force" /></div><div><strong>Nike Air Force 1 NDESTRUKT</strong><p>$35.17</p><span><i></i><i></i><i></i></span></div></Card></div>
+          <div className="mk-product"><Card><div className="mk-product-img"><img src="assets/images/product/product-2.webp" alt="Nike Space Hippie" /></div><div><strong>Nike Space Hippie 04</strong><p>$57.22</p><span><i></i><i></i><i></i></span></div></Card></div>
+          <div className="mk-product"><Card><div className="mk-product-img"><Chip>new</Chip><img src="assets/images/product/product-4.webp" alt="Nike Blazer" /></div><div><strong>Nike Blazer Low 77 Vintage</strong><p>$50.79</p><span><i></i><i></i><i></i></span></div></Card></div>
+          <div className="mk-product"><Card><div className="mk-product-img"><img src="assets/images/product/product-7.webp" alt="Nike Air Max" /></div><div><strong>Nike Air Max Zephyr</strong><p>$96.73</p><span><i></i><i></i><i></i></span></div></Card></div>
+        </div>
+      </section>
+
+      <section id="blog" className="mk-section">
+        <div className="mk-heading-row"><div><p>Content</p><h2>Blog</h2></div><Button variant="contained" color="inherit" onClick={record_action}>New post</Button></div>
+        <div className="mk-blog-grid">
+          <article className="mk-blog-large"><Card><img src="assets/images/cover/cover-1.webp" alt="Blog cover" /><div><Avatar>B</Avatar><span>11/08/2023</span><h3>Whiteboard Templates By Industry Leaders</h3><p>8.8k views - 7.9k comments</p></div></Card></article>
+          <article><Card><img src="assets/images/cover/cover-6.webp" alt="Blog cover" /><div><span>02/29/2024</span><h3>Six Socks Studio</h3><p>8.5k shares</p></div></Card></article>
+          <article><Card><img src="assets/images/cover/cover-8.webp" alt="Blog cover" /><div><span>01/13/2024</span><h3>Simple, Great Looking Animations</h3><p>7.9k comments</p></div></Card></article>
+        </div>
+      </section>
+
+      <section id="users" className="mk-section">
+        <div className="mk-heading-row"><div><p>Directory</p><h2>Users</h2></div><Button variant="contained" color="inherit" onClick={record_action}>New user</Button></div>
+        <div className="mk-user-card">
+          <Card>
+            <div className="mk-table-toolbar"><TextField>Search user</TextField><Button onClick={record_action}>Sort</Button></div>
+            <Table>
+              <TableHead><TableRow><TableCell>Name</TableCell><TableCell>Company</TableCell><TableCell>Role</TableCell><TableCell>Status</TableCell></TableRow></TableHead>
+              <TableBody>
+                <TableRow hover><TableCell><Avatar>B</Avatar>Billy Stoltenberg</TableCell><TableCell>Medhurst, Moore and Franey</TableCell><TableCell>Leader</TableCell><TableCell><Chip>active</Chip></TableCell></TableRow>
+                <TableRow hover><TableCell><Avatar>E</Avatar>Eloise Ebert</TableCell><TableCell>Hahn, Homenick and Lind</TableCell><TableCell>HR Manager</TableCell><TableCell><Chip color="secondary">banned</Chip></TableCell></TableRow>
+                <TableRow hover><TableCell><Avatar>T</Avatar>Teresa Luettgen</TableCell><TableCell>Larkin LLC</TableCell><TableCell>UI Designer</TableCell><TableCell><Chip>active</Chip></TableCell></TableRow>
+                <TableRow hover><TableCell><Avatar>S</Avatar>Salvador Mayert</TableCell><TableCell>Stamm, Larson and Mertz</TableCell><TableCell>UX Designer</TableCell><TableCell><Chip>active</Chip></TableCell></TableRow>
+              </TableBody>
+            </Table>
+          </Card>
+        </div>
+      </section>
+
+      <section id="signin" className="mk-section mk-signin-section">
+        <div className="mk-signin-art"><img src="assets/background/overlay.jpg" alt="Workspace background" /></div>
+        <div className="mk-signin-card">
+          <Card>
+            <h2>Sign in</h2>
+            <p>Use the demo account to enter the SA dashboard.</p>
+            <TextField fullWidth>Email address</TextField>
+            <TextField fullWidth>Password</TextField>
+            <Link>Forgot password?</Link>
+            <Button fullWidth variant="contained" color="inherit" onClick={record_action}>Sign in</Button>
+            <Divider />
+            <div className="mk-socials"><IconButton onClick={record_action}>G</IconButton><IconButton onClick={record_action}>GH</IconButton><IconButton onClick={record_action}>X</IconButton></div>
+          </Card>
+        </div>
+      </section>
+    </main>
+  </section>
+
+  @record_action:
+  L_ENTRY:
+    action_count = load state+MuiMaterialKitDemo_action_count as i64
+    action_count = add action_count, 1
+    store state+MuiMaterialKitDemo_action_count, action_count as i64
+    call @render()
+    ret
+
+  @set_sort:
+  L_ENTRY:
+    sort_value = load state+MuiMaterialKitDemo_sort_value as ptr
+    sort_value_len = call @sax_event_target_value(*sort_value, 64)
+    store state+MuiMaterialKitDemo_sort_value_len, sort_value_len as i64
+    sort_changes = load state+MuiMaterialKitDemo_sort_changes as i64
+    sort_changes = add sort_changes, 1
+    store state+MuiMaterialKitDemo_sort_changes, sort_changes as i64
+    call @render()
+    ret
+
+  @change_conversion:
+  L_ENTRY:
+    slider_value = load state+MuiMaterialKitDemo_slider_value as ptr
+    slider_value_len = call @sax_event_target_value(*slider_value, 16)
+    store state+MuiMaterialKitDemo_slider_value_len, slider_value_len as i64
+    b0 = load slider_value+0 as u8
+    d0 = zext b0 as i64
+    d0 = sub d0, 48
+    has_three = gt slider_value_len, 2
+    br has_three -> L_CONVERSION_THREE, L_CONVERSION_CHECK_TWO
+
+  L_CONVERSION_THREE:
+    b1 = load slider_value+1 as u8
+    d1 = zext b1 as i64
+    d1 = sub d1, 48
+    b2 = load slider_value+2 as u8
+    d2 = zext b2 as i64
+    d2 = sub d2, 48
+    value = mul d0, 100
+    tens = mul d1, 10
+    value = add value, tens
+    value = add value, d2
+    store state+MuiMaterialKitDemo_conversion, value as i64
+    slider_changes = load state+MuiMaterialKitDemo_slider_changes as i64
+    slider_changes = add slider_changes, 1
+    store state+MuiMaterialKitDemo_slider_changes, slider_changes as i64
+    call @render()
+    ret
+
+  L_CONVERSION_CHECK_TWO:
+    has_two = gt slider_value_len, 1
+    br has_two -> L_CONVERSION_TWO, L_CONVERSION_ONE
+
+  L_CONVERSION_TWO:
+    b1 = load slider_value+1 as u8
+    d1 = zext b1 as i64
+    d1 = sub d1, 48
+    value = mul d0, 10
+    value = add value, d1
+    store state+MuiMaterialKitDemo_conversion, value as i64
+    slider_changes = load state+MuiMaterialKitDemo_slider_changes as i64
+    slider_changes = add slider_changes, 1
+    store state+MuiMaterialKitDemo_slider_changes, slider_changes as i64
+    call @render()
+    ret
+
+  L_CONVERSION_ONE:
+    value = add d0, 0
+    store state+MuiMaterialKitDemo_conversion, value as i64
+    slider_changes = load state+MuiMaterialKitDemo_slider_changes as i64
+    slider_changes = add slider_changes, 1
+    store state+MuiMaterialKitDemo_slider_changes, slider_changes as i64
+    call @render()
+    ret
+
+  @toggle_task0:
+  L_ENTRY:
+    checked = call @sax_event_target_checked()
+    store state+MuiMaterialKitDemo_task0, checked as i1
+    task_updates = load state+MuiMaterialKitDemo_task_updates as i64
+    task_updates = add task_updates, 1
+    store state+MuiMaterialKitDemo_task_updates, task_updates as i64
+    call @render()
+    ret
+
+  @toggle_task1:
+  L_ENTRY:
+    checked = call @sax_event_target_checked()
+    store state+MuiMaterialKitDemo_task1, checked as i1
+    task_updates = load state+MuiMaterialKitDemo_task_updates as i64
+    task_updates = add task_updates, 1
+    store state+MuiMaterialKitDemo_task_updates, task_updates as i64
+    call @render()
+    ret
+
+  @toggle_task2:
+  L_ENTRY:
+    checked = call @sax_event_target_checked()
+    store state+MuiMaterialKitDemo_task2, checked as i1
+    task_updates = load state+MuiMaterialKitDemo_task_updates as i64
+    task_updates = add task_updates, 1
+    store state+MuiMaterialKitDemo_task_updates, task_updates as i64
+    call @render()
+    ret
+
+  @toggle_task3:
+  L_ENTRY:
+    checked = call @sax_event_target_checked()
+    store state+MuiMaterialKitDemo_task3, checked as i1
+    task_updates = load state+MuiMaterialKitDemo_task_updates as i64
+    task_updates = add task_updates, 1
+    store state+MuiMaterialKitDemo_task_updates, task_updates as i64
+    call @render()
+    ret
+
+  !action_count !sort_changes !sort_value !sort_value_len !conversion !slider_changes !slider_value !slider_value_len !task_updates !task0 !task1 !task2 !task3
+</Component>

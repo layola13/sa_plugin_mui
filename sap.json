@@ -1,0 +1,49 @@
+{
+  "schema": "sa.plugin/1",
+  "name": "mui",
+  "version": "0.1.0",
+  "source": {
+    "type": "local",
+    "path": "."
+  },
+  "abi": {
+    "plugin": 1,
+    "saasm": ">=0.4.0"
+  },
+  "artifacts": {
+    "linux-x86_64": {
+      "path": "zig-out/lib/libmui.so"
+    }
+  },
+  "interfaces": {},
+  "assets": {
+    "share": [
+      { "path": "mui/material.sax", "target": "mui/material.sax" },
+      { "path": "demos/mui_basic_inlined.sax", "target": "demos/mui_basic_inlined.sax" },
+      { "path": "demos/mui_all_components.sax", "target": "demos/mui_all_components.sax" },
+      { "path": "demos/mui_all_components_from_library.sax", "target": "demos/mui_all_components_from_library.sax" },
+      { "path": "demos/mui_dashboard.sax", "target": "demos/mui_dashboard.sax" },
+      { "path": "demos/mui_material_kit_demo.sax", "target": "demos/mui_material_kit_demo.sax" },
+      { "path": "assets/mui_dashboard.css", "target": "assets/mui_dashboard.css" },
+      { "path": "assets/mui_material_kit_demo.css", "target": "assets/mui_material_kit_demo.css" },
+      { "path": "data/material-components.json", "target": "data/material-components.json" }
+    ]
+  },
+  "skills": ["mui"],
+  "permissions": {
+    "fs": [
+      { "op": "read", "path": "$PROJECT/**" }
+    ],
+    "net": [],
+    "env": ["HOME", "SA_*"],
+    "process": { "spawn": false, "exec": [] }
+  },
+  "dependencies": {
+    "react": {
+      "version": ">=0.1.0",
+      "abi": 1,
+      "path": "../sa_plugin_react",
+      "optional": false
+    }
+  }
+}

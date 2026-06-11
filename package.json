@@ -1,0 +1,12 @@
+{
+  "name": "sa-plugin-mui-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:components": "node tools/extract_mui_components.mjs --check",
+    "verify:browser": "node tools/verify_mui_browser.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.60.0"
+  }
+}
