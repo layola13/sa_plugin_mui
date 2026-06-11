@@ -125,6 +125,36 @@
               </div>
             </Card>
           </div>
+          <div className="mk-panel mk-conversion">
+            <Card>
+              <div className="mk-card-head"><h3>Conversion rates</h3><span>(+43%) than last year</span></div>
+              <div className="mk-conversion-chart">
+                <div className="mk-conversion-row"><strong>Italy</strong><span className="mk-conversion-bars"><i className="mk-cr-2022 mk-cr-44">44</i><i className="mk-cr-2023 mk-cr-53">53</i></span></div>
+                <div className="mk-conversion-row"><strong>Japan</strong><span className="mk-conversion-bars"><i className="mk-cr-2022 mk-cr-55">55</i><i className="mk-cr-2023 mk-cr-32">32</i></span></div>
+                <div className="mk-conversion-row"><strong>China</strong><span className="mk-conversion-bars"><i className="mk-cr-2022 mk-cr-41">41</i><i className="mk-cr-2023 mk-cr-33">33</i></span></div>
+                <div className="mk-conversion-row"><strong>Canada</strong><span className="mk-conversion-bars"><i className="mk-cr-2022 mk-cr-64">64</i><i className="mk-cr-2023 mk-cr-52">52</i></span></div>
+                <div className="mk-conversion-row"><strong>France</strong><span className="mk-conversion-bars"><i className="mk-cr-2022 mk-cr-22">22</i><i className="mk-cr-2023 mk-cr-13">13</i></span></div>
+              </div>
+              <div className="mk-chart-legend"><span className="mk-series-a">2022</span><span className="mk-series-b">2023</span></div>
+            </Card>
+          </div>
+          <div className="mk-panel mk-subject">
+            <Card>
+              <div className="mk-card-head"><h3>Current subject</h3><span>Class performance</span></div>
+              <div className="mk-subject-radar">
+                <span className="mk-radar-label mk-radar-english">English</span>
+                <span className="mk-radar-label mk-radar-history">History</span>
+                <span className="mk-radar-label mk-radar-physics">Physics</span>
+                <span className="mk-radar-label mk-radar-geography">Geography</span>
+                <span className="mk-radar-label mk-radar-chinese">Chinese</span>
+                <span className="mk-radar-label mk-radar-math">Math</span>
+                <i className="mk-radar-axis mk-radar-axis-1"></i><i className="mk-radar-axis mk-radar-axis-2"></i><i className="mk-radar-axis mk-radar-axis-3"></i>
+                <b className="mk-radar-series mk-radar-series-1"></b><b className="mk-radar-series mk-radar-series-2"></b><b className="mk-radar-series mk-radar-series-3"></b>
+              </div>
+              <Divider />
+              <div className="mk-chart-legend"><span className="mk-series-a">Series 1</span><span className="mk-series-b">Series 2</span><span className="mk-series-c">Series 3</span></div>
+            </Card>
+          </div>
           <div className="mk-panel mk-news">
             <Card>
               <div className="mk-card-head"><h3>News</h3><span>Latest posts</span></div>
@@ -132,6 +162,29 @@
                 <article><img src="assets/images/cover/cover-1.webp" alt="Cover" /><div><strong>Whiteboard Templates By Industry Leaders</strong><span>11/08/2023</span></div></article>
                 <article><img src="assets/images/cover/cover-2.webp" alt="Cover" /><div><strong>Tesla Cybertruck-inspired camper trailer</strong><span>04/09/2024</span></div></article>
                 <article><img src="assets/images/cover/cover-3.webp" alt="Cover" /><div><strong>Designify Agency Landing Page Design</strong><span>09/12/2023</span></div></article>
+              </div>
+            </Card>
+          </div>
+          <div className="mk-panel mk-timeline">
+            <Card>
+              <div className="mk-card-head"><h3>Order timeline</h3><span>Latest order flow</span></div>
+              <ol className="mk-timeline-list">
+                <li className="mk-time-primary"><strong>1983, orders, $4220</strong><span>08 Jun 2026 10:30 am</span></li>
+                <li className="mk-time-success"><strong>12 Invoices have been paid</strong><span>07 Jun 2026 08:20 pm</span></li>
+                <li className="mk-time-info"><strong>Order #37745 from September</strong><span>06 Jun 2026 02:45 pm</span></li>
+                <li className="mk-time-warning"><strong>New order placed #XF-2356</strong><span>05 Jun 2026 11:12 am</span></li>
+                <li className="mk-time-error"><strong>New order placed #XF-2346</strong><span>04 Jun 2026 09:05 am</span></li>
+              </ol>
+            </Card>
+          </div>
+          <div className="mk-panel mk-traffic">
+            <Card>
+              <div className="mk-card-head"><h3>Traffic by site</h3><span>Social channels</span></div>
+              <div className="mk-traffic-grid">
+                <div className="mk-traffic-item mk-traffic-facebook"><i>f</i><strong>19.5k</strong><span>Facebook</span></div>
+                <div className="mk-traffic-item mk-traffic-google"><i>G</i><strong>91.2k</strong><span>Google</span></div>
+                <div className="mk-traffic-item mk-traffic-linkedin"><i>in</i><strong>69.8k</strong><span>Linkedin</span></div>
+                <div className="mk-traffic-item mk-traffic-twitter"><i>X</i><strong>84.9k</strong><span>Twitter</span></div>
               </div>
             </Card>
           </div>

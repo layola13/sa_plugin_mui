@@ -104,7 +104,16 @@ async function runDesktopChecks(page, url) {
   await page.waitForSelector(".mk-app", { timeout: 15000 });
 
   const bodyText = await page.locator("body").textContent();
-  for (const text of ["Hi, Welcome back", "Products", "Tasks", "SA-MUI workspace"]) {
+  for (const text of [
+    "Hi, Welcome back",
+    "Conversion rates",
+    "Current subject",
+    "Order timeline",
+    "Traffic by site",
+    "Products",
+    "Tasks",
+    "SA-MUI workspace",
+  ]) {
     if (!bodyText?.includes(text)) throw new Error(`missing text '${text}'`);
   }
 
@@ -114,7 +123,16 @@ async function runDesktopChecks(page, url) {
   await expectTextFieldFocusFrame(page);
 
   const cardCount = await page.locator(".MuiCard-root").count();
-  if (cardCount < 16) throw new Error(`expected Material Kit card coverage, got ${cardCount}`);
+  if (cardCount < 20) throw new Error(`expected Material Kit card coverage, got ${cardCount}`);
+
+  const conversionRows = await page.locator(".mk-conversion-row").count();
+  if (conversionRows !== 5) throw new Error(`expected five conversion rows, got ${conversionRows}`);
+
+  const trafficItems = await page.locator(".mk-traffic-item").count();
+  if (trafficItems !== 4) throw new Error(`expected four traffic site items, got ${trafficItems}`);
+
+  const timelineItems = await page.locator(".mk-timeline-list li").count();
+  if (timelineItems !== 5) throw new Error(`expected five timeline items, got ${timelineItems}`);
 
   const exportButton = page.locator(".MuiButton-root", { hasText: "Export report" }).first();
   const beforeHover = await exportButton.evaluate((node) => getComputedStyle(node).backgroundColor);
