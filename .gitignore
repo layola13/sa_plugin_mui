@@ -15,3 +15,12 @@ Thumbs.db
 .claude
 .code_index
 node_modules
+dist/**/.sa_vite_build_cache
+dist/material-kit-blog-fresh-check/
+
+# code-index generated artifacts
+.code_index
+.claude/skills/code-index
+.codex/skills/code-index
+.opencode/skills/code-index
+# end code-index generated artifacts

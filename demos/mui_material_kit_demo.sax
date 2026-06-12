@@ -1,721 +1,180 @@
 <Component name="MuiMaterialKitDemo">
   <state>
-    action_count = 0
-    sort_changes = 0
-    sort_menu_open = 0 as i1
-    sort_featured_selected = 1 as i1
-    sort_newest_selected = 0 as i1
-    sort_price_desc_selected = 0 as i1
-    sort_price_asc_selected = 0 as i1
-    filter_open = 0 as i1
-    filter_updates = 0
-    gender_men = 1 as i1
-    gender_women = 0 as i1
-    gender_kids = 0 as i1
-    category_all_selected = 1 as i1
-    category_shose_selected = 0 as i1
-    category_apparel_selected = 0 as i1
-    category_accessories_selected = 0 as i1
-    price_below_selected = 1 as i1
-    price_between_selected = 0 as i1
-    price_above_selected = 0 as i1
-    conversion = 44
-    slider_changes = 0
-    slider_value = alloc 16
-    slider_value_len = 0
-    task_updates = 0
-    task0 = 1 as i1
-    task1 = 0 as i1
-    task2 = 1 as i1
-    task3 = 0 as i1
+    page_dashboard = 1 as i1
+    page_products = 0 as i1
+    page_blog = 0 as i1
+    page_users = 0 as i1
+    page_sign_in = 0 as i1
+    page_register = 0 as i1
+    auth_show_password = 0 as i1
+    auth_attempts = 0
+    auth_submissions = 0
+    auth_accept_terms = 1 as i1
   </state>
 
-  <section className="mk-app">
+  <LayoutSection>
     <InitColorSchemeScript />
     <GlobalStyles />
     <CssBaseline />
 
-    <aside className="mk-sidebar">
-      <div className="mk-logo-row">
-        <div className="mk-logo">M</div>
-        <div>
-          <h1>Minimal</h1>
-          <p>SA dashboard</p>
-        </div>
-      </div>
-      <nav className="mk-nav">
-        <a className="mk-nav-active" href="#overview"><img src="assets/icons/navbar/ic-analytics.svg" alt="Overview" />Overview</a>
-        <a href="#products"><img src="assets/icons/navbar/ic-cart.svg" alt="Products" />Products</a>
-        <a href="#blog"><img src="assets/icons/navbar/ic-blog.svg" alt="Blog" />Blog</a>
-        <a href="#users"><img src="assets/icons/navbar/ic-user.svg" alt="Users" />Users</a>
-        <a href="#signin"><img src="assets/icons/navbar/ic-lock.svg" alt="Sign in" />Sign in</a>
-      </nav>
-      <div className="mk-upgrade">
-        <img src="assets/illustrations/illustration-dashboard.webp" alt="Dashboard illustration" />
-        <strong>SA-MUI workspace</strong>
-        <span>React-style components compiled through SA.</span>
-      </div>
-    </aside>
+    <NavDesktop>
+      <NavContent>
+        <button className="mk-nav-item{page_dashboard ? ' mk-nav-active' : ''}" onClick={show_dashboard}><img src="assets/icons/navbar/ic-analytics.svg" alt="Dashboard" />Dashboard</button>
+        <button className="mk-nav-item{page_products ? ' mk-nav-active' : ''}" onClick={show_products}><img src="assets/icons/navbar/ic-cart.svg" alt="Products" />Products</button>
+        <button className="mk-nav-item{page_blog ? ' mk-nav-active' : ''}" onClick={show_blog}><img src="assets/icons/navbar/ic-blog.svg" alt="Blog" />Blog</button>
+        <button className="mk-nav-item{page_users ? ' mk-nav-active' : ''}" onClick={show_users}><img src="assets/icons/navbar/ic-user.svg" alt="Users" />Users</button>
+        <button className="mk-nav-item{page_sign_in ? ' mk-nav-active' : ''}" onClick={show_sign_in}><img src="assets/icons/navbar/ic-lock.svg" alt="Sign in" />Sign in</button>
+        <button className="mk-nav-item{page_register ? ' mk-nav-active' : ''}" onClick={show_register}><img src="assets/icons/navbar/ic-lock.svg" alt="Register" />Register</button>
+      </NavContent>
+    </NavDesktop>
 
-    <main className="mk-main">
-      <header className="mk-topbar">
-        <div className="mk-search">Search dashboards, users, orders</div>
-        <div className="mk-topbar-actions">
-          <Chip>Actions: {action_count}</Chip>
-          <IconButton color="inherit" onClick={record_action}><img className="mk-topbar-icon" src="assets/icons/flags/ic-flag-en.svg" alt="Language" /></IconButton>
-          <IconButton color="inherit" onClick={record_action}><img className="mk-topbar-icon" src="assets/icons/notification/ic-notification-mail.svg" alt="Notifications" /></IconButton>
-          <Avatar>J</Avatar>
-        </div>
-      </header>
+    <MainSection>
+      <DashboardHeader>
+        <button className="mk-account-link-button" onClick={show_sign_in}>Sign in</button>
+        <button className="mk-account-link-button" onClick={show_register}>Register</button>
+      </DashboardHeader>
 
-      <section id="overview" className="mk-section mk-overview">
-        <div className="mk-heading-row">
-          <div>
-            <p>Dashboard</p>
-            <h2>Hi, Welcome back</h2>
-          </div>
-          <Button variant="contained" color="inherit" onClick={record_action}>Export report</Button>
-        </div>
+      <DashboardOverviewContent active={page_dashboard}>
+        <MaterialKitOverviewView />
+      </DashboardOverviewContent>
 
-        <div className="mk-stat-grid">
-          <div className="mk-stat mk-stat-green">
-            <Card>
-              <img src="assets/icons/glass/ic-glass-bag.svg" alt="Weekly sales" />
-              <span>Weekly sales</span>
-              <strong>$714k</strong>
-              <p>+2.6% this week</p>
-            </Card>
-          </div>
-          <div className="mk-stat mk-stat-blue">
-            <Card>
-              <img src="assets/icons/glass/ic-glass-users.svg" alt="New users" />
-              <span>New users</span>
-              <strong>1.35m</strong>
-              <p>-0.1% this week</p>
-            </Card>
-          </div>
-          <div className="mk-stat mk-stat-amber">
-            <Card>
-              <img src="assets/icons/glass/ic-glass-buy.svg" alt="Purchase orders" />
-              <span>Purchase orders</span>
-              <strong>1.72m</strong>
-              <p>+2.8% this week</p>
-            </Card>
-          </div>
-          <div className="mk-stat mk-stat-red">
-            <Card>
-              <img src="assets/icons/glass/ic-glass-message.svg" alt="Messages" />
-              <span>Messages</span>
-              <strong>234</strong>
-              <p>+3.6% this week</p>
-            </Card>
-          </div>
-        </div>
+      <DashboardProductsContent active={page_products}>
+        <MaterialKitProductsView />
+      </DashboardProductsContent>
 
-        <div className="mk-analytics-grid">
-          <div className="mk-panel mk-visits">
-            <Card>
-              <div className="mk-card-head"><h3>Website visits</h3><span>+43% than last year</span></div>
-              <div className="mk-bar-chart">
-                <i className="mk-bar-1"></i><i className="mk-bar-2"></i><i className="mk-bar-3"></i><i className="mk-bar-4"></i><i className="mk-bar-5"></i><i className="mk-bar-6"></i><i className="mk-bar-7"></i><i className="mk-bar-8"></i>
-              </div>
-            </Card>
-          </div>
-          <div className="mk-panel mk-current">
-            <Card>
-              <div className="mk-card-head"><h3>Current visits</h3><span>Regional split</span></div>
-              <div className="mk-donut"><b>44%</b></div>
-              <div className="mk-legend"><span>America</span><span>Asia</span><span>Europe</span><span>Africa</span></div>
-              <div className="mk-slider-panel">
-                <span>Conversion target: {conversion}%</span>
-                <Slider value={conversion} onChange={change_conversion} />
-                <small>Slider changes: {slider_changes}</small>
-              </div>
-              <div className="mk-menu-sample">
-                <MenuList disablePadding>
-                  <MenuItem selected onClick={record_action}>Direct traffic</MenuItem>
-                  <MenuItem onClick={record_action}>Search traffic</MenuItem>
-                  <MenuItem disabled>Referral paused</MenuItem>
-                </MenuList>
-              </div>
-            </Card>
-          </div>
-          <div className="mk-panel mk-conversion">
-            <Card>
-              <div className="mk-card-head"><h3>Conversion rates</h3><span>(+43%) than last year</span></div>
-              <div className="mk-conversion-chart">
-                <div className="mk-conversion-row"><strong>Italy</strong><span className="mk-conversion-bars"><i className="mk-cr-2022 mk-cr-44">44</i><i className="mk-cr-2023 mk-cr-53">53</i></span></div>
-                <div className="mk-conversion-row"><strong>Japan</strong><span className="mk-conversion-bars"><i className="mk-cr-2022 mk-cr-55">55</i><i className="mk-cr-2023 mk-cr-32">32</i></span></div>
-                <div className="mk-conversion-row"><strong>China</strong><span className="mk-conversion-bars"><i className="mk-cr-2022 mk-cr-41">41</i><i className="mk-cr-2023 mk-cr-33">33</i></span></div>
-                <div className="mk-conversion-row"><strong>Canada</strong><span className="mk-conversion-bars"><i className="mk-cr-2022 mk-cr-64">64</i><i className="mk-cr-2023 mk-cr-52">52</i></span></div>
-                <div className="mk-conversion-row"><strong>France</strong><span className="mk-conversion-bars"><i className="mk-cr-2022 mk-cr-22">22</i><i className="mk-cr-2023 mk-cr-13">13</i></span></div>
-              </div>
-              <div className="mk-chart-legend"><span className="mk-series-a">2022</span><span className="mk-series-b">2023</span></div>
-            </Card>
-          </div>
-          <div className="mk-panel mk-subject">
-            <Card>
-              <div className="mk-card-head"><h3>Current subject</h3><span>Class performance</span></div>
-              <div className="mk-subject-radar">
-                <span className="mk-radar-label mk-radar-english">English</span>
-                <span className="mk-radar-label mk-radar-history">History</span>
-                <span className="mk-radar-label mk-radar-physics">Physics</span>
-                <span className="mk-radar-label mk-radar-geography">Geography</span>
-                <span className="mk-radar-label mk-radar-chinese">Chinese</span>
-                <span className="mk-radar-label mk-radar-math">Math</span>
-                <i className="mk-radar-axis mk-radar-axis-1"></i><i className="mk-radar-axis mk-radar-axis-2"></i><i className="mk-radar-axis mk-radar-axis-3"></i>
-                <b className="mk-radar-series mk-radar-series-1"></b><b className="mk-radar-series mk-radar-series-2"></b><b className="mk-radar-series mk-radar-series-3"></b>
-              </div>
-              <Divider />
-              <div className="mk-chart-legend"><span className="mk-series-a">Series 1</span><span className="mk-series-b">Series 2</span><span className="mk-series-c">Series 3</span></div>
-            </Card>
-          </div>
-          <div className="mk-panel mk-news">
-            <Card>
-              <div className="mk-card-head"><h3>News</h3><span>Latest posts</span></div>
-              <div className="mk-news-list">
-                <article><img src="assets/images/cover/cover-1.webp" alt="Cover" /><div><strong>Whiteboard Templates By Industry Leaders</strong><span>11/08/2023</span></div></article>
-                <article><img src="assets/images/cover/cover-2.webp" alt="Cover" /><div><strong>Tesla Cybertruck-inspired camper trailer</strong><span>04/09/2024</span></div></article>
-                <article><img src="assets/images/cover/cover-3.webp" alt="Cover" /><div><strong>Designify Agency Landing Page Design</strong><span>09/12/2023</span></div></article>
-              </div>
-            </Card>
-          </div>
-          <div className="mk-panel mk-timeline">
-            <Card>
-              <div className="mk-card-head"><h3>Order timeline</h3><span>Latest order flow</span></div>
-              <ol className="mk-timeline-list">
-                <li className="mk-time-primary"><strong>1983, orders, $4220</strong><span>08 Jun 2026 10:30 am</span></li>
-                <li className="mk-time-success"><strong>12 Invoices have been paid</strong><span>07 Jun 2026 08:20 pm</span></li>
-                <li className="mk-time-info"><strong>Order #37745 from September</strong><span>06 Jun 2026 02:45 pm</span></li>
-                <li className="mk-time-warning"><strong>New order placed #XF-2356</strong><span>05 Jun 2026 11:12 am</span></li>
-                <li className="mk-time-error"><strong>New order placed #XF-2346</strong><span>04 Jun 2026 09:05 am</span></li>
-              </ol>
-            </Card>
-          </div>
-          <div className="mk-panel mk-traffic">
-            <Card>
-              <div className="mk-card-head"><h3>Traffic by site</h3><span>Social channels</span></div>
-              <div className="mk-traffic-grid">
-                <div className="mk-traffic-item mk-traffic-facebook"><i>f</i><strong>19.5k</strong><span>Facebook</span></div>
-                <div className="mk-traffic-item mk-traffic-google"><i>G</i><strong>91.2k</strong><span>Google</span></div>
-                <div className="mk-traffic-item mk-traffic-linkedin"><i>in</i><strong>69.8k</strong><span>Linkedin</span></div>
-                <div className="mk-traffic-item mk-traffic-twitter"><i>X</i><strong>84.9k</strong><span>Twitter</span></div>
-              </div>
-            </Card>
-          </div>
-          <div className="mk-panel mk-tasks">
-            <Card>
-              <div className="mk-card-head"><h3>Tasks</h3><span>Team queue</span></div>
-              <span className="mk-task-status">Task updates: {task_updates}</span>
-              <FormControlLabel><Checkbox checked={task0} onChange={toggle_task0} />Prepare Monthly Financial Report</FormControlLabel>
-              <FormControlLabel><Checkbox checked={task1} onChange={toggle_task1} />Design New Marketing Campaign</FormControlLabel>
-              <FormControlLabel><Checkbox checked={task2} onChange={toggle_task2} />Analyze Customer Feedback</FormControlLabel>
-              <FormControlLabel><Checkbox checked={task3} onChange={toggle_task3} />Update Website Content</FormControlLabel>
-            </Card>
-          </div>
-        </div>
+      <DashboardBlogContent active={page_blog}>
+        <MaterialKitBlogView />
+      </DashboardBlogContent>
+
+      <DashboardUsersContent active={page_users}>
+        <MaterialKitUsersView />
+      </DashboardUsersContent>
+
+      <section className="mk-section mk-auth-dashboard-page{page_sign_in ? '' : ' mk-hidden'}">
+        <AuthContent>
+          <section className="mk-auth-title"><Typography variant="h5">Sign in</Typography><Typography variant="body2">Don't have an account?<button className="mk-auth-inline-link" onClick={show_register}>Get started</button></Typography></section>
+          <section className="mk-auth-form">
+            <TextField fullWidth value="hello@gmail.com">Email address</TextField>
+            <section className="mk-auth-forgot-row"><button className="mk-auth-forgot" onClick={submit_sign_in}>Forgot password?</button></section>
+            <section className="mk-password-field"><TextField fullWidth type={auth_show_password ? 'text' : 'password'} value="@demo1234">Password</TextField><span className="mk-password-toggle"><IconButton onClick={toggle_auth_password}><span className="mk-eye-icon{auth_show_password ? ' mk-eye-open' : ''}">Show password</span></IconButton></span></section>
+            <span className="mk-inline-status mk-auth-status">Sign-in attempts: {auth_attempts}</span>
+            <Button fullWidth variant="contained" color="inherit" onClick={submit_sign_in}>Sign in</Button>
+          </section>
+          <section className="mk-auth-divider"><span>OR</span></section>
+          <section className="mk-socials"><IconButton onClick={submit_sign_in}><span className="mk-social-icon">G</span></IconButton><IconButton onClick={submit_sign_in}><span className="mk-social-icon">GH</span></IconButton><IconButton onClick={submit_sign_in}><span className="mk-social-icon">X</span></IconButton></section>
+        </AuthContent>
       </section>
 
-      <section id="products" className="mk-section">
-        <a className="mk-cart-widget" href="#products" onClick={record_action}>
-          <Badge color="error" badgeContent={8} showZero><span className="mk-cart-glyph">Cart</span></Badge>
-        </a>
-        <div className="mk-heading-row">
-          <div><p>Catalog</p><h2>Products</h2></div>
-          <div className="mk-filter-row">
-            <Button color="inherit" onClick={open_filters}>Filters <Badge color="error" variant="dot" badgeContent={filter_updates}><span></span></Badge></Button>
-            <div className="mk-sort-box{sort_menu_open ? ' mk-sort-open' : ''}">
-              <Button color="inherit" onClick={toggle_sort_menu}>Sort By</Button>
-              <div className="mk-sort-menu">
-                <MenuList disablePadding>
-                  <MenuItem selected={sort_featured_selected} onClick={sort_featured}>Featured</MenuItem>
-                  <MenuItem selected={sort_newest_selected} onClick={sort_newest}>Newest</MenuItem>
-                  <MenuItem selected={sort_price_desc_selected} onClick={sort_price_desc}>Price: High-Low</MenuItem>
-                  <MenuItem selected={sort_price_asc_selected} onClick={sort_price_asc}>Price: Low-High</MenuItem>
-                </MenuList>
-              </div>
-            </div>
-            <span className="mk-inline-status">Sort changes: {sort_changes}</span>
-            <span className="mk-inline-status">Filter updates: {filter_updates}</span>
-          </div>
-        </div>
-
-        <div className="mk-filter-shell{filter_open ? ' mk-filter-open' : ''}">
-          <Drawer anchor="right" open={filter_open}>
-            <div className="mk-filter-drawer">
-              <div className="mk-filter-title"><h3>Filters</h3><div><IconButton onClick={reset_filters}>R</IconButton><IconButton onClick={close_filters}>X</IconButton></div></div>
-              <Divider />
-              <div className="mk-filter-body">
-                <section>
-                  <h4>Gender</h4>
-                  <FormGroup>
-                    <FormControlLabel><Checkbox checked={gender_men} onChange={toggle_gender_men} />Men</FormControlLabel>
-                    <FormControlLabel><Checkbox checked={gender_women} onChange={toggle_gender_women} />Women</FormControlLabel>
-                    <FormControlLabel><Checkbox checked={gender_kids} onChange={toggle_gender_kids} />Kids</FormControlLabel>
-                  </FormGroup>
-                </section>
-                <section>
-                  <h4>Category</h4>
-                  <RadioGroup>
-                    <FormControlLabel><Radio checked={category_all_selected} onChange={category_all} />All</FormControlLabel>
-                    <FormControlLabel><Radio checked={category_shose_selected} onChange={category_shose} />Shose</FormControlLabel>
-                    <FormControlLabel><Radio checked={category_apparel_selected} onChange={category_apparel} />Apparel</FormControlLabel>
-                    <FormControlLabel><Radio checked={category_accessories_selected} onChange={category_accessories} />Accessories</FormControlLabel>
-                  </RadioGroup>
-                </section>
-                <section>
-                  <h4>Colors</h4>
-                  <div className="mk-color-picker">
-                    <button type="button" className="mk-color-option mk-swatch-green" onClick={update_filter}></button>
-                    <button type="button" className="mk-color-option mk-swatch-black" onClick={update_filter}></button>
-                    <button type="button" className="mk-color-option mk-swatch-white" onClick={update_filter}></button>
-                    <button type="button" className="mk-color-option mk-swatch-pink" onClick={update_filter}></button>
-                    <button type="button" className="mk-color-option mk-swatch-red" onClick={update_filter}></button>
-                    <button type="button" className="mk-color-option mk-swatch-blue" onClick={update_filter}></button>
-                    <button type="button" className="mk-color-option mk-swatch-lime" onClick={update_filter}></button>
-                    <button type="button" className="mk-color-option mk-swatch-amber" onClick={update_filter}></button>
-                  </div>
-                </section>
-                <section>
-                  <h4>Price</h4>
-                  <RadioGroup>
-                    <FormControlLabel><Radio checked={price_below_selected} onChange={price_below} />Below $25</FormControlLabel>
-                    <FormControlLabel><Radio checked={price_between_selected} onChange={price_between} />Between $25 - $75</FormControlLabel>
-                    <FormControlLabel><Radio checked={price_above_selected} onChange={price_above} />Above $75</FormControlLabel>
-                  </RadioGroup>
-                </section>
-                <section>
-                  <h4>Rating</h4>
-                  <button className="mk-rating-row" onClick={update_filter}><Rating value={4} readOnly /> and Up</button>
-                  <button className="mk-rating-row" onClick={update_filter}><Rating value={3} readOnly /> and Up</button>
-                  <button className="mk-rating-row" onClick={update_filter}><Rating value={2} readOnly /> and Up</button>
-                  <button className="mk-rating-row" onClick={update_filter}><Rating value={1} readOnly /> and Up</button>
-                </section>
-              </div>
-            </div>
-          </Drawer>
-        </div>
-
-        <MaterialKitProductGrid />
+      <section className="mk-section mk-auth-dashboard-page{page_register ? '' : ' mk-hidden'}">
+        <AuthContent>
+          <section className="mk-auth-title"><Typography variant="h5">Register</Typography><Typography variant="body2">Already have an account?<button className="mk-auth-inline-link" onClick={show_sign_in}>Sign in</button></Typography></section>
+          <section className="mk-auth-form">
+            <TextField fullWidth value="John Doe">Full name</TextField>
+            <TextField fullWidth value="john.doe@example.com">Email address</TextField>
+            <section className="mk-password-field"><TextField fullWidth type={auth_show_password ? 'text' : 'password'} value="@demo1234">Password</TextField><span className="mk-password-toggle"><IconButton onClick={toggle_auth_password}><span className="mk-eye-icon{auth_show_password ? ' mk-eye-open' : ''}">Show password</span></IconButton></span></section>
+            <FormControlLabel><Checkbox checked={auth_accept_terms} onChange={toggle_auth_terms} />I agree to the terms</FormControlLabel>
+            <span className="mk-inline-status mk-auth-status">Register submissions: {auth_submissions}</span>
+            <Button fullWidth variant="contained" color="inherit" onClick={submit_register}>Register</Button>
+          </section>
+          <section className="mk-auth-divider"><span>OR</span></section>
+          <section className="mk-socials"><IconButton onClick={submit_register}><span className="mk-social-icon">G</span></IconButton><IconButton onClick={submit_register}><span className="mk-social-icon">GH</span></IconButton><IconButton onClick={submit_register}><span className="mk-social-icon">X</span></IconButton></section>
+        </AuthContent>
       </section>
+    </MainSection>
+  </LayoutSection>
 
-      <section id="blog" className="mk-section">
-        <div className="mk-heading-row"><div><p>Content</p><h2>Blog</h2></div><Button variant="contained" color="inherit" onClick={record_action}>New post</Button></div>
-        <div className="mk-blog-grid">
-          <article className="mk-blog-large"><Card><img src="assets/images/cover/cover-1.webp" alt="Blog cover" /><div><Avatar>B</Avatar><span>11/08/2023</span><h3>Whiteboard Templates By Industry Leaders</h3><p>8.8k views - 7.9k comments</p></div></Card></article>
-          <article><Card><img src="assets/images/cover/cover-6.webp" alt="Blog cover" /><div><span>02/29/2024</span><h3>Six Socks Studio</h3><p>8.5k shares</p></div></Card></article>
-          <article><Card><img src="assets/images/cover/cover-8.webp" alt="Blog cover" /><div><span>01/13/2024</span><h3>Simple, Great Looking Animations</h3><p>7.9k comments</p></div></Card></article>
-        </div>
-      </section>
-
-      <section id="users" className="mk-section">
-        <div className="mk-heading-row"><div><p>Directory</p><h2>Users</h2></div><Button variant="contained" color="inherit" onClick={record_action}>New user</Button></div>
-        <div className="mk-user-card">
-          <Card>
-            <div className="mk-table-toolbar"><TextField>Search user</TextField><Button onClick={record_action}>Sort</Button></div>
-            <Table>
-              <TableHead><TableRow><TableCell>Name</TableCell><TableCell>Company</TableCell><TableCell>Role</TableCell><TableCell>Status</TableCell></TableRow></TableHead>
-              <TableBody>
-                <TableRow hover><TableCell><Avatar>B</Avatar>Billy Stoltenberg</TableCell><TableCell>Medhurst, Moore and Franey</TableCell><TableCell>Leader</TableCell><TableCell><Chip>active</Chip></TableCell></TableRow>
-                <TableRow hover><TableCell><Avatar>E</Avatar>Eloise Ebert</TableCell><TableCell>Hahn, Homenick and Lind</TableCell><TableCell>HR Manager</TableCell><TableCell><Chip color="secondary">banned</Chip></TableCell></TableRow>
-                <TableRow hover><TableCell><Avatar>T</Avatar>Teresa Luettgen</TableCell><TableCell>Larkin LLC</TableCell><TableCell>UI Designer</TableCell><TableCell><Chip>active</Chip></TableCell></TableRow>
-                <TableRow hover><TableCell><Avatar>S</Avatar>Salvador Mayert</TableCell><TableCell>Stamm, Larson and Mertz</TableCell><TableCell>UX Designer</TableCell><TableCell><Chip>active</Chip></TableCell></TableRow>
-              </TableBody>
-            </Table>
-          </Card>
-        </div>
-      </section>
-
-      <section id="signin" className="mk-section mk-signin-section">
-        <div className="mk-signin-art"><img src="assets/background/overlay.jpg" alt="Workspace background" /></div>
-        <div className="mk-signin-card">
-          <Card>
-            <h2>Sign in</h2>
-            <p>Use the demo account to enter the SA dashboard.</p>
-            <TextField fullWidth>Email address</TextField>
-            <TextField fullWidth>Password</TextField>
-            <Link>Forgot password?</Link>
-            <Button fullWidth variant="contained" color="inherit" onClick={record_action}>Sign in</Button>
-            <Divider />
-            <div className="mk-socials"><IconButton onClick={record_action}>G</IconButton><IconButton onClick={record_action}>GH</IconButton><IconButton onClick={record_action}>X</IconButton></div>
-          </Card>
-        </div>
-      </section>
-    </main>
-  </section>
-
-  @record_action:
+  @show_dashboard:
   L_ENTRY:
-    action_count = load state+MuiMaterialKitDemo_action_count as i64
-    action_count = add action_count, 1
-    store state+MuiMaterialKitDemo_action_count, action_count as i64
+    store state+MuiMaterialKitDemo_page_dashboard, 1 as i1
+    store state+MuiMaterialKitDemo_page_products, 0 as i1
+    store state+MuiMaterialKitDemo_page_blog, 0 as i1
+    store state+MuiMaterialKitDemo_page_users, 0 as i1
+    store state+MuiMaterialKitDemo_page_sign_in, 0 as i1
+    store state+MuiMaterialKitDemo_page_register, 0 as i1
     call @render()
     ret
-
-  @toggle_sort_menu:
+  @show_products:
   L_ENTRY:
-    store state+MuiMaterialKitDemo_sort_menu_open, 1 as i1
+    store state+MuiMaterialKitDemo_page_dashboard, 0 as i1
+    store state+MuiMaterialKitDemo_page_products, 1 as i1
+    store state+MuiMaterialKitDemo_page_blog, 0 as i1
+    store state+MuiMaterialKitDemo_page_users, 0 as i1
+    store state+MuiMaterialKitDemo_page_sign_in, 0 as i1
+    store state+MuiMaterialKitDemo_page_register, 0 as i1
     call @render()
     ret
-
-  @sort_featured:
+  @show_blog:
   L_ENTRY:
-    store state+MuiMaterialKitDemo_sort_featured_selected, 1 as i1
-    store state+MuiMaterialKitDemo_sort_newest_selected, 0 as i1
-    store state+MuiMaterialKitDemo_sort_price_desc_selected, 0 as i1
-    store state+MuiMaterialKitDemo_sort_price_asc_selected, 0 as i1
-    store state+MuiMaterialKitDemo_sort_menu_open, 0 as i1
-    sort_changes = load state+MuiMaterialKitDemo_sort_changes as i64
-    sort_changes = add sort_changes, 1
-    store state+MuiMaterialKitDemo_sort_changes, sort_changes as i64
+    store state+MuiMaterialKitDemo_page_dashboard, 0 as i1
+    store state+MuiMaterialKitDemo_page_products, 0 as i1
+    store state+MuiMaterialKitDemo_page_blog, 1 as i1
+    store state+MuiMaterialKitDemo_page_users, 0 as i1
+    store state+MuiMaterialKitDemo_page_sign_in, 0 as i1
+    store state+MuiMaterialKitDemo_page_register, 0 as i1
     call @render()
     ret
-
-  @sort_newest:
+  @show_users:
   L_ENTRY:
-    store state+MuiMaterialKitDemo_sort_featured_selected, 0 as i1
-    store state+MuiMaterialKitDemo_sort_newest_selected, 1 as i1
-    store state+MuiMaterialKitDemo_sort_price_desc_selected, 0 as i1
-    store state+MuiMaterialKitDemo_sort_price_asc_selected, 0 as i1
-    store state+MuiMaterialKitDemo_sort_menu_open, 0 as i1
-    sort_changes = load state+MuiMaterialKitDemo_sort_changes as i64
-    sort_changes = add sort_changes, 1
-    store state+MuiMaterialKitDemo_sort_changes, sort_changes as i64
+    store state+MuiMaterialKitDemo_page_dashboard, 0 as i1
+    store state+MuiMaterialKitDemo_page_products, 0 as i1
+    store state+MuiMaterialKitDemo_page_blog, 0 as i1
+    store state+MuiMaterialKitDemo_page_users, 1 as i1
+    store state+MuiMaterialKitDemo_page_sign_in, 0 as i1
+    store state+MuiMaterialKitDemo_page_register, 0 as i1
     call @render()
     ret
-
-  @sort_price_desc:
+  @show_sign_in:
   L_ENTRY:
-    store state+MuiMaterialKitDemo_sort_featured_selected, 0 as i1
-    store state+MuiMaterialKitDemo_sort_newest_selected, 0 as i1
-    store state+MuiMaterialKitDemo_sort_price_desc_selected, 1 as i1
-    store state+MuiMaterialKitDemo_sort_price_asc_selected, 0 as i1
-    store state+MuiMaterialKitDemo_sort_menu_open, 0 as i1
-    sort_changes = load state+MuiMaterialKitDemo_sort_changes as i64
-    sort_changes = add sort_changes, 1
-    store state+MuiMaterialKitDemo_sort_changes, sort_changes as i64
+    store state+MuiMaterialKitDemo_page_dashboard, 0 as i1
+    store state+MuiMaterialKitDemo_page_products, 0 as i1
+    store state+MuiMaterialKitDemo_page_blog, 0 as i1
+    store state+MuiMaterialKitDemo_page_users, 0 as i1
+    store state+MuiMaterialKitDemo_page_sign_in, 1 as i1
+    store state+MuiMaterialKitDemo_page_register, 0 as i1
     call @render()
     ret
-
-  @sort_price_asc:
+  @show_register:
   L_ENTRY:
-    store state+MuiMaterialKitDemo_sort_featured_selected, 0 as i1
-    store state+MuiMaterialKitDemo_sort_newest_selected, 0 as i1
-    store state+MuiMaterialKitDemo_sort_price_desc_selected, 0 as i1
-    store state+MuiMaterialKitDemo_sort_price_asc_selected, 1 as i1
-    store state+MuiMaterialKitDemo_sort_menu_open, 0 as i1
-    sort_changes = load state+MuiMaterialKitDemo_sort_changes as i64
-    sort_changes = add sort_changes, 1
-    store state+MuiMaterialKitDemo_sort_changes, sort_changes as i64
+    store state+MuiMaterialKitDemo_page_dashboard, 0 as i1
+    store state+MuiMaterialKitDemo_page_products, 0 as i1
+    store state+MuiMaterialKitDemo_page_blog, 0 as i1
+    store state+MuiMaterialKitDemo_page_users, 0 as i1
+    store state+MuiMaterialKitDemo_page_sign_in, 0 as i1
+    store state+MuiMaterialKitDemo_page_register, 1 as i1
     call @render()
     ret
-
-  @open_filters:
+  @toggle_auth_password:
   L_ENTRY:
-    store state+MuiMaterialKitDemo_filter_open, 1 as i1
+    visible = load state+MuiMaterialKitDemo_auth_show_password as i1
+    br visible -> L_AUTH_HIDE_PASSWORD, L_AUTH_SHOW_PASSWORD
+  L_AUTH_HIDE_PASSWORD:
+    store state+MuiMaterialKitDemo_auth_show_password, 0 as i1
     call @render()
     ret
-
-  @close_filters:
-  L_ENTRY:
-    store state+MuiMaterialKitDemo_filter_open, 0 as i1
+  L_AUTH_SHOW_PASSWORD:
+    store state+MuiMaterialKitDemo_auth_show_password, 1 as i1
     call @render()
     ret
-
-  @reset_filters:
-  L_ENTRY:
-    store state+MuiMaterialKitDemo_gender_men, 1 as i1
-    store state+MuiMaterialKitDemo_gender_women, 0 as i1
-    store state+MuiMaterialKitDemo_gender_kids, 0 as i1
-    store state+MuiMaterialKitDemo_category_all_selected, 1 as i1
-    store state+MuiMaterialKitDemo_category_shose_selected, 0 as i1
-    store state+MuiMaterialKitDemo_category_apparel_selected, 0 as i1
-    store state+MuiMaterialKitDemo_category_accessories_selected, 0 as i1
-    store state+MuiMaterialKitDemo_price_below_selected, 1 as i1
-    store state+MuiMaterialKitDemo_price_between_selected, 0 as i1
-    store state+MuiMaterialKitDemo_price_above_selected, 0 as i1
-    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
-    filter_updates = add filter_updates, 1
-    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
-    call @render()
-    ret
-
-  @toggle_gender_men:
+  @toggle_auth_terms:
   L_ENTRY:
     checked = call @sax_event_target_checked()
-    store state+MuiMaterialKitDemo_gender_men, checked as i1
-    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
-    filter_updates = add filter_updates, 1
-    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
+    store state+MuiMaterialKitDemo_auth_accept_terms, checked as i1
     call @render()
     ret
-
-  @toggle_gender_women:
+  @submit_sign_in:
   L_ENTRY:
-    checked = call @sax_event_target_checked()
-    store state+MuiMaterialKitDemo_gender_women, checked as i1
-    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
-    filter_updates = add filter_updates, 1
-    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
+    count = load state+MuiMaterialKitDemo_auth_attempts as i64
+    count = add count, 1
+    store state+MuiMaterialKitDemo_auth_attempts, count as i64
     call @render()
     ret
-
-  @toggle_gender_kids:
+  @submit_register:
   L_ENTRY:
-    checked = call @sax_event_target_checked()
-    store state+MuiMaterialKitDemo_gender_kids, checked as i1
-    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
-    filter_updates = add filter_updates, 1
-    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
+    count = load state+MuiMaterialKitDemo_auth_submissions as i64
+    count = add count, 1
+    store state+MuiMaterialKitDemo_auth_submissions, count as i64
     call @render()
     ret
 
-  @category_all:
-  L_ENTRY:
-    store state+MuiMaterialKitDemo_category_all_selected, 1 as i1
-    store state+MuiMaterialKitDemo_category_shose_selected, 0 as i1
-    store state+MuiMaterialKitDemo_category_apparel_selected, 0 as i1
-    store state+MuiMaterialKitDemo_category_accessories_selected, 0 as i1
-    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
-    filter_updates = add filter_updates, 1
-    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
-    call @render()
-    ret
-
-  @category_shose:
-  L_ENTRY:
-    store state+MuiMaterialKitDemo_category_all_selected, 0 as i1
-    store state+MuiMaterialKitDemo_category_shose_selected, 1 as i1
-    store state+MuiMaterialKitDemo_category_apparel_selected, 0 as i1
-    store state+MuiMaterialKitDemo_category_accessories_selected, 0 as i1
-    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
-    filter_updates = add filter_updates, 1
-    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
-    call @render()
-    ret
-
-  @category_apparel:
-  L_ENTRY:
-    store state+MuiMaterialKitDemo_category_all_selected, 0 as i1
-    store state+MuiMaterialKitDemo_category_shose_selected, 0 as i1
-    store state+MuiMaterialKitDemo_category_apparel_selected, 1 as i1
-    store state+MuiMaterialKitDemo_category_accessories_selected, 0 as i1
-    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
-    filter_updates = add filter_updates, 1
-    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
-    call @render()
-    ret
-
-  @category_accessories:
-  L_ENTRY:
-    store state+MuiMaterialKitDemo_category_all_selected, 0 as i1
-    store state+MuiMaterialKitDemo_category_shose_selected, 0 as i1
-    store state+MuiMaterialKitDemo_category_apparel_selected, 0 as i1
-    store state+MuiMaterialKitDemo_category_accessories_selected, 1 as i1
-    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
-    filter_updates = add filter_updates, 1
-    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
-    call @render()
-    ret
-
-  @update_filter:
-  L_ENTRY:
-    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
-    filter_updates = add filter_updates, 1
-    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
-    call @render()
-    ret
-
-  @price_below:
-  L_ENTRY:
-    store state+MuiMaterialKitDemo_price_below_selected, 1 as i1
-    store state+MuiMaterialKitDemo_price_between_selected, 0 as i1
-    store state+MuiMaterialKitDemo_price_above_selected, 0 as i1
-    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
-    filter_updates = add filter_updates, 1
-    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
-    call @render()
-    ret
-
-  @price_between:
-  L_ENTRY:
-    store state+MuiMaterialKitDemo_price_below_selected, 0 as i1
-    store state+MuiMaterialKitDemo_price_between_selected, 1 as i1
-    store state+MuiMaterialKitDemo_price_above_selected, 0 as i1
-    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
-    filter_updates = add filter_updates, 1
-    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
-    call @render()
-    ret
-
-  @price_above:
-  L_ENTRY:
-    store state+MuiMaterialKitDemo_price_below_selected, 0 as i1
-    store state+MuiMaterialKitDemo_price_between_selected, 0 as i1
-    store state+MuiMaterialKitDemo_price_above_selected, 1 as i1
-    filter_updates = load state+MuiMaterialKitDemo_filter_updates as i64
-    filter_updates = add filter_updates, 1
-    store state+MuiMaterialKitDemo_filter_updates, filter_updates as i64
-    call @render()
-    ret
-
-  @change_conversion:
-  L_ENTRY:
-    slider_value = load state+MuiMaterialKitDemo_slider_value as ptr
-    slider_value_len = call @sax_event_target_value(*slider_value, 16)
-    store state+MuiMaterialKitDemo_slider_value_len, slider_value_len as i64
-    b0 = load slider_value+0 as u8
-    d0 = zext b0 as i64
-    d0 = sub d0, 48
-    has_three = gt slider_value_len, 2
-    br has_three -> L_CONVERSION_THREE, L_CONVERSION_CHECK_TWO
-
-  L_CONVERSION_THREE:
-    b1 = load slider_value+1 as u8
-    d1 = zext b1 as i64
-    d1 = sub d1, 48
-    b2 = load slider_value+2 as u8
-    d2 = zext b2 as i64
-    d2 = sub d2, 48
-    value = mul d0, 100
-    tens = mul d1, 10
-    value = add value, tens
-    value = add value, d2
-    store state+MuiMaterialKitDemo_conversion, value as i64
-    slider_changes = load state+MuiMaterialKitDemo_slider_changes as i64
-    slider_changes = add slider_changes, 1
-    store state+MuiMaterialKitDemo_slider_changes, slider_changes as i64
-    call @render()
-    ret
-
-  L_CONVERSION_CHECK_TWO:
-    has_two = gt slider_value_len, 1
-    br has_two -> L_CONVERSION_TWO, L_CONVERSION_ONE
-
-  L_CONVERSION_TWO:
-    b1 = load slider_value+1 as u8
-    d1 = zext b1 as i64
-    d1 = sub d1, 48
-    value = mul d0, 10
-    value = add value, d1
-    store state+MuiMaterialKitDemo_conversion, value as i64
-    slider_changes = load state+MuiMaterialKitDemo_slider_changes as i64
-    slider_changes = add slider_changes, 1
-    store state+MuiMaterialKitDemo_slider_changes, slider_changes as i64
-    call @render()
-    ret
-
-  L_CONVERSION_ONE:
-    value = add d0, 0
-    store state+MuiMaterialKitDemo_conversion, value as i64
-    slider_changes = load state+MuiMaterialKitDemo_slider_changes as i64
-    slider_changes = add slider_changes, 1
-    store state+MuiMaterialKitDemo_slider_changes, slider_changes as i64
-    call @render()
-    ret
-
-  @toggle_task0:
-  L_ENTRY:
-    checked = call @sax_event_target_checked()
-    store state+MuiMaterialKitDemo_task0, checked as i1
-    task_updates = load state+MuiMaterialKitDemo_task_updates as i64
-    task_updates = add task_updates, 1
-    store state+MuiMaterialKitDemo_task_updates, task_updates as i64
-    call @render()
-    ret
-
-  @toggle_task1:
-  L_ENTRY:
-    checked = call @sax_event_target_checked()
-    store state+MuiMaterialKitDemo_task1, checked as i1
-    task_updates = load state+MuiMaterialKitDemo_task_updates as i64
-    task_updates = add task_updates, 1
-    store state+MuiMaterialKitDemo_task_updates, task_updates as i64
-    call @render()
-    ret
-
-  @toggle_task2:
-  L_ENTRY:
-    checked = call @sax_event_target_checked()
-    store state+MuiMaterialKitDemo_task2, checked as i1
-    task_updates = load state+MuiMaterialKitDemo_task_updates as i64
-    task_updates = add task_updates, 1
-    store state+MuiMaterialKitDemo_task_updates, task_updates as i64
-    call @render()
-    ret
-
-  @toggle_task3:
-  L_ENTRY:
-    checked = call @sax_event_target_checked()
-    store state+MuiMaterialKitDemo_task3, checked as i1
-    task_updates = load state+MuiMaterialKitDemo_task_updates as i64
-    task_updates = add task_updates, 1
-    store state+MuiMaterialKitDemo_task_updates, task_updates as i64
-    call @render()
-    ret
-
-  !action_count !sort_changes !sort_menu_open !sort_featured_selected !sort_newest_selected !sort_price_desc_selected !sort_price_asc_selected !filter_open !filter_updates !gender_men !gender_women !gender_kids !category_all_selected !category_shose_selected !category_apparel_selected !category_accessories_selected !price_below_selected !price_between_selected !price_above_selected !conversion !slider_changes !slider_value !slider_value_len !task_updates !task0 !task1 !task2 !task3
-</Component>
-
-<Component name="MaterialKitProductGrid">
-  <div className="mk-product-grid">
-    <MaterialKitProductCard image="assets/images/product/product-1.webp" name="Nike Air Force 1 NDESTRUKT" oldPrice="$57.17" price="$35.17" label="sale" labelClass="mk-product-label mk-product-label-sale"><i className="mk-swatch-green"></i><i className="mk-swatch-black"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-2.webp" name="Nike Space Hippie 04" price="$57.22" labelClass="mk-product-label"><i className="mk-swatch-black"></i><i className="mk-swatch-white"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-3.webp" name="Nike Air Zoom Pegasus 37 A.I.R. Chaz Bear" oldPrice="$64.18" price="$64.18" label="sale" labelClass="mk-product-label mk-product-label-sale"><i className="mk-swatch-white"></i><i className="mk-swatch-pink"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-4.webp" name="Nike Blazer Low 77 Vintage" price="$50.79" label="new" labelClass="mk-product-label mk-product-label-new"><i className="mk-swatch-pink"></i><i className="mk-swatch-red"></i><i className="mk-swatch-blue"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-5.webp" name="Nike ZoomX SuperRep Surge" price="$9.57" label="sale" labelClass="mk-product-label mk-product-label-sale"><i className="mk-swatch-green"></i><i className="mk-swatch-black"></i><i className="mk-swatch-white"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-6.webp" name="Zoom Freak 2" oldPrice="$61.46" price="$61.46" labelClass="mk-product-label"><i className="mk-swatch-red"></i><i className="mk-swatch-blue"></i><i className="mk-swatch-lime"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-7.webp" name="Nike Air Max Zephyr" price="$96.73" labelClass="mk-product-label"><i className="mk-swatch-green"></i><i className="mk-swatch-black"></i><i className="mk-swatch-amber"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-8.webp" name="Jordan Delta" price="$63.04" label="new" labelClass="mk-product-label mk-product-label-new"><i className="mk-swatch-white"></i><i className="mk-swatch-blue"></i><i className="mk-swatch-amber"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-9.webp" name="Air Jordan XXXV PF" oldPrice="$33.30" price="$33.30" labelClass="mk-product-label"><i className="mk-swatch-green"></i><i className="mk-swatch-black"></i><i className="mk-swatch-red"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-10.webp" name="Nike Waffle Racer Crater" price="$39.17" labelClass="mk-product-label"><i className="mk-swatch-pink"></i><i className="mk-swatch-lime"></i><i className="mk-swatch-amber"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-11.webp" name="Kyrie 7 EP Sisterhood" price="$35.71" labelClass="mk-product-label"><i className="mk-swatch-green"></i><i className="mk-swatch-blue"></i><i className="mk-swatch-amber"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-12.webp" name="Nike Air Zoom BB NXT" oldPrice="$45.91" price="$45.91" label="new" labelClass="mk-product-label mk-product-label-new"><i className="mk-swatch-black"></i><i className="mk-swatch-white"></i><i className="mk-swatch-red"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-13.webp" name="Nike Air Force 1 07 LX" price="$42.09" labelClass="mk-product-label"><i className="mk-swatch-green"></i><i className="mk-swatch-pink"></i><i className="mk-swatch-blue"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-14.webp" name="Nike Air Force 1 Shadow SE" price="$98.14" labelClass="mk-product-label"><i className="mk-swatch-white"></i><i className="mk-swatch-lime"></i><i className="mk-swatch-amber"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-15.webp" name="Nike Air Zoom Tempo NEXT%" oldPrice="$88.74" price="$88.74" labelClass="mk-product-label"><i className="mk-swatch-green"></i><i className="mk-swatch-black"></i><i className="mk-swatch-red"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-16.webp" name="Nike DBreak-Type" price="$17.83" labelClass="mk-product-label"><i className="mk-swatch-pink"></i><i className="mk-swatch-blue"></i><i className="mk-swatch-amber"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-17.webp" name="Nike Air Max Up" price="$57.18" labelClass="mk-product-label"><i className="mk-swatch-green"></i><i className="mk-swatch-white"></i><i className="mk-swatch-lime"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-18.webp" name="Nike Air Max 270 React ENG" oldPrice="$19.34" price="$19.34" labelClass="mk-product-label"><i className="mk-swatch-black"></i><i className="mk-swatch-red"></i><i className="mk-swatch-blue"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-19.webp" name="NikeCourt Royale" price="$60.98" labelClass="mk-product-label"><i className="mk-swatch-pink"></i><i className="mk-swatch-lime"></i><i className="mk-swatch-amber"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-20.webp" name="Nike Air Zoom Pegasus 37 Premium" price="$96.57" labelClass="mk-product-label"><i className="mk-swatch-green"></i><i className="mk-swatch-blue"></i><i className="mk-swatch-amber"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-21.webp" name="Nike Air Zoom SuperRep" oldPrice="$68.39" price="$68.39" labelClass="mk-product-label"><i className="mk-swatch-black"></i><i className="mk-swatch-white"></i><i className="mk-swatch-red"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-22.webp" name="NikeCourt Royale" price="$88.98" labelClass="mk-product-label"><i className="mk-swatch-green"></i><i className="mk-swatch-pink"></i><i className="mk-swatch-blue"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-23.webp" name="Nike React Art3mis" price="$93.39" labelClass="mk-product-label"><i className="mk-swatch-red"></i><i className="mk-swatch-blue"></i></MaterialKitProductCard>
-    <MaterialKitProductCard image="assets/images/product/product-24.webp" name="Nike React Infinity Run Flyknit A.I.R. Chaz Bear" oldPrice="$10.64" price="$10.64" labelClass="mk-product-label"><i className="mk-swatch-blue"></i></MaterialKitProductCard>
-  </div>
-  <div className="mk-product-pagination"><Pagination count={10} color="primary" /></div>
-</Component>
-
-<Component name="MaterialKitProductCard">
-  <state>
-    image = alloc 128
-    image_len = 0
-    name = alloc 160
-    name_len = 0
-    price = alloc 32
-    price_len = 0
-    oldPrice = alloc 32
-    oldPrice_len = 0
-    label = alloc 16
-    label_len = 0
-    labelClass = alloc 80
-    labelClass_len = 0
-  </state>
-  <article className="mk-product">
-    <div className="mk-product-card">
-      <div className="mk-product-img">
-        <span className="{labelClass}">{label}</span>
-        <img src="{image}" alt="{name}" />
-      </div>
-      <div>
-        <strong>{name}</strong>
-        <div className="mk-product-meta">
-          <span className="mk-product-colors"><Slot /></span>
-          <p><s>{oldPrice}</s>{price}</p>
-        </div>
-      </div>
-    </div>
-  </article>
-  !image !image_len !name !name_len !price !price_len !oldPrice !oldPrice_len !label !label_len !labelClass !labelClass_len
+  !page_dashboard !page_products !page_blog !page_users !page_sign_in !page_register !auth_show_password !auth_attempts !auth_submissions !auth_accept_terms
 </Component>

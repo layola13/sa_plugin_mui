@@ -23,11 +23,18 @@ pub fn build(b: *std.Build) void {
     });
     b.installArtifact(lib);
     b.installFile("mui/material.sax", "share/mui/material.sax");
+    b.installFile("mui/material_kit_layout.sax", "share/mui/material_kit_layout.sax");
+    b.installFile("mui/material_kit_views.sax", "share/mui/material_kit_views.sax");
     b.installFile("demos/mui_basic_inlined.sax", "share/demos/mui_basic_inlined.sax");
     b.installFile("demos/mui_all_components.sax", "share/demos/mui_all_components.sax");
     b.installFile("demos/mui_all_components_from_library.sax", "share/demos/mui_all_components_from_library.sax");
     b.installFile("demos/mui_dashboard.sax", "share/demos/mui_dashboard.sax");
     b.installFile("demos/mui_material_kit_demo.sax", "share/demos/mui_material_kit_demo.sax");
+    b.installFile("demos/mui_material_kit_products.sax", "share/demos/mui_material_kit_products.sax");
+    b.installFile("demos/mui_material_kit_blog.sax", "share/demos/mui_material_kit_blog.sax");
+    b.installFile("demos/mui_material_kit_users.sax", "share/demos/mui_material_kit_users.sax");
+    b.installFile("demos/mui_material_kit_sign_in.sax", "share/demos/mui_material_kit_sign_in.sax");
+    b.installFile("demos/mui_material_kit_register.sax", "share/demos/mui_material_kit_register.sax");
     b.installFile("assets/mui_dashboard.css", "share/assets/mui_dashboard.css");
     b.installFile("assets/mui_material_kit_demo.css", "share/assets/mui_material_kit_demo.css");
     b.installFile("data/material-components.json", "share/data/material-components.json");

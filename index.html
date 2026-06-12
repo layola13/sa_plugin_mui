@@ -5,374 +5,102 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SA-MUI Demo Navigation</title>
   <style>
-    :root {
-      color-scheme: light;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f6f7fb;
-      color: #172033;
-    }
-
+    :root { color-scheme: light; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f6f7fb; color: #172033; }
     * { box-sizing: border-box; }
     body { margin: 0; background: #f6f7fb; }
     a { color: inherit; }
-
-    .page {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 34px 22px 52px;
-    }
-
-    header {
-      display: grid;
-      gap: 10px;
-      margin-bottom: 24px;
-    }
-
+    .page { max-width: 1180px; margin: 0 auto; padding: 34px 22px 52px; }
+    header { display: grid; gap: 10px; margin-bottom: 24px; }
     h1, h2, h3, p { margin: 0; }
-    h1 { font-size: clamp(30px, 4vw, 46px); line-height: 1.1; letter-spacing: 0; }
+    h1 { font-size: 42px; line-height: 1.1; letter-spacing: 0; }
     h2 { font-size: 22px; margin-bottom: 14px; }
     h3 { font-size: 16px; }
     p { color: #5d6678; line-height: 1.6; }
-
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 8px;
-    }
-
-    .pill {
-      display: inline-flex;
-      min-height: 30px;
-      align-items: center;
-      border: 1px solid #d9e1ec;
-      border-radius: 8px;
-      background: #ffffff;
-      padding: 5px 10px;
-      color: #4a5568;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin: 20px 0 28px;
-    }
-
-    .card, section {
-      border: 1px solid #dfe6ef;
-      border-radius: 8px;
-      background: #ffffff;
-      box-shadow: 0 12px 28px rgba(20, 33, 61, .07);
-    }
-
-    .card {
-      display: grid;
-      gap: 12px;
-      padding: 18px;
-    }
-
-    .card a {
-      width: fit-content;
-      min-height: 38px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 8px;
-      background: #1473e6;
-      color: #ffffff;
-      padding: 0 14px;
-      text-decoration: none;
-      font-weight: 800;
-    }
-
-    .card a:hover, .card a:focus-visible {
-      background: #0b5fc2;
-      outline: 3px solid rgba(20, 115, 230, .18);
-      outline-offset: 2px;
-    }
-
-    .source {
-      display: block;
-      color: #334155;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-      font-size: 13px;
-      overflow-wrap: anywhere;
-    }
-
-    section {
-      margin-top: 18px;
-      padding: 18px;
-      overflow: hidden;
-    }
-
+    code, pre, .source { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    code { color: #1f2937; background: #f1f5f9; border-radius: 6px; padding: 2px 5px; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; border: 1px solid #e2e8f0; border-radius: 8px; background: #0f172a; color: #e5edf8; padding: 14px; line-height: 1.55; font-size: 12px; }
+    .meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+    .pill { display: inline-flex; min-height: 30px; align-items: center; border: 1px solid #d9e1ec; border-radius: 8px; background: #ffffff; padding: 5px 10px; color: #4a5568; font-size: 13px; font-weight: 700; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 20px 0 28px; }
+    .card, section { border: 1px solid #dfe6ef; border-radius: 8px; background: #ffffff; box-shadow: 0 12px 28px rgba(20, 33, 61, .07); }
+    .card { display: grid; gap: 12px; padding: 18px; }
+    .card a.button { width: fit-content; min-height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; background: #1473e6; color: #ffffff; padding: 0 14px; text-decoration: none; font-weight: 800; }
+    .card a.button:hover, .card a.button:focus-visible { background: #0b5fc2; outline: 3px solid rgba(20, 115, 230, .18); outline-offset: 2px; }
+    .source { display: block; color: #334155; font-size: 13px; overflow-wrap: anywhere; }
+    section { margin-top: 18px; padding: 18px; overflow: hidden; }
     .table-wrap { overflow-x: auto; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
-
-    th, td {
-      border-bottom: 1px solid #edf1f6;
-      padding: 10px 8px;
-      text-align: left;
-      vertical-align: top;
-    }
-
-    th {
-      color: #64748b;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0;
-      white-space: nowrap;
-    }
-
-    code, pre {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-    }
-
-    code {
-      color: #1f2937;
-      background: #f1f5f9;
-      border-radius: 6px;
-      padding: 2px 5px;
-    }
-
-    pre {
-      white-space: pre-wrap;
-      overflow-wrap: anywhere;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      background: #0f172a;
-      color: #e5edf8;
-      padding: 14px;
-      line-height: 1.55;
-      font-size: 12px;
-    }
-
-    .files {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .files h3 { margin-bottom: 8px; }
-    .files ul { margin: 0; padding-left: 18px; color: #4b5563; line-height: 1.65; }
-    .files li { overflow-wrap: anywhere; }
-
-    @media (max-width: 820px) {
-      .grid, .files { grid-template-columns: 1fr; }
-      .page { padding: 24px 14px 40px; }
-    }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #edf1f6; padding: 10px 8px; text-align: left; vertical-align: top; }
+    th { color: #64748b; font-size: 12px; text-transform: uppercase; letter-spacing: 0; white-space: nowrap; }
+    ul { margin: 0; padding-left: 18px; color: #4b5563; line-height: 1.65; }
+    li { overflow-wrap: anywhere; }
+    @media (max-width: 980px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } h1 { font-size: 34px; } }
+    @media (max-width: 680px) { .grid { grid-template-columns: 1fr; } .page { padding: 24px 14px 40px; } }
   </style>
 </head>
 <body>
   <main class="page">
     <header>
       <h1>SA-MUI Demo Navigation</h1>
-      <p>所有页面都由 <code>sa_plugin_vite</code> 的静态 build 产物提供，源码是 SA/SAX + <code>sa_plugin_react</code> + <code>mui/material.sax</code>，没有调用 Node MUI、React DOM 或 Emotion。</p>
+      <p>这些页面由 <code>sa_plugin_vite</code> 编译，源码是 SA/SAX + <code>sa_plugin_react</code> + <code>mui/material.sax</code>，没有调用 Node MUI、React DOM 或 Emotion。</p>
       <div class="meta">
-        <span class="pill">报告生成时间: 2026-06-11T12:52:28+08:00</span>
-        <span class="pill">输出根目录: dist/</span>
-        <span class="pill">Demo 数量: 5</span>
+        <span class="pill">报告生成时间: 2026-06-12 13:15:46 CST</span>
+        <span class="pill">输出根目录: dist/material-kit + dist/dashboard</span>
+        <span class="pill">Material Kit 页面: 6</span>
+        <span class="pill">参考源码: /home/vscode/projects/material-kit-react2</span>
+        <span class="pill">DCE: Haxe-style full for Vite React WASM</span>
+        <span class="pill">Vite build cache: 40.86s -> 0.20s</span>
       </div>
     </header>
 
-    <div class="grid" aria-label="Demo navigation">
-      <article class="card">
-        <h2>Material Kit Demo</h2>
-        <p>参考 material-kit-react 的完整后台页面，含产品、用户、登录、交互控件和 public 静态资源。</p>
-        <span class="source">源码: demos/mui_material_kit_demo.sax</span>
-        <span class="source">输出: dist/material-kit/index.html</span>
-        <a href="dist/material-kit/index.html">打开 demo</a>
-      </article>
-
-      <article class="card">
-        <h2>All Components Dashboard</h2>
-        <p>100% 后整理的全组件展示 dashboard，覆盖核心组件分组、响应式布局和交互状态。</p>
-        <span class="source">源码: demos/mui_dashboard.sax</span>
-        <span class="source">输出: dist/dashboard/index.html</span>
-        <a href="dist/dashboard/index.html">打开 demo</a>
-      </article>
-
-      <article class="card">
-        <h2>All Components Library Demo</h2>
-        <p>直接通过 <code>--include mui/material.sax</code> 消费 SA-MUI 库的全组件验证入口。</p>
-        <span class="source">源码: demos/mui_all_components_from_library.sax</span>
-        <span class="source">输出: dist/all-components-library/index.html</span>
-        <a href="dist/all-components-library/index.html">打开 demo</a>
-      </article>
-
-      <article class="card">
-        <h2>All Components Inlined Baseline</h2>
-        <p>早期内联组件基线，用于对照库消费路径和回归检查。</p>
-        <span class="source">源码: demos/mui_all_components.sax</span>
-        <span class="source">输出: dist/all-components-inlined/index.html</span>
-        <a href="dist/all-components-inlined/index.html">打开 demo</a>
-      </article>
-
-      <article class="card">
-        <h2>Basic Inlined Baseline</h2>
-        <p>较小的内联 smoke demo，保留为基础渲染和组件种子对照。</p>
-        <span class="source">源码: demos/mui_basic_inlined.sax</span>
-        <span class="source">输出: dist/basic-inlined/index.html</span>
-        <a href="dist/basic-inlined/index.html">打开 demo</a>
-      </article>
+    <div class="grid" aria-label="Material Kit navigation">
+      <article class="card"><h2>Dashboard</h2><p>主页是 SA 状态驱动的 dashboard shell，Products/Blog/Users/Sign In/Register 都在页面内部切换；右上角 Search/Language/Notifications/Account 支持点击外部区域关闭。</p><span class="source">源码: demos/mui_material_kit_demo.sax</span><span class="source">Layout: mui/material_kit_layout.sax + mui/material_kit_views.sax</span><span class="source">输出: dist/material-kit/index.html</span><a class="button" href="dist/material-kit/index.html">打开</a></article>
+      <article class="card"><h2>Products</h2><p>独立 products 路由，包含产品列表、sort menu、filter drawer、dirty badge 和 reset action。</p><span class="source">源码: demos/mui_material_kit_products.sax</span><span class="source">Layout: mui/material_kit_layout.sax</span><span class="source">输出: dist/material-kit/products/index.html</span><a class="button" href="dist/material-kit/products/index.html">打开</a></article>
+      <article class="card"><h2>Blog</h2><p>独立 blog 路由，包含搜索输入、文章排序菜单和分页区域。</p><span class="source">源码: demos/mui_material_kit_blog.sax</span><span class="source">Layout: mui/material_kit_layout.sax</span><span class="source">输出: dist/material-kit/blog/index.html</span><a class="button" href="dist/material-kit/blog/index.html">打开</a></article>
+      <article class="card"><h2>Users</h2><p>独立 users 路由，包含用户表格、全选、排序、行级菜单和分页按钮。</p><span class="source">源码: demos/mui_material_kit_users.sax</span><span class="source">Layout: mui/material_kit_layout.sax</span><span class="source">输出: dist/material-kit/users/index.html</span><a class="button" href="dist/material-kit/users/index.html">打开</a></article>
+      <article class="card"><h2>Sign In</h2><p>独立认证页面，Sign in/Register 在同一页面内部切换，不刷新路由。</p><span class="source">源码: demos/mui_material_kit_sign_in.sax</span><span class="source">Layout: mui/material_kit_layout.sax</span><span class="source">输出: dist/material-kit/sign-in/index.html</span><a class="button" href="dist/material-kit/sign-in/index.html">打开</a></article>
+      <article class="card"><h2>Register</h2><p>独立注册页面，和登录页同属 auth layout 风格，同页切换到 Sign in。</p><span class="source">源码: demos/mui_material_kit_register.sax</span><span class="source">Layout: mui/material_kit_layout.sax</span><span class="source">输出: dist/material-kit/register/index.html</span><a class="button" href="dist/material-kit/register/index.html">打开</a></article>
     </div>
 
     <section>
-      <h2>Build Summary</h2>
+      <h2>Build Commands</h2>
+      <pre>SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_vite/zig-out/lib/libvite.so:/home/vscode/projects/sa_plugins/sa_plugin_http_server/zig-out/lib/libhttp-server.so:/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so
+/home/vscode/projects/sci/zig-out/bin/sa vite build demos/mui_material_kit_demo.sax --react --include mui/material.sax --include mui/material_kit_layout.sax --include mui/material_kit_views.sax --out-dir dist/material-kit --title "SA Material Kit Dashboard" --css assets/mui_material_kit_demo.css --public-dir /home/vscode/projects/material-kit-react2/public
+/home/vscode/projects/sci/zig-out/bin/sa vite build demos/mui_material_kit_products.sax --react --include mui/material.sax --include mui/material_kit_layout.sax --include mui/material_kit_views.sax --out-dir dist/material-kit/products --title "SA Material Kit Products" --css assets/mui_material_kit_demo.css --public-dir /home/vscode/projects/material-kit-react2/public
+/home/vscode/projects/sci/zig-out/bin/sa vite build demos/mui_material_kit_blog.sax --react --include mui/material.sax --include mui/material_kit_layout.sax --include mui/material_kit_views.sax --out-dir dist/material-kit/blog --title "SA Material Kit Blog" --css assets/mui_material_kit_demo.css --public-dir /home/vscode/projects/material-kit-react2/public
+/home/vscode/projects/sci/zig-out/bin/sa vite build demos/mui_material_kit_users.sax --react --include mui/material.sax --include mui/material_kit_layout.sax --include mui/material_kit_views.sax --out-dir dist/material-kit/users --title "SA Material Kit Users" --css assets/mui_material_kit_demo.css --public-dir /home/vscode/projects/material-kit-react2/public
+/home/vscode/projects/sci/zig-out/bin/sa vite build demos/mui_material_kit_sign_in.sax --react --include mui/material.sax --include mui/material_kit_layout.sax --include mui/material_kit_views.sax --out-dir dist/material-kit/sign-in --title "SA Material Kit Sign In" --css assets/mui_material_kit_demo.css --public-dir /home/vscode/projects/material-kit-react2/public
+/home/vscode/projects/sci/zig-out/bin/sa vite build demos/mui_material_kit_register.sax --react --include mui/material.sax --include mui/material_kit_layout.sax --include mui/material_kit_views.sax --out-dir dist/material-kit/register --title "SA Material Kit Register" --css assets/mui_material_kit_demo.css --public-dir /home/vscode/projects/material-kit-react2/public
+/home/vscode/projects/sci/zig-out/bin/sa vite build demos/mui_dashboard.sax --react --include mui/material.sax --out-dir dist/dashboard --title "SA MUI Component Dashboard" --css assets/mui_dashboard.css</pre>
+    </section>
+
+    <section>
+      <h2>Build Results</h2>
+      <p>Forced-cold Material Kit dashboard build after refreshing the Vite/React cache keys: 40.86s. Current same-input <code>sa vite build</code> manifest hit: 0.20s, about 204x faster. The React browser WASM cache keys generated SA, DCE mode, exports, optimization, <code>sa_std</code>, SA host binary when available, and <code>SA_PLUGINS_PATH</code> plugin library content; the Vite build cache additionally keys SAX inputs, explicit includes, title/CSS/public options, <code>sa_std</code>, and plugin library content. Current full <code>dist/material-kit</code> size is 33M, including copied public assets for the independent routes.</p>
       <div class="table-wrap">
         <table>
-          <thead>
-            <tr>
-              <th>Demo</th>
-              <th>SAX source</th>
-              <th>Output</th>
-              <th>Start</th>
-              <th>End</th>
-              <th>Duration</th>
-              <th>Files</th>
-              <th>Total size</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Page</th><th>Compiled At</th><th>Route dist</th><th>app.sa</th><th>app.wasm</th><th>airlock.js</th><th>CSS</th><th>Build result</th></tr></thead>
           <tbody>
-            <tr>
-              <td>Material Kit</td>
-              <td><code>demos/mui_material_kit_demo.sax</code></td>
-              <td><code>dist/material-kit/</code></td>
-              <td>2026-06-11T12:36:35+08:00</td>
-              <td>2026-06-11T12:37:34+08:00</td>
-              <td>59.11s</td>
-              <td>106</td>
-              <td>12M</td>
-            </tr>
-            <tr>
-              <td>Dashboard</td>
-              <td><code>demos/mui_dashboard.sax</code></td>
-              <td><code>dist/dashboard/</code></td>
-              <td>2026-06-11T11:43:22+08:00</td>
-              <td>2026-06-11T11:44:21+08:00</td>
-              <td>59s</td>
-              <td>6</td>
-              <td>9.7M</td>
-            </tr>
-            <tr>
-              <td>All Components Library</td>
-              <td><code>demos/mui_all_components_from_library.sax</code></td>
-              <td><code>dist/all-components-library/</code></td>
-              <td>2026-06-11T11:38:13+08:00</td>
-              <td>2026-06-11T11:39:13+08:00</td>
-              <td>60s</td>
-              <td>5</td>
-              <td>9.8M</td>
-            </tr>
-            <tr>
-              <td>All Components Inlined</td>
-              <td><code>demos/mui_all_components.sax</code></td>
-              <td><code>dist/all-components-inlined/</code></td>
-              <td>2026-06-11T11:44:49+08:00</td>
-              <td>2026-06-11T11:45:11+08:00</td>
-              <td>22s</td>
-              <td>5</td>
-              <td>4.0M</td>
-            </tr>
-            <tr>
-              <td>Basic Inlined</td>
-              <td><code>demos/mui_basic_inlined.sax</code></td>
-              <td><code>dist/basic-inlined/</code></td>
-              <td>2026-06-11T11:45:29+08:00</td>
-              <td>2026-06-11T11:45:50+08:00</td>
-              <td>21s</td>
-              <td>5</td>
-              <td>4.0M</td>
-            </tr>
+            <tr><td>Material Kit Dashboard</td><td>2026-06-12 12:33:50 CST</td><td>33M</td><td>3,193,600 bytes / 56,063 lines / 874 exports</td><td>464,020 bytes</td><td>30,621 bytes</td><td>49,256 bytes</td><td>same-page navigation and click-away popovers</td></tr>
+            <tr><td>Products</td><td>2026-06-12 12:34:01 CST</td><td>5.2M</td><td>1,142,128 bytes / 19,825 lines / 353 exports</td><td>157,033 bytes</td><td>30,621 bytes</td><td>49,256 bytes</td><td>filter drawer and sort menu route</td></tr>
+            <tr><td>Blog</td><td>2026-06-12 12:34:11 CST</td><td>4.7M</td><td>893,766 bytes / 16,948 lines / 372 exports</td><td>129,736 bytes</td><td>30,621 bytes</td><td>49,256 bytes</td><td>search and sort route</td></tr>
+            <tr><td>Users</td><td>2026-06-12 12:34:22 CST</td><td>5.2M</td><td>1,104,771 bytes / 20,806 lines / 424 exports</td><td>151,885 bytes</td><td>30,621 bytes</td><td>49,256 bytes</td><td>table, pagination, row menu route</td></tr>
+            <tr><td>Sign In</td><td>2026-06-12 12:34:27 CST</td><td>3.9M</td><td>556,188 bytes / 9,836 lines / 181 exports</td><td>72,339 bytes</td><td>30,621 bytes</td><td>49,256 bytes</td><td>auth page with internal register switch</td></tr>
+            <tr><td>Register</td><td>2026-06-12 12:34:32 CST</td><td>4.0M</td><td>559,224 bytes / 9,836 lines / 181 exports</td><td>72,439 bytes</td><td>30,621 bytes</td><td>49,256 bytes</td><td>auth page with internal sign-in switch</td></tr>
+            <tr><td>All Components Dashboard</td><td>2026-06-12 13:00:16 CST</td><td>10M</td><td>4,658,737 bytes / 86,802 lines / 1,730 exports</td><td>634,933 bytes</td><td>30,621 bytes</td><td>23,925 bytes</td><td><code>mui_dashboard.sax</code> now uses <code>Box</code> layout instead of hand-written <code>div</code></td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
     <section>
-      <h2>Build Commands</h2>
-      <p>先设置插件路径，然后执行对应 build 命令。正式 demo 使用 SA-MUI 库源码 include；旧 inlined baseline 不需要 include。</p>
-      <pre>export SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_vite/zig-out/lib/libvite.so:/home/vscode/projects/sa_plugins/sa_plugin_http_server/zig-out/lib/libhttp-server.so:/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so
-
-/home/vscode/projects/sci/zig-out/bin/sa vite build demos/mui_material_kit_demo.sax --react --include mui/material.sax --out-dir dist/material-kit --title "SA Material Kit Demo" --css assets/mui_material_kit_demo.css --public-dir /home/vscode/projects/material-kit-react/public
-
-/home/vscode/projects/sci/zig-out/bin/sa vite build demos/mui_dashboard.sax --react --include mui/material.sax --out-dir dist/dashboard --title "SA MUI Component Dashboard" --css assets/mui_dashboard.css
-
-/home/vscode/projects/sci/zig-out/bin/sa vite build demos/mui_all_components_from_library.sax --react --include mui/material.sax --out-dir dist/all-components-library --title "SA MUI All Components Library Demo"
-
-/home/vscode/projects/sci/zig-out/bin/sa vite build demos/mui_all_components.sax --react --out-dir dist/all-components-inlined --title "SA MUI All Components Inlined Demo"
-
-/home/vscode/projects/sci/zig-out/bin/sa vite build demos/mui_basic_inlined.sax --react --out-dir dist/basic-inlined --title "SA MUI Basic Inlined Demo"</pre>
-    </section>
-
-    <section>
-      <h2>Compiled Files</h2>
-      <div class="files">
-        <div>
-          <h3>dist/material-kit/</h3>
-          <ul>
-            <li><code>index.html</code> - 632 B</li>
-            <li><code>airlock.js</code> - 30,621 B</li>
-            <li><code>app.sa</code> - 4,259,397 B</li>
-            <li><code>app.wasm</code> - 562,072 B</li>
-            <li><code>app.wasm.sa.bc</code> - 4,515,500 B</li>
-            <li><code>mui_material_kit_demo.css</code> - 24,184 B</li>
-            <li><code>favicon.ico</code> - 15,406 B</li>
-            <li><code>assets/</code> - 99 copied public files, 2.7M</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3>dist/dashboard/</h3>
-          <ul>
-            <li><code>index.html</code> - 630 B</li>
-            <li><code>airlock.js</code> - 30,621 B</li>
-            <li><code>app.sa</code> - 4,495,578 B</li>
-            <li><code>app.wasm</code> - 620,214 B</li>
-            <li><code>app.wasm.sa.bc</code> - 4,892,384 B</li>
-            <li><code>mui_dashboard.css</code> - 23,925 B</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3>dist/all-components-library/</h3>
-          <ul>
-            <li><code>index.html</code> - 585 B</li>
-            <li><code>airlock.js</code> - 30,621 B</li>
-            <li><code>app.sa</code> - 4,557,945 B</li>
-            <li><code>app.wasm</code> - 617,074 B</li>
-            <li><code>app.wasm.sa.bc</code> - 4,987,688 B</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3>dist/all-components-inlined/</h3>
-          <ul>
-            <li><code>index.html</code> - 585 B</li>
-            <li><code>airlock.js</code> - 30,621 B</li>
-            <li><code>app.sa</code> - 1,480,163 B</li>
-            <li><code>app.wasm</code> - 291,523 B</li>
-            <li><code>app.wasm.sa.bc</code> - 2,294,600 B</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3>dist/basic-inlined/</h3>
-          <ul>
-            <li><code>index.html</code> - 576 B</li>
-            <li><code>airlock.js</code> - 30,621 B</li>
-            <li><code>app.sa</code> - 1,457,569 B</li>
-            <li><code>app.wasm</code> - 291,419 B</li>
-            <li><code>app.wasm.sa.bc</code> - 2,284,464 B</li>
-          </ul>
-        </div>
-      </div>
+      <h2>Additional Demo Links</h2>
+      <ul>
+        <li><a href="dist/dashboard/index.html">All Components Dashboard</a> - 源码 <code>demos/mui_dashboard.sax</code></li>
+        <li><a href="dist/all-components-library/index.html">All Components Library Demo</a> - 源码 <code>demos/mui_all_components_from_library.sax</code></li>
+        <li><a href="dist/all-components-inlined/index.html">All Components Inlined Baseline</a> - 源码 <code>demos/mui_all_components.sax</code></li>
+        <li><a href="dist/basic-inlined/index.html">Basic Inlined Baseline</a> - 源码 <code>demos/mui_basic_inlined.sax</code></li>
+      </ul>
     </section>
   </main>
 </body>

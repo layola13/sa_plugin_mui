@@ -19,11 +19,18 @@
   "assets": {
     "share": [
       { "path": "mui/material.sax", "target": "mui/material.sax" },
+      { "path": "mui/material_kit_layout.sax", "target": "mui/material_kit_layout.sax" },
+      { "path": "mui/material_kit_views.sax", "target": "mui/material_kit_views.sax" },
       { "path": "demos/mui_basic_inlined.sax", "target": "demos/mui_basic_inlined.sax" },
       { "path": "demos/mui_all_components.sax", "target": "demos/mui_all_components.sax" },
       { "path": "demos/mui_all_components_from_library.sax", "target": "demos/mui_all_components_from_library.sax" },
       { "path": "demos/mui_dashboard.sax", "target": "demos/mui_dashboard.sax" },
       { "path": "demos/mui_material_kit_demo.sax", "target": "demos/mui_material_kit_demo.sax" },
+      { "path": "demos/mui_material_kit_products.sax", "target": "demos/mui_material_kit_products.sax" },
+      { "path": "demos/mui_material_kit_blog.sax", "target": "demos/mui_material_kit_blog.sax" },
+      { "path": "demos/mui_material_kit_users.sax", "target": "demos/mui_material_kit_users.sax" },
+      { "path": "demos/mui_material_kit_sign_in.sax", "target": "demos/mui_material_kit_sign_in.sax" },
+      { "path": "demos/mui_material_kit_register.sax", "target": "demos/mui_material_kit_register.sax" },
       { "path": "assets/mui_dashboard.css", "target": "assets/mui_dashboard.css" },
       { "path": "assets/mui_material_kit_demo.css", "target": "assets/mui_material_kit_demo.css" },
       { "path": "data/material-components.json", "target": "data/material-components.json" }

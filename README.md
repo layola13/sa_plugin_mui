@@ -35,12 +35,14 @@ Run the Material Kit-inspired demo with hot reload and static assets from the up
 /home/vscode/projects/sci/zig-out/bin/sa vite dev demos/mui_material_kit_demo.sax \
   --react \
   --include mui/material.sax \
+  --include mui/material_kit_layout.sax \
+  --include mui/material_kit_views.sax \
   --out-dir .zig-cache/mui-material-kit-dev-dist \
   --port 5174 \
   --debounce-ms 60 \
   --title "SA Material Kit Demo" \
   --css assets/mui_material_kit_demo.css \
-  --public-dir /home/vscode/projects/material-kit-react/public
+  --public-dir /home/vscode/projects/material-kit-react2/public
 ```
 
 `sa_plugin_vite` watches the entry SAX tree, React includes, `--css`, and `--public-dir` inputs in dev mode. Successful rebuilds push a reload event to the browser; build errors show through the live client overlay.
@@ -49,6 +51,7 @@ For compile-only checks, use:
 
 ```bash
 SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_all_components_from_library.sax --include mui/material.sax
+SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_material_kit_demo.sax --include mui/material.sax --include mui/material_kit_layout.sax --include mui/material_kit_views.sax
 ```
 
 For static dist verification, build and browser-verify the same library-consumption path with:

@@ -1,0 +1,93 @@
+<Component name="MuiMaterialKitRegisterPage">
+  <state>
+    page_sign_in = 0 as i1
+    page_register = 1 as i1
+    show_password = 0 as i1
+    attempts = 0
+    submissions = 0
+    accept_terms = 1 as i1
+  </state>
+  <AuthLayout>
+    <InitColorSchemeScript />
+    <GlobalStyles />
+    <CssBaseline />
+    <AuthHeader><button className="mk-auth-logo-button" onClick={show_sign_in}><span className="mk-logo">M</span></button><button className="mk-auth-help-button" onClick={show_sign_in}>Need help?</button></AuthHeader>
+    <AuthMain>
+      <section className="mk-auth-switch-page{page_sign_in ? '' : ' mk-hidden'}">
+        <AuthContent>
+          <section className="mk-auth-title"><Typography variant="h5">Sign in</Typography><Typography variant="body2">Don't have an account?<button className="mk-auth-inline-link" onClick={show_register}>Get started</button></Typography></section>
+          <section className="mk-auth-form">
+            <TextField fullWidth value="hello@gmail.com">Email address</TextField>
+            <section className="mk-auth-forgot-row"><button className="mk-auth-forgot" onClick={submit_sign_in}>Forgot password?</button></section>
+            <section className="mk-password-field"><TextField fullWidth type={show_password ? 'text' : 'password'} value="@demo1234">Password</TextField><span className="mk-password-toggle"><IconButton onClick={toggle_password}><span className="mk-eye-icon{show_password ? ' mk-eye-open' : ''}">Show password</span></IconButton></span></section>
+            <span className="mk-inline-status mk-auth-status">Sign-in attempts: {attempts}</span>
+            <Button fullWidth variant="contained" color="inherit" onClick={submit_sign_in}>Sign in</Button>
+          </section>
+          <section className="mk-auth-divider"><span>OR</span></section>
+          <section className="mk-socials"><IconButton onClick={submit_sign_in}><span className="mk-social-icon">G</span></IconButton><IconButton onClick={submit_sign_in}><span className="mk-social-icon">GH</span></IconButton><IconButton onClick={submit_sign_in}><span className="mk-social-icon">X</span></IconButton></section>
+        </AuthContent>
+      </section>
+      <section className="mk-auth-switch-page{page_register ? '' : ' mk-hidden'}">
+        <AuthContent>
+          <section className="mk-auth-title"><Typography variant="h5">Register</Typography><Typography variant="body2">Already have an account?<button className="mk-auth-inline-link" onClick={show_sign_in}>Sign in</button></Typography></section>
+          <section className="mk-auth-form">
+            <TextField fullWidth value="John Doe">Full name</TextField>
+            <TextField fullWidth value="john.doe@example.com">Email address</TextField>
+            <section className="mk-password-field"><TextField fullWidth type={show_password ? 'text' : 'password'} value="@demo1234">Password</TextField><span className="mk-password-toggle"><IconButton onClick={toggle_password}><span className="mk-eye-icon{show_password ? ' mk-eye-open' : ''}">Show password</span></IconButton></span></section>
+            <FormControlLabel><Checkbox checked={accept_terms} onChange={toggle_terms} />I agree to the terms</FormControlLabel>
+            <span className="mk-inline-status mk-auth-status">Register submissions: {submissions}</span>
+            <Button fullWidth variant="contained" color="inherit" onClick={submit_register}>Register</Button>
+          </section>
+          <section className="mk-auth-divider"><span>OR</span></section>
+          <section className="mk-socials"><IconButton onClick={submit_register}><span className="mk-social-icon">G</span></IconButton><IconButton onClick={submit_register}><span className="mk-social-icon">GH</span></IconButton><IconButton onClick={submit_register}><span className="mk-social-icon">X</span></IconButton></section>
+        </AuthContent>
+      </section>
+    </AuthMain>
+  </AuthLayout>
+
+  @show_sign_in:
+  L_ENTRY:
+    store state+MuiMaterialKitRegisterPage_page_sign_in, 1 as i1
+    store state+MuiMaterialKitRegisterPage_page_register, 0 as i1
+    call @render()
+    ret
+  @show_register:
+  L_ENTRY:
+    store state+MuiMaterialKitRegisterPage_page_sign_in, 0 as i1
+    store state+MuiMaterialKitRegisterPage_page_register, 1 as i1
+    call @render()
+    ret
+  @toggle_password:
+  L_ENTRY:
+    visible = load state+MuiMaterialKitRegisterPage_show_password as i1
+    br visible -> L_HIDE, L_SHOW
+  L_HIDE:
+    store state+MuiMaterialKitRegisterPage_show_password, 0 as i1
+    call @render()
+    ret
+  L_SHOW:
+    store state+MuiMaterialKitRegisterPage_show_password, 1 as i1
+    call @render()
+    ret
+  @toggle_terms:
+  L_ENTRY:
+    checked = call @sax_event_target_checked()
+    store state+MuiMaterialKitRegisterPage_accept_terms, checked as i1
+    call @render()
+    ret
+  @submit_sign_in:
+  L_ENTRY:
+    count = load state+MuiMaterialKitRegisterPage_attempts as i64
+    count = add count, 1
+    store state+MuiMaterialKitRegisterPage_attempts, count as i64
+    call @render()
+    ret
+  @submit_register:
+  L_ENTRY:
+    count = load state+MuiMaterialKitRegisterPage_submissions as i64
+    count = add count, 1
+    store state+MuiMaterialKitRegisterPage_submissions, count as i64
+    call @render()
+    ret
+  !page_sign_in !page_register !show_password !attempts !submissions !accept_terms
+</Component>

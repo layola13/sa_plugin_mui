@@ -486,10 +486,11 @@
     value_len = 0
   </state>
   <div className="MuiInputBase-root MuiOutlinedInput-root{color == 'primary' ? ' MuiInputBase-colorPrimary' : ''}{color == 'secondary' ? ' MuiInputBase-colorSecondary' : ''}{disabled ? ' Mui-disabled' : ''}{error ? ' Mui-error' : ''}{focused ? ' Mui-focused' : ''}{fullWidth ? ' MuiInputBase-fullWidth' : ''}{hiddenLabel ? ' MuiInputBase-hiddenLabel' : ''}{size == 'small' ? ' MuiInputBase-sizeSmall' : ''}{multiline ? ' MuiInputBase-multiline MuiOutlinedInput-multiline' : ''}{readOnly ? ' Mui-readOnly' : ''}">
-    <input className="MuiInputBase-input MuiOutlinedInput-input{disabled ? ' Mui-disabled' : ''}{readOnly ? ' Mui-readOnly' : ''}" disabled={disabled} readonly={readOnly} required={required} />
+    <Slot />
+    <input className="MuiInputBase-input MuiOutlinedInput-input{disabled ? ' Mui-disabled' : ''}{readOnly ? ' Mui-readOnly' : ''}" type={type} value={value} disabled={disabled} readonly={readOnly} required={required} />
     <fieldset className="MuiOutlinedInput-notchedOutline">
       <legend>
-        <span><Slot /></span>
+        <span />
       </legend>
     </fieldset>
   </div>
@@ -511,7 +512,7 @@
     multiline = 0 as i1
     required = 0 as i1
     select = 0 as i1
-    type = alloc 32
+    type = 'text' as ptr
     type_len = 4
     value = alloc 256
     value_len = 0
@@ -523,7 +524,7 @@
       <Slot />
     </label>
     <div className="MuiInputBase-root MuiOutlinedInput-root{color == 'primary' ? ' MuiInputBase-colorPrimary' : ''}{color == 'secondary' ? ' MuiInputBase-colorSecondary' : ''}{disabled ? ' Mui-disabled' : ''}{error ? ' Mui-error' : ''}{fullWidth ? ' MuiInputBase-fullWidth' : ''}{multiline ? ' MuiInputBase-multiline MuiOutlinedInput-multiline' : ''}">
-      <input className="MuiInputBase-input MuiOutlinedInput-input{disabled ? ' Mui-disabled' : ''}" disabled={disabled} />
+      <input className="MuiInputBase-input MuiOutlinedInput-input{disabled ? ' Mui-disabled' : ''}" type={type} value={value} disabled={disabled} required={required} autofocus={autoFocus} />
       <fieldset className="MuiOutlinedInput-notchedOutline">
         <legend><span /></legend>
       </fieldset>
@@ -643,8 +644,8 @@
     keepMounted = 0 as i1
     open = 0 as i1
   </state>
-  <div className="MuiModal-root">
-    <div className="MuiBackdrop-root MuiModal-backdrop" />
+  <div className="MuiModal-root{open ? ' Mui-open' : ' Mui-hidden'}" role="presentation">
+    <div className="MuiBackdrop-root MuiModal-backdrop{hideBackdrop ? ' Mui-hidden' : ''}" />
     <div tabindex="-1">
       <Slot />
     </div>
@@ -664,22 +665,32 @@
 
 <Component name="Popover">
   <state>
+    anchorOriginHorizontal = 'left' as ptr
+    anchorOriginHorizontal_len = 4
+    anchorOriginVertical = 'top' as ptr
+    anchorOriginVertical_len = 3
     anchorReference = alloc 32
     anchorReference_len = 8
     disableAutoFocus = 0 as i1
+    disablePortal = 0 as i1
     disableScrollLock = 0 as i1
     elevation = 8
+    keepMounted = 0 as i1
     marginThreshold = 16
     open = 0 as i1
+    transformOriginHorizontal = 'left' as ptr
+    transformOriginHorizontal_len = 4
+    transformOriginVertical = 'top' as ptr
+    transformOriginVertical_len = 3
     transitionDuration = alloc 32
     transitionDuration_len = 4
   </state>
-  <div className="MuiModal-root MuiPopover-root">
-    <div className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper">
+  <div className="MuiModal-root MuiPopover-root{open ? ' Mui-open' : ' Mui-hidden'}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'right' ? ' MuiPopover-anchorBottomRight' : ''}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'left' ? ' MuiPopover-anchorBottomLeft' : ''}{anchorOriginVertical == 'top' && anchorOriginHorizontal == 'right' ? ' MuiPopover-anchorTopRight' : ''}{transformOriginVertical == 'top' && transformOriginHorizontal == 'right' ? ' MuiPopover-transformTopRight' : ''}{transformOriginVertical == 'top' && transformOriginHorizontal == 'left' ? ' MuiPopover-transformTopLeft' : ''}" role="presentation">
+    <div className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper" tabindex="-1">
       <Slot />
     </div>
   </div>
-  !anchorReference !anchorReference_len !disableAutoFocus !disableScrollLock !elevation !marginThreshold !open !transitionDuration !transitionDuration_len
+  !anchorOriginHorizontal !anchorOriginHorizontal_len !anchorOriginVertical !anchorOriginVertical_len !anchorReference !anchorReference_len !disableAutoFocus !disablePortal !disableScrollLock !elevation !keepMounted !marginThreshold !open !transformOriginHorizontal !transformOriginHorizontal_len !transformOriginVertical !transformOriginVertical_len !transitionDuration !transitionDuration_len
 </Component>
 
 <Component name="Popper">
@@ -691,7 +702,7 @@
     placement_len = 6
     transition = 0 as i1
   </state>
-  <div className="MuiPopper-root">
+  <div className="MuiPopper-root{open ? ' Mui-open' : ' Mui-hidden'}{placement == 'bottom' ? ' MuiPopper-placementBottom' : ''}{placement == 'bottom-start' ? ' MuiPopper-placementBottomStart' : ''}{placement == 'bottom-end' ? ' MuiPopper-placementBottomEnd' : ''}{placement == 'top' ? ' MuiPopper-placementTop' : ''}{placement == 'top-start' ? ' MuiPopper-placementTopStart' : ''}{placement == 'top-end' ? ' MuiPopper-placementTopEnd' : ''}" role="presentation">
     <Slot />
   </div>
   !disablePortal !keepMounted !open !placement !placement_len !transition
@@ -700,21 +711,29 @@
 <Component name="Menu">
   <state>
     autoFocus = 1 as i1
+    anchorOriginHorizontal = 'left' as ptr
+    anchorOriginHorizontal_len = 4
+    anchorOriginVertical = 'bottom' as ptr
+    anchorOriginVertical_len = 6
     disableAutoFocusItem = 0 as i1
     open = 0 as i1
+    transformOriginHorizontal = 'left' as ptr
+    transformOriginHorizontal_len = 4
+    transformOriginVertical = 'top' as ptr
+    transformOriginVertical_len = 3
     transitionDuration = alloc 32
     transitionDuration_len = 4
     variant = alloc 32
     variant_len = 12
   </state>
-  <div className="MuiModal-root MuiPopover-root MuiMenu-root">
+  <div className="MuiModal-root MuiPopover-root MuiMenu-root{open ? ' Mui-open' : ' Mui-hidden'}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'right' ? ' MuiPopover-anchorBottomRight' : ''}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'left' ? ' MuiPopover-anchorBottomLeft' : ''}{transformOriginVertical == 'top' && transformOriginHorizontal == 'right' ? ' MuiPopover-transformTopRight' : ''}{transformOriginVertical == 'top' && transformOriginHorizontal == 'left' ? ' MuiPopover-transformTopLeft' : ''}" role="presentation">
     <div className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper MuiMenu-paper">
       <ul className="MuiList-root MuiList-padding MuiMenu-list" role="menu">
         <Slot />
       </ul>
     </div>
   </div>
-  !autoFocus !disableAutoFocusItem !open !transitionDuration !transitionDuration_len !variant !variant_len
+  !autoFocus !anchorOriginHorizontal !anchorOriginHorizontal_len !anchorOriginVertical !anchorOriginVertical_len !disableAutoFocusItem !open !transformOriginHorizontal !transformOriginHorizontal_len !transformOriginVertical !transformOriginVertical_len !transitionDuration !transitionDuration_len !variant !variant_len
 </Component>
 
 <Component name="Drawer">
@@ -727,7 +746,7 @@
     variant = alloc 32
     variant_len = 9
   </state>
-  <div className="MuiModal-root MuiDrawer-root MuiDrawer-modal MuiDrawer-anchorLeft">
+  <div className="MuiModal-root MuiDrawer-root MuiDrawer-modal MuiDrawer-anchorLeft{open ? ' Mui-open' : ' Mui-hidden'}">
     <div className="MuiBackdrop-root MuiModal-backdrop" />
     <div className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation16 MuiDrawer-paper" role="dialog">
       <Slot />
@@ -750,7 +769,7 @@
     variant = alloc 32
     variant_len = 9
   </state>
-  <div className="MuiModal-root MuiDrawer-root MuiDrawer-modal MuiDrawer-anchorLeft">
+  <div className="MuiModal-root MuiDrawer-root MuiDrawer-modal MuiDrawer-anchorLeft{open ? ' Mui-open' : ' Mui-hidden'}">
     <div className="MuiBackdrop-root MuiModal-backdrop" />
     <div className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation16 MuiDrawer-paper" role="dialog">
       <Slot />
@@ -1202,7 +1221,7 @@
   <span className="MuiTooltip-child">
     <Slot />
   </span>
-  <div className="MuiPopper-root MuiTooltip-popper{disableInteractive ? '' : ' MuiTooltip-popperInteractive'}{arrow ? ' MuiTooltip-popperArrow' : ''}" role="tooltip" data-popper-placement="{placement}">
+  <div className="MuiPopper-root MuiTooltip-popper{open ? ' Mui-open' : ''}{disableInteractive ? '' : ' MuiTooltip-popperInteractive'}{arrow ? ' MuiTooltip-popperArrow' : ''}" role="tooltip" data-popper-placement="{placement}">
     <div className="MuiGrow-root">
       <div className="MuiTooltip-tooltip{placement == 'bottom' ? ' MuiTooltip-tooltipPlacementBottom' : ''}{placement == 'top' ? ' MuiTooltip-tooltipPlacementTop' : ''}{placement == 'left' ? ' MuiTooltip-tooltipPlacementLeft' : ''}{placement == 'right' ? ' MuiTooltip-tooltipPlacementRight' : ''}{arrow ? ' MuiTooltip-tooltipArrow' : ''}">
         {title}
@@ -1252,6 +1271,8 @@
     openOnFocus = 0 as i1
     openText = alloc 64
     openText_len = 4
+    placeholder = alloc 256
+    placeholder_len = 0
     readOnly = 0 as i1
     resetHighlightOnMouseLeave = 0 as i1
     selectOnFocus = 1 as i1
@@ -1263,7 +1284,7 @@
   <div className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon{fullWidth ? ' MuiAutocomplete-fullWidth' : ''}">
     <div className="MuiInputBase-root MuiOutlinedInput-root MuiAutocomplete-inputRoot">
       <span className="MuiAutocomplete-tag MuiAutocomplete-tagSizeMedium" />
-      <input className="MuiAutocomplete-input" disabled={disabled} readonly={readOnly} />
+      <input className="MuiAutocomplete-input" value={inputValue} placeholder={placeholder} disabled={disabled} readonly={readOnly} />
       <div className="MuiAutocomplete-endAdornment">
         <button className="MuiButtonBase-root MuiIconButton-root MuiAutocomplete-clearIndicator" aria-label="Clear" title="Clear">
           <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false" aria-hidden="true">
@@ -1276,25 +1297,16 @@
           </svg>
         </button>
       </div>
-      <Slot />
     </div>
-    <div className="MuiPopper-root MuiAutocomplete-popper{disablePortal ? ' MuiAutocomplete-popperDisablePortal' : ''}" role="presentation">
+    <div className="MuiPopper-root MuiAutocomplete-popper{open ? ' Mui-open' : ' Mui-hidden'}{disablePortal ? ' MuiAutocomplete-popperDisablePortal' : ''}" role="presentation">
       <div className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiAutocomplete-paper">
-        <div className="MuiAutocomplete-loading">Loading</div>
-        <div className="MuiAutocomplete-noOptions" role="presentation">No options</div>
         <ul className="MuiAutocomplete-listbox" role="listbox">
-          <li className="MuiAutocomplete-option" role="option">Option</li>
-          <li>
-            <div className="MuiAutocomplete-groupLabel">Group</div>
-            <ul className="MuiAutocomplete-groupUl">
-              <li className="MuiAutocomplete-option" role="option">Grouped option</li>
-            </ul>
-          </li>
+          <Slot />
         </ul>
       </div>
     </div>
   </div>
-  !autoComplete !autoHighlight !autoSelect !clearOnBlur !clearOnEscape !clearText !clearText_len !closeText !closeText_len !disableClearable !disableCloseOnSelect !disabled !disabledItemsFocusable !disableListWrap !disablePortal !filterSelectedOptions !forcePopupIcon !forcePopupIcon_len !freeSolo !fullWidth !handleHomeEndKeys !id !id_len !includeInputInList !inputValue !inputValue_len !limitTags !loading !loadingText !loadingText_len !multiple !noOptionsText !noOptionsText_len !open !openOnFocus !openText !openText_len !readOnly !resetHighlightOnMouseLeave !selectOnFocus !size !size_len !value !value_len
+  !autoComplete !autoHighlight !autoSelect !clearOnBlur !clearOnEscape !clearText !clearText_len !closeText !closeText_len !disableClearable !disableCloseOnSelect !disabled !disabledItemsFocusable !disableListWrap !disablePortal !filterSelectedOptions !forcePopupIcon !forcePopupIcon_len !freeSolo !fullWidth !handleHomeEndKeys !id !id_len !includeInputInList !inputValue !inputValue_len !limitTags !loading !loadingText !loadingText_len !multiple !noOptionsText !noOptionsText_len !open !openOnFocus !openText !openText_len !placeholder !placeholder_len !readOnly !resetHighlightOnMouseLeave !selectOnFocus !size !size_len !value !value_len
 </Component>
 
 <Component name="Rating">
@@ -1448,9 +1460,15 @@
 </Component>
 
 <Component name="Box">
-  <div className="MuiBox-root">
+  <state>
+    className = alloc 256
+    className_len = 0
+    hidden = 0 as i1
+  </state>
+  <div className="MuiBox-root {className}" hidden={hidden}>
     <Slot />
   </div>
+  !className !className_len !hidden
 </Component>
 
 <Component name="CssBaseline">
