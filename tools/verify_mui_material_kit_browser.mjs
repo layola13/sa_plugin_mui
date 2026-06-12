@@ -46,11 +46,7 @@ async function visibleCount(page, selector) {
 }
 
 async function isVisible(page, selector) {
-  return page.locator(selector).evaluate((node) => {
-    const style = getComputedStyle(node);
-    const rect = node.getBoundingClientRect();
-    return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 1 && rect.height > 1;
-  });
+  return (await visibleCount(page, selector)) > 0;
 }
 
 async function expectText(page, text) {
@@ -133,6 +129,13 @@ async function runDesktopChecks(page, dashboardUrl) {
   await page.waitForTimeout(100);
   if ((await visibleCount(page, '.MuiPopover-root')) !== 0) throw new Error('workspace popover did not close after select');
   await expectText(page, 'Team 2');
+
+  await page.locator('.mk-search-action .MuiIconButton-root').click();
+  await page.waitForTimeout(100);
+  if ((await visibleCount(page, '.mk-search-action .MuiPopover-root')) !== 1) throw new Error('search popover did not open');
+  await page.mouse.click(720, 300);
+  await page.waitForTimeout(100);
+  if ((await visibleCount(page, '.mk-search-action .MuiPopover-root')) !== 0) throw new Error('search popover did not close on click-away');
 
   await page.locator('.mk-topbar-actions .mk-action-popover').nth(1).locator('button').click();
   await page.waitForTimeout(100);

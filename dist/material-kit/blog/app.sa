@@ -5560,7 +5560,7 @@ L_ENTRY:
 #def sax_WorkspacesPopover_node_em_2 = +96
 #def sax_WorkspacesPopover_node_span_2 = +104
 #def sax_WorkspacesPopover_node_section_1 = +112
-#def sax_WorkspacesPopover_node_button_1 = +120
+#def sax_WorkspacesPopover_node_Backdrop = +120
 #def sax_WorkspacesPopover_node_Popover = +128
 #def sax_WorkspacesPopover_node_MenuList = +136
 #def sax_WorkspacesPopover_node_MenuItem = +144
@@ -5785,34 +5785,30 @@ L_strprop_node_12_class_8_TERNARY_DONE_0:
   boolprop_node_14_hidden_wide_1 = zext boolprop_node_14_hidden_load_0 as i64
   boolprop_node_14_hidden = ne boolprop_node_14_hidden_wide_1, 0
   call @sax_dom_set_bool_prop(node_14, *sax_WorkspacesPopover_71, 6, boolprop_node_14_hidden)
-  node_15 = call @sax_dom_create(*sax_WorkspacesPopover_15, 6)
-  store dom+sax_WorkspacesPopover_node_button_1, node_15 as i64
-  call @sax_dom_set_str_prop(node_15, *sax_WorkspacesPopover_72, 9, *sax_WorkspacesPopover_73, 13)
-  call @sax_dom_bind_event(node_15, *sax_WorkspacesPopover_74, 5, *sax_WorkspacesPopover_75, 37, ctx)
   node_19 = call @sax_dom_create(*sax_WorkspacesPopover_19, 3)
   store dom+sax_WorkspacesPopover_node_img_3, node_19 as i64
-  call @sax_dom_set_str_prop(node_19, *sax_WorkspacesPopover_76, 9, *sax_WorkspacesPopover_77, 35)
-  call @sax_dom_set_str_prop(node_19, *sax_WorkspacesPopover_78, 3, *sax_WorkspacesPopover_79, 35)
-  call @sax_dom_set_str_prop(node_19, *sax_WorkspacesPopover_80, 3, *sax_WorkspacesPopover_81, 6)
+  call @sax_dom_set_str_prop(node_19, *sax_WorkspacesPopover_72, 9, *sax_WorkspacesPopover_73, 35)
+  call @sax_dom_set_str_prop(node_19, *sax_WorkspacesPopover_74, 3, *sax_WorkspacesPopover_75, 35)
+  call @sax_dom_set_str_prop(node_19, *sax_WorkspacesPopover_76, 3, *sax_WorkspacesPopover_77, 6)
   node_20 = call @sax_dom_create(*sax_WorkspacesPopover_20, 4)
   store dom+sax_WorkspacesPopover_node_span_3, node_20 as i64
-  call @sax_dom_set_str_prop(node_20, *sax_WorkspacesPopover_82, 9, *sax_WorkspacesPopover_83, 13)
+  call @sax_dom_set_str_prop(node_20, *sax_WorkspacesPopover_78, 9, *sax_WorkspacesPopover_79, 13)
   node_22 = call @sax_dom_create(*sax_WorkspacesPopover_22, 3)
   store dom+sax_WorkspacesPopover_node_img_4, node_22 as i64
-  call @sax_dom_set_str_prop(node_22, *sax_WorkspacesPopover_84, 9, *sax_WorkspacesPopover_85, 35)
-  call @sax_dom_set_str_prop(node_22, *sax_WorkspacesPopover_86, 3, *sax_WorkspacesPopover_87, 35)
-  call @sax_dom_set_str_prop(node_22, *sax_WorkspacesPopover_88, 3, *sax_WorkspacesPopover_89, 6)
+  call @sax_dom_set_str_prop(node_22, *sax_WorkspacesPopover_80, 9, *sax_WorkspacesPopover_81, 35)
+  call @sax_dom_set_str_prop(node_22, *sax_WorkspacesPopover_82, 3, *sax_WorkspacesPopover_83, 35)
+  call @sax_dom_set_str_prop(node_22, *sax_WorkspacesPopover_84, 3, *sax_WorkspacesPopover_85, 6)
   node_23 = call @sax_dom_create(*sax_WorkspacesPopover_23, 4)
   store dom+sax_WorkspacesPopover_node_span_4, node_23 as i64
-  call @sax_dom_set_str_prop(node_23, *sax_WorkspacesPopover_90, 9, *sax_WorkspacesPopover_91, 26)
+  call @sax_dom_set_str_prop(node_23, *sax_WorkspacesPopover_86, 9, *sax_WorkspacesPopover_87, 26)
   node_25 = call @sax_dom_create(*sax_WorkspacesPopover_25, 3)
   store dom+sax_WorkspacesPopover_node_img_5, node_25 as i64
-  call @sax_dom_set_str_prop(node_25, *sax_WorkspacesPopover_92, 9, *sax_WorkspacesPopover_93, 35)
-  call @sax_dom_set_str_prop(node_25, *sax_WorkspacesPopover_94, 3, *sax_WorkspacesPopover_95, 35)
-  call @sax_dom_set_str_prop(node_25, *sax_WorkspacesPopover_96, 3, *sax_WorkspacesPopover_97, 6)
+  call @sax_dom_set_str_prop(node_25, *sax_WorkspacesPopover_88, 9, *sax_WorkspacesPopover_89, 35)
+  call @sax_dom_set_str_prop(node_25, *sax_WorkspacesPopover_90, 3, *sax_WorkspacesPopover_91, 35)
+  call @sax_dom_set_str_prop(node_25, *sax_WorkspacesPopover_92, 3, *sax_WorkspacesPopover_93, 6)
   node_26 = call @sax_dom_create(*sax_WorkspacesPopover_26, 4)
   store dom+sax_WorkspacesPopover_node_span_5, node_26 as i64
-  call @sax_dom_set_str_prop(node_26, *sax_WorkspacesPopover_98, 9, *sax_WorkspacesPopover_99, 26)
+  call @sax_dom_set_str_prop(node_26, *sax_WorkspacesPopover_94, 9, *sax_WorkspacesPopover_95, 26)
   call @sax_dom_append_child(node_0, node_1)
   call @sax_dom_append_child(node_0, node_14)
   call @sax_dom_append_child(node_1, node_2)
@@ -5827,16 +5823,23 @@ L_strprop_node_12_class_8_TERNARY_DONE_0:
   call @sax_dom_append_child(node_6, node_10)
   call @sax_dom_append_child(node_6, node_11)
   call @sax_dom_append_child(node_6, node_12)
-  call @sax_dom_append_child(node_14, node_15)
+  node_15 = call @sax_backdrop_mount(node_14)
+  store dom+sax_WorkspacesPopover_node_Backdrop, node_15 as ptr
+  call @sax_backdrop_set_invisible(node_15, 1)
+  prop_expr_Backdrop_1_load_0 = load state+WorkspacesPopover_workspace_open as i1
+  prop_expr_Backdrop_1_wide_1 = zext prop_expr_Backdrop_1_load_0 as i64
+  call @sax_backdrop_set_open(node_15, prop_expr_Backdrop_1_wide_1)
+  node_15_root = call @sax_backdrop_root(node_15)
+  call @sax_dom_bind_event(node_15_root, *sax_WorkspacesPopover_96, 5, *sax_WorkspacesPopover_97, 37, ctx)
   node_16 = call @sax_popover_mount(node_14)
   store dom+sax_WorkspacesPopover_node_Popover, node_16 as ptr
   prop_expr_Popover_0_load_0 = load state+WorkspacesPopover_workspace_open as i1
   prop_expr_Popover_0_wide_1 = zext prop_expr_Popover_0_load_0 as i64
   call @sax_popover_set_open(node_16, prop_expr_Popover_0_wide_1)
-  call @sax_popover_set_anchorOriginVertical_str(node_16, *sax_WorkspacesPopover_100, 6)
-  call @sax_popover_set_anchorOriginHorizontal_str(node_16, *sax_WorkspacesPopover_101, 4)
-  call @sax_popover_set_transformOriginVertical_str(node_16, *sax_WorkspacesPopover_102, 3)
-  call @sax_popover_set_transformOriginHorizontal_str(node_16, *sax_WorkspacesPopover_103, 4)
+  call @sax_popover_set_anchorOriginVertical_str(node_16, *sax_WorkspacesPopover_98, 6)
+  call @sax_popover_set_anchorOriginHorizontal_str(node_16, *sax_WorkspacesPopover_99, 4)
+  call @sax_popover_set_transformOriginVertical_str(node_16, *sax_WorkspacesPopover_100, 3)
+  call @sax_popover_set_transformOriginHorizontal_str(node_16, *sax_WorkspacesPopover_101, 4)
   slot_16 = call @sax_popover_slot(node_16)
   node_17 = call @sax_menulist_mount(slot_16)
   store dom+sax_WorkspacesPopover_node_MenuList, node_17 as ptr
@@ -5848,10 +5851,10 @@ L_strprop_node_12_class_8_TERNARY_DONE_0:
   prop_expr_MenuItem_0_wide_1 = zext prop_expr_MenuItem_0_load_0 as i64
   call @sax_menuitem_set_selected(node_18, prop_expr_MenuItem_0_wide_1)
   node_18_root = call @sax_menuitem_root(node_18)
-  call @sax_dom_bind_event(node_18_root, *sax_WorkspacesPopover_104, 5, *sax_WorkspacesPopover_105, 44, ctx)
+  call @sax_dom_bind_event(node_18_root, *sax_WorkspacesPopover_102, 5, *sax_WorkspacesPopover_103, 44, ctx)
   slot_18 = call @sax_menuitem_slot(node_18)
   call @sax_dom_append_child(slot_18, node_19)
-  text_child_18_1 = call @sax_dom_create_text(*sax_WorkspacesPopover_106, 6)
+  text_child_18_1 = call @sax_dom_create_text(*sax_WorkspacesPopover_104, 6)
   call @sax_dom_append_child(slot_18, text_child_18_1)
   store dom+sax_WorkspacesPopover_node_MenuItem_text_0, text_child_18_1 as i64
   call @sax_dom_append_child(slot_18, node_20)
@@ -5861,10 +5864,10 @@ L_strprop_node_12_class_8_TERNARY_DONE_0:
   prop_expr_MenuItem_1_0_wide_1 = zext prop_expr_MenuItem_1_0_load_0 as i64
   call @sax_menuitem_set_selected(node_21, prop_expr_MenuItem_1_0_wide_1)
   node_21_root = call @sax_menuitem_root(node_21)
-  call @sax_dom_bind_event(node_21_root, *sax_WorkspacesPopover_107, 5, *sax_WorkspacesPopover_108, 44, ctx)
+  call @sax_dom_bind_event(node_21_root, *sax_WorkspacesPopover_105, 5, *sax_WorkspacesPopover_106, 44, ctx)
   slot_21 = call @sax_menuitem_slot(node_21)
   call @sax_dom_append_child(slot_21, node_22)
-  text_child_21_1 = call @sax_dom_create_text(*sax_WorkspacesPopover_109, 6)
+  text_child_21_1 = call @sax_dom_create_text(*sax_WorkspacesPopover_107, 6)
   call @sax_dom_append_child(slot_21, text_child_21_1)
   store dom+sax_WorkspacesPopover_node_MenuItem_1_text_0, text_child_21_1 as i64
   call @sax_dom_append_child(slot_21, node_23)
@@ -5874,10 +5877,10 @@ L_strprop_node_12_class_8_TERNARY_DONE_0:
   prop_expr_MenuItem_2_0_wide_1 = zext prop_expr_MenuItem_2_0_load_0 as i64
   call @sax_menuitem_set_selected(node_24, prop_expr_MenuItem_2_0_wide_1)
   node_24_root = call @sax_menuitem_root(node_24)
-  call @sax_dom_bind_event(node_24_root, *sax_WorkspacesPopover_110, 5, *sax_WorkspacesPopover_111, 44, ctx)
+  call @sax_dom_bind_event(node_24_root, *sax_WorkspacesPopover_108, 5, *sax_WorkspacesPopover_109, 44, ctx)
   slot_24 = call @sax_menuitem_slot(node_24)
   call @sax_dom_append_child(slot_24, node_25)
-  text_child_24_1 = call @sax_dom_create_text(*sax_WorkspacesPopover_112, 6)
+  text_child_24_1 = call @sax_dom_create_text(*sax_WorkspacesPopover_110, 6)
   call @sax_dom_append_child(slot_24, text_child_24_1)
   store dom+sax_WorkspacesPopover_node_MenuItem_2_text_0, text_child_24_1 as i64
   call @sax_dom_append_child(slot_24, node_26)
@@ -5904,14 +5907,14 @@ L_ENTRY:
   store ctx+WorkspacesPopover_CTX_dom, dom as ptr
   node_0 = call @sax_dom_create(*sax_WorkspacesPopover_0, 7)
   store dom+sax_WorkspacesPopover_node_section, node_0 as i64
-  call @sax_dom_set_str_prop(node_0, *sax_WorkspacesPopover_113, 9, *sax_WorkspacesPopover_114, 38)
+  call @sax_dom_set_str_prop(node_0, *sax_WorkspacesPopover_111, 9, *sax_WorkspacesPopover_112, 38)
   node_1 = call @sax_dom_create(*sax_WorkspacesPopover_1, 6)
   store dom+sax_WorkspacesPopover_node_button, node_1 as i64
-  call @sax_dom_set_str_prop(node_1, *sax_WorkspacesPopover_115, 9, *sax_WorkspacesPopover_116, 20)
-  call @sax_dom_bind_event(node_1, *sax_WorkspacesPopover_117, 5, *sax_WorkspacesPopover_118, 38, ctx)
+  call @sax_dom_set_str_prop(node_1, *sax_WorkspacesPopover_113, 9, *sax_WorkspacesPopover_114, 20)
+  call @sax_dom_bind_event(node_1, *sax_WorkspacesPopover_115, 5, *sax_WorkspacesPopover_116, 38, ctx)
   node_2 = call @sax_dom_create(*sax_WorkspacesPopover_2, 4)
   store dom+sax_WorkspacesPopover_node_span, node_2 as i64
-  call @sax_dom_set_str_prop(node_2, *sax_WorkspacesPopover_119, 9, *sax_WorkspacesPopover_120, 19)
+  call @sax_dom_set_str_prop(node_2, *sax_WorkspacesPopover_117, 9, *sax_WorkspacesPopover_118, 19)
   node_3 = call @sax_dom_create(*sax_WorkspacesPopover_3, 3)
   store dom+sax_WorkspacesPopover_node_img, node_3 as i64
   strprop_buf_node_3_class = stack_alloc 9
@@ -5924,14 +5927,14 @@ L_strprop_node_3_class_9_TERNARY_TRUE_0:
   strprop_node_3_class_ternary_written_0 = 0
   jmp L_strprop_node_3_class_9_TERNARY_DONE_0
 L_strprop_node_3_class_9_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_3_class_ternary_dst_0, *sax_WorkspacesPopover_121, 9)
+  call @sax_mem_copy(*strprop_node_3_class_ternary_dst_0, *sax_WorkspacesPopover_119, 9)
   strprop_node_3_class_ternary_written_0 = 9
   jmp L_strprop_node_3_class_9_TERNARY_DONE_0
 L_strprop_node_3_class_9_TERNARY_DONE_0:
   strprop_len_node_3_class = add strprop_len_node_3_class, strprop_node_3_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_122, 9, *strprop_buf_node_3_class, strprop_len_node_3_class)
-  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_123, 3, *sax_WorkspacesPopover_124, 35)
-  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_125, 3, *sax_WorkspacesPopover_126, 6)
+  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_120, 9, *strprop_buf_node_3_class, strprop_len_node_3_class)
+  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_121, 3, *sax_WorkspacesPopover_122, 35)
+  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_123, 3, *sax_WorkspacesPopover_124, 6)
   node_4 = call @sax_dom_create(*sax_WorkspacesPopover_4, 3)
   store dom+sax_WorkspacesPopover_node_img_1, node_4 as i64
   strprop_buf_node_4_class = stack_alloc 9
@@ -5944,14 +5947,14 @@ L_strprop_node_4_class_10_TERNARY_TRUE_0:
   strprop_node_4_class_ternary_written_0 = 0
   jmp L_strprop_node_4_class_10_TERNARY_DONE_0
 L_strprop_node_4_class_10_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_4_class_ternary_dst_0, *sax_WorkspacesPopover_127, 9)
+  call @sax_mem_copy(*strprop_node_4_class_ternary_dst_0, *sax_WorkspacesPopover_125, 9)
   strprop_node_4_class_ternary_written_0 = 9
   jmp L_strprop_node_4_class_10_TERNARY_DONE_0
 L_strprop_node_4_class_10_TERNARY_DONE_0:
   strprop_len_node_4_class = add strprop_len_node_4_class, strprop_node_4_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_128, 9, *strprop_buf_node_4_class, strprop_len_node_4_class)
-  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_129, 3, *sax_WorkspacesPopover_130, 35)
-  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_131, 3, *sax_WorkspacesPopover_132, 6)
+  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_126, 9, *strprop_buf_node_4_class, strprop_len_node_4_class)
+  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_127, 3, *sax_WorkspacesPopover_128, 35)
+  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_129, 3, *sax_WorkspacesPopover_130, 6)
   node_5 = call @sax_dom_create(*sax_WorkspacesPopover_5, 3)
   store dom+sax_WorkspacesPopover_node_img_2, node_5 as i64
   strprop_buf_node_5_class = stack_alloc 9
@@ -5964,17 +5967,17 @@ L_strprop_node_5_class_11_TERNARY_TRUE_0:
   strprop_node_5_class_ternary_written_0 = 0
   jmp L_strprop_node_5_class_11_TERNARY_DONE_0
 L_strprop_node_5_class_11_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_5_class_ternary_dst_0, *sax_WorkspacesPopover_133, 9)
+  call @sax_mem_copy(*strprop_node_5_class_ternary_dst_0, *sax_WorkspacesPopover_131, 9)
   strprop_node_5_class_ternary_written_0 = 9
   jmp L_strprop_node_5_class_11_TERNARY_DONE_0
 L_strprop_node_5_class_11_TERNARY_DONE_0:
   strprop_len_node_5_class = add strprop_len_node_5_class, strprop_node_5_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_134, 9, *strprop_buf_node_5_class, strprop_len_node_5_class)
-  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_135, 3, *sax_WorkspacesPopover_136, 35)
-  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_137, 3, *sax_WorkspacesPopover_138, 6)
+  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_132, 9, *strprop_buf_node_5_class, strprop_len_node_5_class)
+  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_133, 3, *sax_WorkspacesPopover_134, 35)
+  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_135, 3, *sax_WorkspacesPopover_136, 6)
   node_6 = call @sax_dom_create(*sax_WorkspacesPopover_6, 4)
   store dom+sax_WorkspacesPopover_node_span_1, node_6 as i64
-  call @sax_dom_set_str_prop(node_6, *sax_WorkspacesPopover_139, 9, *sax_WorkspacesPopover_140, 17)
+  call @sax_dom_set_str_prop(node_6, *sax_WorkspacesPopover_137, 9, *sax_WorkspacesPopover_138, 17)
   node_7 = call @sax_dom_create(*sax_WorkspacesPopover_7, 6)
   store dom+sax_WorkspacesPopover_node_strong, node_7 as i64
   strprop_buf_node_7_class = stack_alloc 9
@@ -5987,12 +5990,12 @@ L_strprop_node_7_class_12_TERNARY_TRUE_0:
   strprop_node_7_class_ternary_written_0 = 0
   jmp L_strprop_node_7_class_12_TERNARY_DONE_0
 L_strprop_node_7_class_12_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_7_class_ternary_dst_0, *sax_WorkspacesPopover_141, 9)
+  call @sax_mem_copy(*strprop_node_7_class_ternary_dst_0, *sax_WorkspacesPopover_139, 9)
   strprop_node_7_class_ternary_written_0 = 9
   jmp L_strprop_node_7_class_12_TERNARY_DONE_0
 L_strprop_node_7_class_12_TERNARY_DONE_0:
   strprop_len_node_7_class = add strprop_len_node_7_class, strprop_node_7_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_7, *sax_WorkspacesPopover_142, 9, *strprop_buf_node_7_class, strprop_len_node_7_class)
+  call @sax_dom_set_str_prop(node_7, *sax_WorkspacesPopover_140, 9, *strprop_buf_node_7_class, strprop_len_node_7_class)
   node_8 = call @sax_dom_create(*sax_WorkspacesPopover_8, 6)
   store dom+sax_WorkspacesPopover_node_strong_1, node_8 as i64
   strprop_buf_node_8_class = stack_alloc 9
@@ -6005,12 +6008,12 @@ L_strprop_node_8_class_13_TERNARY_TRUE_0:
   strprop_node_8_class_ternary_written_0 = 0
   jmp L_strprop_node_8_class_13_TERNARY_DONE_0
 L_strprop_node_8_class_13_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_8_class_ternary_dst_0, *sax_WorkspacesPopover_143, 9)
+  call @sax_mem_copy(*strprop_node_8_class_ternary_dst_0, *sax_WorkspacesPopover_141, 9)
   strprop_node_8_class_ternary_written_0 = 9
   jmp L_strprop_node_8_class_13_TERNARY_DONE_0
 L_strprop_node_8_class_13_TERNARY_DONE_0:
   strprop_len_node_8_class = add strprop_len_node_8_class, strprop_node_8_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_8, *sax_WorkspacesPopover_144, 9, *strprop_buf_node_8_class, strprop_len_node_8_class)
+  call @sax_dom_set_str_prop(node_8, *sax_WorkspacesPopover_142, 9, *strprop_buf_node_8_class, strprop_len_node_8_class)
   node_9 = call @sax_dom_create(*sax_WorkspacesPopover_9, 6)
   store dom+sax_WorkspacesPopover_node_strong_2, node_9 as i64
   strprop_buf_node_9_class = stack_alloc 9
@@ -6023,12 +6026,12 @@ L_strprop_node_9_class_14_TERNARY_TRUE_0:
   strprop_node_9_class_ternary_written_0 = 0
   jmp L_strprop_node_9_class_14_TERNARY_DONE_0
 L_strprop_node_9_class_14_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_9_class_ternary_dst_0, *sax_WorkspacesPopover_145, 9)
+  call @sax_mem_copy(*strprop_node_9_class_ternary_dst_0, *sax_WorkspacesPopover_143, 9)
   strprop_node_9_class_ternary_written_0 = 9
   jmp L_strprop_node_9_class_14_TERNARY_DONE_0
 L_strprop_node_9_class_14_TERNARY_DONE_0:
   strprop_len_node_9_class = add strprop_len_node_9_class, strprop_node_9_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_9, *sax_WorkspacesPopover_146, 9, *strprop_buf_node_9_class, strprop_len_node_9_class)
+  call @sax_dom_set_str_prop(node_9, *sax_WorkspacesPopover_144, 9, *strprop_buf_node_9_class, strprop_len_node_9_class)
   node_10 = call @sax_dom_create(*sax_WorkspacesPopover_10, 2)
   store dom+sax_WorkspacesPopover_node_em, node_10 as i64
   strprop_buf_node_10_class = stack_alloc 9
@@ -6041,12 +6044,12 @@ L_strprop_node_10_class_15_TERNARY_TRUE_0:
   strprop_node_10_class_ternary_written_0 = 0
   jmp L_strprop_node_10_class_15_TERNARY_DONE_0
 L_strprop_node_10_class_15_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_10_class_ternary_dst_0, *sax_WorkspacesPopover_147, 9)
+  call @sax_mem_copy(*strprop_node_10_class_ternary_dst_0, *sax_WorkspacesPopover_145, 9)
   strprop_node_10_class_ternary_written_0 = 9
   jmp L_strprop_node_10_class_15_TERNARY_DONE_0
 L_strprop_node_10_class_15_TERNARY_DONE_0:
   strprop_len_node_10_class = add strprop_len_node_10_class, strprop_node_10_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_10, *sax_WorkspacesPopover_148, 9, *strprop_buf_node_10_class, strprop_len_node_10_class)
+  call @sax_dom_set_str_prop(node_10, *sax_WorkspacesPopover_146, 9, *strprop_buf_node_10_class, strprop_len_node_10_class)
   node_11 = call @sax_dom_create(*sax_WorkspacesPopover_11, 2)
   store dom+sax_WorkspacesPopover_node_em_1, node_11 as i64
   strprop_buf_node_11_class = stack_alloc 9
@@ -6059,12 +6062,12 @@ L_strprop_node_11_class_16_TERNARY_TRUE_0:
   strprop_node_11_class_ternary_written_0 = 0
   jmp L_strprop_node_11_class_16_TERNARY_DONE_0
 L_strprop_node_11_class_16_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_11_class_ternary_dst_0, *sax_WorkspacesPopover_149, 9)
+  call @sax_mem_copy(*strprop_node_11_class_ternary_dst_0, *sax_WorkspacesPopover_147, 9)
   strprop_node_11_class_ternary_written_0 = 9
   jmp L_strprop_node_11_class_16_TERNARY_DONE_0
 L_strprop_node_11_class_16_TERNARY_DONE_0:
   strprop_len_node_11_class = add strprop_len_node_11_class, strprop_node_11_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_11, *sax_WorkspacesPopover_150, 9, *strprop_buf_node_11_class, strprop_len_node_11_class)
+  call @sax_dom_set_str_prop(node_11, *sax_WorkspacesPopover_148, 9, *strprop_buf_node_11_class, strprop_len_node_11_class)
   node_12 = call @sax_dom_create(*sax_WorkspacesPopover_12, 2)
   store dom+sax_WorkspacesPopover_node_em_2, node_12 as i64
   strprop_buf_node_12_class = stack_alloc 9
@@ -6077,50 +6080,46 @@ L_strprop_node_12_class_17_TERNARY_TRUE_0:
   strprop_node_12_class_ternary_written_0 = 0
   jmp L_strprop_node_12_class_17_TERNARY_DONE_0
 L_strprop_node_12_class_17_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_12_class_ternary_dst_0, *sax_WorkspacesPopover_151, 9)
+  call @sax_mem_copy(*strprop_node_12_class_ternary_dst_0, *sax_WorkspacesPopover_149, 9)
   strprop_node_12_class_ternary_written_0 = 9
   jmp L_strprop_node_12_class_17_TERNARY_DONE_0
 L_strprop_node_12_class_17_TERNARY_DONE_0:
   strprop_len_node_12_class = add strprop_len_node_12_class, strprop_node_12_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_12, *sax_WorkspacesPopover_152, 9, *strprop_buf_node_12_class, strprop_len_node_12_class)
+  call @sax_dom_set_str_prop(node_12, *sax_WorkspacesPopover_150, 9, *strprop_buf_node_12_class, strprop_len_node_12_class)
   node_13 = call @sax_dom_create(*sax_WorkspacesPopover_13, 4)
   store dom+sax_WorkspacesPopover_node_span_2, node_13 as i64
-  call @sax_dom_set_str_prop(node_13, *sax_WorkspacesPopover_153, 9, *sax_WorkspacesPopover_154, 20)
+  call @sax_dom_set_str_prop(node_13, *sax_WorkspacesPopover_151, 9, *sax_WorkspacesPopover_152, 20)
   node_14 = call @sax_dom_create(*sax_WorkspacesPopover_14, 7)
   store dom+sax_WorkspacesPopover_node_section_1, node_14 as i64
-  call @sax_dom_set_str_prop(node_14, *sax_WorkspacesPopover_155, 9, *sax_WorkspacesPopover_156, 16)
+  call @sax_dom_set_str_prop(node_14, *sax_WorkspacesPopover_153, 9, *sax_WorkspacesPopover_154, 16)
   boolprop_node_14_hidden_load_0 = load state+WorkspacesPopover_workspace_hidden as i1
   boolprop_node_14_hidden_wide_1 = zext boolprop_node_14_hidden_load_0 as i64
   boolprop_node_14_hidden = ne boolprop_node_14_hidden_wide_1, 0
-  call @sax_dom_set_bool_prop(node_14, *sax_WorkspacesPopover_157, 6, boolprop_node_14_hidden)
-  node_15 = call @sax_dom_create(*sax_WorkspacesPopover_15, 6)
-  store dom+sax_WorkspacesPopover_node_button_1, node_15 as i64
-  call @sax_dom_set_str_prop(node_15, *sax_WorkspacesPopover_158, 9, *sax_WorkspacesPopover_159, 13)
-  call @sax_dom_bind_event(node_15, *sax_WorkspacesPopover_160, 5, *sax_WorkspacesPopover_161, 37, ctx)
+  call @sax_dom_set_bool_prop(node_14, *sax_WorkspacesPopover_155, 6, boolprop_node_14_hidden)
   node_19 = call @sax_dom_create(*sax_WorkspacesPopover_19, 3)
   store dom+sax_WorkspacesPopover_node_img_3, node_19 as i64
-  call @sax_dom_set_str_prop(node_19, *sax_WorkspacesPopover_162, 9, *sax_WorkspacesPopover_163, 35)
-  call @sax_dom_set_str_prop(node_19, *sax_WorkspacesPopover_164, 3, *sax_WorkspacesPopover_165, 35)
-  call @sax_dom_set_str_prop(node_19, *sax_WorkspacesPopover_166, 3, *sax_WorkspacesPopover_167, 6)
+  call @sax_dom_set_str_prop(node_19, *sax_WorkspacesPopover_156, 9, *sax_WorkspacesPopover_157, 35)
+  call @sax_dom_set_str_prop(node_19, *sax_WorkspacesPopover_158, 3, *sax_WorkspacesPopover_159, 35)
+  call @sax_dom_set_str_prop(node_19, *sax_WorkspacesPopover_160, 3, *sax_WorkspacesPopover_161, 6)
   node_20 = call @sax_dom_create(*sax_WorkspacesPopover_20, 4)
   store dom+sax_WorkspacesPopover_node_span_3, node_20 as i64
-  call @sax_dom_set_str_prop(node_20, *sax_WorkspacesPopover_168, 9, *sax_WorkspacesPopover_169, 13)
+  call @sax_dom_set_str_prop(node_20, *sax_WorkspacesPopover_162, 9, *sax_WorkspacesPopover_163, 13)
   node_22 = call @sax_dom_create(*sax_WorkspacesPopover_22, 3)
   store dom+sax_WorkspacesPopover_node_img_4, node_22 as i64
-  call @sax_dom_set_str_prop(node_22, *sax_WorkspacesPopover_170, 9, *sax_WorkspacesPopover_171, 35)
-  call @sax_dom_set_str_prop(node_22, *sax_WorkspacesPopover_172, 3, *sax_WorkspacesPopover_173, 35)
-  call @sax_dom_set_str_prop(node_22, *sax_WorkspacesPopover_174, 3, *sax_WorkspacesPopover_175, 6)
+  call @sax_dom_set_str_prop(node_22, *sax_WorkspacesPopover_164, 9, *sax_WorkspacesPopover_165, 35)
+  call @sax_dom_set_str_prop(node_22, *sax_WorkspacesPopover_166, 3, *sax_WorkspacesPopover_167, 35)
+  call @sax_dom_set_str_prop(node_22, *sax_WorkspacesPopover_168, 3, *sax_WorkspacesPopover_169, 6)
   node_23 = call @sax_dom_create(*sax_WorkspacesPopover_23, 4)
   store dom+sax_WorkspacesPopover_node_span_4, node_23 as i64
-  call @sax_dom_set_str_prop(node_23, *sax_WorkspacesPopover_176, 9, *sax_WorkspacesPopover_177, 26)
+  call @sax_dom_set_str_prop(node_23, *sax_WorkspacesPopover_170, 9, *sax_WorkspacesPopover_171, 26)
   node_25 = call @sax_dom_create(*sax_WorkspacesPopover_25, 3)
   store dom+sax_WorkspacesPopover_node_img_5, node_25 as i64
-  call @sax_dom_set_str_prop(node_25, *sax_WorkspacesPopover_178, 9, *sax_WorkspacesPopover_179, 35)
-  call @sax_dom_set_str_prop(node_25, *sax_WorkspacesPopover_180, 3, *sax_WorkspacesPopover_181, 35)
-  call @sax_dom_set_str_prop(node_25, *sax_WorkspacesPopover_182, 3, *sax_WorkspacesPopover_183, 6)
+  call @sax_dom_set_str_prop(node_25, *sax_WorkspacesPopover_172, 9, *sax_WorkspacesPopover_173, 35)
+  call @sax_dom_set_str_prop(node_25, *sax_WorkspacesPopover_174, 3, *sax_WorkspacesPopover_175, 35)
+  call @sax_dom_set_str_prop(node_25, *sax_WorkspacesPopover_176, 3, *sax_WorkspacesPopover_177, 6)
   node_26 = call @sax_dom_create(*sax_WorkspacesPopover_26, 4)
   store dom+sax_WorkspacesPopover_node_span_5, node_26 as i64
-  call @sax_dom_set_str_prop(node_26, *sax_WorkspacesPopover_184, 9, *sax_WorkspacesPopover_185, 26)
+  call @sax_dom_set_str_prop(node_26, *sax_WorkspacesPopover_178, 9, *sax_WorkspacesPopover_179, 26)
   call @sax_dom_append_child(node_0, node_1)
   call @sax_dom_append_child(node_0, node_14)
   call @sax_dom_append_child(node_1, node_2)
@@ -6135,16 +6134,23 @@ L_strprop_node_12_class_17_TERNARY_DONE_0:
   call @sax_dom_append_child(node_6, node_10)
   call @sax_dom_append_child(node_6, node_11)
   call @sax_dom_append_child(node_6, node_12)
-  call @sax_dom_append_child(node_14, node_15)
+  node_15 = call @sax_backdrop_mount(node_14)
+  store dom+sax_WorkspacesPopover_node_Backdrop, node_15 as ptr
+  call @sax_backdrop_set_invisible(node_15, 1)
+  prop_expr_Backdrop_1_load_0 = load state+WorkspacesPopover_workspace_open as i1
+  prop_expr_Backdrop_1_wide_1 = zext prop_expr_Backdrop_1_load_0 as i64
+  call @sax_backdrop_set_open(node_15, prop_expr_Backdrop_1_wide_1)
+  node_15_root = call @sax_backdrop_root(node_15)
+  call @sax_dom_bind_event(node_15_root, *sax_WorkspacesPopover_180, 5, *sax_WorkspacesPopover_181, 37, ctx)
   node_16 = call @sax_popover_mount(node_14)
   store dom+sax_WorkspacesPopover_node_Popover, node_16 as ptr
   prop_expr_Popover_0_load_0 = load state+WorkspacesPopover_workspace_open as i1
   prop_expr_Popover_0_wide_1 = zext prop_expr_Popover_0_load_0 as i64
   call @sax_popover_set_open(node_16, prop_expr_Popover_0_wide_1)
-  call @sax_popover_set_anchorOriginVertical_str(node_16, *sax_WorkspacesPopover_186, 6)
-  call @sax_popover_set_anchorOriginHorizontal_str(node_16, *sax_WorkspacesPopover_187, 4)
-  call @sax_popover_set_transformOriginVertical_str(node_16, *sax_WorkspacesPopover_188, 3)
-  call @sax_popover_set_transformOriginHorizontal_str(node_16, *sax_WorkspacesPopover_189, 4)
+  call @sax_popover_set_anchorOriginVertical_str(node_16, *sax_WorkspacesPopover_182, 6)
+  call @sax_popover_set_anchorOriginHorizontal_str(node_16, *sax_WorkspacesPopover_183, 4)
+  call @sax_popover_set_transformOriginVertical_str(node_16, *sax_WorkspacesPopover_184, 3)
+  call @sax_popover_set_transformOriginHorizontal_str(node_16, *sax_WorkspacesPopover_185, 4)
   slot_16 = call @sax_popover_slot(node_16)
   node_17 = call @sax_menulist_mount(slot_16)
   store dom+sax_WorkspacesPopover_node_MenuList, node_17 as ptr
@@ -6156,10 +6162,10 @@ L_strprop_node_12_class_17_TERNARY_DONE_0:
   prop_expr_MenuItem_0_wide_1 = zext prop_expr_MenuItem_0_load_0 as i64
   call @sax_menuitem_set_selected(node_18, prop_expr_MenuItem_0_wide_1)
   node_18_root = call @sax_menuitem_root(node_18)
-  call @sax_dom_bind_event(node_18_root, *sax_WorkspacesPopover_190, 5, *sax_WorkspacesPopover_191, 44, ctx)
+  call @sax_dom_bind_event(node_18_root, *sax_WorkspacesPopover_186, 5, *sax_WorkspacesPopover_187, 44, ctx)
   slot_18 = call @sax_menuitem_slot(node_18)
   call @sax_dom_append_child(slot_18, node_19)
-  text_child_18_1 = call @sax_dom_create_text(*sax_WorkspacesPopover_192, 6)
+  text_child_18_1 = call @sax_dom_create_text(*sax_WorkspacesPopover_188, 6)
   call @sax_dom_append_child(slot_18, text_child_18_1)
   store dom+sax_WorkspacesPopover_node_MenuItem_text_0, text_child_18_1 as i64
   call @sax_dom_append_child(slot_18, node_20)
@@ -6169,10 +6175,10 @@ L_strprop_node_12_class_17_TERNARY_DONE_0:
   prop_expr_MenuItem_1_0_wide_1 = zext prop_expr_MenuItem_1_0_load_0 as i64
   call @sax_menuitem_set_selected(node_21, prop_expr_MenuItem_1_0_wide_1)
   node_21_root = call @sax_menuitem_root(node_21)
-  call @sax_dom_bind_event(node_21_root, *sax_WorkspacesPopover_193, 5, *sax_WorkspacesPopover_194, 44, ctx)
+  call @sax_dom_bind_event(node_21_root, *sax_WorkspacesPopover_189, 5, *sax_WorkspacesPopover_190, 44, ctx)
   slot_21 = call @sax_menuitem_slot(node_21)
   call @sax_dom_append_child(slot_21, node_22)
-  text_child_21_1 = call @sax_dom_create_text(*sax_WorkspacesPopover_195, 6)
+  text_child_21_1 = call @sax_dom_create_text(*sax_WorkspacesPopover_191, 6)
   call @sax_dom_append_child(slot_21, text_child_21_1)
   store dom+sax_WorkspacesPopover_node_MenuItem_1_text_0, text_child_21_1 as i64
   call @sax_dom_append_child(slot_21, node_23)
@@ -6182,10 +6188,10 @@ L_strprop_node_12_class_17_TERNARY_DONE_0:
   prop_expr_MenuItem_2_0_wide_1 = zext prop_expr_MenuItem_2_0_load_0 as i64
   call @sax_menuitem_set_selected(node_24, prop_expr_MenuItem_2_0_wide_1)
   node_24_root = call @sax_menuitem_root(node_24)
-  call @sax_dom_bind_event(node_24_root, *sax_WorkspacesPopover_196, 5, *sax_WorkspacesPopover_197, 44, ctx)
+  call @sax_dom_bind_event(node_24_root, *sax_WorkspacesPopover_192, 5, *sax_WorkspacesPopover_193, 44, ctx)
   slot_24 = call @sax_menuitem_slot(node_24)
   call @sax_dom_append_child(slot_24, node_25)
-  text_child_24_1 = call @sax_dom_create_text(*sax_WorkspacesPopover_198, 6)
+  text_child_24_1 = call @sax_dom_create_text(*sax_WorkspacesPopover_194, 6)
   call @sax_dom_append_child(slot_24, text_child_24_1)
   store dom+sax_WorkspacesPopover_node_MenuItem_2_text_0, text_child_24_1 as i64
   call @sax_dom_append_child(slot_24, node_26)
@@ -6290,11 +6296,11 @@ L_ENTRY:
   state = load ctx+WorkspacesPopover_CTX_state as ptr
   dom = load ctx+WorkspacesPopover_CTX_dom as ptr
   node_0 = load dom+sax_WorkspacesPopover_node_section as ptr
-  call @sax_dom_set_str_prop(node_0, *sax_WorkspacesPopover_199, 9, *sax_WorkspacesPopover_200, 38)
+  call @sax_dom_set_str_prop(node_0, *sax_WorkspacesPopover_195, 9, *sax_WorkspacesPopover_196, 38)
   node_1 = load dom+sax_WorkspacesPopover_node_button as ptr
-  call @sax_dom_set_str_prop(node_1, *sax_WorkspacesPopover_201, 9, *sax_WorkspacesPopover_202, 20)
+  call @sax_dom_set_str_prop(node_1, *sax_WorkspacesPopover_197, 9, *sax_WorkspacesPopover_198, 20)
   node_2 = load dom+sax_WorkspacesPopover_node_span as ptr
-  call @sax_dom_set_str_prop(node_2, *sax_WorkspacesPopover_203, 9, *sax_WorkspacesPopover_204, 19)
+  call @sax_dom_set_str_prop(node_2, *sax_WorkspacesPopover_199, 9, *sax_WorkspacesPopover_200, 19)
   node_3 = load dom+sax_WorkspacesPopover_node_img as ptr
   strprop_buf_node_3_class = stack_alloc 9
   strprop_len_node_3_class = 0
@@ -6306,14 +6312,14 @@ L_strprop_node_3_class_18_TERNARY_TRUE_0:
   strprop_node_3_class_ternary_written_0 = 0
   jmp L_strprop_node_3_class_18_TERNARY_DONE_0
 L_strprop_node_3_class_18_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_3_class_ternary_dst_0, *sax_WorkspacesPopover_205, 9)
+  call @sax_mem_copy(*strprop_node_3_class_ternary_dst_0, *sax_WorkspacesPopover_201, 9)
   strprop_node_3_class_ternary_written_0 = 9
   jmp L_strprop_node_3_class_18_TERNARY_DONE_0
 L_strprop_node_3_class_18_TERNARY_DONE_0:
   strprop_len_node_3_class = add strprop_len_node_3_class, strprop_node_3_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_206, 9, *strprop_buf_node_3_class, strprop_len_node_3_class)
-  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_207, 3, *sax_WorkspacesPopover_208, 35)
-  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_209, 3, *sax_WorkspacesPopover_210, 6)
+  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_202, 9, *strprop_buf_node_3_class, strprop_len_node_3_class)
+  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_203, 3, *sax_WorkspacesPopover_204, 35)
+  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_205, 3, *sax_WorkspacesPopover_206, 6)
   node_4 = load dom+sax_WorkspacesPopover_node_img_1 as ptr
   strprop_buf_node_4_class = stack_alloc 9
   strprop_len_node_4_class = 0
@@ -6325,14 +6331,14 @@ L_strprop_node_4_class_19_TERNARY_TRUE_0:
   strprop_node_4_class_ternary_written_0 = 0
   jmp L_strprop_node_4_class_19_TERNARY_DONE_0
 L_strprop_node_4_class_19_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_4_class_ternary_dst_0, *sax_WorkspacesPopover_211, 9)
+  call @sax_mem_copy(*strprop_node_4_class_ternary_dst_0, *sax_WorkspacesPopover_207, 9)
   strprop_node_4_class_ternary_written_0 = 9
   jmp L_strprop_node_4_class_19_TERNARY_DONE_0
 L_strprop_node_4_class_19_TERNARY_DONE_0:
   strprop_len_node_4_class = add strprop_len_node_4_class, strprop_node_4_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_212, 9, *strprop_buf_node_4_class, strprop_len_node_4_class)
-  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_213, 3, *sax_WorkspacesPopover_214, 35)
-  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_215, 3, *sax_WorkspacesPopover_216, 6)
+  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_208, 9, *strprop_buf_node_4_class, strprop_len_node_4_class)
+  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_209, 3, *sax_WorkspacesPopover_210, 35)
+  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_211, 3, *sax_WorkspacesPopover_212, 6)
   node_5 = load dom+sax_WorkspacesPopover_node_img_2 as ptr
   strprop_buf_node_5_class = stack_alloc 9
   strprop_len_node_5_class = 0
@@ -6344,16 +6350,16 @@ L_strprop_node_5_class_20_TERNARY_TRUE_0:
   strprop_node_5_class_ternary_written_0 = 0
   jmp L_strprop_node_5_class_20_TERNARY_DONE_0
 L_strprop_node_5_class_20_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_5_class_ternary_dst_0, *sax_WorkspacesPopover_217, 9)
+  call @sax_mem_copy(*strprop_node_5_class_ternary_dst_0, *sax_WorkspacesPopover_213, 9)
   strprop_node_5_class_ternary_written_0 = 9
   jmp L_strprop_node_5_class_20_TERNARY_DONE_0
 L_strprop_node_5_class_20_TERNARY_DONE_0:
   strprop_len_node_5_class = add strprop_len_node_5_class, strprop_node_5_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_218, 9, *strprop_buf_node_5_class, strprop_len_node_5_class)
-  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_219, 3, *sax_WorkspacesPopover_220, 35)
-  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_221, 3, *sax_WorkspacesPopover_222, 6)
+  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_214, 9, *strprop_buf_node_5_class, strprop_len_node_5_class)
+  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_215, 3, *sax_WorkspacesPopover_216, 35)
+  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_217, 3, *sax_WorkspacesPopover_218, 6)
   node_6 = load dom+sax_WorkspacesPopover_node_span_1 as ptr
-  call @sax_dom_set_str_prop(node_6, *sax_WorkspacesPopover_223, 9, *sax_WorkspacesPopover_224, 17)
+  call @sax_dom_set_str_prop(node_6, *sax_WorkspacesPopover_219, 9, *sax_WorkspacesPopover_220, 17)
   node_7 = load dom+sax_WorkspacesPopover_node_strong as ptr
   strprop_buf_node_7_class = stack_alloc 9
   strprop_len_node_7_class = 0
@@ -6365,16 +6371,16 @@ L_strprop_node_7_class_21_TERNARY_TRUE_0:
   strprop_node_7_class_ternary_written_0 = 0
   jmp L_strprop_node_7_class_21_TERNARY_DONE_0
 L_strprop_node_7_class_21_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_7_class_ternary_dst_0, *sax_WorkspacesPopover_225, 9)
+  call @sax_mem_copy(*strprop_node_7_class_ternary_dst_0, *sax_WorkspacesPopover_221, 9)
   strprop_node_7_class_ternary_written_0 = 9
   jmp L_strprop_node_7_class_21_TERNARY_DONE_0
 L_strprop_node_7_class_21_TERNARY_DONE_0:
   strprop_len_node_7_class = add strprop_len_node_7_class, strprop_node_7_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_7, *sax_WorkspacesPopover_226, 9, *strprop_buf_node_7_class, strprop_len_node_7_class)
+  call @sax_dom_set_str_prop(node_7, *sax_WorkspacesPopover_222, 9, *strprop_buf_node_7_class, strprop_len_node_7_class)
   text_buf_strong = stack_alloc 32
   text_len_strong = 0
   text_dst_strong_0 = ptr_add text_buf_strong, text_len_strong
-  call @sax_mem_copy(*text_dst_strong_0, *sax_WorkspacesPopover_227, 6)
+  call @sax_mem_copy(*text_dst_strong_0, *sax_WorkspacesPopover_223, 6)
   text_len_strong = add text_len_strong, 6
   call @sax_dom_set_text(node_7, *text_buf_strong, text_len_strong)
   node_8 = load dom+sax_WorkspacesPopover_node_strong_1 as ptr
@@ -6388,16 +6394,16 @@ L_strprop_node_8_class_22_TERNARY_TRUE_0:
   strprop_node_8_class_ternary_written_0 = 0
   jmp L_strprop_node_8_class_22_TERNARY_DONE_0
 L_strprop_node_8_class_22_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_8_class_ternary_dst_0, *sax_WorkspacesPopover_228, 9)
+  call @sax_mem_copy(*strprop_node_8_class_ternary_dst_0, *sax_WorkspacesPopover_224, 9)
   strprop_node_8_class_ternary_written_0 = 9
   jmp L_strprop_node_8_class_22_TERNARY_DONE_0
 L_strprop_node_8_class_22_TERNARY_DONE_0:
   strprop_len_node_8_class = add strprop_len_node_8_class, strprop_node_8_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_8, *sax_WorkspacesPopover_229, 9, *strprop_buf_node_8_class, strprop_len_node_8_class)
+  call @sax_dom_set_str_prop(node_8, *sax_WorkspacesPopover_225, 9, *strprop_buf_node_8_class, strprop_len_node_8_class)
   text_buf_strong_1 = stack_alloc 32
   text_len_strong_1 = 0
   text_dst_strong_1_0 = ptr_add text_buf_strong_1, text_len_strong_1
-  call @sax_mem_copy(*text_dst_strong_1_0, *sax_WorkspacesPopover_230, 6)
+  call @sax_mem_copy(*text_dst_strong_1_0, *sax_WorkspacesPopover_226, 6)
   text_len_strong_1 = add text_len_strong_1, 6
   call @sax_dom_set_text(node_8, *text_buf_strong_1, text_len_strong_1)
   node_9 = load dom+sax_WorkspacesPopover_node_strong_2 as ptr
@@ -6411,16 +6417,16 @@ L_strprop_node_9_class_23_TERNARY_TRUE_0:
   strprop_node_9_class_ternary_written_0 = 0
   jmp L_strprop_node_9_class_23_TERNARY_DONE_0
 L_strprop_node_9_class_23_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_9_class_ternary_dst_0, *sax_WorkspacesPopover_231, 9)
+  call @sax_mem_copy(*strprop_node_9_class_ternary_dst_0, *sax_WorkspacesPopover_227, 9)
   strprop_node_9_class_ternary_written_0 = 9
   jmp L_strprop_node_9_class_23_TERNARY_DONE_0
 L_strprop_node_9_class_23_TERNARY_DONE_0:
   strprop_len_node_9_class = add strprop_len_node_9_class, strprop_node_9_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_9, *sax_WorkspacesPopover_232, 9, *strprop_buf_node_9_class, strprop_len_node_9_class)
+  call @sax_dom_set_str_prop(node_9, *sax_WorkspacesPopover_228, 9, *strprop_buf_node_9_class, strprop_len_node_9_class)
   text_buf_strong_2 = stack_alloc 32
   text_len_strong_2 = 0
   text_dst_strong_2_0 = ptr_add text_buf_strong_2, text_len_strong_2
-  call @sax_mem_copy(*text_dst_strong_2_0, *sax_WorkspacesPopover_233, 6)
+  call @sax_mem_copy(*text_dst_strong_2_0, *sax_WorkspacesPopover_229, 6)
   text_len_strong_2 = add text_len_strong_2, 6
   call @sax_dom_set_text(node_9, *text_buf_strong_2, text_len_strong_2)
   node_10 = load dom+sax_WorkspacesPopover_node_em as ptr
@@ -6434,16 +6440,16 @@ L_strprop_node_10_class_24_TERNARY_TRUE_0:
   strprop_node_10_class_ternary_written_0 = 0
   jmp L_strprop_node_10_class_24_TERNARY_DONE_0
 L_strprop_node_10_class_24_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_10_class_ternary_dst_0, *sax_WorkspacesPopover_234, 9)
+  call @sax_mem_copy(*strprop_node_10_class_ternary_dst_0, *sax_WorkspacesPopover_230, 9)
   strprop_node_10_class_ternary_written_0 = 9
   jmp L_strprop_node_10_class_24_TERNARY_DONE_0
 L_strprop_node_10_class_24_TERNARY_DONE_0:
   strprop_len_node_10_class = add strprop_len_node_10_class, strprop_node_10_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_10, *sax_WorkspacesPopover_235, 9, *strprop_buf_node_10_class, strprop_len_node_10_class)
+  call @sax_dom_set_str_prop(node_10, *sax_WorkspacesPopover_231, 9, *strprop_buf_node_10_class, strprop_len_node_10_class)
   text_buf_em = stack_alloc 32
   text_len_em = 0
   text_dst_em_0 = ptr_add text_buf_em, text_len_em
-  call @sax_mem_copy(*text_dst_em_0, *sax_WorkspacesPopover_236, 4)
+  call @sax_mem_copy(*text_dst_em_0, *sax_WorkspacesPopover_232, 4)
   text_len_em = add text_len_em, 4
   call @sax_dom_set_text(node_10, *text_buf_em, text_len_em)
   node_11 = load dom+sax_WorkspacesPopover_node_em_1 as ptr
@@ -6457,16 +6463,16 @@ L_strprop_node_11_class_25_TERNARY_TRUE_0:
   strprop_node_11_class_ternary_written_0 = 0
   jmp L_strprop_node_11_class_25_TERNARY_DONE_0
 L_strprop_node_11_class_25_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_11_class_ternary_dst_0, *sax_WorkspacesPopover_237, 9)
+  call @sax_mem_copy(*strprop_node_11_class_ternary_dst_0, *sax_WorkspacesPopover_233, 9)
   strprop_node_11_class_ternary_written_0 = 9
   jmp L_strprop_node_11_class_25_TERNARY_DONE_0
 L_strprop_node_11_class_25_TERNARY_DONE_0:
   strprop_len_node_11_class = add strprop_len_node_11_class, strprop_node_11_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_11, *sax_WorkspacesPopover_238, 9, *strprop_buf_node_11_class, strprop_len_node_11_class)
+  call @sax_dom_set_str_prop(node_11, *sax_WorkspacesPopover_234, 9, *strprop_buf_node_11_class, strprop_len_node_11_class)
   text_buf_em_1 = stack_alloc 32
   text_len_em_1 = 0
   text_dst_em_1_0 = ptr_add text_buf_em_1, text_len_em_1
-  call @sax_mem_copy(*text_dst_em_1_0, *sax_WorkspacesPopover_239, 3)
+  call @sax_mem_copy(*text_dst_em_1_0, *sax_WorkspacesPopover_235, 3)
   text_len_em_1 = add text_len_em_1, 3
   call @sax_dom_set_text(node_11, *text_buf_em_1, text_len_em_1)
   node_12 = load dom+sax_WorkspacesPopover_node_em_2 as ptr
@@ -6480,42 +6486,46 @@ L_strprop_node_12_class_26_TERNARY_TRUE_0:
   strprop_node_12_class_ternary_written_0 = 0
   jmp L_strprop_node_12_class_26_TERNARY_DONE_0
 L_strprop_node_12_class_26_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_12_class_ternary_dst_0, *sax_WorkspacesPopover_240, 9)
+  call @sax_mem_copy(*strprop_node_12_class_ternary_dst_0, *sax_WorkspacesPopover_236, 9)
   strprop_node_12_class_ternary_written_0 = 9
   jmp L_strprop_node_12_class_26_TERNARY_DONE_0
 L_strprop_node_12_class_26_TERNARY_DONE_0:
   strprop_len_node_12_class = add strprop_len_node_12_class, strprop_node_12_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_12, *sax_WorkspacesPopover_241, 9, *strprop_buf_node_12_class, strprop_len_node_12_class)
+  call @sax_dom_set_str_prop(node_12, *sax_WorkspacesPopover_237, 9, *strprop_buf_node_12_class, strprop_len_node_12_class)
   text_buf_em_2 = stack_alloc 32
   text_len_em_2 = 0
   text_dst_em_2_0 = ptr_add text_buf_em_2, text_len_em_2
-  call @sax_mem_copy(*text_dst_em_2_0, *sax_WorkspacesPopover_242, 3)
+  call @sax_mem_copy(*text_dst_em_2_0, *sax_WorkspacesPopover_238, 3)
   text_len_em_2 = add text_len_em_2, 3
   call @sax_dom_set_text(node_12, *text_buf_em_2, text_len_em_2)
   node_13 = load dom+sax_WorkspacesPopover_node_span_2 as ptr
-  call @sax_dom_set_str_prop(node_13, *sax_WorkspacesPopover_243, 9, *sax_WorkspacesPopover_244, 20)
+  call @sax_dom_set_str_prop(node_13, *sax_WorkspacesPopover_239, 9, *sax_WorkspacesPopover_240, 20)
   text_buf_span_2 = stack_alloc 32
   text_len_span_2 = 0
   text_dst_span_2_0 = ptr_add text_buf_span_2, text_len_span_2
-  call @sax_mem_copy(*text_dst_span_2_0, *sax_WorkspacesPopover_245, 4)
+  call @sax_mem_copy(*text_dst_span_2_0, *sax_WorkspacesPopover_241, 4)
   text_len_span_2 = add text_len_span_2, 4
   call @sax_dom_set_text(node_13, *text_buf_span_2, text_len_span_2)
   node_14 = load dom+sax_WorkspacesPopover_node_section_1 as ptr
-  call @sax_dom_set_str_prop(node_14, *sax_WorkspacesPopover_246, 9, *sax_WorkspacesPopover_247, 16)
+  call @sax_dom_set_str_prop(node_14, *sax_WorkspacesPopover_242, 9, *sax_WorkspacesPopover_243, 16)
   boolprop_node_14_hidden_load_0 = load state+WorkspacesPopover_workspace_hidden as i1
   boolprop_node_14_hidden_wide_1 = zext boolprop_node_14_hidden_load_0 as i64
   boolprop_node_14_hidden = ne boolprop_node_14_hidden_wide_1, 0
-  call @sax_dom_set_bool_prop(node_14, *sax_WorkspacesPopover_248, 6, boolprop_node_14_hidden)
-  node_15 = load dom+sax_WorkspacesPopover_node_button_1 as ptr
-  call @sax_dom_set_str_prop(node_15, *sax_WorkspacesPopover_249, 9, *sax_WorkspacesPopover_250, 13)
+  call @sax_dom_set_bool_prop(node_14, *sax_WorkspacesPopover_244, 6, boolprop_node_14_hidden)
+  node_15 = load dom+sax_WorkspacesPopover_node_Backdrop as ptr
+  call @sax_backdrop_set_invisible(node_15, 1)
+  prop_expr_Backdrop_1_load_0 = load state+WorkspacesPopover_workspace_open as i1
+  prop_expr_Backdrop_1_wide_1 = zext prop_expr_Backdrop_1_load_0 as i64
+  call @sax_backdrop_set_open(node_15, prop_expr_Backdrop_1_wide_1)
+  call @sax_backdrop_render(node_15)
   node_16 = load dom+sax_WorkspacesPopover_node_Popover as ptr
   prop_expr_Popover_0_load_0 = load state+WorkspacesPopover_workspace_open as i1
   prop_expr_Popover_0_wide_1 = zext prop_expr_Popover_0_load_0 as i64
   call @sax_popover_set_open(node_16, prop_expr_Popover_0_wide_1)
-  call @sax_popover_set_anchorOriginVertical_str(node_16, *sax_WorkspacesPopover_251, 6)
-  call @sax_popover_set_anchorOriginHorizontal_str(node_16, *sax_WorkspacesPopover_252, 4)
-  call @sax_popover_set_transformOriginVertical_str(node_16, *sax_WorkspacesPopover_253, 3)
-  call @sax_popover_set_transformOriginHorizontal_str(node_16, *sax_WorkspacesPopover_254, 4)
+  call @sax_popover_set_anchorOriginVertical_str(node_16, *sax_WorkspacesPopover_245, 6)
+  call @sax_popover_set_anchorOriginHorizontal_str(node_16, *sax_WorkspacesPopover_246, 4)
+  call @sax_popover_set_transformOriginVertical_str(node_16, *sax_WorkspacesPopover_247, 3)
+  call @sax_popover_set_transformOriginHorizontal_str(node_16, *sax_WorkspacesPopover_248, 4)
   call @sax_popover_render(node_16)
   node_17 = load dom+sax_WorkspacesPopover_node_MenuList as ptr
   call @sax_menulist_set_disablePadding(node_17, 1)
@@ -6526,15 +6536,15 @@ L_strprop_node_12_class_26_TERNARY_DONE_0:
   call @sax_menuitem_set_selected(node_18, prop_expr_MenuItem_0_wide_1)
   call @sax_menuitem_render(node_18)
   node_19 = load dom+sax_WorkspacesPopover_node_img_3 as ptr
-  call @sax_dom_set_str_prop(node_19, *sax_WorkspacesPopover_255, 9, *sax_WorkspacesPopover_256, 35)
-  call @sax_dom_set_str_prop(node_19, *sax_WorkspacesPopover_257, 3, *sax_WorkspacesPopover_258, 35)
-  call @sax_dom_set_str_prop(node_19, *sax_WorkspacesPopover_259, 3, *sax_WorkspacesPopover_260, 6)
+  call @sax_dom_set_str_prop(node_19, *sax_WorkspacesPopover_249, 9, *sax_WorkspacesPopover_250, 35)
+  call @sax_dom_set_str_prop(node_19, *sax_WorkspacesPopover_251, 3, *sax_WorkspacesPopover_252, 35)
+  call @sax_dom_set_str_prop(node_19, *sax_WorkspacesPopover_253, 3, *sax_WorkspacesPopover_254, 6)
   node_20 = load dom+sax_WorkspacesPopover_node_span_3 as ptr
-  call @sax_dom_set_str_prop(node_20, *sax_WorkspacesPopover_261, 9, *sax_WorkspacesPopover_262, 13)
+  call @sax_dom_set_str_prop(node_20, *sax_WorkspacesPopover_255, 9, *sax_WorkspacesPopover_256, 13)
   text_buf_span_3 = stack_alloc 32
   text_len_span_3 = 0
   text_dst_span_3_0 = ptr_add text_buf_span_3, text_len_span_3
-  call @sax_mem_copy(*text_dst_span_3_0, *sax_WorkspacesPopover_263, 4)
+  call @sax_mem_copy(*text_dst_span_3_0, *sax_WorkspacesPopover_257, 4)
   text_len_span_3 = add text_len_span_3, 4
   call @sax_dom_set_text(node_20, *text_buf_span_3, text_len_span_3)
   node_21 = load dom+sax_WorkspacesPopover_node_MenuItem_1 as ptr
@@ -6543,15 +6553,15 @@ L_strprop_node_12_class_26_TERNARY_DONE_0:
   call @sax_menuitem_set_selected(node_21, prop_expr_MenuItem_1_0_wide_1)
   call @sax_menuitem_render(node_21)
   node_22 = load dom+sax_WorkspacesPopover_node_img_4 as ptr
-  call @sax_dom_set_str_prop(node_22, *sax_WorkspacesPopover_264, 9, *sax_WorkspacesPopover_265, 35)
-  call @sax_dom_set_str_prop(node_22, *sax_WorkspacesPopover_266, 3, *sax_WorkspacesPopover_267, 35)
-  call @sax_dom_set_str_prop(node_22, *sax_WorkspacesPopover_268, 3, *sax_WorkspacesPopover_269, 6)
+  call @sax_dom_set_str_prop(node_22, *sax_WorkspacesPopover_258, 9, *sax_WorkspacesPopover_259, 35)
+  call @sax_dom_set_str_prop(node_22, *sax_WorkspacesPopover_260, 3, *sax_WorkspacesPopover_261, 35)
+  call @sax_dom_set_str_prop(node_22, *sax_WorkspacesPopover_262, 3, *sax_WorkspacesPopover_263, 6)
   node_23 = load dom+sax_WorkspacesPopover_node_span_4 as ptr
-  call @sax_dom_set_str_prop(node_23, *sax_WorkspacesPopover_270, 9, *sax_WorkspacesPopover_271, 26)
+  call @sax_dom_set_str_prop(node_23, *sax_WorkspacesPopover_264, 9, *sax_WorkspacesPopover_265, 26)
   text_buf_span_4 = stack_alloc 32
   text_len_span_4 = 0
   text_dst_span_4_0 = ptr_add text_buf_span_4, text_len_span_4
-  call @sax_mem_copy(*text_dst_span_4_0, *sax_WorkspacesPopover_272, 3)
+  call @sax_mem_copy(*text_dst_span_4_0, *sax_WorkspacesPopover_266, 3)
   text_len_span_4 = add text_len_span_4, 3
   call @sax_dom_set_text(node_23, *text_buf_span_4, text_len_span_4)
   node_24 = load dom+sax_WorkspacesPopover_node_MenuItem_2 as ptr
@@ -6560,15 +6570,15 @@ L_strprop_node_12_class_26_TERNARY_DONE_0:
   call @sax_menuitem_set_selected(node_24, prop_expr_MenuItem_2_0_wide_1)
   call @sax_menuitem_render(node_24)
   node_25 = load dom+sax_WorkspacesPopover_node_img_5 as ptr
-  call @sax_dom_set_str_prop(node_25, *sax_WorkspacesPopover_273, 9, *sax_WorkspacesPopover_274, 35)
-  call @sax_dom_set_str_prop(node_25, *sax_WorkspacesPopover_275, 3, *sax_WorkspacesPopover_276, 35)
-  call @sax_dom_set_str_prop(node_25, *sax_WorkspacesPopover_277, 3, *sax_WorkspacesPopover_278, 6)
+  call @sax_dom_set_str_prop(node_25, *sax_WorkspacesPopover_267, 9, *sax_WorkspacesPopover_268, 35)
+  call @sax_dom_set_str_prop(node_25, *sax_WorkspacesPopover_269, 3, *sax_WorkspacesPopover_270, 35)
+  call @sax_dom_set_str_prop(node_25, *sax_WorkspacesPopover_271, 3, *sax_WorkspacesPopover_272, 6)
   node_26 = load dom+sax_WorkspacesPopover_node_span_5 as ptr
-  call @sax_dom_set_str_prop(node_26, *sax_WorkspacesPopover_279, 9, *sax_WorkspacesPopover_280, 26)
+  call @sax_dom_set_str_prop(node_26, *sax_WorkspacesPopover_273, 9, *sax_WorkspacesPopover_274, 26)
   text_buf_span_5 = stack_alloc 32
   text_len_span_5 = 0
   text_dst_span_5_0 = ptr_add text_buf_span_5, text_len_span_5
-  call @sax_mem_copy(*text_dst_span_5_0, *sax_WorkspacesPopover_281, 3)
+  call @sax_mem_copy(*text_dst_span_5_0, *sax_WorkspacesPopover_275, 3)
   text_len_span_5 = add text_len_span_5, 3
   call @sax_dom_set_text(node_26, *text_buf_span_5, text_len_span_5)
   return
@@ -6588,38 +6598,50 @@ L_ENTRY:
     store state+WorkspacesPopover_workspace_open, 0 as i1
     store state+WorkspacesPopover_workspace_hidden, 1 as i1
   node_14 = load dom+sax_WorkspacesPopover_node_section_1 as ptr
-  call @sax_dom_set_str_prop(node_14, *sax_WorkspacesPopover_282, 9, *sax_WorkspacesPopover_283, 16)
+  call @sax_dom_set_str_prop(node_14, *sax_WorkspacesPopover_276, 9, *sax_WorkspacesPopover_277, 16)
   boolprop_node_14_hidden_load_0 = load state+WorkspacesPopover_workspace_hidden as i1
   boolprop_node_14_hidden_wide_1 = zext boolprop_node_14_hidden_load_0 as i64
   boolprop_node_14_hidden = ne boolprop_node_14_hidden_wide_1, 0
-  call @sax_dom_set_bool_prop(node_14, *sax_WorkspacesPopover_284, 6, boolprop_node_14_hidden)
+  call @sax_dom_set_bool_prop(node_14, *sax_WorkspacesPopover_278, 6, boolprop_node_14_hidden)
+  node_15 = load dom+sax_WorkspacesPopover_node_Backdrop as ptr
+  call @sax_backdrop_set_invisible(node_15, 1)
+  prop_expr_Backdrop_1_load_0 = load state+WorkspacesPopover_workspace_open as i1
+  prop_expr_Backdrop_1_wide_1 = zext prop_expr_Backdrop_1_load_0 as i64
+  call @sax_backdrop_set_open(node_15, prop_expr_Backdrop_1_wide_1)
+  call @sax_backdrop_render(node_15)
   node_16 = load dom+sax_WorkspacesPopover_node_Popover as ptr
   prop_expr_Popover_0_load_0 = load state+WorkspacesPopover_workspace_open as i1
   prop_expr_Popover_0_wide_1 = zext prop_expr_Popover_0_load_0 as i64
   call @sax_popover_set_open(node_16, prop_expr_Popover_0_wide_1)
-  call @sax_popover_set_anchorOriginVertical_str(node_16, *sax_WorkspacesPopover_285, 6)
-  call @sax_popover_set_anchorOriginHorizontal_str(node_16, *sax_WorkspacesPopover_286, 4)
-  call @sax_popover_set_transformOriginVertical_str(node_16, *sax_WorkspacesPopover_287, 3)
-  call @sax_popover_set_transformOriginHorizontal_str(node_16, *sax_WorkspacesPopover_288, 4)
+  call @sax_popover_set_anchorOriginVertical_str(node_16, *sax_WorkspacesPopover_279, 6)
+  call @sax_popover_set_anchorOriginHorizontal_str(node_16, *sax_WorkspacesPopover_280, 4)
+  call @sax_popover_set_transformOriginVertical_str(node_16, *sax_WorkspacesPopover_281, 3)
+  call @sax_popover_set_transformOriginHorizontal_str(node_16, *sax_WorkspacesPopover_282, 4)
   call @sax_popover_render(node_16)
     ret
   L_WORKSPACE_OPEN:
     store state+WorkspacesPopover_workspace_open, 1 as i1
     store state+WorkspacesPopover_workspace_hidden, 0 as i1
   node_14 = load dom+sax_WorkspacesPopover_node_section_1 as ptr
-  call @sax_dom_set_str_prop(node_14, *sax_WorkspacesPopover_289, 9, *sax_WorkspacesPopover_290, 16)
+  call @sax_dom_set_str_prop(node_14, *sax_WorkspacesPopover_283, 9, *sax_WorkspacesPopover_284, 16)
   boolprop_node_14_hidden_load_0 = load state+WorkspacesPopover_workspace_hidden as i1
   boolprop_node_14_hidden_wide_1 = zext boolprop_node_14_hidden_load_0 as i64
   boolprop_node_14_hidden = ne boolprop_node_14_hidden_wide_1, 0
-  call @sax_dom_set_bool_prop(node_14, *sax_WorkspacesPopover_291, 6, boolprop_node_14_hidden)
+  call @sax_dom_set_bool_prop(node_14, *sax_WorkspacesPopover_285, 6, boolprop_node_14_hidden)
+  node_15 = load dom+sax_WorkspacesPopover_node_Backdrop as ptr
+  call @sax_backdrop_set_invisible(node_15, 1)
+  prop_expr_Backdrop_1_load_0 = load state+WorkspacesPopover_workspace_open as i1
+  prop_expr_Backdrop_1_wide_1 = zext prop_expr_Backdrop_1_load_0 as i64
+  call @sax_backdrop_set_open(node_15, prop_expr_Backdrop_1_wide_1)
+  call @sax_backdrop_render(node_15)
   node_16 = load dom+sax_WorkspacesPopover_node_Popover as ptr
   prop_expr_Popover_0_load_0 = load state+WorkspacesPopover_workspace_open as i1
   prop_expr_Popover_0_wide_1 = zext prop_expr_Popover_0_load_0 as i64
   call @sax_popover_set_open(node_16, prop_expr_Popover_0_wide_1)
-  call @sax_popover_set_anchorOriginVertical_str(node_16, *sax_WorkspacesPopover_292, 6)
-  call @sax_popover_set_anchorOriginHorizontal_str(node_16, *sax_WorkspacesPopover_293, 4)
-  call @sax_popover_set_transformOriginVertical_str(node_16, *sax_WorkspacesPopover_294, 3)
-  call @sax_popover_set_transformOriginHorizontal_str(node_16, *sax_WorkspacesPopover_295, 4)
+  call @sax_popover_set_anchorOriginVertical_str(node_16, *sax_WorkspacesPopover_286, 6)
+  call @sax_popover_set_anchorOriginHorizontal_str(node_16, *sax_WorkspacesPopover_287, 4)
+  call @sax_popover_set_transformOriginVertical_str(node_16, *sax_WorkspacesPopover_288, 3)
+  call @sax_popover_set_transformOriginHorizontal_str(node_16, *sax_WorkspacesPopover_289, 4)
   call @sax_popover_render(node_16)
     ret
 
@@ -6636,19 +6658,25 @@ L_ENTRY:
     store state+WorkspacesPopover_workspace_open, 0 as i1
     store state+WorkspacesPopover_workspace_hidden, 1 as i1
   node_14 = load dom+sax_WorkspacesPopover_node_section_1 as ptr
-  call @sax_dom_set_str_prop(node_14, *sax_WorkspacesPopover_296, 9, *sax_WorkspacesPopover_297, 16)
+  call @sax_dom_set_str_prop(node_14, *sax_WorkspacesPopover_290, 9, *sax_WorkspacesPopover_291, 16)
   boolprop_node_14_hidden_load_0 = load state+WorkspacesPopover_workspace_hidden as i1
   boolprop_node_14_hidden_wide_1 = zext boolprop_node_14_hidden_load_0 as i64
   boolprop_node_14_hidden = ne boolprop_node_14_hidden_wide_1, 0
-  call @sax_dom_set_bool_prop(node_14, *sax_WorkspacesPopover_298, 6, boolprop_node_14_hidden)
+  call @sax_dom_set_bool_prop(node_14, *sax_WorkspacesPopover_292, 6, boolprop_node_14_hidden)
+  node_15 = load dom+sax_WorkspacesPopover_node_Backdrop as ptr
+  call @sax_backdrop_set_invisible(node_15, 1)
+  prop_expr_Backdrop_1_load_0 = load state+WorkspacesPopover_workspace_open as i1
+  prop_expr_Backdrop_1_wide_1 = zext prop_expr_Backdrop_1_load_0 as i64
+  call @sax_backdrop_set_open(node_15, prop_expr_Backdrop_1_wide_1)
+  call @sax_backdrop_render(node_15)
   node_16 = load dom+sax_WorkspacesPopover_node_Popover as ptr
   prop_expr_Popover_0_load_0 = load state+WorkspacesPopover_workspace_open as i1
   prop_expr_Popover_0_wide_1 = zext prop_expr_Popover_0_load_0 as i64
   call @sax_popover_set_open(node_16, prop_expr_Popover_0_wide_1)
-  call @sax_popover_set_anchorOriginVertical_str(node_16, *sax_WorkspacesPopover_299, 6)
-  call @sax_popover_set_anchorOriginHorizontal_str(node_16, *sax_WorkspacesPopover_300, 4)
-  call @sax_popover_set_transformOriginVertical_str(node_16, *sax_WorkspacesPopover_301, 3)
-  call @sax_popover_set_transformOriginHorizontal_str(node_16, *sax_WorkspacesPopover_302, 4)
+  call @sax_popover_set_anchorOriginVertical_str(node_16, *sax_WorkspacesPopover_293, 6)
+  call @sax_popover_set_anchorOriginHorizontal_str(node_16, *sax_WorkspacesPopover_294, 4)
+  call @sax_popover_set_transformOriginVertical_str(node_16, *sax_WorkspacesPopover_295, 3)
+  call @sax_popover_set_transformOriginHorizontal_str(node_16, *sax_WorkspacesPopover_296, 4)
   call @sax_popover_render(node_16)
     ret
 
@@ -6678,14 +6706,14 @@ L_strprop_node_3_class_27_TERNARY_TRUE_0:
   strprop_node_3_class_ternary_written_0 = 0
   jmp L_strprop_node_3_class_27_TERNARY_DONE_0
 L_strprop_node_3_class_27_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_3_class_ternary_dst_0, *sax_WorkspacesPopover_303, 9)
+  call @sax_mem_copy(*strprop_node_3_class_ternary_dst_0, *sax_WorkspacesPopover_297, 9)
   strprop_node_3_class_ternary_written_0 = 9
   jmp L_strprop_node_3_class_27_TERNARY_DONE_0
 L_strprop_node_3_class_27_TERNARY_DONE_0:
   strprop_len_node_3_class = add strprop_len_node_3_class, strprop_node_3_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_304, 9, *strprop_buf_node_3_class, strprop_len_node_3_class)
-  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_305, 3, *sax_WorkspacesPopover_306, 35)
-  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_307, 3, *sax_WorkspacesPopover_308, 6)
+  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_298, 9, *strprop_buf_node_3_class, strprop_len_node_3_class)
+  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_299, 3, *sax_WorkspacesPopover_300, 35)
+  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_301, 3, *sax_WorkspacesPopover_302, 6)
   node_4 = load dom+sax_WorkspacesPopover_node_img_1 as ptr
   strprop_buf_node_4_class = stack_alloc 9
   strprop_len_node_4_class = 0
@@ -6697,14 +6725,14 @@ L_strprop_node_4_class_28_TERNARY_TRUE_0:
   strprop_node_4_class_ternary_written_0 = 0
   jmp L_strprop_node_4_class_28_TERNARY_DONE_0
 L_strprop_node_4_class_28_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_4_class_ternary_dst_0, *sax_WorkspacesPopover_309, 9)
+  call @sax_mem_copy(*strprop_node_4_class_ternary_dst_0, *sax_WorkspacesPopover_303, 9)
   strprop_node_4_class_ternary_written_0 = 9
   jmp L_strprop_node_4_class_28_TERNARY_DONE_0
 L_strprop_node_4_class_28_TERNARY_DONE_0:
   strprop_len_node_4_class = add strprop_len_node_4_class, strprop_node_4_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_310, 9, *strprop_buf_node_4_class, strprop_len_node_4_class)
-  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_311, 3, *sax_WorkspacesPopover_312, 35)
-  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_313, 3, *sax_WorkspacesPopover_314, 6)
+  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_304, 9, *strprop_buf_node_4_class, strprop_len_node_4_class)
+  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_305, 3, *sax_WorkspacesPopover_306, 35)
+  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_307, 3, *sax_WorkspacesPopover_308, 6)
   node_5 = load dom+sax_WorkspacesPopover_node_img_2 as ptr
   strprop_buf_node_5_class = stack_alloc 9
   strprop_len_node_5_class = 0
@@ -6716,14 +6744,14 @@ L_strprop_node_5_class_29_TERNARY_TRUE_0:
   strprop_node_5_class_ternary_written_0 = 0
   jmp L_strprop_node_5_class_29_TERNARY_DONE_0
 L_strprop_node_5_class_29_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_5_class_ternary_dst_0, *sax_WorkspacesPopover_315, 9)
+  call @sax_mem_copy(*strprop_node_5_class_ternary_dst_0, *sax_WorkspacesPopover_309, 9)
   strprop_node_5_class_ternary_written_0 = 9
   jmp L_strprop_node_5_class_29_TERNARY_DONE_0
 L_strprop_node_5_class_29_TERNARY_DONE_0:
   strprop_len_node_5_class = add strprop_len_node_5_class, strprop_node_5_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_316, 9, *strprop_buf_node_5_class, strprop_len_node_5_class)
-  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_317, 3, *sax_WorkspacesPopover_318, 35)
-  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_319, 3, *sax_WorkspacesPopover_320, 6)
+  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_310, 9, *strprop_buf_node_5_class, strprop_len_node_5_class)
+  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_311, 3, *sax_WorkspacesPopover_312, 35)
+  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_313, 3, *sax_WorkspacesPopover_314, 6)
   node_7 = load dom+sax_WorkspacesPopover_node_strong as ptr
   strprop_buf_node_7_class = stack_alloc 9
   strprop_len_node_7_class = 0
@@ -6735,16 +6763,16 @@ L_strprop_node_7_class_30_TERNARY_TRUE_0:
   strprop_node_7_class_ternary_written_0 = 0
   jmp L_strprop_node_7_class_30_TERNARY_DONE_0
 L_strprop_node_7_class_30_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_7_class_ternary_dst_0, *sax_WorkspacesPopover_321, 9)
+  call @sax_mem_copy(*strprop_node_7_class_ternary_dst_0, *sax_WorkspacesPopover_315, 9)
   strprop_node_7_class_ternary_written_0 = 9
   jmp L_strprop_node_7_class_30_TERNARY_DONE_0
 L_strprop_node_7_class_30_TERNARY_DONE_0:
   strprop_len_node_7_class = add strprop_len_node_7_class, strprop_node_7_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_7, *sax_WorkspacesPopover_322, 9, *strprop_buf_node_7_class, strprop_len_node_7_class)
+  call @sax_dom_set_str_prop(node_7, *sax_WorkspacesPopover_316, 9, *strprop_buf_node_7_class, strprop_len_node_7_class)
   text_buf_strong = stack_alloc 32
   text_len_strong = 0
   text_dst_strong_0 = ptr_add text_buf_strong, text_len_strong
-  call @sax_mem_copy(*text_dst_strong_0, *sax_WorkspacesPopover_323, 6)
+  call @sax_mem_copy(*text_dst_strong_0, *sax_WorkspacesPopover_317, 6)
   text_len_strong = add text_len_strong, 6
   call @sax_dom_set_text(node_7, *text_buf_strong, text_len_strong)
   node_8 = load dom+sax_WorkspacesPopover_node_strong_1 as ptr
@@ -6758,16 +6786,16 @@ L_strprop_node_8_class_31_TERNARY_TRUE_0:
   strprop_node_8_class_ternary_written_0 = 0
   jmp L_strprop_node_8_class_31_TERNARY_DONE_0
 L_strprop_node_8_class_31_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_8_class_ternary_dst_0, *sax_WorkspacesPopover_324, 9)
+  call @sax_mem_copy(*strprop_node_8_class_ternary_dst_0, *sax_WorkspacesPopover_318, 9)
   strprop_node_8_class_ternary_written_0 = 9
   jmp L_strprop_node_8_class_31_TERNARY_DONE_0
 L_strprop_node_8_class_31_TERNARY_DONE_0:
   strprop_len_node_8_class = add strprop_len_node_8_class, strprop_node_8_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_8, *sax_WorkspacesPopover_325, 9, *strprop_buf_node_8_class, strprop_len_node_8_class)
+  call @sax_dom_set_str_prop(node_8, *sax_WorkspacesPopover_319, 9, *strprop_buf_node_8_class, strprop_len_node_8_class)
   text_buf_strong_1 = stack_alloc 32
   text_len_strong_1 = 0
   text_dst_strong_1_0 = ptr_add text_buf_strong_1, text_len_strong_1
-  call @sax_mem_copy(*text_dst_strong_1_0, *sax_WorkspacesPopover_326, 6)
+  call @sax_mem_copy(*text_dst_strong_1_0, *sax_WorkspacesPopover_320, 6)
   text_len_strong_1 = add text_len_strong_1, 6
   call @sax_dom_set_text(node_8, *text_buf_strong_1, text_len_strong_1)
   node_9 = load dom+sax_WorkspacesPopover_node_strong_2 as ptr
@@ -6781,16 +6809,16 @@ L_strprop_node_9_class_32_TERNARY_TRUE_0:
   strprop_node_9_class_ternary_written_0 = 0
   jmp L_strprop_node_9_class_32_TERNARY_DONE_0
 L_strprop_node_9_class_32_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_9_class_ternary_dst_0, *sax_WorkspacesPopover_327, 9)
+  call @sax_mem_copy(*strprop_node_9_class_ternary_dst_0, *sax_WorkspacesPopover_321, 9)
   strprop_node_9_class_ternary_written_0 = 9
   jmp L_strprop_node_9_class_32_TERNARY_DONE_0
 L_strprop_node_9_class_32_TERNARY_DONE_0:
   strprop_len_node_9_class = add strprop_len_node_9_class, strprop_node_9_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_9, *sax_WorkspacesPopover_328, 9, *strprop_buf_node_9_class, strprop_len_node_9_class)
+  call @sax_dom_set_str_prop(node_9, *sax_WorkspacesPopover_322, 9, *strprop_buf_node_9_class, strprop_len_node_9_class)
   text_buf_strong_2 = stack_alloc 32
   text_len_strong_2 = 0
   text_dst_strong_2_0 = ptr_add text_buf_strong_2, text_len_strong_2
-  call @sax_mem_copy(*text_dst_strong_2_0, *sax_WorkspacesPopover_329, 6)
+  call @sax_mem_copy(*text_dst_strong_2_0, *sax_WorkspacesPopover_323, 6)
   text_len_strong_2 = add text_len_strong_2, 6
   call @sax_dom_set_text(node_9, *text_buf_strong_2, text_len_strong_2)
   node_10 = load dom+sax_WorkspacesPopover_node_em as ptr
@@ -6804,16 +6832,16 @@ L_strprop_node_10_class_33_TERNARY_TRUE_0:
   strprop_node_10_class_ternary_written_0 = 0
   jmp L_strprop_node_10_class_33_TERNARY_DONE_0
 L_strprop_node_10_class_33_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_10_class_ternary_dst_0, *sax_WorkspacesPopover_330, 9)
+  call @sax_mem_copy(*strprop_node_10_class_ternary_dst_0, *sax_WorkspacesPopover_324, 9)
   strprop_node_10_class_ternary_written_0 = 9
   jmp L_strprop_node_10_class_33_TERNARY_DONE_0
 L_strprop_node_10_class_33_TERNARY_DONE_0:
   strprop_len_node_10_class = add strprop_len_node_10_class, strprop_node_10_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_10, *sax_WorkspacesPopover_331, 9, *strprop_buf_node_10_class, strprop_len_node_10_class)
+  call @sax_dom_set_str_prop(node_10, *sax_WorkspacesPopover_325, 9, *strprop_buf_node_10_class, strprop_len_node_10_class)
   text_buf_em = stack_alloc 32
   text_len_em = 0
   text_dst_em_0 = ptr_add text_buf_em, text_len_em
-  call @sax_mem_copy(*text_dst_em_0, *sax_WorkspacesPopover_332, 4)
+  call @sax_mem_copy(*text_dst_em_0, *sax_WorkspacesPopover_326, 4)
   text_len_em = add text_len_em, 4
   call @sax_dom_set_text(node_10, *text_buf_em, text_len_em)
   node_11 = load dom+sax_WorkspacesPopover_node_em_1 as ptr
@@ -6827,16 +6855,16 @@ L_strprop_node_11_class_34_TERNARY_TRUE_0:
   strprop_node_11_class_ternary_written_0 = 0
   jmp L_strprop_node_11_class_34_TERNARY_DONE_0
 L_strprop_node_11_class_34_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_11_class_ternary_dst_0, *sax_WorkspacesPopover_333, 9)
+  call @sax_mem_copy(*strprop_node_11_class_ternary_dst_0, *sax_WorkspacesPopover_327, 9)
   strprop_node_11_class_ternary_written_0 = 9
   jmp L_strprop_node_11_class_34_TERNARY_DONE_0
 L_strprop_node_11_class_34_TERNARY_DONE_0:
   strprop_len_node_11_class = add strprop_len_node_11_class, strprop_node_11_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_11, *sax_WorkspacesPopover_334, 9, *strprop_buf_node_11_class, strprop_len_node_11_class)
+  call @sax_dom_set_str_prop(node_11, *sax_WorkspacesPopover_328, 9, *strprop_buf_node_11_class, strprop_len_node_11_class)
   text_buf_em_1 = stack_alloc 32
   text_len_em_1 = 0
   text_dst_em_1_0 = ptr_add text_buf_em_1, text_len_em_1
-  call @sax_mem_copy(*text_dst_em_1_0, *sax_WorkspacesPopover_335, 3)
+  call @sax_mem_copy(*text_dst_em_1_0, *sax_WorkspacesPopover_329, 3)
   text_len_em_1 = add text_len_em_1, 3
   call @sax_dom_set_text(node_11, *text_buf_em_1, text_len_em_1)
   node_12 = load dom+sax_WorkspacesPopover_node_em_2 as ptr
@@ -6850,32 +6878,38 @@ L_strprop_node_12_class_35_TERNARY_TRUE_0:
   strprop_node_12_class_ternary_written_0 = 0
   jmp L_strprop_node_12_class_35_TERNARY_DONE_0
 L_strprop_node_12_class_35_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_12_class_ternary_dst_0, *sax_WorkspacesPopover_336, 9)
+  call @sax_mem_copy(*strprop_node_12_class_ternary_dst_0, *sax_WorkspacesPopover_330, 9)
   strprop_node_12_class_ternary_written_0 = 9
   jmp L_strprop_node_12_class_35_TERNARY_DONE_0
 L_strprop_node_12_class_35_TERNARY_DONE_0:
   strprop_len_node_12_class = add strprop_len_node_12_class, strprop_node_12_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_12, *sax_WorkspacesPopover_337, 9, *strprop_buf_node_12_class, strprop_len_node_12_class)
+  call @sax_dom_set_str_prop(node_12, *sax_WorkspacesPopover_331, 9, *strprop_buf_node_12_class, strprop_len_node_12_class)
   text_buf_em_2 = stack_alloc 32
   text_len_em_2 = 0
   text_dst_em_2_0 = ptr_add text_buf_em_2, text_len_em_2
-  call @sax_mem_copy(*text_dst_em_2_0, *sax_WorkspacesPopover_338, 3)
+  call @sax_mem_copy(*text_dst_em_2_0, *sax_WorkspacesPopover_332, 3)
   text_len_em_2 = add text_len_em_2, 3
   call @sax_dom_set_text(node_12, *text_buf_em_2, text_len_em_2)
   node_14 = load dom+sax_WorkspacesPopover_node_section_1 as ptr
-  call @sax_dom_set_str_prop(node_14, *sax_WorkspacesPopover_339, 9, *sax_WorkspacesPopover_340, 16)
+  call @sax_dom_set_str_prop(node_14, *sax_WorkspacesPopover_333, 9, *sax_WorkspacesPopover_334, 16)
   boolprop_node_14_hidden_load_0 = load state+WorkspacesPopover_workspace_hidden as i1
   boolprop_node_14_hidden_wide_1 = zext boolprop_node_14_hidden_load_0 as i64
   boolprop_node_14_hidden = ne boolprop_node_14_hidden_wide_1, 0
-  call @sax_dom_set_bool_prop(node_14, *sax_WorkspacesPopover_341, 6, boolprop_node_14_hidden)
+  call @sax_dom_set_bool_prop(node_14, *sax_WorkspacesPopover_335, 6, boolprop_node_14_hidden)
+  node_15 = load dom+sax_WorkspacesPopover_node_Backdrop as ptr
+  call @sax_backdrop_set_invisible(node_15, 1)
+  prop_expr_Backdrop_1_load_0 = load state+WorkspacesPopover_workspace_open as i1
+  prop_expr_Backdrop_1_wide_1 = zext prop_expr_Backdrop_1_load_0 as i64
+  call @sax_backdrop_set_open(node_15, prop_expr_Backdrop_1_wide_1)
+  call @sax_backdrop_render(node_15)
   node_16 = load dom+sax_WorkspacesPopover_node_Popover as ptr
   prop_expr_Popover_0_load_0 = load state+WorkspacesPopover_workspace_open as i1
   prop_expr_Popover_0_wide_1 = zext prop_expr_Popover_0_load_0 as i64
   call @sax_popover_set_open(node_16, prop_expr_Popover_0_wide_1)
-  call @sax_popover_set_anchorOriginVertical_str(node_16, *sax_WorkspacesPopover_342, 6)
-  call @sax_popover_set_anchorOriginHorizontal_str(node_16, *sax_WorkspacesPopover_343, 4)
-  call @sax_popover_set_transformOriginVertical_str(node_16, *sax_WorkspacesPopover_344, 3)
-  call @sax_popover_set_transformOriginHorizontal_str(node_16, *sax_WorkspacesPopover_345, 4)
+  call @sax_popover_set_anchorOriginVertical_str(node_16, *sax_WorkspacesPopover_336, 6)
+  call @sax_popover_set_anchorOriginHorizontal_str(node_16, *sax_WorkspacesPopover_337, 4)
+  call @sax_popover_set_transformOriginVertical_str(node_16, *sax_WorkspacesPopover_338, 3)
+  call @sax_popover_set_transformOriginHorizontal_str(node_16, *sax_WorkspacesPopover_339, 4)
   call @sax_popover_render(node_16)
   node_18 = load dom+sax_WorkspacesPopover_node_MenuItem as ptr
   prop_expr_MenuItem_0_load_0 = load state+WorkspacesPopover_workspace_team1 as i1
@@ -6920,14 +6954,14 @@ L_strprop_node_3_class_36_TERNARY_TRUE_0:
   strprop_node_3_class_ternary_written_0 = 0
   jmp L_strprop_node_3_class_36_TERNARY_DONE_0
 L_strprop_node_3_class_36_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_3_class_ternary_dst_0, *sax_WorkspacesPopover_346, 9)
+  call @sax_mem_copy(*strprop_node_3_class_ternary_dst_0, *sax_WorkspacesPopover_340, 9)
   strprop_node_3_class_ternary_written_0 = 9
   jmp L_strprop_node_3_class_36_TERNARY_DONE_0
 L_strprop_node_3_class_36_TERNARY_DONE_0:
   strprop_len_node_3_class = add strprop_len_node_3_class, strprop_node_3_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_347, 9, *strprop_buf_node_3_class, strprop_len_node_3_class)
-  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_348, 3, *sax_WorkspacesPopover_349, 35)
-  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_350, 3, *sax_WorkspacesPopover_351, 6)
+  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_341, 9, *strprop_buf_node_3_class, strprop_len_node_3_class)
+  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_342, 3, *sax_WorkspacesPopover_343, 35)
+  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_344, 3, *sax_WorkspacesPopover_345, 6)
   node_4 = load dom+sax_WorkspacesPopover_node_img_1 as ptr
   strprop_buf_node_4_class = stack_alloc 9
   strprop_len_node_4_class = 0
@@ -6939,14 +6973,14 @@ L_strprop_node_4_class_37_TERNARY_TRUE_0:
   strprop_node_4_class_ternary_written_0 = 0
   jmp L_strprop_node_4_class_37_TERNARY_DONE_0
 L_strprop_node_4_class_37_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_4_class_ternary_dst_0, *sax_WorkspacesPopover_352, 9)
+  call @sax_mem_copy(*strprop_node_4_class_ternary_dst_0, *sax_WorkspacesPopover_346, 9)
   strprop_node_4_class_ternary_written_0 = 9
   jmp L_strprop_node_4_class_37_TERNARY_DONE_0
 L_strprop_node_4_class_37_TERNARY_DONE_0:
   strprop_len_node_4_class = add strprop_len_node_4_class, strprop_node_4_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_353, 9, *strprop_buf_node_4_class, strprop_len_node_4_class)
-  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_354, 3, *sax_WorkspacesPopover_355, 35)
-  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_356, 3, *sax_WorkspacesPopover_357, 6)
+  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_347, 9, *strprop_buf_node_4_class, strprop_len_node_4_class)
+  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_348, 3, *sax_WorkspacesPopover_349, 35)
+  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_350, 3, *sax_WorkspacesPopover_351, 6)
   node_5 = load dom+sax_WorkspacesPopover_node_img_2 as ptr
   strprop_buf_node_5_class = stack_alloc 9
   strprop_len_node_5_class = 0
@@ -6958,14 +6992,14 @@ L_strprop_node_5_class_38_TERNARY_TRUE_0:
   strprop_node_5_class_ternary_written_0 = 0
   jmp L_strprop_node_5_class_38_TERNARY_DONE_0
 L_strprop_node_5_class_38_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_5_class_ternary_dst_0, *sax_WorkspacesPopover_358, 9)
+  call @sax_mem_copy(*strprop_node_5_class_ternary_dst_0, *sax_WorkspacesPopover_352, 9)
   strprop_node_5_class_ternary_written_0 = 9
   jmp L_strprop_node_5_class_38_TERNARY_DONE_0
 L_strprop_node_5_class_38_TERNARY_DONE_0:
   strprop_len_node_5_class = add strprop_len_node_5_class, strprop_node_5_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_359, 9, *strprop_buf_node_5_class, strprop_len_node_5_class)
-  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_360, 3, *sax_WorkspacesPopover_361, 35)
-  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_362, 3, *sax_WorkspacesPopover_363, 6)
+  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_353, 9, *strprop_buf_node_5_class, strprop_len_node_5_class)
+  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_354, 3, *sax_WorkspacesPopover_355, 35)
+  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_356, 3, *sax_WorkspacesPopover_357, 6)
   node_7 = load dom+sax_WorkspacesPopover_node_strong as ptr
   strprop_buf_node_7_class = stack_alloc 9
   strprop_len_node_7_class = 0
@@ -6977,16 +7011,16 @@ L_strprop_node_7_class_39_TERNARY_TRUE_0:
   strprop_node_7_class_ternary_written_0 = 0
   jmp L_strprop_node_7_class_39_TERNARY_DONE_0
 L_strprop_node_7_class_39_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_7_class_ternary_dst_0, *sax_WorkspacesPopover_364, 9)
+  call @sax_mem_copy(*strprop_node_7_class_ternary_dst_0, *sax_WorkspacesPopover_358, 9)
   strprop_node_7_class_ternary_written_0 = 9
   jmp L_strprop_node_7_class_39_TERNARY_DONE_0
 L_strprop_node_7_class_39_TERNARY_DONE_0:
   strprop_len_node_7_class = add strprop_len_node_7_class, strprop_node_7_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_7, *sax_WorkspacesPopover_365, 9, *strprop_buf_node_7_class, strprop_len_node_7_class)
+  call @sax_dom_set_str_prop(node_7, *sax_WorkspacesPopover_359, 9, *strprop_buf_node_7_class, strprop_len_node_7_class)
   text_buf_strong = stack_alloc 32
   text_len_strong = 0
   text_dst_strong_0 = ptr_add text_buf_strong, text_len_strong
-  call @sax_mem_copy(*text_dst_strong_0, *sax_WorkspacesPopover_366, 6)
+  call @sax_mem_copy(*text_dst_strong_0, *sax_WorkspacesPopover_360, 6)
   text_len_strong = add text_len_strong, 6
   call @sax_dom_set_text(node_7, *text_buf_strong, text_len_strong)
   node_8 = load dom+sax_WorkspacesPopover_node_strong_1 as ptr
@@ -7000,16 +7034,16 @@ L_strprop_node_8_class_40_TERNARY_TRUE_0:
   strprop_node_8_class_ternary_written_0 = 0
   jmp L_strprop_node_8_class_40_TERNARY_DONE_0
 L_strprop_node_8_class_40_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_8_class_ternary_dst_0, *sax_WorkspacesPopover_367, 9)
+  call @sax_mem_copy(*strprop_node_8_class_ternary_dst_0, *sax_WorkspacesPopover_361, 9)
   strprop_node_8_class_ternary_written_0 = 9
   jmp L_strprop_node_8_class_40_TERNARY_DONE_0
 L_strprop_node_8_class_40_TERNARY_DONE_0:
   strprop_len_node_8_class = add strprop_len_node_8_class, strprop_node_8_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_8, *sax_WorkspacesPopover_368, 9, *strprop_buf_node_8_class, strprop_len_node_8_class)
+  call @sax_dom_set_str_prop(node_8, *sax_WorkspacesPopover_362, 9, *strprop_buf_node_8_class, strprop_len_node_8_class)
   text_buf_strong_1 = stack_alloc 32
   text_len_strong_1 = 0
   text_dst_strong_1_0 = ptr_add text_buf_strong_1, text_len_strong_1
-  call @sax_mem_copy(*text_dst_strong_1_0, *sax_WorkspacesPopover_369, 6)
+  call @sax_mem_copy(*text_dst_strong_1_0, *sax_WorkspacesPopover_363, 6)
   text_len_strong_1 = add text_len_strong_1, 6
   call @sax_dom_set_text(node_8, *text_buf_strong_1, text_len_strong_1)
   node_9 = load dom+sax_WorkspacesPopover_node_strong_2 as ptr
@@ -7023,16 +7057,16 @@ L_strprop_node_9_class_41_TERNARY_TRUE_0:
   strprop_node_9_class_ternary_written_0 = 0
   jmp L_strprop_node_9_class_41_TERNARY_DONE_0
 L_strprop_node_9_class_41_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_9_class_ternary_dst_0, *sax_WorkspacesPopover_370, 9)
+  call @sax_mem_copy(*strprop_node_9_class_ternary_dst_0, *sax_WorkspacesPopover_364, 9)
   strprop_node_9_class_ternary_written_0 = 9
   jmp L_strprop_node_9_class_41_TERNARY_DONE_0
 L_strprop_node_9_class_41_TERNARY_DONE_0:
   strprop_len_node_9_class = add strprop_len_node_9_class, strprop_node_9_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_9, *sax_WorkspacesPopover_371, 9, *strprop_buf_node_9_class, strprop_len_node_9_class)
+  call @sax_dom_set_str_prop(node_9, *sax_WorkspacesPopover_365, 9, *strprop_buf_node_9_class, strprop_len_node_9_class)
   text_buf_strong_2 = stack_alloc 32
   text_len_strong_2 = 0
   text_dst_strong_2_0 = ptr_add text_buf_strong_2, text_len_strong_2
-  call @sax_mem_copy(*text_dst_strong_2_0, *sax_WorkspacesPopover_372, 6)
+  call @sax_mem_copy(*text_dst_strong_2_0, *sax_WorkspacesPopover_366, 6)
   text_len_strong_2 = add text_len_strong_2, 6
   call @sax_dom_set_text(node_9, *text_buf_strong_2, text_len_strong_2)
   node_10 = load dom+sax_WorkspacesPopover_node_em as ptr
@@ -7046,16 +7080,16 @@ L_strprop_node_10_class_42_TERNARY_TRUE_0:
   strprop_node_10_class_ternary_written_0 = 0
   jmp L_strprop_node_10_class_42_TERNARY_DONE_0
 L_strprop_node_10_class_42_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_10_class_ternary_dst_0, *sax_WorkspacesPopover_373, 9)
+  call @sax_mem_copy(*strprop_node_10_class_ternary_dst_0, *sax_WorkspacesPopover_367, 9)
   strprop_node_10_class_ternary_written_0 = 9
   jmp L_strprop_node_10_class_42_TERNARY_DONE_0
 L_strprop_node_10_class_42_TERNARY_DONE_0:
   strprop_len_node_10_class = add strprop_len_node_10_class, strprop_node_10_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_10, *sax_WorkspacesPopover_374, 9, *strprop_buf_node_10_class, strprop_len_node_10_class)
+  call @sax_dom_set_str_prop(node_10, *sax_WorkspacesPopover_368, 9, *strprop_buf_node_10_class, strprop_len_node_10_class)
   text_buf_em = stack_alloc 32
   text_len_em = 0
   text_dst_em_0 = ptr_add text_buf_em, text_len_em
-  call @sax_mem_copy(*text_dst_em_0, *sax_WorkspacesPopover_375, 4)
+  call @sax_mem_copy(*text_dst_em_0, *sax_WorkspacesPopover_369, 4)
   text_len_em = add text_len_em, 4
   call @sax_dom_set_text(node_10, *text_buf_em, text_len_em)
   node_11 = load dom+sax_WorkspacesPopover_node_em_1 as ptr
@@ -7069,16 +7103,16 @@ L_strprop_node_11_class_43_TERNARY_TRUE_0:
   strprop_node_11_class_ternary_written_0 = 0
   jmp L_strprop_node_11_class_43_TERNARY_DONE_0
 L_strprop_node_11_class_43_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_11_class_ternary_dst_0, *sax_WorkspacesPopover_376, 9)
+  call @sax_mem_copy(*strprop_node_11_class_ternary_dst_0, *sax_WorkspacesPopover_370, 9)
   strprop_node_11_class_ternary_written_0 = 9
   jmp L_strprop_node_11_class_43_TERNARY_DONE_0
 L_strprop_node_11_class_43_TERNARY_DONE_0:
   strprop_len_node_11_class = add strprop_len_node_11_class, strprop_node_11_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_11, *sax_WorkspacesPopover_377, 9, *strprop_buf_node_11_class, strprop_len_node_11_class)
+  call @sax_dom_set_str_prop(node_11, *sax_WorkspacesPopover_371, 9, *strprop_buf_node_11_class, strprop_len_node_11_class)
   text_buf_em_1 = stack_alloc 32
   text_len_em_1 = 0
   text_dst_em_1_0 = ptr_add text_buf_em_1, text_len_em_1
-  call @sax_mem_copy(*text_dst_em_1_0, *sax_WorkspacesPopover_378, 3)
+  call @sax_mem_copy(*text_dst_em_1_0, *sax_WorkspacesPopover_372, 3)
   text_len_em_1 = add text_len_em_1, 3
   call @sax_dom_set_text(node_11, *text_buf_em_1, text_len_em_1)
   node_12 = load dom+sax_WorkspacesPopover_node_em_2 as ptr
@@ -7092,32 +7126,38 @@ L_strprop_node_12_class_44_TERNARY_TRUE_0:
   strprop_node_12_class_ternary_written_0 = 0
   jmp L_strprop_node_12_class_44_TERNARY_DONE_0
 L_strprop_node_12_class_44_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_12_class_ternary_dst_0, *sax_WorkspacesPopover_379, 9)
+  call @sax_mem_copy(*strprop_node_12_class_ternary_dst_0, *sax_WorkspacesPopover_373, 9)
   strprop_node_12_class_ternary_written_0 = 9
   jmp L_strprop_node_12_class_44_TERNARY_DONE_0
 L_strprop_node_12_class_44_TERNARY_DONE_0:
   strprop_len_node_12_class = add strprop_len_node_12_class, strprop_node_12_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_12, *sax_WorkspacesPopover_380, 9, *strprop_buf_node_12_class, strprop_len_node_12_class)
+  call @sax_dom_set_str_prop(node_12, *sax_WorkspacesPopover_374, 9, *strprop_buf_node_12_class, strprop_len_node_12_class)
   text_buf_em_2 = stack_alloc 32
   text_len_em_2 = 0
   text_dst_em_2_0 = ptr_add text_buf_em_2, text_len_em_2
-  call @sax_mem_copy(*text_dst_em_2_0, *sax_WorkspacesPopover_381, 3)
+  call @sax_mem_copy(*text_dst_em_2_0, *sax_WorkspacesPopover_375, 3)
   text_len_em_2 = add text_len_em_2, 3
   call @sax_dom_set_text(node_12, *text_buf_em_2, text_len_em_2)
   node_14 = load dom+sax_WorkspacesPopover_node_section_1 as ptr
-  call @sax_dom_set_str_prop(node_14, *sax_WorkspacesPopover_382, 9, *sax_WorkspacesPopover_383, 16)
+  call @sax_dom_set_str_prop(node_14, *sax_WorkspacesPopover_376, 9, *sax_WorkspacesPopover_377, 16)
   boolprop_node_14_hidden_load_0 = load state+WorkspacesPopover_workspace_hidden as i1
   boolprop_node_14_hidden_wide_1 = zext boolprop_node_14_hidden_load_0 as i64
   boolprop_node_14_hidden = ne boolprop_node_14_hidden_wide_1, 0
-  call @sax_dom_set_bool_prop(node_14, *sax_WorkspacesPopover_384, 6, boolprop_node_14_hidden)
+  call @sax_dom_set_bool_prop(node_14, *sax_WorkspacesPopover_378, 6, boolprop_node_14_hidden)
+  node_15 = load dom+sax_WorkspacesPopover_node_Backdrop as ptr
+  call @sax_backdrop_set_invisible(node_15, 1)
+  prop_expr_Backdrop_1_load_0 = load state+WorkspacesPopover_workspace_open as i1
+  prop_expr_Backdrop_1_wide_1 = zext prop_expr_Backdrop_1_load_0 as i64
+  call @sax_backdrop_set_open(node_15, prop_expr_Backdrop_1_wide_1)
+  call @sax_backdrop_render(node_15)
   node_16 = load dom+sax_WorkspacesPopover_node_Popover as ptr
   prop_expr_Popover_0_load_0 = load state+WorkspacesPopover_workspace_open as i1
   prop_expr_Popover_0_wide_1 = zext prop_expr_Popover_0_load_0 as i64
   call @sax_popover_set_open(node_16, prop_expr_Popover_0_wide_1)
-  call @sax_popover_set_anchorOriginVertical_str(node_16, *sax_WorkspacesPopover_385, 6)
-  call @sax_popover_set_anchorOriginHorizontal_str(node_16, *sax_WorkspacesPopover_386, 4)
-  call @sax_popover_set_transformOriginVertical_str(node_16, *sax_WorkspacesPopover_387, 3)
-  call @sax_popover_set_transformOriginHorizontal_str(node_16, *sax_WorkspacesPopover_388, 4)
+  call @sax_popover_set_anchorOriginVertical_str(node_16, *sax_WorkspacesPopover_379, 6)
+  call @sax_popover_set_anchorOriginHorizontal_str(node_16, *sax_WorkspacesPopover_380, 4)
+  call @sax_popover_set_transformOriginVertical_str(node_16, *sax_WorkspacesPopover_381, 3)
+  call @sax_popover_set_transformOriginHorizontal_str(node_16, *sax_WorkspacesPopover_382, 4)
   call @sax_popover_render(node_16)
   node_18 = load dom+sax_WorkspacesPopover_node_MenuItem as ptr
   prop_expr_MenuItem_0_load_0 = load state+WorkspacesPopover_workspace_team1 as i1
@@ -7162,14 +7202,14 @@ L_strprop_node_3_class_45_TERNARY_TRUE_0:
   strprop_node_3_class_ternary_written_0 = 0
   jmp L_strprop_node_3_class_45_TERNARY_DONE_0
 L_strprop_node_3_class_45_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_3_class_ternary_dst_0, *sax_WorkspacesPopover_389, 9)
+  call @sax_mem_copy(*strprop_node_3_class_ternary_dst_0, *sax_WorkspacesPopover_383, 9)
   strprop_node_3_class_ternary_written_0 = 9
   jmp L_strprop_node_3_class_45_TERNARY_DONE_0
 L_strprop_node_3_class_45_TERNARY_DONE_0:
   strprop_len_node_3_class = add strprop_len_node_3_class, strprop_node_3_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_390, 9, *strprop_buf_node_3_class, strprop_len_node_3_class)
-  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_391, 3, *sax_WorkspacesPopover_392, 35)
-  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_393, 3, *sax_WorkspacesPopover_394, 6)
+  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_384, 9, *strprop_buf_node_3_class, strprop_len_node_3_class)
+  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_385, 3, *sax_WorkspacesPopover_386, 35)
+  call @sax_dom_set_str_prop(node_3, *sax_WorkspacesPopover_387, 3, *sax_WorkspacesPopover_388, 6)
   node_4 = load dom+sax_WorkspacesPopover_node_img_1 as ptr
   strprop_buf_node_4_class = stack_alloc 9
   strprop_len_node_4_class = 0
@@ -7181,14 +7221,14 @@ L_strprop_node_4_class_46_TERNARY_TRUE_0:
   strprop_node_4_class_ternary_written_0 = 0
   jmp L_strprop_node_4_class_46_TERNARY_DONE_0
 L_strprop_node_4_class_46_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_4_class_ternary_dst_0, *sax_WorkspacesPopover_395, 9)
+  call @sax_mem_copy(*strprop_node_4_class_ternary_dst_0, *sax_WorkspacesPopover_389, 9)
   strprop_node_4_class_ternary_written_0 = 9
   jmp L_strprop_node_4_class_46_TERNARY_DONE_0
 L_strprop_node_4_class_46_TERNARY_DONE_0:
   strprop_len_node_4_class = add strprop_len_node_4_class, strprop_node_4_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_396, 9, *strprop_buf_node_4_class, strprop_len_node_4_class)
-  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_397, 3, *sax_WorkspacesPopover_398, 35)
-  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_399, 3, *sax_WorkspacesPopover_400, 6)
+  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_390, 9, *strprop_buf_node_4_class, strprop_len_node_4_class)
+  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_391, 3, *sax_WorkspacesPopover_392, 35)
+  call @sax_dom_set_str_prop(node_4, *sax_WorkspacesPopover_393, 3, *sax_WorkspacesPopover_394, 6)
   node_5 = load dom+sax_WorkspacesPopover_node_img_2 as ptr
   strprop_buf_node_5_class = stack_alloc 9
   strprop_len_node_5_class = 0
@@ -7200,14 +7240,14 @@ L_strprop_node_5_class_47_TERNARY_TRUE_0:
   strprop_node_5_class_ternary_written_0 = 0
   jmp L_strprop_node_5_class_47_TERNARY_DONE_0
 L_strprop_node_5_class_47_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_5_class_ternary_dst_0, *sax_WorkspacesPopover_401, 9)
+  call @sax_mem_copy(*strprop_node_5_class_ternary_dst_0, *sax_WorkspacesPopover_395, 9)
   strprop_node_5_class_ternary_written_0 = 9
   jmp L_strprop_node_5_class_47_TERNARY_DONE_0
 L_strprop_node_5_class_47_TERNARY_DONE_0:
   strprop_len_node_5_class = add strprop_len_node_5_class, strprop_node_5_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_402, 9, *strprop_buf_node_5_class, strprop_len_node_5_class)
-  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_403, 3, *sax_WorkspacesPopover_404, 35)
-  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_405, 3, *sax_WorkspacesPopover_406, 6)
+  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_396, 9, *strprop_buf_node_5_class, strprop_len_node_5_class)
+  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_397, 3, *sax_WorkspacesPopover_398, 35)
+  call @sax_dom_set_str_prop(node_5, *sax_WorkspacesPopover_399, 3, *sax_WorkspacesPopover_400, 6)
   node_7 = load dom+sax_WorkspacesPopover_node_strong as ptr
   strprop_buf_node_7_class = stack_alloc 9
   strprop_len_node_7_class = 0
@@ -7219,16 +7259,16 @@ L_strprop_node_7_class_48_TERNARY_TRUE_0:
   strprop_node_7_class_ternary_written_0 = 0
   jmp L_strprop_node_7_class_48_TERNARY_DONE_0
 L_strprop_node_7_class_48_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_7_class_ternary_dst_0, *sax_WorkspacesPopover_407, 9)
+  call @sax_mem_copy(*strprop_node_7_class_ternary_dst_0, *sax_WorkspacesPopover_401, 9)
   strprop_node_7_class_ternary_written_0 = 9
   jmp L_strprop_node_7_class_48_TERNARY_DONE_0
 L_strprop_node_7_class_48_TERNARY_DONE_0:
   strprop_len_node_7_class = add strprop_len_node_7_class, strprop_node_7_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_7, *sax_WorkspacesPopover_408, 9, *strprop_buf_node_7_class, strprop_len_node_7_class)
+  call @sax_dom_set_str_prop(node_7, *sax_WorkspacesPopover_402, 9, *strprop_buf_node_7_class, strprop_len_node_7_class)
   text_buf_strong = stack_alloc 32
   text_len_strong = 0
   text_dst_strong_0 = ptr_add text_buf_strong, text_len_strong
-  call @sax_mem_copy(*text_dst_strong_0, *sax_WorkspacesPopover_409, 6)
+  call @sax_mem_copy(*text_dst_strong_0, *sax_WorkspacesPopover_403, 6)
   text_len_strong = add text_len_strong, 6
   call @sax_dom_set_text(node_7, *text_buf_strong, text_len_strong)
   node_8 = load dom+sax_WorkspacesPopover_node_strong_1 as ptr
@@ -7242,16 +7282,16 @@ L_strprop_node_8_class_49_TERNARY_TRUE_0:
   strprop_node_8_class_ternary_written_0 = 0
   jmp L_strprop_node_8_class_49_TERNARY_DONE_0
 L_strprop_node_8_class_49_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_8_class_ternary_dst_0, *sax_WorkspacesPopover_410, 9)
+  call @sax_mem_copy(*strprop_node_8_class_ternary_dst_0, *sax_WorkspacesPopover_404, 9)
   strprop_node_8_class_ternary_written_0 = 9
   jmp L_strprop_node_8_class_49_TERNARY_DONE_0
 L_strprop_node_8_class_49_TERNARY_DONE_0:
   strprop_len_node_8_class = add strprop_len_node_8_class, strprop_node_8_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_8, *sax_WorkspacesPopover_411, 9, *strprop_buf_node_8_class, strprop_len_node_8_class)
+  call @sax_dom_set_str_prop(node_8, *sax_WorkspacesPopover_405, 9, *strprop_buf_node_8_class, strprop_len_node_8_class)
   text_buf_strong_1 = stack_alloc 32
   text_len_strong_1 = 0
   text_dst_strong_1_0 = ptr_add text_buf_strong_1, text_len_strong_1
-  call @sax_mem_copy(*text_dst_strong_1_0, *sax_WorkspacesPopover_412, 6)
+  call @sax_mem_copy(*text_dst_strong_1_0, *sax_WorkspacesPopover_406, 6)
   text_len_strong_1 = add text_len_strong_1, 6
   call @sax_dom_set_text(node_8, *text_buf_strong_1, text_len_strong_1)
   node_9 = load dom+sax_WorkspacesPopover_node_strong_2 as ptr
@@ -7265,16 +7305,16 @@ L_strprop_node_9_class_50_TERNARY_TRUE_0:
   strprop_node_9_class_ternary_written_0 = 0
   jmp L_strprop_node_9_class_50_TERNARY_DONE_0
 L_strprop_node_9_class_50_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_9_class_ternary_dst_0, *sax_WorkspacesPopover_413, 9)
+  call @sax_mem_copy(*strprop_node_9_class_ternary_dst_0, *sax_WorkspacesPopover_407, 9)
   strprop_node_9_class_ternary_written_0 = 9
   jmp L_strprop_node_9_class_50_TERNARY_DONE_0
 L_strprop_node_9_class_50_TERNARY_DONE_0:
   strprop_len_node_9_class = add strprop_len_node_9_class, strprop_node_9_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_9, *sax_WorkspacesPopover_414, 9, *strprop_buf_node_9_class, strprop_len_node_9_class)
+  call @sax_dom_set_str_prop(node_9, *sax_WorkspacesPopover_408, 9, *strprop_buf_node_9_class, strprop_len_node_9_class)
   text_buf_strong_2 = stack_alloc 32
   text_len_strong_2 = 0
   text_dst_strong_2_0 = ptr_add text_buf_strong_2, text_len_strong_2
-  call @sax_mem_copy(*text_dst_strong_2_0, *sax_WorkspacesPopover_415, 6)
+  call @sax_mem_copy(*text_dst_strong_2_0, *sax_WorkspacesPopover_409, 6)
   text_len_strong_2 = add text_len_strong_2, 6
   call @sax_dom_set_text(node_9, *text_buf_strong_2, text_len_strong_2)
   node_10 = load dom+sax_WorkspacesPopover_node_em as ptr
@@ -7288,16 +7328,16 @@ L_strprop_node_10_class_51_TERNARY_TRUE_0:
   strprop_node_10_class_ternary_written_0 = 0
   jmp L_strprop_node_10_class_51_TERNARY_DONE_0
 L_strprop_node_10_class_51_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_10_class_ternary_dst_0, *sax_WorkspacesPopover_416, 9)
+  call @sax_mem_copy(*strprop_node_10_class_ternary_dst_0, *sax_WorkspacesPopover_410, 9)
   strprop_node_10_class_ternary_written_0 = 9
   jmp L_strprop_node_10_class_51_TERNARY_DONE_0
 L_strprop_node_10_class_51_TERNARY_DONE_0:
   strprop_len_node_10_class = add strprop_len_node_10_class, strprop_node_10_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_10, *sax_WorkspacesPopover_417, 9, *strprop_buf_node_10_class, strprop_len_node_10_class)
+  call @sax_dom_set_str_prop(node_10, *sax_WorkspacesPopover_411, 9, *strprop_buf_node_10_class, strprop_len_node_10_class)
   text_buf_em = stack_alloc 32
   text_len_em = 0
   text_dst_em_0 = ptr_add text_buf_em, text_len_em
-  call @sax_mem_copy(*text_dst_em_0, *sax_WorkspacesPopover_418, 4)
+  call @sax_mem_copy(*text_dst_em_0, *sax_WorkspacesPopover_412, 4)
   text_len_em = add text_len_em, 4
   call @sax_dom_set_text(node_10, *text_buf_em, text_len_em)
   node_11 = load dom+sax_WorkspacesPopover_node_em_1 as ptr
@@ -7311,16 +7351,16 @@ L_strprop_node_11_class_52_TERNARY_TRUE_0:
   strprop_node_11_class_ternary_written_0 = 0
   jmp L_strprop_node_11_class_52_TERNARY_DONE_0
 L_strprop_node_11_class_52_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_11_class_ternary_dst_0, *sax_WorkspacesPopover_419, 9)
+  call @sax_mem_copy(*strprop_node_11_class_ternary_dst_0, *sax_WorkspacesPopover_413, 9)
   strprop_node_11_class_ternary_written_0 = 9
   jmp L_strprop_node_11_class_52_TERNARY_DONE_0
 L_strprop_node_11_class_52_TERNARY_DONE_0:
   strprop_len_node_11_class = add strprop_len_node_11_class, strprop_node_11_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_11, *sax_WorkspacesPopover_420, 9, *strprop_buf_node_11_class, strprop_len_node_11_class)
+  call @sax_dom_set_str_prop(node_11, *sax_WorkspacesPopover_414, 9, *strprop_buf_node_11_class, strprop_len_node_11_class)
   text_buf_em_1 = stack_alloc 32
   text_len_em_1 = 0
   text_dst_em_1_0 = ptr_add text_buf_em_1, text_len_em_1
-  call @sax_mem_copy(*text_dst_em_1_0, *sax_WorkspacesPopover_421, 3)
+  call @sax_mem_copy(*text_dst_em_1_0, *sax_WorkspacesPopover_415, 3)
   text_len_em_1 = add text_len_em_1, 3
   call @sax_dom_set_text(node_11, *text_buf_em_1, text_len_em_1)
   node_12 = load dom+sax_WorkspacesPopover_node_em_2 as ptr
@@ -7334,32 +7374,38 @@ L_strprop_node_12_class_53_TERNARY_TRUE_0:
   strprop_node_12_class_ternary_written_0 = 0
   jmp L_strprop_node_12_class_53_TERNARY_DONE_0
 L_strprop_node_12_class_53_TERNARY_FALSE_0:
-  call @sax_mem_copy(*strprop_node_12_class_ternary_dst_0, *sax_WorkspacesPopover_422, 9)
+  call @sax_mem_copy(*strprop_node_12_class_ternary_dst_0, *sax_WorkspacesPopover_416, 9)
   strprop_node_12_class_ternary_written_0 = 9
   jmp L_strprop_node_12_class_53_TERNARY_DONE_0
 L_strprop_node_12_class_53_TERNARY_DONE_0:
   strprop_len_node_12_class = add strprop_len_node_12_class, strprop_node_12_class_ternary_written_0
-  call @sax_dom_set_str_prop(node_12, *sax_WorkspacesPopover_423, 9, *strprop_buf_node_12_class, strprop_len_node_12_class)
+  call @sax_dom_set_str_prop(node_12, *sax_WorkspacesPopover_417, 9, *strprop_buf_node_12_class, strprop_len_node_12_class)
   text_buf_em_2 = stack_alloc 32
   text_len_em_2 = 0
   text_dst_em_2_0 = ptr_add text_buf_em_2, text_len_em_2
-  call @sax_mem_copy(*text_dst_em_2_0, *sax_WorkspacesPopover_424, 3)
+  call @sax_mem_copy(*text_dst_em_2_0, *sax_WorkspacesPopover_418, 3)
   text_len_em_2 = add text_len_em_2, 3
   call @sax_dom_set_text(node_12, *text_buf_em_2, text_len_em_2)
   node_14 = load dom+sax_WorkspacesPopover_node_section_1 as ptr
-  call @sax_dom_set_str_prop(node_14, *sax_WorkspacesPopover_425, 9, *sax_WorkspacesPopover_426, 16)
+  call @sax_dom_set_str_prop(node_14, *sax_WorkspacesPopover_419, 9, *sax_WorkspacesPopover_420, 16)
   boolprop_node_14_hidden_load_0 = load state+WorkspacesPopover_workspace_hidden as i1
   boolprop_node_14_hidden_wide_1 = zext boolprop_node_14_hidden_load_0 as i64
   boolprop_node_14_hidden = ne boolprop_node_14_hidden_wide_1, 0
-  call @sax_dom_set_bool_prop(node_14, *sax_WorkspacesPopover_427, 6, boolprop_node_14_hidden)
+  call @sax_dom_set_bool_prop(node_14, *sax_WorkspacesPopover_421, 6, boolprop_node_14_hidden)
+  node_15 = load dom+sax_WorkspacesPopover_node_Backdrop as ptr
+  call @sax_backdrop_set_invisible(node_15, 1)
+  prop_expr_Backdrop_1_load_0 = load state+WorkspacesPopover_workspace_open as i1
+  prop_expr_Backdrop_1_wide_1 = zext prop_expr_Backdrop_1_load_0 as i64
+  call @sax_backdrop_set_open(node_15, prop_expr_Backdrop_1_wide_1)
+  call @sax_backdrop_render(node_15)
   node_16 = load dom+sax_WorkspacesPopover_node_Popover as ptr
   prop_expr_Popover_0_load_0 = load state+WorkspacesPopover_workspace_open as i1
   prop_expr_Popover_0_wide_1 = zext prop_expr_Popover_0_load_0 as i64
   call @sax_popover_set_open(node_16, prop_expr_Popover_0_wide_1)
-  call @sax_popover_set_anchorOriginVertical_str(node_16, *sax_WorkspacesPopover_428, 6)
-  call @sax_popover_set_anchorOriginHorizontal_str(node_16, *sax_WorkspacesPopover_429, 4)
-  call @sax_popover_set_transformOriginVertical_str(node_16, *sax_WorkspacesPopover_430, 3)
-  call @sax_popover_set_transformOriginHorizontal_str(node_16, *sax_WorkspacesPopover_431, 4)
+  call @sax_popover_set_anchorOriginVertical_str(node_16, *sax_WorkspacesPopover_422, 6)
+  call @sax_popover_set_anchorOriginHorizontal_str(node_16, *sax_WorkspacesPopover_423, 4)
+  call @sax_popover_set_transformOriginVertical_str(node_16, *sax_WorkspacesPopover_424, 3)
+  call @sax_popover_set_transformOriginHorizontal_str(node_16, *sax_WorkspacesPopover_425, 4)
   call @sax_popover_render(node_16)
   node_18 = load dom+sax_WorkspacesPopover_node_MenuItem as ptr
   prop_expr_MenuItem_0_load_0 = load state+WorkspacesPopover_workspace_team1 as i1
@@ -7418,8 +7464,8 @@ L_ENTRY:
   call @sax_dom_remove_self(node_13)
   node_14 = load dom+sax_WorkspacesPopover_node_section_1 as ptr
   call @sax_dom_remove_self(node_14)
-  node_15 = load dom+sax_WorkspacesPopover_node_button_1 as ptr
-  call @sax_dom_remove_self(node_15)
+  node_15 = load dom+sax_WorkspacesPopover_node_Backdrop as ptr
+  call @sax_backdrop_destroy(node_15)
   node_16 = load dom+sax_WorkspacesPopover_node_Popover as ptr
   call @sax_popover_destroy(node_16)
   node_17 = load dom+sax_WorkspacesPopover_node_MenuList as ptr
@@ -7478,7 +7524,7 @@ L_ENTRY:
 @const sax_WorkspacesPopover_12 = utf8:"em"
 @const sax_WorkspacesPopover_13 = utf8:"span"
 @const sax_WorkspacesPopover_14 = utf8:"section"
-@const sax_WorkspacesPopover_15 = utf8:"button"
+@const sax_WorkspacesPopover_15 = utf8:"Backdrop"
 @const sax_WorkspacesPopover_16 = utf8:"Popover"
 @const sax_WorkspacesPopover_17 = utf8:"MenuList"
 @const sax_WorkspacesPopover_18 = utf8:"MenuItem"
@@ -7536,74 +7582,74 @@ L_ENTRY:
 @const sax_WorkspacesPopover_70 = utf8:"mk-overlay-state"
 @const sax_WorkspacesPopover_71 = utf8:"hidden"
 @const sax_WorkspacesPopover_72 = utf8:"className"
-@const sax_WorkspacesPopover_73 = utf8:"mk-click-away"
-@const sax_WorkspacesPopover_74 = utf8:"click"
-@const sax_WorkspacesPopover_75 = utf8:"sax_workspacespopover_close_workspace"
-@const sax_WorkspacesPopover_76 = utf8:"className"
-@const sax_WorkspacesPopover_77 = utf8:"mk-menu-icon mk-workspace-menu-icon"
-@const sax_WorkspacesPopover_78 = utf8:"src"
-@const sax_WorkspacesPopover_79 = utf8:"assets/icons/workspaces/logo-1.webp"
-@const sax_WorkspacesPopover_80 = utf8:"alt"
-@const sax_WorkspacesPopover_81 = utf8:"Team 1"
-@const sax_WorkspacesPopover_82 = utf8:"className"
-@const sax_WorkspacesPopover_83 = utf8:"mk-plan-label"
-@const sax_WorkspacesPopover_84 = utf8:"className"
-@const sax_WorkspacesPopover_85 = utf8:"mk-menu-icon mk-workspace-menu-icon"
-@const sax_WorkspacesPopover_86 = utf8:"src"
-@const sax_WorkspacesPopover_87 = utf8:"assets/icons/workspaces/logo-2.webp"
-@const sax_WorkspacesPopover_88 = utf8:"alt"
-@const sax_WorkspacesPopover_89 = utf8:"Team 2"
-@const sax_WorkspacesPopover_90 = utf8:"className"
-@const sax_WorkspacesPopover_91 = utf8:"mk-plan-label mk-plan-info"
-@const sax_WorkspacesPopover_92 = utf8:"className"
-@const sax_WorkspacesPopover_93 = utf8:"mk-menu-icon mk-workspace-menu-icon"
-@const sax_WorkspacesPopover_94 = utf8:"src"
-@const sax_WorkspacesPopover_95 = utf8:"assets/icons/workspaces/logo-3.webp"
-@const sax_WorkspacesPopover_96 = utf8:"alt"
-@const sax_WorkspacesPopover_97 = utf8:"Team 3"
-@const sax_WorkspacesPopover_98 = utf8:"className"
-@const sax_WorkspacesPopover_99 = utf8:"mk-plan-label mk-plan-info"
-@const sax_WorkspacesPopover_100 = utf8:"bottom"
+@const sax_WorkspacesPopover_73 = utf8:"mk-menu-icon mk-workspace-menu-icon"
+@const sax_WorkspacesPopover_74 = utf8:"src"
+@const sax_WorkspacesPopover_75 = utf8:"assets/icons/workspaces/logo-1.webp"
+@const sax_WorkspacesPopover_76 = utf8:"alt"
+@const sax_WorkspacesPopover_77 = utf8:"Team 1"
+@const sax_WorkspacesPopover_78 = utf8:"className"
+@const sax_WorkspacesPopover_79 = utf8:"mk-plan-label"
+@const sax_WorkspacesPopover_80 = utf8:"className"
+@const sax_WorkspacesPopover_81 = utf8:"mk-menu-icon mk-workspace-menu-icon"
+@const sax_WorkspacesPopover_82 = utf8:"src"
+@const sax_WorkspacesPopover_83 = utf8:"assets/icons/workspaces/logo-2.webp"
+@const sax_WorkspacesPopover_84 = utf8:"alt"
+@const sax_WorkspacesPopover_85 = utf8:"Team 2"
+@const sax_WorkspacesPopover_86 = utf8:"className"
+@const sax_WorkspacesPopover_87 = utf8:"mk-plan-label mk-plan-info"
+@const sax_WorkspacesPopover_88 = utf8:"className"
+@const sax_WorkspacesPopover_89 = utf8:"mk-menu-icon mk-workspace-menu-icon"
+@const sax_WorkspacesPopover_90 = utf8:"src"
+@const sax_WorkspacesPopover_91 = utf8:"assets/icons/workspaces/logo-3.webp"
+@const sax_WorkspacesPopover_92 = utf8:"alt"
+@const sax_WorkspacesPopover_93 = utf8:"Team 3"
+@const sax_WorkspacesPopover_94 = utf8:"className"
+@const sax_WorkspacesPopover_95 = utf8:"mk-plan-label mk-plan-info"
+@const sax_WorkspacesPopover_96 = utf8:"click"
+@const sax_WorkspacesPopover_97 = utf8:"sax_workspacespopover_close_workspace"
+@const sax_WorkspacesPopover_98 = utf8:"bottom"
+@const sax_WorkspacesPopover_99 = utf8:"left"
+@const sax_WorkspacesPopover_100 = utf8:"top"
 @const sax_WorkspacesPopover_101 = utf8:"left"
-@const sax_WorkspacesPopover_102 = utf8:"top"
-@const sax_WorkspacesPopover_103 = utf8:"left"
-@const sax_WorkspacesPopover_104 = utf8:"click"
-@const sax_WorkspacesPopover_105 = utf8:"sax_workspacespopover_select_workspace_team1"
-@const sax_WorkspacesPopover_106 = utf8:"Team 1"
-@const sax_WorkspacesPopover_107 = utf8:"click"
-@const sax_WorkspacesPopover_108 = utf8:"sax_workspacespopover_select_workspace_team2"
-@const sax_WorkspacesPopover_109 = utf8:"Team 2"
-@const sax_WorkspacesPopover_110 = utf8:"click"
-@const sax_WorkspacesPopover_111 = utf8:"sax_workspacespopover_select_workspace_team3"
-@const sax_WorkspacesPopover_112 = utf8:"Team 3"
+@const sax_WorkspacesPopover_102 = utf8:"click"
+@const sax_WorkspacesPopover_103 = utf8:"sax_workspacespopover_select_workspace_team1"
+@const sax_WorkspacesPopover_104 = utf8:"Team 1"
+@const sax_WorkspacesPopover_105 = utf8:"click"
+@const sax_WorkspacesPopover_106 = utf8:"sax_workspacespopover_select_workspace_team2"
+@const sax_WorkspacesPopover_107 = utf8:"Team 2"
+@const sax_WorkspacesPopover_108 = utf8:"click"
+@const sax_WorkspacesPopover_109 = utf8:"sax_workspacespopover_select_workspace_team3"
+@const sax_WorkspacesPopover_110 = utf8:"Team 3"
+@const sax_WorkspacesPopover_111 = utf8:"className"
+@const sax_WorkspacesPopover_112 = utf8:"mk-action-popover mk-workspace-popover"
 @const sax_WorkspacesPopover_113 = utf8:"className"
-@const sax_WorkspacesPopover_114 = utf8:"mk-action-popover mk-workspace-popover"
-@const sax_WorkspacesPopover_115 = utf8:"className"
-@const sax_WorkspacesPopover_116 = utf8:"mk-workspace-trigger"
-@const sax_WorkspacesPopover_117 = utf8:"click"
-@const sax_WorkspacesPopover_118 = utf8:"sax_workspacespopover_toggle_workspace"
-@const sax_WorkspacesPopover_119 = utf8:"className"
-@const sax_WorkspacesPopover_120 = utf8:"mk-workspace-avatar"
-@const sax_WorkspacesPopover_121 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_122 = utf8:"className"
-@const sax_WorkspacesPopover_123 = utf8:"src"
-@const sax_WorkspacesPopover_124 = utf8:"assets/icons/workspaces/logo-1.webp"
-@const sax_WorkspacesPopover_125 = utf8:"alt"
-@const sax_WorkspacesPopover_126 = utf8:"Team 1"
-@const sax_WorkspacesPopover_127 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_128 = utf8:"className"
-@const sax_WorkspacesPopover_129 = utf8:"src"
-@const sax_WorkspacesPopover_130 = utf8:"assets/icons/workspaces/logo-2.webp"
-@const sax_WorkspacesPopover_131 = utf8:"alt"
-@const sax_WorkspacesPopover_132 = utf8:"Team 2"
-@const sax_WorkspacesPopover_133 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_134 = utf8:"className"
-@const sax_WorkspacesPopover_135 = utf8:"src"
-@const sax_WorkspacesPopover_136 = utf8:"assets/icons/workspaces/logo-3.webp"
-@const sax_WorkspacesPopover_137 = utf8:"alt"
-@const sax_WorkspacesPopover_138 = utf8:"Team 3"
-@const sax_WorkspacesPopover_139 = utf8:"className"
-@const sax_WorkspacesPopover_140 = utf8:"mk-workspace-copy"
+@const sax_WorkspacesPopover_114 = utf8:"mk-workspace-trigger"
+@const sax_WorkspacesPopover_115 = utf8:"click"
+@const sax_WorkspacesPopover_116 = utf8:"sax_workspacespopover_toggle_workspace"
+@const sax_WorkspacesPopover_117 = utf8:"className"
+@const sax_WorkspacesPopover_118 = utf8:"mk-workspace-avatar"
+@const sax_WorkspacesPopover_119 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_120 = utf8:"className"
+@const sax_WorkspacesPopover_121 = utf8:"src"
+@const sax_WorkspacesPopover_122 = utf8:"assets/icons/workspaces/logo-1.webp"
+@const sax_WorkspacesPopover_123 = utf8:"alt"
+@const sax_WorkspacesPopover_124 = utf8:"Team 1"
+@const sax_WorkspacesPopover_125 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_126 = utf8:"className"
+@const sax_WorkspacesPopover_127 = utf8:"src"
+@const sax_WorkspacesPopover_128 = utf8:"assets/icons/workspaces/logo-2.webp"
+@const sax_WorkspacesPopover_129 = utf8:"alt"
+@const sax_WorkspacesPopover_130 = utf8:"Team 2"
+@const sax_WorkspacesPopover_131 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_132 = utf8:"className"
+@const sax_WorkspacesPopover_133 = utf8:"src"
+@const sax_WorkspacesPopover_134 = utf8:"assets/icons/workspaces/logo-3.webp"
+@const sax_WorkspacesPopover_135 = utf8:"alt"
+@const sax_WorkspacesPopover_136 = utf8:"Team 3"
+@const sax_WorkspacesPopover_137 = utf8:"className"
+@const sax_WorkspacesPopover_138 = utf8:"mk-workspace-copy"
+@const sax_WorkspacesPopover_139 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_140 = utf8:"className"
 @const sax_WorkspacesPopover_141 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_142 = utf8:"className"
 @const sax_WorkspacesPopover_143 = utf8:"mk-hidden"
@@ -7614,287 +7660,281 @@ L_ENTRY:
 @const sax_WorkspacesPopover_148 = utf8:"className"
 @const sax_WorkspacesPopover_149 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_150 = utf8:"className"
-@const sax_WorkspacesPopover_151 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_152 = utf8:"className"
+@const sax_WorkspacesPopover_151 = utf8:"className"
+@const sax_WorkspacesPopover_152 = utf8:"mk-workspace-chevron"
 @const sax_WorkspacesPopover_153 = utf8:"className"
-@const sax_WorkspacesPopover_154 = utf8:"mk-workspace-chevron"
-@const sax_WorkspacesPopover_155 = utf8:"className"
-@const sax_WorkspacesPopover_156 = utf8:"mk-overlay-state"
-@const sax_WorkspacesPopover_157 = utf8:"hidden"
-@const sax_WorkspacesPopover_158 = utf8:"className"
-@const sax_WorkspacesPopover_159 = utf8:"mk-click-away"
-@const sax_WorkspacesPopover_160 = utf8:"click"
-@const sax_WorkspacesPopover_161 = utf8:"sax_workspacespopover_close_workspace"
+@const sax_WorkspacesPopover_154 = utf8:"mk-overlay-state"
+@const sax_WorkspacesPopover_155 = utf8:"hidden"
+@const sax_WorkspacesPopover_156 = utf8:"className"
+@const sax_WorkspacesPopover_157 = utf8:"mk-menu-icon mk-workspace-menu-icon"
+@const sax_WorkspacesPopover_158 = utf8:"src"
+@const sax_WorkspacesPopover_159 = utf8:"assets/icons/workspaces/logo-1.webp"
+@const sax_WorkspacesPopover_160 = utf8:"alt"
+@const sax_WorkspacesPopover_161 = utf8:"Team 1"
 @const sax_WorkspacesPopover_162 = utf8:"className"
-@const sax_WorkspacesPopover_163 = utf8:"mk-menu-icon mk-workspace-menu-icon"
-@const sax_WorkspacesPopover_164 = utf8:"src"
-@const sax_WorkspacesPopover_165 = utf8:"assets/icons/workspaces/logo-1.webp"
-@const sax_WorkspacesPopover_166 = utf8:"alt"
-@const sax_WorkspacesPopover_167 = utf8:"Team 1"
-@const sax_WorkspacesPopover_168 = utf8:"className"
-@const sax_WorkspacesPopover_169 = utf8:"mk-plan-label"
+@const sax_WorkspacesPopover_163 = utf8:"mk-plan-label"
+@const sax_WorkspacesPopover_164 = utf8:"className"
+@const sax_WorkspacesPopover_165 = utf8:"mk-menu-icon mk-workspace-menu-icon"
+@const sax_WorkspacesPopover_166 = utf8:"src"
+@const sax_WorkspacesPopover_167 = utf8:"assets/icons/workspaces/logo-2.webp"
+@const sax_WorkspacesPopover_168 = utf8:"alt"
+@const sax_WorkspacesPopover_169 = utf8:"Team 2"
 @const sax_WorkspacesPopover_170 = utf8:"className"
-@const sax_WorkspacesPopover_171 = utf8:"mk-menu-icon mk-workspace-menu-icon"
-@const sax_WorkspacesPopover_172 = utf8:"src"
-@const sax_WorkspacesPopover_173 = utf8:"assets/icons/workspaces/logo-2.webp"
-@const sax_WorkspacesPopover_174 = utf8:"alt"
-@const sax_WorkspacesPopover_175 = utf8:"Team 2"
-@const sax_WorkspacesPopover_176 = utf8:"className"
-@const sax_WorkspacesPopover_177 = utf8:"mk-plan-label mk-plan-info"
+@const sax_WorkspacesPopover_171 = utf8:"mk-plan-label mk-plan-info"
+@const sax_WorkspacesPopover_172 = utf8:"className"
+@const sax_WorkspacesPopover_173 = utf8:"mk-menu-icon mk-workspace-menu-icon"
+@const sax_WorkspacesPopover_174 = utf8:"src"
+@const sax_WorkspacesPopover_175 = utf8:"assets/icons/workspaces/logo-3.webp"
+@const sax_WorkspacesPopover_176 = utf8:"alt"
+@const sax_WorkspacesPopover_177 = utf8:"Team 3"
 @const sax_WorkspacesPopover_178 = utf8:"className"
-@const sax_WorkspacesPopover_179 = utf8:"mk-menu-icon mk-workspace-menu-icon"
-@const sax_WorkspacesPopover_180 = utf8:"src"
-@const sax_WorkspacesPopover_181 = utf8:"assets/icons/workspaces/logo-3.webp"
-@const sax_WorkspacesPopover_182 = utf8:"alt"
-@const sax_WorkspacesPopover_183 = utf8:"Team 3"
-@const sax_WorkspacesPopover_184 = utf8:"className"
-@const sax_WorkspacesPopover_185 = utf8:"mk-plan-label mk-plan-info"
-@const sax_WorkspacesPopover_186 = utf8:"bottom"
-@const sax_WorkspacesPopover_187 = utf8:"left"
-@const sax_WorkspacesPopover_188 = utf8:"top"
-@const sax_WorkspacesPopover_189 = utf8:"left"
-@const sax_WorkspacesPopover_190 = utf8:"click"
-@const sax_WorkspacesPopover_191 = utf8:"sax_workspacespopover_select_workspace_team1"
-@const sax_WorkspacesPopover_192 = utf8:"Team 1"
-@const sax_WorkspacesPopover_193 = utf8:"click"
-@const sax_WorkspacesPopover_194 = utf8:"sax_workspacespopover_select_workspace_team2"
-@const sax_WorkspacesPopover_195 = utf8:"Team 2"
-@const sax_WorkspacesPopover_196 = utf8:"click"
-@const sax_WorkspacesPopover_197 = utf8:"sax_workspacespopover_select_workspace_team3"
-@const sax_WorkspacesPopover_198 = utf8:"Team 3"
+@const sax_WorkspacesPopover_179 = utf8:"mk-plan-label mk-plan-info"
+@const sax_WorkspacesPopover_180 = utf8:"click"
+@const sax_WorkspacesPopover_181 = utf8:"sax_workspacespopover_close_workspace"
+@const sax_WorkspacesPopover_182 = utf8:"bottom"
+@const sax_WorkspacesPopover_183 = utf8:"left"
+@const sax_WorkspacesPopover_184 = utf8:"top"
+@const sax_WorkspacesPopover_185 = utf8:"left"
+@const sax_WorkspacesPopover_186 = utf8:"click"
+@const sax_WorkspacesPopover_187 = utf8:"sax_workspacespopover_select_workspace_team1"
+@const sax_WorkspacesPopover_188 = utf8:"Team 1"
+@const sax_WorkspacesPopover_189 = utf8:"click"
+@const sax_WorkspacesPopover_190 = utf8:"sax_workspacespopover_select_workspace_team2"
+@const sax_WorkspacesPopover_191 = utf8:"Team 2"
+@const sax_WorkspacesPopover_192 = utf8:"click"
+@const sax_WorkspacesPopover_193 = utf8:"sax_workspacespopover_select_workspace_team3"
+@const sax_WorkspacesPopover_194 = utf8:"Team 3"
+@const sax_WorkspacesPopover_195 = utf8:"className"
+@const sax_WorkspacesPopover_196 = utf8:"mk-action-popover mk-workspace-popover"
+@const sax_WorkspacesPopover_197 = utf8:"className"
+@const sax_WorkspacesPopover_198 = utf8:"mk-workspace-trigger"
 @const sax_WorkspacesPopover_199 = utf8:"className"
-@const sax_WorkspacesPopover_200 = utf8:"mk-action-popover mk-workspace-popover"
-@const sax_WorkspacesPopover_201 = utf8:"className"
-@const sax_WorkspacesPopover_202 = utf8:"mk-workspace-trigger"
-@const sax_WorkspacesPopover_203 = utf8:"className"
-@const sax_WorkspacesPopover_204 = utf8:"mk-workspace-avatar"
-@const sax_WorkspacesPopover_205 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_206 = utf8:"className"
-@const sax_WorkspacesPopover_207 = utf8:"src"
-@const sax_WorkspacesPopover_208 = utf8:"assets/icons/workspaces/logo-1.webp"
-@const sax_WorkspacesPopover_209 = utf8:"alt"
-@const sax_WorkspacesPopover_210 = utf8:"Team 1"
-@const sax_WorkspacesPopover_211 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_212 = utf8:"className"
-@const sax_WorkspacesPopover_213 = utf8:"src"
-@const sax_WorkspacesPopover_214 = utf8:"assets/icons/workspaces/logo-2.webp"
-@const sax_WorkspacesPopover_215 = utf8:"alt"
-@const sax_WorkspacesPopover_216 = utf8:"Team 2"
-@const sax_WorkspacesPopover_217 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_218 = utf8:"className"
-@const sax_WorkspacesPopover_219 = utf8:"src"
-@const sax_WorkspacesPopover_220 = utf8:"assets/icons/workspaces/logo-3.webp"
-@const sax_WorkspacesPopover_221 = utf8:"alt"
-@const sax_WorkspacesPopover_222 = utf8:"Team 3"
-@const sax_WorkspacesPopover_223 = utf8:"className"
-@const sax_WorkspacesPopover_224 = utf8:"mk-workspace-copy"
-@const sax_WorkspacesPopover_225 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_226 = utf8:"className"
-@const sax_WorkspacesPopover_227 = utf8:"Team 1"
-@const sax_WorkspacesPopover_228 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_229 = utf8:"className"
-@const sax_WorkspacesPopover_230 = utf8:"Team 2"
-@const sax_WorkspacesPopover_231 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_232 = utf8:"className"
-@const sax_WorkspacesPopover_233 = utf8:"Team 3"
-@const sax_WorkspacesPopover_234 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_235 = utf8:"className"
-@const sax_WorkspacesPopover_236 = utf8:"Free"
-@const sax_WorkspacesPopover_237 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_238 = utf8:"className"
-@const sax_WorkspacesPopover_239 = utf8:"Pro"
-@const sax_WorkspacesPopover_240 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_241 = utf8:"className"
-@const sax_WorkspacesPopover_242 = utf8:"Pro"
-@const sax_WorkspacesPopover_243 = utf8:"className"
-@const sax_WorkspacesPopover_244 = utf8:"mk-workspace-chevron"
-@const sax_WorkspacesPopover_245 = utf8:"Sort"
-@const sax_WorkspacesPopover_246 = utf8:"className"
-@const sax_WorkspacesPopover_247 = utf8:"mk-overlay-state"
-@const sax_WorkspacesPopover_248 = utf8:"hidden"
+@const sax_WorkspacesPopover_200 = utf8:"mk-workspace-avatar"
+@const sax_WorkspacesPopover_201 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_202 = utf8:"className"
+@const sax_WorkspacesPopover_203 = utf8:"src"
+@const sax_WorkspacesPopover_204 = utf8:"assets/icons/workspaces/logo-1.webp"
+@const sax_WorkspacesPopover_205 = utf8:"alt"
+@const sax_WorkspacesPopover_206 = utf8:"Team 1"
+@const sax_WorkspacesPopover_207 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_208 = utf8:"className"
+@const sax_WorkspacesPopover_209 = utf8:"src"
+@const sax_WorkspacesPopover_210 = utf8:"assets/icons/workspaces/logo-2.webp"
+@const sax_WorkspacesPopover_211 = utf8:"alt"
+@const sax_WorkspacesPopover_212 = utf8:"Team 2"
+@const sax_WorkspacesPopover_213 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_214 = utf8:"className"
+@const sax_WorkspacesPopover_215 = utf8:"src"
+@const sax_WorkspacesPopover_216 = utf8:"assets/icons/workspaces/logo-3.webp"
+@const sax_WorkspacesPopover_217 = utf8:"alt"
+@const sax_WorkspacesPopover_218 = utf8:"Team 3"
+@const sax_WorkspacesPopover_219 = utf8:"className"
+@const sax_WorkspacesPopover_220 = utf8:"mk-workspace-copy"
+@const sax_WorkspacesPopover_221 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_222 = utf8:"className"
+@const sax_WorkspacesPopover_223 = utf8:"Team 1"
+@const sax_WorkspacesPopover_224 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_225 = utf8:"className"
+@const sax_WorkspacesPopover_226 = utf8:"Team 2"
+@const sax_WorkspacesPopover_227 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_228 = utf8:"className"
+@const sax_WorkspacesPopover_229 = utf8:"Team 3"
+@const sax_WorkspacesPopover_230 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_231 = utf8:"className"
+@const sax_WorkspacesPopover_232 = utf8:"Free"
+@const sax_WorkspacesPopover_233 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_234 = utf8:"className"
+@const sax_WorkspacesPopover_235 = utf8:"Pro"
+@const sax_WorkspacesPopover_236 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_237 = utf8:"className"
+@const sax_WorkspacesPopover_238 = utf8:"Pro"
+@const sax_WorkspacesPopover_239 = utf8:"className"
+@const sax_WorkspacesPopover_240 = utf8:"mk-workspace-chevron"
+@const sax_WorkspacesPopover_241 = utf8:"Sort"
+@const sax_WorkspacesPopover_242 = utf8:"className"
+@const sax_WorkspacesPopover_243 = utf8:"mk-overlay-state"
+@const sax_WorkspacesPopover_244 = utf8:"hidden"
+@const sax_WorkspacesPopover_245 = utf8:"bottom"
+@const sax_WorkspacesPopover_246 = utf8:"left"
+@const sax_WorkspacesPopover_247 = utf8:"top"
+@const sax_WorkspacesPopover_248 = utf8:"left"
 @const sax_WorkspacesPopover_249 = utf8:"className"
-@const sax_WorkspacesPopover_250 = utf8:"mk-click-away"
-@const sax_WorkspacesPopover_251 = utf8:"bottom"
-@const sax_WorkspacesPopover_252 = utf8:"left"
-@const sax_WorkspacesPopover_253 = utf8:"top"
-@const sax_WorkspacesPopover_254 = utf8:"left"
+@const sax_WorkspacesPopover_250 = utf8:"mk-menu-icon mk-workspace-menu-icon"
+@const sax_WorkspacesPopover_251 = utf8:"src"
+@const sax_WorkspacesPopover_252 = utf8:"assets/icons/workspaces/logo-1.webp"
+@const sax_WorkspacesPopover_253 = utf8:"alt"
+@const sax_WorkspacesPopover_254 = utf8:"Team 1"
 @const sax_WorkspacesPopover_255 = utf8:"className"
-@const sax_WorkspacesPopover_256 = utf8:"mk-menu-icon mk-workspace-menu-icon"
-@const sax_WorkspacesPopover_257 = utf8:"src"
-@const sax_WorkspacesPopover_258 = utf8:"assets/icons/workspaces/logo-1.webp"
-@const sax_WorkspacesPopover_259 = utf8:"alt"
-@const sax_WorkspacesPopover_260 = utf8:"Team 1"
-@const sax_WorkspacesPopover_261 = utf8:"className"
-@const sax_WorkspacesPopover_262 = utf8:"mk-plan-label"
-@const sax_WorkspacesPopover_263 = utf8:"Free"
+@const sax_WorkspacesPopover_256 = utf8:"mk-plan-label"
+@const sax_WorkspacesPopover_257 = utf8:"Free"
+@const sax_WorkspacesPopover_258 = utf8:"className"
+@const sax_WorkspacesPopover_259 = utf8:"mk-menu-icon mk-workspace-menu-icon"
+@const sax_WorkspacesPopover_260 = utf8:"src"
+@const sax_WorkspacesPopover_261 = utf8:"assets/icons/workspaces/logo-2.webp"
+@const sax_WorkspacesPopover_262 = utf8:"alt"
+@const sax_WorkspacesPopover_263 = utf8:"Team 2"
 @const sax_WorkspacesPopover_264 = utf8:"className"
-@const sax_WorkspacesPopover_265 = utf8:"mk-menu-icon mk-workspace-menu-icon"
-@const sax_WorkspacesPopover_266 = utf8:"src"
-@const sax_WorkspacesPopover_267 = utf8:"assets/icons/workspaces/logo-2.webp"
-@const sax_WorkspacesPopover_268 = utf8:"alt"
-@const sax_WorkspacesPopover_269 = utf8:"Team 2"
-@const sax_WorkspacesPopover_270 = utf8:"className"
-@const sax_WorkspacesPopover_271 = utf8:"mk-plan-label mk-plan-info"
-@const sax_WorkspacesPopover_272 = utf8:"Pro"
+@const sax_WorkspacesPopover_265 = utf8:"mk-plan-label mk-plan-info"
+@const sax_WorkspacesPopover_266 = utf8:"Pro"
+@const sax_WorkspacesPopover_267 = utf8:"className"
+@const sax_WorkspacesPopover_268 = utf8:"mk-menu-icon mk-workspace-menu-icon"
+@const sax_WorkspacesPopover_269 = utf8:"src"
+@const sax_WorkspacesPopover_270 = utf8:"assets/icons/workspaces/logo-3.webp"
+@const sax_WorkspacesPopover_271 = utf8:"alt"
+@const sax_WorkspacesPopover_272 = utf8:"Team 3"
 @const sax_WorkspacesPopover_273 = utf8:"className"
-@const sax_WorkspacesPopover_274 = utf8:"mk-menu-icon mk-workspace-menu-icon"
-@const sax_WorkspacesPopover_275 = utf8:"src"
-@const sax_WorkspacesPopover_276 = utf8:"assets/icons/workspaces/logo-3.webp"
-@const sax_WorkspacesPopover_277 = utf8:"alt"
-@const sax_WorkspacesPopover_278 = utf8:"Team 3"
-@const sax_WorkspacesPopover_279 = utf8:"className"
-@const sax_WorkspacesPopover_280 = utf8:"mk-plan-label mk-plan-info"
-@const sax_WorkspacesPopover_281 = utf8:"Pro"
-@const sax_WorkspacesPopover_282 = utf8:"className"
-@const sax_WorkspacesPopover_283 = utf8:"mk-overlay-state"
-@const sax_WorkspacesPopover_284 = utf8:"hidden"
-@const sax_WorkspacesPopover_285 = utf8:"bottom"
-@const sax_WorkspacesPopover_286 = utf8:"left"
-@const sax_WorkspacesPopover_287 = utf8:"top"
-@const sax_WorkspacesPopover_288 = utf8:"left"
-@const sax_WorkspacesPopover_289 = utf8:"className"
-@const sax_WorkspacesPopover_290 = utf8:"mk-overlay-state"
-@const sax_WorkspacesPopover_291 = utf8:"hidden"
-@const sax_WorkspacesPopover_292 = utf8:"bottom"
-@const sax_WorkspacesPopover_293 = utf8:"left"
-@const sax_WorkspacesPopover_294 = utf8:"top"
-@const sax_WorkspacesPopover_295 = utf8:"left"
-@const sax_WorkspacesPopover_296 = utf8:"className"
-@const sax_WorkspacesPopover_297 = utf8:"mk-overlay-state"
-@const sax_WorkspacesPopover_298 = utf8:"hidden"
-@const sax_WorkspacesPopover_299 = utf8:"bottom"
-@const sax_WorkspacesPopover_300 = utf8:"left"
-@const sax_WorkspacesPopover_301 = utf8:"top"
-@const sax_WorkspacesPopover_302 = utf8:"left"
+@const sax_WorkspacesPopover_274 = utf8:"mk-plan-label mk-plan-info"
+@const sax_WorkspacesPopover_275 = utf8:"Pro"
+@const sax_WorkspacesPopover_276 = utf8:"className"
+@const sax_WorkspacesPopover_277 = utf8:"mk-overlay-state"
+@const sax_WorkspacesPopover_278 = utf8:"hidden"
+@const sax_WorkspacesPopover_279 = utf8:"bottom"
+@const sax_WorkspacesPopover_280 = utf8:"left"
+@const sax_WorkspacesPopover_281 = utf8:"top"
+@const sax_WorkspacesPopover_282 = utf8:"left"
+@const sax_WorkspacesPopover_283 = utf8:"className"
+@const sax_WorkspacesPopover_284 = utf8:"mk-overlay-state"
+@const sax_WorkspacesPopover_285 = utf8:"hidden"
+@const sax_WorkspacesPopover_286 = utf8:"bottom"
+@const sax_WorkspacesPopover_287 = utf8:"left"
+@const sax_WorkspacesPopover_288 = utf8:"top"
+@const sax_WorkspacesPopover_289 = utf8:"left"
+@const sax_WorkspacesPopover_290 = utf8:"className"
+@const sax_WorkspacesPopover_291 = utf8:"mk-overlay-state"
+@const sax_WorkspacesPopover_292 = utf8:"hidden"
+@const sax_WorkspacesPopover_293 = utf8:"bottom"
+@const sax_WorkspacesPopover_294 = utf8:"left"
+@const sax_WorkspacesPopover_295 = utf8:"top"
+@const sax_WorkspacesPopover_296 = utf8:"left"
+@const sax_WorkspacesPopover_297 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_298 = utf8:"className"
+@const sax_WorkspacesPopover_299 = utf8:"src"
+@const sax_WorkspacesPopover_300 = utf8:"assets/icons/workspaces/logo-1.webp"
+@const sax_WorkspacesPopover_301 = utf8:"alt"
+@const sax_WorkspacesPopover_302 = utf8:"Team 1"
 @const sax_WorkspacesPopover_303 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_304 = utf8:"className"
 @const sax_WorkspacesPopover_305 = utf8:"src"
-@const sax_WorkspacesPopover_306 = utf8:"assets/icons/workspaces/logo-1.webp"
+@const sax_WorkspacesPopover_306 = utf8:"assets/icons/workspaces/logo-2.webp"
 @const sax_WorkspacesPopover_307 = utf8:"alt"
-@const sax_WorkspacesPopover_308 = utf8:"Team 1"
+@const sax_WorkspacesPopover_308 = utf8:"Team 2"
 @const sax_WorkspacesPopover_309 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_310 = utf8:"className"
 @const sax_WorkspacesPopover_311 = utf8:"src"
-@const sax_WorkspacesPopover_312 = utf8:"assets/icons/workspaces/logo-2.webp"
+@const sax_WorkspacesPopover_312 = utf8:"assets/icons/workspaces/logo-3.webp"
 @const sax_WorkspacesPopover_313 = utf8:"alt"
-@const sax_WorkspacesPopover_314 = utf8:"Team 2"
+@const sax_WorkspacesPopover_314 = utf8:"Team 3"
 @const sax_WorkspacesPopover_315 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_316 = utf8:"className"
-@const sax_WorkspacesPopover_317 = utf8:"src"
-@const sax_WorkspacesPopover_318 = utf8:"assets/icons/workspaces/logo-3.webp"
-@const sax_WorkspacesPopover_319 = utf8:"alt"
-@const sax_WorkspacesPopover_320 = utf8:"Team 3"
+@const sax_WorkspacesPopover_317 = utf8:"Team 1"
+@const sax_WorkspacesPopover_318 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_319 = utf8:"className"
+@const sax_WorkspacesPopover_320 = utf8:"Team 2"
 @const sax_WorkspacesPopover_321 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_322 = utf8:"className"
-@const sax_WorkspacesPopover_323 = utf8:"Team 1"
+@const sax_WorkspacesPopover_323 = utf8:"Team 3"
 @const sax_WorkspacesPopover_324 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_325 = utf8:"className"
-@const sax_WorkspacesPopover_326 = utf8:"Team 2"
+@const sax_WorkspacesPopover_326 = utf8:"Free"
 @const sax_WorkspacesPopover_327 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_328 = utf8:"className"
-@const sax_WorkspacesPopover_329 = utf8:"Team 3"
+@const sax_WorkspacesPopover_329 = utf8:"Pro"
 @const sax_WorkspacesPopover_330 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_331 = utf8:"className"
-@const sax_WorkspacesPopover_332 = utf8:"Free"
-@const sax_WorkspacesPopover_333 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_334 = utf8:"className"
-@const sax_WorkspacesPopover_335 = utf8:"Pro"
-@const sax_WorkspacesPopover_336 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_337 = utf8:"className"
-@const sax_WorkspacesPopover_338 = utf8:"Pro"
-@const sax_WorkspacesPopover_339 = utf8:"className"
-@const sax_WorkspacesPopover_340 = utf8:"mk-overlay-state"
-@const sax_WorkspacesPopover_341 = utf8:"hidden"
-@const sax_WorkspacesPopover_342 = utf8:"bottom"
-@const sax_WorkspacesPopover_343 = utf8:"left"
-@const sax_WorkspacesPopover_344 = utf8:"top"
-@const sax_WorkspacesPopover_345 = utf8:"left"
+@const sax_WorkspacesPopover_332 = utf8:"Pro"
+@const sax_WorkspacesPopover_333 = utf8:"className"
+@const sax_WorkspacesPopover_334 = utf8:"mk-overlay-state"
+@const sax_WorkspacesPopover_335 = utf8:"hidden"
+@const sax_WorkspacesPopover_336 = utf8:"bottom"
+@const sax_WorkspacesPopover_337 = utf8:"left"
+@const sax_WorkspacesPopover_338 = utf8:"top"
+@const sax_WorkspacesPopover_339 = utf8:"left"
+@const sax_WorkspacesPopover_340 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_341 = utf8:"className"
+@const sax_WorkspacesPopover_342 = utf8:"src"
+@const sax_WorkspacesPopover_343 = utf8:"assets/icons/workspaces/logo-1.webp"
+@const sax_WorkspacesPopover_344 = utf8:"alt"
+@const sax_WorkspacesPopover_345 = utf8:"Team 1"
 @const sax_WorkspacesPopover_346 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_347 = utf8:"className"
 @const sax_WorkspacesPopover_348 = utf8:"src"
-@const sax_WorkspacesPopover_349 = utf8:"assets/icons/workspaces/logo-1.webp"
+@const sax_WorkspacesPopover_349 = utf8:"assets/icons/workspaces/logo-2.webp"
 @const sax_WorkspacesPopover_350 = utf8:"alt"
-@const sax_WorkspacesPopover_351 = utf8:"Team 1"
+@const sax_WorkspacesPopover_351 = utf8:"Team 2"
 @const sax_WorkspacesPopover_352 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_353 = utf8:"className"
 @const sax_WorkspacesPopover_354 = utf8:"src"
-@const sax_WorkspacesPopover_355 = utf8:"assets/icons/workspaces/logo-2.webp"
+@const sax_WorkspacesPopover_355 = utf8:"assets/icons/workspaces/logo-3.webp"
 @const sax_WorkspacesPopover_356 = utf8:"alt"
-@const sax_WorkspacesPopover_357 = utf8:"Team 2"
+@const sax_WorkspacesPopover_357 = utf8:"Team 3"
 @const sax_WorkspacesPopover_358 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_359 = utf8:"className"
-@const sax_WorkspacesPopover_360 = utf8:"src"
-@const sax_WorkspacesPopover_361 = utf8:"assets/icons/workspaces/logo-3.webp"
-@const sax_WorkspacesPopover_362 = utf8:"alt"
-@const sax_WorkspacesPopover_363 = utf8:"Team 3"
+@const sax_WorkspacesPopover_360 = utf8:"Team 1"
+@const sax_WorkspacesPopover_361 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_362 = utf8:"className"
+@const sax_WorkspacesPopover_363 = utf8:"Team 2"
 @const sax_WorkspacesPopover_364 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_365 = utf8:"className"
-@const sax_WorkspacesPopover_366 = utf8:"Team 1"
+@const sax_WorkspacesPopover_366 = utf8:"Team 3"
 @const sax_WorkspacesPopover_367 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_368 = utf8:"className"
-@const sax_WorkspacesPopover_369 = utf8:"Team 2"
+@const sax_WorkspacesPopover_369 = utf8:"Free"
 @const sax_WorkspacesPopover_370 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_371 = utf8:"className"
-@const sax_WorkspacesPopover_372 = utf8:"Team 3"
+@const sax_WorkspacesPopover_372 = utf8:"Pro"
 @const sax_WorkspacesPopover_373 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_374 = utf8:"className"
-@const sax_WorkspacesPopover_375 = utf8:"Free"
-@const sax_WorkspacesPopover_376 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_377 = utf8:"className"
-@const sax_WorkspacesPopover_378 = utf8:"Pro"
-@const sax_WorkspacesPopover_379 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_380 = utf8:"className"
-@const sax_WorkspacesPopover_381 = utf8:"Pro"
-@const sax_WorkspacesPopover_382 = utf8:"className"
-@const sax_WorkspacesPopover_383 = utf8:"mk-overlay-state"
-@const sax_WorkspacesPopover_384 = utf8:"hidden"
-@const sax_WorkspacesPopover_385 = utf8:"bottom"
-@const sax_WorkspacesPopover_386 = utf8:"left"
-@const sax_WorkspacesPopover_387 = utf8:"top"
-@const sax_WorkspacesPopover_388 = utf8:"left"
+@const sax_WorkspacesPopover_375 = utf8:"Pro"
+@const sax_WorkspacesPopover_376 = utf8:"className"
+@const sax_WorkspacesPopover_377 = utf8:"mk-overlay-state"
+@const sax_WorkspacesPopover_378 = utf8:"hidden"
+@const sax_WorkspacesPopover_379 = utf8:"bottom"
+@const sax_WorkspacesPopover_380 = utf8:"left"
+@const sax_WorkspacesPopover_381 = utf8:"top"
+@const sax_WorkspacesPopover_382 = utf8:"left"
+@const sax_WorkspacesPopover_383 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_384 = utf8:"className"
+@const sax_WorkspacesPopover_385 = utf8:"src"
+@const sax_WorkspacesPopover_386 = utf8:"assets/icons/workspaces/logo-1.webp"
+@const sax_WorkspacesPopover_387 = utf8:"alt"
+@const sax_WorkspacesPopover_388 = utf8:"Team 1"
 @const sax_WorkspacesPopover_389 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_390 = utf8:"className"
 @const sax_WorkspacesPopover_391 = utf8:"src"
-@const sax_WorkspacesPopover_392 = utf8:"assets/icons/workspaces/logo-1.webp"
+@const sax_WorkspacesPopover_392 = utf8:"assets/icons/workspaces/logo-2.webp"
 @const sax_WorkspacesPopover_393 = utf8:"alt"
-@const sax_WorkspacesPopover_394 = utf8:"Team 1"
+@const sax_WorkspacesPopover_394 = utf8:"Team 2"
 @const sax_WorkspacesPopover_395 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_396 = utf8:"className"
 @const sax_WorkspacesPopover_397 = utf8:"src"
-@const sax_WorkspacesPopover_398 = utf8:"assets/icons/workspaces/logo-2.webp"
+@const sax_WorkspacesPopover_398 = utf8:"assets/icons/workspaces/logo-3.webp"
 @const sax_WorkspacesPopover_399 = utf8:"alt"
-@const sax_WorkspacesPopover_400 = utf8:"Team 2"
+@const sax_WorkspacesPopover_400 = utf8:"Team 3"
 @const sax_WorkspacesPopover_401 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_402 = utf8:"className"
-@const sax_WorkspacesPopover_403 = utf8:"src"
-@const sax_WorkspacesPopover_404 = utf8:"assets/icons/workspaces/logo-3.webp"
-@const sax_WorkspacesPopover_405 = utf8:"alt"
-@const sax_WorkspacesPopover_406 = utf8:"Team 3"
+@const sax_WorkspacesPopover_403 = utf8:"Team 1"
+@const sax_WorkspacesPopover_404 = utf8:"mk-hidden"
+@const sax_WorkspacesPopover_405 = utf8:"className"
+@const sax_WorkspacesPopover_406 = utf8:"Team 2"
 @const sax_WorkspacesPopover_407 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_408 = utf8:"className"
-@const sax_WorkspacesPopover_409 = utf8:"Team 1"
+@const sax_WorkspacesPopover_409 = utf8:"Team 3"
 @const sax_WorkspacesPopover_410 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_411 = utf8:"className"
-@const sax_WorkspacesPopover_412 = utf8:"Team 2"
+@const sax_WorkspacesPopover_412 = utf8:"Free"
 @const sax_WorkspacesPopover_413 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_414 = utf8:"className"
-@const sax_WorkspacesPopover_415 = utf8:"Team 3"
+@const sax_WorkspacesPopover_415 = utf8:"Pro"
 @const sax_WorkspacesPopover_416 = utf8:"mk-hidden"
 @const sax_WorkspacesPopover_417 = utf8:"className"
-@const sax_WorkspacesPopover_418 = utf8:"Free"
-@const sax_WorkspacesPopover_419 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_420 = utf8:"className"
-@const sax_WorkspacesPopover_421 = utf8:"Pro"
-@const sax_WorkspacesPopover_422 = utf8:"mk-hidden"
-@const sax_WorkspacesPopover_423 = utf8:"className"
-@const sax_WorkspacesPopover_424 = utf8:"Pro"
-@const sax_WorkspacesPopover_425 = utf8:"className"
-@const sax_WorkspacesPopover_426 = utf8:"mk-overlay-state"
-@const sax_WorkspacesPopover_427 = utf8:"hidden"
-@const sax_WorkspacesPopover_428 = utf8:"bottom"
-@const sax_WorkspacesPopover_429 = utf8:"left"
-@const sax_WorkspacesPopover_430 = utf8:"top"
-@const sax_WorkspacesPopover_431 = utf8:"left"
+@const sax_WorkspacesPopover_418 = utf8:"Pro"
+@const sax_WorkspacesPopover_419 = utf8:"className"
+@const sax_WorkspacesPopover_420 = utf8:"mk-overlay-state"
+@const sax_WorkspacesPopover_421 = utf8:"hidden"
+@const sax_WorkspacesPopover_422 = utf8:"bottom"
+@const sax_WorkspacesPopover_423 = utf8:"left"
+@const sax_WorkspacesPopover_424 = utf8:"top"
+@const sax_WorkspacesPopover_425 = utf8:"left"
 
 @const sax_WorkspacesPopover_host_app = utf8:"#app"
 
@@ -14136,6 +14176,270 @@ L_ENTRY:
 @const sax_Pagination_58 = utf8:"next"
 
 @const sax_Pagination_host_app = utf8:"#app"
+
+
+#def Backdrop_SIZE = 16
+#def Backdrop_dom_SIZE = 16
+#def Backdrop_CTX_SIZE = 16
+#def Backdrop_CTX_state = +0
+#def Backdrop_CTX_dom = +8
+
+#def Backdrop_invisible = +0
+#def Backdrop_open = +8
+
+#def sax_Backdrop_node_div = +0
+#def sax_Backdrop_node_Slot = +8
+
+@export sax_backdrop_init() -> ptr:
+L_ENTRY:
+  ctx = call @sax_backdrop_init_ffi()
+  return ctx
+
+@ffi_wrapper sax_backdrop_init_ffi() -> ptr:
+L_ENTRY:
+  host = call @sax_dom_query(*sax_Backdrop_host_app, 4)
+  state = alloc Backdrop_SIZE
+  store state+Backdrop_invisible, 0 as i1
+  store state+Backdrop_open, 0 as i1
+  dom = alloc Backdrop_dom_SIZE
+  ctx = alloc Backdrop_CTX_SIZE
+  store ctx+Backdrop_CTX_state, state as ptr
+  store ctx+Backdrop_CTX_dom, dom as ptr
+  node_0 = call @sax_dom_create(*sax_Backdrop_0, 3)
+  store dom+sax_Backdrop_node_div, node_0 as i64
+  attr_tpl_node_0_class_buf = stack_alloc 50
+  attr_tpl_node_0_class_len = 0
+  attr_tpl_node_0_class_dst_0 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
+  call @sax_mem_copy(*attr_tpl_node_0_class_dst_0, *sax_Backdrop_2, 16)
+  attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, 16
+  attr_tpl_node_0_class_ternary_written_1 = 0
+  attr_tpl_node_0_class_ternary_dst_1 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
+  attr_tpl_node_0_class_ternary_bool_1 = load state+Backdrop_open as i1
+  br attr_tpl_node_0_class_ternary_bool_1 -> L_attr_tpl_node_0_class_0_TERNARY_TRUE_1, L_attr_tpl_node_0_class_0_TERNARY_FALSE_1
+L_attr_tpl_node_0_class_0_TERNARY_TRUE_1:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_1, *sax_Backdrop_3, 9)
+  attr_tpl_node_0_class_ternary_written_1 = 9
+  jmp L_attr_tpl_node_0_class_0_TERNARY_DONE_1
+L_attr_tpl_node_0_class_0_TERNARY_FALSE_1:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_1, *sax_Backdrop_4, 11)
+  attr_tpl_node_0_class_ternary_written_1 = 11
+  jmp L_attr_tpl_node_0_class_0_TERNARY_DONE_1
+L_attr_tpl_node_0_class_0_TERNARY_DONE_1:
+  attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_1
+  attr_tpl_node_0_class_ternary_written_2 = 0
+  attr_tpl_node_0_class_ternary_dst_2 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
+  attr_tpl_node_0_class_ternary_bool_2 = load state+Backdrop_invisible as i1
+  br attr_tpl_node_0_class_ternary_bool_2 -> L_attr_tpl_node_0_class_1_TERNARY_TRUE_2, L_attr_tpl_node_0_class_1_TERNARY_FALSE_2
+L_attr_tpl_node_0_class_1_TERNARY_TRUE_2:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_2, *sax_Backdrop_5, 22)
+  attr_tpl_node_0_class_ternary_written_2 = 22
+  jmp L_attr_tpl_node_0_class_1_TERNARY_DONE_2
+L_attr_tpl_node_0_class_1_TERNARY_FALSE_2:
+  attr_tpl_node_0_class_ternary_written_2 = 0
+  jmp L_attr_tpl_node_0_class_1_TERNARY_DONE_2
+L_attr_tpl_node_0_class_1_TERNARY_DONE_2:
+  attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_2
+  call @sax_dom_set_str_prop(node_0, *sax_Backdrop_6, 9, *attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len)
+  node_1 = call @sax_dom_create(*sax_Backdrop_7, 4)
+  store dom+sax_Backdrop_node_Slot, node_1 as i64
+  call @sax_dom_append_child(node_0, node_1)
+  call @sax_dom_append_child(host, node_0)
+  call @sax_backdrop_render(ctx)
+  return ctx
+
+@export sax_backdrop_mount(parent_h: i64) -> ptr:
+L_ENTRY:
+  ctx = call @sax_backdrop_mount_ffi(parent_h)
+  return ctx
+
+@ffi_wrapper sax_backdrop_mount_ffi(parent_h: i64) -> ptr:
+L_ENTRY:
+  state = alloc Backdrop_SIZE
+  store state+Backdrop_invisible, 0 as i1
+  store state+Backdrop_open, 0 as i1
+  dom = alloc Backdrop_dom_SIZE
+  ctx = alloc Backdrop_CTX_SIZE
+  store ctx+Backdrop_CTX_state, state as ptr
+  store ctx+Backdrop_CTX_dom, dom as ptr
+  node_0 = call @sax_dom_create(*sax_Backdrop_0, 3)
+  store dom+sax_Backdrop_node_div, node_0 as i64
+  attr_tpl_node_0_class_buf = stack_alloc 50
+  attr_tpl_node_0_class_len = 0
+  attr_tpl_node_0_class_dst_0 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
+  call @sax_mem_copy(*attr_tpl_node_0_class_dst_0, *sax_Backdrop_8, 16)
+  attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, 16
+  attr_tpl_node_0_class_ternary_written_1 = 0
+  attr_tpl_node_0_class_ternary_dst_1 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
+  attr_tpl_node_0_class_ternary_bool_1 = load state+Backdrop_open as i1
+  br attr_tpl_node_0_class_ternary_bool_1 -> L_attr_tpl_node_0_class_2_TERNARY_TRUE_1, L_attr_tpl_node_0_class_2_TERNARY_FALSE_1
+L_attr_tpl_node_0_class_2_TERNARY_TRUE_1:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_1, *sax_Backdrop_9, 9)
+  attr_tpl_node_0_class_ternary_written_1 = 9
+  jmp L_attr_tpl_node_0_class_2_TERNARY_DONE_1
+L_attr_tpl_node_0_class_2_TERNARY_FALSE_1:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_1, *sax_Backdrop_10, 11)
+  attr_tpl_node_0_class_ternary_written_1 = 11
+  jmp L_attr_tpl_node_0_class_2_TERNARY_DONE_1
+L_attr_tpl_node_0_class_2_TERNARY_DONE_1:
+  attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_1
+  attr_tpl_node_0_class_ternary_written_2 = 0
+  attr_tpl_node_0_class_ternary_dst_2 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
+  attr_tpl_node_0_class_ternary_bool_2 = load state+Backdrop_invisible as i1
+  br attr_tpl_node_0_class_ternary_bool_2 -> L_attr_tpl_node_0_class_3_TERNARY_TRUE_2, L_attr_tpl_node_0_class_3_TERNARY_FALSE_2
+L_attr_tpl_node_0_class_3_TERNARY_TRUE_2:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_2, *sax_Backdrop_11, 22)
+  attr_tpl_node_0_class_ternary_written_2 = 22
+  jmp L_attr_tpl_node_0_class_3_TERNARY_DONE_2
+L_attr_tpl_node_0_class_3_TERNARY_FALSE_2:
+  attr_tpl_node_0_class_ternary_written_2 = 0
+  jmp L_attr_tpl_node_0_class_3_TERNARY_DONE_2
+L_attr_tpl_node_0_class_3_TERNARY_DONE_2:
+  attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_2
+  call @sax_dom_set_str_prop(node_0, *sax_Backdrop_12, 9, *attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len)
+  node_1 = call @sax_dom_create(*sax_Backdrop_13, 4)
+  store dom+sax_Backdrop_node_Slot, node_1 as i64
+  call @sax_dom_append_child(node_0, node_1)
+  call @sax_dom_append_child(parent_h, node_0)
+  call @sax_backdrop_render(ctx)
+  return ctx
+
+@export sax_backdrop_slot(ctx: ptr) -> i64:
+L_ENTRY:
+  slot_h = call @sax_backdrop_slot_ffi(ctx)
+  return slot_h
+
+@ffi_wrapper sax_backdrop_slot_ffi(ctx: ptr) -> i64:
+L_ENTRY:
+  dom = load ctx+Backdrop_CTX_dom as ptr
+  slot_h = load dom+sax_Backdrop_node_Slot as i64
+  return slot_h
+
+@export sax_backdrop_root(ctx: ptr) -> i64:
+L_ENTRY:
+  root_h = call @sax_backdrop_root_ffi(ctx)
+  return root_h
+
+@ffi_wrapper sax_backdrop_root_ffi(ctx: ptr) -> i64:
+L_ENTRY:
+  dom = load ctx+Backdrop_CTX_dom as ptr
+  root_h = load dom+sax_Backdrop_node_div as i64
+  return root_h
+
+@export sax_backdrop_set_invisible(ctx: ptr, value: i64):
+L_ENTRY:
+  call @sax_backdrop_set_invisible_ffi(ctx, value)
+  return
+
+@ffi_wrapper sax_backdrop_set_invisible_ffi(ctx: ptr, value: i64):
+L_ENTRY:
+  state = load ctx+Backdrop_CTX_state as ptr
+  is_set = ne value, 0
+  store state+Backdrop_invisible, is_set as i1
+  call @sax_backdrop_render(ctx)
+  return
+
+@export sax_backdrop_set_open(ctx: ptr, value: i64):
+L_ENTRY:
+  call @sax_backdrop_set_open_ffi(ctx, value)
+  return
+
+@ffi_wrapper sax_backdrop_set_open_ffi(ctx: ptr, value: i64):
+L_ENTRY:
+  state = load ctx+Backdrop_CTX_state as ptr
+  is_set = ne value, 0
+  store state+Backdrop_open, is_set as i1
+  call @sax_backdrop_render(ctx)
+  return
+
+@export sax_backdrop_render(ctx: ptr):
+L_ENTRY:
+  call @sax_backdrop_render_ffi(ctx)
+  return
+
+@ffi_wrapper sax_backdrop_render_ffi(ctx: ptr):
+L_ENTRY:
+  state = load ctx+Backdrop_CTX_state as ptr
+  dom = load ctx+Backdrop_CTX_dom as ptr
+  node_0 = load dom+sax_Backdrop_node_div as ptr
+  attr_tpl_node_0_class_buf = stack_alloc 50
+  attr_tpl_node_0_class_len = 0
+  attr_tpl_node_0_class_dst_0 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
+  call @sax_mem_copy(*attr_tpl_node_0_class_dst_0, *sax_Backdrop_14, 16)
+  attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, 16
+  attr_tpl_node_0_class_ternary_written_1 = 0
+  attr_tpl_node_0_class_ternary_dst_1 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
+  attr_tpl_node_0_class_ternary_bool_1 = load state+Backdrop_open as i1
+  br attr_tpl_node_0_class_ternary_bool_1 -> L_attr_tpl_node_0_class_4_TERNARY_TRUE_1, L_attr_tpl_node_0_class_4_TERNARY_FALSE_1
+L_attr_tpl_node_0_class_4_TERNARY_TRUE_1:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_1, *sax_Backdrop_15, 9)
+  attr_tpl_node_0_class_ternary_written_1 = 9
+  jmp L_attr_tpl_node_0_class_4_TERNARY_DONE_1
+L_attr_tpl_node_0_class_4_TERNARY_FALSE_1:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_1, *sax_Backdrop_16, 11)
+  attr_tpl_node_0_class_ternary_written_1 = 11
+  jmp L_attr_tpl_node_0_class_4_TERNARY_DONE_1
+L_attr_tpl_node_0_class_4_TERNARY_DONE_1:
+  attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_1
+  attr_tpl_node_0_class_ternary_written_2 = 0
+  attr_tpl_node_0_class_ternary_dst_2 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
+  attr_tpl_node_0_class_ternary_bool_2 = load state+Backdrop_invisible as i1
+  br attr_tpl_node_0_class_ternary_bool_2 -> L_attr_tpl_node_0_class_5_TERNARY_TRUE_2, L_attr_tpl_node_0_class_5_TERNARY_FALSE_2
+L_attr_tpl_node_0_class_5_TERNARY_TRUE_2:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_2, *sax_Backdrop_17, 22)
+  attr_tpl_node_0_class_ternary_written_2 = 22
+  jmp L_attr_tpl_node_0_class_5_TERNARY_DONE_2
+L_attr_tpl_node_0_class_5_TERNARY_FALSE_2:
+  attr_tpl_node_0_class_ternary_written_2 = 0
+  jmp L_attr_tpl_node_0_class_5_TERNARY_DONE_2
+L_attr_tpl_node_0_class_5_TERNARY_DONE_2:
+  attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_2
+  call @sax_dom_set_str_prop(node_0, *sax_Backdrop_18, 9, *attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len)
+  node_1 = load dom+sax_Backdrop_node_Slot as ptr
+  return
+
+@export sax_backdrop_destroy(ctx: ptr):
+L_ENTRY:
+  call @sax_backdrop_destroy_ffi(ctx)
+  return
+
+@ffi_wrapper sax_backdrop_destroy_ffi(ctx: ptr):
+L_ENTRY:
+  state = load ctx+Backdrop_CTX_state as ptr
+  dom = load ctx+Backdrop_CTX_dom as ptr
+  node_0 = load dom+sax_Backdrop_node_div as ptr
+  call @sax_dom_remove_self(node_0)
+  node_1 = load dom+sax_Backdrop_node_Slot as ptr
+  call @sax_dom_remove_self(node_1)
+  invisible = load state+Backdrop_invisible as i1
+  !invisible
+  open = load state+Backdrop_open as i1
+  !open
+  !dom
+  !state
+  !ctx
+  return
+
+@const sax_Backdrop_0 = utf8:"div"
+@const sax_Backdrop_1 = utf8:"slot"
+@const sax_Backdrop_2 = utf8:"MuiBackdrop-root"
+@const sax_Backdrop_3 = utf8:" Mui-open"
+@const sax_Backdrop_4 = utf8:" Mui-hidden"
+@const sax_Backdrop_5 = utf8:" MuiBackdrop-invisible"
+@const sax_Backdrop_6 = utf8:"className"
+@const sax_Backdrop_7 = utf8:"slot"
+@const sax_Backdrop_8 = utf8:"MuiBackdrop-root"
+@const sax_Backdrop_9 = utf8:" Mui-open"
+@const sax_Backdrop_10 = utf8:" Mui-hidden"
+@const sax_Backdrop_11 = utf8:" MuiBackdrop-invisible"
+@const sax_Backdrop_12 = utf8:"className"
+@const sax_Backdrop_13 = utf8:"slot"
+@const sax_Backdrop_14 = utf8:"MuiBackdrop-root"
+@const sax_Backdrop_15 = utf8:" Mui-open"
+@const sax_Backdrop_16 = utf8:" Mui-hidden"
+@const sax_Backdrop_17 = utf8:" MuiBackdrop-invisible"
+@const sax_Backdrop_18 = utf8:"className"
+
+@const sax_Backdrop_host_app = utf8:"#app"
 
 
 #def Popover_SIZE = 152

@@ -59,7 +59,7 @@
       <span className="mk-workspace-chevron">Sort</span>
     </button>
     <section className="mk-overlay-state" hidden={workspace_hidden}>
-      <button className="mk-click-away" onClick={close_workspace}></button>
+      <Backdrop invisible open={workspace_open} onClick={close_workspace} />
       <Popover open={workspace_open} anchorOriginVertical="bottom" anchorOriginHorizontal="left" transformOriginVertical="top" transformOriginHorizontal="left">
         <MenuList disablePadding>
           <MenuItem selected={workspace_team1} onClick={select_workspace_team1}><img className="mk-menu-icon mk-workspace-menu-icon" src="assets/icons/workspaces/logo-1.webp" alt="Team 1" />Team 1<span className="mk-plan-label">Free</span></MenuItem>
@@ -171,7 +171,7 @@
     <section className="mk-action-popover mk-search-action">
       <IconButton color="inherit" onClick={toggle_search}><span className="mk-icon-text">Search</span></IconButton>
       <section className="mk-overlay-state" hidden={search_hidden}>
-        <button className="mk-click-away" onClick={close_search}></button>
+        <Backdrop invisible open={search_open} onClick={close_search} />
         <Popover open={search_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
           <section className="mk-search-panel">
             <TextField fullWidth autoFocus onChange={search_changed}>Search dashboard</TextField>
@@ -185,7 +185,7 @@
     <section className="mk-action-popover">
       <IconButton color="inherit" onClick={toggle_language}><img className="mk-topbar-icon" src="assets/icons/flags/ic-flag-en.svg" alt="Language" /></IconButton>
       <section className="mk-overlay-state" hidden={language_hidden}>
-        <button className="mk-click-away" onClick={close_language}></button>
+        <Backdrop invisible open={language_open} onClick={close_language} />
         <Popover open={language_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
           <MenuList disablePadding>
             <MenuItem selected={lang_en} onClick={select_lang_en}><img className="mk-menu-icon" src="assets/icons/flags/ic-flag-en.svg" alt="English" />English</MenuItem>
@@ -199,7 +199,7 @@
     <section className="mk-action-popover mk-notification-action">
       <IconButton color="inherit" onClick={toggle_notifications}><Badge color="error" badgeContent={unread_count}><span className="mk-bell">Bell</span></Badge></IconButton>
       <section className="mk-overlay-state" hidden={notifications_hidden}>
-        <button className="mk-click-away" onClick={close_notifications}></button>
+        <Backdrop invisible open={notifications_open} onClick={close_notifications} />
         <Popover open={notifications_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
           <section className="mk-notification-panel">
             <section className="mk-popover-title"><section><strong>Notifications</strong><span>You have {unread_count} unread messages</span></section><IconButton color="primary" onClick={mark_all_read}>Done</IconButton></section>
@@ -219,7 +219,7 @@
     <section className="mk-action-popover mk-account-action">
       <IconButton color="inherit" onClick={toggle_account}><Avatar>J</Avatar></IconButton>
       <section className="mk-overlay-state" hidden={account_hidden}>
-        <button className="mk-click-away" onClick={close_account}></button>
+        <Backdrop invisible open={account_open} onClick={close_account} />
         <Popover open={account_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
           <section className="mk-account-panel">
             <section className="mk-account-head"><strong>John Doe</strong><span>john.doe@example.com</span></section>

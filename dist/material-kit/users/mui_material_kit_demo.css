@@ -183,18 +183,31 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
 }
 
+.mk-action-popover > button,
+.mk-action-popover > .MuiButtonBase-root {
+  position: relative;
+  z-index: 95;
+}
+
 .mk-overlay-state { display: contents; }
 .mk-overlay-state[hidden] { display: none !important; }
 
-.mk-click-away {
+.mk-click-away,
+.mk-action-popover > .MuiBackdrop-root,
+.mk-action-popover .mk-overlay-state > .MuiBackdrop-root {
   position: fixed;
-  inset: 0;
+  top: -100vh;
+  left: -100vw;
+  width: 200vw;
+  height: 200vh;
   z-index: 55;
   border: 0;
   background: transparent;
   padding: 0;
   cursor: default;
 }
+
+.mk-action-popover .MuiBackdrop-root.MuiBackdrop-invisible { background: transparent; }
 
 .MuiModal-root.Mui-hidden,
 .MuiPopover-root.Mui-hidden,
@@ -242,7 +255,8 @@ a { color: inherit; text-decoration: none; }
   z-index: 90;
 }
 
-.mk-search-action .mk-click-away { z-index: 85; }
+.mk-search-action .mk-click-away,
+.mk-search-action .MuiBackdrop-root { z-index: 85; }
 
 .mk-search-action .MuiPopover-paper { width: 100%; max-width: none; }
 .mk-search-panel {

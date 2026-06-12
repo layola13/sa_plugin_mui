@@ -1720,7 +1720,7 @@
     invisible = 0 as i1
     open = 0 as i1
   </state>
-  <div className="MuiBackdrop-root{invisible ? ' MuiBackdrop-invisible' : ''}">
+  <div className="MuiBackdrop-root{open ? ' Mui-open' : ' Mui-hidden'}{invisible ? ' MuiBackdrop-invisible' : ''}">
     <Slot />
   </div>
   !invisible !open
