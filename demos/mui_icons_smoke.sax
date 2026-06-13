@@ -1,0 +1,8 @@
+<Component name="MuiIconsSmoke">
+  <section className="mui-icons-smoke">
+    <SearchIcon color="primary" />
+    <WarningIcon color="warning" />
+    <InfoIcon color="info" fontSize="small" />
+    <Typography>Material icons smoke</Typography>
+  </section>
+</Component>

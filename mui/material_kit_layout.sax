@@ -56,7 +56,7 @@
     <button className="mk-workspace-trigger" onClick={toggle_workspace}>
       <span className="mk-workspace-avatar"><img className="{workspace_team1 ? '' : 'mk-hidden'}" src="assets/icons/workspaces/logo-1.webp" alt="Team 1" /><img className="{workspace_team2 ? '' : 'mk-hidden'}" src="assets/icons/workspaces/logo-2.webp" alt="Team 2" /><img className="{workspace_team3 ? '' : 'mk-hidden'}" src="assets/icons/workspaces/logo-3.webp" alt="Team 3" /></span>
       <span className="mk-workspace-copy"><strong className="{workspace_team1 ? '' : 'mk-hidden'}">Team 1</strong><strong className="{workspace_team2 ? '' : 'mk-hidden'}">Team 2</strong><strong className="{workspace_team3 ? '' : 'mk-hidden'}">Team 3</strong><em className="{workspace_team1 ? '' : 'mk-hidden'}">Free</em><em className="{workspace_team2 ? '' : 'mk-hidden'}">Pro</em><em className="{workspace_team3 ? '' : 'mk-hidden'}">Pro</em></span>
-      <span className="mk-workspace-chevron">Sort</span>
+      <span className="mk-workspace-chevron"><ExpandMoreIcon fontSize="small" /></span>
     </button>
     <section className="mk-overlay-state" hidden={workspace_hidden}>
       <Backdrop invisible open={workspace_open} onClick={close_workspace} />
@@ -169,7 +169,7 @@
   </state>
   <section className="mk-topbar-actions">
     <section className="mk-action-popover mk-search-action">
-      <IconButton color="inherit" onClick={toggle_search}><span className="mk-icon-text">Search</span></IconButton>
+      <IconButton color="inherit" onClick={toggle_search}><SearchIcon /></IconButton>
       <section className="mk-overlay-state" hidden={search_hidden}>
         <Backdrop invisible open={search_open} onClick={close_search} />
         <Popover open={search_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
@@ -197,7 +197,7 @@
     </section>
 
     <section className="mk-action-popover mk-notification-action">
-      <IconButton color="inherit" onClick={toggle_notifications}><Badge color="error" badgeContent={unread_count}><span className="mk-bell">Bell</span></Badge></IconButton>
+      <IconButton color="inherit" onClick={toggle_notifications}><Badge color="error" badgeContent={unread_count}><NotificationsIcon /></Badge></IconButton>
       <section className="mk-overlay-state" hidden={notifications_hidden}>
         <Backdrop invisible open={notifications_open} onClick={close_notifications} />
         <Popover open={notifications_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
@@ -227,11 +227,11 @@
             <MenuList disablePadding>
               <MenuItem onClick={close_account}>Home</MenuItem>
               <MenuItem onClick={close_account}>Profile</MenuItem>
-              <MenuItem onClick={close_account}>Settings</MenuItem>
+              <MenuItem onClick={close_account}><SettingsIcon fontSize="small" />Settings</MenuItem>
             </MenuList>
             <Divider />
             <section className="mk-account-links" onClick={close_account}><Slot /></section>
-            <Button fullWidth color="error" onClick={toggle_account}>Logout</Button>
+            <Button fullWidth color="error" onClick={toggle_account}><LogoutIcon fontSize="small" />Logout</Button>
           </section>
         </Popover>
       </section>

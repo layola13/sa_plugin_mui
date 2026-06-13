@@ -92,6 +92,16 @@ async function expectMountedMui(page) {
 
   const requiredSelectors = [
     ".MuiButton-root",
+    ".MuiThemeProvider-root.MuiThemeProvider-modeDark",
+    ".MuiCssVarsProvider-root.MuiCssVarsProvider-modeDark",
+    ".MuiIconify-root.MuiIconify-hasIcon",
+    ".MuiLoadingButton-root.MuiLoadingButton-loading",
+    ".MuiTimeline-root",
+    ".MuiMasonry-root",
+    ".MuiTabContext-root",
+    ".MuiResponsiveBox-root",
+    ".MuiHidden-root.MuiHidden-smDown",
+    ".mui-material-icons-grid",
     ".MuiAutocomplete-root",
     ".MuiTablePaginationActions-root",
     ".MuiDialog-root",
@@ -109,6 +119,57 @@ async function expectMountedMui(page) {
 
   const allMuiNodes = await count(page, "[class*='Mui']");
   if (allMuiNodes < 80) throw new Error(`expected broad MUI DOM coverage, got ${allMuiNodes} Mui-class nodes`);
+
+  const loadingButton = page.locator(".MuiLoadingButton-root.MuiLoadingButton-loading", { hasText: "Saving theme" }).first();
+  if ((await loadingButton.count()) === 0) throw new Error("missing loading Button lab component state");
+  if (!(await loadingButton.evaluate((node) => node instanceof HTMLButtonElement && node.disabled))) {
+    throw new Error("loading Button did not set native disabled state");
+  }
+
+  const labCases = [
+    [".MuiTimelineItem-root.MuiTimelineItem-missingOppositeContent", "Order placed"],
+    [".MuiTimelineDot-root.MuiTimelineDot-primary", null],
+    [".MuiTimelineDot-root.MuiTimelineDot-success.MuiTimelineDot-outlined", null],
+    [".MuiTimelineConnector-root", null],
+    [".MuiMasonry-root.MuiMasonry-columns3", "Short masonry card"],
+    [".MuiTabPanel-root", "Overview panel"],
+    [".MuiThemeProvider-root.MuiThemeProvider-colorPrimary", null],
+    [".MuiThemeProvider-root.MuiThemeProvider-colorSecondary", "Secondary theme"],
+    [".MuiThemeProvider-root.MuiThemeProvider-colorSuccess", "Success theme"],
+    [".MuiThemeProvider-root.MuiThemeProvider-colorWarning", "Warning theme"],
+    [".MuiThemeProvider-root.MuiThemeProvider-colorError", "Error theme"],
+    [".MuiThemeProvider-root.MuiThemeProvider-colorInfo", "Info theme"],
+    [".MuiCssVarsProvider-root.MuiCssVarsProvider-colorSecondary", "Dark secondary CSS vars provider"],
+    [".mui-theme-palette-card", "Primary theme"],
+    [".MuiIconify-root.MuiIconify-colorSecondary", "Search iconify"],
+    [".MuiIconify-root.MuiIconify-colorWarning", "Bell iconify"],
+    [".mui-material-icon-sample", "Search material icon"],
+    [".mui-material-icon-sample", "Notifications material icon"],
+    [".mui-material-icon-sample", "Account material icon"],
+    [".mui-material-icon-sample", "Dashboard material icon"],
+    [".mui-material-icon-sample", "Shopping bag material icon"],
+  ];
+
+  for (const [selector, label] of labCases) {
+    const locator = label ? page.locator(selector, { hasText: label }) : page.locator(selector);
+    if ((await locator.count()) === 0) throw new Error(`missing new theme/lab/icon/responsive class ${selector}${label ? ` for '${label}'` : ""}`);
+  }
+
+  const materialIconLabels = [
+    "Search material icon",
+    "Notifications material icon",
+    "Account material icon",
+    "Dashboard material icon",
+    "Shopping bag material icon",
+  ];
+
+  for (const label of materialIconLabels) {
+    const sample = page.locator(".mui-material-icon-sample", { hasText: label }).first();
+    if ((await sample.count()) === 0) throw new Error(`missing material icon sample '${label}'`);
+    if ((await sample.locator(".MuiSvgIcon-root path").count()) === 0) {
+      throw new Error(`material icon sample '${label}' did not render through SvgIcon`);
+    }
+  }
 
   const buttonTexts = await page.locator(".MuiButton-root").evaluateAll((nodes) => nodes.map((node) => node.textContent?.trim()).filter(Boolean));
   for (const label of ["Save", "Disabled button", "Interactive button", "Grouped", "Tooltip target", "Open"]) {
@@ -526,6 +587,12 @@ async function expectMountedMui(page) {
     [".MuiLink-root.MuiLink-underlineNone", "Plain link"],
     [".MuiSvgIcon-root.MuiSvgIcon-fontSizeSmall", null],
     [".MuiSvgIcon-root.MuiSvgIcon-colorSecondary", null],
+    [".MuiSvgIcon-root.MuiSvgIcon-colorSuccess", null],
+    [".MuiSvgIcon-root.MuiSvgIcon-colorWarning", null],
+    [".MuiSvgIcon-root.MuiSvgIcon-colorInfo", null],
+    [".MuiSvgIcon-root.MuiSvgIcon-colorError", null],
+    [".MuiSvgIcon-root.MuiSvgIcon-colorAction", null],
+    [".MuiSvgIcon-root.MuiSvgIcon-colorDisabled", null],
     [".MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge", null],
     [".MuiIcon-root.MuiIcon-fontSizeSmall", "menu"],
     [".MuiIcon-root.MuiIcon-colorSecondary", "menu"],

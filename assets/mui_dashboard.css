@@ -504,6 +504,21 @@ a {
   color: var(--dash-teal);
 }
 
+.MuiSvgIcon-colorPrimary,
+.MuiIcon-colorPrimary { color: var(--dash-blue); }
+.MuiSvgIcon-colorSuccess,
+.MuiIcon-colorSuccess { color: var(--dash-green); }
+.MuiSvgIcon-colorInfo,
+.MuiIcon-colorInfo { color: #0284c7; }
+.MuiSvgIcon-colorWarning,
+.MuiIcon-colorWarning { color: var(--dash-amber); }
+.MuiSvgIcon-colorError,
+.MuiIcon-colorError { color: var(--dash-red); }
+.MuiSvgIcon-colorAction,
+.MuiIcon-colorAction { color: #64748b; }
+.MuiSvgIcon-colorDisabled,
+.MuiIcon-colorDisabled { color: #cbd5e1; }
+
 .MuiFab-root {
   min-width: 42px;
   border-radius: 999px;
@@ -1143,6 +1158,179 @@ option {
   border-radius: 8px;
   background: rgba(15, 23, 42, 0.08);
   padding: 10px;
+}
+
+.MuiThemeProvider-root,
+.MuiCssVarsProvider-root {
+  --mui-palette-main: #00a76f;
+  --mui-palette-contrast: #ffffff;
+  --mui-palette-soft: rgba(0, 167, 111, 0.12);
+  display: block;
+  border: 1px solid var(--dash-line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.MuiThemeProvider-colorPrimary,
+.MuiCssVarsProvider-colorPrimary {
+  --mui-palette-main: #00a76f;
+  --mui-palette-soft: rgba(0, 167, 111, 0.12);
+}
+
+.MuiThemeProvider-colorSecondary,
+.MuiCssVarsProvider-colorSecondary {
+  --mui-palette-main: #8e33ff;
+  --mui-palette-soft: rgba(142, 51, 255, 0.12);
+}
+
+.MuiThemeProvider-colorSuccess,
+.MuiCssVarsProvider-colorSuccess {
+  --mui-palette-main: #22c55e;
+  --mui-palette-soft: rgba(34, 197, 94, 0.12);
+}
+
+.MuiThemeProvider-colorWarning,
+.MuiCssVarsProvider-colorWarning {
+  --mui-palette-main: #f59e0b;
+  --mui-palette-soft: rgba(245, 158, 11, 0.14);
+  --mui-palette-contrast: #111827;
+}
+
+.MuiThemeProvider-colorError,
+.MuiCssVarsProvider-colorError {
+  --mui-palette-main: #ef4444;
+  --mui-palette-soft: rgba(239, 68, 68, 0.12);
+}
+
+.MuiThemeProvider-colorInfo,
+.MuiCssVarsProvider-colorInfo {
+  --mui-palette-main: #0288d1;
+  --mui-palette-soft: rgba(2, 136, 209, 0.12);
+}
+
+.MuiThemeProvider-modeDark,
+.MuiCssVarsProvider-modeDark {
+  color: #e5e7eb;
+  background: #111827;
+  border-color: #334155;
+}
+
+.mui-theme-palette-grid {
+  margin: 12px 0;
+  align-items: stretch;
+}
+
+.mui-theme-palette-card {
+  min-width: 142px;
+  border: 1px solid color-mix(in srgb, var(--mui-palette-main), #ffffff 55%);
+  border-radius: 8px;
+  padding: 14px 16px;
+  color: var(--mui-palette-main);
+  background: var(--mui-palette-soft);
+  font-weight: 700;
+}
+
+.mui-css-vars-sample {
+  border-left: 4px solid var(--mui-palette-main);
+  background: var(--mui-palette-soft);
+  color: inherit;
+}
+
+.MuiResponsiveBox-root {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.MuiResponsiveBox-directionColumn { flex-direction: column; align-items: stretch; }
+.MuiResponsiveBox-directionRow { flex-direction: row; }
+
+.MuiIconify-root {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #475569;
+  font-weight: 700;
+}
+.MuiIconify-glyph {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: .22;
+}
+.MuiIconify-colorPrimary { color: #00a76f; }
+.MuiIconify-colorSecondary { color: #8e33ff; }
+.MuiIconify-colorWarning { color: #f59e0b; }
+.MuiIconify-colorError { color: #ef4444; }
+.MuiIconify-colorSuccess { color: #16a34a; }
+
+.mui-material-icons-grid {
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.mui-material-icon-sample {
+  min-width: 178px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid var(--dash-line-soft);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 10px 12px;
+}
+
+.mui-material-icon-sample .MuiTypography-root {
+  font-size: 12px;
+  line-height: 1.25;
+  color: var(--dash-muted);
+}
+
+.MuiLoadingButton-root { position: relative; }
+.MuiLoadingButton-loadingIndicator { display: inline-flex; margin-right: 8px; }
+.MuiLoadingButton-loadingIndicatorHidden { display: none; }
+
+.MuiTimeline-root {
+  display: grid;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.MuiTimelineItem-root { display: grid; grid-template-columns: auto 1fr; gap: 12px; min-height: 48px; }
+.MuiTimelineSeparator-root { display: grid; justify-items: center; align-content: start; }
+.MuiTimelineDot-root { width: 12px; height: 12px; border-radius: 999px; background: #94a3b8; margin-top: 6px; }
+.MuiTimelineDot-primary { background: #00a76f; }
+.MuiTimelineDot-success { background: #16a34a; }
+.MuiTimelineDot-info { background: #0284c7; }
+.MuiTimelineDot-warning { background: #f59e0b; }
+.MuiTimelineDot-error { background: #ef4444; }
+.MuiTimelineDot-outlined { background: #ffffff; border: 2px solid currentColor; }
+.MuiTimelineConnector-root { width: 2px; min-height: 28px; background: #e2e8f0; }
+.MuiTimelineContent-root,
+.MuiTimelineOppositeContent-root { padding: 2px 0 10px; }
+
+.MuiMasonry-root { column-gap: 12px; }
+.MuiMasonry-columns3 { columns: 3; }
+.MuiMasonry-columns4 { columns: 4; }
+.MuiMasonry-root > * { break-inside: avoid; margin-bottom: 12px; }
+
+.MuiTabContext-root,
+.MuiTabPanel-root { display: block; }
+.MuiTabPanel-root { padding: 12px; border: 1px solid var(--dash-line); border-radius: 8px; }
+
+@media (max-width: 899px) {
+  .MuiHidden-smDown { display: none !important; }
+  .MuiResponsiveBox-smRow { flex-direction: row; }
+  .MuiResponsiveBox-smColumn { flex-direction: column; align-items: stretch; }
+  .MuiMasonry-root { columns: 1; }
+}
+
+@media (min-width: 900px) {
+  .MuiResponsiveBox-mdRow { flex-direction: row; }
+  .MuiResponsiveBox-mdColumn { flex-direction: column; align-items: stretch; }
 }
 
 .MuiAppBar-root {

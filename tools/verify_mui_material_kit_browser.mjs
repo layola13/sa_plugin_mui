@@ -104,6 +104,12 @@ async function runDesktopChecks(page, dashboardUrl) {
   await expectNoHorizontalOverflow(page);
   await expectImagesLoaded(page);
 
+  const topbarSvgIcons = await page.locator('.mk-topbar-actions .MuiIconButton-root .MuiSvgIcon-root').count();
+  if (topbarSvgIcons < 2) throw new Error(`topbar did not render SAX material icons, got ${topbarSvgIcons}`);
+  if ((await page.locator('.mk-workspace-chevron .MuiSvgIcon-root').count()) === 0) {
+    throw new Error('workspace trigger did not render ExpandMoreIcon');
+  }
+
   await page.locator('.mk-tasks .MuiIconButton-root').first().click();
   await page.waitForTimeout(100);
   if ((await visibleCount(page, '.mk-tasks .MuiPopover-root')) !== 1) throw new Error('tasks row popover did not open');
@@ -265,6 +271,9 @@ async function runDesktopChecks(page, dashboardUrl) {
   await page.waitForTimeout(150);
   await expectSameUrl(page, beforeUrl, 'dashboard sign-in nav changed URL');
   await expectVisibleText(page, '.mk-auth-dashboard-page', 'Sign in');
+  if ((await visibleCount(page, '.mk-auth-dashboard-page:not(.mk-hidden) .MuiButton-root.MuiButton-fullWidth')) === 0) {
+    throw new Error('dashboard auth button did not emit MuiButton-fullWidth');
+  }
   await page.locator('.mk-auth-dashboard-page:not(.mk-hidden) .mk-password-toggle .MuiIconButton-root').click();
   await page.waitForTimeout(100);
   if ((await page.locator('.mk-auth-dashboard-page:not(.mk-hidden) .mk-password-field input').evaluate((node) => node.type)) !== 'text') throw new Error('dashboard sign-in password did not reveal');
@@ -376,6 +385,9 @@ async function runIndependentRouteChecks(page, dashboardUrl) {
     if ((await visibleCount(page, '.mk-sidebar')) !== 0) throw new Error(`${route} route rendered dashboard sidebar`);
     if ((await visibleCount(page, '.mk-signin-art')) !== 0) throw new Error(`${route} route kept old split artwork panel`);
     if (!(await isVisible(page, '.mk-auth-content'))) throw new Error(`${route} auth content not visible`);
+    if ((await visibleCount(page, '.mk-auth-switch-page:not(.mk-hidden) .MuiButton-root.MuiButton-fullWidth')) === 0) {
+      throw new Error(`${route} auth button did not emit MuiButton-fullWidth`);
+    }
     await expectText(page, heading);
     const activeAuth = page.locator('.mk-auth-switch-page:not(.mk-hidden)');
     const beforeRouteUrl = page.url();
@@ -391,6 +403,21 @@ async function runIndependentRouteChecks(page, dashboardUrl) {
     await expectSameUrl(page, beforeRouteUrl, `${route} auth submit changed URL`);
     await expectNoHorizontalOverflow(page);
   }
+
+  await page.goto(routeUrl(dashboardUrl, '404'), { waitUntil: 'commit' });
+  await page.waitForSelector('.mk-notfound-app', { timeout: 15000 });
+  if ((await visibleCount(page, '.mk-sidebar')) !== 0) throw new Error('404 route rendered dashboard sidebar');
+  await expectVisibleText(page, '.mk-notfound-content', 'Sorry, page not found!');
+  await expectImagesLoaded(page);
+  const homeHref = await page.locator('.mk-notfound-actions .MuiLink-root', { hasText: 'Go to home' }).getAttribute('href');
+  if (homeHref !== '../index.html') throw new Error(`404 home link href mismatch: ${homeHref}`);
+  if ((await visibleCount(page, '.mk-notfound-actions .MuiButton-root.MuiButton-contained.MuiButton-colorInherit.MuiButton-sizeLarge')) === 0) {
+    throw new Error('404 home action did not render MUI button classes');
+  }
+  await page.locator('.mk-notfound-actions .MuiButton-root', { hasText: 'Stay here' }).click();
+  await page.waitForTimeout(100);
+  await expectText(page, '404 actions: 1');
+  await expectNoHorizontalOverflow(page);
 }
 
 async function run(inputUrl) {

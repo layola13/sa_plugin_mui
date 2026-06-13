@@ -1,0 +1,34 @@
+<Component name="MuiThemeLabSmoke">
+  <section className="mui-theme-lab-smoke">
+    <MuiThemeProvider mode="dark" colorScheme="dark">
+      <CssBaseline enableColorScheme />
+      <ResponsiveBox direction="column" smDirection="row" mdDirection="row">
+        <Iconify icon="eva:search-fill" color="secondary">Search icon</Iconify>
+        <LoadingButton loading variant="contained">Loading action</LoadingButton>
+        <Hidden smDown>Desktop only</Hidden>
+      </ResponsiveBox>
+    </MuiThemeProvider>
+    <MuiCssVarsProvider mode="dark" colorScheme="dark">
+      <Box>CSS vars provider</Box>
+    </MuiCssVarsProvider>
+    <Timeline>
+      <TimelineItem missingOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot color="primary" />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Order placed</TimelineContent>
+      </TimelineItem>
+    </Timeline>
+    <Masonry columns="3">
+      <Paper>One</Paper>
+      <Paper>Two</Paper>
+    </Masonry>
+    <TabContext value="overview">
+      <TabList value="overview">
+        <Tab value="overview">Overview</Tab>
+      </TabList>
+      <TabPanel value="overview">Panel</TabPanel>
+    </TabContext>
+  </section>
+</Component>

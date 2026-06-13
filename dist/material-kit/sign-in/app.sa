@@ -483,6 +483,7 @@ L_attr_tpl_node_48_class_3_TERNARY_DONE_1:
   call @sax_dom_append_child(node_15, node_24)
   node_25 = call @sax_button_mount(node_15)
   store dom+sax_MuiMaterialKitSignInPage_node_Button, node_25 as ptr
+  call @sax_button_set_fullWidth(node_25, 1)
   call @sax_button_set_variant_str(node_25, *sax_MuiMaterialKitSignInPage_144, 9)
   call @sax_button_set_color_str(node_25, *sax_MuiMaterialKitSignInPage_145, 7)
   node_25_root = call @sax_button_root(node_25)
@@ -598,6 +599,7 @@ L_prop_str_ternary_TextField_1_1_4_TERNARY_DONE_0:
   call @sax_dom_append_child(node_41, node_51)
   node_52 = call @sax_button_mount(node_41)
   store dom+sax_MuiMaterialKitSignInPage_node_Button_1, node_52 as ptr
+  call @sax_button_set_fullWidth(node_52, 1)
   call @sax_button_set_variant_str(node_52, *sax_MuiMaterialKitSignInPage_172, 9)
   call @sax_button_set_color_str(node_52, *sax_MuiMaterialKitSignInPage_173, 7)
   node_52_root = call @sax_button_root(node_52)
@@ -907,6 +909,7 @@ L_attr_tpl_node_48_class_9_TERNARY_DONE_1:
   call @sax_dom_append_child(node_15, node_24)
   node_25 = call @sax_button_mount(node_15)
   store dom+sax_MuiMaterialKitSignInPage_node_Button, node_25 as ptr
+  call @sax_button_set_fullWidth(node_25, 1)
   call @sax_button_set_variant_str(node_25, *sax_MuiMaterialKitSignInPage_271, 9)
   call @sax_button_set_color_str(node_25, *sax_MuiMaterialKitSignInPage_272, 7)
   node_25_root = call @sax_button_root(node_25)
@@ -1022,6 +1025,7 @@ L_prop_str_ternary_TextField_1_1_10_TERNARY_DONE_0:
   call @sax_dom_append_child(node_41, node_51)
   node_52 = call @sax_button_mount(node_41)
   store dom+sax_MuiMaterialKitSignInPage_node_Button_1, node_52 as ptr
+  call @sax_button_set_fullWidth(node_52, 1)
   call @sax_button_set_variant_str(node_52, *sax_MuiMaterialKitSignInPage_299, 9)
   call @sax_button_set_color_str(node_52, *sax_MuiMaterialKitSignInPage_300, 7)
   node_52_root = call @sax_button_root(node_52)
@@ -1363,6 +1367,7 @@ L_attr_tpl_node_23_class_14_TERNARY_DONE_1:
   text_len_span_3 = add text_len_span_3, text_tmp_len_span_3_1
   call @sax_dom_set_text(node_24, *text_buf_span_3, text_len_span_3)
   node_25 = load dom+sax_MuiMaterialKitSignInPage_node_Button as ptr
+  call @sax_button_set_fullWidth(node_25, 1)
   call @sax_button_set_variant_str(node_25, *sax_MuiMaterialKitSignInPage_356, 9)
   call @sax_button_set_color_str(node_25, *sax_MuiMaterialKitSignInPage_357, 7)
   call @sax_button_render(node_25)
@@ -1530,6 +1535,7 @@ L_attr_tpl_node_48_class_17_TERNARY_DONE_1:
   text_len_span_10 = add text_len_span_10, text_tmp_len_span_10_1
   call @sax_dom_set_text(node_51, *text_buf_span_10, text_len_span_10)
   node_52 = load dom+sax_MuiMaterialKitSignInPage_node_Button_1 as ptr
+  call @sax_button_set_fullWidth(node_52, 1)
   call @sax_button_set_variant_str(node_52, *sax_MuiMaterialKitSignInPage_400, 9)
   call @sax_button_set_color_str(node_52, *sax_MuiMaterialKitSignInPage_401, 7)
   call @sax_button_render(node_52)
@@ -1628,7 +1634,7 @@ L_attr_tpl_node_35_class_19_TERNARY_DONE_1:
   attr_tpl_node_35_class_len = add attr_tpl_node_35_class_len, attr_tpl_node_35_class_ternary_written_1
   call @sax_dom_set_str_prop(node_35, *sax_MuiMaterialKitSignInPage_421, 9, *attr_tpl_node_35_class_buf, attr_tpl_node_35_class_len)
     ret
-
+  
 
 @export sax_muimaterialkitsigninpage_show_register(ctx: ptr):
 L_ENTRY:
@@ -1682,7 +1688,7 @@ L_attr_tpl_node_35_class_21_TERNARY_DONE_1:
   attr_tpl_node_35_class_len = add attr_tpl_node_35_class_len, attr_tpl_node_35_class_ternary_written_1
   call @sax_dom_set_str_prop(node_35, *sax_MuiMaterialKitSignInPage_427, 9, *attr_tpl_node_35_class_buf, attr_tpl_node_35_class_len)
     ret
-
+  
 
 @export sax_muimaterialkitsigninpage_toggle_password(ctx: ptr):
 L_ENTRY:
@@ -1889,7 +1895,7 @@ L_attr_tpl_node_48_class_29_TERNARY_DONE_1:
   text_len_span_9 = add text_len_span_9, 13
   call @sax_dom_set_text(node_48, *text_buf_span_9, text_len_span_9)
     ret
-
+  
 
 @export sax_muimaterialkitsigninpage_toggle_terms(ctx: ptr):
 L_ENTRY:
@@ -1908,7 +1914,7 @@ L_ENTRY:
   call @sax_checkbox_set_checked(node_50, prop_expr_Checkbox_0_wide_1)
   call @sax_checkbox_render(node_50)
     ret
-
+  
 
 @export sax_muimaterialkitsigninpage_submit_sign_in(ctx: ptr):
 L_ENTRY:
@@ -1937,7 +1943,7 @@ L_ENTRY:
   text_len_span_3 = add text_len_span_3, text_tmp_len_span_3_1
   call @sax_dom_set_text(node_24, *text_buf_span_3, text_len_span_3)
     ret
-
+  
 
 @export sax_muimaterialkitsigninpage_submit_register(ctx: ptr):
 L_ENTRY:
@@ -1966,7 +1972,7 @@ L_ENTRY:
   text_len_span_10 = add text_len_span_10, text_tmp_len_span_10_1
   call @sax_dom_set_text(node_51, *text_buf_span_10, text_len_span_10)
     ret
-
+  
 
 @export sax_muimaterialkitsigninpage_destroy(ctx: ptr):
 L_ENTRY:
@@ -3344,9 +3350,27 @@ L_ENTRY:
   store ctx+CssBaseline_CTX_dom, dom as ptr
   node_0 = call @sax_dom_create(*sax_CssBaseline_0, 4)
   store dom+sax_CssBaseline_node_span, node_0 as i64
-  call @sax_dom_set_str_prop(node_0, *sax_CssBaseline_2, 9, *sax_CssBaseline_3, 19)
-  call @sax_dom_set_bool_prop(node_0, *sax_CssBaseline_4, 6, 1)
-  node_1 = call @sax_dom_create(*sax_CssBaseline_5, 4)
+  attr_tpl_node_0_class_buf = stack_alloc 53
+  attr_tpl_node_0_class_len = 0
+  attr_tpl_node_0_class_dst_0 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
+  call @sax_mem_copy(*attr_tpl_node_0_class_dst_0, *sax_CssBaseline_2, 19)
+  attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, 19
+  attr_tpl_node_0_class_ternary_written_1 = 0
+  attr_tpl_node_0_class_ternary_dst_1 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
+  attr_tpl_node_0_class_ternary_bool_1 = load state+CssBaseline_enableColorScheme as i1
+  br attr_tpl_node_0_class_ternary_bool_1 -> L_attr_tpl_node_0_class_0_TERNARY_TRUE_1, L_attr_tpl_node_0_class_0_TERNARY_FALSE_1
+L_attr_tpl_node_0_class_0_TERNARY_TRUE_1:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_1, *sax_CssBaseline_3, 33)
+  attr_tpl_node_0_class_ternary_written_1 = 33
+  jmp L_attr_tpl_node_0_class_0_TERNARY_DONE_1
+L_attr_tpl_node_0_class_0_TERNARY_FALSE_1:
+  attr_tpl_node_0_class_ternary_written_1 = 0
+  jmp L_attr_tpl_node_0_class_0_TERNARY_DONE_1
+L_attr_tpl_node_0_class_0_TERNARY_DONE_1:
+  attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_1
+  call @sax_dom_set_str_prop(node_0, *sax_CssBaseline_4, 9, *attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len)
+  call @sax_dom_set_bool_prop(node_0, *sax_CssBaseline_5, 6, 1)
+  node_1 = call @sax_dom_create(*sax_CssBaseline_6, 4)
   store dom+sax_CssBaseline_node_Slot, node_1 as i64
   call @sax_dom_append_child(host, node_0)
   call @sax_dom_append_child(host, node_1)
@@ -3368,9 +3392,27 @@ L_ENTRY:
   store ctx+CssBaseline_CTX_dom, dom as ptr
   node_0 = call @sax_dom_create(*sax_CssBaseline_0, 4)
   store dom+sax_CssBaseline_node_span, node_0 as i64
-  call @sax_dom_set_str_prop(node_0, *sax_CssBaseline_6, 9, *sax_CssBaseline_7, 19)
-  call @sax_dom_set_bool_prop(node_0, *sax_CssBaseline_8, 6, 1)
-  node_1 = call @sax_dom_create(*sax_CssBaseline_9, 4)
+  attr_tpl_node_0_class_buf = stack_alloc 53
+  attr_tpl_node_0_class_len = 0
+  attr_tpl_node_0_class_dst_0 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
+  call @sax_mem_copy(*attr_tpl_node_0_class_dst_0, *sax_CssBaseline_7, 19)
+  attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, 19
+  attr_tpl_node_0_class_ternary_written_1 = 0
+  attr_tpl_node_0_class_ternary_dst_1 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
+  attr_tpl_node_0_class_ternary_bool_1 = load state+CssBaseline_enableColorScheme as i1
+  br attr_tpl_node_0_class_ternary_bool_1 -> L_attr_tpl_node_0_class_1_TERNARY_TRUE_1, L_attr_tpl_node_0_class_1_TERNARY_FALSE_1
+L_attr_tpl_node_0_class_1_TERNARY_TRUE_1:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_1, *sax_CssBaseline_8, 33)
+  attr_tpl_node_0_class_ternary_written_1 = 33
+  jmp L_attr_tpl_node_0_class_1_TERNARY_DONE_1
+L_attr_tpl_node_0_class_1_TERNARY_FALSE_1:
+  attr_tpl_node_0_class_ternary_written_1 = 0
+  jmp L_attr_tpl_node_0_class_1_TERNARY_DONE_1
+L_attr_tpl_node_0_class_1_TERNARY_DONE_1:
+  attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_1
+  call @sax_dom_set_str_prop(node_0, *sax_CssBaseline_9, 9, *attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len)
+  call @sax_dom_set_bool_prop(node_0, *sax_CssBaseline_10, 6, 1)
+  node_1 = call @sax_dom_create(*sax_CssBaseline_11, 4)
   store dom+sax_CssBaseline_node_Slot, node_1 as i64
   call @sax_dom_append_child(parent_h, node_0)
   call @sax_dom_append_child(parent_h, node_1)
@@ -3422,8 +3464,26 @@ L_ENTRY:
   state = load ctx+CssBaseline_CTX_state as ptr
   dom = load ctx+CssBaseline_CTX_dom as ptr
   node_0 = load dom+sax_CssBaseline_node_span as ptr
-  call @sax_dom_set_str_prop(node_0, *sax_CssBaseline_10, 9, *sax_CssBaseline_11, 19)
-  call @sax_dom_set_bool_prop(node_0, *sax_CssBaseline_12, 6, 1)
+  attr_tpl_node_0_class_buf = stack_alloc 53
+  attr_tpl_node_0_class_len = 0
+  attr_tpl_node_0_class_dst_0 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
+  call @sax_mem_copy(*attr_tpl_node_0_class_dst_0, *sax_CssBaseline_12, 19)
+  attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, 19
+  attr_tpl_node_0_class_ternary_written_1 = 0
+  attr_tpl_node_0_class_ternary_dst_1 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
+  attr_tpl_node_0_class_ternary_bool_1 = load state+CssBaseline_enableColorScheme as i1
+  br attr_tpl_node_0_class_ternary_bool_1 -> L_attr_tpl_node_0_class_2_TERNARY_TRUE_1, L_attr_tpl_node_0_class_2_TERNARY_FALSE_1
+L_attr_tpl_node_0_class_2_TERNARY_TRUE_1:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_1, *sax_CssBaseline_13, 33)
+  attr_tpl_node_0_class_ternary_written_1 = 33
+  jmp L_attr_tpl_node_0_class_2_TERNARY_DONE_1
+L_attr_tpl_node_0_class_2_TERNARY_FALSE_1:
+  attr_tpl_node_0_class_ternary_written_1 = 0
+  jmp L_attr_tpl_node_0_class_2_TERNARY_DONE_1
+L_attr_tpl_node_0_class_2_TERNARY_DONE_1:
+  attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_1
+  call @sax_dom_set_str_prop(node_0, *sax_CssBaseline_14, 9, *attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len)
+  call @sax_dom_set_bool_prop(node_0, *sax_CssBaseline_15, 6, 1)
   node_1 = load dom+sax_CssBaseline_node_Slot as ptr
   return
 
@@ -3449,17 +3509,20 @@ L_ENTRY:
 
 @const sax_CssBaseline_0 = utf8:"span"
 @const sax_CssBaseline_1 = utf8:"slot"
-@const sax_CssBaseline_2 = utf8:"className"
-@const sax_CssBaseline_3 = utf8:"MuiCssBaseline-root"
-@const sax_CssBaseline_4 = utf8:"hidden"
-@const sax_CssBaseline_5 = utf8:"slot"
-@const sax_CssBaseline_6 = utf8:"className"
+@const sax_CssBaseline_2 = utf8:"MuiCssBaseline-root"
+@const sax_CssBaseline_3 = utf8:" MuiCssBaseline-enableColorScheme"
+@const sax_CssBaseline_4 = utf8:"className"
+@const sax_CssBaseline_5 = utf8:"hidden"
+@const sax_CssBaseline_6 = utf8:"slot"
 @const sax_CssBaseline_7 = utf8:"MuiCssBaseline-root"
-@const sax_CssBaseline_8 = utf8:"hidden"
-@const sax_CssBaseline_9 = utf8:"slot"
-@const sax_CssBaseline_10 = utf8:"className"
-@const sax_CssBaseline_11 = utf8:"MuiCssBaseline-root"
-@const sax_CssBaseline_12 = utf8:"hidden"
+@const sax_CssBaseline_8 = utf8:" MuiCssBaseline-enableColorScheme"
+@const sax_CssBaseline_9 = utf8:"className"
+@const sax_CssBaseline_10 = utf8:"hidden"
+@const sax_CssBaseline_11 = utf8:"slot"
+@const sax_CssBaseline_12 = utf8:"MuiCssBaseline-root"
+@const sax_CssBaseline_13 = utf8:" MuiCssBaseline-enableColorScheme"
+@const sax_CssBaseline_14 = utf8:"className"
+@const sax_CssBaseline_15 = utf8:"hidden"
 
 @const sax_CssBaseline_host_app = utf8:"#app"
 
@@ -7280,7 +7343,7 @@ L_ENTRY:
 @const sax_IconButton_host_app = utf8:"#app"
 
 
-#def Button_SIZE = 56
+#def Button_SIZE = 64
 #def Button_dom_SIZE = 16
 #def Button_CTX_SIZE = 16
 #def Button_CTX_state = +0
@@ -7293,6 +7356,7 @@ L_ENTRY:
 #def Button_size = +32
 #def Button_size_len = +40
 #def Button_disabled = +48
+#def Button_fullWidth = +56
 
 #def sax_Button_node_button = +0
 #def sax_Button_node_Slot = +8
@@ -7319,13 +7383,14 @@ L_ENTRY:
   store state+Button_size, tmp_ptr_4 as ptr
   store state+Button_size_len, 6 as i64
   store state+Button_disabled, 0 as i1
+  store state+Button_fullWidth, 0 as i1
   dom = alloc Button_dom_SIZE
   ctx = alloc Button_CTX_SIZE
   store ctx+Button_CTX_state, state as ptr
   store ctx+Button_CTX_dom, dom as ptr
   node_0 = call @sax_dom_create(*sax_Button_0, 6)
   store dom+sax_Button_node_button, node_0 as i64
-  attr_tpl_node_0_class_buf = stack_alloc 301
+  attr_tpl_node_0_class_buf = stack_alloc 321
   attr_tpl_node_0_class_len = 0
   attr_tpl_node_0_class_dst_0 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   call @sax_mem_copy(*attr_tpl_node_0_class_dst_0, *sax_Button_5, 14)
@@ -7553,23 +7618,36 @@ L_attr_tpl_node_0_class_12_TERNARY_DONE_13:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_13
   attr_tpl_node_0_class_ternary_written_14 = 0
   attr_tpl_node_0_class_ternary_dst_14 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
-  attr_tpl_node_0_class_ternary_bool_14 = load state+Button_disabled as i1
+  attr_tpl_node_0_class_ternary_bool_14 = load state+Button_fullWidth as i1
   br attr_tpl_node_0_class_ternary_bool_14 -> L_attr_tpl_node_0_class_13_TERNARY_TRUE_14, L_attr_tpl_node_0_class_13_TERNARY_FALSE_14
 L_attr_tpl_node_0_class_13_TERNARY_TRUE_14:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_14, *sax_Button_32, 13)
-  attr_tpl_node_0_class_ternary_written_14 = 13
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_14, *sax_Button_32, 20)
+  attr_tpl_node_0_class_ternary_written_14 = 20
   jmp L_attr_tpl_node_0_class_13_TERNARY_DONE_14
 L_attr_tpl_node_0_class_13_TERNARY_FALSE_14:
   attr_tpl_node_0_class_ternary_written_14 = 0
   jmp L_attr_tpl_node_0_class_13_TERNARY_DONE_14
 L_attr_tpl_node_0_class_13_TERNARY_DONE_14:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_14
-  call @sax_dom_set_str_prop(node_0, *sax_Button_33, 9, *attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len)
+  attr_tpl_node_0_class_ternary_written_15 = 0
+  attr_tpl_node_0_class_ternary_dst_15 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
+  attr_tpl_node_0_class_ternary_bool_15 = load state+Button_disabled as i1
+  br attr_tpl_node_0_class_ternary_bool_15 -> L_attr_tpl_node_0_class_14_TERNARY_TRUE_15, L_attr_tpl_node_0_class_14_TERNARY_FALSE_15
+L_attr_tpl_node_0_class_14_TERNARY_TRUE_15:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_15, *sax_Button_33, 13)
+  attr_tpl_node_0_class_ternary_written_15 = 13
+  jmp L_attr_tpl_node_0_class_14_TERNARY_DONE_15
+L_attr_tpl_node_0_class_14_TERNARY_FALSE_15:
+  attr_tpl_node_0_class_ternary_written_15 = 0
+  jmp L_attr_tpl_node_0_class_14_TERNARY_DONE_15
+L_attr_tpl_node_0_class_14_TERNARY_DONE_15:
+  attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_15
+  call @sax_dom_set_str_prop(node_0, *sax_Button_34, 9, *attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len)
   disabled_expr_node_0_disabled_load_0 = load state+Button_disabled as i1
   disabled_expr_node_0_disabled_wide_1 = zext disabled_expr_node_0_disabled_load_0 as i64
   disabled_node_0_disabled = ne disabled_expr_node_0_disabled_wide_1, 0
   call @sax_dom_set_disabled(node_0, disabled_node_0_disabled)
-  node_1 = call @sax_dom_create(*sax_Button_34, 4)
+  node_1 = call @sax_dom_create(*sax_Button_35, 4)
   store dom+sax_Button_node_Slot, node_1 as i64
   call @sax_dom_append_child(node_0, node_1)
   call @sax_dom_append_child(host, node_0)
@@ -7585,269 +7663,283 @@ L_ENTRY:
 L_ENTRY:
   state = alloc Button_SIZE
   tmp_ptr_0 = alloc 32
-  call @sax_mem_copy(*tmp_ptr_0, *sax_Button_35, 4)
+  call @sax_mem_copy(*tmp_ptr_0, *sax_Button_36, 4)
   store state+Button_variant, tmp_ptr_0 as ptr
   store state+Button_variant_len, 4 as i64
   tmp_ptr_2 = alloc 32
-  call @sax_mem_copy(*tmp_ptr_2, *sax_Button_36, 7)
+  call @sax_mem_copy(*tmp_ptr_2, *sax_Button_37, 7)
   store state+Button_color, tmp_ptr_2 as ptr
   store state+Button_color_len, 7 as i64
   tmp_ptr_4 = alloc 32
-  call @sax_mem_copy(*tmp_ptr_4, *sax_Button_37, 6)
+  call @sax_mem_copy(*tmp_ptr_4, *sax_Button_38, 6)
   store state+Button_size, tmp_ptr_4 as ptr
   store state+Button_size_len, 6 as i64
   store state+Button_disabled, 0 as i1
+  store state+Button_fullWidth, 0 as i1
   dom = alloc Button_dom_SIZE
   ctx = alloc Button_CTX_SIZE
   store ctx+Button_CTX_state, state as ptr
   store ctx+Button_CTX_dom, dom as ptr
   node_0 = call @sax_dom_create(*sax_Button_0, 6)
   store dom+sax_Button_node_button, node_0 as i64
-  attr_tpl_node_0_class_buf = stack_alloc 301
+  attr_tpl_node_0_class_buf = stack_alloc 321
   attr_tpl_node_0_class_len = 0
   attr_tpl_node_0_class_dst_0 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
-  call @sax_mem_copy(*attr_tpl_node_0_class_dst_0, *sax_Button_38, 14)
+  call @sax_mem_copy(*attr_tpl_node_0_class_dst_0, *sax_Button_39, 14)
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, 14
   attr_tpl_node_0_class_ternary_written_1 = 0
   attr_tpl_node_0_class_ternary_dst_1 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_1_ptr = load state+Button_variant as ptr
   attr_tpl_node_0_class_ternary_eq_1_len = load state+Button_variant_len as i64
   attr_tpl_node_0_class_ternary_eq_len_1 = eq attr_tpl_node_0_class_ternary_eq_1_len, 4
-  attr_tpl_node_0_class_ternary_eq_mem_1 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_1_ptr, *sax_Button_39, 4)
+  attr_tpl_node_0_class_ternary_eq_mem_1 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_1_ptr, *sax_Button_40, 4)
   attr_tpl_node_0_class_ternary_bool_1 = and attr_tpl_node_0_class_ternary_eq_len_1, attr_tpl_node_0_class_ternary_eq_mem_1
-  br attr_tpl_node_0_class_ternary_bool_1 -> L_attr_tpl_node_0_class_14_TERNARY_TRUE_1, L_attr_tpl_node_0_class_14_TERNARY_FALSE_1
-L_attr_tpl_node_0_class_14_TERNARY_TRUE_1:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_1, *sax_Button_40, 15)
+  br attr_tpl_node_0_class_ternary_bool_1 -> L_attr_tpl_node_0_class_15_TERNARY_TRUE_1, L_attr_tpl_node_0_class_15_TERNARY_FALSE_1
+L_attr_tpl_node_0_class_15_TERNARY_TRUE_1:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_1, *sax_Button_41, 15)
   attr_tpl_node_0_class_ternary_written_1 = 15
-  jmp L_attr_tpl_node_0_class_14_TERNARY_DONE_1
-L_attr_tpl_node_0_class_14_TERNARY_FALSE_1:
+  jmp L_attr_tpl_node_0_class_15_TERNARY_DONE_1
+L_attr_tpl_node_0_class_15_TERNARY_FALSE_1:
   attr_tpl_node_0_class_ternary_written_1 = 0
-  jmp L_attr_tpl_node_0_class_14_TERNARY_DONE_1
-L_attr_tpl_node_0_class_14_TERNARY_DONE_1:
+  jmp L_attr_tpl_node_0_class_15_TERNARY_DONE_1
+L_attr_tpl_node_0_class_15_TERNARY_DONE_1:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_1
   attr_tpl_node_0_class_ternary_written_2 = 0
   attr_tpl_node_0_class_ternary_dst_2 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_2_ptr = load state+Button_variant as ptr
   attr_tpl_node_0_class_ternary_eq_2_len = load state+Button_variant_len as i64
   attr_tpl_node_0_class_ternary_eq_len_2 = eq attr_tpl_node_0_class_ternary_eq_2_len, 8
-  attr_tpl_node_0_class_ternary_eq_mem_2 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_2_ptr, *sax_Button_41, 8)
+  attr_tpl_node_0_class_ternary_eq_mem_2 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_2_ptr, *sax_Button_42, 8)
   attr_tpl_node_0_class_ternary_bool_2 = and attr_tpl_node_0_class_ternary_eq_len_2, attr_tpl_node_0_class_ternary_eq_mem_2
-  br attr_tpl_node_0_class_ternary_bool_2 -> L_attr_tpl_node_0_class_15_TERNARY_TRUE_2, L_attr_tpl_node_0_class_15_TERNARY_FALSE_2
-L_attr_tpl_node_0_class_15_TERNARY_TRUE_2:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_2, *sax_Button_42, 19)
+  br attr_tpl_node_0_class_ternary_bool_2 -> L_attr_tpl_node_0_class_16_TERNARY_TRUE_2, L_attr_tpl_node_0_class_16_TERNARY_FALSE_2
+L_attr_tpl_node_0_class_16_TERNARY_TRUE_2:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_2, *sax_Button_43, 19)
   attr_tpl_node_0_class_ternary_written_2 = 19
-  jmp L_attr_tpl_node_0_class_15_TERNARY_DONE_2
-L_attr_tpl_node_0_class_15_TERNARY_FALSE_2:
+  jmp L_attr_tpl_node_0_class_16_TERNARY_DONE_2
+L_attr_tpl_node_0_class_16_TERNARY_FALSE_2:
   attr_tpl_node_0_class_ternary_written_2 = 0
-  jmp L_attr_tpl_node_0_class_15_TERNARY_DONE_2
-L_attr_tpl_node_0_class_15_TERNARY_DONE_2:
+  jmp L_attr_tpl_node_0_class_16_TERNARY_DONE_2
+L_attr_tpl_node_0_class_16_TERNARY_DONE_2:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_2
   attr_tpl_node_0_class_ternary_written_3 = 0
   attr_tpl_node_0_class_ternary_dst_3 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_3_ptr = load state+Button_variant as ptr
   attr_tpl_node_0_class_ternary_eq_3_len = load state+Button_variant_len as i64
   attr_tpl_node_0_class_ternary_eq_len_3 = eq attr_tpl_node_0_class_ternary_eq_3_len, 9
-  attr_tpl_node_0_class_ternary_eq_mem_3 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_3_ptr, *sax_Button_43, 9)
+  attr_tpl_node_0_class_ternary_eq_mem_3 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_3_ptr, *sax_Button_44, 9)
   attr_tpl_node_0_class_ternary_bool_3 = and attr_tpl_node_0_class_ternary_eq_len_3, attr_tpl_node_0_class_ternary_eq_mem_3
-  br attr_tpl_node_0_class_ternary_bool_3 -> L_attr_tpl_node_0_class_16_TERNARY_TRUE_3, L_attr_tpl_node_0_class_16_TERNARY_FALSE_3
-L_attr_tpl_node_0_class_16_TERNARY_TRUE_3:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_3, *sax_Button_44, 20)
+  br attr_tpl_node_0_class_ternary_bool_3 -> L_attr_tpl_node_0_class_17_TERNARY_TRUE_3, L_attr_tpl_node_0_class_17_TERNARY_FALSE_3
+L_attr_tpl_node_0_class_17_TERNARY_TRUE_3:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_3, *sax_Button_45, 20)
   attr_tpl_node_0_class_ternary_written_3 = 20
-  jmp L_attr_tpl_node_0_class_16_TERNARY_DONE_3
-L_attr_tpl_node_0_class_16_TERNARY_FALSE_3:
+  jmp L_attr_tpl_node_0_class_17_TERNARY_DONE_3
+L_attr_tpl_node_0_class_17_TERNARY_FALSE_3:
   attr_tpl_node_0_class_ternary_written_3 = 0
-  jmp L_attr_tpl_node_0_class_16_TERNARY_DONE_3
-L_attr_tpl_node_0_class_16_TERNARY_DONE_3:
+  jmp L_attr_tpl_node_0_class_17_TERNARY_DONE_3
+L_attr_tpl_node_0_class_17_TERNARY_DONE_3:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_3
   attr_tpl_node_0_class_ternary_written_4 = 0
   attr_tpl_node_0_class_ternary_dst_4 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_4_ptr = load state+Button_color as ptr
   attr_tpl_node_0_class_ternary_eq_4_len = load state+Button_color_len as i64
   attr_tpl_node_0_class_ternary_eq_len_4 = eq attr_tpl_node_0_class_ternary_eq_4_len, 7
-  attr_tpl_node_0_class_ternary_eq_mem_4 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_4_ptr, *sax_Button_45, 7)
+  attr_tpl_node_0_class_ternary_eq_mem_4 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_4_ptr, *sax_Button_46, 7)
   attr_tpl_node_0_class_ternary_bool_4 = and attr_tpl_node_0_class_ternary_eq_len_4, attr_tpl_node_0_class_ternary_eq_mem_4
-  br attr_tpl_node_0_class_ternary_bool_4 -> L_attr_tpl_node_0_class_17_TERNARY_TRUE_4, L_attr_tpl_node_0_class_17_TERNARY_FALSE_4
-L_attr_tpl_node_0_class_17_TERNARY_TRUE_4:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_4, *sax_Button_46, 23)
+  br attr_tpl_node_0_class_ternary_bool_4 -> L_attr_tpl_node_0_class_18_TERNARY_TRUE_4, L_attr_tpl_node_0_class_18_TERNARY_FALSE_4
+L_attr_tpl_node_0_class_18_TERNARY_TRUE_4:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_4, *sax_Button_47, 23)
   attr_tpl_node_0_class_ternary_written_4 = 23
-  jmp L_attr_tpl_node_0_class_17_TERNARY_DONE_4
-L_attr_tpl_node_0_class_17_TERNARY_FALSE_4:
+  jmp L_attr_tpl_node_0_class_18_TERNARY_DONE_4
+L_attr_tpl_node_0_class_18_TERNARY_FALSE_4:
   attr_tpl_node_0_class_ternary_written_4 = 0
-  jmp L_attr_tpl_node_0_class_17_TERNARY_DONE_4
-L_attr_tpl_node_0_class_17_TERNARY_DONE_4:
+  jmp L_attr_tpl_node_0_class_18_TERNARY_DONE_4
+L_attr_tpl_node_0_class_18_TERNARY_DONE_4:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_4
   attr_tpl_node_0_class_ternary_written_5 = 0
   attr_tpl_node_0_class_ternary_dst_5 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_5_ptr = load state+Button_color as ptr
   attr_tpl_node_0_class_ternary_eq_5_len = load state+Button_color_len as i64
   attr_tpl_node_0_class_ternary_eq_len_5 = eq attr_tpl_node_0_class_ternary_eq_5_len, 7
-  attr_tpl_node_0_class_ternary_eq_mem_5 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_5_ptr, *sax_Button_47, 7)
+  attr_tpl_node_0_class_ternary_eq_mem_5 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_5_ptr, *sax_Button_48, 7)
   attr_tpl_node_0_class_ternary_bool_5 = and attr_tpl_node_0_class_ternary_eq_len_5, attr_tpl_node_0_class_ternary_eq_mem_5
-  br attr_tpl_node_0_class_ternary_bool_5 -> L_attr_tpl_node_0_class_18_TERNARY_TRUE_5, L_attr_tpl_node_0_class_18_TERNARY_FALSE_5
-L_attr_tpl_node_0_class_18_TERNARY_TRUE_5:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_5, *sax_Button_48, 23)
+  br attr_tpl_node_0_class_ternary_bool_5 -> L_attr_tpl_node_0_class_19_TERNARY_TRUE_5, L_attr_tpl_node_0_class_19_TERNARY_FALSE_5
+L_attr_tpl_node_0_class_19_TERNARY_TRUE_5:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_5, *sax_Button_49, 23)
   attr_tpl_node_0_class_ternary_written_5 = 23
-  jmp L_attr_tpl_node_0_class_18_TERNARY_DONE_5
-L_attr_tpl_node_0_class_18_TERNARY_FALSE_5:
+  jmp L_attr_tpl_node_0_class_19_TERNARY_DONE_5
+L_attr_tpl_node_0_class_19_TERNARY_FALSE_5:
   attr_tpl_node_0_class_ternary_written_5 = 0
-  jmp L_attr_tpl_node_0_class_18_TERNARY_DONE_5
-L_attr_tpl_node_0_class_18_TERNARY_DONE_5:
+  jmp L_attr_tpl_node_0_class_19_TERNARY_DONE_5
+L_attr_tpl_node_0_class_19_TERNARY_DONE_5:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_5
   attr_tpl_node_0_class_ternary_written_6 = 0
   attr_tpl_node_0_class_ternary_dst_6 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_6_ptr = load state+Button_color as ptr
   attr_tpl_node_0_class_ternary_eq_6_len = load state+Button_color_len as i64
   attr_tpl_node_0_class_ternary_eq_len_6 = eq attr_tpl_node_0_class_ternary_eq_6_len, 9
-  attr_tpl_node_0_class_ternary_eq_mem_6 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_6_ptr, *sax_Button_49, 9)
+  attr_tpl_node_0_class_ternary_eq_mem_6 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_6_ptr, *sax_Button_50, 9)
   attr_tpl_node_0_class_ternary_bool_6 = and attr_tpl_node_0_class_ternary_eq_len_6, attr_tpl_node_0_class_ternary_eq_mem_6
-  br attr_tpl_node_0_class_ternary_bool_6 -> L_attr_tpl_node_0_class_19_TERNARY_TRUE_6, L_attr_tpl_node_0_class_19_TERNARY_FALSE_6
-L_attr_tpl_node_0_class_19_TERNARY_TRUE_6:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_6, *sax_Button_50, 25)
+  br attr_tpl_node_0_class_ternary_bool_6 -> L_attr_tpl_node_0_class_20_TERNARY_TRUE_6, L_attr_tpl_node_0_class_20_TERNARY_FALSE_6
+L_attr_tpl_node_0_class_20_TERNARY_TRUE_6:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_6, *sax_Button_51, 25)
   attr_tpl_node_0_class_ternary_written_6 = 25
-  jmp L_attr_tpl_node_0_class_19_TERNARY_DONE_6
-L_attr_tpl_node_0_class_19_TERNARY_FALSE_6:
+  jmp L_attr_tpl_node_0_class_20_TERNARY_DONE_6
+L_attr_tpl_node_0_class_20_TERNARY_FALSE_6:
   attr_tpl_node_0_class_ternary_written_6 = 0
-  jmp L_attr_tpl_node_0_class_19_TERNARY_DONE_6
-L_attr_tpl_node_0_class_19_TERNARY_DONE_6:
+  jmp L_attr_tpl_node_0_class_20_TERNARY_DONE_6
+L_attr_tpl_node_0_class_20_TERNARY_DONE_6:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_6
   attr_tpl_node_0_class_ternary_written_7 = 0
   attr_tpl_node_0_class_ternary_dst_7 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_7_ptr = load state+Button_color as ptr
   attr_tpl_node_0_class_ternary_eq_7_len = load state+Button_color_len as i64
   attr_tpl_node_0_class_ternary_eq_len_7 = eq attr_tpl_node_0_class_ternary_eq_7_len, 7
-  attr_tpl_node_0_class_ternary_eq_mem_7 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_7_ptr, *sax_Button_51, 7)
+  attr_tpl_node_0_class_ternary_eq_mem_7 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_7_ptr, *sax_Button_52, 7)
   attr_tpl_node_0_class_ternary_bool_7 = and attr_tpl_node_0_class_ternary_eq_len_7, attr_tpl_node_0_class_ternary_eq_mem_7
-  br attr_tpl_node_0_class_ternary_bool_7 -> L_attr_tpl_node_0_class_20_TERNARY_TRUE_7, L_attr_tpl_node_0_class_20_TERNARY_FALSE_7
-L_attr_tpl_node_0_class_20_TERNARY_TRUE_7:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_7, *sax_Button_52, 23)
+  br attr_tpl_node_0_class_ternary_bool_7 -> L_attr_tpl_node_0_class_21_TERNARY_TRUE_7, L_attr_tpl_node_0_class_21_TERNARY_FALSE_7
+L_attr_tpl_node_0_class_21_TERNARY_TRUE_7:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_7, *sax_Button_53, 23)
   attr_tpl_node_0_class_ternary_written_7 = 23
-  jmp L_attr_tpl_node_0_class_20_TERNARY_DONE_7
-L_attr_tpl_node_0_class_20_TERNARY_FALSE_7:
+  jmp L_attr_tpl_node_0_class_21_TERNARY_DONE_7
+L_attr_tpl_node_0_class_21_TERNARY_FALSE_7:
   attr_tpl_node_0_class_ternary_written_7 = 0
-  jmp L_attr_tpl_node_0_class_20_TERNARY_DONE_7
-L_attr_tpl_node_0_class_20_TERNARY_DONE_7:
+  jmp L_attr_tpl_node_0_class_21_TERNARY_DONE_7
+L_attr_tpl_node_0_class_21_TERNARY_DONE_7:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_7
   attr_tpl_node_0_class_ternary_written_8 = 0
   attr_tpl_node_0_class_ternary_dst_8 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_8_ptr = load state+Button_color as ptr
   attr_tpl_node_0_class_ternary_eq_8_len = load state+Button_color_len as i64
   attr_tpl_node_0_class_ternary_eq_len_8 = eq attr_tpl_node_0_class_ternary_eq_8_len, 5
-  attr_tpl_node_0_class_ternary_eq_mem_8 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_8_ptr, *sax_Button_53, 5)
+  attr_tpl_node_0_class_ternary_eq_mem_8 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_8_ptr, *sax_Button_54, 5)
   attr_tpl_node_0_class_ternary_bool_8 = and attr_tpl_node_0_class_ternary_eq_len_8, attr_tpl_node_0_class_ternary_eq_mem_8
-  br attr_tpl_node_0_class_ternary_bool_8 -> L_attr_tpl_node_0_class_21_TERNARY_TRUE_8, L_attr_tpl_node_0_class_21_TERNARY_FALSE_8
-L_attr_tpl_node_0_class_21_TERNARY_TRUE_8:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_8, *sax_Button_54, 21)
+  br attr_tpl_node_0_class_ternary_bool_8 -> L_attr_tpl_node_0_class_22_TERNARY_TRUE_8, L_attr_tpl_node_0_class_22_TERNARY_FALSE_8
+L_attr_tpl_node_0_class_22_TERNARY_TRUE_8:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_8, *sax_Button_55, 21)
   attr_tpl_node_0_class_ternary_written_8 = 21
-  jmp L_attr_tpl_node_0_class_21_TERNARY_DONE_8
-L_attr_tpl_node_0_class_21_TERNARY_FALSE_8:
+  jmp L_attr_tpl_node_0_class_22_TERNARY_DONE_8
+L_attr_tpl_node_0_class_22_TERNARY_FALSE_8:
   attr_tpl_node_0_class_ternary_written_8 = 0
-  jmp L_attr_tpl_node_0_class_21_TERNARY_DONE_8
-L_attr_tpl_node_0_class_21_TERNARY_DONE_8:
+  jmp L_attr_tpl_node_0_class_22_TERNARY_DONE_8
+L_attr_tpl_node_0_class_22_TERNARY_DONE_8:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_8
   attr_tpl_node_0_class_ternary_written_9 = 0
   attr_tpl_node_0_class_ternary_dst_9 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_9_ptr = load state+Button_color as ptr
   attr_tpl_node_0_class_ternary_eq_9_len = load state+Button_color_len as i64
   attr_tpl_node_0_class_ternary_eq_len_9 = eq attr_tpl_node_0_class_ternary_eq_9_len, 4
-  attr_tpl_node_0_class_ternary_eq_mem_9 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_9_ptr, *sax_Button_55, 4)
+  attr_tpl_node_0_class_ternary_eq_mem_9 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_9_ptr, *sax_Button_56, 4)
   attr_tpl_node_0_class_ternary_bool_9 = and attr_tpl_node_0_class_ternary_eq_len_9, attr_tpl_node_0_class_ternary_eq_mem_9
-  br attr_tpl_node_0_class_ternary_bool_9 -> L_attr_tpl_node_0_class_22_TERNARY_TRUE_9, L_attr_tpl_node_0_class_22_TERNARY_FALSE_9
-L_attr_tpl_node_0_class_22_TERNARY_TRUE_9:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_9, *sax_Button_56, 20)
+  br attr_tpl_node_0_class_ternary_bool_9 -> L_attr_tpl_node_0_class_23_TERNARY_TRUE_9, L_attr_tpl_node_0_class_23_TERNARY_FALSE_9
+L_attr_tpl_node_0_class_23_TERNARY_TRUE_9:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_9, *sax_Button_57, 20)
   attr_tpl_node_0_class_ternary_written_9 = 20
-  jmp L_attr_tpl_node_0_class_22_TERNARY_DONE_9
-L_attr_tpl_node_0_class_22_TERNARY_FALSE_9:
+  jmp L_attr_tpl_node_0_class_23_TERNARY_DONE_9
+L_attr_tpl_node_0_class_23_TERNARY_FALSE_9:
   attr_tpl_node_0_class_ternary_written_9 = 0
-  jmp L_attr_tpl_node_0_class_22_TERNARY_DONE_9
-L_attr_tpl_node_0_class_22_TERNARY_DONE_9:
+  jmp L_attr_tpl_node_0_class_23_TERNARY_DONE_9
+L_attr_tpl_node_0_class_23_TERNARY_DONE_9:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_9
   attr_tpl_node_0_class_ternary_written_10 = 0
   attr_tpl_node_0_class_ternary_dst_10 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_10_ptr = load state+Button_color as ptr
   attr_tpl_node_0_class_ternary_eq_10_len = load state+Button_color_len as i64
   attr_tpl_node_0_class_ternary_eq_len_10 = eq attr_tpl_node_0_class_ternary_eq_10_len, 7
-  attr_tpl_node_0_class_ternary_eq_mem_10 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_10_ptr, *sax_Button_57, 7)
+  attr_tpl_node_0_class_ternary_eq_mem_10 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_10_ptr, *sax_Button_58, 7)
   attr_tpl_node_0_class_ternary_bool_10 = and attr_tpl_node_0_class_ternary_eq_len_10, attr_tpl_node_0_class_ternary_eq_mem_10
-  br attr_tpl_node_0_class_ternary_bool_10 -> L_attr_tpl_node_0_class_23_TERNARY_TRUE_10, L_attr_tpl_node_0_class_23_TERNARY_FALSE_10
-L_attr_tpl_node_0_class_23_TERNARY_TRUE_10:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_10, *sax_Button_58, 23)
+  br attr_tpl_node_0_class_ternary_bool_10 -> L_attr_tpl_node_0_class_24_TERNARY_TRUE_10, L_attr_tpl_node_0_class_24_TERNARY_FALSE_10
+L_attr_tpl_node_0_class_24_TERNARY_TRUE_10:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_10, *sax_Button_59, 23)
   attr_tpl_node_0_class_ternary_written_10 = 23
-  jmp L_attr_tpl_node_0_class_23_TERNARY_DONE_10
-L_attr_tpl_node_0_class_23_TERNARY_FALSE_10:
+  jmp L_attr_tpl_node_0_class_24_TERNARY_DONE_10
+L_attr_tpl_node_0_class_24_TERNARY_FALSE_10:
   attr_tpl_node_0_class_ternary_written_10 = 0
-  jmp L_attr_tpl_node_0_class_23_TERNARY_DONE_10
-L_attr_tpl_node_0_class_23_TERNARY_DONE_10:
+  jmp L_attr_tpl_node_0_class_24_TERNARY_DONE_10
+L_attr_tpl_node_0_class_24_TERNARY_DONE_10:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_10
   attr_tpl_node_0_class_ternary_written_11 = 0
   attr_tpl_node_0_class_ternary_dst_11 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_11_ptr = load state+Button_size as ptr
   attr_tpl_node_0_class_ternary_eq_11_len = load state+Button_size_len as i64
   attr_tpl_node_0_class_ternary_eq_len_11 = eq attr_tpl_node_0_class_ternary_eq_11_len, 5
-  attr_tpl_node_0_class_ternary_eq_mem_11 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_11_ptr, *sax_Button_59, 5)
+  attr_tpl_node_0_class_ternary_eq_mem_11 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_11_ptr, *sax_Button_60, 5)
   attr_tpl_node_0_class_ternary_bool_11 = and attr_tpl_node_0_class_ternary_eq_len_11, attr_tpl_node_0_class_ternary_eq_mem_11
-  br attr_tpl_node_0_class_ternary_bool_11 -> L_attr_tpl_node_0_class_24_TERNARY_TRUE_11, L_attr_tpl_node_0_class_24_TERNARY_FALSE_11
-L_attr_tpl_node_0_class_24_TERNARY_TRUE_11:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_11, *sax_Button_60, 20)
+  br attr_tpl_node_0_class_ternary_bool_11 -> L_attr_tpl_node_0_class_25_TERNARY_TRUE_11, L_attr_tpl_node_0_class_25_TERNARY_FALSE_11
+L_attr_tpl_node_0_class_25_TERNARY_TRUE_11:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_11, *sax_Button_61, 20)
   attr_tpl_node_0_class_ternary_written_11 = 20
-  jmp L_attr_tpl_node_0_class_24_TERNARY_DONE_11
-L_attr_tpl_node_0_class_24_TERNARY_FALSE_11:
+  jmp L_attr_tpl_node_0_class_25_TERNARY_DONE_11
+L_attr_tpl_node_0_class_25_TERNARY_FALSE_11:
   attr_tpl_node_0_class_ternary_written_11 = 0
-  jmp L_attr_tpl_node_0_class_24_TERNARY_DONE_11
-L_attr_tpl_node_0_class_24_TERNARY_DONE_11:
+  jmp L_attr_tpl_node_0_class_25_TERNARY_DONE_11
+L_attr_tpl_node_0_class_25_TERNARY_DONE_11:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_11
   attr_tpl_node_0_class_ternary_written_12 = 0
   attr_tpl_node_0_class_ternary_dst_12 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_12_ptr = load state+Button_size as ptr
   attr_tpl_node_0_class_ternary_eq_12_len = load state+Button_size_len as i64
   attr_tpl_node_0_class_ternary_eq_len_12 = eq attr_tpl_node_0_class_ternary_eq_12_len, 6
-  attr_tpl_node_0_class_ternary_eq_mem_12 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_12_ptr, *sax_Button_61, 6)
+  attr_tpl_node_0_class_ternary_eq_mem_12 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_12_ptr, *sax_Button_62, 6)
   attr_tpl_node_0_class_ternary_bool_12 = and attr_tpl_node_0_class_ternary_eq_len_12, attr_tpl_node_0_class_ternary_eq_mem_12
-  br attr_tpl_node_0_class_ternary_bool_12 -> L_attr_tpl_node_0_class_25_TERNARY_TRUE_12, L_attr_tpl_node_0_class_25_TERNARY_FALSE_12
-L_attr_tpl_node_0_class_25_TERNARY_TRUE_12:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_12, *sax_Button_62, 21)
+  br attr_tpl_node_0_class_ternary_bool_12 -> L_attr_tpl_node_0_class_26_TERNARY_TRUE_12, L_attr_tpl_node_0_class_26_TERNARY_FALSE_12
+L_attr_tpl_node_0_class_26_TERNARY_TRUE_12:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_12, *sax_Button_63, 21)
   attr_tpl_node_0_class_ternary_written_12 = 21
-  jmp L_attr_tpl_node_0_class_25_TERNARY_DONE_12
-L_attr_tpl_node_0_class_25_TERNARY_FALSE_12:
+  jmp L_attr_tpl_node_0_class_26_TERNARY_DONE_12
+L_attr_tpl_node_0_class_26_TERNARY_FALSE_12:
   attr_tpl_node_0_class_ternary_written_12 = 0
-  jmp L_attr_tpl_node_0_class_25_TERNARY_DONE_12
-L_attr_tpl_node_0_class_25_TERNARY_DONE_12:
+  jmp L_attr_tpl_node_0_class_26_TERNARY_DONE_12
+L_attr_tpl_node_0_class_26_TERNARY_DONE_12:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_12
   attr_tpl_node_0_class_ternary_written_13 = 0
   attr_tpl_node_0_class_ternary_dst_13 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_13_ptr = load state+Button_size as ptr
   attr_tpl_node_0_class_ternary_eq_13_len = load state+Button_size_len as i64
   attr_tpl_node_0_class_ternary_eq_len_13 = eq attr_tpl_node_0_class_ternary_eq_13_len, 5
-  attr_tpl_node_0_class_ternary_eq_mem_13 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_13_ptr, *sax_Button_63, 5)
+  attr_tpl_node_0_class_ternary_eq_mem_13 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_13_ptr, *sax_Button_64, 5)
   attr_tpl_node_0_class_ternary_bool_13 = and attr_tpl_node_0_class_ternary_eq_len_13, attr_tpl_node_0_class_ternary_eq_mem_13
-  br attr_tpl_node_0_class_ternary_bool_13 -> L_attr_tpl_node_0_class_26_TERNARY_TRUE_13, L_attr_tpl_node_0_class_26_TERNARY_FALSE_13
-L_attr_tpl_node_0_class_26_TERNARY_TRUE_13:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_13, *sax_Button_64, 20)
+  br attr_tpl_node_0_class_ternary_bool_13 -> L_attr_tpl_node_0_class_27_TERNARY_TRUE_13, L_attr_tpl_node_0_class_27_TERNARY_FALSE_13
+L_attr_tpl_node_0_class_27_TERNARY_TRUE_13:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_13, *sax_Button_65, 20)
   attr_tpl_node_0_class_ternary_written_13 = 20
-  jmp L_attr_tpl_node_0_class_26_TERNARY_DONE_13
-L_attr_tpl_node_0_class_26_TERNARY_FALSE_13:
+  jmp L_attr_tpl_node_0_class_27_TERNARY_DONE_13
+L_attr_tpl_node_0_class_27_TERNARY_FALSE_13:
   attr_tpl_node_0_class_ternary_written_13 = 0
-  jmp L_attr_tpl_node_0_class_26_TERNARY_DONE_13
-L_attr_tpl_node_0_class_26_TERNARY_DONE_13:
+  jmp L_attr_tpl_node_0_class_27_TERNARY_DONE_13
+L_attr_tpl_node_0_class_27_TERNARY_DONE_13:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_13
   attr_tpl_node_0_class_ternary_written_14 = 0
   attr_tpl_node_0_class_ternary_dst_14 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
-  attr_tpl_node_0_class_ternary_bool_14 = load state+Button_disabled as i1
-  br attr_tpl_node_0_class_ternary_bool_14 -> L_attr_tpl_node_0_class_27_TERNARY_TRUE_14, L_attr_tpl_node_0_class_27_TERNARY_FALSE_14
-L_attr_tpl_node_0_class_27_TERNARY_TRUE_14:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_14, *sax_Button_65, 13)
-  attr_tpl_node_0_class_ternary_written_14 = 13
-  jmp L_attr_tpl_node_0_class_27_TERNARY_DONE_14
-L_attr_tpl_node_0_class_27_TERNARY_FALSE_14:
+  attr_tpl_node_0_class_ternary_bool_14 = load state+Button_fullWidth as i1
+  br attr_tpl_node_0_class_ternary_bool_14 -> L_attr_tpl_node_0_class_28_TERNARY_TRUE_14, L_attr_tpl_node_0_class_28_TERNARY_FALSE_14
+L_attr_tpl_node_0_class_28_TERNARY_TRUE_14:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_14, *sax_Button_66, 20)
+  attr_tpl_node_0_class_ternary_written_14 = 20
+  jmp L_attr_tpl_node_0_class_28_TERNARY_DONE_14
+L_attr_tpl_node_0_class_28_TERNARY_FALSE_14:
   attr_tpl_node_0_class_ternary_written_14 = 0
-  jmp L_attr_tpl_node_0_class_27_TERNARY_DONE_14
-L_attr_tpl_node_0_class_27_TERNARY_DONE_14:
+  jmp L_attr_tpl_node_0_class_28_TERNARY_DONE_14
+L_attr_tpl_node_0_class_28_TERNARY_DONE_14:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_14
-  call @sax_dom_set_str_prop(node_0, *sax_Button_66, 9, *attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len)
+  attr_tpl_node_0_class_ternary_written_15 = 0
+  attr_tpl_node_0_class_ternary_dst_15 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
+  attr_tpl_node_0_class_ternary_bool_15 = load state+Button_disabled as i1
+  br attr_tpl_node_0_class_ternary_bool_15 -> L_attr_tpl_node_0_class_29_TERNARY_TRUE_15, L_attr_tpl_node_0_class_29_TERNARY_FALSE_15
+L_attr_tpl_node_0_class_29_TERNARY_TRUE_15:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_15, *sax_Button_67, 13)
+  attr_tpl_node_0_class_ternary_written_15 = 13
+  jmp L_attr_tpl_node_0_class_29_TERNARY_DONE_15
+L_attr_tpl_node_0_class_29_TERNARY_FALSE_15:
+  attr_tpl_node_0_class_ternary_written_15 = 0
+  jmp L_attr_tpl_node_0_class_29_TERNARY_DONE_15
+L_attr_tpl_node_0_class_29_TERNARY_DONE_15:
+  attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_15
+  call @sax_dom_set_str_prop(node_0, *sax_Button_68, 9, *attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len)
   disabled_expr_node_0_disabled_load_0 = load state+Button_disabled as i1
   disabled_expr_node_0_disabled_wide_1 = zext disabled_expr_node_0_disabled_load_0 as i64
   disabled_node_0_disabled = ne disabled_expr_node_0_disabled_wide_1, 0
   call @sax_dom_set_disabled(node_0, disabled_node_0_disabled)
-  node_1 = call @sax_dom_create(*sax_Button_67, 4)
+  node_1 = call @sax_dom_create(*sax_Button_69, 4)
   store dom+sax_Button_node_Slot, node_1 as i64
   call @sax_dom_append_child(node_0, node_1)
   call @sax_dom_append_child(parent_h, node_0)
@@ -7967,6 +8059,19 @@ L_ENTRY:
   call @sax_button_render(ctx)
   return
 
+@export sax_button_set_fullWidth(ctx: ptr, value: i64):
+L_ENTRY:
+  call @sax_button_set_fullWidth_ffi(ctx, value)
+  return
+
+@ffi_wrapper sax_button_set_fullWidth_ffi(ctx: ptr, value: i64):
+L_ENTRY:
+  state = load ctx+Button_CTX_state as ptr
+  is_set = ne value, 0
+  store state+Button_fullWidth, is_set as i1
+  call @sax_button_render(ctx)
+  return
+
 @export sax_button_render(ctx: ptr):
 L_ENTRY:
   call @sax_button_render_ffi(ctx)
@@ -7977,246 +8082,259 @@ L_ENTRY:
   state = load ctx+Button_CTX_state as ptr
   dom = load ctx+Button_CTX_dom as ptr
   node_0 = load dom+sax_Button_node_button as ptr
-  attr_tpl_node_0_class_buf = stack_alloc 301
+  attr_tpl_node_0_class_buf = stack_alloc 321
   attr_tpl_node_0_class_len = 0
   attr_tpl_node_0_class_dst_0 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
-  call @sax_mem_copy(*attr_tpl_node_0_class_dst_0, *sax_Button_68, 14)
+  call @sax_mem_copy(*attr_tpl_node_0_class_dst_0, *sax_Button_70, 14)
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, 14
   attr_tpl_node_0_class_ternary_written_1 = 0
   attr_tpl_node_0_class_ternary_dst_1 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_1_ptr = load state+Button_variant as ptr
   attr_tpl_node_0_class_ternary_eq_1_len = load state+Button_variant_len as i64
   attr_tpl_node_0_class_ternary_eq_len_1 = eq attr_tpl_node_0_class_ternary_eq_1_len, 4
-  attr_tpl_node_0_class_ternary_eq_mem_1 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_1_ptr, *sax_Button_69, 4)
+  attr_tpl_node_0_class_ternary_eq_mem_1 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_1_ptr, *sax_Button_71, 4)
   attr_tpl_node_0_class_ternary_bool_1 = and attr_tpl_node_0_class_ternary_eq_len_1, attr_tpl_node_0_class_ternary_eq_mem_1
-  br attr_tpl_node_0_class_ternary_bool_1 -> L_attr_tpl_node_0_class_28_TERNARY_TRUE_1, L_attr_tpl_node_0_class_28_TERNARY_FALSE_1
-L_attr_tpl_node_0_class_28_TERNARY_TRUE_1:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_1, *sax_Button_70, 15)
+  br attr_tpl_node_0_class_ternary_bool_1 -> L_attr_tpl_node_0_class_30_TERNARY_TRUE_1, L_attr_tpl_node_0_class_30_TERNARY_FALSE_1
+L_attr_tpl_node_0_class_30_TERNARY_TRUE_1:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_1, *sax_Button_72, 15)
   attr_tpl_node_0_class_ternary_written_1 = 15
-  jmp L_attr_tpl_node_0_class_28_TERNARY_DONE_1
-L_attr_tpl_node_0_class_28_TERNARY_FALSE_1:
+  jmp L_attr_tpl_node_0_class_30_TERNARY_DONE_1
+L_attr_tpl_node_0_class_30_TERNARY_FALSE_1:
   attr_tpl_node_0_class_ternary_written_1 = 0
-  jmp L_attr_tpl_node_0_class_28_TERNARY_DONE_1
-L_attr_tpl_node_0_class_28_TERNARY_DONE_1:
+  jmp L_attr_tpl_node_0_class_30_TERNARY_DONE_1
+L_attr_tpl_node_0_class_30_TERNARY_DONE_1:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_1
   attr_tpl_node_0_class_ternary_written_2 = 0
   attr_tpl_node_0_class_ternary_dst_2 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_2_ptr = load state+Button_variant as ptr
   attr_tpl_node_0_class_ternary_eq_2_len = load state+Button_variant_len as i64
   attr_tpl_node_0_class_ternary_eq_len_2 = eq attr_tpl_node_0_class_ternary_eq_2_len, 8
-  attr_tpl_node_0_class_ternary_eq_mem_2 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_2_ptr, *sax_Button_71, 8)
+  attr_tpl_node_0_class_ternary_eq_mem_2 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_2_ptr, *sax_Button_73, 8)
   attr_tpl_node_0_class_ternary_bool_2 = and attr_tpl_node_0_class_ternary_eq_len_2, attr_tpl_node_0_class_ternary_eq_mem_2
-  br attr_tpl_node_0_class_ternary_bool_2 -> L_attr_tpl_node_0_class_29_TERNARY_TRUE_2, L_attr_tpl_node_0_class_29_TERNARY_FALSE_2
-L_attr_tpl_node_0_class_29_TERNARY_TRUE_2:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_2, *sax_Button_72, 19)
+  br attr_tpl_node_0_class_ternary_bool_2 -> L_attr_tpl_node_0_class_31_TERNARY_TRUE_2, L_attr_tpl_node_0_class_31_TERNARY_FALSE_2
+L_attr_tpl_node_0_class_31_TERNARY_TRUE_2:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_2, *sax_Button_74, 19)
   attr_tpl_node_0_class_ternary_written_2 = 19
-  jmp L_attr_tpl_node_0_class_29_TERNARY_DONE_2
-L_attr_tpl_node_0_class_29_TERNARY_FALSE_2:
+  jmp L_attr_tpl_node_0_class_31_TERNARY_DONE_2
+L_attr_tpl_node_0_class_31_TERNARY_FALSE_2:
   attr_tpl_node_0_class_ternary_written_2 = 0
-  jmp L_attr_tpl_node_0_class_29_TERNARY_DONE_2
-L_attr_tpl_node_0_class_29_TERNARY_DONE_2:
+  jmp L_attr_tpl_node_0_class_31_TERNARY_DONE_2
+L_attr_tpl_node_0_class_31_TERNARY_DONE_2:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_2
   attr_tpl_node_0_class_ternary_written_3 = 0
   attr_tpl_node_0_class_ternary_dst_3 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_3_ptr = load state+Button_variant as ptr
   attr_tpl_node_0_class_ternary_eq_3_len = load state+Button_variant_len as i64
   attr_tpl_node_0_class_ternary_eq_len_3 = eq attr_tpl_node_0_class_ternary_eq_3_len, 9
-  attr_tpl_node_0_class_ternary_eq_mem_3 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_3_ptr, *sax_Button_73, 9)
+  attr_tpl_node_0_class_ternary_eq_mem_3 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_3_ptr, *sax_Button_75, 9)
   attr_tpl_node_0_class_ternary_bool_3 = and attr_tpl_node_0_class_ternary_eq_len_3, attr_tpl_node_0_class_ternary_eq_mem_3
-  br attr_tpl_node_0_class_ternary_bool_3 -> L_attr_tpl_node_0_class_30_TERNARY_TRUE_3, L_attr_tpl_node_0_class_30_TERNARY_FALSE_3
-L_attr_tpl_node_0_class_30_TERNARY_TRUE_3:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_3, *sax_Button_74, 20)
+  br attr_tpl_node_0_class_ternary_bool_3 -> L_attr_tpl_node_0_class_32_TERNARY_TRUE_3, L_attr_tpl_node_0_class_32_TERNARY_FALSE_3
+L_attr_tpl_node_0_class_32_TERNARY_TRUE_3:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_3, *sax_Button_76, 20)
   attr_tpl_node_0_class_ternary_written_3 = 20
-  jmp L_attr_tpl_node_0_class_30_TERNARY_DONE_3
-L_attr_tpl_node_0_class_30_TERNARY_FALSE_3:
+  jmp L_attr_tpl_node_0_class_32_TERNARY_DONE_3
+L_attr_tpl_node_0_class_32_TERNARY_FALSE_3:
   attr_tpl_node_0_class_ternary_written_3 = 0
-  jmp L_attr_tpl_node_0_class_30_TERNARY_DONE_3
-L_attr_tpl_node_0_class_30_TERNARY_DONE_3:
+  jmp L_attr_tpl_node_0_class_32_TERNARY_DONE_3
+L_attr_tpl_node_0_class_32_TERNARY_DONE_3:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_3
   attr_tpl_node_0_class_ternary_written_4 = 0
   attr_tpl_node_0_class_ternary_dst_4 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_4_ptr = load state+Button_color as ptr
   attr_tpl_node_0_class_ternary_eq_4_len = load state+Button_color_len as i64
   attr_tpl_node_0_class_ternary_eq_len_4 = eq attr_tpl_node_0_class_ternary_eq_4_len, 7
-  attr_tpl_node_0_class_ternary_eq_mem_4 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_4_ptr, *sax_Button_75, 7)
+  attr_tpl_node_0_class_ternary_eq_mem_4 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_4_ptr, *sax_Button_77, 7)
   attr_tpl_node_0_class_ternary_bool_4 = and attr_tpl_node_0_class_ternary_eq_len_4, attr_tpl_node_0_class_ternary_eq_mem_4
-  br attr_tpl_node_0_class_ternary_bool_4 -> L_attr_tpl_node_0_class_31_TERNARY_TRUE_4, L_attr_tpl_node_0_class_31_TERNARY_FALSE_4
-L_attr_tpl_node_0_class_31_TERNARY_TRUE_4:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_4, *sax_Button_76, 23)
+  br attr_tpl_node_0_class_ternary_bool_4 -> L_attr_tpl_node_0_class_33_TERNARY_TRUE_4, L_attr_tpl_node_0_class_33_TERNARY_FALSE_4
+L_attr_tpl_node_0_class_33_TERNARY_TRUE_4:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_4, *sax_Button_78, 23)
   attr_tpl_node_0_class_ternary_written_4 = 23
-  jmp L_attr_tpl_node_0_class_31_TERNARY_DONE_4
-L_attr_tpl_node_0_class_31_TERNARY_FALSE_4:
+  jmp L_attr_tpl_node_0_class_33_TERNARY_DONE_4
+L_attr_tpl_node_0_class_33_TERNARY_FALSE_4:
   attr_tpl_node_0_class_ternary_written_4 = 0
-  jmp L_attr_tpl_node_0_class_31_TERNARY_DONE_4
-L_attr_tpl_node_0_class_31_TERNARY_DONE_4:
+  jmp L_attr_tpl_node_0_class_33_TERNARY_DONE_4
+L_attr_tpl_node_0_class_33_TERNARY_DONE_4:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_4
   attr_tpl_node_0_class_ternary_written_5 = 0
   attr_tpl_node_0_class_ternary_dst_5 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_5_ptr = load state+Button_color as ptr
   attr_tpl_node_0_class_ternary_eq_5_len = load state+Button_color_len as i64
   attr_tpl_node_0_class_ternary_eq_len_5 = eq attr_tpl_node_0_class_ternary_eq_5_len, 7
-  attr_tpl_node_0_class_ternary_eq_mem_5 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_5_ptr, *sax_Button_77, 7)
+  attr_tpl_node_0_class_ternary_eq_mem_5 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_5_ptr, *sax_Button_79, 7)
   attr_tpl_node_0_class_ternary_bool_5 = and attr_tpl_node_0_class_ternary_eq_len_5, attr_tpl_node_0_class_ternary_eq_mem_5
-  br attr_tpl_node_0_class_ternary_bool_5 -> L_attr_tpl_node_0_class_32_TERNARY_TRUE_5, L_attr_tpl_node_0_class_32_TERNARY_FALSE_5
-L_attr_tpl_node_0_class_32_TERNARY_TRUE_5:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_5, *sax_Button_78, 23)
+  br attr_tpl_node_0_class_ternary_bool_5 -> L_attr_tpl_node_0_class_34_TERNARY_TRUE_5, L_attr_tpl_node_0_class_34_TERNARY_FALSE_5
+L_attr_tpl_node_0_class_34_TERNARY_TRUE_5:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_5, *sax_Button_80, 23)
   attr_tpl_node_0_class_ternary_written_5 = 23
-  jmp L_attr_tpl_node_0_class_32_TERNARY_DONE_5
-L_attr_tpl_node_0_class_32_TERNARY_FALSE_5:
+  jmp L_attr_tpl_node_0_class_34_TERNARY_DONE_5
+L_attr_tpl_node_0_class_34_TERNARY_FALSE_5:
   attr_tpl_node_0_class_ternary_written_5 = 0
-  jmp L_attr_tpl_node_0_class_32_TERNARY_DONE_5
-L_attr_tpl_node_0_class_32_TERNARY_DONE_5:
+  jmp L_attr_tpl_node_0_class_34_TERNARY_DONE_5
+L_attr_tpl_node_0_class_34_TERNARY_DONE_5:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_5
   attr_tpl_node_0_class_ternary_written_6 = 0
   attr_tpl_node_0_class_ternary_dst_6 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_6_ptr = load state+Button_color as ptr
   attr_tpl_node_0_class_ternary_eq_6_len = load state+Button_color_len as i64
   attr_tpl_node_0_class_ternary_eq_len_6 = eq attr_tpl_node_0_class_ternary_eq_6_len, 9
-  attr_tpl_node_0_class_ternary_eq_mem_6 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_6_ptr, *sax_Button_79, 9)
+  attr_tpl_node_0_class_ternary_eq_mem_6 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_6_ptr, *sax_Button_81, 9)
   attr_tpl_node_0_class_ternary_bool_6 = and attr_tpl_node_0_class_ternary_eq_len_6, attr_tpl_node_0_class_ternary_eq_mem_6
-  br attr_tpl_node_0_class_ternary_bool_6 -> L_attr_tpl_node_0_class_33_TERNARY_TRUE_6, L_attr_tpl_node_0_class_33_TERNARY_FALSE_6
-L_attr_tpl_node_0_class_33_TERNARY_TRUE_6:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_6, *sax_Button_80, 25)
+  br attr_tpl_node_0_class_ternary_bool_6 -> L_attr_tpl_node_0_class_35_TERNARY_TRUE_6, L_attr_tpl_node_0_class_35_TERNARY_FALSE_6
+L_attr_tpl_node_0_class_35_TERNARY_TRUE_6:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_6, *sax_Button_82, 25)
   attr_tpl_node_0_class_ternary_written_6 = 25
-  jmp L_attr_tpl_node_0_class_33_TERNARY_DONE_6
-L_attr_tpl_node_0_class_33_TERNARY_FALSE_6:
+  jmp L_attr_tpl_node_0_class_35_TERNARY_DONE_6
+L_attr_tpl_node_0_class_35_TERNARY_FALSE_6:
   attr_tpl_node_0_class_ternary_written_6 = 0
-  jmp L_attr_tpl_node_0_class_33_TERNARY_DONE_6
-L_attr_tpl_node_0_class_33_TERNARY_DONE_6:
+  jmp L_attr_tpl_node_0_class_35_TERNARY_DONE_6
+L_attr_tpl_node_0_class_35_TERNARY_DONE_6:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_6
   attr_tpl_node_0_class_ternary_written_7 = 0
   attr_tpl_node_0_class_ternary_dst_7 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_7_ptr = load state+Button_color as ptr
   attr_tpl_node_0_class_ternary_eq_7_len = load state+Button_color_len as i64
   attr_tpl_node_0_class_ternary_eq_len_7 = eq attr_tpl_node_0_class_ternary_eq_7_len, 7
-  attr_tpl_node_0_class_ternary_eq_mem_7 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_7_ptr, *sax_Button_81, 7)
+  attr_tpl_node_0_class_ternary_eq_mem_7 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_7_ptr, *sax_Button_83, 7)
   attr_tpl_node_0_class_ternary_bool_7 = and attr_tpl_node_0_class_ternary_eq_len_7, attr_tpl_node_0_class_ternary_eq_mem_7
-  br attr_tpl_node_0_class_ternary_bool_7 -> L_attr_tpl_node_0_class_34_TERNARY_TRUE_7, L_attr_tpl_node_0_class_34_TERNARY_FALSE_7
-L_attr_tpl_node_0_class_34_TERNARY_TRUE_7:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_7, *sax_Button_82, 23)
+  br attr_tpl_node_0_class_ternary_bool_7 -> L_attr_tpl_node_0_class_36_TERNARY_TRUE_7, L_attr_tpl_node_0_class_36_TERNARY_FALSE_7
+L_attr_tpl_node_0_class_36_TERNARY_TRUE_7:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_7, *sax_Button_84, 23)
   attr_tpl_node_0_class_ternary_written_7 = 23
-  jmp L_attr_tpl_node_0_class_34_TERNARY_DONE_7
-L_attr_tpl_node_0_class_34_TERNARY_FALSE_7:
+  jmp L_attr_tpl_node_0_class_36_TERNARY_DONE_7
+L_attr_tpl_node_0_class_36_TERNARY_FALSE_7:
   attr_tpl_node_0_class_ternary_written_7 = 0
-  jmp L_attr_tpl_node_0_class_34_TERNARY_DONE_7
-L_attr_tpl_node_0_class_34_TERNARY_DONE_7:
+  jmp L_attr_tpl_node_0_class_36_TERNARY_DONE_7
+L_attr_tpl_node_0_class_36_TERNARY_DONE_7:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_7
   attr_tpl_node_0_class_ternary_written_8 = 0
   attr_tpl_node_0_class_ternary_dst_8 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_8_ptr = load state+Button_color as ptr
   attr_tpl_node_0_class_ternary_eq_8_len = load state+Button_color_len as i64
   attr_tpl_node_0_class_ternary_eq_len_8 = eq attr_tpl_node_0_class_ternary_eq_8_len, 5
-  attr_tpl_node_0_class_ternary_eq_mem_8 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_8_ptr, *sax_Button_83, 5)
+  attr_tpl_node_0_class_ternary_eq_mem_8 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_8_ptr, *sax_Button_85, 5)
   attr_tpl_node_0_class_ternary_bool_8 = and attr_tpl_node_0_class_ternary_eq_len_8, attr_tpl_node_0_class_ternary_eq_mem_8
-  br attr_tpl_node_0_class_ternary_bool_8 -> L_attr_tpl_node_0_class_35_TERNARY_TRUE_8, L_attr_tpl_node_0_class_35_TERNARY_FALSE_8
-L_attr_tpl_node_0_class_35_TERNARY_TRUE_8:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_8, *sax_Button_84, 21)
+  br attr_tpl_node_0_class_ternary_bool_8 -> L_attr_tpl_node_0_class_37_TERNARY_TRUE_8, L_attr_tpl_node_0_class_37_TERNARY_FALSE_8
+L_attr_tpl_node_0_class_37_TERNARY_TRUE_8:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_8, *sax_Button_86, 21)
   attr_tpl_node_0_class_ternary_written_8 = 21
-  jmp L_attr_tpl_node_0_class_35_TERNARY_DONE_8
-L_attr_tpl_node_0_class_35_TERNARY_FALSE_8:
+  jmp L_attr_tpl_node_0_class_37_TERNARY_DONE_8
+L_attr_tpl_node_0_class_37_TERNARY_FALSE_8:
   attr_tpl_node_0_class_ternary_written_8 = 0
-  jmp L_attr_tpl_node_0_class_35_TERNARY_DONE_8
-L_attr_tpl_node_0_class_35_TERNARY_DONE_8:
+  jmp L_attr_tpl_node_0_class_37_TERNARY_DONE_8
+L_attr_tpl_node_0_class_37_TERNARY_DONE_8:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_8
   attr_tpl_node_0_class_ternary_written_9 = 0
   attr_tpl_node_0_class_ternary_dst_9 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_9_ptr = load state+Button_color as ptr
   attr_tpl_node_0_class_ternary_eq_9_len = load state+Button_color_len as i64
   attr_tpl_node_0_class_ternary_eq_len_9 = eq attr_tpl_node_0_class_ternary_eq_9_len, 4
-  attr_tpl_node_0_class_ternary_eq_mem_9 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_9_ptr, *sax_Button_85, 4)
+  attr_tpl_node_0_class_ternary_eq_mem_9 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_9_ptr, *sax_Button_87, 4)
   attr_tpl_node_0_class_ternary_bool_9 = and attr_tpl_node_0_class_ternary_eq_len_9, attr_tpl_node_0_class_ternary_eq_mem_9
-  br attr_tpl_node_0_class_ternary_bool_9 -> L_attr_tpl_node_0_class_36_TERNARY_TRUE_9, L_attr_tpl_node_0_class_36_TERNARY_FALSE_9
-L_attr_tpl_node_0_class_36_TERNARY_TRUE_9:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_9, *sax_Button_86, 20)
+  br attr_tpl_node_0_class_ternary_bool_9 -> L_attr_tpl_node_0_class_38_TERNARY_TRUE_9, L_attr_tpl_node_0_class_38_TERNARY_FALSE_9
+L_attr_tpl_node_0_class_38_TERNARY_TRUE_9:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_9, *sax_Button_88, 20)
   attr_tpl_node_0_class_ternary_written_9 = 20
-  jmp L_attr_tpl_node_0_class_36_TERNARY_DONE_9
-L_attr_tpl_node_0_class_36_TERNARY_FALSE_9:
+  jmp L_attr_tpl_node_0_class_38_TERNARY_DONE_9
+L_attr_tpl_node_0_class_38_TERNARY_FALSE_9:
   attr_tpl_node_0_class_ternary_written_9 = 0
-  jmp L_attr_tpl_node_0_class_36_TERNARY_DONE_9
-L_attr_tpl_node_0_class_36_TERNARY_DONE_9:
+  jmp L_attr_tpl_node_0_class_38_TERNARY_DONE_9
+L_attr_tpl_node_0_class_38_TERNARY_DONE_9:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_9
   attr_tpl_node_0_class_ternary_written_10 = 0
   attr_tpl_node_0_class_ternary_dst_10 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_10_ptr = load state+Button_color as ptr
   attr_tpl_node_0_class_ternary_eq_10_len = load state+Button_color_len as i64
   attr_tpl_node_0_class_ternary_eq_len_10 = eq attr_tpl_node_0_class_ternary_eq_10_len, 7
-  attr_tpl_node_0_class_ternary_eq_mem_10 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_10_ptr, *sax_Button_87, 7)
+  attr_tpl_node_0_class_ternary_eq_mem_10 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_10_ptr, *sax_Button_89, 7)
   attr_tpl_node_0_class_ternary_bool_10 = and attr_tpl_node_0_class_ternary_eq_len_10, attr_tpl_node_0_class_ternary_eq_mem_10
-  br attr_tpl_node_0_class_ternary_bool_10 -> L_attr_tpl_node_0_class_37_TERNARY_TRUE_10, L_attr_tpl_node_0_class_37_TERNARY_FALSE_10
-L_attr_tpl_node_0_class_37_TERNARY_TRUE_10:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_10, *sax_Button_88, 23)
+  br attr_tpl_node_0_class_ternary_bool_10 -> L_attr_tpl_node_0_class_39_TERNARY_TRUE_10, L_attr_tpl_node_0_class_39_TERNARY_FALSE_10
+L_attr_tpl_node_0_class_39_TERNARY_TRUE_10:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_10, *sax_Button_90, 23)
   attr_tpl_node_0_class_ternary_written_10 = 23
-  jmp L_attr_tpl_node_0_class_37_TERNARY_DONE_10
-L_attr_tpl_node_0_class_37_TERNARY_FALSE_10:
+  jmp L_attr_tpl_node_0_class_39_TERNARY_DONE_10
+L_attr_tpl_node_0_class_39_TERNARY_FALSE_10:
   attr_tpl_node_0_class_ternary_written_10 = 0
-  jmp L_attr_tpl_node_0_class_37_TERNARY_DONE_10
-L_attr_tpl_node_0_class_37_TERNARY_DONE_10:
+  jmp L_attr_tpl_node_0_class_39_TERNARY_DONE_10
+L_attr_tpl_node_0_class_39_TERNARY_DONE_10:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_10
   attr_tpl_node_0_class_ternary_written_11 = 0
   attr_tpl_node_0_class_ternary_dst_11 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_11_ptr = load state+Button_size as ptr
   attr_tpl_node_0_class_ternary_eq_11_len = load state+Button_size_len as i64
   attr_tpl_node_0_class_ternary_eq_len_11 = eq attr_tpl_node_0_class_ternary_eq_11_len, 5
-  attr_tpl_node_0_class_ternary_eq_mem_11 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_11_ptr, *sax_Button_89, 5)
+  attr_tpl_node_0_class_ternary_eq_mem_11 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_11_ptr, *sax_Button_91, 5)
   attr_tpl_node_0_class_ternary_bool_11 = and attr_tpl_node_0_class_ternary_eq_len_11, attr_tpl_node_0_class_ternary_eq_mem_11
-  br attr_tpl_node_0_class_ternary_bool_11 -> L_attr_tpl_node_0_class_38_TERNARY_TRUE_11, L_attr_tpl_node_0_class_38_TERNARY_FALSE_11
-L_attr_tpl_node_0_class_38_TERNARY_TRUE_11:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_11, *sax_Button_90, 20)
+  br attr_tpl_node_0_class_ternary_bool_11 -> L_attr_tpl_node_0_class_40_TERNARY_TRUE_11, L_attr_tpl_node_0_class_40_TERNARY_FALSE_11
+L_attr_tpl_node_0_class_40_TERNARY_TRUE_11:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_11, *sax_Button_92, 20)
   attr_tpl_node_0_class_ternary_written_11 = 20
-  jmp L_attr_tpl_node_0_class_38_TERNARY_DONE_11
-L_attr_tpl_node_0_class_38_TERNARY_FALSE_11:
+  jmp L_attr_tpl_node_0_class_40_TERNARY_DONE_11
+L_attr_tpl_node_0_class_40_TERNARY_FALSE_11:
   attr_tpl_node_0_class_ternary_written_11 = 0
-  jmp L_attr_tpl_node_0_class_38_TERNARY_DONE_11
-L_attr_tpl_node_0_class_38_TERNARY_DONE_11:
+  jmp L_attr_tpl_node_0_class_40_TERNARY_DONE_11
+L_attr_tpl_node_0_class_40_TERNARY_DONE_11:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_11
   attr_tpl_node_0_class_ternary_written_12 = 0
   attr_tpl_node_0_class_ternary_dst_12 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_12_ptr = load state+Button_size as ptr
   attr_tpl_node_0_class_ternary_eq_12_len = load state+Button_size_len as i64
   attr_tpl_node_0_class_ternary_eq_len_12 = eq attr_tpl_node_0_class_ternary_eq_12_len, 6
-  attr_tpl_node_0_class_ternary_eq_mem_12 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_12_ptr, *sax_Button_91, 6)
+  attr_tpl_node_0_class_ternary_eq_mem_12 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_12_ptr, *sax_Button_93, 6)
   attr_tpl_node_0_class_ternary_bool_12 = and attr_tpl_node_0_class_ternary_eq_len_12, attr_tpl_node_0_class_ternary_eq_mem_12
-  br attr_tpl_node_0_class_ternary_bool_12 -> L_attr_tpl_node_0_class_39_TERNARY_TRUE_12, L_attr_tpl_node_0_class_39_TERNARY_FALSE_12
-L_attr_tpl_node_0_class_39_TERNARY_TRUE_12:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_12, *sax_Button_92, 21)
+  br attr_tpl_node_0_class_ternary_bool_12 -> L_attr_tpl_node_0_class_41_TERNARY_TRUE_12, L_attr_tpl_node_0_class_41_TERNARY_FALSE_12
+L_attr_tpl_node_0_class_41_TERNARY_TRUE_12:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_12, *sax_Button_94, 21)
   attr_tpl_node_0_class_ternary_written_12 = 21
-  jmp L_attr_tpl_node_0_class_39_TERNARY_DONE_12
-L_attr_tpl_node_0_class_39_TERNARY_FALSE_12:
+  jmp L_attr_tpl_node_0_class_41_TERNARY_DONE_12
+L_attr_tpl_node_0_class_41_TERNARY_FALSE_12:
   attr_tpl_node_0_class_ternary_written_12 = 0
-  jmp L_attr_tpl_node_0_class_39_TERNARY_DONE_12
-L_attr_tpl_node_0_class_39_TERNARY_DONE_12:
+  jmp L_attr_tpl_node_0_class_41_TERNARY_DONE_12
+L_attr_tpl_node_0_class_41_TERNARY_DONE_12:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_12
   attr_tpl_node_0_class_ternary_written_13 = 0
   attr_tpl_node_0_class_ternary_dst_13 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
   attr_tpl_node_0_class_ternary_eq_13_ptr = load state+Button_size as ptr
   attr_tpl_node_0_class_ternary_eq_13_len = load state+Button_size_len as i64
   attr_tpl_node_0_class_ternary_eq_len_13 = eq attr_tpl_node_0_class_ternary_eq_13_len, 5
-  attr_tpl_node_0_class_ternary_eq_mem_13 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_13_ptr, *sax_Button_93, 5)
+  attr_tpl_node_0_class_ternary_eq_mem_13 = call @sax_mem_eq(*attr_tpl_node_0_class_ternary_eq_13_ptr, *sax_Button_95, 5)
   attr_tpl_node_0_class_ternary_bool_13 = and attr_tpl_node_0_class_ternary_eq_len_13, attr_tpl_node_0_class_ternary_eq_mem_13
-  br attr_tpl_node_0_class_ternary_bool_13 -> L_attr_tpl_node_0_class_40_TERNARY_TRUE_13, L_attr_tpl_node_0_class_40_TERNARY_FALSE_13
-L_attr_tpl_node_0_class_40_TERNARY_TRUE_13:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_13, *sax_Button_94, 20)
+  br attr_tpl_node_0_class_ternary_bool_13 -> L_attr_tpl_node_0_class_42_TERNARY_TRUE_13, L_attr_tpl_node_0_class_42_TERNARY_FALSE_13
+L_attr_tpl_node_0_class_42_TERNARY_TRUE_13:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_13, *sax_Button_96, 20)
   attr_tpl_node_0_class_ternary_written_13 = 20
-  jmp L_attr_tpl_node_0_class_40_TERNARY_DONE_13
-L_attr_tpl_node_0_class_40_TERNARY_FALSE_13:
+  jmp L_attr_tpl_node_0_class_42_TERNARY_DONE_13
+L_attr_tpl_node_0_class_42_TERNARY_FALSE_13:
   attr_tpl_node_0_class_ternary_written_13 = 0
-  jmp L_attr_tpl_node_0_class_40_TERNARY_DONE_13
-L_attr_tpl_node_0_class_40_TERNARY_DONE_13:
+  jmp L_attr_tpl_node_0_class_42_TERNARY_DONE_13
+L_attr_tpl_node_0_class_42_TERNARY_DONE_13:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_13
   attr_tpl_node_0_class_ternary_written_14 = 0
   attr_tpl_node_0_class_ternary_dst_14 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
-  attr_tpl_node_0_class_ternary_bool_14 = load state+Button_disabled as i1
-  br attr_tpl_node_0_class_ternary_bool_14 -> L_attr_tpl_node_0_class_41_TERNARY_TRUE_14, L_attr_tpl_node_0_class_41_TERNARY_FALSE_14
-L_attr_tpl_node_0_class_41_TERNARY_TRUE_14:
-  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_14, *sax_Button_95, 13)
-  attr_tpl_node_0_class_ternary_written_14 = 13
-  jmp L_attr_tpl_node_0_class_41_TERNARY_DONE_14
-L_attr_tpl_node_0_class_41_TERNARY_FALSE_14:
+  attr_tpl_node_0_class_ternary_bool_14 = load state+Button_fullWidth as i1
+  br attr_tpl_node_0_class_ternary_bool_14 -> L_attr_tpl_node_0_class_43_TERNARY_TRUE_14, L_attr_tpl_node_0_class_43_TERNARY_FALSE_14
+L_attr_tpl_node_0_class_43_TERNARY_TRUE_14:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_14, *sax_Button_97, 20)
+  attr_tpl_node_0_class_ternary_written_14 = 20
+  jmp L_attr_tpl_node_0_class_43_TERNARY_DONE_14
+L_attr_tpl_node_0_class_43_TERNARY_FALSE_14:
   attr_tpl_node_0_class_ternary_written_14 = 0
-  jmp L_attr_tpl_node_0_class_41_TERNARY_DONE_14
-L_attr_tpl_node_0_class_41_TERNARY_DONE_14:
+  jmp L_attr_tpl_node_0_class_43_TERNARY_DONE_14
+L_attr_tpl_node_0_class_43_TERNARY_DONE_14:
   attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_14
-  call @sax_dom_set_str_prop(node_0, *sax_Button_96, 9, *attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len)
+  attr_tpl_node_0_class_ternary_written_15 = 0
+  attr_tpl_node_0_class_ternary_dst_15 = ptr_add attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len
+  attr_tpl_node_0_class_ternary_bool_15 = load state+Button_disabled as i1
+  br attr_tpl_node_0_class_ternary_bool_15 -> L_attr_tpl_node_0_class_44_TERNARY_TRUE_15, L_attr_tpl_node_0_class_44_TERNARY_FALSE_15
+L_attr_tpl_node_0_class_44_TERNARY_TRUE_15:
+  call @sax_mem_copy(*attr_tpl_node_0_class_ternary_dst_15, *sax_Button_98, 13)
+  attr_tpl_node_0_class_ternary_written_15 = 13
+  jmp L_attr_tpl_node_0_class_44_TERNARY_DONE_15
+L_attr_tpl_node_0_class_44_TERNARY_FALSE_15:
+  attr_tpl_node_0_class_ternary_written_15 = 0
+  jmp L_attr_tpl_node_0_class_44_TERNARY_DONE_15
+L_attr_tpl_node_0_class_44_TERNARY_DONE_15:
+  attr_tpl_node_0_class_len = add attr_tpl_node_0_class_len, attr_tpl_node_0_class_ternary_written_15
+  call @sax_dom_set_str_prop(node_0, *sax_Button_99, 9, *attr_tpl_node_0_class_buf, attr_tpl_node_0_class_len)
   disabled_expr_node_0_disabled_load_0 = load state+Button_disabled as i1
   disabled_expr_node_0_disabled_wide_1 = zext disabled_expr_node_0_disabled_load_0 as i64
   disabled_node_0_disabled = ne disabled_expr_node_0_disabled_wide_1, 0
@@ -8251,6 +8369,8 @@ L_ENTRY:
   !size_len
   disabled = load state+Button_disabled as i1
   !disabled
+  fullWidth = load state+Button_fullWidth as i1
+  !fullWidth
   !dom
   !state
   !ctx
@@ -8288,71 +8408,74 @@ L_ENTRY:
 @const sax_Button_29 = utf8:" MuiButton-sizeMedium"
 @const sax_Button_30 = utf8:"large"
 @const sax_Button_31 = utf8:" MuiButton-sizeLarge"
-@const sax_Button_32 = utf8:" Mui-disabled"
-@const sax_Button_33 = utf8:"className"
-@const sax_Button_34 = utf8:"slot"
-@const sax_Button_35 = utf8:"text"
-@const sax_Button_36 = utf8:"primary"
-@const sax_Button_37 = utf8:"medium"
-@const sax_Button_38 = utf8:"MuiButton-root"
-@const sax_Button_39 = utf8:"text"
-@const sax_Button_40 = utf8:" MuiButton-text"
-@const sax_Button_41 = utf8:"outlined"
-@const sax_Button_42 = utf8:" MuiButton-outlined"
-@const sax_Button_43 = utf8:"contained"
-@const sax_Button_44 = utf8:" MuiButton-contained"
-@const sax_Button_45 = utf8:"inherit"
-@const sax_Button_46 = utf8:" MuiButton-colorInherit"
-@const sax_Button_47 = utf8:"primary"
-@const sax_Button_48 = utf8:" MuiButton-colorPrimary"
-@const sax_Button_49 = utf8:"secondary"
-@const sax_Button_50 = utf8:" MuiButton-colorSecondary"
-@const sax_Button_51 = utf8:"success"
-@const sax_Button_52 = utf8:" MuiButton-colorSuccess"
-@const sax_Button_53 = utf8:"error"
-@const sax_Button_54 = utf8:" MuiButton-colorError"
-@const sax_Button_55 = utf8:"info"
-@const sax_Button_56 = utf8:" MuiButton-colorInfo"
-@const sax_Button_57 = utf8:"warning"
-@const sax_Button_58 = utf8:" MuiButton-colorWarning"
-@const sax_Button_59 = utf8:"small"
-@const sax_Button_60 = utf8:" MuiButton-sizeSmall"
-@const sax_Button_61 = utf8:"medium"
-@const sax_Button_62 = utf8:" MuiButton-sizeMedium"
-@const sax_Button_63 = utf8:"large"
-@const sax_Button_64 = utf8:" MuiButton-sizeLarge"
-@const sax_Button_65 = utf8:" Mui-disabled"
-@const sax_Button_66 = utf8:"className"
-@const sax_Button_67 = utf8:"slot"
-@const sax_Button_68 = utf8:"MuiButton-root"
-@const sax_Button_69 = utf8:"text"
-@const sax_Button_70 = utf8:" MuiButton-text"
-@const sax_Button_71 = utf8:"outlined"
-@const sax_Button_72 = utf8:" MuiButton-outlined"
-@const sax_Button_73 = utf8:"contained"
-@const sax_Button_74 = utf8:" MuiButton-contained"
-@const sax_Button_75 = utf8:"inherit"
-@const sax_Button_76 = utf8:" MuiButton-colorInherit"
-@const sax_Button_77 = utf8:"primary"
-@const sax_Button_78 = utf8:" MuiButton-colorPrimary"
-@const sax_Button_79 = utf8:"secondary"
-@const sax_Button_80 = utf8:" MuiButton-colorSecondary"
-@const sax_Button_81 = utf8:"success"
-@const sax_Button_82 = utf8:" MuiButton-colorSuccess"
-@const sax_Button_83 = utf8:"error"
-@const sax_Button_84 = utf8:" MuiButton-colorError"
-@const sax_Button_85 = utf8:"info"
-@const sax_Button_86 = utf8:" MuiButton-colorInfo"
-@const sax_Button_87 = utf8:"warning"
-@const sax_Button_88 = utf8:" MuiButton-colorWarning"
-@const sax_Button_89 = utf8:"small"
-@const sax_Button_90 = utf8:" MuiButton-sizeSmall"
-@const sax_Button_91 = utf8:"medium"
-@const sax_Button_92 = utf8:" MuiButton-sizeMedium"
-@const sax_Button_93 = utf8:"large"
-@const sax_Button_94 = utf8:" MuiButton-sizeLarge"
-@const sax_Button_95 = utf8:" Mui-disabled"
-@const sax_Button_96 = utf8:"className"
+@const sax_Button_32 = utf8:" MuiButton-fullWidth"
+@const sax_Button_33 = utf8:" Mui-disabled"
+@const sax_Button_34 = utf8:"className"
+@const sax_Button_35 = utf8:"slot"
+@const sax_Button_36 = utf8:"text"
+@const sax_Button_37 = utf8:"primary"
+@const sax_Button_38 = utf8:"medium"
+@const sax_Button_39 = utf8:"MuiButton-root"
+@const sax_Button_40 = utf8:"text"
+@const sax_Button_41 = utf8:" MuiButton-text"
+@const sax_Button_42 = utf8:"outlined"
+@const sax_Button_43 = utf8:" MuiButton-outlined"
+@const sax_Button_44 = utf8:"contained"
+@const sax_Button_45 = utf8:" MuiButton-contained"
+@const sax_Button_46 = utf8:"inherit"
+@const sax_Button_47 = utf8:" MuiButton-colorInherit"
+@const sax_Button_48 = utf8:"primary"
+@const sax_Button_49 = utf8:" MuiButton-colorPrimary"
+@const sax_Button_50 = utf8:"secondary"
+@const sax_Button_51 = utf8:" MuiButton-colorSecondary"
+@const sax_Button_52 = utf8:"success"
+@const sax_Button_53 = utf8:" MuiButton-colorSuccess"
+@const sax_Button_54 = utf8:"error"
+@const sax_Button_55 = utf8:" MuiButton-colorError"
+@const sax_Button_56 = utf8:"info"
+@const sax_Button_57 = utf8:" MuiButton-colorInfo"
+@const sax_Button_58 = utf8:"warning"
+@const sax_Button_59 = utf8:" MuiButton-colorWarning"
+@const sax_Button_60 = utf8:"small"
+@const sax_Button_61 = utf8:" MuiButton-sizeSmall"
+@const sax_Button_62 = utf8:"medium"
+@const sax_Button_63 = utf8:" MuiButton-sizeMedium"
+@const sax_Button_64 = utf8:"large"
+@const sax_Button_65 = utf8:" MuiButton-sizeLarge"
+@const sax_Button_66 = utf8:" MuiButton-fullWidth"
+@const sax_Button_67 = utf8:" Mui-disabled"
+@const sax_Button_68 = utf8:"className"
+@const sax_Button_69 = utf8:"slot"
+@const sax_Button_70 = utf8:"MuiButton-root"
+@const sax_Button_71 = utf8:"text"
+@const sax_Button_72 = utf8:" MuiButton-text"
+@const sax_Button_73 = utf8:"outlined"
+@const sax_Button_74 = utf8:" MuiButton-outlined"
+@const sax_Button_75 = utf8:"contained"
+@const sax_Button_76 = utf8:" MuiButton-contained"
+@const sax_Button_77 = utf8:"inherit"
+@const sax_Button_78 = utf8:" MuiButton-colorInherit"
+@const sax_Button_79 = utf8:"primary"
+@const sax_Button_80 = utf8:" MuiButton-colorPrimary"
+@const sax_Button_81 = utf8:"secondary"
+@const sax_Button_82 = utf8:" MuiButton-colorSecondary"
+@const sax_Button_83 = utf8:"success"
+@const sax_Button_84 = utf8:" MuiButton-colorSuccess"
+@const sax_Button_85 = utf8:"error"
+@const sax_Button_86 = utf8:" MuiButton-colorError"
+@const sax_Button_87 = utf8:"info"
+@const sax_Button_88 = utf8:" MuiButton-colorInfo"
+@const sax_Button_89 = utf8:"warning"
+@const sax_Button_90 = utf8:" MuiButton-colorWarning"
+@const sax_Button_91 = utf8:"small"
+@const sax_Button_92 = utf8:" MuiButton-sizeSmall"
+@const sax_Button_93 = utf8:"medium"
+@const sax_Button_94 = utf8:" MuiButton-sizeMedium"
+@const sax_Button_95 = utf8:"large"
+@const sax_Button_96 = utf8:" MuiButton-sizeLarge"
+@const sax_Button_97 = utf8:" MuiButton-fullWidth"
+@const sax_Button_98 = utf8:" Mui-disabled"
+@const sax_Button_99 = utf8:"className"
 
 @const sax_Button_host_app = utf8:"#app"
 
@@ -9833,3 +9956,4 @@ L_ENTRY:
 L_ENTRY:
   ctx = call @sax_muimaterialkitsigninpage_init()
   return ctx
+

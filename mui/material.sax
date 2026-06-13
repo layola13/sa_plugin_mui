@@ -7,11 +7,12 @@
     size = 'medium' as ptr
     size_len = 6
     disabled = 0 as i1
+    fullWidth = 0 as i1
   </state>
-  <button className="MuiButton-root{variant == 'text' ? ' MuiButton-text' : ''}{variant == 'outlined' ? ' MuiButton-outlined' : ''}{variant == 'contained' ? ' MuiButton-contained' : ''}{color == 'inherit' ? ' MuiButton-colorInherit' : ''}{color == 'primary' ? ' MuiButton-colorPrimary' : ''}{color == 'secondary' ? ' MuiButton-colorSecondary' : ''}{color == 'success' ? ' MuiButton-colorSuccess' : ''}{color == 'error' ? ' MuiButton-colorError' : ''}{color == 'info' ? ' MuiButton-colorInfo' : ''}{color == 'warning' ? ' MuiButton-colorWarning' : ''}{size == 'small' ? ' MuiButton-sizeSmall' : ''}{size == 'medium' ? ' MuiButton-sizeMedium' : ''}{size == 'large' ? ' MuiButton-sizeLarge' : ''}{disabled ? ' Mui-disabled' : ''}" disabled={disabled}>
+  <button className="MuiButton-root{variant == 'text' ? ' MuiButton-text' : ''}{variant == 'outlined' ? ' MuiButton-outlined' : ''}{variant == 'contained' ? ' MuiButton-contained' : ''}{color == 'inherit' ? ' MuiButton-colorInherit' : ''}{color == 'primary' ? ' MuiButton-colorPrimary' : ''}{color == 'secondary' ? ' MuiButton-colorSecondary' : ''}{color == 'success' ? ' MuiButton-colorSuccess' : ''}{color == 'error' ? ' MuiButton-colorError' : ''}{color == 'info' ? ' MuiButton-colorInfo' : ''}{color == 'warning' ? ' MuiButton-colorWarning' : ''}{size == 'small' ? ' MuiButton-sizeSmall' : ''}{size == 'medium' ? ' MuiButton-sizeMedium' : ''}{size == 'large' ? ' MuiButton-sizeLarge' : ''}{fullWidth ? ' MuiButton-fullWidth' : ''}{disabled ? ' Mui-disabled' : ''}" disabled={disabled}>
     <Slot />
   </button>
-  !variant !variant_len !color !color_len !size !size_len !disabled
+  !variant !variant_len !color !color_len !size !size_len !disabled !fullWidth
 </Component>
 
 <Component name="ButtonBase">
@@ -1421,7 +1422,7 @@
     viewBox = alloc 32
     viewBox_len = 11
   </state>
-  <svg className="MuiSvgIcon-root{color == 'primary' ? ' MuiSvgIcon-colorPrimary' : ''}{color == 'secondary' ? ' MuiSvgIcon-colorSecondary' : ''}{color == 'action' ? ' MuiSvgIcon-colorAction' : ''}{color == 'error' ? ' MuiSvgIcon-colorError' : ''}{color == 'disabled' ? ' MuiSvgIcon-colorDisabled' : ''}{fontSize == 'inherit' ? ' MuiSvgIcon-fontSizeInherit' : ''}{fontSize == 'small' ? ' MuiSvgIcon-fontSizeSmall' : ''}{fontSize == 'medium' ? ' MuiSvgIcon-fontSizeMedium' : ''}{fontSize == 'large' ? ' MuiSvgIcon-fontSizeLarge' : ''}" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+  <svg className="MuiSvgIcon-root{color == 'inherit' ? ' MuiSvgIcon-colorInherit' : ''}{color == 'primary' ? ' MuiSvgIcon-colorPrimary' : ''}{color == 'secondary' ? ' MuiSvgIcon-colorSecondary' : ''}{color == 'action' ? ' MuiSvgIcon-colorAction' : ''}{color == 'error' ? ' MuiSvgIcon-colorError' : ''}{color == 'info' ? ' MuiSvgIcon-colorInfo' : ''}{color == 'success' ? ' MuiSvgIcon-colorSuccess' : ''}{color == 'warning' ? ' MuiSvgIcon-colorWarning' : ''}{color == 'disabled' ? ' MuiSvgIcon-colorDisabled' : ''}{fontSize == 'inherit' ? ' MuiSvgIcon-fontSizeInherit' : ''}{fontSize == 'small' ? ' MuiSvgIcon-fontSizeSmall' : ''}{fontSize == 'medium' ? ' MuiSvgIcon-fontSizeMedium' : ''}{fontSize == 'large' ? ' MuiSvgIcon-fontSizeLarge' : ''}" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
     <Slot />
   </svg>
   !color !color_len !fontSize !fontSize_len !htmlColor !htmlColor_len !inheritViewBox !titleAccess !titleAccess_len !viewBox !viewBox_len
@@ -1436,24 +1437,40 @@
     fontSize = 'medium' as ptr
     fontSize_len = 6
   </state>
-  <span className="material-icons notranslate MuiIcon-root{color == 'primary' ? ' MuiIcon-colorPrimary' : ''}{color == 'secondary' ? ' MuiIcon-colorSecondary' : ''}{color == 'action' ? ' MuiIcon-colorAction' : ''}{color == 'error' ? ' MuiIcon-colorError' : ''}{color == 'disabled' ? ' MuiIcon-colorDisabled' : ''}{fontSize == 'inherit' ? ' MuiIcon-fontSizeInherit' : ''}{fontSize == 'small' ? ' MuiIcon-fontSizeSmall' : ''}{fontSize == 'medium' ? ' MuiIcon-fontSizeMedium' : ''}{fontSize == 'large' ? ' MuiIcon-fontSizeLarge' : ''}" aria-hidden="true">
+  <span className="material-icons notranslate MuiIcon-root{color == 'inherit' ? ' MuiIcon-colorInherit' : ''}{color == 'primary' ? ' MuiIcon-colorPrimary' : ''}{color == 'secondary' ? ' MuiIcon-colorSecondary' : ''}{color == 'action' ? ' MuiIcon-colorAction' : ''}{color == 'error' ? ' MuiIcon-colorError' : ''}{color == 'info' ? ' MuiIcon-colorInfo' : ''}{color == 'success' ? ' MuiIcon-colorSuccess' : ''}{color == 'warning' ? ' MuiIcon-colorWarning' : ''}{color == 'disabled' ? ' MuiIcon-colorDisabled' : ''}{fontSize == 'inherit' ? ' MuiIcon-fontSizeInherit' : ''}{fontSize == 'small' ? ' MuiIcon-fontSizeSmall' : ''}{fontSize == 'medium' ? ' MuiIcon-fontSizeMedium' : ''}{fontSize == 'large' ? ' MuiIcon-fontSizeLarge' : ''}" aria-hidden="true">
     <Slot />
   </span>
   !baseClassName !baseClassName_len !color !color_len !fontSize !fontSize_len
+</Component>
+
+<Component name="Iconify">
+  <state>
+    color = alloc 32
+    color_len = 0
+    height = 20
+    icon = alloc 128
+    icon_len = 0
+    width = 20
+  </state>
+  <span className="MuiIconify-root MuiIconify-hasIcon{color == 'primary' ? ' MuiIconify-colorPrimary' : ''}{color == 'secondary' ? ' MuiIconify-colorSecondary' : ''}{color == 'success' ? ' MuiIconify-colorSuccess' : ''}{color == 'error' ? ' MuiIconify-colorError' : ''}{color == 'warning' ? ' MuiIconify-colorWarning' : ''}" data-icon="sa-iconify" aria-hidden="true">
+    <span className="MuiIconify-glyph" />
+    <Slot />
+  </span>
+  !color !color_len !height !icon !icon_len !width
 </Component>
 
 <Component name="Link">
   <state>
     color = alloc 32
     color_len = 7
-    href = alloc 256
+    href = '#' as ptr
     href_len = 1
     underline = 'always' as ptr
     underline_len = 6
     variant = alloc 32
     variant_len = 7
   </state>
-  <a className="MuiTypography-root MuiTypography-inherit MuiLink-root{underline == 'none' ? ' MuiLink-underlineNone' : ''}{underline == 'hover' ? ' MuiLink-underlineHover' : ''}{underline == 'always' ? ' MuiLink-underlineAlways' : ''}" href="#">
+  <a className="MuiTypography-root MuiTypography-inherit MuiLink-root{underline == 'none' ? ' MuiLink-underlineNone' : ''}{underline == 'hover' ? ' MuiLink-underlineHover' : ''}{underline == 'always' ? ' MuiLink-underlineAlways' : ''}" href={href}>
     <Slot />
   </a>
   !color !color_len !href !href_len !underline !underline_len !variant !variant_len
@@ -1475,9 +1492,92 @@
   <state>
     enableColorScheme = 0 as i1
   </state>
-  <span className="MuiCssBaseline-root" hidden="true" />
+  <span className="MuiCssBaseline-root{enableColorScheme ? ' MuiCssBaseline-enableColorScheme' : ''}" hidden="true" />
   <Slot />
   !enableColorScheme
+</Component>
+
+<Component name="MuiThemeProvider">
+  <state>
+    color = 'primary' as ptr
+    color_len = 7
+    colorScheme = 'light' as ptr
+    colorScheme_len = 5
+    defaultMode = 'light' as ptr
+    defaultMode_len = 5
+    disableTransitionOnChange = 0 as i1
+    mode = 'light' as ptr
+    mode_len = 5
+  </state>
+  <section className="MuiThemeProvider-root{mode == 'dark' ? ' MuiThemeProvider-modeDark' : ' MuiThemeProvider-modeLight'}{colorScheme == 'dark' ? ' MuiThemeProvider-colorSchemeDark' : ''}{color == 'primary' ? ' MuiThemeProvider-colorPrimary' : ''}{color == 'secondary' ? ' MuiThemeProvider-colorSecondary' : ''}{color == 'success' ? ' MuiThemeProvider-colorSuccess' : ''}{color == 'warning' ? ' MuiThemeProvider-colorWarning' : ''}{color == 'error' ? ' MuiThemeProvider-colorError' : ''}{color == 'info' ? ' MuiThemeProvider-colorInfo' : ''}{disableTransitionOnChange ? ' MuiThemeProvider-disableTransitionOnChange' : ''}" data-mui-color-scheme="theme" data-mui-mode="theme">
+    <Slot />
+  </section>
+  !color !color_len !colorScheme !colorScheme_len !defaultMode !defaultMode_len !disableTransitionOnChange !mode !mode_len
+</Component>
+
+<Component name="ThemeProvider">
+  <state>
+    color = 'primary' as ptr
+    color_len = 7
+    colorScheme = 'light' as ptr
+    colorScheme_len = 5
+    defaultMode = 'light' as ptr
+    defaultMode_len = 5
+    disableTransitionOnChange = 0 as i1
+    mode = 'light' as ptr
+    mode_len = 5
+  </state>
+  <section className="MuiThemeProvider-root{mode == 'dark' ? ' MuiThemeProvider-modeDark' : ' MuiThemeProvider-modeLight'}{colorScheme == 'dark' ? ' MuiThemeProvider-colorSchemeDark' : ''}{color == 'primary' ? ' MuiThemeProvider-colorPrimary' : ''}{color == 'secondary' ? ' MuiThemeProvider-colorSecondary' : ''}{color == 'success' ? ' MuiThemeProvider-colorSuccess' : ''}{color == 'warning' ? ' MuiThemeProvider-colorWarning' : ''}{color == 'error' ? ' MuiThemeProvider-colorError' : ''}{color == 'info' ? ' MuiThemeProvider-colorInfo' : ''}{disableTransitionOnChange ? ' MuiThemeProvider-disableTransitionOnChange' : ''}" data-mui-color-scheme="theme" data-mui-mode="theme">
+    <Slot />
+  </section>
+  !color !color_len !colorScheme !colorScheme_len !defaultMode !defaultMode_len !disableTransitionOnChange !mode !mode_len
+</Component>
+
+<Component name="MuiCssVarsProvider">
+  <state>
+    color = 'primary' as ptr
+    color_len = 7
+    colorScheme = 'light' as ptr
+    colorScheme_len = 5
+    defaultMode = 'light' as ptr
+    defaultMode_len = 5
+    mode = 'light' as ptr
+    mode_len = 5
+  </state>
+  <section className="MuiCssVarsProvider-root{mode == 'dark' ? ' MuiCssVarsProvider-modeDark' : ' MuiCssVarsProvider-modeLight'}{colorScheme == 'dark' ? ' MuiCssVarsProvider-colorSchemeDark' : ''}{color == 'primary' ? ' MuiCssVarsProvider-colorPrimary' : ''}{color == 'secondary' ? ' MuiCssVarsProvider-colorSecondary' : ''}{color == 'success' ? ' MuiCssVarsProvider-colorSuccess' : ''}{color == 'warning' ? ' MuiCssVarsProvider-colorWarning' : ''}{color == 'error' ? ' MuiCssVarsProvider-colorError' : ''}{color == 'info' ? ' MuiCssVarsProvider-colorInfo' : ''}" data-mui-color-scheme="css-vars" data-mui-mode="css-vars">
+    <Slot />
+  </section>
+  !color !color_len !colorScheme !colorScheme_len !defaultMode !defaultMode_len !mode !mode_len
+</Component>
+
+<Component name="CssVarsProvider">
+  <state>
+    color = 'primary' as ptr
+    color_len = 7
+    colorScheme = 'light' as ptr
+    colorScheme_len = 5
+    defaultMode = 'light' as ptr
+    defaultMode_len = 5
+    mode = 'light' as ptr
+    mode_len = 5
+  </state>
+  <section className="MuiCssVarsProvider-root{mode == 'dark' ? ' MuiCssVarsProvider-modeDark' : ' MuiCssVarsProvider-modeLight'}{colorScheme == 'dark' ? ' MuiCssVarsProvider-colorSchemeDark' : ''}{color == 'primary' ? ' MuiCssVarsProvider-colorPrimary' : ''}{color == 'secondary' ? ' MuiCssVarsProvider-colorSecondary' : ''}{color == 'success' ? ' MuiCssVarsProvider-colorSuccess' : ''}{color == 'warning' ? ' MuiCssVarsProvider-colorWarning' : ''}{color == 'error' ? ' MuiCssVarsProvider-colorError' : ''}{color == 'info' ? ' MuiCssVarsProvider-colorInfo' : ''}" data-mui-color-scheme="css-vars" data-mui-mode="css-vars">
+    <Slot />
+  </section>
+  !color !color_len !colorScheme !colorScheme_len !defaultMode !defaultMode_len !mode !mode_len
+</Component>
+
+<Component name="Experimental_CssVarsProvider">
+  <state>
+    colorScheme = 'light' as ptr
+    colorScheme_len = 5
+    mode = 'light' as ptr
+    mode_len = 5
+  </state>
+  <MuiCssVarsProvider colorScheme={colorScheme} mode={mode}>
+    <Slot />
+  </MuiCssVarsProvider>
+  !colorScheme !colorScheme_len !mode !mode_len
 </Component>
 
 <Component name="GlobalStyles">
@@ -1510,6 +1610,47 @@
     <Slot />
   </div>
   !defer !fallback !fallback_len
+</Component>
+
+<Component name="Hidden">
+  <state>
+    implementation = alloc 32
+    implementation_len = 3
+    lgDown = 0 as i1
+    lgUp = 0 as i1
+    mdDown = 0 as i1
+    mdUp = 0 as i1
+    only = alloc 32
+    only_len = 0
+    smDown = 0 as i1
+    smUp = 0 as i1
+    xlDown = 0 as i1
+    xlUp = 0 as i1
+    xsDown = 0 as i1
+    xsUp = 0 as i1
+  </state>
+  <div className="MuiHidden-root{xsUp ? ' MuiHidden-xsUp' : ''}{smUp ? ' MuiHidden-smUp' : ''}{mdUp ? ' MuiHidden-mdUp' : ''}{lgUp ? ' MuiHidden-lgUp' : ''}{xlUp ? ' MuiHidden-xlUp' : ''}{xsDown ? ' MuiHidden-xsDown' : ''}{smDown ? ' MuiHidden-smDown' : ''}{mdDown ? ' MuiHidden-mdDown' : ''}{lgDown ? ' MuiHidden-lgDown' : ''}{xlDown ? ' MuiHidden-xlDown' : ''}{only == 'xs' ? ' MuiHidden-onlyXs' : ''}{only == 'sm' ? ' MuiHidden-onlySm' : ''}{only == 'md' ? ' MuiHidden-onlyMd' : ''}{only == 'lg' ? ' MuiHidden-onlyLg' : ''}{only == 'xl' ? ' MuiHidden-onlyXl' : ''}">
+    <Slot />
+  </div>
+  !implementation !implementation_len !lgDown !lgUp !mdDown !mdUp !only !only_len !smDown !smUp !xlDown !xlUp !xsDown !xsUp
+</Component>
+
+<Component name="ResponsiveBox">
+  <state>
+    className = alloc 256
+    className_len = 0
+    direction = 'row' as ptr
+    direction_len = 3
+    gap = 2
+    mdDirection = alloc 32
+    mdDirection_len = 0
+    smDirection = alloc 32
+    smDirection_len = 0
+  </state>
+  <div className="MuiResponsiveBox-root MuiResponsiveBox-direction{direction == 'row' ? 'Row' : ''}{direction == 'column' ? 'Column' : ''}{smDirection == 'row' ? ' MuiResponsiveBox-smRow' : ''}{smDirection == 'column' ? ' MuiResponsiveBox-smColumn' : ''}{mdDirection == 'row' ? ' MuiResponsiveBox-mdRow' : ''}{mdDirection == 'column' ? ' MuiResponsiveBox-mdColumn' : ''} {className}">
+    <Slot />
+  </div>
+  !className !className_len !direction !direction_len !gap !mdDirection !mdDirection_len !smDirection !smDirection_len
 </Component>
 
 <Component name="ClickAwayListener">
@@ -1774,6 +1915,148 @@
     <Slot />
   </span>
   !animation !animation_len !height !variant !variant_len !width
+</Component>
+
+<Component name="LoadingButton">
+  <state>
+    color = 'primary' as ptr
+    color_len = 7
+    disabled = 0 as i1
+    fullWidth = 0 as i1
+    loading = 0 as i1
+    loadingPosition = 'center' as ptr
+    loadingPosition_len = 6
+    size = 'medium' as ptr
+    size_len = 6
+    variant = 'text' as ptr
+    variant_len = 4
+  </state>
+  <button className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root{variant == 'text' ? ' MuiButton-text MuiLoadingButton-text' : ''}{variant == 'contained' ? ' MuiButton-contained MuiLoadingButton-contained' : ''}{variant == 'outlined' ? ' MuiButton-outlined MuiLoadingButton-outlined' : ''}{color == 'primary' ? ' MuiButton-colorPrimary MuiLoadingButton-colorPrimary' : ''}{color == 'secondary' ? ' MuiButton-colorSecondary MuiLoadingButton-colorSecondary' : ''}{size == 'small' ? ' MuiButton-sizeSmall MuiLoadingButton-sizeSmall' : ''}{size == 'medium' ? ' MuiButton-sizeMedium MuiLoadingButton-sizeMedium' : ''}{size == 'large' ? ' MuiButton-sizeLarge MuiLoadingButton-sizeLarge' : ''}{fullWidth ? ' MuiButton-fullWidth MuiLoadingButton-fullWidth' : ''}{loading ? ' MuiLoadingButton-loading Mui-disabled MuiLoadingButton-loadingPositionCenter' : ''}{disabled ? ' Mui-disabled' : ''}" disabled={loading}>
+    <span className="MuiLoadingButton-loadingIndicator{loading ? '' : ' MuiLoadingButton-loadingIndicatorHidden'}">
+      <CircularProgress color="inherit" size="16" />
+    </span>
+    <Slot />
+  </button>
+  !color !color_len !disabled !fullWidth !loading !loadingPosition !loadingPosition_len !size !size_len !variant !variant_len
+</Component>
+
+<Component name="Timeline">
+  <state>
+    position = 'right' as ptr
+    position_len = 5
+  </state>
+  <ul className="MuiTimeline-root{position == 'left' ? ' MuiTimeline-positionLeft' : ''}{position == 'right' ? ' MuiTimeline-positionRight' : ''}{position == 'alternate' ? ' MuiTimeline-positionAlternate' : ''}{position == 'alternate-reverse' ? ' MuiTimeline-positionAlternateReverse' : ''}">
+    <Slot />
+  </ul>
+  !position !position_len
+</Component>
+
+<Component name="TimelineItem">
+  <state>
+    missingOppositeContent = 0 as i1
+    position = 'right' as ptr
+    position_len = 5
+  </state>
+  <li className="MuiTimelineItem-root{missingOppositeContent ? ' MuiTimelineItem-missingOppositeContent' : ''}{position == 'left' ? ' MuiTimelineItem-positionLeft' : ''}{position == 'right' ? ' MuiTimelineItem-positionRight' : ''}{position == 'alternate' ? ' MuiTimelineItem-positionAlternate' : ''}{position == 'alternate-reverse' ? ' MuiTimelineItem-positionAlternateReverse' : ''}">
+    <Slot />
+  </li>
+  !missingOppositeContent !position !position_len
+</Component>
+
+<Component name="TimelineSeparator">
+  <div className="MuiTimelineSeparator-root">
+    <Slot />
+  </div>
+</Component>
+
+<Component name="TimelineConnector">
+  <span className="MuiTimelineConnector-root" />
+</Component>
+
+<Component name="TimelineContent">
+  <state>
+    position = 'right' as ptr
+    position_len = 5
+  </state>
+  <div className="MuiTimelineContent-root{position == 'left' ? ' MuiTimelineContent-positionLeft' : ''}{position == 'right' ? ' MuiTimelineContent-positionRight' : ''}{position == 'alternate' ? ' MuiTimelineContent-positionAlternate' : ''}{position == 'alternate-reverse' ? ' MuiTimelineContent-positionAlternateReverse' : ''}">
+    <Slot />
+  </div>
+  !position !position_len
+</Component>
+
+<Component name="TimelineOppositeContent">
+  <state>
+    position = 'left' as ptr
+    position_len = 4
+  </state>
+  <div className="MuiTimelineOppositeContent-root{position == 'left' ? ' MuiTimelineOppositeContent-positionLeft' : ''}{position == 'right' ? ' MuiTimelineOppositeContent-positionRight' : ''}">
+    <Slot />
+  </div>
+  !position !position_len
+</Component>
+
+<Component name="TimelineDot">
+  <state>
+    color = 'grey' as ptr
+    color_len = 4
+    variant = 'filled' as ptr
+    variant_len = 6
+  </state>
+  <span className="MuiTimelineDot-root{variant == 'filled' ? ' MuiTimelineDot-filled' : ''}{variant == 'outlined' ? ' MuiTimelineDot-outlined' : ''}{color == 'grey' ? ' MuiTimelineDot-grey' : ''}{color == 'primary' ? ' MuiTimelineDot-primary' : ''}{color == 'secondary' ? ' MuiTimelineDot-secondary' : ''}{color == 'success' ? ' MuiTimelineDot-success' : ''}{color == 'info' ? ' MuiTimelineDot-info' : ''}{color == 'warning' ? ' MuiTimelineDot-warning' : ''}{color == 'error' ? ' MuiTimelineDot-error' : ''}">
+    <Slot />
+  </span>
+  !color !color_len !variant !variant_len
+</Component>
+
+<Component name="Masonry">
+  <state>
+    columns = 4
+    defaultColumns = 4
+    defaultHeight = 0
+    defaultSpacing = 2
+    spacing = 2
+  </state>
+  <div className="MuiMasonry-root MuiMasonry-columns{columns}">
+    <Slot />
+  </div>
+  !columns !defaultColumns !defaultHeight !defaultSpacing !spacing
+</Component>
+
+<Component name="TabContext">
+  <state>
+    value = alloc 64
+    value_len = 1
+  </state>
+  <div className="MuiTabContext-root" data-value="tab-context">
+    <Slot />
+  </div>
+  !value !value_len
+</Component>
+
+<Component name="TabList">
+  <state>
+    centered = 0 as i1
+    orientation = 'horizontal' as ptr
+    orientation_len = 10
+    value = alloc 64
+    value_len = 1
+  </state>
+  <Tabs centered={centered} orientation="horizontal" value="tab-list">
+    <Slot />
+  </Tabs>
+  !centered !orientation !orientation_len !value !value_len
+</Component>
+
+<Component name="TabPanel">
+  <state>
+    keepMounted = 0 as i1
+    value = alloc 64
+    value_len = 1
+  </state>
+  <div className="MuiTabPanel-root" role="tabpanel" data-value="tab-panel">
+    <Slot />
+  </div>
+  !keepMounted !value !value_len
 </Component>
 
 <Component name="SnackbarContent">

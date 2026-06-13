@@ -1,0 +1,36 @@
+<Component name="MuiMaterialKitNotFoundPage">
+  <state>
+    action_count = 0
+  </state>
+
+  <section className="mk-notfound-app">
+    <InitColorSchemeScript />
+    <GlobalStyles />
+    <CssBaseline />
+
+    <Link href="../index.html" underline="none"><span className="mk-notfound-logo"><span className="mk-logo">M</span></span></Link>
+
+    <Container>
+      <section className="mk-notfound-content">
+        <Typography variant="h3">Sorry, page not found!</Typography>
+        <Typography variant="body1">Sorry, we couldn't find the page you're looking for. Perhaps you've mistyped the URL? Be sure to check your spelling.</Typography>
+        <img className="mk-notfound-image" src="assets/illustrations/illustration-404.svg" alt="Page not found" />
+        <section className="mk-notfound-actions">
+          <Link href="../index.html" underline="none"><span className="MuiButton-root MuiButton-contained MuiButton-colorInherit MuiButton-sizeLarge mk-home-link-button">Go to home</span></Link>
+          <Button variant="outlined" color="inherit" size="large" onClick={track_action}>Stay here</Button>
+        </section>
+        <span className="mk-inline-status">404 actions: {action_count}</span>
+      </section>
+    </Container>
+  </section>
+
+  @track_action:
+  L_ENTRY:
+    count = load state+MuiMaterialKitNotFoundPage_action_count as i64
+    count = add count, 1
+    store state+MuiMaterialKitNotFoundPage_action_count, count as i64
+    call @render()
+    ret
+
+  !action_count
+</Component>

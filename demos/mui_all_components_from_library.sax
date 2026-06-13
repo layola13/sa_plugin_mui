@@ -6,6 +6,37 @@
   <section className="mui-basic-demo">
     <InitColorSchemeScript />
     <GlobalStyles />
+    <MuiThemeProvider mode="dark" colorScheme="dark" color="primary">
+      <CssBaseline enableColorScheme />
+      <ResponsiveBox direction="column" smDirection="row" mdDirection="row" className="mui-theme-showcase">
+        <Iconify icon="solar:moon-bold" color="primary">Theme icon</Iconify>
+        <LoadingButton loading variant="contained" loadingPosition="start">Saving theme</LoadingButton>
+        <Hidden smDown>Desktop utility</Hidden>
+      </ResponsiveBox>
+    </MuiThemeProvider>
+    <ResponsiveBox direction="column" smDirection="row" mdDirection="row" className="mui-theme-palette-grid">
+      <ThemeProvider mode="light" colorScheme="light" color="primary">
+        <Box className="mui-theme-palette-card">Primary theme</Box>
+      </ThemeProvider>
+      <ThemeProvider mode="light" colorScheme="light" color="secondary">
+        <Box className="mui-theme-palette-card">Secondary theme</Box>
+      </ThemeProvider>
+      <ThemeProvider mode="light" colorScheme="light" color="success">
+        <Box className="mui-theme-palette-card">Success theme</Box>
+      </ThemeProvider>
+      <ThemeProvider mode="light" colorScheme="light" color="warning">
+        <Box className="mui-theme-palette-card">Warning theme</Box>
+      </ThemeProvider>
+      <ThemeProvider mode="light" colorScheme="light" color="error">
+        <Box className="mui-theme-palette-card">Error theme</Box>
+      </ThemeProvider>
+      <ThemeProvider mode="light" colorScheme="light" color="info">
+        <Box className="mui-theme-palette-card">Info theme</Box>
+      </ThemeProvider>
+    </ResponsiveBox>
+    <MuiCssVarsProvider mode="dark" colorScheme="dark" color="secondary">
+      <Box className="mui-css-vars-sample">Dark secondary CSS vars provider</Box>
+    </MuiCssVarsProvider>
     <CssBaseline />
     <Container>
       <Container fixed disableGutters>
@@ -276,18 +307,30 @@
             <Slider size="small">Small slider</Slider>
             <Slider disabled>Disabled slider</Slider>
             <Collapse in>Collapsed content</Collapse>
-            <SvgIcon>
+            <SvgIcon color="action">
               <path d="M12 2 2 22h20z" />
             </SvgIcon>
             <SvgIcon color="secondary" fontSize="small">
               <path d="M12 2 2 22h20z" />
             </SvgIcon>
-            <SvgIcon fontSize="large">
+            <SvgIcon color="disabled" fontSize="large">
+              <path d="M12 2 2 22h20z" />
+            </SvgIcon>
+            <SvgIcon color="info">
               <path d="M12 2 2 22h20z" />
             </SvgIcon>
             <Icon>home</Icon>
             <Icon color="secondary" fontSize="small">menu</Icon>
             <Icon fontSize="inherit">search</Icon>
+            <Iconify icon="eva:search-fill" color="secondary">Search iconify</Iconify>
+            <Iconify icon="solar:bell-bing-bold-duotone" color="warning">Bell iconify</Iconify>
+            <ResponsiveBox direction="column" smDirection="row" mdDirection="row" className="mui-material-icons-grid">
+              <Box className="mui-material-icon-sample"><SearchIcon color="primary" /><Typography>Search material icon</Typography></Box>
+              <Box className="mui-material-icon-sample"><NotificationsIcon color="warning" /><Typography>Notifications material icon</Typography></Box>
+              <Box className="mui-material-icon-sample"><AccountCircleIcon color="secondary" /><Typography>Account material icon</Typography></Box>
+              <Box className="mui-material-icon-sample"><DashboardIcon color="success" /><Typography>Dashboard material icon</Typography></Box>
+              <Box className="mui-material-icon-sample"><ShoppingBagIcon color="error" /><Typography>Shopping bag material icon</Typography></Box>
+            </ResponsiveBox>
             <Link>Open link</Link>
             <Link underline="hover">Hover link</Link>
             <Link underline="none">Plain link</Link>
@@ -417,6 +460,8 @@
           <LinearProgress color="secondary" />
           <LinearProgress variant="determinate" />
           <LinearProgress variant="buffer" color="secondary" />
+          <LoadingButton loading variant="contained" color="secondary">Loading submit</LoadingButton>
+          <LoadingButton loading loadingPosition="end" variant="outlined">Loading end</LoadingButton>
           <Skeleton>Loading</Skeleton>
           <Skeleton variant="rectangular">Rectangular skeleton</Skeleton>
           <Skeleton animation="wave">Wave skeleton</Skeleton>
@@ -440,6 +485,34 @@
             <Button>Progress back</Button>
             <Button>Progress next</Button>
           </MobileStepper>
+          <Timeline position="right">
+            <TimelineItem missingOppositeContent>
+              <TimelineSeparator>
+                <TimelineDot color="primary" />
+                <TimelineConnector />
+              </TimelineSeparator>
+              <TimelineContent>Order placed</TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+              <TimelineOppositeContent>09:30</TimelineOppositeContent>
+              <TimelineSeparator>
+                <TimelineDot color="success" variant="outlined" />
+              </TimelineSeparator>
+              <TimelineContent>Delivery processing</TimelineContent>
+            </TimelineItem>
+          </Timeline>
+          <Masonry columns="3" spacing="2">
+            <Paper>Short masonry card</Paper>
+            <Paper>Medium masonry card with content</Paper>
+            <Paper>Long masonry card with more dashboard content</Paper>
+          </Masonry>
+          <TabContext value="overview">
+            <TabList value="overview">
+              <Tab value="overview">Overview tab</Tab>
+              <Tab value="settings">Settings tab</Tab>
+            </TabList>
+            <TabPanel value="overview">Overview panel</TabPanel>
+          </TabContext>
           <Dialog open>
             <DialogTitle>Dialog title</DialogTitle>
             <DialogContent>

@@ -23,6 +23,7 @@ pub fn build(b: *std.Build) void {
     });
     b.installArtifact(lib);
     b.installFile("mui/material.sax", "share/mui/material.sax");
+    b.installFile("mui/icons_material.sax", "share/mui/icons_material.sax");
     b.installFile("mui/material_kit_layout.sax", "share/mui/material_kit_layout.sax");
     b.installFile("mui/material_kit_views.sax", "share/mui/material_kit_views.sax");
     b.installFile("demos/mui_basic_inlined.sax", "share/demos/mui_basic_inlined.sax");
@@ -35,6 +36,7 @@ pub fn build(b: *std.Build) void {
     b.installFile("demos/mui_material_kit_users.sax", "share/demos/mui_material_kit_users.sax");
     b.installFile("demos/mui_material_kit_sign_in.sax", "share/demos/mui_material_kit_sign_in.sax");
     b.installFile("demos/mui_material_kit_register.sax", "share/demos/mui_material_kit_register.sax");
+    b.installFile("demos/mui_material_kit_404.sax", "share/demos/mui_material_kit_404.sax");
     b.installFile("assets/mui_dashboard.css", "share/assets/mui_dashboard.css");
     b.installFile("assets/mui_material_kit_demo.css", "share/assets/mui_material_kit_demo.css");
     b.installFile("data/material-components.json", "share/data/material-components.json");
