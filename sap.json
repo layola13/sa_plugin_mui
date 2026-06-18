@@ -26,6 +26,8 @@
       { "path": "demos/mui_all_components.sax", "target": "demos/mui_all_components.sax" },
       { "path": "demos/mui_all_components_from_library.sax", "target": "demos/mui_all_components_from_library.sax" },
       { "path": "demos/mui_dashboard.sax", "target": "demos/mui_dashboard.sax" },
+      { "path": "demos/mui_theme_lab_smoke.sax", "target": "demos/mui_theme_lab_smoke.sax" },
+      { "path": "demos/mui_table_pagination_repro.sax", "target": "demos/mui_table_pagination_repro.sax" },
       { "path": "demos/mui_material_kit_demo.sax", "target": "demos/mui_material_kit_demo.sax" },
       { "path": "demos/mui_material_kit_products.sax", "target": "demos/mui_material_kit_products.sax" },
       { "path": "demos/mui_material_kit_blog.sax", "target": "demos/mui_material_kit_blog.sax" },
@@ -35,6 +37,10 @@
       { "path": "demos/mui_material_kit_404.sax", "target": "demos/mui_material_kit_404.sax" },
       { "path": "assets/mui_dashboard.css", "target": "assets/mui_dashboard.css" },
       { "path": "assets/mui_material_kit_demo.css", "target": "assets/mui_material_kit_demo.css" },
+      { "path": "assets/mui_demo_cover.webp", "target": "assets/mui_demo_cover.webp" },
+      { "path": "assets/mui_demo_inline.webp", "target": "assets/mui_demo_inline.webp" },
+      { "path": "assets/mui_demo_avatar.webp", "target": "assets/mui_demo_avatar.webp" },
+      { "path": "assets/mui_demo_avatar@2x.webp", "target": "assets/mui_demo_avatar@2x.webp" },
       { "path": "data/material-components.json", "target": "data/material-components.json" }
     ]
   },

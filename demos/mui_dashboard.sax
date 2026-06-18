@@ -118,7 +118,9 @@
             <Box className="mui-showcase-card">
               <h3>Baseline wrappers</h3>
               <ScopedCssBaseline>
-                <Grid>
+                <Grid container spacing={2} direction="row-reverse" wrap="wrap-reverse" className="mui-grid-owner-state">
+                  <Grid size={6}>Grid half item</Grid>
+                  <Grid size={12}>Grid full item</Grid>
                   <NoSsr>Client content</NoSsr>
                   <ClickAwayListener>Click away content</ClickAwayListener>
                   <Unstable_TrapFocus open>Focus content</Unstable_TrapFocus>
@@ -144,6 +146,10 @@
                 <Button variant="contained">Contained button</Button>
                 <Button color="inherit">Inherit button</Button>
                 <Button color="secondary">Secondary button</Button>
+              </Stack>
+              <Stack direction="row" spacing={2} useFlexGap className="mui-stack-owner-state">
+                <Chip color="secondary">Row stack item</Chip>
+                <Button variant="outlined">Row stack action</Button>
               </Stack>
             </Box>
 

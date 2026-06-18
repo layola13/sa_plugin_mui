@@ -59,14 +59,15 @@
       <span className="mk-workspace-chevron"><ExpandMoreIcon fontSize="small" /></span>
     </button>
     <section className="mk-overlay-state" hidden={workspace_hidden}>
-      <Backdrop invisible open={workspace_open} onClick={close_workspace} />
-      <Popover open={workspace_open} anchorOriginVertical="bottom" anchorOriginHorizontal="left" transformOriginVertical="top" transformOriginHorizontal="left">
-        <MenuList disablePadding>
-          <MenuItem selected={workspace_team1} onClick={select_workspace_team1}><img className="mk-menu-icon mk-workspace-menu-icon" src="assets/icons/workspaces/logo-1.webp" alt="Team 1" />Team 1<span className="mk-plan-label">Free</span></MenuItem>
-          <MenuItem selected={workspace_team2} onClick={select_workspace_team2}><img className="mk-menu-icon mk-workspace-menu-icon" src="assets/icons/workspaces/logo-2.webp" alt="Team 2" />Team 2<span className="mk-plan-label mk-plan-info">Pro</span></MenuItem>
-          <MenuItem selected={workspace_team3} onClick={select_workspace_team3}><img className="mk-menu-icon mk-workspace-menu-icon" src="assets/icons/workspaces/logo-3.webp" alt="Team 3" />Team 3<span className="mk-plan-label mk-plan-info">Pro</span></MenuItem>
-        </MenuList>
-      </Popover>
+      <ClickAwayListener onClickAway={close_workspace}>
+        <Popover open={workspace_open} anchorOriginVertical="bottom" anchorOriginHorizontal="left" transformOriginVertical="top" transformOriginHorizontal="left">
+          <MenuList disablePadding>
+            <MenuItem selected={workspace_team1} onClick={select_workspace_team1}><img className="mk-menu-icon mk-workspace-menu-icon" src="assets/icons/workspaces/logo-1.webp" alt="Team 1" />Team 1<span className="mk-plan-label">Free</span></MenuItem>
+            <MenuItem selected={workspace_team2} onClick={select_workspace_team2}><img className="mk-menu-icon mk-workspace-menu-icon" src="assets/icons/workspaces/logo-2.webp" alt="Team 2" />Team 2<span className="mk-plan-label mk-plan-info">Pro</span></MenuItem>
+            <MenuItem selected={workspace_team3} onClick={select_workspace_team3}><img className="mk-menu-icon mk-workspace-menu-icon" src="assets/icons/workspaces/logo-3.webp" alt="Team 3" />Team 3<span className="mk-plan-label mk-plan-info">Pro</span></MenuItem>
+          </MenuList>
+        </Popover>
+      </ClickAwayListener>
     </section>
   </section>
 
@@ -171,70 +172,76 @@
     <section className="mk-action-popover mk-search-action">
       <IconButton color="inherit" onClick={toggle_search}><SearchIcon /></IconButton>
       <section className="mk-overlay-state" hidden={search_hidden}>
-        <Backdrop invisible open={search_open} onClick={close_search} />
-        <Popover open={search_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
-          <section className="mk-search-panel">
-            <TextField fullWidth autoFocus onChange={search_changed}>Search dashboard</TextField>
-            <Button variant="contained" color="inherit" onClick={close_search}>Search</Button>
-            <span className="mk-inline-status">Updates: {search_updates}</span>
-          </section>
-        </Popover>
+        <ClickAwayListener onClickAway={close_search}>
+          <Popover open={search_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
+            <section className="mk-search-panel">
+              <TextField fullWidth autoFocus onChange={search_changed}>Search dashboard</TextField>
+              <Button variant="contained" color="inherit" onClick={close_search}>Search</Button>
+              <span className="mk-inline-status">Updates: {search_updates}</span>
+            </section>
+          </Popover>
+        </ClickAwayListener>
       </section>
     </section>
 
     <section className="mk-action-popover">
       <IconButton color="inherit" onClick={toggle_language}><img className="mk-topbar-icon" src="assets/icons/flags/ic-flag-en.svg" alt="Language" /></IconButton>
       <section className="mk-overlay-state" hidden={language_hidden}>
-        <Backdrop invisible open={language_open} onClick={close_language} />
-        <Popover open={language_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
-          <MenuList disablePadding>
-            <MenuItem selected={lang_en} onClick={select_lang_en}><img className="mk-menu-icon" src="assets/icons/flags/ic-flag-en.svg" alt="English" />English</MenuItem>
-            <MenuItem selected={lang_fr} onClick={select_lang_fr}><img className="mk-menu-icon" src="assets/icons/flags/ic-flag-fr.svg" alt="French" />French</MenuItem>
-            <MenuItem selected={lang_de} onClick={select_lang_de}><img className="mk-menu-icon" src="assets/icons/flags/ic-flag-de.svg" alt="German" />German</MenuItem>
-          </MenuList>
-        </Popover>
+        <ClickAwayListener onClickAway={close_language}>
+          <Popover open={language_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
+            <MenuList disablePadding>
+              <MenuItem selected={lang_en} onClick={select_lang_en}><img className="mk-menu-icon" src="assets/icons/flags/ic-flag-en.svg" alt="English" />English</MenuItem>
+              <MenuItem selected={lang_fr} onClick={select_lang_fr}><img className="mk-menu-icon" src="assets/icons/flags/ic-flag-fr.svg" alt="French" />French</MenuItem>
+              <MenuItem selected={lang_de} onClick={select_lang_de}><img className="mk-menu-icon" src="assets/icons/flags/ic-flag-de.svg" alt="German" />German</MenuItem>
+            </MenuList>
+          </Popover>
+        </ClickAwayListener>
       </section>
     </section>
 
     <section className="mk-action-popover mk-notification-action">
       <IconButton color="inherit" onClick={toggle_notifications}><Badge color="error" badgeContent={unread_count}><NotificationsIcon /></Badge></IconButton>
       <section className="mk-overlay-state" hidden={notifications_hidden}>
-        <Backdrop invisible open={notifications_open} onClick={close_notifications} />
-        <Popover open={notifications_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
-          <section className="mk-notification-panel">
-            <section className="mk-popover-title"><section><strong>Notifications</strong><span>You have {unread_count} unread messages</span></section><IconButton color="primary" onClick={mark_all_read}>Done</IconButton></section>
-            <Divider />
-            <section className="mk-notification-list">
-              <article><Avatar><img src="assets/icons/notification/ic-notification-package.svg" alt="Package" /></Avatar><section><strong>Your order is placed</strong><span>waiting for shipping</span></section></article>
-              <article><Avatar><img src="assets/icons/notification/ic-notification-shipping.svg" alt="Shipping" /></Avatar><section><strong>Delivery processing</strong><span>picked up by courier</span></section></article>
-              <article><Avatar><img src="assets/icons/notification/ic-notification-mail.svg" alt="Mail" /></Avatar><section><strong>New mail received</strong><span>sent from support</span></section></article>
+        <ClickAwayListener onClickAway={close_notifications}>
+          <Popover open={notifications_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
+            <section className="mk-notification-panel">
+              <section className="mk-popover-title"><section><strong>Notifications</strong><span>You have {unread_count} unread messages</span></section><IconButton color="primary" onClick={mark_all_read}>Done</IconButton></section>
+              <Divider />
+              <section className="mk-notification-list">
+                <article><Avatar><img src="assets/icons/notification/ic-notification-package.svg" alt="Package" /></Avatar><section><strong>Your order is placed</strong><span>waiting for shipping</span></section></article>
+                <article><Avatar><img src="assets/icons/notification/ic-notification-shipping.svg" alt="Shipping" /></Avatar><section><strong>Delivery processing</strong><span>picked up by courier</span></section></article>
+                <article><Avatar><img src="assets/icons/notification/ic-notification-mail.svg" alt="Mail" /></Avatar><section><strong>New mail received</strong><span>sent from support</span></section></article>
+              </section>
+              <Divider />
+              <Button fullWidth color="inherit" onClick={toggle_notifications}>View all</Button>
             </section>
-            <Divider />
-            <Button fullWidth color="inherit" onClick={toggle_notifications}>View all</Button>
-          </section>
-        </Popover>
+          </Popover>
+        </ClickAwayListener>
       </section>
     </section>
 
     <section className="mk-action-popover mk-account-action">
-      <IconButton color="inherit" onClick={toggle_account}><Avatar>J</Avatar></IconButton>
-      <section className="mk-overlay-state" hidden={account_hidden}>
-        <Backdrop invisible open={account_open} onClick={close_account} />
-        <Popover open={account_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
-          <section className="mk-account-panel">
-            <section className="mk-account-head"><strong>John Doe</strong><span>john.doe@example.com</span></section>
-            <Divider />
-            <MenuList disablePadding>
-              <MenuItem onClick={close_account}>Home</MenuItem>
-              <MenuItem onClick={close_account}>Profile</MenuItem>
-              <MenuItem onClick={close_account}><SettingsIcon fontSize="small" />Settings</MenuItem>
-            </MenuList>
-            <Divider />
-            <section className="mk-account-links" onClick={close_account}><Slot /></section>
-            <Button fullWidth color="error" onClick={toggle_account}><LogoutIcon fontSize="small" />Logout</Button>
+      <ClickAwayListener onClickAway={close_account}>
+        <section>
+          <IconButton color="inherit" onClick={toggle_account}><Avatar>J</Avatar></IconButton>
+          <section className="mk-overlay-state" hidden={account_hidden}>
+            <Popover open={account_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
+              <section className="mk-account-panel">
+                <section className="mk-account-head"><strong>John Doe</strong><span>john.doe@example.com</span></section>
+                <Divider />
+                <MenuList disablePadding>
+                  <MenuItem onClick={close_account}>Home</MenuItem>
+                  <MenuItem onClick={close_account}>Profile</MenuItem>
+                  <MenuItem onClick={close_account}><SettingsIcon fontSize="small" />Settings</MenuItem>
+                </MenuList>
+                <Divider />
+                <section className="mk-account-links" onClick={close_account}><Slot /></section>
+                <Button fullWidth color="error" onClick={toggle_account}><LogoutIcon fontSize="small" />Logout</Button>
+              </section>
+            </Popover>
           </section>
-        </Popover>
-      </section>
+        </section>
+      </ClickAwayListener>
     </section>
   </section>
 

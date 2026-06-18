@@ -30,6 +30,8 @@ pub fn build(b: *std.Build) void {
     b.installFile("demos/mui_all_components.sax", "share/demos/mui_all_components.sax");
     b.installFile("demos/mui_all_components_from_library.sax", "share/demos/mui_all_components_from_library.sax");
     b.installFile("demos/mui_dashboard.sax", "share/demos/mui_dashboard.sax");
+    b.installFile("demos/mui_theme_lab_smoke.sax", "share/demos/mui_theme_lab_smoke.sax");
+    b.installFile("demos/mui_table_pagination_repro.sax", "share/demos/mui_table_pagination_repro.sax");
     b.installFile("demos/mui_material_kit_demo.sax", "share/demos/mui_material_kit_demo.sax");
     b.installFile("demos/mui_material_kit_products.sax", "share/demos/mui_material_kit_products.sax");
     b.installFile("demos/mui_material_kit_blog.sax", "share/demos/mui_material_kit_blog.sax");
@@ -39,6 +41,10 @@ pub fn build(b: *std.Build) void {
     b.installFile("demos/mui_material_kit_404.sax", "share/demos/mui_material_kit_404.sax");
     b.installFile("assets/mui_dashboard.css", "share/assets/mui_dashboard.css");
     b.installFile("assets/mui_material_kit_demo.css", "share/assets/mui_material_kit_demo.css");
+    b.installFile("assets/mui_demo_cover.webp", "share/assets/mui_demo_cover.webp");
+    b.installFile("assets/mui_demo_inline.webp", "share/assets/mui_demo_inline.webp");
+    b.installFile("assets/mui_demo_avatar.webp", "share/assets/mui_demo_avatar.webp");
+    b.installFile("assets/mui_demo_avatar@2x.webp", "share/assets/mui_demo_avatar@2x.webp");
     b.installFile("data/material-components.json", "share/data/material-components.json");
 
     const tests = b.addTest(.{ .root_module = root_module });

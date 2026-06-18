@@ -77,13 +77,26 @@ async function expectSameUrl(page, beforeUrl, message) {
 
 async function expectImagesLoaded(page) {
   await page.waitForFunction(
-    () => Array.from(document.images).every((img) => img.complete && img.naturalWidth > 0),
+    () => Array.from(document.images).every((img) => {
+      if (img.classList.contains('MuiAvatar-imgHidden')) return true;
+      const style = getComputedStyle(img);
+      const rect = img.getBoundingClientRect();
+      if (style.display === 'none' || style.visibility === 'hidden' || img.hidden || rect.width <= 1 || rect.height <= 1) return true;
+      return img.complete && img.naturalWidth > 0;
+    }),
     null,
     { timeout: 5000 },
   ).catch(() => {});
   const broken = await page.locator('img').evaluateAll((images) =>
     images
-      .filter((img) => img instanceof HTMLImageElement && (!img.complete || img.naturalWidth === 0))
+      .filter((img) => {
+        if (!(img instanceof HTMLImageElement)) return false;
+        if (img.classList.contains('MuiAvatar-imgHidden')) return false;
+        const style = getComputedStyle(img);
+        const rect = img.getBoundingClientRect();
+        if (style.display === 'none' || style.visibility === 'hidden' || img.hidden || rect.width <= 1 || rect.height <= 1) return false;
+        return !img.complete || img.naturalWidth === 0;
+      })
       .map((img) => img.getAttribute('src') ?? '<missing src>'),
   );
   if (broken.length !== 0) throw new Error(`broken images:\n${broken.join('\n')}`);

@@ -61,14 +61,23 @@
           <Typography>Static secondary app bar</Typography>
         </Toolbar>
       </AppBar>
+      <AppBar color="transparent" position="sticky" enableColorOnDark>
+        <Toolbar>
+          <Typography>Sticky transparent app bar</Typography>
+        </Toolbar>
+      </AppBar>
       <Typography>SA driven MUI</Typography>
       <Typography gutterBottom noWrap>Compact headline</Typography>
       <Typography variant="h6">Section heading</Typography>
       <Typography align="center">Centered body copy</Typography>
-      <Paper>
+        <Paper>
         <Paper variant="outlined">Outlined paper</Paper>
         <Paper elevation={3}>Elevation three paper</Paper>
         <Paper square>Square paper</Paper>
+        <Stack direction="row" spacing={2} useFlexGap className="mui-stack-owner-state">
+          <Chip color="secondary">Row stack item</Chip>
+          <Button variant="outlined">Row stack action</Button>
+        </Stack>
         <Stack>
           <Button>Save</Button>
           <Button disabled>Disabled button</Button>
@@ -149,6 +158,7 @@
             <TextField disabled error fullWidth multiline required>State text field</TextField>
             <TextField color="secondary">Secondary text field</TextField>
             <TextareaAutosize>Textarea</TextareaAutosize>
+            <TextareaAutosize minRows={3} maxRows={6} value="Autosized value">Sized textarea</TextareaAutosize>
             <Select>
               <MenuItem>First option</MenuItem>
               <MenuItem>Second option</MenuItem>
@@ -180,38 +190,51 @@
             <Menu open>
               <MenuItem>Menu child</MenuItem>
             </Menu>
+            <Menu open anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
+              <MenuItem>Bottom right menu child</MenuItem>
+            </Menu>
             <Popover open>Popover content</Popover>
+            <Popover open anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">Bottom right popover content</Popover>
             <Popper open>Popper content</Popper>
+            <Popper open placement="top-start">Top start popper content</Popper>
             <Portal>Portal content</Portal>
             <Modal open>Modal content</Modal>
+            <Modal open hideBackdrop keepMounted disablePortal disableScrollLock closeAfterTransition disableAutoFocus disableEnforceFocus disableRestoreFocus>Configured modal content</Modal>
             <Drawer open>Drawer content</Drawer>
+            <Drawer open anchor="right" hideBackdrop>Right drawer content</Drawer>
             <SwipeableDrawer open>Swipeable drawer content</SwipeableDrawer>
+            <SwipeableDrawer open anchor="right">Right swipeable drawer content</SwipeableDrawer>
             <Slide in>Slide content</Slide>
+            <Slide in={false} appear={false} direction="left" disablePrefersReducedMotion>Closed left slide content</Slide>
             <Fade in>Fade content</Fade>
+            <Fade in={false} appear={false}>Closed fade content</Fade>
             <Grow in>Grow content</Grow>
+            <Grow in timeout="250">Timed grow content</Grow>
             <Zoom in>Zoom content</Zoom>
-            <Stepper alternativeLabel>
-              <Step>
+            <Zoom in={false} disablePrefersReducedMotion>Closed zoom content</Zoom>
+            <Stepper alternativeLabel activeStep={1} nonLinear>
+              <Step index={0}>
                 <StepLabel>First step</StepLabel>
                 <StepContent>Step content</StepContent>
+                <StepContent active last transitionDuration="225">Configured step content</StepContent>
               </Step>
-              <Step completed>
+              <Step completed expanded index={1}>
                 <StepLabel active completed>Completed step label</StepLabel>
               </Step>
-              <StepConnector active completed />
+              <StepConnector active completed alternativeLabel />
               <StepConnector disabled />
-              <Step>
+              <Step disabled last index={2}>
                 <StepButton>Second step</StepButton>
                 <StepButton active completed>Completed step button</StepButton>
                 <StepButton disabled>Disabled step</StepButton>
               </Step>
             </Stepper>
             <Stepper orientation="vertical">
-              <Step>
+              <Step orientation="vertical">
                 <StepLabel orientation="vertical">Vertical first step</StepLabel>
               </Step>
               <StepConnector orientation="vertical" />
-              <Step>
+              <Step orientation="vertical" last index={1}>
                 <StepButton orientation="vertical">Vertical second step</StepButton>
               </Step>
             </Stepper>
@@ -260,6 +283,10 @@
               <PaginationItem color="secondary" selected>3</PaginationItem>
               <PaginationItem disabled>Disabled page</PaginationItem>
             </Pagination>
+            <Pagination aria-label="Library inherited pages" color="secondary" shape="rounded" size="small" variant="outlined" className="library-pagination" classes={{ ul: "library-pagination-ul" }} slotProps={{ root: { className: "library-pagination-root-slot" }, ul: { className: "library-pagination-ul-slot" } }}>
+              <PaginationItem>Inherited library page</PaginationItem>
+              <PaginationItem className="library-pagination-item" classes={{ icon: "library-pagination-icon" }} slotProps={{ icon: { className: "library-pagination-icon-slot" } }}>Classed library page</PaginationItem>
+            </Pagination>
             <Pagination variant="outlined">
               <PaginationItem>Outlined page</PaginationItem>
             </Pagination>
@@ -305,6 +332,7 @@
             <Slider value={40} />
             <Slider color="secondary">Secondary slider</Slider>
             <Slider size="small">Small slider</Slider>
+            <Slider min={10} max={90} step={5} value={55} name="volume" disableSwap track="inverted" valueLabelDisplay="on">Configured slider</Slider>
             <Slider disabled>Disabled slider</Slider>
             <Collapse in>Collapsed content</Collapse>
             <SvgIcon color="action">
@@ -330,6 +358,13 @@
               <Box className="mui-material-icon-sample"><AccountCircleIcon color="secondary" /><Typography>Account material icon</Typography></Box>
               <Box className="mui-material-icon-sample"><DashboardIcon color="success" /><Typography>Dashboard material icon</Typography></Box>
               <Box className="mui-material-icon-sample"><ShoppingBagIcon color="error" /><Typography>Shopping bag material icon</Typography></Box>
+              <Box className="mui-material-icon-sample"><AddIcon color="primary" /><Typography>Add material icon</Typography></Box>
+              <Box className="mui-material-icon-sample"><ShoppingCartIcon color="secondary" /><Typography>Cart material icon</Typography></Box>
+              <Box className="mui-material-icon-sample"><DoneAllIcon color="success" /><Typography>Done all material icon</Typography></Box>
+              <Box className="mui-material-icon-sample"><ShareIcon color="info" /><Typography>Share material icon</Typography></Box>
+              <Box className="mui-material-icon-sample"><RestartAltIcon color="warning" /><Typography>Restart material icon</Typography></Box>
+              <Box className="mui-material-icon-sample"><ArrowForwardIosIcon fontSize="small" /><Typography>Arrow material icon</Typography></Box>
+              <Box className="mui-material-icon-sample"><AccessTimeIcon color="action" /><Typography>Time material icon</Typography></Box>
             </ResponsiveBox>
             <Link>Open link</Link>
             <Link underline="hover">Hover link</Link>
@@ -339,12 +374,15 @@
                 <Checkbox />
                 <Checkbox size="small">Small checkbox</Checkbox>
                 <Checkbox color="secondary">Secondary checkbox</Checkbox>
+                <Checkbox indeterminate name="consent" value="partial" required>Indeterminate checkbox</Checkbox>
                 <Checkbox checked>Checked checkbox</Checkbox>
                 <Checkbox disabled>Disabled checkbox</Checkbox>
               </FormControlLabel>
               <Switch />
               <Switch size="small">Small switch</Switch>
               <Switch color="secondary">Secondary switch</Switch>
+              <Switch edge="start" name="notifications" value="enabled" required>Edge start switch</Switch>
+              <Switch edge="end">Edge end switch</Switch>
               <Switch checked>Checked switch</Switch>
               <Switch disabled>Disabled switch</Switch>
               <FormHelperText>Required field</FormHelperText>
@@ -371,6 +409,7 @@
               <Radio />
               <Radio size="small">Small radio</Radio>
               <Radio color="secondary">Secondary radio</Radio>
+              <Radio name="choice" value="named" required>Named required radio</Radio>
               <Radio checked>Checked radio</Radio>
               <Radio disabled>Disabled radio</Radio>
             </RadioGroup>
@@ -407,12 +446,19 @@
             <BottomNavigationAction selected>Settings</BottomNavigationAction>
             <BottomNavigationAction showLabel>Visible label</BottomNavigationAction>
           </BottomNavigation>
-          <Breadcrumbs>
+          <BottomNavigation showLabels className="library-bottom-navigation" classes={{ root: "library-bottom-navigation-root" }} slotProps={{ root: { className: "library-bottom-navigation-root-slot" } }}>
+            <BottomNavigationAction label="Library parent label" classes={{ label: "library-bottom-navigation-label" }} slotProps={{ label: { className: "library-bottom-navigation-label-slot" } }} />
+            <BottomNavigationAction selected label="Library selected label" />
+            <BottomNavigationAction disabled label="Library disabled label" />
+          </BottomNavigation>
+          <Breadcrumbs aria-label="Library breadcrumb" className="library-breadcrumbs" classes={{ ol: "library-breadcrumbs-ol" }}>
             <span>Home</span>
             <span>Library</span>
           </Breadcrumbs>
           <ScopedCssBaseline>
-            <Grid>
+            <Grid container spacing={2} direction="row-reverse" wrap="wrap-reverse" className="mui-grid-owner-state">
+              <Grid size={6}>Grid half item</Grid>
+              <Grid size={12}>Grid full item</Grid>
               <NoSsr>Client content</NoSsr>
               <ClickAwayListener>Click away content</ClickAwayListener>
               <Unstable_TrapFocus open>Focus content</Unstable_TrapFocus>
@@ -430,6 +476,7 @@
             Check the SA driven MUI surface.
           </Alert>
           <Alert severity="warning" variant="filled">Filled warning alert</Alert>
+          <Alert severity="warning" color="info" variant="outlined" role="status" action="Retry" icon={false}>Action info alert</Alert>
           <Accordion>
             <AccordionSummary>Accordion summary</AccordionSummary>
             <AccordionDetails>Accordion details</AccordionDetails>
@@ -443,6 +490,9 @@
           <Accordion expanded>
             <AccordionSummary expanded>Expanded accordion summary</AccordionSummary>
             <AccordionDetails>Expanded accordion details</AccordionDetails>
+          </Accordion>
+          <Accordion defaultExpanded>
+            <AccordionSummary>Default expanded accordion summary</AccordionSummary>
           </Accordion>
           <Accordion disabled>
             <AccordionSummary disabled>Disabled accordion summary</AccordionSummary>
@@ -462,13 +512,13 @@
           <LinearProgress variant="buffer" color="secondary" />
           <LoadingButton loading variant="contained" color="secondary">Loading submit</LoadingButton>
           <LoadingButton loading loadingPosition="end" variant="outlined">Loading end</LoadingButton>
-          <Skeleton>Loading</Skeleton>
-          <Skeleton variant="rectangular">Rectangular skeleton</Skeleton>
-          <Skeleton animation="wave">Wave skeleton</Skeleton>
-          <Snackbar open>Snackbar message</Snackbar>
+          <Skeleton width={120} height={18}>Loading</Skeleton>
+          <Skeleton variant="rectangular" width={160} height={48}>Rectangular skeleton</Skeleton>
+          <Skeleton animation="wave" width={140} height={24}>Wave skeleton</Skeleton>
+          <Snackbar open message="Snackbar prop message" action="Undo">Snackbar message</Snackbar>
           <Snackbar open anchorOriginVertical="top" anchorOriginHorizontal="right">Top right snackbar</Snackbar>
           <Snackbar open anchorOriginHorizontal="center">Bottom center snackbar</Snackbar>
-          <SnackbarContent>Snackbar content</SnackbarContent>
+          <SnackbarContent message="Snackbar content message" action="Dismiss" role="status">Snackbar content</SnackbarContent>
           <MobileStepper position="bottom">
             <Button>Bottom back</Button>
             <Button>Bottom next</Button>
@@ -513,6 +563,18 @@
             </TabList>
             <TabPanel value="overview">Overview panel</TabPanel>
           </TabContext>
+          <TabContext value="settings">
+            <TabList orientation="vertical" centered>
+              <Tab value="settings">Vertical settings tab</Tab>
+            </TabList>
+            <TabPanel keepMounted>Context settings panel</TabPanel>
+          </TabContext>
+          <SimpleTreeView aria-label="Dashboard navigation" multiSelect disabledItemsFocusable disableSelection expandedItems="root,finance" selectedItems="finance">
+            <TreeItem nodeId="root" label="Dashboard tree" expanded level={1}>
+              <TreeItem nodeId="finance" label="Finance tree item" selected level={2} />
+              <TreeItem nodeId="disabled" label="Disabled tree item" disabled level={2} />
+            </TreeItem>
+          </SimpleTreeView>
           <Dialog open>
             <DialogTitle>Dialog title</DialogTitle>
             <DialogContent>
@@ -540,26 +602,34 @@
             </DialogContent>
           </Dialog>
           <Card>
-            <CardHeader>Card header</CardHeader>
+            <CardHeader title="Card header title" subheader="Card header subheader">Card header slot</CardHeader>
+            <CardHeader disableTypography title="Plain card title" subheader="Plain card subheader">Plain card slot</CardHeader>
             <CardActionArea disabled>
               <CardMedia>Action media</CardMedia>
             </CardActionArea>
             <CardMedia>Media</CardMedia>
+            <CardMedia image="assets/mui_demo_cover.webp">Image media</CardMedia>
+            <CardMedia component="img" src="assets/mui_demo_inline.webp">Img media</CardMedia>
             <CardContent>
               <Typography>Card content</Typography>
               <AvatarGroup>
                 <Avatar>A</Avatar>
                 <Avatar variant="rounded">R</Avatar>
+                <Avatar src="assets/mui_demo_avatar.webp" srcSet="assets/mui_demo_avatar@2x.webp 2x" alt="Avatar image">Image avatar</Avatar>
                 <Avatar>B</Avatar>
               </AvatarGroup>
-              <ImageList>
-                <ImageListItem>
+              <AvatarGroup variant="rounded" className="library-avatar-group">
+                <Avatar>Inherited group avatar</Avatar>
+                <Avatar variant="square">Explicit group avatar</Avatar>
+              </AvatarGroup>
+              <ImageList cols={3} gap={8} rowHeight="240">
+                <ImageListItem cols={2} rows={3}>
                   <img />
-                  <ImageListItemBar>Image title</ImageListItemBar>
+                  <ImageListItemBar title="Image title" subtitle="Image subtitle" actionIcon="More">Image title</ImageListItemBar>
                 </ImageListItem>
-                <ImageListItem variant="woven">
+                <ImageListItem variant="woven" cols={1} rows={2}>
                   <img />
-                  <ImageListItemBar position="top" actionPosition="left">Woven image title</ImageListItemBar>
+                  <ImageListItemBar position="top" actionPosition="left" title="Woven image title" subtitle="Woven image subtitle" actionIcon="Share">Woven image title</ImageListItemBar>
                 </ImageListItem>
               </ImageList>
               <List>
@@ -594,6 +664,9 @@
                 <ListItem>
                   <ListItemText primary="Main inbox" secondary="Two unread messages">Multiline list text</ListItemText>
                 </ListItem>
+                <ListItem>
+                  <ListItemText disableTypography primary="Plain primary" secondary="Plain secondary">Plain list slot</ListItemText>
+                </ListItem>
                 <ListItemButton divider disableGutters selected>
                   <ListItemText>Dense selected action</ListItemText>
                 </ListItemButton>
@@ -620,12 +693,16 @@
                       <TablePagination />
                     </TableRow>
                     <TableRow>
+                      <TablePagination className="library-pagination-controls" classes={{ root: "library-pagination-root", toolbar: "library-pagination-toolbar", spacer: "library-pagination-spacer", selectLabel: "library-pagination-select-label", input: "library-pagination-input", selectRoot: "library-pagination-select-root", select: "library-pagination-select", selectIcon: "library-pagination-select-icon", displayedRows: "library-pagination-displayed-rows", actions: "library-pagination-actions" }} slotProps={{ root: { className: "library-pagination-root-slot" }, toolbar: { className: "library-pagination-toolbar-slot" }, spacer: { className: "library-pagination-spacer-slot" }, selectLabel: { className: "library-pagination-select-label-slot" }, input: { className: "library-pagination-input-slot" }, selectRoot: { className: "library-pagination-select-root-slot" }, select: { className: "library-pagination-select-slot" }, selectIcon: { className: "library-pagination-select-icon-slot" }, displayedRows: { className: "library-pagination-displayed-rows-slot" }, actions: { className: "library-pagination-actions-slot" } }} showFirstButton showLastButton count="25" page="0" rowsPerPage="10">Classed pagination</TablePagination>
+                    </TableRow>
+                    <TableRow>
                       <TablePagination disabled count="25" page="0" rowsPerPage="10" showFirstButton showLastButton>Disabled pagination</TablePagination>
                     </TableRow>
                   </TableFooter>
                 </Table>
               </TableContainer>
               <TablePaginationActions disabled count="25" page="0" rowsPerPage="10" showFirstButton showLastButton>Disabled pagination actions</TablePaginationActions>
+              <TablePaginationActions className="library-pagination-actions-root" classes={{ root: "library-pagination-actions-root-class", previousButton: "library-pagination-previous-button", previousButtonIcon: "library-pagination-previous-button-icon", nextButton: "library-pagination-next-button", nextButtonIcon: "library-pagination-next-button-icon", firstButton: "library-pagination-first-button", firstButtonIcon: "library-pagination-first-button-icon", lastButton: "library-pagination-last-button", lastButtonIcon: "library-pagination-last-button-icon" }} slotProps={{ root: { className: "library-pagination-actions-root-slot" }, previousButton: { className: "library-pagination-previous-button-slot" }, previousButtonIcon: { className: "library-pagination-previous-button-icon-slot" }, nextButton: { className: "library-pagination-next-button-slot" }, nextButtonIcon: { className: "library-pagination-next-button-icon-slot" }, firstButton: { className: "library-pagination-first-button-slot" }, firstButtonIcon: { className: "library-pagination-first-button-icon-slot" }, lastButton: { className: "library-pagination-last-button-slot" }, lastButtonIcon: { className: "library-pagination-last-button-icon-slot" } }} showFirstButton showLastButton>Classed pagination actions</TablePaginationActions>
             </CardContent>
             <CardActions>
               <Button>Open</Button>

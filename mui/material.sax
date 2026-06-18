@@ -2,6 +2,8 @@
   <state>
     variant = 'text' as ptr
     variant_len = 4
+    className = alloc 256
+    className_len = 0
     color = 'primary' as ptr
     color_len = 7
     size = 'medium' as ptr
@@ -9,26 +11,30 @@
     disabled = 0 as i1
     fullWidth = 0 as i1
   </state>
-  <button className="MuiButton-root{variant == 'text' ? ' MuiButton-text' : ''}{variant == 'outlined' ? ' MuiButton-outlined' : ''}{variant == 'contained' ? ' MuiButton-contained' : ''}{color == 'inherit' ? ' MuiButton-colorInherit' : ''}{color == 'primary' ? ' MuiButton-colorPrimary' : ''}{color == 'secondary' ? ' MuiButton-colorSecondary' : ''}{color == 'success' ? ' MuiButton-colorSuccess' : ''}{color == 'error' ? ' MuiButton-colorError' : ''}{color == 'info' ? ' MuiButton-colorInfo' : ''}{color == 'warning' ? ' MuiButton-colorWarning' : ''}{size == 'small' ? ' MuiButton-sizeSmall' : ''}{size == 'medium' ? ' MuiButton-sizeMedium' : ''}{size == 'large' ? ' MuiButton-sizeLarge' : ''}{fullWidth ? ' MuiButton-fullWidth' : ''}{disabled ? ' Mui-disabled' : ''}" disabled={disabled}>
+  <button className="MuiButton-root{variant == 'text' ? ' MuiButton-text' : ''}{variant == 'outlined' ? ' MuiButton-outlined' : ''}{variant == 'contained' ? ' MuiButton-contained' : ''}{color == 'inherit' ? ' MuiButton-colorInherit' : ''}{color == 'primary' ? ' MuiButton-colorPrimary' : ''}{color == 'secondary' ? ' MuiButton-colorSecondary' : ''}{color == 'success' ? ' MuiButton-colorSuccess' : ''}{color == 'error' ? ' MuiButton-colorError' : ''}{color == 'info' ? ' MuiButton-colorInfo' : ''}{color == 'warning' ? ' MuiButton-colorWarning' : ''}{size == 'small' ? ' MuiButton-sizeSmall' : ''}{size == 'medium' ? ' MuiButton-sizeMedium' : ''}{size == 'large' ? ' MuiButton-sizeLarge' : ''}{fullWidth ? ' MuiButton-fullWidth' : ''}{disabled ? ' Mui-disabled' : ''} {className}" disabled={disabled}>
     <Slot />
   </button>
-  !variant !variant_len !color !color_len !size !size_len !disabled !fullWidth
+  !variant !variant_len !className !className_len !color !color_len !size !size_len !disabled !fullWidth
 </Component>
 
 <Component name="ButtonBase">
   <state>
+    className = alloc 256
+    className_len = 0
     disabled = 0 as i1
   </state>
-  <button className="MuiButtonBase-root{disabled ? ' Mui-disabled' : ''}" disabled={disabled}>
+  <button className="MuiButtonBase-root{disabled ? ' Mui-disabled' : ''} {className}" disabled={disabled}>
     <Slot />
   </button>
-  !disabled
+  !className !className_len !disabled
 </Component>
 
 <Component name="ButtonGroup">
   <state>
     color = 'primary' as ptr
     color_len = 7
+    className = alloc 256
+    className_len = 0
     disabled = 0 as i1
     disableElevation = 0 as i1
     fullWidth = 0 as i1
@@ -39,10 +45,10 @@
     variant = 'outlined' as ptr
     variant_len = 8
   </state>
-  <div className="MuiButtonGroup-root{variant == 'text' ? ' MuiButtonGroup-text' : ''}{variant == 'outlined' ? ' MuiButtonGroup-outlined' : ''}{variant == 'contained' ? ' MuiButtonGroup-contained' : ''}{color == 'inherit' ? ' MuiButtonGroup-colorInherit' : ''}{color == 'primary' ? ' MuiButtonGroup-colorPrimary' : ''}{color == 'secondary' ? ' MuiButtonGroup-colorSecondary' : ''}{color == 'error' ? ' MuiButtonGroup-colorError' : ''}{color == 'info' ? ' MuiButtonGroup-colorInfo' : ''}{color == 'success' ? ' MuiButtonGroup-colorSuccess' : ''}{color == 'warning' ? ' MuiButtonGroup-colorWarning' : ''}{orientation == 'horizontal' ? ' MuiButtonGroup-horizontal' : ''}{orientation == 'vertical' ? ' MuiButtonGroup-vertical' : ''}{fullWidth ? ' MuiButtonGroup-fullWidth' : ''}{disableElevation ? ' MuiButtonGroup-disableElevation' : ''}">
+  <div className="MuiButtonGroup-root{variant == 'text' ? ' MuiButtonGroup-text' : ''}{variant == 'outlined' ? ' MuiButtonGroup-outlined' : ''}{variant == 'contained' ? ' MuiButtonGroup-contained' : ''}{color == 'inherit' ? ' MuiButtonGroup-colorInherit' : ''}{color == 'primary' ? ' MuiButtonGroup-colorPrimary' : ''}{color == 'secondary' ? ' MuiButtonGroup-colorSecondary' : ''}{color == 'error' ? ' MuiButtonGroup-colorError' : ''}{color == 'info' ? ' MuiButtonGroup-colorInfo' : ''}{color == 'success' ? ' MuiButtonGroup-colorSuccess' : ''}{color == 'warning' ? ' MuiButtonGroup-colorWarning' : ''}{orientation == 'horizontal' ? ' MuiButtonGroup-horizontal' : ''}{orientation == 'vertical' ? ' MuiButtonGroup-vertical' : ''}{fullWidth ? ' MuiButtonGroup-fullWidth' : ''}{disableElevation ? ' MuiButtonGroup-disableElevation' : ''} {className}" data-color="{color}" data-disabled="{disabled}" data-disable-elevation="{disableElevation}" data-full-width="{fullWidth}" data-orientation="{orientation}" data-size="{size}" data-variant="{variant}">
     <Slot contextProps="variant color size disabled" />
   </div>
-  !color !color_len !disabled !disableElevation !fullWidth !orientation !orientation_len !size !size_len !variant !variant_len
+  !color !color_len !className !className_len !disabled !disableElevation !fullWidth !orientation !orientation_len !size !size_len !variant !variant_len
 </Component>
 
 <Component name="Badge">
@@ -52,6 +58,8 @@
     anchorOriginVertical = 'top' as ptr
     anchorOriginVertical_len = 3
     badgeContent = 0
+    className = alloc 256
+    className_len = 0
     color = 'default' as ptr
     color_len = 7
     invisible = 0 as i1
@@ -62,15 +70,23 @@
     variant = 'standard' as ptr
     variant_len = 8
   </state>
-  <span className="MuiBadge-root">
+  <span className="MuiBadge-root {className}">
     <Slot />
     <span className="MuiBadge-badge{variant == 'standard' ? ' MuiBadge-standard' : ''}{variant == 'dot' ? ' MuiBadge-dot' : ''}{anchorOriginVertical == 'top' && anchorOriginHorizontal == 'right' ? ' MuiBadge-anchorOriginTopRight' : ''}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'right' ? ' MuiBadge-anchorOriginBottomRight' : ''}{anchorOriginVertical == 'top' && anchorOriginHorizontal == 'left' ? ' MuiBadge-anchorOriginTopLeft' : ''}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'left' ? ' MuiBadge-anchorOriginBottomLeft' : ''}{anchorOriginVertical == 'top' && anchorOriginHorizontal == 'right' && overlap == 'rectangular' ? ' MuiBadge-anchorOriginTopRightRectangular' : ''}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'right' && overlap == 'rectangular' ? ' MuiBadge-anchorOriginBottomRightRectangular' : ''}{anchorOriginVertical == 'top' && anchorOriginHorizontal == 'left' && overlap == 'rectangular' ? ' MuiBadge-anchorOriginTopLeftRectangular' : ''}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'left' && overlap == 'rectangular' ? ' MuiBadge-anchorOriginBottomLeftRectangular' : ''}{anchorOriginVertical == 'top' && anchorOriginHorizontal == 'right' && overlap == 'circular' ? ' MuiBadge-anchorOriginTopRightCircular' : ''}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'right' && overlap == 'circular' ? ' MuiBadge-anchorOriginBottomRightCircular' : ''}{anchorOriginVertical == 'top' && anchorOriginHorizontal == 'left' && overlap == 'circular' ? ' MuiBadge-anchorOriginTopLeftCircular' : ''}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'left' && overlap == 'circular' ? ' MuiBadge-anchorOriginBottomLeftCircular' : ''}{overlap == 'rectangular' ? ' MuiBadge-overlapRectangular' : ''}{overlap == 'circular' ? ' MuiBadge-overlapCircular' : ''}{color == 'primary' ? ' MuiBadge-colorPrimary' : ''}{color == 'secondary' ? ' MuiBadge-colorSecondary' : ''}{color == 'error' ? ' MuiBadge-colorError' : ''}{color == 'info' ? ' MuiBadge-colorInfo' : ''}{color == 'success' ? ' MuiBadge-colorSuccess' : ''}{color == 'warning' ? ' MuiBadge-colorWarning' : ''}{invisible ? ' MuiBadge-invisible' : ''}">{badgeContent}</span>
   </span>
-  !anchorOriginHorizontal !anchorOriginHorizontal_len !anchorOriginVertical !anchorOriginVertical_len !badgeContent !color !color_len !invisible !max !overlap !overlap_len !showZero !variant !variant_len
+  !anchorOriginHorizontal !anchorOriginHorizontal_len !anchorOriginVertical !anchorOriginVertical_len !badgeContent !className !className_len !color !color_len !invisible !max !overlap !overlap_len !showZero !variant !variant_len
 </Component>
 
 <Component name="Breadcrumbs">
   <state>
+    ariaLabel = 'breadcrumb' as ptr
+    ariaLabel_len = 10
+    className = alloc 256
+    className_len = 0
+    classesOl = alloc 256
+    classesOl_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
     expandText = alloc 64
     expandText_len = 9
     itemsAfterCollapse = 1
@@ -78,45 +94,69 @@
     maxItems = 8
     separator = alloc 16
     separator_len = 1
+    slotPropsOlClassName = alloc 256
+    slotPropsOlClassName_len = 0
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
   </state>
-  <nav className="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root">
-    <ol className="MuiBreadcrumbs-ol">
+  <nav className="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root {className} {classesRoot} {slotPropsRootClassName}" aria-label="{ariaLabel}">
+    <ol className="MuiBreadcrumbs-ol {classesOl} {slotPropsOlClassName}">
       <Slot />
     </ol>
   </nav>
-  !expandText !expandText_len !itemsAfterCollapse !itemsBeforeCollapse !maxItems !separator !separator_len
+  !ariaLabel !ariaLabel_len !className !className_len !classesOl !classesOl_len !classesRoot !classesRoot_len !expandText !expandText_len !itemsAfterCollapse !itemsBeforeCollapse !maxItems !separator !separator_len !slotPropsOlClassName !slotPropsOlClassName_len !slotPropsRootClassName !slotPropsRootClassName_len
 </Component>
 
 <Component name="BottomNavigation">
   <state>
+    className = alloc 256
+    className_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
     showLabels = 0 as i1
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
     value = 0
   </state>
-  <div className="MuiBottomNavigation-root">
-    <Slot />
+  <div className="MuiBottomNavigation-root {className} {classesRoot} {slotPropsRootClassName}" data-show-labels="{showLabels}" data-value="{value}">
+    <Slot contextProps="showLabels" />
   </div>
-  !showLabels !value
+  !className !className_len !classesRoot !classesRoot_len !showLabels !slotPropsRootClassName !slotPropsRootClassName_len !value
 </Component>
 
 <Component name="BottomNavigationAction">
   <state>
+    className = alloc 256
+    className_len = 0
+    classesLabel = alloc 256
+    classesLabel_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
+    disabled = 0 as i1
     label = alloc 256
     label_len = 0
     selected = 0 as i1
     showLabel = 0 as i1
+    showLabels = 0 as i1
+    slotPropsLabelClassName = alloc 256
+    slotPropsLabelClassName_len = 0
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
     value = 0
   </state>
-  <button className="MuiButtonBase-root MuiBottomNavigationAction-root{showLabel ? '' : ' MuiBottomNavigationAction-iconOnly'}{selected ? ' Mui-selected' : ''}">
-    <span className="MuiBottomNavigationAction-label{showLabel ? '' : ' MuiBottomNavigationAction-iconOnly'}{selected ? ' Mui-selected' : ''}">
+  <button className="MuiButtonBase-root MuiBottomNavigationAction-root{showLabel == 0 && showLabels == 0 && selected == 0 ? ' MuiBottomNavigationAction-iconOnly' : ''}{selected ? ' Mui-selected' : ''}{disabled ? ' Mui-disabled' : ''} {className} {classesRoot} {slotPropsRootClassName}" disabled={disabled} data-disabled="{disabled}" data-label="{label}" data-selected="{selected}" data-show-label="{showLabel}" data-show-labels="{showLabels}" data-value="{value}">
+    <span className="MuiBottomNavigationAction-label{showLabel == 0 && showLabels == 0 && selected == 0 ? ' MuiBottomNavigationAction-iconOnly' : ''}{selected ? ' Mui-selected' : ''} {classesLabel} {slotPropsLabelClassName}">{label}
       <Slot />
     </span>
   </button>
-  !label !label_len !selected !showLabel !value
+  !className !className_len !classesLabel !classesLabel_len !classesRoot !classesRoot_len !disabled !label !label_len !selected !showLabel !showLabels !slotPropsLabelClassName !slotPropsLabelClassName_len !slotPropsRootClassName !slotPropsRootClassName_len !value
 </Component>
 
 <Component name="Chip">
   <state>
     clickable = 0 as i1
+    className = alloc 256
+    className_len = 0
     color = 'default' as ptr
     color_len = 7
     disabled = 0 as i1
@@ -127,30 +167,34 @@
     variant = 'filled' as ptr
     variant_len = 6
   </state>
-  <div className="MuiChip-root{variant == 'filled' ? ' MuiChip-filled' : ''}{variant == 'outlined' ? ' MuiChip-outlined' : ''}{size == 'small' ? ' MuiChip-sizeSmall' : ''}{size == 'medium' ? ' MuiChip-sizeMedium' : ''}{color == 'default' ? ' MuiChip-colorDefault' : ''}{color == 'primary' ? ' MuiChip-colorPrimary' : ''}{color == 'secondary' ? ' MuiChip-colorSecondary' : ''}{color == 'error' ? ' MuiChip-colorError' : ''}{color == 'info' ? ' MuiChip-colorInfo' : ''}{color == 'success' ? ' MuiChip-colorSuccess' : ''}{color == 'warning' ? ' MuiChip-colorWarning' : ''}{disabled ? ' Mui-disabled' : ''}{clickable ? ' MuiChip-clickable' : ''}">
+  <div className="MuiChip-root{variant == 'filled' ? ' MuiChip-filled' : ''}{variant == 'outlined' ? ' MuiChip-outlined' : ''}{size == 'small' ? ' MuiChip-sizeSmall' : ''}{size == 'medium' ? ' MuiChip-sizeMedium' : ''}{color == 'default' ? ' MuiChip-colorDefault' : ''}{color == 'primary' ? ' MuiChip-colorPrimary' : ''}{color == 'secondary' ? ' MuiChip-colorSecondary' : ''}{color == 'error' ? ' MuiChip-colorError' : ''}{color == 'info' ? ' MuiChip-colorInfo' : ''}{color == 'success' ? ' MuiChip-colorSuccess' : ''}{color == 'warning' ? ' MuiChip-colorWarning' : ''}{disabled ? ' Mui-disabled' : ''}{clickable ? ' MuiChip-clickable' : ''} {className}" data-clickable="{clickable}" data-color="{color}" data-disabled="{disabled}" data-size="{size}" data-variant="{variant}">
     <span className="MuiChip-label{size == 'small' ? ' MuiChip-labelSmall' : ''}{size == 'medium' ? ' MuiChip-labelMedium' : ''}">
       <Slot />
     </span>
   </div>
-  !clickable !color !color_len !disabled !label !label_len !size !size_len !variant !variant_len
+  !clickable !className !className_len !color !color_len !disabled !label !label_len !size !size_len !variant !variant_len
 </Component>
 
 <Component name="IconButton">
   <state>
+    className = alloc 256
+    className_len = 0
     color = 'default' as ptr
     color_len = 7
     disabled = 0 as i1
     size = 'medium' as ptr
     size_len = 6
   </state>
-  <button className="MuiButtonBase-root MuiIconButton-root{color == 'inherit' ? ' MuiIconButton-colorInherit' : ''}{color == 'primary' ? ' MuiIconButton-colorPrimary' : ''}{color == 'secondary' ? ' MuiIconButton-colorSecondary' : ''}{color == 'error' ? ' MuiIconButton-colorError' : ''}{color == 'info' ? ' MuiIconButton-colorInfo' : ''}{color == 'success' ? ' MuiIconButton-colorSuccess' : ''}{color == 'warning' ? ' MuiIconButton-colorWarning' : ''}{size == 'small' ? ' MuiIconButton-sizeSmall' : ''}{size == 'medium' ? ' MuiIconButton-sizeMedium' : ''}{size == 'large' ? ' MuiIconButton-sizeLarge' : ''}{disabled ? ' Mui-disabled' : ''}" disabled={disabled}>
+  <button className="MuiButtonBase-root MuiIconButton-root{color == 'inherit' ? ' MuiIconButton-colorInherit' : ''}{color == 'primary' ? ' MuiIconButton-colorPrimary' : ''}{color == 'secondary' ? ' MuiIconButton-colorSecondary' : ''}{color == 'error' ? ' MuiIconButton-colorError' : ''}{color == 'info' ? ' MuiIconButton-colorInfo' : ''}{color == 'success' ? ' MuiIconButton-colorSuccess' : ''}{color == 'warning' ? ' MuiIconButton-colorWarning' : ''}{size == 'small' ? ' MuiIconButton-sizeSmall' : ''}{size == 'medium' ? ' MuiIconButton-sizeMedium' : ''}{size == 'large' ? ' MuiIconButton-sizeLarge' : ''}{disabled ? ' Mui-disabled' : ''} {className}" disabled={disabled}>
     <Slot />
   </button>
-  !color !color_len !disabled !size !size_len
+  !className !className_len !color !color_len !disabled !size !size_len
 </Component>
 
 <Component name="Fab">
   <state>
+    className = alloc 256
+    className_len = 0
     color = 'default' as ptr
     color_len = 7
     disabled = 0 as i1
@@ -159,10 +203,10 @@
     variant = 'circular' as ptr
     variant_len = 8
   </state>
-  <button className="MuiButtonBase-root MuiFab-root{variant == 'circular' ? ' MuiFab-circular' : ''}{variant == 'extended' ? ' MuiFab-extended' : ''}{size == 'small' ? ' MuiFab-sizeSmall' : ''}{size == 'medium' ? ' MuiFab-sizeMedium' : ''}{size == 'large' ? ' MuiFab-sizeLarge' : ''}{color == 'default' ? ' MuiFab-default' : ''}{color == 'primary' ? ' MuiFab-primary' : ''}{color == 'secondary' ? ' MuiFab-secondary' : ''}{color == 'error' ? ' MuiFab-error' : ''}{color == 'info' ? ' MuiFab-info' : ''}{color == 'success' ? ' MuiFab-success' : ''}{color == 'warning' ? ' MuiFab-warning' : ''}{color == 'inherit' ? ' MuiFab-colorInherit' : ''}{disabled ? ' Mui-disabled' : ''}" disabled={disabled}>
+  <button className="MuiButtonBase-root MuiFab-root{variant == 'circular' ? ' MuiFab-circular' : ''}{variant == 'extended' ? ' MuiFab-extended' : ''}{size == 'small' ? ' MuiFab-sizeSmall' : ''}{size == 'medium' ? ' MuiFab-sizeMedium' : ''}{size == 'large' ? ' MuiFab-sizeLarge' : ''}{color == 'default' ? ' MuiFab-default' : ''}{color == 'primary' ? ' MuiFab-primary' : ''}{color == 'secondary' ? ' MuiFab-secondary' : ''}{color == 'error' ? ' MuiFab-error' : ''}{color == 'info' ? ' MuiFab-info' : ''}{color == 'success' ? ' MuiFab-success' : ''}{color == 'warning' ? ' MuiFab-warning' : ''}{color == 'inherit' ? ' MuiFab-colorInherit' : ''}{disabled ? ' Mui-disabled' : ''} {className}" disabled={disabled}>
     <Slot />
   </button>
-  !color !color_len !disabled !size !size_len !variant !variant_len
+  !className !className_len !color !color_len !disabled !size !size_len !variant !variant_len
 </Component>
 
 <Component name="FormControl">
@@ -245,18 +289,20 @@
     disabled = 0 as i1
     disableRipple = 0 as i1
     indeterminate = 0 as i1
+    name = alloc 128
+    name_len = 0
     required = 0 as i1
     size = 'medium' as ptr
     size_len = 6
     value = alloc 128
     value_len = 0
   </state>
-  <span className="MuiButtonBase-root MuiCheckbox-root{color == 'primary' ? ' MuiCheckbox-colorPrimary' : ''}{color == 'secondary' ? ' MuiCheckbox-colorSecondary' : ''}{size == 'small' ? ' MuiCheckbox-sizeSmall' : ''}{size == 'medium' ? ' MuiCheckbox-sizeMedium' : ''}{checked ? ' Mui-checked' : ''}{disabled ? ' Mui-disabled' : ''}">
-    <input className="MuiSwitchBase-input" type="checkbox" checked={checked} disabled={disabled} />
+  <span className="MuiButtonBase-root MuiCheckbox-root{color == 'primary' ? ' MuiCheckbox-colorPrimary' : ''}{color == 'secondary' ? ' MuiCheckbox-colorSecondary' : ''}{size == 'small' ? ' MuiCheckbox-sizeSmall' : ''}{size == 'medium' ? ' MuiCheckbox-sizeMedium' : ''}{indeterminate ? ' MuiCheckbox-indeterminate' : ''}{checked ? ' Mui-checked' : ''}{disabled ? ' Mui-disabled' : ''}" data-color="{color}" data-size="{size}" data-checked="{checked}" data-disabled="{disabled}" data-required="{required}" data-indeterminate="{indeterminate}">
+    <input className="MuiSwitchBase-input" type="checkbox" checked={checked} disabled={disabled} required={required} name={name} value={value} data-indeterminate="{indeterminate ? 'true' : 'false'}" />
     <span className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiCheckbox-icon" />
     <Slot />
   </span>
-  !checked !color !color_len !defaultChecked !disabled !disableRipple !indeterminate !required !size !size_len !value !value_len
+  !checked !color !color_len !defaultChecked !disabled !disableRipple !indeterminate !name !name_len !required !size !size_len !value !value_len
 </Component>
 
 <Component name="Radio">
@@ -275,8 +321,8 @@
     value = alloc 128
     value_len = 0
   </state>
-  <span className="MuiButtonBase-root MuiRadio-root{color == 'primary' ? ' MuiRadio-colorPrimary' : ''}{color == 'secondary' ? ' MuiRadio-colorSecondary' : ''}{size == 'small' ? ' MuiRadio-sizeSmall' : ''}{checked ? ' Mui-checked' : ''}{disabled ? ' Mui-disabled' : ''}">
-    <input className="MuiSwitchBase-input" type="radio" checked={checked} disabled={disabled} />
+  <span className="MuiButtonBase-root MuiRadio-root{color == 'primary' ? ' MuiRadio-colorPrimary' : ''}{color == 'secondary' ? ' MuiRadio-colorSecondary' : ''}{size == 'small' ? ' MuiRadio-sizeSmall' : ''}{checked ? ' Mui-checked' : ''}{disabled ? ' Mui-disabled' : ''}" data-color="{color}" data-size="{size}" data-checked="{checked}" data-disabled="{disabled}" data-required="{required}">
+    <input className="MuiSwitchBase-input" type="radio" checked={checked} disabled={disabled} required={required} name={name} value={value} />
     <span className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiRadio-icon" />
     <Slot />
   </span>
@@ -294,7 +340,7 @@
     value = alloc 128
     value_len = 0
   </state>
-  <div className="MuiFormGroup-root MuiRadioGroup-root{row ? ' MuiRadioGroup-row' : ''}{error ? ' Mui-error' : ''}" role="radiogroup">
+  <div className="MuiFormGroup-root MuiRadioGroup-root{row ? ' MuiRadioGroup-row' : ''}{error ? ' Mui-error' : ''}" role="radiogroup" data-row="{row}" data-error="{error}" data-name="{name}" data-value="{value}" data-default-value="{defaultValue}">
     <Slot />
   </div>
   !defaultValue !defaultValue_len !error !name !name_len !row !value !value_len
@@ -310,21 +356,23 @@
     disableRipple = 0 as i1
     edge = alloc 32
     edge_len = 0
+    name = alloc 128
+    name_len = 0
     required = 0 as i1
     size = 'medium' as ptr
     size_len = 6
     value = alloc 128
     value_len = 0
   </state>
-  <span className="MuiSwitch-root{size == 'small' ? ' MuiSwitch-sizeSmall' : ''}{size == 'medium' ? ' MuiSwitch-sizeMedium' : ''}">
-    <span className="MuiButtonBase-root MuiSwitch-switchBase{color == 'primary' ? ' MuiSwitch-colorPrimary' : ''}{color == 'secondary' ? ' MuiSwitch-colorSecondary' : ''}{checked ? ' Mui-checked' : ''}{disabled ? ' Mui-disabled' : ''}">
-      <input className="MuiSwitch-input" type="checkbox" checked={checked} disabled={disabled} />
+  <span className="MuiSwitch-root{edge == 'start' ? ' MuiSwitch-edgeStart' : ''}{edge == 'end' ? ' MuiSwitch-edgeEnd' : ''}{size == 'small' ? ' MuiSwitch-sizeSmall' : ''}{size == 'medium' ? ' MuiSwitch-sizeMedium' : ''}" data-edge="{edge}" data-size="{size}">
+    <span className="MuiButtonBase-root MuiSwitch-switchBase{color == 'primary' ? ' MuiSwitch-colorPrimary' : ''}{color == 'secondary' ? ' MuiSwitch-colorSecondary' : ''}{checked ? ' Mui-checked' : ''}{disabled ? ' Mui-disabled' : ''}" data-color="{color}" data-checked="{checked}" data-disabled="{disabled}" data-required="{required}">
+      <input className="MuiSwitch-input" type="checkbox" checked={checked} disabled={disabled} required={required} name={name} value={value} />
       <span className="MuiSwitch-thumb" />
     </span>
     <span className="MuiSwitch-track" />
     <Slot />
   </span>
-  !checked !color !color_len !defaultChecked !disabled !disableRipple !edge !edge_len !required !size !size_len !value !value_len
+  !checked !color !color_len !defaultChecked !disabled !disableRipple !edge !edge_len !name !name_len !required !size !size_len !value !value_len
 </Component>
 
 <Component name="FormControlLabel">
@@ -341,7 +389,7 @@
     value = alloc 128
     value_len = 0
   </state>
-  <label className="MuiFormControlLabel-root{labelPlacement == 'start' ? ' MuiFormControlLabel-labelPlacementStart' : ''}{labelPlacement == 'top' ? ' MuiFormControlLabel-labelPlacementTop' : ''}{labelPlacement == 'bottom' ? ' MuiFormControlLabel-labelPlacementBottom' : ''}{disabled ? ' Mui-disabled' : ''}{error ? ' Mui-error' : ''}{required ? ' Mui-required' : ''}">
+  <label className="MuiFormControlLabel-root{labelPlacement == 'start' ? ' MuiFormControlLabel-labelPlacementStart' : ''}{labelPlacement == 'top' ? ' MuiFormControlLabel-labelPlacementTop' : ''}{labelPlacement == 'bottom' ? ' MuiFormControlLabel-labelPlacementBottom' : ''}{disabled ? ' Mui-disabled' : ''}{error ? ' Mui-error' : ''}{required ? ' Mui-required' : ''}" data-disabled="{disabled}" data-error="{error}" data-required="{required}" data-label-placement="{labelPlacement}">
     <Slot />
     <span className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label{disabled ? ' Mui-disabled' : ''}" />
   </label>
@@ -412,7 +460,7 @@
     variant = 'standard' as ptr
     variant_len = 8
   </state>
-  <div className="MuiInputAdornment-root{position == 'start' ? ' MuiInputAdornment-positionStart' : ''}{position == 'end' ? ' MuiInputAdornment-positionEnd' : ''}{variant == 'standard' ? ' MuiInputAdornment-standard' : ''}{variant == 'filled' ? ' MuiInputAdornment-filled' : ''}{variant == 'outlined' ? ' MuiInputAdornment-outlined' : ''}{size == 'small' ? ' MuiInputAdornment-sizeSmall' : ''}{size == 'medium' ? ' MuiInputAdornment-sizeMedium' : ''}{disablePointerEvents ? ' MuiInputAdornment-disablePointerEvents' : ''}{hiddenLabel ? ' MuiInputAdornment-hiddenLabel' : ''}">
+  <div className="MuiInputAdornment-root{position == 'start' ? ' MuiInputAdornment-positionStart' : ''}{position == 'end' ? ' MuiInputAdornment-positionEnd' : ''}{variant == 'standard' ? ' MuiInputAdornment-standard' : ''}{variant == 'filled' ? ' MuiInputAdornment-filled' : ''}{variant == 'outlined' ? ' MuiInputAdornment-outlined' : ''}{size == 'small' ? ' MuiInputAdornment-sizeSmall' : ''}{size == 'medium' ? ' MuiInputAdornment-sizeMedium' : ''}{disablePointerEvents ? ' MuiInputAdornment-disablePointerEvents' : ''}{hiddenLabel ? ' MuiInputAdornment-hiddenLabel' : ''}" data-position="{position}" data-variant="{variant}" data-size="{size}" data-disable-pointer-events="{disablePointerEvents}" data-hidden-label="{hiddenLabel}">
     <Slot />
   </div>
   !disablePointerEvents !disableTypography !hiddenLabel !position !position_len !size !size_len !variant !variant_len
@@ -517,10 +565,10 @@
     type_len = 4
     value = alloc 256
     value_len = 0
-    variant = alloc 32
+    variant = 'circular' as ptr
     variant_len = 8
   </state>
-  <div className="MuiFormControl-root MuiTextField-root{fullWidth ? ' MuiFormControl-fullWidth' : ''}">
+  <div className="MuiFormControl-root MuiTextField-root{fullWidth ? ' MuiFormControl-fullWidth' : ''}" data-color="{color}" data-disabled="{disabled}" data-error="{error}" data-full-width="{fullWidth}" data-multiline="{multiline}" data-required="{required}" data-select="{select}" data-type="{type}" data-value="{value}">
     <label className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-animated MuiInputLabel-outlined{disabled ? ' Mui-disabled' : ''}{error ? ' Mui-error' : ''}{required ? ' Mui-required' : ''}">
       <Slot />
     </label>
@@ -541,7 +589,7 @@
     value = alloc 512
     value_len = 0
   </state>
-  <textarea className="MuiTextareaAutosize-root">
+  <textarea className="MuiTextareaAutosize-root" data-min-rows="{minRows}" data-max-rows="{maxRows}" data-value="{value}" value={value}>
     <Slot />
   </textarea>
   !maxRows !minRows !value !value_len
@@ -566,11 +614,11 @@
     variant = 'outlined' as ptr
     variant_len = 8
   </state>
-  <div className="MuiInputBase-root MuiOutlinedInput-root MuiSelect-root{color == 'primary' ? ' MuiInputBase-colorPrimary' : ''}{color == 'secondary' ? ' MuiInputBase-colorSecondary' : ''}{disabled ? ' Mui-disabled' : ''}{error ? ' Mui-error' : ''}">
+  <div className="MuiInputBase-root MuiOutlinedInput-root MuiSelect-root{color == 'primary' ? ' MuiInputBase-colorPrimary' : ''}{color == 'secondary' ? ' MuiInputBase-colorSecondary' : ''}{disabled ? ' Mui-disabled' : ''}{error ? ' Mui-error' : ''}" data-color="{color}" data-variant="{variant}" data-open="{open}" data-disabled="{disabled}" data-error="{error}" data-multiple="{multiple}" data-native="{native}" data-default-open="{defaultOpen}" data-auto-width="{autoWidth}" data-display-empty="{displayEmpty}" data-value="{value}">
     <div className="MuiSelect-select{variant == 'outlined' ? ' MuiSelect-outlined' : ''}{variant == 'standard' ? ' MuiSelect-standard' : ''}{disabled ? ' Mui-disabled' : ''}{multiple ? ' MuiSelect-multiple' : ''}{error ? ' Mui-error' : ''}" role="combobox">
       <Slot />
     </div>
-    <input className="MuiSelect-nativeInput" disabled={disabled} />
+    <input className="MuiSelect-nativeInput" value={value} disabled={disabled} />
     <svg className="MuiSelect-icon{variant == 'outlined' ? ' MuiSelect-iconOutlined' : ''}{variant == 'standard' ? ' MuiSelect-iconStandard' : ''}{open ? ' MuiSelect-iconOpen' : ''}{disabled ? ' Mui-disabled' : ''}" />
     <fieldset className="MuiOutlinedInput-notchedOutline">
       <legend><span /></legend>
@@ -591,8 +639,8 @@
     variant = 'standard' as ptr
     variant_len = 8
   </state>
-  <div className="MuiInputBase-root MuiInput-root MuiNativeSelect-root{color == 'primary' ? ' MuiInputBase-colorPrimary' : ''}{color == 'secondary' ? ' MuiInputBase-colorSecondary' : ''}{disabled ? ' Mui-disabled' : ''}{error ? ' Mui-error' : ''}">
-    <select className="MuiNativeSelect-select{variant == 'standard' ? ' MuiNativeSelect-standard' : ''}{variant == 'filled' ? ' MuiNativeSelect-filled' : ''}{variant == 'outlined' ? ' MuiNativeSelect-outlined' : ''}{disabled ? ' Mui-disabled' : ''}{multiple ? ' MuiNativeSelect-multiple' : ''}{error ? ' Mui-error' : ''}" disabled={disabled} multiple={multiple}>
+  <div className="MuiInputBase-root MuiInput-root MuiNativeSelect-root{color == 'primary' ? ' MuiInputBase-colorPrimary' : ''}{color == 'secondary' ? ' MuiInputBase-colorSecondary' : ''}{disabled ? ' Mui-disabled' : ''}{error ? ' Mui-error' : ''}" data-color="{color}" data-variant="{variant}" data-disabled="{disabled}" data-error="{error}" data-multiple="{multiple}" data-value="{value}">
+    <select className="MuiNativeSelect-select{variant == 'standard' ? ' MuiNativeSelect-standard' : ''}{variant == 'filled' ? ' MuiNativeSelect-filled' : ''}{variant == 'outlined' ? ' MuiNativeSelect-outlined' : ''}{disabled ? ' Mui-disabled' : ''}{multiple ? ' MuiNativeSelect-multiple' : ''}{error ? ' Mui-error' : ''}" value={value} disabled={disabled} multiple={multiple}>
       <Slot />
     </select>
     <svg className="MuiNativeSelect-icon{variant == 'standard' ? ' MuiNativeSelect-iconStandard' : ''}{variant == 'filled' ? ' MuiNativeSelect-iconFilled' : ''}{variant == 'outlined' ? ' MuiNativeSelect-iconOutlined' : ''}{disabled ? ' Mui-disabled' : ''}" />
@@ -611,7 +659,7 @@
     value = alloc 256
     value_len = 0
   </state>
-  <li className="MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters{disabled ? ' Mui-disabled' : ''}{selected ? ' Mui-selected' : ''}" role="menuitem">
+  <li className="MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters{disabled ? ' Mui-disabled' : ''}{selected ? ' Mui-selected' : ''}" role="menuitem" data-dense="{dense}" data-disabled="{disabled}" data-disable-gutters="{disableGutters}" data-divider="{divider}" data-selected="{selected}" data-value="{value}">
     <Slot />
   </li>
   !autoFocus !dense !disabled !disableGutters !divider !selected !value !value_len
@@ -624,7 +672,7 @@
     disabledItemsFocusable = 0 as i1
     disablePadding = 0 as i1
     disableListWrap = 0 as i1
-    variant = alloc 32
+    variant = 'circular' as ptr
     variant_len = 12
   </state>
   <ul className="MuiList-root{disablePadding ? '' : ' MuiList-padding'}" role="menu">
@@ -635,6 +683,12 @@
 
 <Component name="Modal">
   <state>
+    className = alloc 256
+    className_len = 0
+    classesBackdrop = alloc 256
+    classesBackdrop_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
     closeAfterTransition = 0 as i1
     disableAutoFocus = 0 as i1
     disableEnforceFocus = 0 as i1
@@ -644,14 +698,18 @@
     hideBackdrop = 0 as i1
     keepMounted = 0 as i1
     open = 0 as i1
+    slotPropsBackdropClassName = alloc 256
+    slotPropsBackdropClassName_len = 0
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
   </state>
-  <div className="MuiModal-root{open ? ' Mui-open' : ' Mui-hidden'}" role="presentation">
-    <div className="MuiBackdrop-root MuiModal-backdrop{hideBackdrop ? ' Mui-hidden' : ''}" />
+  <div className="MuiModal-root{open ? ' Mui-open' : ' Mui-hidden'} {className} {classesRoot} {slotPropsRootClassName}" role="presentation" aria-hidden="{open ? 'false' : 'true'}" data-open="{open}" data-hide-backdrop="{hideBackdrop}" data-keep-mounted="{keepMounted}" data-disable-portal="{disablePortal}" data-disable-scroll-lock="{disableScrollLock}" data-close-after-transition="{closeAfterTransition}" data-disable-auto-focus="{disableAutoFocus}" data-disable-enforce-focus="{disableEnforceFocus}" data-disable-restore-focus="{disableRestoreFocus}" hidden={1 - open}>
+    <div className="MuiBackdrop-root MuiModal-backdrop {classesBackdrop} {slotPropsBackdropClassName}" hidden={hideBackdrop} />
     <div tabindex="-1">
       <Slot />
     </div>
   </div>
-  !closeAfterTransition !disableAutoFocus !disableEnforceFocus !disablePortal !disableRestoreFocus !disableScrollLock !hideBackdrop !keepMounted !open
+  !className !className_len !classesBackdrop !classesBackdrop_len !classesRoot !classesRoot_len !closeAfterTransition !disableAutoFocus !disableEnforceFocus !disablePortal !disableRestoreFocus !disableScrollLock !hideBackdrop !keepMounted !open !slotPropsBackdropClassName !slotPropsBackdropClassName_len !slotPropsRootClassName !slotPropsRootClassName_len
 </Component>
 
 <Component name="Portal">
@@ -672,6 +730,12 @@
     anchorOriginVertical_len = 3
     anchorReference = alloc 32
     anchorReference_len = 8
+    className = alloc 256
+    className_len = 0
+    classesPaper = alloc 256
+    classesPaper_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
     disableAutoFocus = 0 as i1
     disablePortal = 0 as i1
     disableScrollLock = 0 as i1
@@ -679,6 +743,10 @@
     keepMounted = 0 as i1
     marginThreshold = 16
     open = 0 as i1
+    slotPropsPaperClassName = alloc 256
+    slotPropsPaperClassName_len = 0
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
     transformOriginHorizontal = 'left' as ptr
     transformOriginHorizontal_len = 4
     transformOriginVertical = 'top' as ptr
@@ -686,27 +754,33 @@
     transitionDuration = alloc 32
     transitionDuration_len = 4
   </state>
-  <div className="MuiModal-root MuiPopover-root{open ? ' Mui-open' : ' Mui-hidden'}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'right' ? ' MuiPopover-anchorBottomRight' : ''}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'left' ? ' MuiPopover-anchorBottomLeft' : ''}{anchorOriginVertical == 'top' && anchorOriginHorizontal == 'right' ? ' MuiPopover-anchorTopRight' : ''}{transformOriginVertical == 'top' && transformOriginHorizontal == 'right' ? ' MuiPopover-transformTopRight' : ''}{transformOriginVertical == 'top' && transformOriginHorizontal == 'left' ? ' MuiPopover-transformTopLeft' : ''}" role="presentation">
-    <div className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper" tabindex="-1">
+  <div className="MuiModal-root MuiPopover-root{open ? ' Mui-open' : ' Mui-hidden'}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'right' ? ' MuiPopover-anchorBottomRight' : ''}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'left' ? ' MuiPopover-anchorBottomLeft' : ''}{anchorOriginVertical == 'top' && anchorOriginHorizontal == 'right' ? ' MuiPopover-anchorTopRight' : ''}{transformOriginVertical == 'top' && transformOriginHorizontal == 'right' ? ' MuiPopover-transformTopRight' : ''}{transformOriginVertical == 'top' && transformOriginHorizontal == 'left' ? ' MuiPopover-transformTopLeft' : ''} {className} {classesRoot} {slotPropsRootClassName}" role="presentation" aria-hidden="{open ? 'false' : 'true'}" data-open="{open}" data-anchor-origin-vertical="{anchorOriginVertical}" data-anchor-origin-horizontal="{anchorOriginHorizontal}" data-transform-origin-vertical="{transformOriginVertical}" data-transform-origin-horizontal="{transformOriginHorizontal}" hidden={1 - open}>
+    <div className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper {classesPaper} {slotPropsPaperClassName}" tabindex="-1">
       <Slot />
     </div>
   </div>
-  !anchorOriginHorizontal !anchorOriginHorizontal_len !anchorOriginVertical !anchorOriginVertical_len !anchorReference !anchorReference_len !disableAutoFocus !disablePortal !disableScrollLock !elevation !keepMounted !marginThreshold !open !transformOriginHorizontal !transformOriginHorizontal_len !transformOriginVertical !transformOriginVertical_len !transitionDuration !transitionDuration_len
+  !anchorOriginHorizontal !anchorOriginHorizontal_len !anchorOriginVertical !anchorOriginVertical_len !anchorReference !anchorReference_len !className !className_len !classesPaper !classesPaper_len !classesRoot !classesRoot_len !disableAutoFocus !disablePortal !disableScrollLock !elevation !keepMounted !marginThreshold !open !slotPropsPaperClassName !slotPropsPaperClassName_len !slotPropsRootClassName !slotPropsRootClassName_len !transformOriginHorizontal !transformOriginHorizontal_len !transformOriginVertical !transformOriginVertical_len !transitionDuration !transitionDuration_len
 </Component>
 
 <Component name="Popper">
   <state>
+    className = alloc 256
+    className_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
     disablePortal = 0 as i1
     keepMounted = 0 as i1
     open = 0 as i1
     placement = 'bottom' as ptr
     placement_len = 6
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
     transition = 0 as i1
   </state>
-  <div className="MuiPopper-root{open ? ' Mui-open' : ' Mui-hidden'}{placement == 'bottom' ? ' MuiPopper-placementBottom' : ''}{placement == 'bottom-start' ? ' MuiPopper-placementBottomStart' : ''}{placement == 'bottom-end' ? ' MuiPopper-placementBottomEnd' : ''}{placement == 'top' ? ' MuiPopper-placementTop' : ''}{placement == 'top-start' ? ' MuiPopper-placementTopStart' : ''}{placement == 'top-end' ? ' MuiPopper-placementTopEnd' : ''}" role="presentation">
+  <div className="MuiPopper-root{open ? ' Mui-open' : ' Mui-hidden'}{placement == 'bottom' ? ' MuiPopper-placementBottom' : ''}{placement == 'bottom-start' ? ' MuiPopper-placementBottomStart' : ''}{placement == 'bottom-end' ? ' MuiPopper-placementBottomEnd' : ''}{placement == 'top' ? ' MuiPopper-placementTop' : ''}{placement == 'top-start' ? ' MuiPopper-placementTopStart' : ''}{placement == 'top-end' ? ' MuiPopper-placementTopEnd' : ''} {className} {classesRoot} {slotPropsRootClassName}" role="presentation" aria-hidden="{open ? 'false' : 'true'}" data-open="{open}" data-placement="{placement}" hidden={1 - open}>
     <Slot />
   </div>
-  !disablePortal !keepMounted !open !placement !placement_len !transition
+  !className !className_len !classesRoot !classesRoot_len !disablePortal !keepMounted !open !placement !placement_len !slotPropsRootClassName !slotPropsRootClassName_len !transition
 </Component>
 
 <Component name="Menu">
@@ -716,8 +790,22 @@
     anchorOriginHorizontal_len = 4
     anchorOriginVertical = 'bottom' as ptr
     anchorOriginVertical_len = 6
+    className = alloc 256
+    className_len = 0
+    classesList = alloc 256
+    classesList_len = 0
+    classesPaper = alloc 256
+    classesPaper_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
     disableAutoFocusItem = 0 as i1
     open = 0 as i1
+    slotPropsListClassName = alloc 256
+    slotPropsListClassName_len = 0
+    slotPropsPaperClassName = alloc 256
+    slotPropsPaperClassName_len = 0
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
     transformOriginHorizontal = 'left' as ptr
     transformOriginHorizontal_len = 4
     transformOriginVertical = 'top' as ptr
@@ -727,67 +815,96 @@
     variant = alloc 32
     variant_len = 12
   </state>
-  <div className="MuiModal-root MuiPopover-root MuiMenu-root{open ? ' Mui-open' : ' Mui-hidden'}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'right' ? ' MuiPopover-anchorBottomRight' : ''}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'left' ? ' MuiPopover-anchorBottomLeft' : ''}{transformOriginVertical == 'top' && transformOriginHorizontal == 'right' ? ' MuiPopover-transformTopRight' : ''}{transformOriginVertical == 'top' && transformOriginHorizontal == 'left' ? ' MuiPopover-transformTopLeft' : ''}" role="presentation">
-    <div className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper MuiMenu-paper">
-      <ul className="MuiList-root MuiList-padding MuiMenu-list" role="menu">
+  <div className="MuiModal-root MuiPopover-root MuiMenu-root{open ? ' Mui-open' : ' Mui-hidden'}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'right' ? ' MuiPopover-anchorBottomRight' : ''}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'left' ? ' MuiPopover-anchorBottomLeft' : ''}{transformOriginVertical == 'top' && transformOriginHorizontal == 'right' ? ' MuiPopover-transformTopRight' : ''}{transformOriginVertical == 'top' && transformOriginHorizontal == 'left' ? ' MuiPopover-transformTopLeft' : ''} {className} {classesRoot} {slotPropsRootClassName}" role="presentation" aria-hidden="{open ? 'false' : 'true'}" data-open="{open}" data-anchor-origin-vertical="{anchorOriginVertical}" data-anchor-origin-horizontal="{anchorOriginHorizontal}" data-transform-origin-vertical="{transformOriginVertical}" data-transform-origin-horizontal="{transformOriginHorizontal}" hidden={1 - open}>
+    <div className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper MuiMenu-paper {classesPaper} {slotPropsPaperClassName}">
+      <ul className="MuiList-root MuiList-padding MuiMenu-list {classesList} {slotPropsListClassName}" role="menu">
         <Slot />
       </ul>
     </div>
   </div>
-  !autoFocus !anchorOriginHorizontal !anchorOriginHorizontal_len !anchorOriginVertical !anchorOriginVertical_len !disableAutoFocusItem !open !transformOriginHorizontal !transformOriginHorizontal_len !transformOriginVertical !transformOriginVertical_len !transitionDuration !transitionDuration_len !variant !variant_len
+  !autoFocus !anchorOriginHorizontal !anchorOriginHorizontal_len !anchorOriginVertical !anchorOriginVertical_len !className !className_len !classesList !classesList_len !classesPaper !classesPaper_len !classesRoot !classesRoot_len !disableAutoFocusItem !open !slotPropsListClassName !slotPropsListClassName_len !slotPropsPaperClassName !slotPropsPaperClassName_len !slotPropsRootClassName !slotPropsRootClassName_len !transformOriginHorizontal !transformOriginHorizontal_len !transformOriginVertical !transformOriginVertical_len !transitionDuration !transitionDuration_len !variant !variant_len
 </Component>
 
 <Component name="Drawer">
   <state>
-    anchor = alloc 32
+    anchor = 'left' as ptr
     anchor_len = 4
+    className = alloc 256
+    className_len = 0
+    classesBackdrop = alloc 256
+    classesBackdrop_len = 0
+    classesPaper = alloc 256
+    classesPaper_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
     elevation = 16
     hideBackdrop = 0 as i1
     open = 0 as i1
-    variant = alloc 32
+    slotPropsBackdropClassName = alloc 256
+    slotPropsBackdropClassName_len = 0
+    slotPropsPaperClassName = alloc 256
+    slotPropsPaperClassName_len = 0
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
+    variant = 'temporary' as ptr
     variant_len = 9
   </state>
-  <div className="MuiModal-root MuiDrawer-root MuiDrawer-modal MuiDrawer-anchorLeft{open ? ' Mui-open' : ' Mui-hidden'}">
-    <div className="MuiBackdrop-root MuiModal-backdrop" />
-    <div className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation16 MuiDrawer-paper" role="dialog">
+  <div className="MuiModal-root MuiDrawer-root MuiDrawer-modal{anchor == 'left' ? ' MuiDrawer-anchorLeft' : ''}{anchor == 'right' ? ' MuiDrawer-anchorRight' : ''}{anchor == 'top' ? ' MuiDrawer-anchorTop' : ''}{anchor == 'bottom' ? ' MuiDrawer-anchorBottom' : ''}{open ? ' Mui-open' : ' Mui-hidden'} {className} {classesRoot} {slotPropsRootClassName}" role="presentation" aria-hidden="{open ? 'false' : 'true'}" data-open="{open}" data-anchor="{anchor}" data-variant="{variant}" data-hide-backdrop="{hideBackdrop}" hidden={1 - open}>
+    <div className="MuiBackdrop-root MuiModal-backdrop {classesBackdrop} {slotPropsBackdropClassName}" hidden={hideBackdrop} />
+    <div className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation16 MuiDrawer-paper {classesPaper} {slotPropsPaperClassName}" role="dialog" aria-modal="{open ? 'true' : 'false'}" tabindex="-1">
       <Slot />
     </div>
   </div>
-  !anchor !anchor_len !elevation !hideBackdrop !open !variant !variant_len
+  !anchor !anchor_len !className !className_len !classesBackdrop !classesBackdrop_len !classesPaper !classesPaper_len !classesRoot !classesRoot_len !elevation !hideBackdrop !open !slotPropsBackdropClassName !slotPropsBackdropClassName_len !slotPropsPaperClassName !slotPropsPaperClassName_len !slotPropsRootClassName !slotPropsRootClassName_len !variant !variant_len
 </Component>
 
 <Component name="SwipeableDrawer">
   <state>
-    anchor = alloc 32
+    anchor = 'left' as ptr
     anchor_len = 4
+    className = alloc 256
+    className_len = 0
+    classesBackdrop = alloc 256
+    classesBackdrop_len = 0
+    classesPaper = alloc 256
+    classesPaper_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
     disableBackdropTransition = 0 as i1
     disableDiscovery = 0 as i1
     disableSwipeToOpen = 0 as i1
+    hideBackdrop = 0 as i1
     hysteresis = 0
     minFlingVelocity = 450
     open = 0 as i1
+    slotPropsBackdropClassName = alloc 256
+    slotPropsBackdropClassName_len = 0
+    slotPropsPaperClassName = alloc 256
+    slotPropsPaperClassName_len = 0
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
     swipeAreaWidth = 20
-    variant = alloc 32
+    variant = 'temporary' as ptr
     variant_len = 9
   </state>
-  <div className="MuiModal-root MuiDrawer-root MuiDrawer-modal MuiDrawer-anchorLeft{open ? ' Mui-open' : ' Mui-hidden'}">
-    <div className="MuiBackdrop-root MuiModal-backdrop" />
-    <div className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation16 MuiDrawer-paper" role="dialog">
+  <div className="MuiModal-root MuiDrawer-root MuiDrawer-modal{anchor == 'left' ? ' MuiDrawer-anchorLeft' : ''}{anchor == 'right' ? ' MuiDrawer-anchorRight' : ''}{anchor == 'top' ? ' MuiDrawer-anchorTop' : ''}{anchor == 'bottom' ? ' MuiDrawer-anchorBottom' : ''}{open ? ' Mui-open' : ' Mui-hidden'} {className} {classesRoot} {slotPropsRootClassName}" role="presentation" aria-hidden="{open ? 'false' : 'true'}" data-open="{open}" data-anchor="{anchor}" data-variant="{variant}" data-hide-backdrop="{hideBackdrop}" hidden={1 - open}>
+    <div className="MuiBackdrop-root MuiModal-backdrop {classesBackdrop} {slotPropsBackdropClassName}" hidden={hideBackdrop} />
+    <div className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation16 MuiDrawer-paper {classesPaper} {slotPropsPaperClassName}" role="dialog" aria-modal="{open ? 'true' : 'false'}" tabindex="-1">
       <Slot />
     </div>
   </div>
-  !anchor !anchor_len !disableBackdropTransition !disableDiscovery !disableSwipeToOpen !hysteresis !minFlingVelocity !open !swipeAreaWidth !variant !variant_len
+  !anchor !anchor_len !className !className_len !classesBackdrop !classesBackdrop_len !classesPaper !classesPaper_len !classesRoot !classesRoot_len !disableBackdropTransition !disableDiscovery !disableSwipeToOpen !hideBackdrop !hysteresis !minFlingVelocity !open !slotPropsBackdropClassName !slotPropsBackdropClassName_len !slotPropsPaperClassName !slotPropsPaperClassName_len !slotPropsRootClassName !slotPropsRootClassName_len !swipeAreaWidth !variant !variant_len
 </Component>
 
 <Component name="Slide">
   <state>
     appear = 1 as i1
-    direction = alloc 32
+    direction = 'down' as ptr
     direction_len = 4
     disablePrefersReducedMotion = 0 as i1
     in = 0 as i1
   </state>
-  <div className="MuiSlide-root">
+  <div className="MuiSlide-root" data-appear="{appear}" data-direction="{direction}" data-disable-prefers-reduced-motion="{disablePrefersReducedMotion}" data-in="{in}">
     <Slot />
   </div>
   !appear !direction !direction_len !disablePrefersReducedMotion !in
@@ -799,7 +916,7 @@
     disablePrefersReducedMotion = 0 as i1
     in = 0 as i1
   </state>
-  <div className="MuiFade-root">
+  <div className="MuiFade-root" data-appear="{appear}" data-disable-prefers-reduced-motion="{disablePrefersReducedMotion}" data-in="{in}">
     <Slot />
   </div>
   !appear !disablePrefersReducedMotion !in
@@ -810,10 +927,10 @@
     appear = 1 as i1
     disablePrefersReducedMotion = 0 as i1
     in = 0 as i1
-    timeout = alloc 32
+    timeout = 'auto' as ptr
     timeout_len = 4
   </state>
-  <div className="MuiGrow-root">
+  <div className="MuiGrow-root" data-appear="{appear}" data-disable-prefers-reduced-motion="{disablePrefersReducedMotion}" data-in="{in}" data-timeout="{timeout}">
     <Slot />
   </div>
   !appear !disablePrefersReducedMotion !in !timeout !timeout_len
@@ -825,7 +942,7 @@
     disablePrefersReducedMotion = 0 as i1
     in = 0 as i1
   </state>
-  <div className="MuiZoom-root">
+  <div className="MuiZoom-root" data-appear="{appear}" data-disable-prefers-reduced-motion="{disablePrefersReducedMotion}" data-in="{in}">
     <Slot />
   </div>
   !appear !disablePrefersReducedMotion !in
@@ -839,7 +956,7 @@
     orientation = 'horizontal' as ptr
     orientation_len = 10
   </state>
-  <div className="MuiStepper-root{orientation == 'horizontal' ? ' MuiStepper-horizontal' : ''}{orientation == 'vertical' ? ' MuiStepper-vertical' : ''}{alternativeLabel ? ' MuiStepper-alternativeLabel' : ''}">
+  <div className="MuiStepper-root{orientation == 'horizontal' ? ' MuiStepper-horizontal' : ''}{orientation == 'vertical' ? ' MuiStepper-vertical' : ''}{alternativeLabel ? ' MuiStepper-alternativeLabel' : ''}" data-active-step="{activeStep}" data-alternative-label="{alternativeLabel}" data-non-linear="{nonLinear}" data-orientation="{orientation}">
     <Slot />
   </div>
   !activeStep !alternativeLabel !nonLinear !orientation !orientation_len
@@ -848,16 +965,19 @@
 <Component name="Step">
   <state>
     active = 0 as i1
+    alternativeLabel = 0 as i1
     completed = 0 as i1
     disabled = 0 as i1
     expanded = 0 as i1
     index = 0
     last = 0 as i1
+    orientation = 'horizontal' as ptr
+    orientation_len = 10
   </state>
-  <div className="MuiStep-root MuiStep-horizontal{completed ? ' Mui-completed' : ''}">
+  <div className="MuiStep-root{orientation == 'horizontal' ? ' MuiStep-horizontal' : ''}{orientation == 'vertical' ? ' MuiStep-vertical' : ''}{alternativeLabel ? ' MuiStep-alternativeLabel' : ''}{completed ? ' Mui-completed' : ''}" data-active="{active}" data-alternative-label="{alternativeLabel}" data-completed="{completed}" data-disabled="{disabled}" data-expanded="{expanded}" data-index="{index}" data-last="{last}" data-orientation="{orientation}">
     <Slot />
   </div>
-  !active !completed !disabled !expanded !index !last
+  !active !alternativeLabel !completed !disabled !expanded !index !last !orientation !orientation_len
 </Component>
 
 <Component name="StepButton">
@@ -871,7 +991,7 @@
     orientation = 'horizontal' as ptr
     orientation_len = 10
   </state>
-  <button className="MuiButtonBase-root MuiStepButton-root{orientation == 'horizontal' ? ' MuiStepButton-horizontal' : ''}{orientation == 'vertical' ? ' MuiStepButton-vertical' : ''}{disabled ? ' Mui-disabled' : ''}" disabled={disabled}>
+  <button className="MuiButtonBase-root MuiStepButton-root{orientation == 'horizontal' ? ' MuiStepButton-horizontal' : ''}{orientation == 'vertical' ? ' MuiStepButton-vertical' : ''}{disabled ? ' Mui-disabled' : ''}" disabled={disabled} data-active="{active}" data-completed="{completed}" data-disabled="{disabled}" data-icon="{icon}" data-optional="{optional}" data-orientation="{orientation}">
     <span className="MuiStepLabel-root{orientation == 'horizontal' ? ' MuiStepLabel-horizontal' : ''}{orientation == 'vertical' ? ' MuiStepLabel-vertical' : ''}{disabled ? ' Mui-disabled' : ''}">
       <span className="MuiStepLabel-labelContainer">
         <span className="MuiStepLabel-label{active ? ' Mui-active' : ''}{completed ? ' Mui-completed' : ''}{disabled ? ' Mui-disabled' : ''}">
@@ -892,7 +1012,7 @@
     orientation = 'horizontal' as ptr
     orientation_len = 10
   </state>
-  <div className="MuiStepConnector-root{orientation == 'horizontal' ? ' MuiStepConnector-horizontal' : ''}{orientation == 'vertical' ? ' MuiStepConnector-vertical' : ''}{alternativeLabel ? ' MuiStepConnector-alternativeLabel' : ''}{active ? ' Mui-active' : ''}{completed ? ' Mui-completed' : ''}{disabled ? ' Mui-disabled' : ''}">
+  <div className="MuiStepConnector-root{orientation == 'horizontal' ? ' MuiStepConnector-horizontal' : ''}{orientation == 'vertical' ? ' MuiStepConnector-vertical' : ''}{alternativeLabel ? ' MuiStepConnector-alternativeLabel' : ''}{active ? ' Mui-active' : ''}{completed ? ' Mui-completed' : ''}{disabled ? ' Mui-disabled' : ''}" data-active="{active}" data-alternative-label="{alternativeLabel}" data-completed="{completed}" data-disabled="{disabled}" data-orientation="{orientation}">
     <span className="MuiStepConnector-line" />
   </div>
   !active !alternativeLabel !completed !disabled !orientation !orientation_len
@@ -902,10 +1022,10 @@
   <state>
     active = 0 as i1
     last = 0 as i1
-    transitionDuration = alloc 32
+    transitionDuration = 'auto' as ptr
     transitionDuration_len = 4
   </state>
-  <div className="MuiStepContent-root">
+  <div className="MuiStepContent-root" data-active="{active}" data-last="{last}" data-transition-duration="{transitionDuration}">
     <div className="MuiStepContent-transition">
       <Slot />
     </div>
@@ -921,7 +1041,7 @@
     icon = alloc 64
     icon_len = 0
   </state>
-  <svg className="MuiSvgIcon-root MuiStepIcon-root{active ? ' Mui-active' : ''}{completed ? ' Mui-completed' : ''}{error ? ' Mui-error' : ''}" focusable="false" aria-hidden="true">
+  <svg className="MuiSvgIcon-root MuiStepIcon-root{active ? ' Mui-active' : ''}{completed ? ' Mui-completed' : ''}{error ? ' Mui-error' : ''}" focusable="false" aria-hidden="true" data-active="{active}" data-completed="{completed}" data-error="{error}" data-icon="{icon}">
     <circle cx="12" cy="12" r="12" />
     <text className="MuiStepIcon-text" x="12" y="12" text-anchor="middle">1</text>
   </svg>
@@ -941,7 +1061,7 @@
     orientation = 'horizontal' as ptr
     orientation_len = 10
   </state>
-  <span className="MuiStepLabel-root{orientation == 'horizontal' ? ' MuiStepLabel-horizontal' : ''}{orientation == 'vertical' ? ' MuiStepLabel-vertical' : ''}{error ? ' Mui-error' : ''}{disabled ? ' Mui-disabled' : ''}{alternativeLabel ? ' MuiStepLabel-alternativeLabel' : ''}">
+  <span className="MuiStepLabel-root{orientation == 'horizontal' ? ' MuiStepLabel-horizontal' : ''}{orientation == 'vertical' ? ' MuiStepLabel-vertical' : ''}{error ? ' Mui-error' : ''}{disabled ? ' Mui-disabled' : ''}{alternativeLabel ? ' MuiStepLabel-alternativeLabel' : ''}" data-active="{active}" data-alternative-label="{alternativeLabel}" data-completed="{completed}" data-disabled="{disabled}" data-error="{error}" data-icon="{icon}" data-optional="{optional}" data-orientation="{orientation}">
     <span className="MuiStepLabel-iconContainer{active ? ' Mui-active' : ''}{completed ? ' Mui-completed' : ''}{error ? ' Mui-error' : ''}{disabled ? ' Mui-disabled' : ''}{alternativeLabel ? ' MuiStepLabel-alternativeLabel' : ''}">
       <svg className="MuiSvgIcon-root MuiStepIcon-root{active ? ' Mui-active' : ''}{completed ? ' Mui-completed' : ''}{error ? ' Mui-error' : ''}" focusable="false" aria-hidden="true">
         <circle cx="12" cy="12" r="12" />
@@ -975,7 +1095,7 @@
     variant_len = 8
     visibleScrollbar = 0 as i1
   </state>
-  <div className="MuiTabs-root{orientation == 'vertical' ? ' MuiTabs-vertical' : ''}">
+  <div className="MuiTabs-root{orientation == 'vertical' ? ' MuiTabs-vertical' : ''}" data-centered="{centered}" data-orientation="{orientation}" data-value="{value}">
     <div className="MuiTabs-scroller MuiTabs-fixed">
       <div className="MuiTabs-list{orientation == 'vertical' ? ' MuiTabs-vertical' : ''}{centered ? ' MuiTabs-centered' : ''}" role="tablist">
         <Slot />
@@ -1004,7 +1124,7 @@
     value = 0
     wrapped = 0 as i1
   </state>
-  <button className="MuiButtonBase-root MuiTab-root{ textColor == 'inherit' ? ' MuiTab-textColorInherit' : ''}{ textColor == 'primary' ? ' MuiTab-textColorPrimary' : ''}{ textColor == 'secondary' ? ' MuiTab-textColorSecondary' : ''}{fullWidth ? ' MuiTab-fullWidth' : ''}{wrapped ? ' MuiTab-wrapped' : ''}{selected ? ' Mui-selected' : ''}{disabled ? ' Mui-disabled' : ''}" role="tab" aria-selected={selected} disabled={disabled}>
+  <button className="MuiButtonBase-root MuiTab-root{ textColor == 'inherit' ? ' MuiTab-textColorInherit' : ''}{ textColor == 'primary' ? ' MuiTab-textColorPrimary' : ''}{ textColor == 'secondary' ? ' MuiTab-textColorSecondary' : ''}{fullWidth ? ' MuiTab-fullWidth' : ''}{wrapped ? ' MuiTab-wrapped' : ''}{selected ? ' Mui-selected' : ''}{disabled ? ' Mui-disabled' : ''}" role="tab" aria-selected={selected} disabled={disabled} data-disabled="{disabled}" data-full-width="{fullWidth}" data-selected="{selected}" data-text-color="{textColor}" data-value="{value}" data-wrapped="{wrapped}">
     <Slot />
   </button>
   !disabled !disableFocusRipple !fullWidth !icon !icon_len !iconPosition !iconPosition_len !label !label_len !selected !selectionFollowsFocus !textColor !textColor_len !value !wrapped
@@ -1018,7 +1138,7 @@
     orientation = 'horizontal' as ptr
     orientation_len = 10
   </state>
-  <div className="MuiButtonBase-root MuiTabScrollButton-root{orientation == 'horizontal' ? ' MuiTabScrollButton-horizontal' : ''}{orientation == 'vertical' ? ' MuiTabScrollButton-vertical' : ''}{disabled ? ' Mui-disabled' : ''}" role="presentation">
+  <div className="MuiButtonBase-root MuiTabScrollButton-root{orientation == 'horizontal' ? ' MuiTabScrollButton-horizontal' : ''}{orientation == 'vertical' ? ' MuiTabScrollButton-vertical' : ''}{disabled ? ' Mui-disabled' : ''}" role="presentation" data-disabled="{disabled}" data-orientation="{orientation}">
     <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false" aria-hidden="true">
       <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
     </svg>
@@ -1042,7 +1162,7 @@
     value = alloc 128
     value_len = 0
   </state>
-  <div className="MuiToggleButtonGroup-root{orientation == 'horizontal' ? ' MuiToggleButtonGroup-horizontal' : ''}{orientation == 'vertical' ? ' MuiToggleButtonGroup-vertical' : ''}{fullWidth ? ' MuiToggleButtonGroup-fullWidth' : ''}" role="group">
+  <div className="MuiToggleButtonGroup-root{orientation == 'horizontal' ? ' MuiToggleButtonGroup-horizontal' : ''}{orientation == 'vertical' ? ' MuiToggleButtonGroup-vertical' : ''}{fullWidth ? ' MuiToggleButtonGroup-fullWidth' : ''}" role="group" data-color="{color}" data-disabled="{disabled}" data-exclusive="{exclusive}" data-full-width="{fullWidth}" data-orientation="{orientation}" data-size="{size}" data-value="{value}">
     <Slot contextProps="color disabled fullWidth grouped size" />
   </div>
   !color !color_len !disabled !exclusive !fullWidth !grouped !orientation !orientation_len !size !size_len !value !value_len
@@ -1062,7 +1182,7 @@
     value = alloc 128
     value_len = 0
   </state>
-  <button className="MuiButtonBase-root MuiToggleButton-root{size == 'small' ? ' MuiToggleButton-sizeSmall' : ''}{size == 'medium' ? ' MuiToggleButton-sizeMedium' : ''}{size == 'large' ? ' MuiToggleButton-sizeLarge' : ''}{color == 'standard' ? ' MuiToggleButton-standard' : ''}{color == 'primary' ? ' MuiToggleButton-primary' : ''}{color == 'secondary' ? ' MuiToggleButton-secondary' : ''}{fullWidth ? ' MuiToggleButton-fullWidth' : ''}{grouped ? ' MuiToggleButtonGroup-grouped' : ''}{selected ? ' Mui-selected' : ''}{disabled ? ' Mui-disabled' : ''}" aria-pressed={selected} disabled={disabled}>
+  <button className="MuiButtonBase-root MuiToggleButton-root{size == 'small' ? ' MuiToggleButton-sizeSmall' : ''}{size == 'medium' ? ' MuiToggleButton-sizeMedium' : ''}{size == 'large' ? ' MuiToggleButton-sizeLarge' : ''}{color == 'standard' ? ' MuiToggleButton-standard' : ''}{color == 'primary' ? ' MuiToggleButton-primary' : ''}{color == 'secondary' ? ' MuiToggleButton-secondary' : ''}{fullWidth ? ' MuiToggleButton-fullWidth' : ''}{grouped ? ' MuiToggleButtonGroup-grouped' : ''}{selected ? ' Mui-selected' : ''}{disabled ? ' Mui-disabled' : ''}" aria-pressed={selected} disabled={disabled} data-color="{color}" data-disabled="{disabled}" data-full-width="{fullWidth}" data-grouped="{grouped}" data-selected="{selected}" data-size="{size}" data-value="{value}">
     <Slot />
   </button>
   !color !color_len !disabled !disableFocusRipple !fullWidth !grouped !selected !size !size_len !value !value_len
@@ -1070,7 +1190,15 @@
 
 <Component name="Pagination">
   <state>
+    ariaLabel = 'pagination navigation' as ptr
+    ariaLabel_len = 21
     boundaryCount = 1
+    className = alloc 256
+    className_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
+    classesUl = alloc 256
+    classesUl_len = 0
     color = 'inherit' as ptr
     color_len = 8
     count = 1
@@ -1084,61 +1212,82 @@
     showFirstButton = 0 as i1
     showLastButton = 0 as i1
     siblingCount = 1
-    size = alloc 32
+    size = 'medium' as ptr
     size_len = 6
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
+    slotPropsUlClassName = alloc 256
+    slotPropsUlClassName_len = 0
     variant = 'text' as ptr
     variant_len = 4
   </state>
-  <nav className="MuiPagination-root{variant == 'text' ? ' MuiPagination-text' : ''}{variant == 'outlined' ? ' MuiPagination-outlined' : ''}" aria-label="pagination navigation">
-    <ul className="MuiPagination-ul">
+  <nav className="MuiPagination-root{variant == 'text' ? ' MuiPagination-text' : ''}{variant == 'outlined' ? ' MuiPagination-outlined' : ''} {className} {classesRoot} {slotPropsRootClassName}" aria-label="{ariaLabel}" data-color="{color}" data-disabled="{disabled}" data-shape="{shape}" data-size="{size}" data-variant="{variant}">
+    <ul className="MuiPagination-ul {classesUl} {slotPropsUlClassName}">
       <li>
-        <PaginationItem type="previous" />
+        <PaginationItem type="first" color={color} disabled={disabled} hidden={1 - showFirstButton} shape={shape} size={size} variant={variant} />
       </li>
       <li>
-        <PaginationItem selected>1</PaginationItem>
+        <PaginationItem type="previous" color={color} disabled={disabled} hidden={hidePrevButton} shape={shape} size={size} variant={variant} />
       </li>
       <li>
-        <PaginationItem>2</PaginationItem>
+        <PaginationItem selected color={color} disabled={disabled} shape={shape} size={size} variant={variant}>1</PaginationItem>
       </li>
       <li>
-        <PaginationItem type="next" />
+        <PaginationItem color={color} disabled={disabled} shape={shape} size={size} variant={variant}>2</PaginationItem>
       </li>
-      <Slot />
+      <li>
+        <PaginationItem type="next" color={color} disabled={disabled} hidden={hideNextButton} shape={shape} size={size} variant={variant} />
+      </li>
+      <li>
+        <PaginationItem type="last" color={color} disabled={disabled} hidden={1 - showLastButton} shape={shape} size={size} variant={variant} />
+      </li>
+      <Slot contextProps="color disabled shape size variant" />
     </ul>
   </nav>
-  !boundaryCount !color !color_len !count !defaultPage !disabled !hideNextButton !hidePrevButton !page !shape !shape_len !showFirstButton !showLastButton !siblingCount !size !size_len !variant !variant_len
+  !ariaLabel !ariaLabel_len !boundaryCount !className !className_len !classesRoot !classesRoot_len !classesUl !classesUl_len !color !color_len !count !defaultPage !disabled !hideNextButton !hidePrevButton !page !shape !shape_len !showFirstButton !showLastButton !siblingCount !size !size_len !slotPropsRootClassName !slotPropsRootClassName_len !slotPropsUlClassName !slotPropsUlClassName_len !variant !variant_len
 </Component>
 
 <Component name="PaginationItem">
   <state>
+    className = alloc 256
+    className_len = 0
+    classesIcon = alloc 256
+    classesIcon_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
     color = 'inherit' as ptr
     color_len = 8
     disabled = 0 as i1
+    hidden = 0 as i1
     page = 0
     selected = 0 as i1
     shape = 'circular' as ptr
     shape_len = 8
     size = 'medium' as ptr
     size_len = 6
+    slotPropsIconClassName = alloc 256
+    slotPropsIconClassName_len = 0
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
     type = 'page' as ptr
     type_len = 4
     variant = 'text' as ptr
     variant_len = 4
   </state>
-  <button className="MuiButtonBase-root MuiPaginationItem-root{size == 'small' ? ' MuiPaginationItem-sizeSmall' : ''}{size == 'medium' ? ' MuiPaginationItem-sizeMedium' : ''}{size == 'large' ? ' MuiPaginationItem-sizeLarge' : ''}{variant == 'text' ? ' MuiPaginationItem-text' : ''}{variant == 'outlined' ? ' MuiPaginationItem-outlined' : ''}{shape == 'circular' ? ' MuiPaginationItem-circular' : ''}{color == 'primary' ? ' MuiPaginationItem-colorPrimary' : ''}{color == 'secondary' ? ' MuiPaginationItem-colorSecondary' : ''}{shape == 'rounded' ? ' MuiPaginationItem-rounded' : ''}{type == 'page' ? ' MuiPaginationItem-page' : ''}{type == 'first' ? ' MuiPaginationItem-firstLast' : ''}{type == 'last' ? ' MuiPaginationItem-firstLast' : ''}{type == 'start-ellipsis' ? ' MuiPaginationItem-ellipsis' : ''}{type == 'end-ellipsis' ? ' MuiPaginationItem-ellipsis' : ''}{type == 'previous' ? ' MuiPaginationItem-previousNext' : ''}{type == 'next' ? ' MuiPaginationItem-previousNext' : ''}{selected ? ' Mui-selected' : ''}{disabled ? ' Mui-disabled' : ''}" aria-current={selected} disabled={disabled}>
+  <button className="MuiButtonBase-root MuiPaginationItem-root{size == 'small' ? ' MuiPaginationItem-sizeSmall' : ''}{size == 'medium' ? ' MuiPaginationItem-sizeMedium' : ''}{size == 'large' ? ' MuiPaginationItem-sizeLarge' : ''}{variant == 'text' ? ' MuiPaginationItem-text' : ''}{variant == 'outlined' ? ' MuiPaginationItem-outlined' : ''}{shape == 'circular' ? ' MuiPaginationItem-circular' : ''}{color == 'primary' ? ' MuiPaginationItem-colorPrimary' : ''}{color == 'secondary' ? ' MuiPaginationItem-colorSecondary' : ''}{shape == 'rounded' ? ' MuiPaginationItem-rounded' : ''}{type == 'page' ? ' MuiPaginationItem-page' : ''}{type == 'first' ? ' MuiPaginationItem-firstLast' : ''}{type == 'last' ? ' MuiPaginationItem-firstLast' : ''}{type == 'start-ellipsis' ? ' MuiPaginationItem-ellipsis' : ''}{type == 'end-ellipsis' ? ' MuiPaginationItem-ellipsis' : ''}{type == 'previous' ? ' MuiPaginationItem-previousNext' : ''}{type == 'next' ? ' MuiPaginationItem-previousNext' : ''}{selected ? ' Mui-selected' : ''}{disabled ? ' Mui-disabled' : ''} {className} {classesRoot} {slotPropsRootClassName}" aria-current={selected} disabled={disabled} hidden={hidden} data-color="{color}" data-disabled="{disabled}" data-hidden="{hidden}" data-selected="{selected}" data-shape="{shape}" data-size="{size}" data-type="{type}" data-variant="{variant}">
     <Slot />
-    <span className="MuiPaginationItem-icon">
+    <span className="MuiPaginationItem-icon {classesIcon} {slotPropsIconClassName}">
       <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium" focusable="false" aria-hidden="true">
         <path d="m10 6 6 6-6 6-1.41-1.41L13.17 12 8.59 7.41z" />
       </svg>
     </span>
   </button>
-  !color !color_len !disabled !page !selected !shape !shape_len !size !size_len !type !type_len !variant !variant_len
+  !className !className_len !classesIcon !classesIcon_len !classesRoot !classesRoot_len !color !color_len !disabled !hidden !page !selected !shape !shape_len !size !size_len !slotPropsIconClassName !slotPropsIconClassName_len !slotPropsRootClassName !slotPropsRootClassName_len !type !type_len !variant !variant_len
 </Component>
 
 <Component name="SpeedDial">
   <state>
-    ariaLabel = alloc 128
+    ariaLabel = 'speed dial' as ptr
     ariaLabel_len = 10
     direction = 'up' as ptr
     direction_len = 2
@@ -1146,7 +1295,7 @@
     open = 0 as i1
     transitionDuration = 225
   </state>
-  <div className="MuiSpeedDial-root{direction == 'up' ? ' MuiSpeedDial-directionUp' : ''}{direction == 'down' ? ' MuiSpeedDial-directionDown' : ''}{direction == 'left' ? ' MuiSpeedDial-directionLeft' : ''}{direction == 'right' ? ' MuiSpeedDial-directionRight' : ''}" role="presentation">
+  <div className="MuiSpeedDial-root{direction == 'up' ? ' MuiSpeedDial-directionUp' : ''}{direction == 'down' ? ' MuiSpeedDial-directionDown' : ''}{direction == 'left' ? ' MuiSpeedDial-directionLeft' : ''}{direction == 'right' ? ' MuiSpeedDial-directionRight' : ''}" role="presentation" data-aria-label="{ariaLabel}" data-direction="{direction}" data-hidden="{hidden}" data-open="{open}" data-transition-duration="{transitionDuration}">
     <div className="MuiZoom-root">
       <button className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-primary MuiSpeedDial-fab" aria-haspopup="true" aria-expanded={open} aria-label="speed dial">
         <SpeedDialIcon open={open} />
@@ -1165,12 +1314,12 @@
     id = alloc 128
     id_len = 0
     open = 0 as i1
-    tooltipPlacement = alloc 32
+    tooltipPlacement = 'left' as ptr
     tooltipPlacement_len = 4
     tooltipTitle = alloc 128
     tooltipTitle_len = 0
   </state>
-  <span className="MuiSpeedDialAction-staticTooltip MuiSpeedDialAction-tooltipPlacementLeft{open ? '' : ' MuiSpeedDialAction-staticTooltipClosed'}">
+  <span className="MuiSpeedDialAction-staticTooltip MuiSpeedDialAction-tooltipPlacementLeft{open ? '' : ' MuiSpeedDialAction-staticTooltipClosed'}" data-delay="{delay}" data-id="{id}" data-open="{open}" data-tooltip-placement="{tooltipPlacement}" data-tooltip-title="{tooltipTitle}">
     <span className="MuiSpeedDialAction-staticTooltipLabel" />
     <button className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab{open ? '' : ' MuiSpeedDialAction-fabClosed'}" role="menuitem" tabindex="-1">
       <Slot />
@@ -1200,6 +1349,12 @@
 <Component name="Tooltip">
   <state>
     arrow = 0 as i1
+    classesArrow = alloc 256
+    classesArrow_len = 0
+    classesPopper = alloc 256
+    classesPopper_len = 0
+    classesTooltip = alloc 256
+    classesTooltip_len = 0
     describeChild = 0 as i1
     disableFocusListener = 0 as i1
     disableHoverListener = 0 as i1
@@ -1216,21 +1371,27 @@
     open = 0 as i1
     placement = 'bottom' as ptr
     placement_len = 6
+    slotPropsArrowClassName = alloc 256
+    slotPropsArrowClassName_len = 0
+    slotPropsPopperClassName = alloc 256
+    slotPropsPopperClassName_len = 0
+    slotPropsTooltipClassName = alloc 256
+    slotPropsTooltipClassName_len = 0
     title = alloc 256
     title_len = 0
   </state>
   <span className="MuiTooltip-child">
     <Slot />
   </span>
-  <div className="MuiPopper-root MuiTooltip-popper{open ? ' Mui-open' : ''}{disableInteractive ? '' : ' MuiTooltip-popperInteractive'}{arrow ? ' MuiTooltip-popperArrow' : ''}" role="tooltip" data-popper-placement="{placement}">
+  <div className="MuiPopper-root MuiTooltip-popper{open ? ' Mui-open' : ''}{disableInteractive ? '' : ' MuiTooltip-popperInteractive'}{arrow ? ' MuiTooltip-popperArrow' : ''} {classesPopper} {slotPropsPopperClassName}" role="tooltip" data-popper-placement="{placement}" data-open="{open}" data-placement="{placement}" data-arrow="{arrow}" data-disable-interactive="{disableInteractive}" hidden={1 - open}>
     <div className="MuiGrow-root">
-      <div className="MuiTooltip-tooltip{placement == 'bottom' ? ' MuiTooltip-tooltipPlacementBottom' : ''}{placement == 'top' ? ' MuiTooltip-tooltipPlacementTop' : ''}{placement == 'left' ? ' MuiTooltip-tooltipPlacementLeft' : ''}{placement == 'right' ? ' MuiTooltip-tooltipPlacementRight' : ''}{arrow ? ' MuiTooltip-tooltipArrow' : ''}">
+      <div className="MuiTooltip-tooltip{placement == 'bottom' ? ' MuiTooltip-tooltipPlacementBottom' : ''}{placement == 'top' ? ' MuiTooltip-tooltipPlacementTop' : ''}{placement == 'left' ? ' MuiTooltip-tooltipPlacementLeft' : ''}{placement == 'right' ? ' MuiTooltip-tooltipPlacementRight' : ''}{arrow ? ' MuiTooltip-tooltipArrow' : ''} {classesTooltip} {slotPropsTooltipClassName}">
         {title}
-        <span className="MuiTooltip-arrow" />
+        <span className="MuiTooltip-arrow {classesArrow} {slotPropsArrowClassName}" />
       </div>
     </div>
   </div>
-  !arrow !describeChild !disableFocusListener !disableHoverListener !disableInteractive !disableTouchListener !enterDelay !enterNextDelay !enterTouchDelay !followCursor !id !id_len !leaveDelay !leaveTouchDelay !open !placement !placement_len !title !title_len
+  !arrow !classesArrow !classesArrow_len !classesPopper !classesPopper_len !classesTooltip !classesTooltip_len !describeChild !disableFocusListener !disableHoverListener !disableInteractive !disableTouchListener !enterDelay !enterNextDelay !enterTouchDelay !followCursor !id !id_len !leaveDelay !leaveTouchDelay !open !placement !placement_len !slotPropsArrowClassName !slotPropsArrowClassName_len !slotPropsPopperClassName !slotPropsPopperClassName_len !slotPropsTooltipClassName !slotPropsTooltipClassName_len !title !title_len
 </Component>
 
 <Component name="Autocomplete">
@@ -1242,6 +1403,26 @@
     clearOnEscape = 0 as i1
     clearText = alloc 64
     clearText_len = 5
+    className = alloc 256
+    className_len = 0
+    classesClearIndicator = alloc 256
+    classesClearIndicator_len = 0
+    classesEndAdornment = alloc 256
+    classesEndAdornment_len = 0
+    classesInput = alloc 256
+    classesInput_len = 0
+    classesInputRoot = alloc 256
+    classesInputRoot_len = 0
+    classesListbox = alloc 256
+    classesListbox_len = 0
+    classesPaper = alloc 256
+    classesPaper_len = 0
+    classesPopper = alloc 256
+    classesPopper_len = 0
+    classesPopupIndicator = alloc 256
+    classesPopupIndicator_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
     closeText = alloc 64
     closeText_len = 5
     disableClearable = 0 as i1
@@ -1279,39 +1460,69 @@
     selectOnFocus = 1 as i1
     size = alloc 32
     size_len = 6
+    slotPropsClearIndicatorClassName = alloc 256
+    slotPropsClearIndicatorClassName_len = 0
+    slotPropsEndAdornmentClassName = alloc 256
+    slotPropsEndAdornmentClassName_len = 0
+    slotPropsInputClassName = alloc 256
+    slotPropsInputClassName_len = 0
+    slotPropsInputRootClassName = alloc 256
+    slotPropsInputRootClassName_len = 0
+    slotPropsListboxClassName = alloc 256
+    slotPropsListboxClassName_len = 0
+    slotPropsPaperClassName = alloc 256
+    slotPropsPaperClassName_len = 0
+    slotPropsPopperClassName = alloc 256
+    slotPropsPopperClassName_len = 0
+    slotPropsPopupIndicatorClassName = alloc 256
+    slotPropsPopupIndicatorClassName_len = 0
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
     value = alloc 256
     value_len = 0
   </state>
-  <div className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon{fullWidth ? ' MuiAutocomplete-fullWidth' : ''}">
-    <div className="MuiInputBase-root MuiOutlinedInput-root MuiAutocomplete-inputRoot">
+  <div className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon{fullWidth ? ' MuiAutocomplete-fullWidth' : ''} {className} {classesRoot} {slotPropsRootClassName}" data-open="{open}" data-full-width="{fullWidth}" data-disable-portal="{disablePortal}" data-disabled="{disabled}" data-read-only="{readOnly}" data-input-value="{inputValue}" data-placeholder="{placeholder}">
+    <div className="MuiInputBase-root MuiOutlinedInput-root MuiAutocomplete-inputRoot {classesInputRoot} {slotPropsInputRootClassName}">
       <span className="MuiAutocomplete-tag MuiAutocomplete-tagSizeMedium" />
-      <input className="MuiAutocomplete-input" value={inputValue} placeholder={placeholder} disabled={disabled} readonly={readOnly} />
-      <div className="MuiAutocomplete-endAdornment">
-        <button className="MuiButtonBase-root MuiIconButton-root MuiAutocomplete-clearIndicator" aria-label="Clear" title="Clear">
+      <input className="MuiAutocomplete-input {classesInput} {slotPropsInputClassName}" value={inputValue} placeholder={placeholder} disabled={disabled} readonly={readOnly} />
+      <div className="MuiAutocomplete-endAdornment {classesEndAdornment} {slotPropsEndAdornmentClassName}">
+        <button className="MuiButtonBase-root MuiIconButton-root MuiAutocomplete-clearIndicator {classesClearIndicator} {slotPropsClearIndicatorClassName}" aria-label="Clear" title="Clear">
           <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false" aria-hidden="true">
             <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
           </svg>
         </button>
-        <button className="MuiButtonBase-root MuiIconButton-root MuiAutocomplete-popupIndicator{open ? ' MuiAutocomplete-popupIndicatorOpen' : ''}" aria-label="Open" title="Open">
+        <button className="MuiButtonBase-root MuiIconButton-root MuiAutocomplete-popupIndicator{open ? ' MuiAutocomplete-popupIndicatorOpen' : ''} {classesPopupIndicator} {slotPropsPopupIndicatorClassName}" aria-label="Open" title="Open">
           <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium" focusable="false" aria-hidden="true">
             <path d="M7 10l5 5 5-5z" />
           </svg>
         </button>
       </div>
     </div>
-    <div className="MuiPopper-root MuiAutocomplete-popper{open ? ' Mui-open' : ' Mui-hidden'}{disablePortal ? ' MuiAutocomplete-popperDisablePortal' : ''}" role="presentation">
-      <div className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiAutocomplete-paper">
-        <ul className="MuiAutocomplete-listbox" role="listbox">
+    <div className="MuiPopper-root MuiAutocomplete-popper{open ? ' Mui-open' : ''}{disablePortal ? ' MuiAutocomplete-popperDisablePortal' : ''} {classesPopper} {slotPropsPopperClassName}" role="presentation" data-autocomplete-open="{open}" data-autocomplete-disable-portal="{disablePortal}" hidden={1 - open}>
+      <div className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiAutocomplete-paper {classesPaper} {slotPropsPaperClassName}">
+        <ul className="MuiAutocomplete-listbox {classesListbox} {slotPropsListboxClassName}" role="listbox">
           <Slot />
         </ul>
       </div>
     </div>
   </div>
-  !autoComplete !autoHighlight !autoSelect !clearOnBlur !clearOnEscape !clearText !clearText_len !closeText !closeText_len !disableClearable !disableCloseOnSelect !disabled !disabledItemsFocusable !disableListWrap !disablePortal !filterSelectedOptions !forcePopupIcon !forcePopupIcon_len !freeSolo !fullWidth !handleHomeEndKeys !id !id_len !includeInputInList !inputValue !inputValue_len !limitTags !loading !loadingText !loadingText_len !multiple !noOptionsText !noOptionsText_len !open !openOnFocus !openText !openText_len !placeholder !placeholder_len !readOnly !resetHighlightOnMouseLeave !selectOnFocus !size !size_len !value !value_len
+  !autoComplete !autoHighlight !autoSelect !clearOnBlur !clearOnEscape !clearText !clearText_len !className !className_len !classesClearIndicator !classesClearIndicator_len !classesEndAdornment !classesEndAdornment_len !classesInput !classesInput_len !classesInputRoot !classesInputRoot_len !classesListbox !classesListbox_len !classesPaper !classesPaper_len !classesPopper !classesPopper_len !classesPopupIndicator !classesPopupIndicator_len !classesRoot !classesRoot_len !closeText !closeText_len !disableClearable !disableCloseOnSelect !disabled !disabledItemsFocusable !disableListWrap !disablePortal !filterSelectedOptions !forcePopupIcon !forcePopupIcon_len !freeSolo !fullWidth !handleHomeEndKeys !id !id_len !includeInputInList !inputValue !inputValue_len !limitTags !loading !loadingText !loadingText_len !multiple !noOptionsText !noOptionsText_len !open !openOnFocus !openText !openText_len !placeholder !placeholder_len !readOnly !resetHighlightOnMouseLeave !selectOnFocus !size !size_len !slotPropsClearIndicatorClassName !slotPropsClearIndicatorClassName_len !slotPropsEndAdornmentClassName !slotPropsEndAdornmentClassName_len !slotPropsInputClassName !slotPropsInputClassName_len !slotPropsInputRootClassName !slotPropsInputRootClassName_len !slotPropsListboxClassName !slotPropsListboxClassName_len !slotPropsPaperClassName !slotPropsPaperClassName_len !slotPropsPopperClassName !slotPropsPopperClassName_len !slotPropsPopupIndicatorClassName !slotPropsPopupIndicatorClassName_len !slotPropsRootClassName !slotPropsRootClassName_len !value !value_len
 </Component>
 
 <Component name="Rating">
   <state>
+    className = alloc 256
+    className_len = 0
+    classesIcon = alloc 256
+    classesIcon_len = 0
+    classesIconEmpty = alloc 256
+    classesIconEmpty_len = 0
+    classesIconFilled = alloc 256
+    classesIconFilled_len = 0
+    classesLabel = alloc 256
+    classesLabel_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
     defaultValue = 0
     disabled = 0 as i1
     emptyLabelText = alloc 64
@@ -1324,19 +1535,25 @@
     readOnly = 0 as i1
     size = 'medium' as ptr
     size_len = 6
+    slotPropsIconClassName = alloc 256
+    slotPropsIconClassName_len = 0
+    slotPropsLabelClassName = alloc 256
+    slotPropsLabelClassName_len = 0
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
     value = 0
   </state>
-  <span className="MuiRating-root{size == 'small' ? ' MuiRating-sizeSmall' : ''}{size == 'medium' ? ' MuiRating-sizeMedium' : ''}{size == 'large' ? ' MuiRating-sizeLarge' : ''}{disabled ? ' Mui-disabled' : ''}{readOnly ? ' MuiRating-readOnly' : ''}" role="radiogroup">
-    <label className="MuiRating-label MuiRating-pristine">
-      <span className="MuiRating-icon MuiRating-iconFilled">
+  <span className="MuiRating-root{size == 'small' ? ' MuiRating-sizeSmall' : ''}{size == 'medium' ? ' MuiRating-sizeMedium' : ''}{size == 'large' ? ' MuiRating-sizeLarge' : ''}{disabled ? ' Mui-disabled' : ''}{readOnly ? ' MuiRating-readOnly' : ''} {className} {classesRoot} {slotPropsRootClassName}" role="radiogroup">
+    <label className="MuiRating-label MuiRating-pristine {classesLabel} {slotPropsLabelClassName}">
+      <span className="MuiRating-icon MuiRating-iconFilled {classesIcon} {classesIconFilled} {slotPropsIconClassName}">
         <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit" focusable="false" aria-hidden="true">
           <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
         </svg>
       </span>
       <span className="MuiRating-visuallyHidden">1 Star</span>
     </label>
-    <label className="MuiRating-label">
-      <span className="MuiRating-icon MuiRating-iconEmpty">
+    <label className="MuiRating-label {classesLabel} {slotPropsLabelClassName}">
+      <span className="MuiRating-icon MuiRating-iconEmpty {classesIcon} {classesIconEmpty} {slotPropsIconClassName}">
         <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit" focusable="false" aria-hidden="true">
           <path d="m22 9.24-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28z" />
         </svg>
@@ -1345,11 +1562,29 @@
     </label>
     <Slot />
   </span>
-  !defaultValue !disabled !emptyLabelText !emptyLabelText_len !highlightSelectedOnly !max !name !name_len !precision !readOnly !size !size_len !value
+  !className !className_len !classesIcon !classesIcon_len !classesIconEmpty !classesIconEmpty_len !classesIconFilled !classesIconFilled_len !classesLabel !classesLabel_len !classesRoot !classesRoot_len !defaultValue !disabled !emptyLabelText !emptyLabelText_len !highlightSelectedOnly !max !name !name_len !precision !readOnly !size !size_len !slotPropsIconClassName !slotPropsIconClassName_len !slotPropsLabelClassName !slotPropsLabelClassName_len !slotPropsRootClassName !slotPropsRootClassName_len !value
 </Component>
 
 <Component name="Slider">
   <state>
+    className = alloc 256
+    className_len = 0
+    classesInput = alloc 256
+    classesInput_len = 0
+    classesMark = alloc 256
+    classesMark_len = 0
+    classesMarkLabel = alloc 256
+    classesMarkLabel_len = 0
+    classesRail = alloc 256
+    classesRail_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
+    classesThumb = alloc 256
+    classesThumb_len = 0
+    classesTrack = alloc 256
+    classesTrack_len = 0
+    classesValueLabel = alloc 256
+    classesValueLabel_len = 0
     color = 'primary' as ptr
     color_len = 7
     disableSwap = 0 as i1
@@ -1358,49 +1593,65 @@
     min = 0
     name = alloc 128
     name_len = 0
-    orientation = alloc 32
+    orientation = 'horizontal' as ptr
     orientation_len = 10
     shiftStep = 10
     size = 'medium' as ptr
     size_len = 6
+    slotPropsInputClassName = alloc 256
+    slotPropsInputClassName_len = 0
+    slotPropsMarkClassName = alloc 256
+    slotPropsMarkClassName_len = 0
+    slotPropsMarkLabelClassName = alloc 256
+    slotPropsMarkLabelClassName_len = 0
+    slotPropsRailClassName = alloc 256
+    slotPropsRailClassName_len = 0
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
+    slotPropsThumbClassName = alloc 256
+    slotPropsThumbClassName_len = 0
+    slotPropsTrackClassName = alloc 256
+    slotPropsTrackClassName_len = 0
+    slotPropsValueLabelClassName = alloc 256
+    slotPropsValueLabelClassName_len = 0
     step = 1
-    track = alloc 32
+    track = 'normal' as ptr
     track_len = 6
     value = 0
-    valueLabelDisplay = alloc 32
+    valueLabelDisplay = 'off' as ptr
     valueLabelDisplay_len = 3
   </state>
-  <span className="MuiSlider-root{color == 'primary' ? ' MuiSlider-colorPrimary' : ''}{color == 'secondary' ? ' MuiSlider-colorSecondary' : ''}{size == 'small' ? ' MuiSlider-sizeSmall' : ''}{size == 'medium' ? ' MuiSlider-sizeMedium' : ''}{disabled ? ' Mui-disabled' : ''}">
-    <span className="MuiSlider-rail" />
-    <span className="MuiSlider-track" />
-    <span className="MuiSlider-mark" />
-    <span className="MuiSlider-markLabel">{value}</span>
-    <span className="MuiSlider-thumb{disabled ? ' Mui-disabled' : ''}">
-      <span className="MuiSlider-valueLabel">
+  <span className="MuiSlider-root{color == 'primary' ? ' MuiSlider-colorPrimary' : ''}{color == 'secondary' ? ' MuiSlider-colorSecondary' : ''}{size == 'small' ? ' MuiSlider-sizeSmall' : ''}{size == 'medium' ? ' MuiSlider-sizeMedium' : ''}{disabled ? ' Mui-disabled' : ''} {className} {classesRoot} {slotPropsRootClassName}" data-color="{color}" data-disable-swap="{disableSwap}" data-disabled="{disabled}" data-max="{max}" data-min="{min}" data-name="{name}" data-orientation="{orientation}" data-shift-step="{shiftStep}" data-size="{size}" data-step="{step}" data-track="{track}" data-value="{value}" data-value-label-display="{valueLabelDisplay}">
+    <span className="MuiSlider-rail {classesRail} {slotPropsRailClassName}" />
+    <span className="MuiSlider-track {classesTrack} {slotPropsTrackClassName}" />
+    <span className="MuiSlider-mark {classesMark} {slotPropsMarkClassName}" />
+    <span className="MuiSlider-markLabel {classesMarkLabel} {slotPropsMarkLabelClassName}">{value}</span>
+    <span className="MuiSlider-thumb{disabled ? ' Mui-disabled' : ''} {classesThumb} {slotPropsThumbClassName}">
+      <span className="MuiSlider-valueLabel {classesValueLabel} {slotPropsValueLabelClassName}">
         <span className="MuiSlider-valueLabelCircle">
           <span className="MuiSlider-valueLabelLabel">{value}</span>
         </span>
       </span>
-      <input type="range" className="MuiSlider-input" min={min} max={max} step={step} value={value} disabled={disabled} />
+      <input type="range" className="MuiSlider-input {classesInput} {slotPropsInputClassName}" min={min} max={max} step={step} value={value} name="{name}" disabled={disabled} data-slider-value="{value}" data-slider-min="{min}" data-slider-max="{max}" data-slider-step="{step}" />
     </span>
     <Slot />
   </span>
-  !color !color_len !disableSwap !disabled !max !min !name !name_len !orientation !orientation_len !shiftStep !size !size_len !step !track !track_len !value !valueLabelDisplay !valueLabelDisplay_len
+  !className !className_len !classesInput !classesInput_len !classesMark !classesMark_len !classesMarkLabel !classesMarkLabel_len !classesRail !classesRail_len !classesRoot !classesRoot_len !classesThumb !classesThumb_len !classesTrack !classesTrack_len !classesValueLabel !classesValueLabel_len !color !color_len !disableSwap !disabled !max !min !name !name_len !orientation !orientation_len !shiftStep !size !size_len !slotPropsInputClassName !slotPropsInputClassName_len !slotPropsMarkClassName !slotPropsMarkClassName_len !slotPropsMarkLabelClassName !slotPropsMarkLabelClassName_len !slotPropsRailClassName !slotPropsRailClassName_len !slotPropsRootClassName !slotPropsRootClassName_len !slotPropsThumbClassName !slotPropsThumbClassName_len !slotPropsTrackClassName !slotPropsTrackClassName_len !slotPropsValueLabelClassName !slotPropsValueLabelClassName_len !step !track !track_len !value !valueLabelDisplay !valueLabelDisplay_len
 </Component>
 
 <Component name="Collapse">
   <state>
-    collapsedSize = alloc 32
+    collapsedSize = '0px' as ptr
     collapsedSize_len = 3
     disablePrefersReducedMotion = 0 as i1
     in = 0 as i1
-    orientation = alloc 32
+    orientation = 'vertical' as ptr
     orientation_len = 8
     timeout = 300
   </state>
-  <div className="MuiCollapse-root MuiCollapse-vertical">
-    <div className="MuiCollapse-wrapper MuiCollapse-vertical">
-      <div className="MuiCollapse-wrapperInner MuiCollapse-vertical">
+  <div className="MuiCollapse-root{orientation == 'vertical' ? ' MuiCollapse-vertical' : ''}{orientation == 'horizontal' ? ' MuiCollapse-horizontal' : ''}{in ? ' MuiCollapse-entered' : ''}{in == 0 && collapsedSize == '0px' ? ' MuiCollapse-hidden' : ''}{in == 0 && collapsedSize == '0' ? ' MuiCollapse-hidden' : ''}" aria-hidden="{in ? 'false' : 'true'}" data-collapse-axis="{orientation == 'horizontal' ? 'width' : 'height'}" data-collapsed-size="{collapsedSize}" data-state="{in ? 'entered' : 'exited'}" data-timeout="{timeout}">
+    <div className="MuiCollapse-wrapper{orientation == 'vertical' ? ' MuiCollapse-vertical' : ''}{orientation == 'horizontal' ? ' MuiCollapse-horizontal' : ''}">
+      <div className="MuiCollapse-wrapperInner{orientation == 'vertical' ? ' MuiCollapse-vertical' : ''}{orientation == 'horizontal' ? ' MuiCollapse-horizontal' : ''}">
         <Slot />
       </div>
     </div>
@@ -1461,6 +1712,8 @@
 
 <Component name="Link">
   <state>
+    className = alloc 256
+    className_len = 0
     color = alloc 32
     color_len = 7
     href = '#' as ptr
@@ -1470,10 +1723,10 @@
     variant = alloc 32
     variant_len = 7
   </state>
-  <a className="MuiTypography-root MuiTypography-inherit MuiLink-root{underline == 'none' ? ' MuiLink-underlineNone' : ''}{underline == 'hover' ? ' MuiLink-underlineHover' : ''}{underline == 'always' ? ' MuiLink-underlineAlways' : ''}" href={href}>
+  <a className="MuiTypography-root MuiTypography-inherit MuiLink-root{underline == 'none' ? ' MuiLink-underlineNone' : ''}{underline == 'hover' ? ' MuiLink-underlineHover' : ''}{underline == 'always' ? ' MuiLink-underlineAlways' : ''} {className}" href={href}>
     <Slot />
   </a>
-  !color !color_len !href !href_len !underline !underline_len !variant !variant_len
+  !className !className_len !color !color_len !href !href_len !underline !underline_len !variant !variant_len
 </Component>
 
 <Component name="Box">
@@ -1490,11 +1743,15 @@
 
 <Component name="CssBaseline">
   <state>
+    colorScheme = 'light' as ptr
+    colorScheme_len = 5
     enableColorScheme = 0 as i1
+    mode = 'light' as ptr
+    mode_len = 5
   </state>
-  <span className="MuiCssBaseline-root{enableColorScheme ? ' MuiCssBaseline-enableColorScheme' : ''}" hidden="true" />
+  <span className="MuiCssBaseline-root{enableColorScheme ? ' MuiCssBaseline-enableColorScheme' : ''}{mode == 'dark' ? ' MuiCssBaseline-modeDark' : ' MuiCssBaseline-modeLight'}{colorScheme == 'dark' ? ' MuiCssBaseline-colorSchemeDark' : ''}" data-mui-color-scheme="{colorScheme}" data-mui-mode="{mode}" hidden="true" />
   <Slot />
-  !enableColorScheme
+  !colorScheme !colorScheme_len !enableColorScheme !mode !mode_len
 </Component>
 
 <Component name="MuiThemeProvider">
@@ -1509,8 +1766,8 @@
     mode = 'light' as ptr
     mode_len = 5
   </state>
-  <section className="MuiThemeProvider-root{mode == 'dark' ? ' MuiThemeProvider-modeDark' : ' MuiThemeProvider-modeLight'}{colorScheme == 'dark' ? ' MuiThemeProvider-colorSchemeDark' : ''}{color == 'primary' ? ' MuiThemeProvider-colorPrimary' : ''}{color == 'secondary' ? ' MuiThemeProvider-colorSecondary' : ''}{color == 'success' ? ' MuiThemeProvider-colorSuccess' : ''}{color == 'warning' ? ' MuiThemeProvider-colorWarning' : ''}{color == 'error' ? ' MuiThemeProvider-colorError' : ''}{color == 'info' ? ' MuiThemeProvider-colorInfo' : ''}{disableTransitionOnChange ? ' MuiThemeProvider-disableTransitionOnChange' : ''}" data-mui-color-scheme="theme" data-mui-mode="theme">
-    <Slot />
+  <section className="MuiThemeProvider-root{mode == 'dark' ? ' MuiThemeProvider-modeDark' : ' MuiThemeProvider-modeLight'}{colorScheme == 'dark' ? ' MuiThemeProvider-colorSchemeDark' : ''}{color == 'primary' ? ' MuiThemeProvider-colorPrimary' : ''}{color == 'secondary' ? ' MuiThemeProvider-colorSecondary' : ''}{color == 'success' ? ' MuiThemeProvider-colorSuccess' : ''}{color == 'warning' ? ' MuiThemeProvider-colorWarning' : ''}{color == 'error' ? ' MuiThemeProvider-colorError' : ''}{color == 'info' ? ' MuiThemeProvider-colorInfo' : ''}{disableTransitionOnChange ? ' MuiThemeProvider-disableTransitionOnChange' : ''}" data-mui-color-scheme="{colorScheme}" data-mui-mode="{mode}" data-mui-default-color="{color}" data-mui-default-mode="{defaultMode}">
+    <Slot contextProps="color colorScheme defaultMode mode" contextScope="descendants" />
   </section>
   !color !color_len !colorScheme !colorScheme_len !defaultMode !defaultMode_len !disableTransitionOnChange !mode !mode_len
 </Component>
@@ -1527,8 +1784,8 @@
     mode = 'light' as ptr
     mode_len = 5
   </state>
-  <section className="MuiThemeProvider-root{mode == 'dark' ? ' MuiThemeProvider-modeDark' : ' MuiThemeProvider-modeLight'}{colorScheme == 'dark' ? ' MuiThemeProvider-colorSchemeDark' : ''}{color == 'primary' ? ' MuiThemeProvider-colorPrimary' : ''}{color == 'secondary' ? ' MuiThemeProvider-colorSecondary' : ''}{color == 'success' ? ' MuiThemeProvider-colorSuccess' : ''}{color == 'warning' ? ' MuiThemeProvider-colorWarning' : ''}{color == 'error' ? ' MuiThemeProvider-colorError' : ''}{color == 'info' ? ' MuiThemeProvider-colorInfo' : ''}{disableTransitionOnChange ? ' MuiThemeProvider-disableTransitionOnChange' : ''}" data-mui-color-scheme="theme" data-mui-mode="theme">
-    <Slot />
+  <section className="MuiThemeProvider-root{mode == 'dark' ? ' MuiThemeProvider-modeDark' : ' MuiThemeProvider-modeLight'}{colorScheme == 'dark' ? ' MuiThemeProvider-colorSchemeDark' : ''}{color == 'primary' ? ' MuiThemeProvider-colorPrimary' : ''}{color == 'secondary' ? ' MuiThemeProvider-colorSecondary' : ''}{color == 'success' ? ' MuiThemeProvider-colorSuccess' : ''}{color == 'warning' ? ' MuiThemeProvider-colorWarning' : ''}{color == 'error' ? ' MuiThemeProvider-colorError' : ''}{color == 'info' ? ' MuiThemeProvider-colorInfo' : ''}{disableTransitionOnChange ? ' MuiThemeProvider-disableTransitionOnChange' : ''}" data-mui-color-scheme="{colorScheme}" data-mui-mode="{mode}" data-mui-default-color="{color}" data-mui-default-mode="{defaultMode}">
+    <Slot contextProps="color colorScheme defaultMode mode" contextScope="descendants" />
   </section>
   !color !color_len !colorScheme !colorScheme_len !defaultMode !defaultMode_len !disableTransitionOnChange !mode !mode_len
 </Component>
@@ -1544,8 +1801,8 @@
     mode = 'light' as ptr
     mode_len = 5
   </state>
-  <section className="MuiCssVarsProvider-root{mode == 'dark' ? ' MuiCssVarsProvider-modeDark' : ' MuiCssVarsProvider-modeLight'}{colorScheme == 'dark' ? ' MuiCssVarsProvider-colorSchemeDark' : ''}{color == 'primary' ? ' MuiCssVarsProvider-colorPrimary' : ''}{color == 'secondary' ? ' MuiCssVarsProvider-colorSecondary' : ''}{color == 'success' ? ' MuiCssVarsProvider-colorSuccess' : ''}{color == 'warning' ? ' MuiCssVarsProvider-colorWarning' : ''}{color == 'error' ? ' MuiCssVarsProvider-colorError' : ''}{color == 'info' ? ' MuiCssVarsProvider-colorInfo' : ''}" data-mui-color-scheme="css-vars" data-mui-mode="css-vars">
-    <Slot />
+  <section className="MuiCssVarsProvider-root{mode == 'dark' ? ' MuiCssVarsProvider-modeDark' : ' MuiCssVarsProvider-modeLight'}{colorScheme == 'dark' ? ' MuiCssVarsProvider-colorSchemeDark' : ''}{color == 'primary' ? ' MuiCssVarsProvider-colorPrimary' : ''}{color == 'secondary' ? ' MuiCssVarsProvider-colorSecondary' : ''}{color == 'success' ? ' MuiCssVarsProvider-colorSuccess' : ''}{color == 'warning' ? ' MuiCssVarsProvider-colorWarning' : ''}{color == 'error' ? ' MuiCssVarsProvider-colorError' : ''}{color == 'info' ? ' MuiCssVarsProvider-colorInfo' : ''}" data-mui-color-scheme="{colorScheme}" data-mui-mode="{mode}" data-mui-default-color="{color}" data-mui-default-mode="{defaultMode}">
+    <Slot contextProps="color colorScheme defaultMode mode" contextScope="descendants" />
   </section>
   !color !color_len !colorScheme !colorScheme_len !defaultMode !defaultMode_len !mode !mode_len
 </Component>
@@ -1561,23 +1818,27 @@
     mode = 'light' as ptr
     mode_len = 5
   </state>
-  <section className="MuiCssVarsProvider-root{mode == 'dark' ? ' MuiCssVarsProvider-modeDark' : ' MuiCssVarsProvider-modeLight'}{colorScheme == 'dark' ? ' MuiCssVarsProvider-colorSchemeDark' : ''}{color == 'primary' ? ' MuiCssVarsProvider-colorPrimary' : ''}{color == 'secondary' ? ' MuiCssVarsProvider-colorSecondary' : ''}{color == 'success' ? ' MuiCssVarsProvider-colorSuccess' : ''}{color == 'warning' ? ' MuiCssVarsProvider-colorWarning' : ''}{color == 'error' ? ' MuiCssVarsProvider-colorError' : ''}{color == 'info' ? ' MuiCssVarsProvider-colorInfo' : ''}" data-mui-color-scheme="css-vars" data-mui-mode="css-vars">
-    <Slot />
+  <section className="MuiCssVarsProvider-root{mode == 'dark' ? ' MuiCssVarsProvider-modeDark' : ' MuiCssVarsProvider-modeLight'}{colorScheme == 'dark' ? ' MuiCssVarsProvider-colorSchemeDark' : ''}{color == 'primary' ? ' MuiCssVarsProvider-colorPrimary' : ''}{color == 'secondary' ? ' MuiCssVarsProvider-colorSecondary' : ''}{color == 'success' ? ' MuiCssVarsProvider-colorSuccess' : ''}{color == 'warning' ? ' MuiCssVarsProvider-colorWarning' : ''}{color == 'error' ? ' MuiCssVarsProvider-colorError' : ''}{color == 'info' ? ' MuiCssVarsProvider-colorInfo' : ''}" data-mui-color-scheme="{colorScheme}" data-mui-mode="{mode}" data-mui-default-color="{color}" data-mui-default-mode="{defaultMode}">
+    <Slot contextProps="color colorScheme defaultMode mode" contextScope="descendants" />
   </section>
   !color !color_len !colorScheme !colorScheme_len !defaultMode !defaultMode_len !mode !mode_len
 </Component>
 
 <Component name="Experimental_CssVarsProvider">
   <state>
+    color = 'primary' as ptr
+    color_len = 7
     colorScheme = 'light' as ptr
     colorScheme_len = 5
+    defaultMode = 'light' as ptr
+    defaultMode_len = 5
     mode = 'light' as ptr
     mode_len = 5
   </state>
-  <MuiCssVarsProvider colorScheme={colorScheme} mode={mode}>
+  <MuiCssVarsProvider color={color} colorScheme={colorScheme} defaultMode={defaultMode} mode={mode}>
     <Slot />
   </MuiCssVarsProvider>
-  !colorScheme !colorScheme_len !mode !mode_len
+  !color !color_len !colorScheme !colorScheme_len !defaultMode !defaultMode_len !mode !mode_len
 </Component>
 
 <Component name="GlobalStyles">
@@ -1592,12 +1853,16 @@
 
 <Component name="ScopedCssBaseline">
   <state>
+    colorScheme = 'light' as ptr
+    colorScheme_len = 5
     enableColorScheme = 0 as i1
+    mode = 'light' as ptr
+    mode_len = 5
   </state>
-  <div className="MuiScopedCssBaseline-root">
+  <div className="MuiScopedCssBaseline-root{enableColorScheme ? ' MuiScopedCssBaseline-enableColorScheme' : ''}{mode == 'dark' ? ' MuiScopedCssBaseline-modeDark' : ' MuiScopedCssBaseline-modeLight'}{colorScheme == 'dark' ? ' MuiScopedCssBaseline-colorSchemeDark' : ''}" data-mui-color-scheme="{colorScheme}" data-mui-mode="{mode}">
     <Slot />
   </div>
-  !enableColorScheme
+  !colorScheme !colorScheme_len !enableColorScheme !mode !mode_len
 </Component>
 
 <Component name="NoSsr">
@@ -1684,45 +1949,51 @@
 
 <Component name="InitColorSchemeScript">
   <state>
-    attribute = alloc 64
+    attribute = 'data-mui-color-scheme' as ptr
     attribute_len = 21
-    colorSchemeNode = alloc 64
+    colorScheme = 'light' as ptr
+    colorScheme_len = 5
+    colorSchemeNode = 'document.documentElement' as ptr
     colorSchemeNode_len = 24
-    colorSchemeStorageKey = alloc 64
+    colorSchemeStorageKey = 'mui-color-scheme' as ptr
     colorSchemeStorageKey_len = 16
-    defaultDarkColorScheme = alloc 32
+    defaultDarkColorScheme = 'dark' as ptr
     defaultDarkColorScheme_len = 4
-    defaultLightColorScheme = alloc 32
+    defaultLightColorScheme = 'light' as ptr
     defaultLightColorScheme_len = 5
-    defaultMode = alloc 32
+    defaultMode = 'system' as ptr
     defaultMode_len = 6
-    modeStorageKey = alloc 64
+    mode = 'system' as ptr
+    mode_len = 6
+    modeStorageKey = 'mui-mode' as ptr
     modeStorageKey_len = 8
     nonce = alloc 128
     nonce_len = 0
   </state>
-  <span className="MuiInitColorSchemeScript-root" hidden="true" />
-  !attribute !attribute_len !colorSchemeNode !colorSchemeNode_len !colorSchemeStorageKey !colorSchemeStorageKey_len !defaultDarkColorScheme !defaultDarkColorScheme_len !defaultLightColorScheme !defaultLightColorScheme_len !defaultMode !defaultMode_len !modeStorageKey !modeStorageKey_len !nonce !nonce_len
+  <span className="MuiInitColorSchemeScript-root{mode == 'dark' ? ' MuiInitColorSchemeScript-modeDark' : ''}{colorScheme == 'dark' ? ' MuiInitColorSchemeScript-colorSchemeDark' : ''}" data-mui-attribute="{attribute}" data-mui-color-scheme="{colorScheme}" data-mui-color-scheme-node="{colorSchemeNode}" data-mui-color-scheme-storage-key="{colorSchemeStorageKey}" data-mui-default-dark-color-scheme="{defaultDarkColorScheme}" data-mui-default-light-color-scheme="{defaultLightColorScheme}" data-mui-default-mode="{defaultMode}" data-mui-mode="{mode}" data-mui-mode-storage-key="{modeStorageKey}" hidden="true" />
+  !attribute !attribute_len !colorScheme !colorScheme_len !colorSchemeNode !colorSchemeNode_len !colorSchemeStorageKey !colorSchemeStorageKey_len !defaultDarkColorScheme !defaultDarkColorScheme_len !defaultLightColorScheme !defaultLightColorScheme_len !defaultMode !defaultMode_len !mode !mode_len !modeStorageKey !modeStorageKey_len !nonce !nonce_len
 </Component>
 
 <Component name="Grid">
   <state>
+    className = alloc 256
+    className_len = 0
     columns = 12
     columnSpacing = 0
     container = 0 as i1
-    direction = alloc 32
+    direction = 'row' as ptr
     direction_len = 3
     offset = 0
     rowSpacing = 0
     size = 0
     spacing = 0
-    wrap = alloc 32
+    wrap = 'wrap' as ptr
     wrap_len = 4
   </state>
-  <div className="MuiGrid-root">
+  <div className="MuiGrid-root{container ? ' MuiGrid-container' : ''}{wrap == 'nowrap' ? ' MuiGrid-wrap-xs-nowrap' : ''}{wrap == 'wrap-reverse' ? ' MuiGrid-wrap-xs-wrap-reverse' : ''}{direction == 'row' ? ' MuiGrid-direction-xs-row' : ''}{direction == 'row-reverse' ? ' MuiGrid-direction-xs-row-reverse' : ''}{direction == 'column' ? ' MuiGrid-direction-xs-column' : ''}{direction == 'column-reverse' ? ' MuiGrid-direction-xs-column-reverse' : ''}{size == 1 ? ' MuiGrid-grid-xs-1' : ''}{size == 2 ? ' MuiGrid-grid-xs-2' : ''}{size == 3 ? ' MuiGrid-grid-xs-3' : ''}{size == 4 ? ' MuiGrid-grid-xs-4' : ''}{size == 5 ? ' MuiGrid-grid-xs-5' : ''}{size == 6 ? ' MuiGrid-grid-xs-6' : ''}{size == 7 ? ' MuiGrid-grid-xs-7' : ''}{size == 8 ? ' MuiGrid-grid-xs-8' : ''}{size == 9 ? ' MuiGrid-grid-xs-9' : ''}{size == 10 ? ' MuiGrid-grid-xs-10' : ''}{size == 11 ? ' MuiGrid-grid-xs-11' : ''}{size == 12 ? ' MuiGrid-grid-xs-12' : ''}{container && spacing == 1 ? ' MuiGrid-spacing-xs-1' : ''}{container && spacing == 2 ? ' MuiGrid-spacing-xs-2' : ''}{container && spacing == 3 ? ' MuiGrid-spacing-xs-3' : ''}{container && spacing == 4 ? ' MuiGrid-spacing-xs-4' : ''}{container && spacing == 5 ? ' MuiGrid-spacing-xs-5' : ''}{container && spacing == 6 ? ' MuiGrid-spacing-xs-6' : ''}{container && spacing == 7 ? ' MuiGrid-spacing-xs-7' : ''}{container && spacing == 8 ? ' MuiGrid-spacing-xs-8' : ''}{container && spacing == 9 ? ' MuiGrid-spacing-xs-9' : ''}{container && spacing == 10 ? ' MuiGrid-spacing-xs-10' : ''}{container && spacing == 11 ? ' MuiGrid-spacing-xs-11' : ''}{container && spacing == 12 ? ' MuiGrid-spacing-xs-12' : ''} {className}">
     <Slot />
   </div>
-  !columns !columnSpacing !container !direction !direction_len !offset !rowSpacing !size !spacing !wrap !wrap_len
+  !className !className_len !columns !columnSpacing !container !direction !direction_len !offset !rowSpacing !size !spacing !wrap !wrap_len
 </Component>
 
 <Component name="AppBar">
@@ -1733,7 +2004,7 @@
     position = 'fixed' as ptr
     position_len = 5
   </state>
-  <header className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root{color == 'default' ? ' MuiAppBar-colorDefault' : ''}{color == 'inherit' ? ' MuiAppBar-colorInherit' : ''}{color == 'primary' ? ' MuiAppBar-colorPrimary' : ''}{color == 'secondary' ? ' MuiAppBar-colorSecondary' : ''}{color == 'transparent' ? ' MuiAppBar-colorTransparent' : ''}{position == 'fixed' ? ' MuiAppBar-positionFixed' : ''}{position == 'absolute' ? ' MuiAppBar-positionAbsolute' : ''}{position == 'static' ? ' MuiAppBar-positionStatic' : ''}{position == 'sticky' ? ' MuiAppBar-positionSticky' : ''}{position == 'relative' ? ' MuiAppBar-positionRelative' : ''}">
+  <header className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root{color == 'default' ? ' MuiAppBar-colorDefault' : ''}{color == 'inherit' ? ' MuiAppBar-colorInherit' : ''}{color == 'primary' ? ' MuiAppBar-colorPrimary' : ''}{color == 'secondary' ? ' MuiAppBar-colorSecondary' : ''}{color == 'transparent' ? ' MuiAppBar-colorTransparent' : ''}{position == 'fixed' ? ' MuiAppBar-positionFixed' : ''}{position == 'absolute' ? ' MuiAppBar-positionAbsolute' : ''}{position == 'static' ? ' MuiAppBar-positionStatic' : ''}{position == 'sticky' ? ' MuiAppBar-positionSticky' : ''}{position == 'relative' ? ' MuiAppBar-positionRelative' : ''}" data-color="{color}" data-position="{position}" data-enable-color-on-dark="{enableColorOnDark}">
     <Slot />
   </header>
   !color !color_len !enableColorOnDark !position !position_len
@@ -1745,7 +2016,7 @@
     variant = 'regular' as ptr
     variant_len = 7
   </state>
-  <div className="MuiToolbar-root{disableGutters ? '' : ' MuiToolbar-gutters'}{variant == 'regular' ? ' MuiToolbar-regular' : ''}{variant == 'dense' ? ' MuiToolbar-dense' : ''}">
+  <div className="MuiToolbar-root{disableGutters ? '' : ' MuiToolbar-gutters'}{variant == 'regular' ? ' MuiToolbar-regular' : ''}{variant == 'dense' ? ' MuiToolbar-dense' : ''}" data-variant="{variant}" data-disable-gutters="{disableGutters}">
     <Slot />
   </div>
   !disableGutters !variant !variant_len
@@ -1762,7 +2033,8 @@
     variant = 'circular' as ptr
     variant_len = 8
   </state>
-  <div className="MuiAvatar-root{variant == 'circular' ? ' MuiAvatar-circular' : ''}{variant == 'rounded' ? ' MuiAvatar-rounded' : ''}{variant == 'square' ? ' MuiAvatar-square' : ''} MuiAvatar-colorDefault">
+  <div className="MuiAvatar-root{variant == 'circular' ? ' MuiAvatar-circular' : ''}{variant == 'rounded' ? ' MuiAvatar-rounded' : ''}{variant == 'square' ? ' MuiAvatar-square' : ''}{src_len == 0 && srcSet_len == 0 ? ' MuiAvatar-colorDefault' : ''}" data-variant="{variant}" data-has-image="{src_len == 0 && srcSet_len == 0 ? '0' : '1'}" data-alt="{alt}" data-src="{src}" data-src-set="{srcSet}">
+    <img className="MuiAvatar-img{src_len == 0 && srcSet_len == 0 ? ' MuiAvatar-imgHidden' : ''}" alt={alt} src={src} srcset={srcSet} />
     <Slot />
   </div>
   !alt !alt_len !src !src_len !srcSet !srcSet_len !variant !variant_len
@@ -1770,38 +2042,69 @@
 
 <Component name="AvatarGroup">
   <state>
+    className = alloc 256
+    className_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
     max = 5
-    spacing = alloc 32
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
+    spacing = 'medium' as ptr
     spacing_len = 6
     total = 0
-    variant = alloc 32
+    variant = 'circular' as ptr
     variant_len = 8
   </state>
-  <div className="MuiAvatarGroup-root">
-    <Slot />
+  <div className="MuiAvatarGroup-root {className} {classesRoot} {slotPropsRootClassName}" data-variant="{variant}" data-max="{max}" data-spacing="{spacing}" data-total="{total}">
+    <Slot contextProps="variant" />
   </div>
-  !max !spacing !spacing_len !total !variant !variant_len
+  !className !className_len !classesRoot !classesRoot_len !max !slotPropsRootClassName !slotPropsRootClassName_len !spacing !spacing_len !total !variant !variant_len
 </Component>
 
 <Component name="Alert">
   <state>
+    action = alloc 128
+    action_len = 0
+    className = alloc 256
+    className_len = 0
+    classesAction = alloc 256
+    classesAction_len = 0
+    classesIcon = alloc 256
+    classesIcon_len = 0
+    classesMessage = alloc 256
+    classesMessage_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
     closeText = alloc 64
     closeText_len = 5
     color = alloc 32
     color_len = 0
-    role = alloc 32
+    icon = 1 as i1
+    role = 'alert' as ptr
     role_len = 5
     severity = 'success' as ptr
     severity_len = 7
+    slotPropsActionClassName = alloc 256
+    slotPropsActionClassName_len = 0
+    slotPropsIconClassName = alloc 256
+    slotPropsIconClassName_len = 0
+    slotPropsMessageClassName = alloc 256
+    slotPropsMessageClassName_len = 0
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
     variant = 'standard' as ptr
     variant_len = 8
   </state>
-  <div className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiAlert-root{severity == 'success' ? ' MuiAlert-colorSuccess' : ''}{severity == 'warning' ? ' MuiAlert-colorWarning' : ''}{severity == 'error' ? ' MuiAlert-colorError' : ''}{severity == 'info' ? ' MuiAlert-colorInfo' : ''}{variant == 'standard' ? ' MuiAlert-standard' : ''}{variant == 'outlined' ? ' MuiAlert-outlined' : ''}{variant == 'filled' ? ' MuiAlert-filled' : ''}" role="alert">
-    <div className="MuiAlert-message">
+  <div className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiAlert-root{color_len && color == 'success' ? ' MuiAlert-colorSuccess' : ''}{color_len == 0 && severity == 'success' ? ' MuiAlert-colorSuccess' : ''}{color_len && color == 'warning' ? ' MuiAlert-colorWarning' : ''}{color_len == 0 && severity == 'warning' ? ' MuiAlert-colorWarning' : ''}{color_len && color == 'error' ? ' MuiAlert-colorError' : ''}{color_len == 0 && severity == 'error' ? ' MuiAlert-colorError' : ''}{color_len && color == 'info' ? ' MuiAlert-colorInfo' : ''}{color_len == 0 && severity == 'info' ? ' MuiAlert-colorInfo' : ''}{variant == 'standard' ? ' MuiAlert-standard' : ''}{variant == 'outlined' ? ' MuiAlert-outlined' : ''}{variant == 'filled' ? ' MuiAlert-filled' : ''}{variant == 'standard' && color_len && color == 'success' ? ' MuiAlert-standardSuccess' : ''}{variant == 'standard' && color_len == 0 && severity == 'success' ? ' MuiAlert-standardSuccess' : ''}{variant == 'standard' && color_len && color == 'warning' ? ' MuiAlert-standardWarning' : ''}{variant == 'standard' && color_len == 0 && severity == 'warning' ? ' MuiAlert-standardWarning' : ''}{variant == 'standard' && color_len && color == 'error' ? ' MuiAlert-standardError' : ''}{variant == 'standard' && color_len == 0 && severity == 'error' ? ' MuiAlert-standardError' : ''}{variant == 'standard' && color_len && color == 'info' ? ' MuiAlert-standardInfo' : ''}{variant == 'standard' && color_len == 0 && severity == 'info' ? ' MuiAlert-standardInfo' : ''}{variant == 'outlined' && color_len && color == 'success' ? ' MuiAlert-outlinedSuccess' : ''}{variant == 'outlined' && color_len == 0 && severity == 'success' ? ' MuiAlert-outlinedSuccess' : ''}{variant == 'outlined' && color_len && color == 'warning' ? ' MuiAlert-outlinedWarning' : ''}{variant == 'outlined' && color_len == 0 && severity == 'warning' ? ' MuiAlert-outlinedWarning' : ''}{variant == 'outlined' && color_len && color == 'error' ? ' MuiAlert-outlinedError' : ''}{variant == 'outlined' && color_len == 0 && severity == 'error' ? ' MuiAlert-outlinedError' : ''}{variant == 'outlined' && color_len && color == 'info' ? ' MuiAlert-outlinedInfo' : ''}{variant == 'outlined' && color_len == 0 && severity == 'info' ? ' MuiAlert-outlinedInfo' : ''}{variant == 'filled' && color_len && color == 'success' ? ' MuiAlert-filledSuccess' : ''}{variant == 'filled' && color_len == 0 && severity == 'success' ? ' MuiAlert-filledSuccess' : ''}{variant == 'filled' && color_len && color == 'warning' ? ' MuiAlert-filledWarning' : ''}{variant == 'filled' && color_len == 0 && severity == 'warning' ? ' MuiAlert-filledWarning' : ''}{variant == 'filled' && color_len && color == 'error' ? ' MuiAlert-filledError' : ''}{variant == 'filled' && color_len == 0 && severity == 'error' ? ' MuiAlert-filledError' : ''}{variant == 'filled' && color_len && color == 'info' ? ' MuiAlert-filledInfo' : ''}{variant == 'filled' && color_len == 0 && severity == 'info' ? ' MuiAlert-filledInfo' : ''} {className} {classesRoot} {slotPropsRootClassName}" role={role}>
+    <div className="MuiAlert-icon{icon ? '' : ' MuiAlert-iconHidden'} {classesIcon} {slotPropsIconClassName}" aria-hidden="true">
+      <span className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit MuiAlert-iconSvg" />
+    </div>
+    <div className="MuiAlert-message {classesMessage} {slotPropsMessageClassName}">
       <Slot />
     </div>
+    <div className="MuiAlert-action{action_len ? '' : ' MuiAlert-actionHidden'} {classesAction} {slotPropsActionClassName}">{action}</div>
   </div>
-  !closeText !closeText_len !color !color_len !role !role_len !severity !severity_len !variant !variant_len
+  !action !action_len !className !className_len !classesAction !classesAction_len !classesIcon !classesIcon_len !classesMessage !classesMessage_len !classesRoot !classesRoot_len !closeText !closeText_len !color !color_len !icon !role !role_len !severity !severity_len !slotPropsActionClassName !slotPropsActionClassName_len !slotPropsIconClassName !slotPropsIconClassName_len !slotPropsMessageClassName !slotPropsMessageClassName_len !slotPropsRootClassName !slotPropsRootClassName_len !variant !variant_len
 </Component>
 
 <Component name="AlertTitle">
@@ -1818,7 +2121,7 @@
     expanded = 0 as i1
     square = 0 as i1
   </state>
-  <div className="MuiPaper-root MuiPaper-elevation{square ? '' : ' MuiPaper-rounded'} MuiPaper-elevation1 MuiAccordion-root{square ? '' : ' MuiAccordion-rounded'}{disableGutters ? '' : ' MuiAccordion-gutters'}{expanded ? ' Mui-expanded' : ''}{disabled ? ' Mui-disabled' : ''}">
+  <div className="MuiPaper-root MuiPaper-elevation{square ? '' : ' MuiPaper-rounded'} MuiPaper-elevation1 MuiAccordion-root{square ? '' : ' MuiAccordion-rounded'}{disableGutters ? '' : ' MuiAccordion-gutters'}{expanded ? ' Mui-expanded' : ''}{disabled ? ' Mui-disabled' : ''}" data-default-expanded="{defaultExpanded}" data-disabled="{disabled}" data-disable-gutters="{disableGutters}" data-expanded="{expanded}" data-square="{square}">
     <h3 className="MuiAccordion-heading">
       <Slot />
     </h3>
@@ -1832,8 +2135,8 @@
     disableGutters = 0 as i1
     expanded = 0 as i1
   </state>
-  <button className="MuiButtonBase-root MuiAccordionSummary-root{disableGutters ? '' : ' MuiAccordionSummary-gutters'}{expanded ? ' Mui-expanded' : ''}{disabled ? ' Mui-disabled' : ''}" disabled={disabled}>
-    <span className="MuiAccordionSummary-content{expanded ? ' Mui-expanded' : ''}">
+  <button className="MuiButtonBase-root MuiAccordionSummary-root{disableGutters ? '' : ' MuiAccordionSummary-gutters'}{expanded ? ' Mui-expanded' : ''}{disabled ? ' Mui-disabled' : ''}" disabled={disabled} data-disabled="{disabled}" data-disable-gutters="{disableGutters}" data-expanded="{expanded}">
+    <span className="MuiAccordionSummary-content{expanded ? ' Mui-expanded' : ''}" data-summary-expanded="{expanded}">
       <Slot />
     </span>
   </button>
@@ -1850,7 +2153,7 @@
   <state>
     disableSpacing = 0 as i1
   </state>
-  <div className="MuiAccordionActions-root{disableSpacing ? '' : ' MuiAccordionActions-spacing'}">
+  <div className="MuiAccordionActions-root{disableSpacing ? '' : ' MuiAccordionActions-spacing'}" data-disable-spacing="{disableSpacing}">
     <Slot />
   </div>
   !disableSpacing
@@ -1861,7 +2164,7 @@
     invisible = 0 as i1
     open = 0 as i1
   </state>
-  <div className="MuiBackdrop-root{open ? ' Mui-open' : ' Mui-hidden'}{invisible ? ' MuiBackdrop-invisible' : ''}">
+  <div className="MuiBackdrop-root{open ? ' Mui-open' : ''}{invisible ? ' MuiBackdrop-invisible' : ''}" hidden={1 - open}>
     <Slot />
   </div>
   !invisible !open
@@ -1878,7 +2181,7 @@
     variant = 'indeterminate' as ptr
     variant_len = 13
   </state>
-  <span className="MuiCircularProgress-root{variant == 'indeterminate' ? ' MuiCircularProgress-indeterminate' : ''}{variant == 'determinate' ? ' MuiCircularProgress-determinate' : ''}{color == 'primary' ? ' MuiCircularProgress-colorPrimary' : ''}{color == 'secondary' ? ' MuiCircularProgress-colorSecondary' : ''}{color == 'error' ? ' MuiCircularProgress-colorError' : ''}{color == 'info' ? ' MuiCircularProgress-colorInfo' : ''}{color == 'success' ? ' MuiCircularProgress-colorSuccess' : ''}{color == 'warning' ? ' MuiCircularProgress-colorWarning' : ''}{color == 'inherit' ? ' MuiCircularProgress-colorInherit' : ''}">
+  <span className="MuiCircularProgress-root{variant == 'indeterminate' ? ' MuiCircularProgress-indeterminate' : ''}{variant == 'determinate' ? ' MuiCircularProgress-determinate' : ''}{color == 'primary' ? ' MuiCircularProgress-colorPrimary' : ''}{color == 'secondary' ? ' MuiCircularProgress-colorSecondary' : ''}{color == 'error' ? ' MuiCircularProgress-colorError' : ''}{color == 'info' ? ' MuiCircularProgress-colorInfo' : ''}{color == 'success' ? ' MuiCircularProgress-colorSuccess' : ''}{color == 'warning' ? ' MuiCircularProgress-colorWarning' : ''}{color == 'inherit' ? ' MuiCircularProgress-colorInherit' : ''}" role="progressbar" data-variant="{variant}" data-value="{value}" data-size="{size}" data-thickness="{thickness}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{value}">
     <svg className="MuiCircularProgress-svg">
       <circle className="MuiCircularProgress-circle{variant == 'indeterminate' ? ' MuiCircularProgress-circleIndeterminate' : ''}{variant == 'determinate' ? ' MuiCircularProgress-circleDeterminate' : ''}{disableShrink ? ' MuiCircularProgress-circleDisableShrink' : ''}" />
     </svg>
@@ -1895,7 +2198,7 @@
     variant = 'indeterminate' as ptr
     variant_len = 13
   </state>
-  <span className="MuiLinearProgress-root{color == 'primary' ? ' MuiLinearProgress-colorPrimary' : ''}{color == 'secondary' ? ' MuiLinearProgress-colorSecondary' : ''}{color == 'error' ? ' MuiLinearProgress-colorError' : ''}{color == 'info' ? ' MuiLinearProgress-colorInfo' : ''}{color == 'success' ? ' MuiLinearProgress-colorSuccess' : ''}{color == 'warning' ? ' MuiLinearProgress-colorWarning' : ''}{color == 'inherit' ? ' MuiLinearProgress-colorInherit' : ''}{variant == 'indeterminate' ? ' MuiLinearProgress-indeterminate' : ''}{variant == 'determinate' ? ' MuiLinearProgress-determinate' : ''}{variant == 'buffer' ? ' MuiLinearProgress-buffer' : ''}">
+  <span className="MuiLinearProgress-root{color == 'primary' ? ' MuiLinearProgress-colorPrimary' : ''}{color == 'secondary' ? ' MuiLinearProgress-colorSecondary' : ''}{color == 'error' ? ' MuiLinearProgress-colorError' : ''}{color == 'info' ? ' MuiLinearProgress-colorInfo' : ''}{color == 'success' ? ' MuiLinearProgress-colorSuccess' : ''}{color == 'warning' ? ' MuiLinearProgress-colorWarning' : ''}{color == 'inherit' ? ' MuiLinearProgress-colorInherit' : ''}{variant == 'indeterminate' ? ' MuiLinearProgress-indeterminate' : ''}{variant == 'determinate' ? ' MuiLinearProgress-determinate' : ''}{variant == 'buffer' ? ' MuiLinearProgress-buffer' : ''}" role="progressbar" data-variant="{variant}" data-value="{value}" data-value-buffer="{valueBuffer}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{value}">
     <span className="MuiLinearProgress-bar MuiLinearProgress-bar1{variant == 'indeterminate' ? ' MuiLinearProgress-bar1Indeterminate' : ''}{variant == 'determinate' ? ' MuiLinearProgress-bar1Determinate' : ''}{variant == 'buffer' ? ' MuiLinearProgress-bar1Buffer' : ''}" />
     <span className="MuiLinearProgress-bar MuiLinearProgress-bar2{variant == 'buffer' && color == 'primary' ? ' MuiLinearProgress-colorPrimary' : ''}{variant == 'buffer' && color == 'secondary' ? ' MuiLinearProgress-colorSecondary' : ''}{variant == 'buffer' && color == 'error' ? ' MuiLinearProgress-colorError' : ''}{variant == 'buffer' && color == 'info' ? ' MuiLinearProgress-colorInfo' : ''}{variant == 'buffer' && color == 'success' ? ' MuiLinearProgress-colorSuccess' : ''}{variant == 'buffer' && color == 'warning' ? ' MuiLinearProgress-colorWarning' : ''}{variant == 'buffer' && color == 'inherit' ? ' MuiLinearProgress-colorInherit' : ''}{variant == 'indeterminate' ? ' MuiLinearProgress-bar2Indeterminate' : ''}{variant == 'buffer' ? ' MuiLinearProgress-bar2Buffer' : ''}" />
   </span>
@@ -1911,7 +2214,7 @@
     variant_len = 4
     width = 0
   </state>
-  <span className="MuiSkeleton-root{variant == 'text' ? ' MuiSkeleton-text' : ''}{variant == 'rectangular' ? ' MuiSkeleton-rectangular' : ''}{variant == 'rounded' ? ' MuiSkeleton-rounded' : ''}{variant == 'circular' ? ' MuiSkeleton-circular' : ''}{animation == 'pulse' ? ' MuiSkeleton-pulse' : ''}{animation == 'wave' ? ' MuiSkeleton-wave' : ''}">
+  <span className="MuiSkeleton-root{variant == 'text' ? ' MuiSkeleton-text' : ''}{variant == 'rectangular' ? ' MuiSkeleton-rectangular' : ''}{variant == 'rounded' ? ' MuiSkeleton-rounded' : ''}{variant == 'circular' ? ' MuiSkeleton-circular' : ''}{animation == 'pulse' ? ' MuiSkeleton-pulse' : ''}{animation == 'wave' ? ' MuiSkeleton-wave' : ''}" data-variant="{variant}" data-animation="{animation}" data-width="{width}" data-height="{height}">
     <Slot />
   </span>
   !animation !animation_len !height !variant !variant_len !width
@@ -1931,8 +2234,8 @@
     variant = 'text' as ptr
     variant_len = 4
   </state>
-  <button className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root{variant == 'text' ? ' MuiButton-text MuiLoadingButton-text' : ''}{variant == 'contained' ? ' MuiButton-contained MuiLoadingButton-contained' : ''}{variant == 'outlined' ? ' MuiButton-outlined MuiLoadingButton-outlined' : ''}{color == 'primary' ? ' MuiButton-colorPrimary MuiLoadingButton-colorPrimary' : ''}{color == 'secondary' ? ' MuiButton-colorSecondary MuiLoadingButton-colorSecondary' : ''}{size == 'small' ? ' MuiButton-sizeSmall MuiLoadingButton-sizeSmall' : ''}{size == 'medium' ? ' MuiButton-sizeMedium MuiLoadingButton-sizeMedium' : ''}{size == 'large' ? ' MuiButton-sizeLarge MuiLoadingButton-sizeLarge' : ''}{fullWidth ? ' MuiButton-fullWidth MuiLoadingButton-fullWidth' : ''}{loading ? ' MuiLoadingButton-loading Mui-disabled MuiLoadingButton-loadingPositionCenter' : ''}{disabled ? ' Mui-disabled' : ''}" disabled={loading}>
-    <span className="MuiLoadingButton-loadingIndicator{loading ? '' : ' MuiLoadingButton-loadingIndicatorHidden'}">
+  <button className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root{variant == 'text' ? ' MuiButton-text MuiLoadingButton-text' : ''}{variant == 'contained' ? ' MuiButton-contained MuiLoadingButton-contained' : ''}{variant == 'outlined' ? ' MuiButton-outlined MuiLoadingButton-outlined' : ''}{color == 'primary' ? ' MuiButton-colorPrimary MuiLoadingButton-colorPrimary' : ''}{color == 'secondary' ? ' MuiButton-colorSecondary MuiLoadingButton-colorSecondary' : ''}{size == 'small' ? ' MuiButton-sizeSmall MuiLoadingButton-sizeSmall' : ''}{size == 'medium' ? ' MuiButton-sizeMedium MuiLoadingButton-sizeMedium' : ''}{size == 'large' ? ' MuiButton-sizeLarge MuiLoadingButton-sizeLarge' : ''}{fullWidth ? ' MuiButton-fullWidth MuiLoadingButton-fullWidth' : ''}{loading ? ' MuiLoadingButton-loading Mui-disabled' : ''}{loading && loadingPosition == 'start' ? ' MuiLoadingButton-loadingPositionStart' : ''}{loading && loadingPosition == 'center' ? ' MuiLoadingButton-loadingPositionCenter' : ''}{loading && loadingPosition == 'end' ? ' MuiLoadingButton-loadingPositionEnd' : ''}{disabled ? ' Mui-disabled' : ''}" disabled={loading}>
+    <span className="MuiLoadingButton-loadingIndicator{loading ? '' : ' MuiLoadingButton-loadingIndicatorHidden'}{loadingPosition == 'start' ? ' MuiLoadingButton-loadingIndicatorStart' : ''}{loadingPosition == 'center' ? ' MuiLoadingButton-loadingIndicatorCenter' : ''}{loadingPosition == 'end' ? ' MuiLoadingButton-loadingIndicatorEnd' : ''}">
       <CircularProgress color="inherit" size="16" />
     </span>
     <Slot />
@@ -2027,8 +2330,8 @@
     value = alloc 64
     value_len = 1
   </state>
-  <div className="MuiTabContext-root" data-value="tab-context">
-    <Slot />
+  <div className="MuiTabContext-root" data-value="{value}">
+    <Slot contextProps="value" contextScope="descendants" />
   </div>
   !value !value_len
 </Component>
@@ -2041,7 +2344,7 @@
     value = alloc 64
     value_len = 1
   </state>
-  <Tabs centered={centered} orientation="horizontal" value="tab-list">
+  <Tabs centered={centered} orientation={orientation}>
     <Slot />
   </Tabs>
   !centered !orientation !orientation_len !value !value_len
@@ -2053,31 +2356,108 @@
     value = alloc 64
     value_len = 1
   </state>
-  <div className="MuiTabPanel-root" role="tabpanel" data-value="tab-panel">
+  <div className="MuiTabPanel-root{keepMounted ? ' MuiTabPanel-keepMounted' : ''}" role="tabpanel" data-value="{value}">
     <Slot />
   </div>
   !keepMounted !value !value_len
 </Component>
 
+<Component name="TreeView">
+  <state>
+    ariaLabel = alloc 128
+    ariaLabel_len = 0
+    disabledItemsFocusable = 0 as i1
+    disableSelection = 0 as i1
+    expandedItems = alloc 256
+    expandedItems_len = 0
+    multiSelect = 0 as i1
+    selectedItems = alloc 256
+    selectedItems_len = 0
+  </state>
+  <ul className="MuiTreeView-root MuiSimpleTreeView-root{multiSelect ? ' MuiTreeView-multiSelect MuiSimpleTreeView-multiSelect' : ''}{disableSelection ? ' MuiTreeView-disableSelection MuiSimpleTreeView-disableSelection' : ''}{disabledItemsFocusable ? ' MuiTreeView-disabledItemsFocusable MuiSimpleTreeView-disabledItemsFocusable' : ''}" role="tree" aria-label="{ariaLabel}" aria-multiselectable="{multiSelect ? 'true' : 'false'}" data-expanded-items="{expandedItems}" data-selected-items="{selectedItems}">
+    <Slot />
+  </ul>
+  !ariaLabel !ariaLabel_len !disabledItemsFocusable !disableSelection !expandedItems !expandedItems_len !multiSelect !selectedItems !selectedItems_len
+</Component>
+
+<Component name="SimpleTreeView">
+  <state>
+    ariaLabel = alloc 128
+    ariaLabel_len = 0
+    disabledItemsFocusable = 0 as i1
+    disableSelection = 0 as i1
+    expandedItems = alloc 256
+    expandedItems_len = 0
+    multiSelect = 0 as i1
+    selectedItems = alloc 256
+    selectedItems_len = 0
+  </state>
+  <TreeView ariaLabel={ariaLabel} disabledItemsFocusable={disabledItemsFocusable} disableSelection={disableSelection} expandedItems={expandedItems} multiSelect={multiSelect} selectedItems={selectedItems}>
+    <Slot />
+  </TreeView>
+  !ariaLabel !ariaLabel_len !disabledItemsFocusable !disableSelection !expandedItems !expandedItems_len !multiSelect !selectedItems !selectedItems_len
+</Component>
+
+<Component name="TreeItem">
+  <state>
+    disabled = 0 as i1
+    expanded = 0 as i1
+    label = alloc 256
+    label_len = 0
+    level = 1
+    nodeId = alloc 128
+    nodeId_len = 0
+    selected = 0 as i1
+  </state>
+  <li className="MuiTreeItem-root{expanded ? ' Mui-expanded' : ''}{selected ? ' Mui-selected' : ''}{disabled ? ' Mui-disabled' : ''}" role="treeitem" aria-expanded="{expanded ? 'true' : 'false'}" aria-selected="{selected ? 'true' : 'false'}" aria-disabled="{disabled ? 'true' : 'false'}" aria-level="{level}" data-node-id="{nodeId}">
+    <div className="MuiTreeItem-content{expanded ? ' Mui-expanded' : ''}{selected ? ' Mui-selected' : ''}{disabled ? ' Mui-disabled' : ''}">
+      <span className="MuiTreeItem-iconContainer{expanded ? ' Mui-expanded' : ''}" />
+      <span className="MuiTreeItem-label">{label}</span>
+    </div>
+    <ul className="MuiTreeItem-group" role="group">
+      <Slot />
+    </ul>
+  </li>
+  !disabled !expanded !label !label_len !level !nodeId !nodeId_len !selected
+</Component>
+
 <Component name="SnackbarContent">
   <state>
-    action = 0 as i1
+    action = alloc 256
+    action_len = 0
+    className = alloc 256
+    className_len = 0
+    classesAction = alloc 256
+    classesAction_len = 0
+    classesMessage = alloc 256
+    classesMessage_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
     message = alloc 512
     message_len = 0
     role = alloc 32
     role_len = 5
+    slotPropsActionClassName = alloc 256
+    slotPropsActionClassName_len = 0
+    slotPropsMessageClassName = alloc 256
+    slotPropsMessageClassName_len = 0
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
   </state>
-  <div className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation6 MuiSnackbarContent-root" role="alert">
-    <div className="MuiSnackbarContent-message">
+  <div className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation6 MuiSnackbarContent-root {className} {classesRoot} {slotPropsRootClassName}" role={role} data-message="{message}" data-action="{action}">
+    <div className="MuiSnackbarContent-message {classesMessage} {slotPropsMessageClassName}">
+      {message}
       <Slot />
     </div>
-    <div className="MuiSnackbarContent-action" />
+    <div className="MuiSnackbarContent-action{action_len ? '' : ' MuiSnackbarContent-actionHidden'} {classesAction} {slotPropsActionClassName}">{action}</div>
   </div>
-  !action !message !message_len !role !role_len
+  !action !action_len !className !className_len !classesAction !classesAction_len !classesMessage !classesMessage_len !classesRoot !classesRoot_len !message !message_len !role !role_len !slotPropsActionClassName !slotPropsActionClassName_len !slotPropsMessageClassName !slotPropsMessageClassName_len !slotPropsRootClassName !slotPropsRootClassName_len
 </Component>
 
 <Component name="Snackbar">
   <state>
+    action = alloc 256
+    action_len = 0
     anchorOriginHorizontal = 'left' as ptr
     anchorOriginHorizontal_len = 4
     anchorOriginVertical = 'bottom' as ptr
@@ -2089,14 +2469,14 @@
     open = 0 as i1
     resumeHideDuration = 0
   </state>
-  <div className="MuiSnackbar-root{anchorOriginVertical == 'top' ? ' MuiSnackbar-anchorOriginTop' : ''}{anchorOriginVertical == 'bottom' ? ' MuiSnackbar-anchorOriginBottom' : ''}{anchorOriginHorizontal == 'left' ? ' MuiSnackbar-anchorOriginLeft' : ''}{anchorOriginHorizontal == 'center' ? ' MuiSnackbar-anchorOriginCenter' : ''}{anchorOriginHorizontal == 'right' ? ' MuiSnackbar-anchorOriginRight' : ''}{anchorOriginVertical == 'top' && anchorOriginHorizontal == 'left' ? ' MuiSnackbar-anchorOriginTopLeft' : ''}{anchorOriginVertical == 'top' && anchorOriginHorizontal == 'center' ? ' MuiSnackbar-anchorOriginTopCenter' : ''}{anchorOriginVertical == 'top' && anchorOriginHorizontal == 'right' ? ' MuiSnackbar-anchorOriginTopRight' : ''}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'left' ? ' MuiSnackbar-anchorOriginBottomLeft' : ''}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'center' ? ' MuiSnackbar-anchorOriginBottomCenter' : ''}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'right' ? ' MuiSnackbar-anchorOriginBottomRight' : ''}">
+  <div className="MuiSnackbar-root{open ? ' Mui-open' : ' Mui-hidden'}{anchorOriginVertical == 'top' ? ' MuiSnackbar-anchorOriginTop' : ''}{anchorOriginVertical == 'bottom' ? ' MuiSnackbar-anchorOriginBottom' : ''}{anchorOriginHorizontal == 'left' ? ' MuiSnackbar-anchorOriginLeft' : ''}{anchorOriginHorizontal == 'center' ? ' MuiSnackbar-anchorOriginCenter' : ''}{anchorOriginHorizontal == 'right' ? ' MuiSnackbar-anchorOriginRight' : ''}{anchorOriginVertical == 'top' && anchorOriginHorizontal == 'left' ? ' MuiSnackbar-anchorOriginTopLeft' : ''}{anchorOriginVertical == 'top' && anchorOriginHorizontal == 'center' ? ' MuiSnackbar-anchorOriginTopCenter' : ''}{anchorOriginVertical == 'top' && anchorOriginHorizontal == 'right' ? ' MuiSnackbar-anchorOriginTopRight' : ''}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'left' ? ' MuiSnackbar-anchorOriginBottomLeft' : ''}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'center' ? ' MuiSnackbar-anchorOriginBottomCenter' : ''}{anchorOriginVertical == 'bottom' && anchorOriginHorizontal == 'right' ? ' MuiSnackbar-anchorOriginBottomRight' : ''}" aria-hidden="{open ? 'false' : 'true'}" data-open="{open}" data-anchor-origin-vertical="{anchorOriginVertical}" data-anchor-origin-horizontal="{anchorOriginHorizontal}" hidden={1 - open}>
     <div className="MuiGrow-root">
-      <SnackbarContent>
+      <SnackbarContent action={action} message={message}>
         <Slot />
       </SnackbarContent>
     </div>
   </div>
-  !anchorOriginHorizontal !anchorOriginHorizontal_len !anchorOriginVertical !anchorOriginVertical_len !autoHideDuration !disableWindowBlurListener !message !message_len !open !resumeHideDuration
+  !action !action_len !anchorOriginHorizontal !anchorOriginHorizontal_len !anchorOriginVertical !anchorOriginVertical_len !autoHideDuration !disableWindowBlurListener !message !message_len !open !resumeHideDuration
 </Component>
 
 <Component name="MobileStepper">
@@ -2124,6 +2504,22 @@
 
 <Component name="Dialog">
   <state>
+    ariaDescribedby = alloc 128
+    ariaDescribedby_len = 0
+    ariaLabel = alloc 128
+    ariaLabel_len = 0
+    ariaLabelledby = alloc 128
+    ariaLabelledby_len = 0
+    className = alloc 256
+    className_len = 0
+    classesBackdrop = alloc 256
+    classesBackdrop_len = 0
+    classesContainer = alloc 256
+    classesContainer_len = 0
+    classesPaper = alloc 256
+    classesPaper_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
     fullScreen = 0 as i1
     fullWidth = 0 as i1
     maxWidth = 'sm' as ptr
@@ -2131,16 +2527,24 @@
     open = 0 as i1
     scroll = 'paper' as ptr
     scroll_len = 5
+    slotPropsBackdropClassName = alloc 256
+    slotPropsBackdropClassName_len = 0
+    slotPropsContainerClassName = alloc 256
+    slotPropsContainerClassName_len = 0
+    slotPropsPaperClassName = alloc 256
+    slotPropsPaperClassName_len = 0
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
   </state>
-  <div className="MuiDialog-root" role="presentation">
-    <div className="MuiBackdrop-root MuiDialog-backdrop" />
-    <div className="MuiDialog-container{scroll == 'paper' ? ' MuiDialog-scrollPaper' : ''}{scroll == 'body' ? ' MuiDialog-scrollBody' : ''}" role="presentation">
-      <div className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiDialog-paper{maxWidth == 'xs' ? ' MuiDialog-paperWidthXs' : ''}{maxWidth == 'sm' ? ' MuiDialog-paperWidthSm' : ''}{maxWidth == 'md' ? ' MuiDialog-paperWidthMd' : ''}{maxWidth == 'lg' ? ' MuiDialog-paperWidthLg' : ''}{maxWidth == 'xl' ? ' MuiDialog-paperWidthXl' : ''}{fullWidth ? ' MuiDialog-paperFullWidth' : ''}{fullScreen ? ' MuiDialog-paperFullScreen' : ''}" role="dialog">
+  <div className="MuiDialog-root{open ? ' Mui-open' : ' Mui-hidden'} {className} {classesRoot} {slotPropsRootClassName}" role="presentation" aria-hidden="{open ? 'false' : 'true'}" data-open="{open}" data-scroll="{scroll}" data-max-width="{maxWidth}" data-full-width="{fullWidth}" data-full-screen="{fullScreen}" hidden={1 - open}>
+    <div className="MuiBackdrop-root MuiDialog-backdrop {classesBackdrop} {slotPropsBackdropClassName}" />
+    <div className="MuiDialog-container{scroll == 'paper' ? ' MuiDialog-scrollPaper' : ''}{scroll == 'body' ? ' MuiDialog-scrollBody' : ''} {classesContainer} {slotPropsContainerClassName}" role="presentation" data-dialog-scroll="{scroll}">
+      <div className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiDialog-paper{maxWidth == 'xs' ? ' MuiDialog-paperWidthXs' : ''}{maxWidth == 'sm' ? ' MuiDialog-paperWidthSm' : ''}{maxWidth == 'md' ? ' MuiDialog-paperWidthMd' : ''}{maxWidth == 'lg' ? ' MuiDialog-paperWidthLg' : ''}{maxWidth == 'xl' ? ' MuiDialog-paperWidthXl' : ''}{fullWidth ? ' MuiDialog-paperFullWidth' : ''}{fullScreen ? ' MuiDialog-paperFullScreen' : ''} {classesPaper} {slotPropsPaperClassName}" role="dialog" aria-label="{ariaLabel}" aria-labelledby="{ariaLabelledby}" aria-describedby="{ariaDescribedby}" aria-modal="{open ? 'true' : 'false'}" data-dialog-max-width="{maxWidth}" data-dialog-full-width="{fullWidth}" data-dialog-full-screen="{fullScreen}" tabindex="-1">
         <Slot />
       </div>
     </div>
   </div>
-  !fullScreen !fullWidth !maxWidth !maxWidth_len !open !scroll !scroll_len
+  !ariaDescribedby !ariaDescribedby_len !ariaLabel !ariaLabel_len !ariaLabelledby !ariaLabelledby_len !className !className_len !classesBackdrop !classesBackdrop_len !classesContainer !classesContainer_len !classesPaper !classesPaper_len !classesRoot !classesRoot_len !fullScreen !fullWidth !maxWidth !maxWidth_len !open !scroll !scroll_len !slotPropsBackdropClassName !slotPropsBackdropClassName_len !slotPropsContainerClassName !slotPropsContainerClassName_len !slotPropsPaperClassName !slotPropsPaperClassName_len !slotPropsRootClassName !slotPropsRootClassName_len
 </Component>
 
 <Component name="DialogActions">
@@ -2157,22 +2561,36 @@
   <state>
     dividers = 0 as i1
   </state>
-  <div className="MuiDialogContent-root{dividers ? ' MuiDialogContent-dividers' : ''}">
+  <div className="MuiDialogContent-root{dividers ? ' MuiDialogContent-dividers' : ''}" data-dividers="{dividers}">
     <Slot />
   </div>
   !dividers
 </Component>
 
 <Component name="DialogContentText">
-  <p className="MuiTypography-root MuiTypography-body1 MuiDialogContentText-root">
+  <state>
+    className = alloc 256
+    className_len = 0
+    id = alloc 128
+    id_len = 0
+  </state>
+  <p className="MuiTypography-root MuiTypography-body1 MuiDialogContentText-root {className}" id="{id}">
     <Slot />
   </p>
+  !className !className_len !id !id_len
 </Component>
 
 <Component name="DialogTitle">
-  <h2 className="MuiTypography-root MuiTypography-h6 MuiDialogTitle-root">
+  <state>
+    className = alloc 256
+    className_len = 0
+    id = alloc 128
+    id_len = 0
+  </state>
+  <h2 className="MuiTypography-root MuiTypography-h6 MuiDialogTitle-root {className}" id="{id}">
     <Slot />
   </h2>
+  !className !className_len !id !id_len
 </Component>
 
 <Component name="Container">
@@ -2182,7 +2600,7 @@
     fixed = 0 as i1
     disableGutters = 0 as i1
   </state>
-  <div className="MuiContainer-root{maxWidth == 'xs' ? ' MuiContainer-maxWidthXs' : ''}{maxWidth == 'sm' ? ' MuiContainer-maxWidthSm' : ''}{maxWidth == 'md' ? ' MuiContainer-maxWidthMd' : ''}{maxWidth == 'lg' ? ' MuiContainer-maxWidthLg' : ''}{maxWidth == 'xl' ? ' MuiContainer-maxWidthXl' : ''}{fixed ? ' MuiContainer-fixed' : ''}{disableGutters ? ' MuiContainer-disableGutters' : ''}">
+  <div className="MuiContainer-root{maxWidth == 'xs' ? ' MuiContainer-maxWidthXs' : ''}{maxWidth == 'sm' ? ' MuiContainer-maxWidthSm' : ''}{maxWidth == 'md' ? ' MuiContainer-maxWidthMd' : ''}{maxWidth == 'lg' ? ' MuiContainer-maxWidthLg' : ''}{maxWidth == 'xl' ? ' MuiContainer-maxWidthXl' : ''}{fixed ? ' MuiContainer-fixed' : ''}{disableGutters ? ' MuiContainer-disableGutters' : ''}" data-max-width="{maxWidth}" data-fixed="{fixed}" data-disable-gutters="{disableGutters}">
     <Slot />
   </div>
   !maxWidth !maxWidth_len !fixed !disableGutters
@@ -2190,15 +2608,17 @@
 
 <Component name="Stack">
   <state>
-    direction = alloc 32
+    className = alloc 256
+    className_len = 0
+    direction = 'column' as ptr
     direction_len = 6
     spacing = 0
     useFlexGap = 0 as i1
   </state>
-  <div className="MuiStack-root" style={{ display: "flex", flexDirection: "column" }}>
+  <div className="MuiStack-root{direction == 'column' ? ' MuiStack-directionColumn' : ''}{direction == 'row' ? ' MuiStack-directionRow' : ''}{direction == 'row-reverse' ? ' MuiStack-directionRowReverse' : ''}{direction == 'column-reverse' ? ' MuiStack-directionColumnReverse' : ''}{spacing == 0 ? ' MuiStack-spacing0' : ''}{spacing == 1 ? ' MuiStack-spacing1' : ''}{spacing == 2 ? ' MuiStack-spacing2' : ''}{spacing == 3 ? ' MuiStack-spacing3' : ''}{spacing == 4 ? ' MuiStack-spacing4' : ''}{useFlexGap ? ' MuiStack-useFlexGap' : ''} {className}">
     <Slot />
   </div>
-  !direction !direction_len !spacing !useFlexGap
+  !className !className_len !direction !direction_len !spacing !useFlexGap
 </Component>
 
 <Component name="Divider">
@@ -2212,38 +2632,42 @@
     variant = 'fullWidth' as ptr
     variant_len = 9
   </state>
-  <hr className="MuiDivider-root{variant == 'fullWidth' ? ' MuiDivider-fullWidth' : ''}{variant == 'inset' ? ' MuiDivider-inset' : ''}{variant == 'middle' ? ' MuiDivider-middle' : ''}{orientation == 'vertical' ? ' MuiDivider-vertical' : ''}{absolute ? ' MuiDivider-absolute' : ''}{flexItem ? ' MuiDivider-flexItem' : ''}{orientation == 'horizontal' && textAlign == 'right' ? ' MuiDivider-textAlignRight' : ''}{orientation == 'horizontal' && textAlign == 'left' ? ' MuiDivider-textAlignLeft' : ''}" />
+  <hr className="MuiDivider-root{variant == 'fullWidth' ? ' MuiDivider-fullWidth' : ''}{variant == 'inset' ? ' MuiDivider-inset' : ''}{variant == 'middle' ? ' MuiDivider-middle' : ''}{orientation == 'vertical' ? ' MuiDivider-vertical' : ''}{absolute ? ' MuiDivider-absolute' : ''}{flexItem ? ' MuiDivider-flexItem' : ''}{orientation == 'horizontal' && textAlign == 'right' ? ' MuiDivider-textAlignRight' : ''}{orientation == 'horizontal' && textAlign == 'left' ? ' MuiDivider-textAlignLeft' : ''}" data-variant="{variant}" data-orientation="{orientation}" data-absolute="{absolute}" data-flex-item="{flexItem}" data-text-align="{textAlign}" />
   !absolute !flexItem !orientation !orientation_len !textAlign !textAlign_len !variant !variant_len
 </Component>
 
 <Component name="Paper">
   <state>
+    className = alloc 256
+    className_len = 0
     elevation = 1
     square = 0 as i1
     variant = 'elevation' as ptr
     variant_len = 9
   </state>
-  <div className="MuiPaper-root{square ? '' : ' MuiPaper-rounded'}{variant == 'outlined' ? ' MuiPaper-outlined' : ''}{variant == 'elevation' ? ' MuiPaper-elevation' : ''}{variant == 'elevation' && elevation == 0 ? ' MuiPaper-elevation0' : ''}{variant == 'elevation' && elevation == 1 ? ' MuiPaper-elevation1' : ''}{variant == 'elevation' && elevation == 2 ? ' MuiPaper-elevation2' : ''}{variant == 'elevation' && elevation == 3 ? ' MuiPaper-elevation3' : ''}{variant == 'elevation' && elevation == 4 ? ' MuiPaper-elevation4' : ''}{variant == 'elevation' && elevation == 5 ? ' MuiPaper-elevation5' : ''}{variant == 'elevation' && elevation == 6 ? ' MuiPaper-elevation6' : ''}{variant == 'elevation' && elevation == 7 ? ' MuiPaper-elevation7' : ''}{variant == 'elevation' && elevation == 8 ? ' MuiPaper-elevation8' : ''}{variant == 'elevation' && elevation == 9 ? ' MuiPaper-elevation9' : ''}{variant == 'elevation' && elevation == 10 ? ' MuiPaper-elevation10' : ''}{variant == 'elevation' && elevation == 11 ? ' MuiPaper-elevation11' : ''}{variant == 'elevation' && elevation == 12 ? ' MuiPaper-elevation12' : ''}{variant == 'elevation' && elevation == 13 ? ' MuiPaper-elevation13' : ''}{variant == 'elevation' && elevation == 14 ? ' MuiPaper-elevation14' : ''}{variant == 'elevation' && elevation == 15 ? ' MuiPaper-elevation15' : ''}{variant == 'elevation' && elevation == 16 ? ' MuiPaper-elevation16' : ''}{variant == 'elevation' && elevation == 17 ? ' MuiPaper-elevation17' : ''}{variant == 'elevation' && elevation == 18 ? ' MuiPaper-elevation18' : ''}{variant == 'elevation' && elevation == 19 ? ' MuiPaper-elevation19' : ''}{variant == 'elevation' && elevation == 20 ? ' MuiPaper-elevation20' : ''}{variant == 'elevation' && elevation == 21 ? ' MuiPaper-elevation21' : ''}{variant == 'elevation' && elevation == 22 ? ' MuiPaper-elevation22' : ''}{variant == 'elevation' && elevation == 23 ? ' MuiPaper-elevation23' : ''}{variant == 'elevation' && elevation == 24 ? ' MuiPaper-elevation24' : ''}">
+  <div className="MuiPaper-root{square ? '' : ' MuiPaper-rounded'}{variant == 'outlined' ? ' MuiPaper-outlined' : ''}{variant == 'elevation' ? ' MuiPaper-elevation' : ''}{variant == 'elevation' && elevation == 0 ? ' MuiPaper-elevation0' : ''}{variant == 'elevation' && elevation == 1 ? ' MuiPaper-elevation1' : ''}{variant == 'elevation' && elevation == 2 ? ' MuiPaper-elevation2' : ''}{variant == 'elevation' && elevation == 3 ? ' MuiPaper-elevation3' : ''}{variant == 'elevation' && elevation == 4 ? ' MuiPaper-elevation4' : ''}{variant == 'elevation' && elevation == 5 ? ' MuiPaper-elevation5' : ''}{variant == 'elevation' && elevation == 6 ? ' MuiPaper-elevation6' : ''}{variant == 'elevation' && elevation == 7 ? ' MuiPaper-elevation7' : ''}{variant == 'elevation' && elevation == 8 ? ' MuiPaper-elevation8' : ''}{variant == 'elevation' && elevation == 9 ? ' MuiPaper-elevation9' : ''}{variant == 'elevation' && elevation == 10 ? ' MuiPaper-elevation10' : ''}{variant == 'elevation' && elevation == 11 ? ' MuiPaper-elevation11' : ''}{variant == 'elevation' && elevation == 12 ? ' MuiPaper-elevation12' : ''}{variant == 'elevation' && elevation == 13 ? ' MuiPaper-elevation13' : ''}{variant == 'elevation' && elevation == 14 ? ' MuiPaper-elevation14' : ''}{variant == 'elevation' && elevation == 15 ? ' MuiPaper-elevation15' : ''}{variant == 'elevation' && elevation == 16 ? ' MuiPaper-elevation16' : ''}{variant == 'elevation' && elevation == 17 ? ' MuiPaper-elevation17' : ''}{variant == 'elevation' && elevation == 18 ? ' MuiPaper-elevation18' : ''}{variant == 'elevation' && elevation == 19 ? ' MuiPaper-elevation19' : ''}{variant == 'elevation' && elevation == 20 ? ' MuiPaper-elevation20' : ''}{variant == 'elevation' && elevation == 21 ? ' MuiPaper-elevation21' : ''}{variant == 'elevation' && elevation == 22 ? ' MuiPaper-elevation22' : ''}{variant == 'elevation' && elevation == 23 ? ' MuiPaper-elevation23' : ''}{variant == 'elevation' && elevation == 24 ? ' MuiPaper-elevation24' : ''} {className}" data-variant="{variant}" data-elevation="{elevation}" data-square="{square}">
     <Slot />
   </div>
-  !elevation !square !variant !variant_len
+  !className !className_len !elevation !square !variant !variant_len
 </Component>
 
 <Component name="Card">
   <state>
+    className = alloc 256
+    className_len = 0
     raised = 0 as i1
   </state>
-  <div className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiCard-root{raised ? ' MuiPaper-elevation8' : ''}{raised ? '' : ' MuiPaper-elevation1'}">
+  <div className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiCard-root{raised ? ' MuiPaper-elevation8' : ''}{raised ? '' : ' MuiPaper-elevation1'} {className}" data-raised="{raised}">
     <Slot />
   </div>
-  !raised
+  !className !className_len !raised
 </Component>
 
 <Component name="CardActionArea">
   <state>
     disabled = 0 as i1
   </state>
-  <button className="MuiButtonBase-root MuiCardActionArea-root{disabled ? ' Mui-disabled' : ''}" disabled={disabled}>
+  <button className="MuiButtonBase-root MuiCardActionArea-root{disabled ? ' Mui-disabled' : ''}" disabled={disabled} data-disabled="{disabled}">
     <Slot />
     <span className="MuiCardActionArea-focusHighlight" />
   </button>
@@ -2254,7 +2678,7 @@
   <state>
     disableSpacing = 0 as i1
   </state>
-  <div className="MuiCardActions-root{disableSpacing ? '' : ' MuiCardActions-spacing'}">
+  <div className="MuiCardActions-root{disableSpacing ? '' : ' MuiCardActions-spacing'}" data-disable-spacing="{disableSpacing}">
     <Slot />
   </div>
   !disableSpacing
@@ -2268,10 +2692,14 @@
     title = alloc 256
     title_len = 0
   </state>
-  <div className="MuiCardHeader-root">
+  <div className="MuiCardHeader-root" data-disable-typography="{disableTypography}" data-title="{title}" data-subheader="{subheader}">
     <div className="MuiCardHeader-content">
-      <span className="MuiTypography-root MuiTypography-h5 MuiCardHeader-title">
+      <span className="MuiCardHeader-title{disableTypography ? '' : ' MuiTypography-root MuiTypography-h5'}">
+        {title}
         <Slot />
+      </span>
+      <span className="MuiCardHeader-subheader{disableTypography ? '' : ' MuiTypography-root MuiTypography-body1'}">
+        {subheader}
       </span>
     </div>
   </div>
@@ -2286,27 +2714,29 @@
 
 <Component name="CardMedia">
   <state>
+    component = 'div' as ptr
+    component_len = 3
     image = alloc 256
     image_len = 0
     src = alloc 256
     src_len = 0
   </state>
-  <div className="MuiCardMedia-root">
+  <div className="MuiCardMedia-root{component == 'img' ? ' MuiCardMedia-media MuiCardMedia-img' : ''}{component == 'picture' ? ' MuiCardMedia-media MuiCardMedia-img' : ''}{component == 'video' ? ' MuiCardMedia-media' : ''}{component == 'audio' ? ' MuiCardMedia-media' : ''}{component == 'iframe' ? ' MuiCardMedia-media' : ''}{image_len ? ' MuiCardMedia-img' : ''}{src_len ? ' MuiCardMedia-media' : ''}" data-component="{component}" data-image="{image}" data-src="{src}" data-has-image="{image_len ? '1' : '0'}" data-has-src="{src_len ? '1' : '0'}">
     <Slot />
   </div>
-  !image !image_len !src !src_len
+  !component !component_len !image !image_len !src !src_len
 </Component>
 
 <Component name="ImageList">
   <state>
     cols = 2
     gap = 4
-    rowHeight = alloc 32
+    rowHeight = 'auto' as ptr
     rowHeight_len = 4
     variant = 'standard' as ptr
     variant_len = 8
   </state>
-  <ul className="MuiImageList-root{variant == 'standard' ? ' MuiImageList-standard' : ''}{variant == 'masonry' ? ' MuiImageList-masonry' : ''}{variant == 'woven' ? ' MuiImageList-woven' : ''}">
+  <ul className="MuiImageList-root{variant == 'standard' ? ' MuiImageList-standard' : ''}{variant == 'masonry' ? ' MuiImageList-masonry' : ''}{variant == 'woven' ? ' MuiImageList-woven' : ''}" data-cols="{cols}" data-gap="{gap}" data-row-height="{rowHeight}">
     <Slot />
   </ul>
   !cols !gap !rowHeight !rowHeight_len !variant !variant_len
@@ -2319,7 +2749,7 @@
     variant = 'standard' as ptr
     variant_len = 8
   </state>
-  <li className="MuiImageListItem-root{variant == 'standard' ? ' MuiImageListItem-standard' : ''}{variant == 'woven' ? ' MuiImageListItem-woven' : ''}">
+  <li className="MuiImageListItem-root{variant == 'standard' ? ' MuiImageListItem-standard' : ''}{variant == 'woven' ? ' MuiImageListItem-woven' : ''}" data-cols="{cols}" data-rows="{rows}">
     <Slot />
   </li>
   !cols !rows !variant !variant_len
@@ -2327,7 +2757,8 @@
 
 <Component name="ImageListItemBar">
   <state>
-    actionIcon = 0 as i1
+    actionIcon = alloc 256
+    actionIcon_len = 0
     actionPosition = 'right' as ptr
     actionPosition_len = 5
     position = 'bottom' as ptr
@@ -2337,16 +2768,17 @@
     title = alloc 256
     title_len = 0
   </state>
-  <div className="MuiImageListItemBar-root{position == 'top' ? ' MuiImageListItemBar-positionTop' : ''}{position == 'bottom' ? ' MuiImageListItemBar-positionBottom' : ''}{actionPosition == 'left' ? ' MuiImageListItemBar-actionPositionLeft' : ''}{actionPosition == 'right' ? ' MuiImageListItemBar-actionPositionRight' : ''}">
+  <div className="MuiImageListItemBar-root{position == 'top' ? ' MuiImageListItemBar-positionTop' : ''}{position == 'bottom' ? ' MuiImageListItemBar-positionBottom' : ''}{actionPosition == 'left' ? ' MuiImageListItemBar-actionPositionLeft' : ''}{actionPosition == 'right' ? ' MuiImageListItemBar-actionPositionRight' : ''}" data-position="{position}" data-action-position="{actionPosition}" data-title="{title}" data-subtitle="{subtitle}" data-action-icon="{actionIcon}">
     <div className="MuiImageListItemBar-titleWrap">
       <div className="MuiImageListItemBar-title">
+        {title}
         <Slot />
       </div>
-      <div className="MuiImageListItemBar-subtitle" />
+      <div className="MuiImageListItemBar-subtitle">{subtitle}</div>
     </div>
-    <div className="MuiImageListItemBar-actionIcon" />
+    <div className="MuiImageListItemBar-actionIcon">{actionIcon}</div>
   </div>
-  !actionIcon !actionPosition !actionPosition_len !position !position_len !subtitle !subtitle_len !title !title_len
+  !actionIcon !actionIcon_len !actionPosition !actionPosition_len !position !position_len !subtitle !subtitle_len !title !title_len
 </Component>
 
 <Component name="List">
@@ -2362,7 +2794,7 @@
 
 <Component name="ListItem">
   <state>
-    alignItems = alloc 32
+    alignItems = 'center' as ptr
     alignItems_len = 6
     dense = 0 as i1
     disableGutters = 0 as i1
@@ -2377,7 +2809,7 @@
 
 <Component name="ListItemButton">
   <state>
-    alignItems = alloc 32
+    alignItems = 'center' as ptr
     alignItems_len = 6
     autoFocus = 0 as i1
     dense = 0 as i1
@@ -2386,7 +2818,7 @@
     divider = 0 as i1
     selected = 0 as i1
   </state>
-  <div className="MuiButtonBase-root MuiListItemButton-root{dense ? ' MuiListItemButton-dense' : ''}{disableGutters ? '' : ' MuiListItemButton-gutters'}{divider ? ' MuiListItemButton-divider' : ''}{disabled ? ' Mui-disabled' : ''}{selected ? ' Mui-selected' : ''}" tabindex="0">
+  <div className="MuiButtonBase-root MuiListItemButton-root{dense ? ' MuiListItemButton-dense' : ''}{disableGutters ? '' : ' MuiListItemButton-gutters'}{divider ? ' MuiListItemButton-divider' : ''}{disabled ? ' Mui-disabled' : ''}{selected ? ' Mui-selected' : ''}" tabindex="0" data-align-items="{alignItems}" data-dense="{dense}" data-disabled="{disabled}" data-disable-gutters="{disableGutters}" data-divider="{divider}" data-selected="{selected}">
     <Slot contextProps="dense disableGutters alignItems" />
   </div>
   !alignItems !alignItems_len !autoFocus !dense !disabled !disableGutters !divider !selected
@@ -2394,7 +2826,7 @@
 
 <Component name="ListItemAvatar">
   <state>
-    alignItems = alloc 32
+    alignItems = 'center' as ptr
     alignItems_len = 6
   </state>
   <div className="MuiListItemAvatar-root">
@@ -2420,7 +2852,13 @@
     secondary_len = 0
   </state>
   <div className="MuiListItemText-root{inset ? ' MuiListItemText-inset' : ''}{dense ? ' MuiListItemText-dense' : ''}{primary_len && secondary_len ? ' MuiListItemText-multiline' : ''}">
-    <Slot />
+    <span className="MuiListItemText-primary{disableTypography ? '' : ' MuiTypography-root MuiTypography-body1'}">
+      {primary}
+      <Slot />
+    </span>
+    <p className="MuiListItemText-secondary{disableTypography ? '' : ' MuiTypography-root MuiTypography-body2'}">
+      {secondary}
+    </p>
   </div>
   !disableTypography !inset !dense !primary !primary_len !secondary !secondary_len
 </Component>
@@ -2443,7 +2881,7 @@
     disableSticky = 0 as i1
     inset = 0 as i1
   </state>
-  <li className="MuiListSubheader-root{color == 'primary' ? ' MuiListSubheader-colorPrimary' : ''}{color == 'inherit' ? ' MuiListSubheader-colorInherit' : ''}{disableGutters ? '' : ' MuiListSubheader-gutters'}{disableSticky ? '' : ' MuiListSubheader-sticky'}{inset ? ' MuiListSubheader-inset' : ''}">
+  <li className="MuiListSubheader-root{color == 'primary' ? ' MuiListSubheader-colorPrimary' : ''}{color == 'inherit' ? ' MuiListSubheader-colorInherit' : ''}{disableGutters ? '' : ' MuiListSubheader-gutters'}{disableSticky ? '' : ' MuiListSubheader-sticky'}{inset ? ' MuiListSubheader-inset' : ''}" data-color="{color}" data-disable-gutters="{disableGutters}" data-disable-sticky="{disableSticky}" data-inset="{inset}">
     <Slot />
   </li>
   !color !color_len !disableGutters !disableSticky !inset
@@ -2463,7 +2901,7 @@
     size_len = 6
     stickyHeader = 0 as i1
   </state>
-  <table className="MuiTable-root{stickyHeader ? ' MuiTable-stickyHeader' : ''}">
+  <table className="MuiTable-root{stickyHeader ? ' MuiTable-stickyHeader' : ''}" data-sticky-header="{stickyHeader}">
     <Slot />
   </table>
   !padding !padding_len !size !size_len !stickyHeader
@@ -2492,7 +2930,7 @@
     hover = 0 as i1
     selected = 0 as i1
   </state>
-  <tr className="MuiTableRow-root{hover ? ' MuiTableRow-hover' : ''}{selected ? ' Mui-selected' : ''}">
+  <tr className="MuiTableRow-root{hover ? ' MuiTableRow-hover' : ''}{selected ? ' Mui-selected' : ''}" data-hover="{hover}" data-selected="{selected}">
     <Slot />
   </tr>
   !hover !selected
@@ -2510,7 +2948,7 @@
     variant = alloc 32
     variant_len = 4
   </state>
-  <td className="MuiTableCell-root MuiTableCell-body{size == 'small' ? ' MuiTableCell-sizeSmall' : ''}{size == 'medium' ? ' MuiTableCell-sizeMedium' : ''}{stickyHeader ? ' MuiTableCell-stickyHeader' : ''}">
+  <td className="MuiTableCell-root MuiTableCell-body{size == 'small' ? ' MuiTableCell-sizeSmall' : ''}{size == 'medium' ? ' MuiTableCell-sizeMedium' : ''}{stickyHeader ? ' MuiTableCell-stickyHeader' : ''}" data-size="{size}" data-sticky-header="{stickyHeader}">
     <Slot />
   </td>
   !align !align_len !padding !padding_len !size !size_len !stickyHeader !variant !variant_len
@@ -2523,7 +2961,7 @@
     direction_len = 3
     hideSortIcon = 0 as i1
   </state>
-  <span className="MuiButtonBase-root MuiTableSortLabel-root{direction == 'asc' ? ' MuiTableSortLabel-directionAsc' : ''}{direction == 'desc' ? ' MuiTableSortLabel-directionDesc' : ''}{active ? ' Mui-active' : ''}" role="button">
+  <span className="MuiButtonBase-root MuiTableSortLabel-root{direction == 'asc' ? ' MuiTableSortLabel-directionAsc' : ''}{direction == 'desc' ? ' MuiTableSortLabel-directionDesc' : ''}{active ? ' Mui-active' : ''}" role="button" data-active="{active}" data-direction="{direction}" data-hide-sort-icon="{hideSortIcon}">
     <Slot />
     <span className="MuiTableSortLabel-icon{direction == 'asc' ? ' MuiTableSortLabel-directionAsc' : ''}{direction == 'desc' ? ' MuiTableSortLabel-directionDesc' : ''}">
       <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium" focusable="false" aria-hidden="true">
@@ -2536,71 +2974,165 @@
 
 <Component name="TablePaginationActions">
   <state>
+    className = alloc 256
+    className_len = 0
     count = 0
+    classesFirstButton = alloc 256
+    classesFirstButton_len = 0
+    classesFirstButtonIcon = alloc 256
+    classesFirstButtonIcon_len = 0
+    classesLastButton = alloc 256
+    classesLastButton_len = 0
+    classesLastButtonIcon = alloc 256
+    classesLastButtonIcon_len = 0
+    classesNextButton = alloc 256
+    classesNextButton_len = 0
+    classesNextButtonIcon = alloc 256
+    classesNextButtonIcon_len = 0
+    classesPreviousButton = alloc 256
+    classesPreviousButton_len = 0
+    classesPreviousButtonIcon = alloc 256
+    classesPreviousButtonIcon_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
     disabled = 0 as i1
     page = 0
     rowsPerPage = 10
     showFirstButton = 0 as i1
     showLastButton = 0 as i1
+    slotPropsFirstButtonClassName = alloc 256
+    slotPropsFirstButtonClassName_len = 0
+    slotPropsFirstButtonIconClassName = alloc 256
+    slotPropsFirstButtonIconClassName_len = 0
+    slotPropsLastButtonClassName = alloc 256
+    slotPropsLastButtonClassName_len = 0
+    slotPropsLastButtonIconClassName = alloc 256
+    slotPropsLastButtonIconClassName_len = 0
+    slotPropsNextButtonClassName = alloc 256
+    slotPropsNextButtonClassName_len = 0
+    slotPropsNextButtonIconClassName = alloc 256
+    slotPropsNextButtonIconClassName_len = 0
+    slotPropsPreviousButtonClassName = alloc 256
+    slotPropsPreviousButtonClassName_len = 0
+    slotPropsPreviousButtonIconClassName = alloc 256
+    slotPropsPreviousButtonIconClassName_len = 0
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
   </state>
-  <div className="MuiTablePaginationActions-root">
-    <button className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium{disabled ? ' Mui-disabled' : ''}" disabled={disabled} aria-label="Go to previous page">
-      <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium" focusable="false" aria-hidden="true">
+  <div className="MuiTablePaginationActions-root {className} {classesRoot} {slotPropsRootClassName}">
+    <button className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium{disabled ? ' Mui-disabled' : ''} {classesFirstButton} {slotPropsFirstButtonClassName}" disabled={disabled} aria-label="Go to first page" style="{showFirstButton ? '' : 'display:none'}">
+      <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium {classesFirstButtonIcon} {slotPropsFirstButtonIconClassName}" focusable="false" aria-hidden="true">
+        <path d="M18.41 16.59 13.83 12l4.58-4.59L17 6l-6 6 6 6z" />
+        <path d="M6 6h2v12H6z" />
+      </svg>
+    </button>
+    <button className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium{disabled ? ' Mui-disabled' : ''} {classesPreviousButton} {slotPropsPreviousButtonClassName}" disabled={disabled} aria-label="Go to previous page">
+      <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium {classesPreviousButtonIcon} {slotPropsPreviousButtonIconClassName}" focusable="false" aria-hidden="true">
         <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
       </svg>
     </button>
-    <button className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium{disabled ? ' Mui-disabled' : ''}" disabled={disabled} aria-label="Go to next page">
-      <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium" focusable="false" aria-hidden="true">
+    <button className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium{disabled ? ' Mui-disabled' : ''} {classesNextButton} {slotPropsNextButtonClassName}" disabled={disabled} aria-label="Go to next page">
+      <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium {classesNextButtonIcon} {slotPropsNextButtonIconClassName}" focusable="false" aria-hidden="true">
         <path d="m10 6 6 6-6 6-1.41-1.41L13.17 12 8.59 7.41z" />
+      </svg>
+    </button>
+    <button className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium{disabled ? ' Mui-disabled' : ''} {classesLastButton} {slotPropsLastButtonClassName}" disabled={disabled} aria-label="Go to last page" style="{showLastButton ? '' : 'display:none'}">
+      <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium {classesLastButtonIcon} {slotPropsLastButtonIconClassName}" focusable="false" aria-hidden="true">
+        <path d="M5.59 7.41 10.17 12l-4.58 4.59L7 18l6-6-6-6z" />
+        <path d="M16 6h2v12h-2z" />
       </svg>
     </button>
     <Slot />
   </div>
-  !count !disabled !page !rowsPerPage !showFirstButton !showLastButton
+  !className !className_len !count !classesFirstButton !classesFirstButtonIcon !classesFirstButtonIcon_len !classesFirstButton_len !classesLastButton !classesLastButtonIcon !classesLastButtonIcon_len !classesLastButton_len !classesNextButton !classesNextButtonIcon !classesNextButtonIcon_len !classesNextButton_len !classesPreviousButton !classesPreviousButtonIcon !classesPreviousButtonIcon_len !classesPreviousButton_len !classesRoot !classesRoot_len !disabled !page !rowsPerPage !showFirstButton !showLastButton !slotPropsFirstButtonClassName !slotPropsFirstButtonClassName_len !slotPropsFirstButtonIconClassName !slotPropsFirstButtonIconClassName_len !slotPropsLastButtonClassName !slotPropsLastButtonClassName_len !slotPropsLastButtonIconClassName !slotPropsLastButtonIconClassName_len !slotPropsNextButtonClassName !slotPropsNextButtonClassName_len !slotPropsNextButtonIconClassName !slotPropsNextButtonIconClassName_len !slotPropsPreviousButtonClassName !slotPropsPreviousButtonClassName_len !slotPropsPreviousButtonIconClassName !slotPropsPreviousButtonIconClassName_len !slotPropsRootClassName !slotPropsRootClassName_len
 </Component>
 
 <Component name="TablePagination">
   <state>
+    className = alloc 256
+    className_len = 0
     count = 0
+    classesActions = alloc 256
+    classesActions_len = 0
+    classesDisplayedRows = alloc 256
+    classesDisplayedRows_len = 0
+    classesInput = alloc 256
+    classesInput_len = 0
+    classesRoot = alloc 256
+    classesRoot_len = 0
+    classesSelect = alloc 256
+    classesSelect_len = 0
+    classesSelectIcon = alloc 256
+    classesSelectIcon_len = 0
+    classesSelectLabel = alloc 256
+    classesSelectLabel_len = 0
+    classesSelectRoot = alloc 256
+    classesSelectRoot_len = 0
+    classesSpacer = alloc 256
+    classesSpacer_len = 0
+    classesToolbar = alloc 256
+    classesToolbar_len = 0
     disabled = 0 as i1
-    labelRowsPerPage = alloc 64
+    labelRowsPerPage = 'Rows per page:' as ptr
     labelRowsPerPage_len = 14
     page = 0
     rowsPerPage = 10
     showFirstButton = 0 as i1
     showLastButton = 0 as i1
+    slotPropsActionsClassName = alloc 256
+    slotPropsActionsClassName_len = 0
+    slotPropsDisplayedRowsClassName = alloc 256
+    slotPropsDisplayedRowsClassName_len = 0
+    slotPropsInputClassName = alloc 256
+    slotPropsInputClassName_len = 0
+    slotPropsRootClassName = alloc 256
+    slotPropsRootClassName_len = 0
+    slotPropsSelectClassName = alloc 256
+    slotPropsSelectClassName_len = 0
+    slotPropsSelectIconClassName = alloc 256
+    slotPropsSelectIconClassName_len = 0
+    slotPropsSelectLabelClassName = alloc 256
+    slotPropsSelectLabelClassName_len = 0
+    slotPropsSelectRootClassName = alloc 256
+    slotPropsSelectRootClassName_len = 0
+    slotPropsSpacerClassName = alloc 256
+    slotPropsSpacerClassName_len = 0
+    slotPropsToolbarClassName = alloc 256
+    slotPropsToolbarClassName_len = 0
   </state>
-  <td className="MuiTableCell-root MuiTableCell-footer MuiTablePagination-root" colspan="1000">
-    <div className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular MuiTablePagination-toolbar">
-      <div className="MuiTablePagination-spacer" />
-      <p className="MuiTablePagination-selectLabel">Rows per page:</p>
-      <div className="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot">
-        <select className="MuiTablePagination-select" />
-        <svg className="MuiTablePagination-selectIcon" focusable="false" aria-hidden="true">
+  <td className="MuiTableCell-root MuiTableCell-footer MuiTablePagination-root {className} {classesRoot} {slotPropsRootClassName}" colspan="1000">
+    <div className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular MuiTablePagination-toolbar {classesToolbar} {slotPropsToolbarClassName}">
+      <div className="MuiTablePagination-spacer {classesSpacer} {slotPropsSpacerClassName}" />
+      <p className="MuiTablePagination-selectLabel {classesSelectLabel} {slotPropsSelectLabelClassName}">{labelRowsPerPage}</p>
+      <div className="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot {classesInput} {classesSelectRoot} {slotPropsInputClassName} {slotPropsSelectRootClassName}">
+        <select className="MuiTablePagination-select {classesSelect} {slotPropsSelectClassName}" disabled={disabled} />
+        <svg className="MuiTablePagination-selectIcon {classesSelectIcon} {slotPropsSelectIconClassName}" focusable="false" aria-hidden="true">
           <path d="m7 10 5 5 5-5z" />
         </svg>
       </div>
-      <p className="MuiTablePagination-displayedRows">0-0 of 0</p>
-      <div className="MuiTablePagination-actions">
-        <TablePaginationActions disabled={disabled} count={count} page={page} rowsPerPage={rowsPerPage} showFirstButton={showFirstButton} showLastButton={showLastButton} />
+      <p className="MuiTablePagination-displayedRows {classesDisplayedRows} {slotPropsDisplayedRowsClassName}">0-0 of 0</p>
+      <div className="MuiTablePagination-actions {classesActions} {slotPropsActionsClassName}">
+        <TablePaginationActions className="{classesActions} {slotPropsActionsClassName}" disabled={disabled} count={count} page={page} rowsPerPage={rowsPerPage} showFirstButton={showFirstButton} showLastButton={showLastButton} />
       </div>
       <Slot />
     </div>
   </td>
-  !count !disabled !labelRowsPerPage !labelRowsPerPage_len !page !rowsPerPage !showFirstButton !showLastButton
+  !className !className_len !count !classesActions !classesActions_len !classesDisplayedRows !classesDisplayedRows_len !classesInput !classesInput_len !classesRoot !classesRoot_len !classesSelect !classesSelectIcon !classesSelectIcon_len !classesSelectLabel !classesSelectLabel_len !classesSelectRoot !classesSelectRoot_len !classesSelect_len !classesSpacer !classesSpacer_len !classesToolbar !classesToolbar_len !disabled !labelRowsPerPage !labelRowsPerPage_len !page !rowsPerPage !showFirstButton !showLastButton !slotPropsActionsClassName !slotPropsActionsClassName_len !slotPropsDisplayedRowsClassName !slotPropsDisplayedRowsClassName_len !slotPropsInputClassName !slotPropsInputClassName_len !slotPropsRootClassName !slotPropsRootClassName_len !slotPropsSelectClassName !slotPropsSelectClassName_len !slotPropsSelectIconClassName !slotPropsSelectIconClassName_len !slotPropsSelectLabelClassName !slotPropsSelectLabelClassName_len !slotPropsSelectRootClassName !slotPropsSelectRootClassName_len !slotPropsSpacerClassName !slotPropsSpacerClassName_len !slotPropsToolbarClassName !slotPropsToolbarClassName_len
 </Component>
 
 <Component name="Typography">
   <state>
     align = 'inherit' as ptr
     align_len = 7
+    className = alloc 256
+    className_len = 0
     gutterBottom = 0 as i1
     noWrap = 0 as i1
     variant = 'body1' as ptr
     variant_len = 5
   </state>
-  <p className="MuiTypography-root{variant == 'h1' ? ' MuiTypography-h1' : ''}{variant == 'h2' ? ' MuiTypography-h2' : ''}{variant == 'h3' ? ' MuiTypography-h3' : ''}{variant == 'h4' ? ' MuiTypography-h4' : ''}{variant == 'h5' ? ' MuiTypography-h5' : ''}{variant == 'h6' ? ' MuiTypography-h6' : ''}{variant == 'subtitle1' ? ' MuiTypography-subtitle1' : ''}{variant == 'subtitle2' ? ' MuiTypography-subtitle2' : ''}{variant == 'body1' ? ' MuiTypography-body1' : ''}{variant == 'body2' ? ' MuiTypography-body2' : ''}{variant == 'inherit' ? ' MuiTypography-inherit' : ''}{variant == 'button' ? ' MuiTypography-button' : ''}{variant == 'caption' ? ' MuiTypography-caption' : ''}{variant == 'overline' ? ' MuiTypography-overline' : ''}{align == 'left' ? ' MuiTypography-alignLeft' : ''}{align == 'right' ? ' MuiTypography-alignRight' : ''}{align == 'center' ? ' MuiTypography-alignCenter' : ''}{align == 'justify' ? ' MuiTypography-alignJustify' : ''}{gutterBottom ? ' MuiTypography-gutterBottom' : ''}{noWrap ? ' MuiTypography-noWrap' : ''}">
+  <p className="MuiTypography-root{variant == 'h1' ? ' MuiTypography-h1' : ''}{variant == 'h2' ? ' MuiTypography-h2' : ''}{variant == 'h3' ? ' MuiTypography-h3' : ''}{variant == 'h4' ? ' MuiTypography-h4' : ''}{variant == 'h5' ? ' MuiTypography-h5' : ''}{variant == 'h6' ? ' MuiTypography-h6' : ''}{variant == 'subtitle1' ? ' MuiTypography-subtitle1' : ''}{variant == 'subtitle2' ? ' MuiTypography-subtitle2' : ''}{variant == 'body1' ? ' MuiTypography-body1' : ''}{variant == 'body2' ? ' MuiTypography-body2' : ''}{variant == 'inherit' ? ' MuiTypography-inherit' : ''}{variant == 'button' ? ' MuiTypography-button' : ''}{variant == 'caption' ? ' MuiTypography-caption' : ''}{variant == 'overline' ? ' MuiTypography-overline' : ''}{align == 'left' ? ' MuiTypography-alignLeft' : ''}{align == 'right' ? ' MuiTypography-alignRight' : ''}{align == 'center' ? ' MuiTypography-alignCenter' : ''}{align == 'justify' ? ' MuiTypography-alignJustify' : ''}{gutterBottom ? ' MuiTypography-gutterBottom' : ''}{noWrap ? ' MuiTypography-noWrap' : ''} {className}">
     <Slot />
   </p>
-  !align !align_len !gutterBottom !noWrap !variant !variant_len
+  !align !align_len !className !className_len !gutterBottom !noWrap !variant !variant_len
 </Component>

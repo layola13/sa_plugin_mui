@@ -1,16 +1,138 @@
 <Component name="MuiThemeLabSmoke">
+  <state>
+    click_away_open = 1 as i1
+    click_away_closed = 0 as i1
+  </state>
   <section className="mui-theme-lab-smoke">
-    <MuiThemeProvider mode="dark" colorScheme="dark">
+    <MuiThemeProvider mode="dark" colorScheme="dark" defaultMode="system">
       <CssBaseline enableColorScheme />
+      <ScopedCssBaseline enableColorScheme>
+        <Box>Scoped baseline inherits dark mode</Box>
+      </ScopedCssBaseline>
+      <InitColorSchemeScript />
       <ResponsiveBox direction="column" smDirection="row" mdDirection="row">
         <Iconify icon="eva:search-fill" color="secondary">Search icon</Iconify>
+        <Box className="mui-material-icon-smoke"><AddIcon color="primary" /><Typography>Add icon smoke</Typography></Box>
+        <Box className="mui-material-icon-smoke"><ShoppingCartIcon color="secondary" /><Typography>Cart icon smoke</Typography></Box>
+        <Box className="mui-material-icon-smoke"><DoneAllIcon color="success" /><Typography>Done all icon smoke</Typography></Box>
         <LoadingButton loading variant="contained">Loading action</LoadingButton>
+        <LoadingButton loading loadingPosition="start" variant="outlined">Loading start</LoadingButton>
+        <LoadingButton loading loadingPosition="end" variant="outlined">Loading end</LoadingButton>
         <Hidden smDown>Desktop only</Hidden>
       </ResponsiveBox>
+      <Stack direction="row" spacing={2} useFlexGap className="mui-stack-owner-state">
+        <Chip color="secondary">Theme stack item</Chip>
+        <Button variant="outlined">Theme stack action</Button>
+      </Stack>
     </MuiThemeProvider>
-    <MuiCssVarsProvider mode="dark" colorScheme="dark">
+    <MuiCssVarsProvider mode="dark" colorScheme="dark" defaultMode="system">
       <Box>CSS vars provider</Box>
     </MuiCssVarsProvider>
+    <Experimental_CssVarsProvider mode="dark" colorScheme="dark" defaultMode="system">
+      <InitColorSchemeScript />
+      <Box>Experimental CSS vars provider</Box>
+    </Experimental_CssVarsProvider>
+    <ThemeProvider mode="dark" colorScheme="dark" color="secondary">
+      <Box className="mui-theme-provider-nested-defaults">
+        <Button>Theme default color button</Button>
+        <Button color="primary">Theme explicit primary button</Button>
+        <Iconify icon="eva:color-palette-fill">Theme default iconify</Iconify>
+      </Box>
+    </ThemeProvider>
+    <Box className="mui-root-classname-smoke">
+      <Button className="custom-root-button" variant="contained">Classed button</Button>
+      <ButtonGroup className="custom-root-button-group" color="secondary"><Button>Grouped class button</Button></ButtonGroup>
+      <Paper className="custom-root-paper" elevation={3}>Classed paper</Paper>
+      <Card className="custom-root-card" raised>Classed card</Card>
+      <Typography className="custom-root-typography" variant="h6">Classed typography</Typography>
+      <Link className="custom-root-link" href="#classed-link">Classed link</Link>
+      <IconButton className="custom-root-icon-button" color="secondary">Classed icon button</IconButton>
+      <Fab className="custom-root-fab" color="secondary">Fab</Fab>
+      <Chip className="custom-root-chip" color="secondary">Classed chip</Chip>
+      <Badge className="custom-root-badge" badgeContent={7}>Classed badge</Badge>
+      <Alert className="custom-root-alert" severity="warning">Classed alert</Alert>
+    </Box>
+    <Box className="mui-slot-class-smoke">
+      <Menu open classes={{ root: "custom-menu-root", paper: "custom-menu-paper", list: "custom-menu-list" }} slotProps={{ root: { className: "custom-menu-root-slot" }, paper: { className: "custom-menu-paper-slot" }, list: { className: "custom-menu-list-slot" } }}><MenuItem>Slot menu action</MenuItem></Menu>
+      <Dialog open classes={{ root: "custom-dialog-root", backdrop: "custom-dialog-backdrop", container: "custom-dialog-container", paper: "custom-dialog-paper" }} slotProps={{ root: { className: "custom-dialog-root-slot" }, paper: { className: "custom-dialog-paper-slot" } }}><DialogTitle>Slot dialog</DialogTitle><DialogContent><DialogContentText>Slot dialog content</DialogContentText></DialogContent></Dialog>
+      <Slider value={40} classes={{ root: "custom-slider-root", track: "custom-slider-track", thumb: "custom-slider-thumb", input: "custom-slider-input" }} slotProps={{ track: { className: "custom-slider-track-slot" }, thumb: { className: "custom-slider-thumb-slot" } }} />
+      <Tooltip open arrow title="Slot tooltip" classes={{ popper: "custom-tooltip-popper", tooltip: "custom-tooltip-body", arrow: "custom-tooltip-arrow" }} slotProps={{ popper: { className: "custom-tooltip-popper-slot" }, tooltip: { className: "custom-tooltip-body-slot" }, arrow: { className: "custom-tooltip-arrow-slot" } }}><Button>Tooltip slot target</Button></Tooltip>
+      <Autocomplete open inputValue="Option" placeholder="Search" classes={{ root: "custom-autocomplete-root", inputRoot: "custom-autocomplete-input-root", input: "custom-autocomplete-input", popupIndicator: "custom-autocomplete-popup", popper: "custom-autocomplete-popper", paper: "custom-autocomplete-paper", listbox: "custom-autocomplete-listbox" }} slotProps={{ input: { className: "custom-autocomplete-input-slot" }, popper: { className: "custom-autocomplete-popper-slot" }, listbox: { className: "custom-autocomplete-listbox-slot" } }}><MenuItem>Option one</MenuItem></Autocomplete>
+      <Rating value={3} classes={{ root: "custom-rating-root", label: "custom-rating-label", icon: "custom-rating-icon", iconFilled: "custom-rating-icon-filled", iconEmpty: "custom-rating-icon-empty" }} slotProps={{ root: { className: "custom-rating-root-slot" }, icon: { className: "custom-rating-icon-slot" } }} />
+      <Alert severity="warning" color="info" variant="outlined" role="status" action="Retry" classes={{ icon: "custom-alert-icon", message: "custom-alert-message", action: "custom-alert-action" }} slotProps={{ icon: { className: "custom-alert-icon-slot" }, message: { className: "custom-alert-message-slot" }, action: { className: "custom-alert-action-slot" } }}>Slot alert content</Alert>
+      <SnackbarContent message="Slot snackbar message" action="Dismiss" role="status" classes={{ root: "custom-snackbar-root", message: "custom-snackbar-message", action: "custom-snackbar-action" }} slotProps={{ root: { className: "custom-snackbar-root-slot" }, message: { className: "custom-snackbar-message-slot" }, action: { className: "custom-snackbar-action-slot" } }}>Slot snackbar child</SnackbarContent>
+      <Breadcrumbs aria-label="Theme breadcrumb" className="custom-breadcrumb-root" classes={{ root: "custom-breadcrumb-root-class", ol: "custom-breadcrumb-ol" }} slotProps={{ root: { className: "custom-breadcrumb-root-slot" }, ol: { className: "custom-breadcrumb-ol-slot" } }}><span>Theme home</span><span>Theme page</span></Breadcrumbs>
+      <Pagination aria-label="Theme pages" color="secondary" variant="outlined" shape="rounded" size="small" className="custom-pagination-root" classes={{ root: "custom-pagination-root-class", ul: "custom-pagination-ul" }} slotProps={{ root: { className: "custom-pagination-root-slot" }, ul: { className: "custom-pagination-ul-slot" } }}>
+        <PaginationItem className="custom-pagination-item" classes={{ root: "custom-pagination-item-root", icon: "custom-pagination-icon" }} slotProps={{ root: { className: "custom-pagination-item-root-slot" }, icon: { className: "custom-pagination-icon-slot" } }}>Theme inherited page</PaginationItem>
+        <PaginationItem variant="text" shape="circular">Theme explicit page</PaginationItem>
+      </Pagination>
+      <BottomNavigation showLabels className="custom-bottom-navigation-root" classes={{ root: "custom-bottom-navigation-root-class" }} slotProps={{ root: { className: "custom-bottom-navigation-root-slot" } }}>
+        <BottomNavigationAction label="Theme parent label" classes={{ root: "custom-bottom-action-root", label: "custom-bottom-action-label" }} slotProps={{ root: { className: "custom-bottom-action-root-slot" }, label: { className: "custom-bottom-action-label-slot" } }} />
+        <BottomNavigationAction selected label="Theme selected label" />
+        <BottomNavigationAction disabled label="Theme disabled label" />
+      </BottomNavigation>
+      <TablePagination className="custom-table-pagination-root" classes={{ root: "custom-table-pagination-root-class", toolbar: "custom-table-pagination-toolbar", spacer: "custom-table-pagination-spacer", selectLabel: "custom-table-pagination-select-label", input: "custom-table-pagination-input", selectRoot: "custom-table-pagination-select-root", select: "custom-table-pagination-select", selectIcon: "custom-table-pagination-select-icon", displayedRows: "custom-table-pagination-displayed-rows", actions: "custom-table-pagination-actions" }} slotProps={{ root: { className: "custom-table-pagination-root-slot" }, toolbar: { className: "custom-table-pagination-toolbar-slot" }, spacer: { className: "custom-table-pagination-spacer-slot" }, selectLabel: { className: "custom-table-pagination-select-label-slot" }, input: { className: "custom-table-pagination-input-slot" }, selectRoot: { className: "custom-table-pagination-select-root-slot" }, select: { className: "custom-table-pagination-select-slot" }, selectIcon: { className: "custom-table-pagination-select-icon-slot" }, displayedRows: { className: "custom-table-pagination-displayed-rows-slot" }, actions: { className: "custom-table-pagination-actions-slot" } }} showFirstButton showLastButton count="25" page="0" rowsPerPage="10">Theme classed pagination</TablePagination>
+      <TablePaginationActions className="custom-table-pagination-actions-root" classes={{ root: "custom-table-pagination-actions-root-class", previousButton: "custom-table-pagination-previous-button", previousButtonIcon: "custom-table-pagination-previous-button-icon", nextButton: "custom-table-pagination-next-button", nextButtonIcon: "custom-table-pagination-next-button-icon", firstButton: "custom-table-pagination-first-button", firstButtonIcon: "custom-table-pagination-first-button-icon", lastButton: "custom-table-pagination-last-button", lastButtonIcon: "custom-table-pagination-last-button-icon" }} slotProps={{ root: { className: "custom-table-pagination-actions-root-slot" }, previousButton: { className: "custom-table-pagination-previous-button-slot" }, previousButtonIcon: { className: "custom-table-pagination-previous-button-icon-slot" }, nextButton: { className: "custom-table-pagination-next-button-slot" }, nextButtonIcon: { className: "custom-table-pagination-next-button-icon-slot" }, firstButton: { className: "custom-table-pagination-first-button-slot" }, firstButtonIcon: { className: "custom-table-pagination-first-button-icon-slot" }, lastButton: { className: "custom-table-pagination-last-button-slot" }, lastButtonIcon: { className: "custom-table-pagination-last-button-icon-slot" } }} showFirstButton showLastButton>Theme classed pagination actions</TablePaginationActions>
+    </Box>
+    <Box className="mui-switchbase-prop-smoke">
+      <Checkbox indeterminate name="themeConsent" value="partial" required>Theme indeterminate checkbox</Checkbox>
+      <Radio name="themeChoice" value="named" required>Theme named required radio</Radio>
+      <Switch edge="start" name="themeNotifications" value="enabled" required>Theme edge start switch</Switch>
+      <Switch edge="end">Theme edge end switch</Switch>
+    </Box>
+    <Box className="mui-text-slot-smoke">
+      <CardHeader title="Theme card title" subheader="Theme card subheader">Theme card child</CardHeader>
+      <CardHeader disableTypography title="Plain theme card title" subheader="Plain theme card subheader">Plain theme card child</CardHeader>
+      <CardMedia image="assets/mui_demo_cover.webp">Theme image media</CardMedia>
+      <CardMedia component="img" src="assets/mui_demo_inline.webp">Theme img media</CardMedia>
+      <Avatar src="assets/mui_demo_avatar.webp" srcSet="assets/mui_demo_avatar@2x.webp 2x" alt="Theme avatar">Theme image avatar</Avatar>
+      <AvatarGroup className="custom-avatar-group" variant="rounded" classes={{ root: "custom-avatar-group-root" }} slotProps={{ root: { className: "custom-avatar-group-slot" } }}>
+        <Avatar>Inherited rounded avatar</Avatar>
+        <Avatar variant="square">Explicit square avatar</Avatar>
+      </AvatarGroup>
+      <List>
+        <ListItem>
+          <ListItemText primary="Theme primary" secondary="Theme secondary">Theme list child</ListItemText>
+        </ListItem>
+        <ListItem>
+          <ListItemText disableTypography primary="Plain theme primary" secondary="Plain theme secondary">Plain theme list child</ListItemText>
+        </ListItem>
+      </List>
+    </Box>
+    <Box className="mui-overlay-a11y-smoke">
+      <section className="mui-click-away-smoke">
+        <ClickAwayListener onClickAway={close_click_away}><section className="mui-click-away-panel{click_away_open ? '' : ' mui-click-away-hidden'}" hidden={1 - click_away_open}>Theme click away panel</section></ClickAwayListener>
+        <span className="mui-click-away-status{click_away_closed ? ' mui-click-away-closed' : ''}">Click away closed: {click_away_closed}</span>
+      </section>
+      <Modal>Closed modal</Modal>
+      <Modal open>Open modal</Modal>
+      <Popover>Closed popover</Popover>
+      <Popover open>Open popover</Popover>
+      <Popper>Closed popper</Popper>
+      <Popper open>Open popper</Popper>
+      <Menu><MenuItem>Closed menu action</MenuItem></Menu>
+      <Menu open><MenuItem>Open menu action</MenuItem></Menu>
+      <Drawer>Closed drawer</Drawer>
+      <Drawer open>Open drawer</Drawer>
+      <Snackbar>Closed snackbar</Snackbar>
+      <Snackbar open message="Open snackbar prop" action="Undo">Open snackbar</Snackbar>
+      <Dialog>Closed dialog</Dialog>
+      <Dialog open aria-labelledby="smoke-dialog-title" aria-describedby="smoke-dialog-description"><DialogTitle id="smoke-dialog-title">Open dialog</DialogTitle><DialogContent><DialogContentText id="smoke-dialog-description">Open dialog content</DialogContentText></DialogContent></Dialog>
+    </Box>
+    <Box className="mui-progress-smoke">
+      <CircularProgress variant="determinate" color="inherit" value={72} size={48} thickness={6} />
+      <LinearProgress variant="determinate" value={64} color="secondary" />
+      <LinearProgress variant="buffer" value={32} valueBuffer={68} />
+      <Skeleton variant="rounded" animation="wave" width={96} height={28}>Rounded skeleton</Skeleton>
+    </Box>
+    <Box className="mui-image-list-smoke">
+      <ImageList variant="woven" cols={4} gap={6} rowHeight="180">
+        <ImageListItem variant="woven" cols={2} rows={2}>
+          <img />
+          <ImageListItemBar position="top" actionPosition="left" title="Theme image title" subtitle="Theme image subtitle" actionIcon="Open">Theme image title</ImageListItemBar>
+        </ImageListItem>
+      </ImageList>
+    </Box>
     <Timeline>
       <TimelineItem missingOppositeContent>
         <TimelineSeparator>
@@ -20,6 +142,11 @@
         <TimelineContent>Order placed</TimelineContent>
       </TimelineItem>
     </Timeline>
+    <Box className="mui-collapse-smoke">
+      <Collapse in>Open vertical collapse</Collapse>
+      <Collapse>Closed vertical collapse</Collapse>
+      <Collapse orientation="horizontal" collapsedSize="12px">Closed horizontal collapse</Collapse>
+    </Box>
     <Masonry columns="3">
       <Paper>One</Paper>
       <Paper>Two</Paper>
@@ -30,5 +157,28 @@
       </TabList>
       <TabPanel value="overview">Panel</TabPanel>
     </TabContext>
+    <TabContext value="settings">
+      <TabList orientation="vertical" centered>
+        <Tab value="settings">Settings</Tab>
+      </TabList>
+      <TabPanel keepMounted>Context panel</TabPanel>
+    </TabContext>
+    <Box className="mui-treeview-smoke">
+      <SimpleTreeView aria-label="Theme navigation" multiSelect disabledItemsFocusable expandedItems="root,reports" selectedItems="reports">
+        <TreeItem nodeId="root" label="Theme Lab" expanded level={1}>
+          <TreeItem nodeId="reports" label="Reports" selected level={2} />
+          <TreeItem nodeId="archive" label="Archive" disabled level={2} />
+        </TreeItem>
+      </SimpleTreeView>
+    </Box>
   </section>
+
+  @close_click_away:
+  L_ENTRY:
+    store state+MuiThemeLabSmoke_click_away_open, 0 as i1
+    store state+MuiThemeLabSmoke_click_away_closed, 1 as i1
+    call @render()
+    ret
+
+  !click_away_open !click_away_closed
 </Component>
