@@ -11,6 +11,8 @@ function chromiumExecutablePath() {
 }
 
 async function resolveChromiumExecutablePath() {
+  if (process.env.MUI_BROWSER_EXECUTABLE) return process.env.MUI_BROWSER_EXECUTABLE;
+
   const legacy = chromiumExecutablePath();
   try {
     await access(legacy);
