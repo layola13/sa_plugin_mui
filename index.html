@@ -81,7 +81,8 @@
 
     <section>
       <h2>Build Commands</h2>
-      <pre>SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_vite/zig-out/lib/libvite.so:/home/vscode/projects/sa_plugins/sa_plugin_http_server/zig-out/lib/libhttp-server.so:/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so
+      <pre>export SA_PLUGIN_DEV=1
+export SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_vite/zig-out/lib/libvite.so:/home/vscode/projects/sa_plugins/sa_plugin_http_server/zig-out/lib/libhttp-server.so:/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so
 /home/vscode/projects/sci/zig-out/bin/sa vite build demos/mui_material_kit_demo.sax --react --include mui/material.sax --include mui/icons_material.sax --include mui/material_kit_layout.sax --include mui/material_kit_views.sax --out-dir dist/material-kit --title "SA Material Kit Dashboard" --css assets/mui_material_kit_demo.css --public-dir /home/vscode/projects/material-kit-react2/public
 /home/vscode/projects/sci/zig-out/bin/sa vite build demos/mui_material_kit_products.sax --react --include mui/material.sax --include mui/icons_material.sax --include mui/material_kit_layout.sax --include mui/material_kit_views.sax --out-dir dist/material-kit/products --title "SA Material Kit Products" --css assets/mui_material_kit_demo.css --public-dir /home/vscode/projects/material-kit-react2/public
 /home/vscode/projects/sci/zig-out/bin/sa vite build demos/mui_material_kit_blog.sax --react --include mui/material.sax --include mui/icons_material.sax --include mui/material_kit_layout.sax --include mui/material_kit_views.sax --out-dir dist/material-kit/blog --title "SA Material Kit Blog" --css assets/mui_material_kit_demo.css --public-dir /home/vscode/projects/material-kit-react2/public

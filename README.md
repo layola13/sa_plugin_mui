@@ -13,6 +13,7 @@ The source library starts at `mui/material.sax`. Consume it through the generic 
 Local development plugin path:
 
 ```bash
+export SA_PLUGIN_DEV=1
 export SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_vite/zig-out/lib/libvite.so:/home/vscode/projects/sa_plugins/sa_plugin_http_server/zig-out/lib/libhttp-server.so:/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so
 ```
 
@@ -51,9 +52,9 @@ Run the Material Kit-inspired demo with hot reload and static assets from the up
 For compile-only checks, use:
 
 ```bash
-SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_all_components_from_library.sax --include mui/material.sax --include mui/icons_material.sax
-SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_material_kit_demo.sax --include mui/material.sax --include mui/icons_material.sax --include mui/material_kit_layout.sax --include mui/material_kit_views.sax
-SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_material_kit_404.sax --include mui/material.sax --include mui/icons_material.sax --include mui/material_kit_layout.sax --include mui/material_kit_views.sax
+SA_PLUGIN_DEV=1 SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_all_components_from_library.sax --include mui/material.sax --include mui/icons_material.sax
+SA_PLUGIN_DEV=1 SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_material_kit_demo.sax --include mui/material.sax --include mui/icons_material.sax --include mui/material_kit_layout.sax --include mui/material_kit_views.sax
+SA_PLUGIN_DEV=1 SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_material_kit_404.sax --include mui/material.sax --include mui/icons_material.sax --include mui/material_kit_layout.sax --include mui/material_kit_views.sax
 ```
 
 Every MUI demo also has a same-name Sla handler entry ending in `_sla.sax`. Demos without event handlers are copied as Sla-compatible baselines; demos with SA label handlers have equivalent `fn handler() { ... }` logic. Material Kit's reusable handler logic is mirrored in `mui/material_kit_layout_sla.sax` and `mui/material_kit_views_sla.sax`; the original SA files remain unchanged.
@@ -61,6 +62,7 @@ Every MUI demo also has a same-name Sla handler entry ending in `_sla.sax`. Demo
 Compile the Sla demo set with:
 
 ```bash
+export SA_PLUGIN_DEV=1
 export SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so
 /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_basic_inlined_sla.sax
 /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_all_components_sla.sax
@@ -75,7 +77,7 @@ Build and browser-verify the focused Sla smoke target with a screenshot:
 
 ```bash
 npm ci
-SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so \
+SA_PLUGIN_DEV=1 SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so \
   /home/vscode/projects/sci/zig-out/bin/sa react build demos/mui_theme_lab_smoke_sla.sax --include mui/material.sax --include mui/icons_material.sax --out-dir dist/theme-lab-smoke-sla
 MUI_BROWSER_EXECUTABLE=/home/vscode/.local/bin/chromium \
 MUI_BROWSER_SCREENSHOT=$PWD/dist/theme-lab-smoke-sla/theme_lab_sla_chromium.png \
@@ -94,22 +96,22 @@ MUI_BROWSER_SCREENSHOT=$PWD/dist/material-kit-sla/material_kit_sla_chromium.png 
 For static dist verification, build and browser-verify the same library-consumption path with:
 
 ```bash
-SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so /home/vscode/projects/sci/zig-out/bin/sa react build demos/mui_all_components_from_library.sax --include mui/material.sax --include mui/icons_material.sax --out-dir .zig-cache/mui-share-dist
+SA_PLUGIN_DEV=1 SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so /home/vscode/projects/sci/zig-out/bin/sa react build demos/mui_all_components_from_library.sax --include mui/material.sax --include mui/icons_material.sax --out-dir .zig-cache/mui-share-dist
 node tools/verify_mui_browser.mjs .zig-cache/mui-share-dist
 ```
 
 For the focused TablePagination/TablePaginationActions repro, use:
 
 ```bash
-SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so /home/vscode/projects/sci/zig-out/bin/sa react build demos/mui_table_pagination_repro.sax --include mui/material.sax --include mui/icons_material.sax --out-dir .zig-cache/mui-table-pagination-repro-dist
+SA_PLUGIN_DEV=1 SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so /home/vscode/projects/sci/zig-out/bin/sa react build demos/mui_table_pagination_repro.sax --include mui/material.sax --include mui/icons_material.sax --out-dir .zig-cache/mui-table-pagination-repro-dist
 node tools/verify_mui_table_pagination_repro.mjs .zig-cache/mui-table-pagination-repro-dist
 ```
 
 For a focused theme/default-prop smoke check that stays below the current full-demo memory envelope, use:
 
 ```bash
-SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_theme_lab_smoke.sax --include mui/material.sax --include mui/icons_material.sax
-SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so /home/vscode/projects/sci/zig-out/bin/sa react build demos/mui_theme_lab_smoke.sax --include mui/material.sax --include mui/icons_material.sax --out-dir .zig-cache/mui-theme-lab-smoke
+SA_PLUGIN_DEV=1 SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_theme_lab_smoke.sax --include mui/material.sax --include mui/icons_material.sax
+SA_PLUGIN_DEV=1 SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so /home/vscode/projects/sci/zig-out/bin/sa react build demos/mui_theme_lab_smoke.sax --include mui/material.sax --include mui/icons_material.sax --out-dir .zig-cache/mui-theme-lab-smoke
 node tools/verify_mui_theme_lab_browser.mjs .zig-cache/mui-theme-lab-smoke
 ```
 
