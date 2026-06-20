@@ -4,6 +4,8 @@
 
 The implementation direction is SA-first: MUI components live in `mui/material.sax`, and React/SAX compilation should consume that source through an SA/SAX library mechanism. Zig in this plugin is limited to the plugin descriptor and installation of share assets; it must not implement MUI component behavior, theme logic, class generation, source rewriting, or CLI commands.
 
+For build performance analysis and optimization planning, see [docs/mui_build_performance_optimization.md](docs/mui_build_performance_optimization.md).
+
 Upstream `/home/vscode/projects/material-ui` is a reference for the React model: default props resolve into owner state, slots, utility classes, theme tokens, and DOM output. It is not a runtime dependency, and this plugin must not call npm, Node MUI, React DOM, Emotion, or `@mui/material`.
 
 ## Current Use
