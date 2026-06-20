@@ -5,6 +5,8 @@ import { chromium } from 'playwright';
 const playwrightCacheDir = path.join(process.env.HOME ?? '', '.cache', 'ms-playwright');
 
 async function resolveChromiumExecutablePath() {
+  if (process.env.MUI_BROWSER_EXECUTABLE) return process.env.MUI_BROWSER_EXECUTABLE;
+
   const entries = await readdir(playwrightCacheDir, { withFileTypes: true }).catch(() => []);
   const names = entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort().reverse();
 
@@ -453,6 +455,10 @@ async function run(inputUrl) {
     await runDesktopChecks(page, dashboardUrl);
     await runMobileChecks(page, dashboardUrl);
     await runIndependentRouteChecks(page, dashboardUrl);
+
+    if (process.env.MUI_BROWSER_SCREENSHOT) {
+      await page.screenshot({ path: process.env.MUI_BROWSER_SCREENSHOT, fullPage: true });
+    }
 
     if (pageErrors.length !== 0) throw new Error(`browser console/page errors:\n${pageErrors.join('\n')}`);
     const fatalRequests = failedRequests.filter((line) => {

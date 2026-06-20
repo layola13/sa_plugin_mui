@@ -1,0 +1,536 @@
+<Component name="MaterialKitOverviewView">
+  <state>
+    conversion = 44
+    slider_changes = 0
+    slider_value = alloc 16
+    slider_value_len = 0
+    task_updates = 0
+    task0 = 1 as i1
+    task1 = 0 as i1
+    task2 = 1 as i1
+    task3 = 0 as i1
+    task_menu_open = 0 as i1
+    task_menu_hidden = 1 as i1
+    task_menu_actions = 0
+    overview_actions = 0
+  </state>
+
+  <PageHeading eyebrow="Dashboard" title="Hi, Welcome back">
+    <Button variant="contained" color="inherit" onClick={overview_action}>Export report</Button>
+  </PageHeading>
+
+  <StatsGrid>
+    <section className="mk-stat mk-stat-green"><Card><img src="assets/icons/glass/ic-glass-bag.svg" alt="Weekly sales" /><span>Weekly sales</span><strong>$714k</strong><p>+2.6% this week</p></Card></section>
+    <section className="mk-stat mk-stat-blue"><Card><img src="assets/icons/glass/ic-glass-users.svg" alt="New users" /><span>New users</span><strong>1.35m</strong><p>-0.1% this week</p></Card></section>
+    <section className="mk-stat mk-stat-amber"><Card><img src="assets/icons/glass/ic-glass-buy.svg" alt="Purchase orders" /><span>Purchase orders</span><strong>1.72m</strong><p>+2.8% this week</p></Card></section>
+    <section className="mk-stat mk-stat-red"><Card><img src="assets/icons/glass/ic-glass-message.svg" alt="Messages" /><span>Messages</span><strong>234</strong><p>+3.6% this week</p></Card></section>
+  </StatsGrid>
+
+  <AnalyticsGrid>
+    <DashboardPanel className="mk-visits"><Card><section className="mk-card-head"><h3>Website visits</h3><span>+43% than last year</span></section><section className="mk-bar-chart"><i className="mk-bar-1"></i><i className="mk-bar-2"></i><i className="mk-bar-3"></i><i className="mk-bar-4"></i><i className="mk-bar-5"></i><i className="mk-bar-6"></i><i className="mk-bar-7"></i><i className="mk-bar-8"></i></section></Card></DashboardPanel>
+    <DashboardPanel className="mk-current"><Card><section className="mk-card-head"><h3>Current visits</h3><span>Regional split</span></section><section className="mk-donut"><b>{conversion}%</b></section><section className="mk-legend"><span>America</span><span>Asia</span><span>Europe</span><span>Africa</span></section><section className="mk-slider-panel"><span>Conversion target: {conversion}%</span><Slider value={conversion} onChange={change_conversion} /><small>Slider changes: {slider_changes}</small></section></Card></DashboardPanel>
+    <DashboardPanel className="mk-conversion"><Card><section className="mk-card-head"><h3>Conversion rates</h3><span>+43% than last year</span></section><section className="mk-conversion-chart"><section className="mk-conversion-row"><strong>Italy</strong><span className="mk-conversion-bars"><i className="mk-cr-44 mk-cr-2022">44%</i><i className="mk-cr-53 mk-cr-2023">53%</i></span></section><section className="mk-conversion-row"><strong>Japan</strong><span className="mk-conversion-bars"><i className="mk-cr-55 mk-cr-2022">55%</i><i className="mk-cr-32 mk-cr-2023">32%</i></span></section><section className="mk-conversion-row"><strong>China</strong><span className="mk-conversion-bars"><i className="mk-cr-41 mk-cr-2022">41%</i><i className="mk-cr-64 mk-cr-2023">64%</i></span></section><section className="mk-conversion-row"><strong>Canada</strong><span className="mk-conversion-bars"><i className="mk-cr-13 mk-cr-2022">13%</i><i className="mk-cr-22 mk-cr-2023">22%</i></span></section><section className="mk-conversion-row"><strong>France</strong><span className="mk-conversion-bars"><i className="mk-cr-52 mk-cr-2022">52%</i><i className="mk-cr-33 mk-cr-2023">33%</i></span></section></section><section className="mk-chart-legend"><span className="mk-series-a">2022</span><span className="mk-series-b">2023</span></section></Card></DashboardPanel>
+    <DashboardPanel className="mk-subject"><Card><section className="mk-card-head"><h3>Current subject</h3><span>Six topic radar</span></section><section className="mk-subject-radar"><span className="mk-radar-label mk-radar-english">English</span><span className="mk-radar-label mk-radar-history">History</span><span className="mk-radar-label mk-radar-physics">Physics</span><span className="mk-radar-label mk-radar-geography">Geography</span><span className="mk-radar-label mk-radar-chinese">Chinese</span><span className="mk-radar-label mk-radar-math">Math</span><i className="mk-radar-series mk-radar-series-1"></i><i className="mk-radar-series mk-radar-series-2"></i><i className="mk-radar-series mk-radar-series-3"></i></section><Divider /><section className="mk-chart-legend"><span className="mk-series-a">Series 1</span><span className="mk-series-b">Series 2</span><span className="mk-series-c">Series 3</span></section></Card></DashboardPanel>
+    <DashboardPanel className="mk-news"><Card><section className="mk-card-head"><h3>News</h3><span>Latest headlines</span></section><section className="mk-news-list"><article><img src="assets/images/cover/cover-1.webp" alt="News" /><section><strong>Whiteboard Templates By Industry Leaders</strong><span>8 minutes ago</span></section></article><article><img src="assets/images/cover/cover-4.webp" alt="News" /><section><strong>How to run async workflows from design</strong><span>2 hours ago</span></section></article><article><img src="assets/images/cover/cover-6.webp" alt="News" /><section><strong>Project handoff checklist for teams</strong><span>1 day ago</span></section></article></section></Card></DashboardPanel>
+    <DashboardPanel className="mk-timeline"><Card><section className="mk-card-head"><h3>Order timeline</h3><span>Recent activity</span></section><ol className="mk-timeline-list"><li className="mk-time-success"><strong>1983 orders, $4220</strong><span>22 Feb 2024 10:30 AM</span></li><li className="mk-time-info"><strong>12 invoices have been paid</strong><span>21 Feb 2024 11:30 AM</span></li><li className="mk-time-warning"><strong>Order #37745 from September</strong><span>20 Feb 2024 08:20 AM</span></li><li className="mk-time-error"><strong>New order placed #XF-2356</strong><span>19 Feb 2024 07:20 AM</span></li><li><strong>New order received</strong><span>18 Feb 2024 04:20 PM</span></li></ol></Card></DashboardPanel>
+    <DashboardPanel className="mk-traffic"><Card><section className="mk-card-head"><h3>Traffic by site</h3><span>Social channels</span></section><section className="mk-traffic-grid"><button className="mk-traffic-item mk-traffic-facebook" onClick={overview_action}><i>f</i><strong>323k</strong><span>Facebook</span></button><button className="mk-traffic-item mk-traffic-google" onClick={overview_action}><i>G</i><strong>341k</strong><span>Google</span></button><button className="mk-traffic-item mk-traffic-linkedin" onClick={overview_action}><i>in</i><strong>411k</strong><span>Linkedin</span></button><button className="mk-traffic-item mk-traffic-twitter" onClick={overview_action}><i>X</i><strong>443k</strong><span>Twitter</span></button></section><span className="mk-inline-status">Actions: {overview_actions}</span></Card></DashboardPanel>
+    <DashboardPanel className="mk-tasks"><Card><section className="mk-card-head"><h3>Tasks</h3><span>Team queue</span></section><span className="mk-task-status">Task updates: {task_updates}</span><span className="mk-task-action-status">Task menu actions: {task_menu_actions}</span><section className="mk-task-row{task0 ? ' mk-task-completed' : ''}"><FormControlLabel><Checkbox checked={task0} onChange={toggle_task0} />Prepare Monthly Financial Report</FormControlLabel><section className="mk-action-popover mk-task-menu"><IconButton onClick={toggle_task_menu}>More</IconButton><section className="mk-overlay-state" hidden={task_menu_hidden}><ClickAwayListener onClickAway={close_task_menu}><Popover open={task_menu_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right"><MenuList disablePadding><MenuItem onClick={task_menu_complete}>Mark complete</MenuItem><MenuItem onClick={task_menu_edit}>Edit</MenuItem><MenuItem onClick={task_menu_share}>Share</MenuItem><MenuItem onClick={task_menu_delete}>Delete</MenuItem></MenuList></Popover></ClickAwayListener></section></section></section><section className="mk-task-row{task1 ? ' mk-task-completed' : ''}"><FormControlLabel><Checkbox checked={task1} onChange={toggle_task1} />Design New Marketing Campaign</FormControlLabel><IconButton onClick={toggle_task_menu}>More</IconButton></section><section className="mk-task-row{task2 ? ' mk-task-completed' : ''}"><FormControlLabel><Checkbox checked={task2} onChange={toggle_task2} />Analyze Customer Feedback</FormControlLabel><IconButton onClick={toggle_task_menu}>More</IconButton></section><section className="mk-task-row{task3 ? ' mk-task-completed' : ''}"><FormControlLabel><Checkbox checked={task3} onChange={toggle_task3} />Update Website Content</FormControlLabel><IconButton onClick={toggle_task_menu}>More</IconButton></section></Card></DashboardPanel>
+  </AnalyticsGrid>
+
+  fn overview_action() {
+    let actions = overview_actions;
+    actions = actions + 1;
+    overview_actions = actions;
+    render();
+  }
+  fn change_conversion() {
+    conversion = sax_event_target_value_i64();
+    slider_changes = slider_changes + 1;
+    render();
+  }
+  fn toggle_task0() {
+    task0 = checked;
+    task_updates = task_updates + 1;
+    render();
+  }
+  fn toggle_task1() {
+    task1 = checked;
+    task_updates = task_updates + 1;
+    render();
+  }
+  fn toggle_task2() {
+    task2 = checked;
+    task_updates = task_updates + 1;
+    render();
+  }
+  fn toggle_task3() {
+    task3 = checked;
+    task_updates = task_updates + 1;
+    render();
+  }
+  fn toggle_task_menu() {
+    let open = task_menu_open;
+    if open {
+      task_menu_open = false;
+      task_menu_hidden = true;
+      render();
+    } else {
+      task_menu_open = true;
+      task_menu_hidden = false;
+      render();
+    }
+  }
+  fn close_task_menu() {
+    task_menu_open = false;
+    task_menu_hidden = true;
+    render();
+  }
+  fn task_menu_complete() {
+    task0 = true;
+    task_menu_open = false;
+    task_menu_hidden = true;
+    let actions = task_menu_actions;
+    actions = actions + 1;
+    task_menu_actions = actions;
+    render();
+  }
+  fn task_menu_edit() {
+    task_menu_open = false;
+    task_menu_hidden = true;
+    let actions = task_menu_actions;
+    actions = actions + 1;
+    task_menu_actions = actions;
+    render();
+  }
+  fn task_menu_share() {
+    task_menu_open = false;
+    task_menu_hidden = true;
+    let actions = task_menu_actions;
+    actions = actions + 1;
+    task_menu_actions = actions;
+    render();
+  }
+  fn task_menu_delete() {
+    task_menu_open = false;
+    task_menu_hidden = true;
+    let actions = task_menu_actions;
+    actions = actions + 1;
+    task_menu_actions = actions;
+    render();
+  }
+  !conversion !slider_changes !slider_value !slider_value_len !task_updates !task0 !task1 !task2 !task3 !task_menu_open !task_menu_hidden !task_menu_actions !overview_actions
+</Component>
+
+<Component name="MaterialKitProductsView">
+  <state>
+    sort_open = 0 as i1
+    sort_hidden = 1 as i1
+    sort_changes = 0
+    sort_featured = 1 as i1
+    sort_newest = 0 as i1
+    sort_price_desc = 0 as i1
+    sort_price_asc = 0 as i1
+    filter_open = 0 as i1
+    filter_hidden = 1 as i1
+    filter_clean = 1 as i1
+    filter_updates = 0
+  </state>
+
+  <button className="mk-cart-widget" onClick={open_filter}><Badge color="error" badgeContent={8} showZero><span className="mk-cart-glyph">Cart</span></Badge></button>
+  <PageHeading eyebrow="Catalog" title="Products"><section className="mk-filter-row"><Button color="inherit" onClick={open_filter}><Badge color="error" variant="dot" invisible={filter_clean}>Filters</Badge></Button><section className="mk-action-popover"><Button color="inherit" onClick={toggle_sort}>Sort By: <span className="mk-sort-label{sort_featured ? '' : ' mk-hidden'}">Featured</span><span className="mk-sort-label{sort_newest ? '' : ' mk-hidden'}">Newest</span><span className="mk-sort-label{sort_price_desc ? '' : ' mk-hidden'}">Price: High-Low</span><span className="mk-sort-label{sort_price_asc ? '' : ' mk-hidden'}">Price: Low-High</span></Button><section className="mk-overlay-state" hidden={sort_hidden}><ClickAwayListener onClickAway={close_sort}><Menu open={sort_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right"><MenuItem selected={sort_featured} onClick={choose_featured}>Featured</MenuItem><MenuItem selected={sort_newest} onClick={choose_newest}>Newest</MenuItem><MenuItem selected={sort_price_desc} onClick={choose_price_desc}>Price: High-Low</MenuItem><MenuItem selected={sort_price_asc} onClick={choose_price_asc}>Price: Low-High</MenuItem></Menu></ClickAwayListener></section></section><span className="mk-inline-status">Sort changes: {sort_changes}</span><span className="mk-inline-status">Filter updates: {filter_updates}</span><span className="mk-inline-status{filter_clean ? ' mk-hidden' : ''}">Filters changed</span></section></PageHeading>
+  <section className="mk-filter-shell" hidden={filter_hidden}><Drawer open={filter_open}><ClickAwayListener onClickAway={close_filter}><section className="mk-filter-drawer"><section className="mk-filter-title"><h3>Filters</h3><section><IconButton onClick={reset_filter}><Badge color="error" variant="dot" invisible={filter_clean}>Reset</Badge></IconButton><IconButton onClick={close_filter}>Close</IconButton></section></section><Divider /><section className="mk-filter-body"><section><h4>Gender</h4><FormGroup><FormControlLabel><Checkbox checked onChange={update_filter} />Men</FormControlLabel><FormControlLabel><Checkbox onChange={update_filter} />Women</FormControlLabel><FormControlLabel><Checkbox onChange={update_filter} />Kids</FormControlLabel></FormGroup></section><section><h4>Category</h4><FormGroup><FormControlLabel><Checkbox checked onChange={update_filter} />All</FormControlLabel><FormControlLabel><Checkbox onChange={update_filter} />Shoes</FormControlLabel><FormControlLabel><Checkbox onChange={update_filter} />Apparel</FormControlLabel><FormControlLabel><Checkbox onChange={update_filter} />Accessories</FormControlLabel></FormGroup></section><section><h4>Color</h4><section className="mk-color-picker"><button className="mk-color-option mk-swatch-green" onClick={update_filter}></button><button className="mk-color-option mk-swatch-black" onClick={update_filter}></button><button className="mk-color-option mk-swatch-white" onClick={update_filter}></button><button className="mk-color-option mk-swatch-pink" onClick={update_filter}></button><button className="mk-color-option mk-swatch-red mk-color-selected" onClick={update_filter}></button><button className="mk-color-option mk-swatch-blue" onClick={update_filter}></button><button className="mk-color-option mk-swatch-lime" onClick={update_filter}></button><button className="mk-color-option mk-swatch-amber" onClick={update_filter}></button></section></section><section><h4>Price</h4><FormGroup><FormControlLabel><Checkbox onChange={update_filter} />Below $25</FormControlLabel><FormControlLabel><Checkbox onChange={update_filter} />Between $25 - $75</FormControlLabel><FormControlLabel><Checkbox onChange={update_filter} />Above $75</FormControlLabel></FormGroup></section><section><h4>Rating</h4><button className="mk-rating-row mk-rating-selected" onClick={update_filter}>4 stars and up</button><button className="mk-rating-row" onClick={update_filter}>3 stars and up</button><button className="mk-rating-row" onClick={update_filter}>2 stars and up</button><button className="mk-rating-row" onClick={update_filter}>1 star and up</button></section></section></section></ClickAwayListener></Drawer></section>
+  <ProductGrid>
+    <article className="mk-product"><section className="mk-product-card"><section className="mk-product-img"><span className="mk-product-label mk-product-label-sale">sale</span><img src="assets/images/product/product-1.webp" alt="Nike Air Force 1 NDESTRUKT" /></section><section><strong>Nike Air Force 1 NDESTRUKT</strong><section className="mk-product-meta"><span className="mk-product-colors"><i className="mk-swatch-green"></i><i className="mk-swatch-black"></i></span><p><s>$57.17</s>$35.17</p></section></section></section></article>
+    <article className="mk-product"><section className="mk-product-card"><section className="mk-product-img"><span className="mk-product-label"></span><img src="assets/images/product/product-2.webp" alt="Nike Space Hippie 04" /></section><section><strong>Nike Space Hippie 04</strong><section className="mk-product-meta"><span className="mk-product-colors"><i className="mk-swatch-black"></i><i className="mk-swatch-white"></i></span><p>$57.22</p></section></section></section></article>
+    <article className="mk-product"><section className="mk-product-card"><section className="mk-product-img"><span className="mk-product-label mk-product-label-sale">sale</span><img src="assets/images/product/product-3.webp" alt="Nike Air Zoom Pegasus" /></section><section><strong>Nike Air Zoom Pegasus 37</strong><section className="mk-product-meta"><span className="mk-product-colors"><i className="mk-swatch-white"></i><i className="mk-swatch-pink"></i></span><p><s>$64.18</s>$64.18</p></section></section></section></article>
+    <article className="mk-product"><section className="mk-product-card"><section className="mk-product-img"><span className="mk-product-label mk-product-label-new">new</span><img src="assets/images/product/product-4.webp" alt="Nike Blazer Low" /></section><section><strong>Nike Blazer Low 77 Vintage</strong><section className="mk-product-meta"><span className="mk-product-colors"><i className="mk-swatch-pink"></i><i className="mk-swatch-red"></i><i className="mk-swatch-blue"></i></span><p>$50.79</p></section></section></section></article>
+  </ProductGrid>
+
+  fn toggle_sort() {
+    let open = sort_open;
+    if open {
+      sort_open = false;
+      sort_hidden = true;
+      render();
+    } else {
+      sort_open = true;
+      sort_hidden = false;
+      render();
+    }
+  }
+  fn close_sort() {
+    sort_open = false;
+    sort_hidden = true;
+    render();
+  }
+  fn choose_featured() {
+    sort_featured = true;
+    sort_newest = false;
+    sort_price_desc = false;
+    sort_price_asc = false;
+    sort_open = false;
+    sort_hidden = true;
+    let count = sort_changes;
+    count = count + 1;
+    sort_changes = count;
+    render();
+  }
+  fn choose_newest() {
+    sort_featured = false;
+    sort_newest = true;
+    sort_price_desc = false;
+    sort_price_asc = false;
+    sort_open = false;
+    sort_hidden = true;
+    let count = sort_changes;
+    count = count + 1;
+    sort_changes = count;
+    render();
+  }
+  fn choose_price_desc() {
+    sort_featured = false;
+    sort_newest = false;
+    sort_price_desc = true;
+    sort_price_asc = false;
+    sort_open = false;
+    sort_hidden = true;
+    let count = sort_changes;
+    count = count + 1;
+    sort_changes = count;
+    render();
+  }
+  fn choose_price_asc() {
+    sort_featured = false;
+    sort_newest = false;
+    sort_price_desc = false;
+    sort_price_asc = true;
+    sort_open = false;
+    sort_hidden = true;
+    let count = sort_changes;
+    count = count + 1;
+    sort_changes = count;
+    render();
+  }
+  fn open_filter() {
+    filter_open = true;
+    filter_hidden = false;
+    render();
+  }
+  fn close_filter() {
+    filter_open = false;
+    filter_hidden = true;
+    render();
+  }
+  fn update_filter() {
+    filter_clean = false;
+    let count = filter_updates;
+    count = count + 1;
+    filter_updates = count;
+    render();
+  }
+  fn reset_filter() {
+    filter_clean = true;
+    let count = filter_updates;
+    count = count + 1;
+    filter_updates = count;
+    render();
+  }
+  !sort_open !sort_hidden !sort_changes !sort_featured !sort_newest !sort_price_desc !sort_price_asc !filter_open !filter_hidden !filter_clean !filter_updates
+</Component>
+
+<Component name="MaterialKitBlogView">
+  <state>
+    sort_open = 0 as i1
+    sort_hidden = 1 as i1
+    sort_latest = 1 as i1
+    sort_popular = 0 as i1
+    sort_oldest = 0 as i1
+    sort_changes = 0
+    search_open = 0 as i1
+    search_updates = 0
+    post_actions = 0
+  </state>
+
+  <PageHeading eyebrow="Content" title="Blog"><Button variant="contained" color="inherit" onClick={new_post}>New post</Button></PageHeading>
+  <BlogTools>
+    <section className="mk-blog-search"><ClickAwayListener onClickAway={close_search}><Autocomplete fullWidth autoHighlight open={search_open} placeholder="Search post..." onClick={open_search} onChange={search_changed}><li className="MuiAutocomplete-option" role="option" onClick={choose_search_result}>Whiteboard Templates By Industry Leaders</li><li className="MuiAutocomplete-option" role="option" onClick={choose_search_result}>Six Socks Studio</li><li className="MuiAutocomplete-option" role="option" onClick={choose_search_result}>Simple, Great Looking Animations</li></Autocomplete></ClickAwayListener><span>Search updates: {search_updates}</span></section>
+    <section className="mk-action-popover"><Button color="inherit" onClick={toggle_sort}><span className="mk-sort-label{sort_latest ? '' : ' mk-hidden'}">Latest</span><span className="mk-sort-label{sort_popular ? '' : ' mk-hidden'}">Popular</span><span className="mk-sort-label{sort_oldest ? '' : ' mk-hidden'}">Oldest</span></Button><section className="mk-overlay-state" hidden={sort_hidden}><ClickAwayListener onClickAway={close_sort}><Menu open={sort_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right"><MenuItem selected={sort_latest} onClick={choose_latest}>Latest</MenuItem><MenuItem selected={sort_popular} onClick={choose_popular}>Popular</MenuItem><MenuItem selected={sort_oldest} onClick={choose_oldest}>Oldest</MenuItem></Menu></ClickAwayListener></section></section>
+    <span className="mk-inline-status">Blog actions: {post_actions}</span><span className="mk-inline-status">Sort changes: {sort_changes}</span><span className="mk-inline-status{sort_latest ? '' : ' mk-hidden'}">Blog sort: latest</span><span className="mk-inline-status{sort_popular ? '' : ' mk-hidden'}">Blog sort: popular</span><span className="mk-inline-status{sort_oldest ? '' : ' mk-hidden'}">Blog sort: oldest</span>
+  </BlogTools>
+  <BlogGrid>
+    <article className="mk-blog-large"><Card><img src="assets/images/cover/cover-1.webp" alt="Blog cover" /><section><Avatar>B</Avatar><span>11/08/2023</span><h3>Whiteboard Templates By Industry Leaders</h3><p>8.8k views - 7.9k comments</p></section></Card></article>
+    <article><Card><img src="assets/images/cover/cover-6.webp" alt="Blog cover" /><section><span>02/29/2024</span><h3>Six Socks Studio</h3><p>8.5k shares</p></section></Card></article>
+    <article><Card><img src="assets/images/cover/cover-8.webp" alt="Blog cover" /><section><span>01/13/2024</span><h3>Simple, Great Looking Animations</h3><p>7.9k comments</p></section></Card></article>
+  </BlogGrid>
+  <section className="mk-blog-pagination"><Pagination count={10} color="primary" /></section>
+
+  fn new_post() {
+    let count = post_actions;
+    count = count + 1;
+    post_actions = count;
+    render();
+  }
+  fn search_changed() {
+    search_open = true;
+    let count = search_updates;
+    count = count + 1;
+    search_updates = count;
+    render();
+  }
+  fn open_search() {
+    search_open = true;
+    render();
+  }
+  fn close_search() {
+    search_open = false;
+    render();
+  }
+  fn choose_search_result() {
+    search_open = false;
+    let count = search_updates;
+    count = count + 1;
+    search_updates = count;
+    render();
+  }
+  fn toggle_sort() {
+    let open = sort_open;
+    if open {
+      sort_open = false;
+      sort_hidden = true;
+      render();
+    } else {
+      sort_open = true;
+      sort_hidden = false;
+      render();
+    }
+  }
+  fn close_sort() {
+    sort_open = false;
+    sort_hidden = true;
+    render();
+  }
+  fn choose_latest() {
+    sort_latest = true;
+    sort_popular = false;
+    sort_oldest = false;
+    sort_open = false;
+    sort_hidden = true;
+    let count = sort_changes;
+    count = count + 1;
+    sort_changes = count;
+    render();
+  }
+  fn choose_popular() {
+    sort_latest = false;
+    sort_popular = true;
+    sort_oldest = false;
+    sort_open = false;
+    sort_hidden = true;
+    let count = sort_changes;
+    count = count + 1;
+    sort_changes = count;
+    render();
+  }
+  fn choose_oldest() {
+    sort_latest = false;
+    sort_popular = false;
+    sort_oldest = true;
+    sort_open = false;
+    sort_hidden = true;
+    let count = sort_changes;
+    count = count + 1;
+    sort_changes = count;
+    render();
+  }
+  !sort_open !sort_hidden !sort_latest !sort_popular !sort_oldest !sort_changes !search_open !search_updates !post_actions
+</Component>
+
+<Component name="MaterialKitUsersView">
+  <state>
+    selected = 0
+    page = 1
+    row0 = 0 as i1
+    all_selected = 0 as i1
+    row_menu_open = 0 as i1
+    row_menu_hidden = 1 as i1
+    order_asc = 1 as i1
+    actions = 0
+  </state>
+
+  <PageHeading eyebrow="Directory" title="Users"><Button variant="contained" color="inherit" onClick={user_action}>New user</Button></PageHeading>
+  <UserCardShell><Card>
+    <section className="mk-table-toolbar{row0 ? ' mk-table-toolbar-selected' : ''}"><Toolbar disableGutters><span className="mk-toolbar-selected-copy{row0 ? '' : ' mk-hidden'}">{selected} selected</span><span className="mk-toolbar-search{row0 ? ' mk-hidden' : ''}"><OutlinedInput fullWidth onChange={user_action}><InputAdornment position="start">Search</InputAdornment></OutlinedInput></span><span className="mk-inline-status">Actions: {actions}</span><span className="mk-inline-status">Selected: {selected}</span><span className="mk-inline-status">Page: {page}</span><Tooltip title="Delete"><IconButton onClick={user_action}>Delete</IconButton></Tooltip><Tooltip title="Filter list"><IconButton onClick={user_action}>Filter</IconButton></Tooltip></Toolbar></section>
+    <Table>
+      <TableHead><TableRow><TableCell><Checkbox checked={all_selected} onChange={toggle_all_rows} /></TableCell><TableCell><span className="mk-sort-asc{order_asc ? '' : ' mk-hidden'}"><TableSortLabel active direction="asc" onClick={toggle_order}>Name</TableSortLabel></span><span className="mk-sort-desc{order_asc ? ' mk-hidden' : ''}"><TableSortLabel active direction="desc" onClick={toggle_order}>Name</TableSortLabel></span></TableCell><TableCell>Company</TableCell><TableCell>Role</TableCell><TableCell>Verified</TableCell><TableCell>Status</TableCell><TableCell></TableCell></TableRow></TableHead>
+      <TableBody>
+        <TableRow hover selected={row0}><TableCell><Checkbox checked={row0} onChange={toggle_row0} /></TableCell><TableCell><Avatar>B</Avatar>Billy Stoltenberg</TableCell><TableCell>Medhurst, Moore and Franey</TableCell><TableCell>Leader</TableCell><TableCell>Yes</TableCell><TableCell><Chip>active</Chip></TableCell><TableCell><section className="mk-action-popover mk-row-action"><IconButton onClick={toggle_row_menu}>More</IconButton><section className="mk-overlay-state" hidden={row_menu_hidden}><ClickAwayListener onClickAway={close_row_menu}><Popover open={row_menu_open} anchorOriginVertical="top" anchorOriginHorizontal="left" transformOriginVertical="top" transformOriginHorizontal="right"><MenuList disablePadding><MenuItem onClick={row_menu_edit}>Edit</MenuItem><MenuItem onClick={row_menu_delete}>Delete</MenuItem></MenuList></Popover></ClickAwayListener></section></section></TableCell></TableRow>
+        <TableRow hover><TableCell></TableCell><TableCell><Avatar>E</Avatar>Eloise Ebert</TableCell><TableCell>Hahn, Homenick and Lind</TableCell><TableCell>HR Manager</TableCell><TableCell>No</TableCell><TableCell><Chip color="secondary">banned</Chip></TableCell><TableCell><IconButton onClick={user_action}>More</IconButton></TableCell></TableRow>
+        <TableRow hover><TableCell></TableCell><TableCell><Avatar>T</Avatar>Teresa Luettgen</TableCell><TableCell>Larkin LLC</TableCell><TableCell>UI Designer</TableCell><TableCell>Yes</TableCell><TableCell><Chip>active</Chip></TableCell><TableCell><IconButton onClick={user_action}>More</IconButton></TableCell></TableRow>
+        <TableRow hover><TableCell></TableCell><TableCell><Avatar>S</Avatar>Salvador Mayert</TableCell><TableCell>Stamm, Larson and Mertz</TableCell><TableCell>UX Designer</TableCell><TableCell>Yes</TableCell><TableCell><Chip>active</Chip></TableCell><TableCell><IconButton onClick={user_action}>More</IconButton></TableCell></TableRow>
+        <TableRow hover><TableCell></TableCell><TableCell><Avatar>M</Avatar>Mallory Keeling</TableCell><TableCell>Schuppe, Nolan and Green</TableCell><TableCell>Backend Engineer</TableCell><TableCell>No</TableCell><TableCell><Chip>active</Chip></TableCell><TableCell><IconButton onClick={user_action}>More</IconButton></TableCell></TableRow>
+      </TableBody>
+    </Table>
+    <section className="mk-table-pagination"><Button onClick={prev_page}>Previous</Button><span>Rows per page: 5</span><span>Page {page} of 2</span><Button onClick={next_page}>Next</Button></section>
+  </Card></UserCardShell>
+
+  fn user_action() {
+    let count = actions;
+    count = count + 1;
+    actions = count;
+    render();
+  }
+  fn toggle_order() {
+    let asc = order_asc;
+    if asc {
+      order_asc = false;
+      render();
+    } else {
+      order_asc = true;
+      render();
+    }
+  }
+  fn toggle_all_rows() {
+    all_selected = checked;
+    row0 = checked;
+    if checked {
+      selected = 5;
+      render();
+    } else {
+      selected = 0;
+      render();
+    }
+  }
+  fn toggle_row0() {
+    row0 = checked;
+    all_selected = false;
+    if checked {
+      selected = 1;
+      render();
+    } else {
+      selected = 0;
+      render();
+    }
+  }
+  fn toggle_row_menu() {
+    let open = row_menu_open;
+    if open {
+      row_menu_open = false;
+      row_menu_hidden = true;
+      render();
+    } else {
+      row_menu_open = true;
+      row_menu_hidden = false;
+      render();
+    }
+  }
+  fn close_row_menu() {
+    row_menu_open = false;
+    row_menu_hidden = true;
+    render();
+  }
+  fn row_menu_edit() {
+    row_menu_open = false;
+    row_menu_hidden = true;
+    let count = actions;
+    count = count + 1;
+    actions = count;
+    render();
+  }
+  fn row_menu_delete() {
+    row_menu_open = false;
+    row_menu_hidden = true;
+    let count = actions;
+    count = count + 1;
+    actions = count;
+    render();
+  }
+  fn prev_page() {
+    page = 1;
+    render();
+  }
+  fn next_page() {
+    page = 2;
+    render();
+  }
+  !selected !page !row0 !all_selected !row_menu_open !row_menu_hidden !order_asc !actions
+</Component>
+
+<Component name="MaterialKitSignInView">
+  <state>
+    show_password = 0 as i1
+    attempts = 0
+  </state>
+  <AuthContent>
+    <section className="mk-auth-title"><Typography variant="h5">Sign in</Typography><Typography variant="body2">Don't have an account?<Slot /></Typography></section>
+    <section className="mk-auth-form">
+      <TextField fullWidth value="hello@gmail.com">Email address</TextField>
+      <section className="mk-auth-forgot-row"><button className="mk-auth-forgot" onClick={submit}>Forgot password?</button></section>
+      <section className="mk-password-field"><TextField fullWidth type={show_password ? 'text' : 'password'} value="@demo1234">Password</TextField><span className="mk-password-toggle"><IconButton onClick={toggle_password}><span className="mk-eye-icon{show_password ? ' mk-eye-open' : ''}">Show password</span></IconButton></span></section>
+      <span className="mk-inline-status mk-auth-status">Sign-in attempts: {attempts}</span>
+      <Button fullWidth variant="contained" color="inherit" onClick={submit}>Sign in</Button>
+    </section>
+    <section className="mk-auth-divider"><span>OR</span></section>
+    <section className="mk-socials"><IconButton onClick={submit}><span className="mk-social-icon">G</span></IconButton><IconButton onClick={submit}><span className="mk-social-icon">GH</span></IconButton><IconButton onClick={submit}><span className="mk-social-icon">X</span></IconButton></section>
+  </AuthContent>
+
+  fn toggle_password() {
+    let visible = show_password;
+    if visible {
+      show_password = false;
+      render();
+    } else {
+      show_password = true;
+      render();
+    }
+  }
+  fn submit() {
+    let count = attempts;
+    count = count + 1;
+    attempts = count;
+    render();
+  }
+  !show_password !attempts
+</Component>
+
+<Component name="MaterialKitRegisterView">
+  <state>
+    show_password = 0 as i1
+    submissions = 0
+    accept_terms = 1 as i1
+  </state>
+  <AuthContent>
+    <section className="mk-auth-title"><Typography variant="h5">Register</Typography><Typography variant="body2">Already have an account?<Slot /></Typography></section>
+    <section className="mk-auth-form">
+      <TextField fullWidth value="John Doe">Full name</TextField>
+      <TextField fullWidth value="john.doe@example.com">Email address</TextField>
+      <section className="mk-password-field"><TextField fullWidth type={show_password ? 'text' : 'password'} value="@demo1234">Password</TextField><span className="mk-password-toggle"><IconButton onClick={toggle_password}><span className="mk-eye-icon{show_password ? ' mk-eye-open' : ''}">Show password</span></IconButton></span></section>
+      <FormControlLabel><Checkbox checked={accept_terms} onChange={toggle_terms} />I agree to the terms</FormControlLabel>
+      <span className="mk-inline-status mk-auth-status">Register submissions: {submissions}</span>
+      <Button fullWidth variant="contained" color="inherit" onClick={submit}>Register</Button>
+    </section>
+    <section className="mk-auth-divider"><span>OR</span></section>
+    <section className="mk-socials"><IconButton onClick={submit}><span className="mk-social-icon">G</span></IconButton><IconButton onClick={submit}><span className="mk-social-icon">GH</span></IconButton><IconButton onClick={submit}><span className="mk-social-icon">X</span></IconButton></section>
+  </AuthContent>
+
+  fn toggle_password() {
+    let visible = show_password;
+    if visible {
+      show_password = false;
+      render();
+    } else {
+      show_password = true;
+      render();
+    }
+  }
+  fn toggle_terms() {
+    accept_terms = checked;
+    render();
+  }
+  fn submit() {
+    let count = submissions;
+    count = count + 1;
+    submissions = count;
+    render();
+  }
+  !show_password !submissions !accept_terms
+</Component>

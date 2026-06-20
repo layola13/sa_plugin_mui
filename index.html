@@ -27,6 +27,8 @@
     .card a.button { width: fit-content; min-height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; background: #1473e6; color: #ffffff; padding: 0 14px; text-decoration: none; font-weight: 800; }
     .card a.button:hover, .card a.button:focus-visible { background: #0b5fc2; outline: 3px solid rgba(20, 115, 230, .18); outline-offset: 2px; }
     .source { display: block; color: #334155; font-size: 13px; overflow-wrap: anywhere; }
+    .sla-nav-section { margin: 18px 0 28px; }
+    .sla-nav-section > p { margin-bottom: 12px; }
     section { margin-top: 18px; padding: 18px; overflow: hidden; }
     .table-wrap { overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; font-size: 14px; }
@@ -61,6 +63,20 @@
       <article class="card"><h2>Sign In</h2><p>独立认证页面，Sign in/Register 在同一页面内部切换，不刷新路由。</p><span class="source">源码: demos/mui_material_kit_sign_in.sax</span><span class="source">Layout: mui/material_kit_layout.sax</span><span class="source">输出: dist/material-kit/sign-in/index.html</span><a class="button" href="dist/material-kit/sign-in/index.html">打开</a></article>
       <article class="card"><h2>Register</h2><p>独立注册页面，和登录页同属 auth layout 风格，同页切换到 Sign in。</p><span class="source">源码: demos/mui_material_kit_register.sax</span><span class="source">Layout: mui/material_kit_layout.sax</span><span class="source">输出: dist/material-kit/register/index.html</span><a class="button" href="dist/material-kit/register/index.html">打开</a></article>
       <article class="card"><h2>404</h2><p>独立 404 页面，对齐原版 NotFoundView：固定 Logo、居中说明、404 illustration，以及返回首页 Link/Button 组合。</p><span class="source">源码: demos/mui_material_kit_404.sax</span><span class="source">组件: Link.href + Button fullWidth/size/color classes</span><span class="source">输出: dist/material-kit/404/index.html</span><a class="button" href="dist/material-kit/404/index.html">打开</a></article>
+    </div>
+
+    <div class="sla-nav-section">
+      <h2>Sla Material Kit Navigation</h2>
+      <p>下面是同一套 Material Kit 页面入口的 Sla handler 版本；SA 版本保留在上方，输出目录独立为 <code>dist/material-kit-sla</code>。</p>
+      <div class="grid" aria-label="Sla Material Kit navigation">
+        <article class="card"><h2>Sla Dashboard</h2><p>Dashboard shell、内部页面切换、click-away popover、auth 切换和计数逻辑均由 Sla handler 编译。</p><span class="source">源码: demos/mui_material_kit_demo_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">输出: dist/material-kit-sla/index.html</span><a class="button" href="dist/material-kit-sla/index.html">打开</a></article>
+        <article class="card"><h2>Sla Products</h2><p>Products 独立路由使用 Sla 版 sort menu、filter drawer、dirty badge 和 reset action。</p><span class="source">源码: demos/mui_material_kit_products_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">输出: dist/material-kit-sla/products/index.html</span><a class="button" href="dist/material-kit-sla/products/index.html">打开</a></article>
+        <article class="card"><h2>Sla Blog</h2><p>Blog 独立路由使用 Sla 版搜索输入、文章排序菜单和分页状态。</p><span class="source">源码: demos/mui_material_kit_blog_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">输出: dist/material-kit-sla/blog/index.html</span><a class="button" href="dist/material-kit-sla/blog/index.html">打开</a></article>
+        <article class="card"><h2>Sla Users</h2><p>Users 独立路由使用 Sla 版表格选择、排序、行级菜单和分页按钮。</p><span class="source">源码: demos/mui_material_kit_users_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">输出: dist/material-kit-sla/users/index.html</span><a class="button" href="dist/material-kit-sla/users/index.html">打开</a></article>
+        <article class="card"><h2>Sla Sign In</h2><p>Sign in 独立认证页面的页面切换、密码显示和提交计数均由 Sla handler 编译。</p><span class="source">源码: demos/mui_material_kit_sign_in_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">输出: dist/material-kit-sla/sign-in/index.html</span><a class="button" href="dist/material-kit-sla/sign-in/index.html">打开</a></article>
+        <article class="card"><h2>Sla Register</h2><p>Register 独立认证页面使用 Sla 版 terms toggle、密码显示和提交计数。</p><span class="source">源码: demos/mui_material_kit_register_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">输出: dist/material-kit-sla/register/index.html</span><a class="button" href="dist/material-kit-sla/register/index.html">打开</a></article>
+        <article class="card"><h2>Sla 404</h2><p>404 独立页面使用 Sla 版 Stay here action 计数，保留原 Link/Button 输出结构。</p><span class="source">源码: demos/mui_material_kit_404_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">输出: dist/material-kit-sla/404/index.html</span><a class="button" href="dist/material-kit-sla/404/index.html">打开</a></article>
+      </div>
     </div>
 
     <section>
@@ -105,6 +121,8 @@
         <li><a href="dist/all-components-library/index.html">All Components Library Demo</a> - 源码 <code>demos/mui_all_components_from_library.sax</code></li>
         <li><a href="dist/all-components-inlined/index.html">All Components Inlined Baseline</a> - 源码 <code>demos/mui_all_components.sax</code></li>
         <li><a href="dist/basic-inlined/index.html">Basic Inlined Baseline</a> - 源码 <code>demos/mui_basic_inlined.sax</code></li>
+        <li><a href="dist/all-components-library-sla/index.html">Sla All Components Library Demo</a> - 源码 <code>demos/mui_all_components_from_library_sla.sax</code></li>
+        <li><a href="dist/theme-lab-smoke-sla/index.html">Sla Theme Lab Smoke</a> - 源码 <code>demos/mui_theme_lab_smoke_sla.sax</code></li>
       </ul>
     </section>
   </main>

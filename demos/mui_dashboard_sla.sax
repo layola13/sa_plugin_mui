@@ -1,0 +1,766 @@
+<Component name="MuiDashboard">
+  <section className="mui-basic-demo mui-dashboard">
+    <InitColorSchemeScript />
+    <GlobalStyles />
+    <CssBaseline />
+
+    <Box className="mui-dashboard-shell">
+      <aside className="mui-dashboard-sidebar">
+        <Box className="mui-dashboard-brand">
+          <Box className="mui-dashboard-mark">S</Box>
+          <Box>
+            <h3>SA MUI</h3>
+            <p>Component dashboard</p>
+          </Box>
+        </Box>
+        <nav className="mui-dashboard-nav">
+          <a href="#overview">Overview</a>
+          <a href="#layout">Layout</a>
+          <a href="#actions">Actions</a>
+          <a href="#forms">Forms</a>
+          <a href="#navigation">Navigation</a>
+          <a href="#feedback">Feedback</a>
+          <a href="#data">Data display</a>
+        </nav>
+        <Box className="mui-dashboard-status">
+          <h3>Coverage</h3>
+          <strong>100%</strong>
+          <p>SA/SAX driven</p>
+        </Box>
+      </aside>
+
+      <main className="mui-dashboard-main">
+        <header className="mui-dashboard-topbar">
+          <Box>
+            <p>Material UI on SA React</p>
+            <h1>SA MUI Component Dashboard</h1>
+          </Box>
+          <Box className="mui-dashboard-actions">
+            <span>Library build</span>
+            <span>No Node MUI runtime</span>
+          </Box>
+        </header>
+
+        <section id="overview" className="mui-dashboard-hero">
+          <Box className="mui-dashboard-hero-copy">
+            <h2>React-shaped, SA-owned MUI surface</h2>
+            <p>Every tile below is rendered through SA React and the local SAX Material component library.</p>
+          </Box>
+          <Box className="mui-dashboard-metrics">
+            <Box><span>Components</span><strong>130</strong><p>Core exports</p></Box>
+            <Box><span>Owner state</span><strong>Locked</strong><p>Verified DOM</p></Box>
+            <Box><span>Plugin boundary</span><strong>Clean</strong><p>Zig descriptor only</p></Box>
+          </Box>
+        </section>
+
+        <section id="layout" className="mui-dashboard-section">
+          <Box className="mui-section-heading">
+            <h2>Layout and Surfaces</h2>
+            <p>Containers, app bars, typography, paper, dividers, and utility wrappers.</p>
+          </Box>
+          <Box className="mui-showcase-grid">
+            <Box className="mui-showcase-card">
+              <h3>Containers</h3>
+              <Container fixed disableGutters>
+                <Typography>Fixed flush container</Typography>
+              </Container>
+              <Container maxWidth="md">
+                <Typography>Medium container</Typography>
+              </Container>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>App bar and toolbar</h3>
+              <AppBar>
+                <Toolbar>
+                  <Typography>Toolbar title</Typography>
+                </Toolbar>
+                <Toolbar variant="dense">
+                  <Typography>Dense toolbar</Typography>
+                </Toolbar>
+                <Toolbar disableGutters>
+                  <Typography>Flush toolbar</Typography>
+                </Toolbar>
+              </AppBar>
+              <AppBar color="secondary" position="static">
+                <Toolbar>
+                  <Typography>Static secondary app bar</Typography>
+                </Toolbar>
+              </AppBar>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Typography</h3>
+              <Typography>SA driven MUI</Typography>
+              <Typography gutterBottom noWrap>Compact headline</Typography>
+              <Typography variant="h6">Section heading</Typography>
+              <Typography align="center">Centered body copy</Typography>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Paper and box</h3>
+              <Paper variant="outlined">Outlined paper</Paper>
+              <Paper elevation={3}>Elevation three paper</Paper>
+              <Paper square>Square paper</Paper>
+              <Box>Box content</Box>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Dividers</h3>
+              <Divider />
+              <Divider absolute flexItem />
+              <Divider variant="middle" />
+              <Divider variant="inset" />
+              <Divider orientation="vertical" flexItem />
+              <Divider textAlign="left" />
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Baseline wrappers</h3>
+              <ScopedCssBaseline>
+                <Grid container spacing={2} direction="row-reverse" wrap="wrap-reverse" className="mui-grid-owner-state">
+                  <Grid size={6}>Grid half item</Grid>
+                  <Grid size={12}>Grid full item</Grid>
+                  <NoSsr>Client content</NoSsr>
+                  <ClickAwayListener>Click away content</ClickAwayListener>
+                  <Unstable_TrapFocus open>Focus content</Unstable_TrapFocus>
+                </Grid>
+              </ScopedCssBaseline>
+            </Box>
+          </Box>
+        </section>
+
+        <section id="actions" className="mui-dashboard-section">
+          <Box className="mui-section-heading">
+            <h2>Actions</h2>
+            <p>Buttons, icons, fabs, grouped controls, links, and symbol components.</p>
+          </Box>
+          <Box className="mui-showcase-grid">
+            <Box className="mui-showcase-card">
+              <h3>Buttons</h3>
+              <Stack>
+                <Button>Save</Button>
+                <Button disabled>Disabled button</Button>
+                <Button size="small">Small button</Button>
+                <Button size="large">Large button</Button>
+                <Button variant="contained">Contained button</Button>
+                <Button color="inherit">Inherit button</Button>
+                <Button color="secondary">Secondary button</Button>
+              </Stack>
+              <Stack direction="row" spacing={2} useFlexGap className="mui-stack-owner-state">
+                <Chip color="secondary">Row stack item</Chip>
+                <Button variant="outlined">Row stack action</Button>
+              </Stack>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Button groups</h3>
+              <ButtonGroup>
+                <ButtonBase>Base</ButtonBase>
+                <ButtonBase disabled>Disabled base</ButtonBase>
+                <Button>Grouped</Button>
+              </ButtonGroup>
+              <ButtonGroup variant="contained" color="inherit">
+                <Button>Contained inherit grouped</Button>
+              </ButtonGroup>
+              <ButtonGroup color="secondary">
+                <Button>Secondary grouped</Button>
+              </ButtonGroup>
+              <ButtonGroup orientation="vertical">
+                <Button>Vertical grouped</Button>
+              </ButtonGroup>
+              <ButtonGroup fullWidth disableElevation>
+                <Button>Full width grouped</Button>
+              </ButtonGroup>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Icon buttons</h3>
+              <IconButton>Icon</IconButton>
+              <IconButton color="primary">Primary icon</IconButton>
+              <IconButton color="secondary">Secondary icon</IconButton>
+              <IconButton color="inherit">Inherit icon</IconButton>
+              <IconButton size="small">Small icon</IconButton>
+              <IconButton disabled>Disabled icon</IconButton>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Floating actions</h3>
+              <Fab>Add</Fab>
+              <Fab color="primary">Primary fab</Fab>
+              <Fab color="secondary">Secondary fab</Fab>
+              <Fab color="inherit">Inherit fab</Fab>
+              <Fab variant="extended">Extended fab</Fab>
+              <Fab size="small">Small fab</Fab>
+              <Fab size="medium">Medium fab</Fab>
+              <Fab disabled>Disabled fab</Fab>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Links and icons</h3>
+              <SvgIcon>
+                <path d="M12 2 2 22h20z" />
+              </SvgIcon>
+              <SvgIcon color="secondary" fontSize="small">
+                <path d="M12 2 2 22h20z" />
+              </SvgIcon>
+              <SvgIcon fontSize="large">
+                <path d="M12 2 2 22h20z" />
+              </SvgIcon>
+              <Icon>home</Icon>
+              <Icon color="secondary" fontSize="small">menu</Icon>
+              <Icon fontSize="inherit">search</Icon>
+              <Link>Open link</Link>
+              <Link underline="hover">Hover link</Link>
+              <Link underline="none">Plain link</Link>
+            </Box>
+          </Box>
+        </section>
+
+        <section id="forms" className="mui-dashboard-section">
+          <Box className="mui-section-heading">
+            <h2>Forms and Inputs</h2>
+            <p>Labels, base inputs, selects, text fields, switches, radios, and validation states.</p>
+          </Box>
+          <Box className="mui-showcase-grid">
+            <Box className="mui-showcase-card">
+              <h3>Labels</h3>
+              <FormControl>
+                <FormLabel>Email</FormLabel>
+              </FormControl>
+              <FormControl fullWidth>
+                <FormLabel>Full width form</FormLabel>
+              </FormControl>
+              <FormLabel disabled error filled focused required>State form label</FormLabel>
+              <FormLabel color="secondary">Secondary form label</FormLabel>
+              <InputLabel>Email input</InputLabel>
+              <InputLabel disabled error focused required shrink>State input label</InputLabel>
+              <InputLabel size="small" variant="outlined">Outlined small input label</InputLabel>
+              <InputLabel disableAnimation variant="filled">Filled static input label</InputLabel>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Input variants</h3>
+              <Input>
+                <InputAdornment>$</InputAdornment>
+              </Input>
+              <Input>
+                <InputAdornment position="end">kg</InputAdornment>
+              </Input>
+              <InputAdornment disablePointerEvents hiddenLabel>Hidden adornment</InputAdornment>
+              <Input disabled error focused fullWidth multiline readOnly>State input</Input>
+              <Input color="secondary">Secondary input</Input>
+              <InputBase>Base input</InputBase>
+              <InputBase disabled error focused fullWidth hiddenLabel multiline readOnly>State input base</InputBase>
+              <InputBase color="secondary">Secondary base input</InputBase>
+              <FilledInput>Filled input</FilledInput>
+              <FilledInput disabled error focused fullWidth hiddenLabel multiline readOnly>State filled input</FilledInput>
+              <FilledInput color="secondary">Secondary filled input</FilledInput>
+              <OutlinedInput>Outlined input</OutlinedInput>
+              <OutlinedInput disabled error focused fullWidth hiddenLabel multiline readOnly>State outlined input</OutlinedInput>
+              <OutlinedInput color="secondary">Secondary outlined input</OutlinedInput>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Fields and selects</h3>
+              <TextField>Text field</TextField>
+              <TextField disabled error fullWidth multiline required>State text field</TextField>
+              <TextField color="secondary">Secondary text field</TextField>
+              <TextareaAutosize>Textarea</TextareaAutosize>
+              <Select>
+                <MenuItem>First option</MenuItem>
+                <MenuItem>Second option</MenuItem>
+              </Select>
+              <Select color="secondary">Secondary select</Select>
+              <Select variant="standard">Standard select</Select>
+              <Select disabled error multiple open>State select</Select>
+              <NativeSelect>
+                <option>Native option</option>
+              </NativeSelect>
+              <NativeSelect color="secondary">
+                <option>Secondary native option</option>
+              </NativeSelect>
+              <NativeSelect variant="outlined">
+                <option>Outlined native option</option>
+              </NativeSelect>
+              <NativeSelect disabled error multiple>
+                <option>Disabled native option</option>
+              </NativeSelect>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Choice controls</h3>
+              <FormGroup>
+                <FormControlLabel>
+                  <Checkbox />
+                  <Checkbox size="small">Small checkbox</Checkbox>
+                  <Checkbox color="secondary">Secondary checkbox</Checkbox>
+                  <Checkbox checked>Checked checkbox</Checkbox>
+                  <Checkbox disabled>Disabled checkbox</Checkbox>
+                </FormControlLabel>
+                <Switch />
+                <Switch size="small">Small switch</Switch>
+                <Switch color="secondary">Secondary switch</Switch>
+                <Switch checked>Checked switch</Switch>
+                <Switch disabled>Disabled switch</Switch>
+                <FormHelperText>Required field</FormHelperText>
+                <FormHelperText size="small">Small helper text</FormHelperText>
+                <FormHelperText variant="filled">Filled helper text</FormHelperText>
+                <FormHelperText variant="outlined">Outlined helper text</FormHelperText>
+                <FormHelperText disabled error filled focused required>State helper text</FormHelperText>
+              </FormGroup>
+              <FormGroup row error>
+                <FormControlLabel disabled error required>
+                  State form control label
+                </FormControlLabel>
+              </FormGroup>
+              <RadioGroup>
+                <Radio />
+                <Radio size="small">Small radio</Radio>
+                <Radio color="secondary">Secondary radio</Radio>
+                <Radio checked>Checked radio</Radio>
+                <Radio disabled>Disabled radio</Radio>
+              </RadioGroup>
+              <RadioGroup row error>
+                <Radio>Row error radio</Radio>
+              </RadioGroup>
+            </Box>
+          </Box>
+        </section>
+
+        <section id="navigation" className="mui-dashboard-section">
+          <Box className="mui-section-heading">
+            <h2>Navigation</h2>
+            <p>Menus, step flows, tabs, toggle groups, pagination, and mobile steppers.</p>
+          </Box>
+          <Box className="mui-showcase-grid">
+            <Box className="mui-showcase-card">
+              <h3>Menu primitives</h3>
+              <MenuList>
+                <MenuItem>Menu option</MenuItem>
+                <MenuItem selected>Selected menu option</MenuItem>
+                <MenuItem disabled>Disabled menu option</MenuItem>
+              </MenuList>
+              <MenuList disablePadding>
+                <MenuItem>Flush menu option</MenuItem>
+              </MenuList>
+              <Menu open>
+                <MenuItem>Menu child</MenuItem>
+              </Menu>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Bottom navigation and breadcrumbs</h3>
+              <BottomNavigation>
+                <BottomNavigationAction>Home</BottomNavigationAction>
+                <BottomNavigationAction selected>Settings</BottomNavigationAction>
+                <BottomNavigationAction showLabel>Visible label</BottomNavigationAction>
+              </BottomNavigation>
+              <Breadcrumbs>
+                <span>Home</span>
+                <span>Library</span>
+              </Breadcrumbs>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Steppers</h3>
+              <Stepper alternativeLabel>
+                <Step>
+                  <StepLabel>First step</StepLabel>
+                  <StepContent>Step content</StepContent>
+                </Step>
+                <Step completed>
+                  <StepLabel active completed>Completed step label</StepLabel>
+                </Step>
+                <StepConnector active completed />
+                <StepConnector disabled />
+                <Step>
+                  <StepButton>Second step</StepButton>
+                  <StepButton active completed>Completed step button</StepButton>
+                  <StepButton disabled>Disabled step</StepButton>
+                </Step>
+              </Stepper>
+              <Stepper orientation="vertical">
+                <Step>
+                  <StepLabel orientation="vertical">Vertical first step</StepLabel>
+                </Step>
+                <StepConnector orientation="vertical" />
+                <Step>
+                  <StepButton orientation="vertical">Vertical second step</StepButton>
+                </Step>
+              </Stepper>
+              <StepIcon />
+              <StepIcon active />
+              <StepIcon completed />
+              <StepIcon error />
+              <StepLabel error>Errored step label</StepLabel>
+              <StepLabel disabled>Disabled step label</StepLabel>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Tabs and toggles</h3>
+              <Tabs>
+                <Tab>First tab</Tab>
+                <Tab>Second tab</Tab>
+                <Tab selected>Selected tab</Tab>
+                <Tab disabled>Disabled tab</Tab>
+              </Tabs>
+              <Tabs>
+                <Tab textColor="primary">Primary tab</Tab>
+                <Tab textColor="secondary">Secondary tab</Tab>
+              </Tabs>
+              <Tabs centered>
+                <Tab fullWidth wrapped>Wide wrapped tab</Tab>
+              </Tabs>
+              <TabScrollButton />
+              <TabScrollButton disabled>Disabled tab scroll</TabScrollButton>
+              <TabScrollButton orientation="vertical">Vertical tab scroll</TabScrollButton>
+              <ToggleButtonGroup>
+                <ToggleButton>Bold</ToggleButton>
+                <ToggleButton>Italic</ToggleButton>
+                <ToggleButton color="primary">Primary toggle</ToggleButton>
+                <ToggleButton color="secondary">Secondary toggle</ToggleButton>
+                <ToggleButton size="small">Small toggle</ToggleButton>
+                <ToggleButton size="large">Large toggle</ToggleButton>
+                <ToggleButton selected>Selected toggle</ToggleButton>
+                <ToggleButton disabled>Disabled toggle</ToggleButton>
+              </ToggleButtonGroup>
+              <ToggleButtonGroup orientation="vertical">
+                <ToggleButton>Vertical toggle</ToggleButton>
+              </ToggleButtonGroup>
+              <ToggleButtonGroup fullWidth>
+                <ToggleButton fullWidth>Full width toggle</ToggleButton>
+              </ToggleButtonGroup>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Pagination and speed dial</h3>
+              <Pagination>
+                <PaginationItem color="secondary" selected>3</PaginationItem>
+                <PaginationItem disabled>Disabled page</PaginationItem>
+              </Pagination>
+              <Pagination variant="outlined">
+                <PaginationItem>Outlined page</PaginationItem>
+              </Pagination>
+              <PaginationItem size="small">Small page</PaginationItem>
+              <PaginationItem size="large">Large page</PaginationItem>
+              <PaginationItem shape="rounded">Rounded page</PaginationItem>
+              <PaginationItem variant="outlined">Outlined item page</PaginationItem>
+              <PaginationItem type="previous">Previous item</PaginationItem>
+              <PaginationItem type="next">Next item</PaginationItem>
+              <PaginationItem type="start-ellipsis">Start ellipsis</PaginationItem>
+              <PaginationItem type="last">Last item</PaginationItem>
+              <SpeedDial open>
+                <SpeedDialIcon />
+                <SpeedDialAction open>Edit</SpeedDialAction>
+                <SpeedDialAction>Share</SpeedDialAction>
+              </SpeedDial>
+              <SpeedDial>
+                <SpeedDialAction>Closed speed action</SpeedDialAction>
+              </SpeedDial>
+              <SpeedDial direction="left">
+                <SpeedDialAction>Left speed action</SpeedDialAction>
+              </SpeedDial>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Mobile stepper</h3>
+              <MobileStepper position="bottom">
+                <Button>Bottom back</Button>
+                <Button>Bottom next</Button>
+              </MobileStepper>
+              <MobileStepper position="top">
+                <Button>Top back</Button>
+                <Button>Top next</Button>
+              </MobileStepper>
+              <MobileStepper position="static">
+                <Button>Static back</Button>
+                <Button>Static next</Button>
+              </MobileStepper>
+              <MobileStepper variant="progress" steps="5" activeStep="2">
+                <Button>Progress back</Button>
+                <Button>Progress next</Button>
+              </MobileStepper>
+            </Box>
+          </Box>
+        </section>
+
+        <section id="feedback" className="mui-dashboard-section">
+          <Box className="mui-section-heading">
+            <h2>Feedback and Overlays</h2>
+            <p>Alerts, accordions, progress, drawers, dialogs, tooltips, autocomplete, and range controls.</p>
+          </Box>
+          <Box className="mui-showcase-grid">
+            <Box className="mui-showcase-card">
+              <h3>Overlay primitives</h3>
+              <Popover open>Popover content</Popover>
+              <Popper open>Popper content</Popper>
+              <Portal>Portal content</Portal>
+              <Modal open>Modal content</Modal>
+              <Drawer open>Drawer content</Drawer>
+              <SwipeableDrawer open>Swipeable drawer content</SwipeableDrawer>
+              <Slide in>Slide content</Slide>
+              <Fade in>Fade content</Fade>
+              <Grow in>Grow content</Grow>
+              <Zoom in>Zoom content</Zoom>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Tooltips and autocomplete</h3>
+              <Tooltip title="Tooltip label" open>
+                <Button>Tooltip target</Button>
+              </Tooltip>
+              <Tooltip title="Arrow tooltip" open arrow>
+                <Button>Arrow tooltip target</Button>
+              </Tooltip>
+              <Tooltip title="Static tooltip" open disableInteractive>
+                <Button>Static tooltip target</Button>
+              </Tooltip>
+              <Tooltip title="Top tooltip" open placement="top">
+                <Button>Top tooltip target</Button>
+              </Tooltip>
+              <Autocomplete open fullWidth disablePortal>
+                <span>Selected option</span>
+              </Autocomplete>
+              <Rating value={3} />
+              <Rating size="small">Small rating</Rating>
+              <Rating size="large">Large rating</Rating>
+              <Rating disabled>Disabled rating</Rating>
+              <Rating readOnly>Read only rating</Rating>
+              <Slider value={40} />
+              <Slider color="secondary">Secondary slider</Slider>
+              <Slider size="small">Small slider</Slider>
+              <Slider disabled>Disabled slider</Slider>
+              <Collapse in>Collapsed content</Collapse>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Alerts and accordions</h3>
+              <Alert>
+                <AlertTitle>Heads up</AlertTitle>
+                Check the SA driven MUI surface.
+              </Alert>
+              <Alert severity="warning" variant="filled">Filled warning alert</Alert>
+              <Accordion>
+                <AccordionSummary>Accordion summary</AccordionSummary>
+                <AccordionDetails>Accordion details</AccordionDetails>
+                <AccordionActions>
+                  <Button>Close</Button>
+                </AccordionActions>
+                <AccordionActions disableSpacing>
+                  <Button>Tight accordion action</Button>
+                </AccordionActions>
+              </Accordion>
+              <Accordion expanded>
+                <AccordionSummary expanded>Expanded accordion summary</AccordionSummary>
+                <AccordionDetails>Expanded accordion details</AccordionDetails>
+              </Accordion>
+              <Accordion disabled>
+                <AccordionSummary disabled>Disabled accordion summary</AccordionSummary>
+              </Accordion>
+              <Accordion square disableGutters>
+                <AccordionSummary disableGutters>Flush square accordion summary</AccordionSummary>
+              </Accordion>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Progress and snackbars</h3>
+              <Backdrop open>Backdrop</Backdrop>
+              <Backdrop open invisible>Invisible backdrop</Backdrop>
+              <CircularProgress />
+              <CircularProgress color="secondary" />
+              <CircularProgress disableShrink />
+              <CircularProgress variant="determinate" color="inherit" />
+              <LinearProgress />
+              <LinearProgress color="secondary" />
+              <LinearProgress variant="determinate" />
+              <LinearProgress variant="buffer" color="secondary" />
+              <Skeleton>Loading</Skeleton>
+              <Skeleton variant="rectangular">Rectangular skeleton</Skeleton>
+              <Skeleton animation="wave">Wave skeleton</Skeleton>
+              <Snackbar open>Snackbar message</Snackbar>
+              <Snackbar open anchorOriginVertical="top" anchorOriginHorizontal="right">Top right snackbar</Snackbar>
+              <Snackbar open anchorOriginHorizontal="center">Bottom center snackbar</Snackbar>
+              <SnackbarContent>Snackbar content</SnackbarContent>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Dialogs</h3>
+              <Dialog open>
+                <DialogTitle>Dialog title</DialogTitle>
+                <DialogContent>
+                  <DialogContentText>Dialog body</DialogContentText>
+                </DialogContent>
+                <DialogContent dividers>
+                  Divided dialog content
+                </DialogContent>
+                <DialogActions>
+                  <Button>Cancel</Button>
+                  <Button>Ok</Button>
+                </DialogActions>
+                <DialogActions disableSpacing>
+                  <Button>Tight dialog action</Button>
+                </DialogActions>
+              </Dialog>
+              <Dialog open fullWidth fullScreen>
+                <DialogContent>
+                  Full screen dialog body
+                </DialogContent>
+              </Dialog>
+              <Dialog open scroll="body" maxWidth="md">
+                <DialogContent>
+                  Body scroll medium dialog body
+                </DialogContent>
+              </Dialog>
+            </Box>
+          </Box>
+        </section>
+
+        <section id="data" className="mui-dashboard-section">
+          <Box className="mui-section-heading">
+            <h2>Data Display and Media</h2>
+            <p>Badges, chips, cards, avatars, lists, image lists, and tables.</p>
+          </Box>
+          <Box className="mui-showcase-grid">
+            <Box className="mui-showcase-card">
+              <h3>Badges and chips</h3>
+              <Badge badgeContent={3}>
+                <Chip>Status</Chip>
+              </Badge>
+              <Badge badgeContent={7} color="primary">
+                <Chip>Primary badge</Chip>
+              </Badge>
+              <Badge badgeContent={5} color="secondary">
+                <Chip>Secondary badge</Chip>
+              </Badge>
+              <Badge badgeContent={4} color="error">
+                <Chip>Error badge</Chip>
+              </Badge>
+              <Badge badgeContent={9} anchorOriginVertical="top" anchorOriginHorizontal="left">
+                <Chip>Top left badge</Chip>
+              </Badge>
+              <Badge badgeContent={2} overlap="circular" anchorOriginVertical="bottom" anchorOriginHorizontal="left">
+                <Avatar>BL</Avatar>
+              </Badge>
+              <Chip variant="outlined">Outlined chip</Chip>
+              <Chip color="primary">Primary chip</Chip>
+              <Chip color="secondary">Secondary chip</Chip>
+              <Badge badgeContent={0} invisible>
+                <Chip clickable disabled>Disabled clickable chip</Chip>
+              </Badge>
+              <Chip size="small">Small chip</Chip>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Cards, media, and lists</h3>
+              <Card>
+                <CardHeader>Card header</CardHeader>
+                <CardActionArea disabled>
+                  <CardMedia>Action media</CardMedia>
+                </CardActionArea>
+                <CardMedia>Media</CardMedia>
+                <CardContent>
+                  <Typography>Card content</Typography>
+                  <AvatarGroup>
+                    <Avatar>A</Avatar>
+                    <Avatar variant="rounded">R</Avatar>
+                    <Avatar>B</Avatar>
+                  </AvatarGroup>
+                  <ImageList>
+                    <ImageListItem>
+                      <img />
+                      <ImageListItemBar>Image title</ImageListItemBar>
+                    </ImageListItem>
+                    <ImageListItem variant="woven">
+                      <img />
+                      <ImageListItemBar position="top" actionPosition="left">Woven image title</ImageListItemBar>
+                    </ImageListItem>
+                  </ImageList>
+                  <List>
+                    <ListSubheader>Recent</ListSubheader>
+                    <ListSubheader color="primary">Primary recent</ListSubheader>
+                    <ListSubheader color="inherit">Inherited recent</ListSubheader>
+                    <ListItem>
+                      <ListItemAvatar>
+                        <Avatar>I</Avatar>
+                      </ListItemAvatar>
+                      <ListItemIcon>*</ListItemIcon>
+                      <ListItemText>Inbox</ListItemText>
+                      <ListItemSecondaryAction>
+                        <IconButton>More</IconButton>
+                      </ListItemSecondaryAction>
+                    </ListItem>
+                    <ListItemButton selected>
+                      <ListItemText>Open inbox</ListItemText>
+                    </ListItemButton>
+                    <ListItemButton disabled>
+                      <ListItemText>Disabled inbox</ListItemText>
+                    </ListItemButton>
+                  </List>
+                  <List dense disablePadding>
+                    <ListSubheader inset disableGutters disableSticky>Compact recent</ListSubheader>
+                    <ListItem dense divider disableGutters disablePadding>
+                      <ListItemText inset dense>Dense divided item</ListItemText>
+                      <ListItemSecondaryAction disableGutters>
+                        <IconButton>Compact more</IconButton>
+                      </ListItemSecondaryAction>
+                    </ListItem>
+                    <ListItem>
+                      <ListItemText primary="Main inbox" secondary="Two unread messages">Multiline list text</ListItemText>
+                    </ListItem>
+                    <ListItemButton dense divider disableGutters selected>
+                      <ListItemText dense>Dense selected action</ListItemText>
+                    </ListItemButton>
+                  </List>
+                </CardContent>
+                <CardActions>
+                  <Button>Open</Button>
+                </CardActions>
+                <CardActions disableSpacing>
+                  <Button>Tight card action</Button>
+                </CardActions>
+              </Card>
+              <Card raised>
+                <CardContent>
+                  <Typography>Raised card content</Typography>
+                </CardContent>
+              </Card>
+            </Box>
+
+            <Box className="mui-showcase-card">
+              <h3>Tables</h3>
+              <TableContainer>
+                <Table stickyHeader>
+                  <TableHead>
+                    <TableRow hover selected>
+                      <TableCell stickyHeader>
+                        <TableSortLabel active>Name</TableSortLabel>
+                      </TableCell>
+                      <TableCell>
+                        <TableSortLabel direction="desc">Descending</TableSortLabel>
+                      </TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell size="small">Value</TableCell>
+                    </TableRow>
+                  </TableBody>
+                  <TableFooter>
+                    <TableRow>
+                      <TablePagination />
+                    </TableRow>
+                    <TableRow>
+                      <TablePagination disabled count="25" page="0" rowsPerPage="10" showFirstButton showLastButton>Disabled pagination</TablePagination>
+                    </TableRow>
+                  </TableFooter>
+                </Table>
+              </TableContainer>
+              <TablePaginationActions disabled count="25" page="0" rowsPerPage="10" showFirstButton showLastButton>Disabled pagination actions</TablePaginationActions>
+            </Box>
+          </Box>
+        </section>
+      </main>
+    </Box>
+  </section>
+</Component>

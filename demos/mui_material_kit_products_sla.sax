@@ -1,0 +1,16 @@
+<Component name="MuiMaterialKitProductsPage">
+  <LayoutSection>
+    <InitColorSchemeScript />
+    <GlobalStyles />
+    <CssBaseline />
+    <NavDesktop>
+      <NavContent upgradeTitle="Products page" upgradeSubtitle="Separate route compiled from SAX."><button><img src="assets/icons/navbar/ic-analytics.svg" alt="Dashboard" />Dashboard</button><button className="mk-nav-active"><img src="assets/icons/navbar/ic-cart.svg" alt="Products" />Products</button><button><img src="assets/icons/navbar/ic-blog.svg" alt="Blog" />Blog</button><button><img src="assets/icons/navbar/ic-user.svg" alt="Users" />Users</button><button><img src="assets/icons/navbar/ic-lock.svg" alt="Sign in" />Sign in</button></NavContent>
+    </NavDesktop>
+    <MainSection>
+      <RouteHeader title="Products" />
+      <DashboardContent>
+        <MaterialKitProductsView />
+      </DashboardContent>
+    </MainSection>
+  </LayoutSection>
+</Component>

@@ -56,6 +56,41 @@ SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/lib
 SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_material_kit_404.sax --include mui/material.sax --include mui/icons_material.sax --include mui/material_kit_layout.sax --include mui/material_kit_views.sax
 ```
 
+Every MUI demo also has a same-name Sla handler entry ending in `_sla.sax`. Demos without event handlers are copied as Sla-compatible baselines; demos with SA label handlers have equivalent `fn handler() { ... }` logic. Material Kit's reusable handler logic is mirrored in `mui/material_kit_layout_sla.sax` and `mui/material_kit_views_sla.sax`; the original SA files remain unchanged.
+
+Compile the Sla demo set with:
+
+```bash
+export SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so
+/home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_basic_inlined_sla.sax
+/home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_all_components_sla.sax
+/home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_all_components_from_library_sla.sax --include mui/material.sax --include mui/icons_material.sax
+/home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_theme_lab_smoke_sla.sax --include mui/material.sax --include mui/icons_material.sax
+/home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_material_kit_demo_sla.sax --include mui/material.sax --include mui/icons_material.sax --include mui/material_kit_layout_sla.sax --include mui/material_kit_views_sla.sax
+```
+
+For all seven Sla Material Kit routes, repeat the last command with `demos/mui_material_kit_products_sla.sax`, `demos/mui_material_kit_blog_sla.sax`, `demos/mui_material_kit_users_sla.sax`, `demos/mui_material_kit_sign_in_sla.sax`, `demos/mui_material_kit_register_sla.sax`, and `demos/mui_material_kit_404_sla.sax`.
+
+Build and browser-verify the focused Sla smoke target with a screenshot:
+
+```bash
+npm ci
+SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so \
+  /home/vscode/projects/sci/zig-out/bin/sa react build demos/mui_theme_lab_smoke_sla.sax --include mui/material.sax --include mui/icons_material.sax --out-dir dist/theme-lab-smoke-sla
+MUI_BROWSER_EXECUTABLE=/home/vscode/.local/bin/chromium \
+MUI_BROWSER_SCREENSHOT=$PWD/dist/theme-lab-smoke-sla/theme_lab_sla_chromium.png \
+  node tools/verify_mui_theme_lab_browser.mjs dist/theme-lab-smoke-sla
+```
+
+When `sa_plugin_vite` is available, build the Sla Material Kit static suite with `sa vite build` using the same commands as the SA suite but replacing the entry files with `_sla.sax`, the includes with `mui/material_kit_layout_sla.sax` and `mui/material_kit_views_sla.sax`, and the output root with `dist/material-kit-sla`. The root `index.html` keeps the original SA links and adds the Sla links under `Sla Material Kit Navigation`. The browser verifier can be run against a static server:
+
+```bash
+python3 -m http.server 4177 --bind 127.0.0.1
+MUI_BROWSER_EXECUTABLE=/home/vscode/.local/bin/chromium \
+MUI_BROWSER_SCREENSHOT=$PWD/dist/material-kit-sla/material_kit_sla_chromium.png \
+  node tools/verify_mui_material_kit_browser.mjs http://127.0.0.1:4177/dist/material-kit-sla/index.html
+```
+
 For static dist verification, build and browser-verify the same library-consumption path with:
 
 ```bash

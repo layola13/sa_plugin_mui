@@ -1,0 +1,530 @@
+<Component name="LayoutSection">
+  <section className="mk-app">
+    <Slot />
+  </section>
+</Component>
+
+<Component name="NavDesktop">
+  <aside className="mk-sidebar">
+    <Slot />
+  </aside>
+</Component>
+
+<Component name="NavContent">
+  <state>
+    upgradeTitle = 'SA-MUI workspace' as ptr
+    upgradeTitle_len = 16
+    upgradeSubtitle = 'React-style MUI components compiled through SA.' as ptr
+    upgradeSubtitle_len = 47
+  </state>
+  <section className="mk-logo-row">
+    <section className="mk-logo">M</section>
+    <section><h1>Minimal</h1><p>SA dashboard</p></section>
+  </section>
+  <WorkspacesPopover />
+  <nav className="mk-nav">
+    <Slot />
+  </nav>
+  <NavUpgrade title={upgradeTitle} subtitle={upgradeSubtitle} />
+  !upgradeTitle !upgradeTitle_len !upgradeSubtitle !upgradeSubtitle_len
+</Component>
+
+<Component name="NavUpgrade">
+  <state>
+    title = 'SA-MUI workspace' as ptr
+    title_len = 16
+    subtitle = 'React-style MUI components compiled through SA.' as ptr
+    subtitle_len = 47
+  </state>
+  <section className="mk-upgrade">
+    <img src="assets/illustrations/illustration-dashboard.webp" alt="Dashboard illustration" />
+    <strong>{title}</strong>
+    <span>{subtitle}</span>
+  </section>
+  !title !title_len !subtitle !subtitle_len
+</Component>
+
+<Component name="WorkspacesPopover">
+  <state>
+    workspace_open = 0 as i1
+    workspace_hidden = 1 as i1
+    workspace_team1 = 1 as i1
+    workspace_team2 = 0 as i1
+    workspace_team3 = 0 as i1
+  </state>
+  <section className="mk-action-popover mk-workspace-popover">
+    <button className="mk-workspace-trigger" onClick={toggle_workspace}>
+      <span className="mk-workspace-avatar"><img className="{workspace_team1 ? '' : 'mk-hidden'}" src="assets/icons/workspaces/logo-1.webp" alt="Team 1" /><img className="{workspace_team2 ? '' : 'mk-hidden'}" src="assets/icons/workspaces/logo-2.webp" alt="Team 2" /><img className="{workspace_team3 ? '' : 'mk-hidden'}" src="assets/icons/workspaces/logo-3.webp" alt="Team 3" /></span>
+      <span className="mk-workspace-copy"><strong className="{workspace_team1 ? '' : 'mk-hidden'}">Team 1</strong><strong className="{workspace_team2 ? '' : 'mk-hidden'}">Team 2</strong><strong className="{workspace_team3 ? '' : 'mk-hidden'}">Team 3</strong><em className="{workspace_team1 ? '' : 'mk-hidden'}">Free</em><em className="{workspace_team2 ? '' : 'mk-hidden'}">Pro</em><em className="{workspace_team3 ? '' : 'mk-hidden'}">Pro</em></span>
+      <span className="mk-workspace-chevron"><ExpandMoreIcon fontSize="small" /></span>
+    </button>
+    <section className="mk-overlay-state" hidden={workspace_hidden}>
+      <ClickAwayListener onClickAway={close_workspace}>
+        <Popover open={workspace_open} anchorOriginVertical="bottom" anchorOriginHorizontal="left" transformOriginVertical="top" transformOriginHorizontal="left">
+          <MenuList disablePadding>
+            <MenuItem selected={workspace_team1} onClick={select_workspace_team1}><img className="mk-menu-icon mk-workspace-menu-icon" src="assets/icons/workspaces/logo-1.webp" alt="Team 1" />Team 1<span className="mk-plan-label">Free</span></MenuItem>
+            <MenuItem selected={workspace_team2} onClick={select_workspace_team2}><img className="mk-menu-icon mk-workspace-menu-icon" src="assets/icons/workspaces/logo-2.webp" alt="Team 2" />Team 2<span className="mk-plan-label mk-plan-info">Pro</span></MenuItem>
+            <MenuItem selected={workspace_team3} onClick={select_workspace_team3}><img className="mk-menu-icon mk-workspace-menu-icon" src="assets/icons/workspaces/logo-3.webp" alt="Team 3" />Team 3<span className="mk-plan-label mk-plan-info">Pro</span></MenuItem>
+          </MenuList>
+        </Popover>
+      </ClickAwayListener>
+    </section>
+  </section>
+
+  fn toggle_workspace() {
+    let open = workspace_open;
+    if open {
+      workspace_open = false;
+      workspace_hidden = true;
+      render();
+    } else {
+      workspace_open = true;
+      workspace_hidden = false;
+      render();
+    }
+  }
+  fn close_workspace() {
+    workspace_open = false;
+    workspace_hidden = true;
+    render();
+  }
+  fn select_workspace_team1() {
+    workspace_team1 = true;
+    workspace_team2 = false;
+    workspace_team3 = false;
+    workspace_open = false;
+    workspace_hidden = true;
+    render();
+  }
+  fn select_workspace_team2() {
+    workspace_team1 = false;
+    workspace_team2 = true;
+    workspace_team3 = false;
+    workspace_open = false;
+    workspace_hidden = true;
+    render();
+  }
+  fn select_workspace_team3() {
+    workspace_team1 = false;
+    workspace_team2 = false;
+    workspace_team3 = true;
+    workspace_open = false;
+    workspace_hidden = true;
+    render();
+  }
+  !workspace_open !workspace_hidden !workspace_team1 !workspace_team2 !workspace_team3
+</Component>
+
+<Component name="MainSection">
+  <main className="mk-main">
+    <Slot />
+  </main>
+</Component>
+
+<Component name="HeaderSection">
+  <header className="mk-topbar">
+    <Slot />
+  </header>
+</Component>
+
+<Component name="DashboardHeader">
+  <HeaderSection>
+    <section className="mk-mobile-brand"><span className="mk-logo">M</span><strong>Minimal</strong></section>
+    <HeaderActions><Slot /></HeaderActions>
+  </HeaderSection>
+</Component>
+
+<Component name="RouteHeader">
+  <state>
+    title = 'Minimal' as ptr
+    title_len = 7
+  </state>
+  <HeaderSection>
+    <section className="mk-mobile-brand"><span className="mk-logo">M</span><strong>{title}</strong></section>
+    <section className="mk-topbar-actions"><span className="mk-page-link mk-page-link-static">Sign in</span><span className="mk-page-link mk-page-link-static">Register</span></section>
+  </HeaderSection>
+  !title !title_len
+</Component>
+
+<Component name="HeaderActions">
+  <state>
+    search_open = 0 as i1
+    search_hidden = 1 as i1
+    search_updates = 0
+    language_open = 0 as i1
+    language_hidden = 1 as i1
+    lang_en = 1 as i1
+    lang_fr = 0 as i1
+    lang_de = 0 as i1
+    notifications_open = 0 as i1
+    notifications_hidden = 1 as i1
+    unread_count = 3
+    account_open = 0 as i1
+    account_hidden = 1 as i1
+  </state>
+  <section className="mk-topbar-actions">
+    <section className="mk-action-popover mk-search-action">
+      <IconButton color="inherit" onClick={toggle_search}><SearchIcon /></IconButton>
+      <section className="mk-overlay-state" hidden={search_hidden}>
+        <ClickAwayListener onClickAway={close_search}>
+          <Popover open={search_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
+            <section className="mk-search-panel">
+              <TextField fullWidth autoFocus onChange={search_changed}>Search dashboard</TextField>
+              <Button variant="contained" color="inherit" onClick={close_search}>Search</Button>
+              <span className="mk-inline-status">Updates: {search_updates}</span>
+            </section>
+          </Popover>
+        </ClickAwayListener>
+      </section>
+    </section>
+
+    <section className="mk-action-popover">
+      <IconButton color="inherit" onClick={toggle_language}><img className="mk-topbar-icon" src="assets/icons/flags/ic-flag-en.svg" alt="Language" /></IconButton>
+      <section className="mk-overlay-state" hidden={language_hidden}>
+        <ClickAwayListener onClickAway={close_language}>
+          <Popover open={language_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
+            <MenuList disablePadding>
+              <MenuItem selected={lang_en} onClick={select_lang_en}><img className="mk-menu-icon" src="assets/icons/flags/ic-flag-en.svg" alt="English" />English</MenuItem>
+              <MenuItem selected={lang_fr} onClick={select_lang_fr}><img className="mk-menu-icon" src="assets/icons/flags/ic-flag-fr.svg" alt="French" />French</MenuItem>
+              <MenuItem selected={lang_de} onClick={select_lang_de}><img className="mk-menu-icon" src="assets/icons/flags/ic-flag-de.svg" alt="German" />German</MenuItem>
+            </MenuList>
+          </Popover>
+        </ClickAwayListener>
+      </section>
+    </section>
+
+    <section className="mk-action-popover mk-notification-action">
+      <IconButton color="inherit" onClick={toggle_notifications}><Badge color="error" badgeContent={unread_count}><NotificationsIcon /></Badge></IconButton>
+      <section className="mk-overlay-state" hidden={notifications_hidden}>
+        <ClickAwayListener onClickAway={close_notifications}>
+          <Popover open={notifications_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
+            <section className="mk-notification-panel">
+              <section className="mk-popover-title"><section><strong>Notifications</strong><span>You have {unread_count} unread messages</span></section><IconButton color="primary" onClick={mark_all_read}>Done</IconButton></section>
+              <Divider />
+              <section className="mk-notification-list">
+                <article><Avatar><img src="assets/icons/notification/ic-notification-package.svg" alt="Package" /></Avatar><section><strong>Your order is placed</strong><span>waiting for shipping</span></section></article>
+                <article><Avatar><img src="assets/icons/notification/ic-notification-shipping.svg" alt="Shipping" /></Avatar><section><strong>Delivery processing</strong><span>picked up by courier</span></section></article>
+                <article><Avatar><img src="assets/icons/notification/ic-notification-mail.svg" alt="Mail" /></Avatar><section><strong>New mail received</strong><span>sent from support</span></section></article>
+              </section>
+              <Divider />
+              <Button fullWidth color="inherit" onClick={toggle_notifications}>View all</Button>
+            </section>
+          </Popover>
+        </ClickAwayListener>
+      </section>
+    </section>
+
+    <section className="mk-action-popover mk-account-action">
+      <ClickAwayListener onClickAway={close_account}>
+        <section>
+          <IconButton color="inherit" onClick={toggle_account}><Avatar>J</Avatar></IconButton>
+          <section className="mk-overlay-state" hidden={account_hidden}>
+            <Popover open={account_open} anchorOriginVertical="bottom" anchorOriginHorizontal="right" transformOriginVertical="top" transformOriginHorizontal="right">
+              <section className="mk-account-panel">
+                <section className="mk-account-head"><strong>John Doe</strong><span>john.doe@example.com</span></section>
+                <Divider />
+                <MenuList disablePadding>
+                  <MenuItem onClick={close_account}>Home</MenuItem>
+                  <MenuItem onClick={close_account}>Profile</MenuItem>
+                  <MenuItem onClick={close_account}><SettingsIcon fontSize="small" />Settings</MenuItem>
+                </MenuList>
+                <Divider />
+                <section className="mk-account-links" onClick={close_account}><Slot /></section>
+                <Button fullWidth color="error" onClick={toggle_account}><LogoutIcon fontSize="small" />Logout</Button>
+              </section>
+            </Popover>
+          </section>
+        </section>
+      </ClickAwayListener>
+    </section>
+  </section>
+
+  fn close_topbar_popovers() {
+    search_open = false;
+    search_hidden = true;
+    language_open = false;
+    language_hidden = true;
+    notifications_open = false;
+    notifications_hidden = true;
+    account_open = false;
+    account_hidden = true;
+  }
+  fn toggle_search() {
+    let open = search_open;
+    if open {
+      search_open = false;
+      search_hidden = true;
+      render();
+    } else {
+      language_open = false;
+      language_hidden = true;
+      notifications_open = false;
+      notifications_hidden = true;
+      account_open = false;
+      account_hidden = true;
+      search_open = true;
+      search_hidden = false;
+      render();
+    }
+  }
+  fn close_search() {
+    search_open = false;
+    search_hidden = true;
+    render();
+  }
+  fn search_changed() {
+    let count = search_updates;
+    count = count + 1;
+    search_updates = count;
+    render();
+  }
+  fn toggle_language() {
+    let open = language_open;
+    if open {
+      language_open = false;
+      language_hidden = true;
+      render();
+    } else {
+      search_open = false;
+      search_hidden = true;
+      notifications_open = false;
+      notifications_hidden = true;
+      account_open = false;
+      account_hidden = true;
+      language_open = true;
+      language_hidden = false;
+      render();
+    }
+  }
+  fn close_language() {
+    language_open = false;
+    language_hidden = true;
+    render();
+  }
+  fn select_lang_en() {
+    lang_en = true;
+    lang_fr = false;
+    lang_de = false;
+    language_open = false;
+    language_hidden = true;
+    render();
+  }
+  fn select_lang_fr() {
+    lang_en = false;
+    lang_fr = true;
+    lang_de = false;
+    language_open = false;
+    language_hidden = true;
+    render();
+  }
+  fn select_lang_de() {
+    lang_en = false;
+    lang_fr = false;
+    lang_de = true;
+    language_open = false;
+    language_hidden = true;
+    render();
+  }
+  fn toggle_notifications() {
+    let open = notifications_open;
+    if open {
+      notifications_open = false;
+      notifications_hidden = true;
+      render();
+    } else {
+      search_open = false;
+      search_hidden = true;
+      language_open = false;
+      language_hidden = true;
+      account_open = false;
+      account_hidden = true;
+      notifications_open = true;
+      notifications_hidden = false;
+      render();
+    }
+  }
+  fn close_notifications() {
+    notifications_open = false;
+    notifications_hidden = true;
+    render();
+  }
+  fn mark_all_read() {
+    unread_count = 0;
+    render();
+  }
+  fn toggle_account() {
+    let open = account_open;
+    if open {
+      account_open = false;
+      account_hidden = true;
+      render();
+    } else {
+      search_open = false;
+      search_hidden = true;
+      language_open = false;
+      language_hidden = true;
+      notifications_open = false;
+      notifications_hidden = true;
+      account_open = true;
+      account_hidden = false;
+      render();
+    }
+  }
+  fn close_account() {
+    account_open = false;
+    account_hidden = true;
+    render();
+  }
+  !search_open !search_hidden !search_updates !language_open !language_hidden !lang_en !lang_fr !lang_de !notifications_open !notifications_hidden !unread_count !account_open !account_hidden
+</Component>
+
+<Component name="DashboardContent">
+  <section className="mk-section">
+    <Slot />
+  </section>
+</Component>
+
+<Component name="DashboardOverviewContent">
+  <state>
+    active = 1 as i1
+  </state>
+  <section className="mk-section mk-overview{active ? '' : ' mk-hidden'}">
+    <Slot />
+  </section>
+  !active
+</Component>
+
+<Component name="DashboardProductsContent">
+  <state>
+    active = 1 as i1
+  </state>
+  <section className="mk-section mk-products-page{active ? '' : ' mk-hidden'}">
+    <Slot />
+  </section>
+  !active
+</Component>
+
+<Component name="DashboardBlogContent">
+  <state>
+    active = 1 as i1
+  </state>
+  <section className="mk-section mk-blog-page{active ? '' : ' mk-hidden'}">
+    <Slot />
+  </section>
+  !active
+</Component>
+
+<Component name="DashboardUsersContent">
+  <state>
+    active = 1 as i1
+  </state>
+  <section className="mk-section mk-users-page{active ? '' : ' mk-hidden'}">
+    <Slot />
+  </section>
+  !active
+</Component>
+
+<Component name="DashboardAuthContent">
+  <state>
+    active = 1 as i1
+  </state>
+  <section className="mk-section mk-auth-dashboard-page{active ? '' : ' mk-hidden'}">
+    <Slot />
+  </section>
+  !active
+</Component>
+
+<Component name="PageHeading">
+  <state>
+    eyebrow = 'Dashboard' as ptr
+    eyebrow_len = 9
+    title = 'Hi, Welcome back' as ptr
+    title_len = 16
+  </state>
+  <section className="mk-heading-row">
+    <section><p>{eyebrow}</p><h2>{title}</h2></section>
+    <Slot />
+  </section>
+  !eyebrow !eyebrow_len !title !title_len
+</Component>
+
+<Component name="StatsGrid">
+  <section className="mk-stat-grid">
+    <Slot />
+  </section>
+</Component>
+
+<Component name="AnalyticsGrid">
+  <section className="mk-analytics-grid">
+    <Slot />
+  </section>
+</Component>
+
+<Component name="DashboardPanel">
+  <state>
+    className = '' as ptr
+    className_len = 0
+  </state>
+  <section className="mk-panel {className}">
+    <Slot />
+  </section>
+  !className !className_len
+</Component>
+
+<Component name="ProductGrid">
+  <section className="mk-product-grid">
+    <Slot />
+  </section>
+</Component>
+
+<Component name="BlogTools">
+  <section className="mk-blog-tools">
+    <Slot />
+  </section>
+</Component>
+
+<Component name="BlogGrid">
+  <section className="mk-blog-grid">
+    <Slot />
+  </section>
+</Component>
+
+<Component name="UserCardShell">
+  <section className="mk-user-card">
+    <Slot />
+  </section>
+</Component>
+
+<Component name="AuthLayout">
+  <section className="mk-auth-app">
+    <Slot />
+  </section>
+</Component>
+
+<Component name="AuthHeader">
+  <header className="mk-auth-header">
+    <Slot />
+  </header>
+</Component>
+
+<Component name="AuthMain">
+  <main className="mk-auth-main">
+    <Slot />
+  </main>
+</Component>
+
+<Component name="AuthContent">
+  <section className="mk-auth-content">
+    <Slot />
+  </section>
+</Component>
+
+<Component name="AuthSwitchContent">
+  <state>
+    active = 1 as i1
+  </state>
+  <section className="mk-auth-switch-page{active ? '' : ' mk-hidden'}">
+    <Slot />
+  </section>
+  !active
+</Component>

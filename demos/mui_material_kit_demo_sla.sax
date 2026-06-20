@@ -1,0 +1,167 @@
+<Component name="MuiMaterialKitDemo">
+  <state>
+    page_dashboard = 1 as i1
+    page_products = 0 as i1
+    page_blog = 0 as i1
+    page_users = 0 as i1
+    page_sign_in = 0 as i1
+    page_register = 0 as i1
+    auth_show_password = 0 as i1
+    auth_attempts = 0
+    auth_submissions = 0
+    auth_accept_terms = 1 as i1
+  </state>
+
+  <LayoutSection>
+    <InitColorSchemeScript />
+    <GlobalStyles />
+    <CssBaseline />
+
+    <NavDesktop>
+      <NavContent>
+        <button className="mk-nav-item{page_dashboard ? ' mk-nav-active' : ''}" onClick={show_dashboard}><img src="assets/icons/navbar/ic-analytics.svg" alt="Dashboard" />Dashboard</button>
+        <button className="mk-nav-item{page_products ? ' mk-nav-active' : ''}" onClick={show_products}><img src="assets/icons/navbar/ic-cart.svg" alt="Products" />Products</button>
+        <button className="mk-nav-item{page_blog ? ' mk-nav-active' : ''}" onClick={show_blog}><img src="assets/icons/navbar/ic-blog.svg" alt="Blog" />Blog</button>
+        <button className="mk-nav-item{page_users ? ' mk-nav-active' : ''}" onClick={show_users}><img src="assets/icons/navbar/ic-user.svg" alt="Users" />Users</button>
+        <button className="mk-nav-item{page_sign_in ? ' mk-nav-active' : ''}" onClick={show_sign_in}><img src="assets/icons/navbar/ic-lock.svg" alt="Sign in" />Sign in</button>
+        <button className="mk-nav-item{page_register ? ' mk-nav-active' : ''}" onClick={show_register}><img src="assets/icons/navbar/ic-lock.svg" alt="Register" />Register</button>
+      </NavContent>
+    </NavDesktop>
+
+    <MainSection>
+      <DashboardHeader>
+        <button className="mk-account-link-button" onClick={show_sign_in}>Sign in</button>
+        <button className="mk-account-link-button" onClick={show_register}>Register</button>
+      </DashboardHeader>
+
+      <DashboardOverviewContent active={page_dashboard}>
+        <MaterialKitOverviewView />
+      </DashboardOverviewContent>
+
+      <DashboardProductsContent active={page_products}>
+        <MaterialKitProductsView />
+      </DashboardProductsContent>
+
+      <DashboardBlogContent active={page_blog}>
+        <MaterialKitBlogView />
+      </DashboardBlogContent>
+
+      <DashboardUsersContent active={page_users}>
+        <MaterialKitUsersView />
+      </DashboardUsersContent>
+
+      <section className="mk-section mk-auth-dashboard-page{page_sign_in ? '' : ' mk-hidden'}">
+        <AuthContent>
+          <section className="mk-auth-title"><Typography variant="h5">Sign in</Typography><Typography variant="body2">Don't have an account?<button className="mk-auth-inline-link" onClick={show_register}>Get started</button></Typography></section>
+          <section className="mk-auth-form">
+            <TextField fullWidth value="hello@gmail.com">Email address</TextField>
+            <section className="mk-auth-forgot-row"><button className="mk-auth-forgot" onClick={submit_sign_in}>Forgot password?</button></section>
+            <section className="mk-password-field"><TextField fullWidth type={auth_show_password ? 'text' : 'password'} value="@demo1234">Password</TextField><span className="mk-password-toggle"><IconButton onClick={toggle_auth_password}><span className="mk-eye-icon{auth_show_password ? ' mk-eye-open' : ''}">Show password</span></IconButton></span></section>
+            <span className="mk-inline-status mk-auth-status">Sign-in attempts: {auth_attempts}</span>
+            <Button fullWidth variant="contained" color="inherit" onClick={submit_sign_in}>Sign in</Button>
+          </section>
+          <section className="mk-auth-divider"><span>OR</span></section>
+          <section className="mk-socials"><IconButton onClick={submit_sign_in}><span className="mk-social-icon">G</span></IconButton><IconButton onClick={submit_sign_in}><span className="mk-social-icon">GH</span></IconButton><IconButton onClick={submit_sign_in}><span className="mk-social-icon">X</span></IconButton></section>
+        </AuthContent>
+      </section>
+
+      <section className="mk-section mk-auth-dashboard-page{page_register ? '' : ' mk-hidden'}">
+        <AuthContent>
+          <section className="mk-auth-title"><Typography variant="h5">Register</Typography><Typography variant="body2">Already have an account?<button className="mk-auth-inline-link" onClick={show_sign_in}>Sign in</button></Typography></section>
+          <section className="mk-auth-form">
+            <TextField fullWidth value="John Doe">Full name</TextField>
+            <TextField fullWidth value="john.doe@example.com">Email address</TextField>
+            <section className="mk-password-field"><TextField fullWidth type={auth_show_password ? 'text' : 'password'} value="@demo1234">Password</TextField><span className="mk-password-toggle"><IconButton onClick={toggle_auth_password}><span className="mk-eye-icon{auth_show_password ? ' mk-eye-open' : ''}">Show password</span></IconButton></span></section>
+            <FormControlLabel><Checkbox checked={auth_accept_terms} onChange={toggle_auth_terms} />I agree to the terms</FormControlLabel>
+            <span className="mk-inline-status mk-auth-status">Register submissions: {auth_submissions}</span>
+            <Button fullWidth variant="contained" color="inherit" onClick={submit_register}>Register</Button>
+          </section>
+          <section className="mk-auth-divider"><span>OR</span></section>
+          <section className="mk-socials"><IconButton onClick={submit_register}><span className="mk-social-icon">G</span></IconButton><IconButton onClick={submit_register}><span className="mk-social-icon">GH</span></IconButton><IconButton onClick={submit_register}><span className="mk-social-icon">X</span></IconButton></section>
+        </AuthContent>
+      </section>
+    </MainSection>
+  </LayoutSection>
+
+  fn show_dashboard() {
+    page_dashboard = true;
+    page_products = false;
+    page_blog = false;
+    page_users = false;
+    page_sign_in = false;
+    page_register = false;
+    render();
+  }
+  fn show_products() {
+    page_dashboard = false;
+    page_products = true;
+    page_blog = false;
+    page_users = false;
+    page_sign_in = false;
+    page_register = false;
+    render();
+  }
+  fn show_blog() {
+    page_dashboard = false;
+    page_products = false;
+    page_blog = true;
+    page_users = false;
+    page_sign_in = false;
+    page_register = false;
+    render();
+  }
+  fn show_users() {
+    page_dashboard = false;
+    page_products = false;
+    page_blog = false;
+    page_users = true;
+    page_sign_in = false;
+    page_register = false;
+    render();
+  }
+  fn show_sign_in() {
+    page_dashboard = false;
+    page_products = false;
+    page_blog = false;
+    page_users = false;
+    page_sign_in = true;
+    page_register = false;
+    render();
+  }
+  fn show_register() {
+    page_dashboard = false;
+    page_products = false;
+    page_blog = false;
+    page_users = false;
+    page_sign_in = false;
+    page_register = true;
+    render();
+  }
+  fn toggle_auth_password() {
+    let visible = auth_show_password;
+    if visible {
+      auth_show_password = false;
+      render();
+    } else {
+      auth_show_password = true;
+      render();
+    }
+  }
+  fn toggle_auth_terms() {
+    auth_accept_terms = checked;
+    render();
+  }
+  fn submit_sign_in() {
+    let count = auth_attempts;
+    count = count + 1;
+    auth_attempts = count;
+    render();
+  }
+  fn submit_register() {
+    let count = auth_submissions;
+    count = count + 1;
+    auth_submissions = count;
+    render();
+  }
+  !page_dashboard !page_products !page_blog !page_users !page_sign_in !page_register !auth_show_password !auth_attempts !auth_submissions !auth_accept_terms
+</Component>

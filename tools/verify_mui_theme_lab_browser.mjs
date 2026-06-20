@@ -7,6 +7,8 @@ const playwrightCacheDir = path.join(process.env.HOME ?? "", ".cache", "ms-playw
 const repoRoot = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 
 async function resolveChromiumExecutablePath() {
+  if (process.env.MUI_BROWSER_EXECUTABLE) return process.env.MUI_BROWSER_EXECUTABLE;
+
   const entries = await readdir(playwrightCacheDir, { withFileTypes: true }).catch(() => []);
   const names = entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort().reverse();
 
@@ -609,6 +611,10 @@ async function main() {
     await expectNestedAttr(openDialog, ".MuiDialog-paper", "aria-describedby", "smoke-dialog-description", "open dialog paper");
     await expectNestedAttr(openDialog, ".MuiDialogTitle-root", "id", "smoke-dialog-title", "open dialog title");
     await expectNestedAttr(openDialog, ".MuiDialogContentText-root", "id", "smoke-dialog-description", "open dialog description");
+
+    if (process.env.MUI_BROWSER_SCREENSHOT) {
+      await page.screenshot({ path: process.env.MUI_BROWSER_SCREENSHOT, fullPage: true });
+    }
 
     console.log("MUI theme lab browser verification passed");
   } finally {
