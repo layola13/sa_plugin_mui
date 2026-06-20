@@ -178,5 +178,4 @@
     click_away_closed = true;
     render();
   }
-  !click_away_open !click_away_closed
 </Component>

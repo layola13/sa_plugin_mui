@@ -57,7 +57,7 @@ SA_PLUGIN_DEV=1 SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react
 SA_PLUGIN_DEV=1 SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/lib/libreact.so:/home/vscode/projects/sa_plugins/sa_plugin_mui/zig-out/lib/libmui.so /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_material_kit_404.sax --include mui/material.sax --include mui/icons_material.sax --include mui/material_kit_layout.sax --include mui/material_kit_views.sax
 ```
 
-Every MUI demo also has a same-name Sla handler entry ending in `_sla.sax`. Demos without event handlers are copied as Sla-compatible baselines; demos with SA label handlers have equivalent `fn handler() { ... }` logic. Material Kit's reusable handler logic is mirrored in `mui/material_kit_layout_sla.sax` and `mui/material_kit_views_sla.sax`; the original SA files remain unchanged.
+Every MUI demo also has a same-name Sla handler entry ending in `_sla.sax`. Demos without event handlers are copied as Sla-compatible baselines; demos with SA label handlers have equivalent `fn handler() { ... }` logic. Components with Sla handlers rely on SAX destroy-time state cleanup and omit explicit `!state_name` release lines. Material Kit's reusable handler logic is mirrored in `mui/material_kit_layout_sla.sax` and `mui/material_kit_views_sla.sax`; the original SA files remain unchanged.
 
 Compile the Sla demo set with:
 
@@ -67,6 +67,9 @@ export SA_PLUGINS_PATH=/home/vscode/projects/sa_plugins/sa_plugin_react/zig-out/
 /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_basic_inlined_sla.sax
 /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_all_components_sla.sax
 /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_all_components_from_library_sla.sax --include mui/material.sax --include mui/icons_material.sax
+/home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_icons_smoke_sla.sax --include mui/material.sax --include mui/icons_material.sax
+/home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_table_pagination_repro_sla.sax --include mui/material.sax --include mui/icons_material.sax
+/home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_dashboard_sla.sax --include mui/material.sax --include mui/icons_material.sax
 /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_theme_lab_smoke_sla.sax --include mui/material.sax --include mui/icons_material.sax
 /home/vscode/projects/sci/zig-out/bin/sa react check demos/mui_material_kit_demo_sla.sax --include mui/material.sax --include mui/icons_material.sax --include mui/material_kit_layout_sla.sax --include mui/material_kit_views_sla.sax
 ```

@@ -81,5 +81,4 @@
     submissions = count;
     render();
   }
-  !page_sign_in !page_register !show_password !attempts !submissions !accept_terms
 </Component>

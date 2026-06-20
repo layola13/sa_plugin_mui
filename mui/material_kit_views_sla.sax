@@ -118,7 +118,6 @@
     task_menu_actions = actions;
     render();
   }
-  !conversion !slider_changes !slider_value !slider_value_len !task_updates !task0 !task1 !task2 !task3 !task_menu_open !task_menu_hidden !task_menu_actions !overview_actions
 </Component>
 
 <Component name="MaterialKitProductsView">
@@ -235,7 +234,6 @@
     filter_updates = count;
     render();
   }
-  !sort_open !sort_hidden !sort_changes !sort_featured !sort_newest !sort_price_desc !sort_price_asc !filter_open !filter_hidden !filter_clean !filter_updates
 </Component>
 
 <Component name="MaterialKitBlogView">
@@ -342,7 +340,6 @@
     sort_changes = count;
     render();
   }
-  !sort_open !sort_hidden !sort_latest !sort_popular !sort_oldest !sort_changes !search_open !search_updates !post_actions
 </Component>
 
 <Component name="MaterialKitUsersView">
@@ -452,7 +449,6 @@
     page = 2;
     render();
   }
-  !selected !page !row0 !all_selected !row_menu_open !row_menu_hidden !order_asc !actions
 </Component>
 
 <Component name="MaterialKitSignInView">
@@ -489,7 +485,6 @@
     attempts = count;
     render();
   }
-  !show_password !attempts
 </Component>
 
 <Component name="MaterialKitRegisterView">
@@ -532,5 +527,4 @@
     submissions = count;
     render();
   }
-  !show_password !submissions !accept_terms
 </Component>

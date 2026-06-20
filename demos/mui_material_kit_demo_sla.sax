@@ -163,5 +163,4 @@
     auth_submissions = count;
     render();
   }
-  !page_dashboard !page_products !page_blog !page_users !page_sign_in !page_register !auth_show_password !auth_attempts !auth_submissions !auth_accept_terms
 </Component>

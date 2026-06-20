@@ -725,5 +725,4 @@
     clicks = clicks + 1;
     render();
   }
-  !clicks
 </Component>
