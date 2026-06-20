@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SA-MUI Demo Navigation</title>
+  <title>SA + SLA MUI Demo Navigation</title>
   <style>
     :root { color-scheme: light; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f6f7fb; color: #172033; }
     * { box-sizing: border-box; }
@@ -43,39 +43,57 @@
 <body>
   <main class="page">
     <header>
-      <h1>SA-MUI Demo Navigation</h1>
-      <p>这些页面由 <code>sa_plugin_vite</code> 编译，源码是 SA/SAX + <code>sa_plugin_react</code> + <code>mui/material.sax</code>，没有调用 Node MUI、React DOM 或 Emotion。</p>
+      <h1>SA + SLA MUI Demo Navigation</h1>
+      <p>This page keeps two Material Kit demo sets side by side: the original SA/SAX version and the new SLA handler version. Original SA sources build from <code>.sax</code> files into <code>dist/material-kit</code>. New SLA sources build independently from <code>_sla.sax</code> files into <code>dist/material-kit-sla</code>. SLA handlers compile into that SLA dist's generated <code>app.sa</code> intermediate before wasm; they do not overwrite the original SA dist and do not reuse the original SA pages.</p>
       <div class="meta">
-        <span class="pill">报告生成时间: 2026-06-20 07:40 UTC</span>
-        <span class="pill">输出根目录: dist/material-kit + dist/material-kit-sla + dist/theme-lab-smoke-sla + dist/all-components-library-sla</span>
-        <span class="pill">Material Kit 页面: 7</span>
-        <span class="pill">Sla Material Kit 页面: 7</span>
+        <span class="pill">Report generated: 2026-06-20 07:40 UTC</span>
+        <span class="pill">Output roots: dist/material-kit + dist/material-kit-sla + dist/theme-lab-smoke-sla + dist/all-components-library-sla</span>
+        <span class="pill">Original SA Material Kit pages: 7</span>
+        <span class="pill">New SLA Material Kit pages: 7</span>
         <span class="pill">DCE: Haxe-style full for Vite React WASM</span>
-        <span class="pill">Sla Vite build cache: 108.91s -> 0.44s</span>
+        <span class="pill">SLA Vite build cache: 108.91s -> 0.44s</span>
       </div>
     </header>
 
+    <section aria-label="SA and SLA output comparison">
+      <h2>SA / SLA Output Comparison</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Version</th><th>Source</th><th>Layout include</th><th>Output directory</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>Original SA (kept)</td><td><code>demos/mui_material_kit_*.sax</code></td><td><code>mui/material_kit_layout.sax</code> + <code>mui/material_kit_views.sax</code></td><td><code>dist/material-kit</code></td><td>Original SA/SAX demos, preserved as the comparison baseline.</td></tr>
+            <tr><td>New SLA (independent)</td><td><code>demos/mui_material_kit_*_sla.sax</code></td><td><code>mui/material_kit_layout_sla.sax</code> + <code>mui/material_kit_views_sla.sax</code></td><td><code>dist/material-kit-sla</code></td><td>SLA handler demos with their own generated <code>app.sa</code> intermediate and wasm.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-label="SA version summary">
+      <h2>Original SA Version (Kept)</h2>
+      <p>These seven entries are the original SA/SAX Material Kit demos. Their sources were not converted to SLA, and their output remains <code>dist/material-kit</code>.</p>
+    </section>
+
     <div class="grid" aria-label="Material Kit navigation">
-      <article class="card"><h2>Dashboard</h2><p>主页是 SA 状态驱动的 dashboard shell，Products/Blog/Users/Sign In/Register 都在页面内部切换；右上角 Search/Language/Notifications/Account 支持点击外部区域关闭。</p><span class="source">源码: demos/mui_material_kit_demo.sax</span><span class="source">Layout: mui/material_kit_layout.sax + mui/material_kit_views.sax</span><span class="source">输出: dist/material-kit/index.html</span><a class="button" href="dist/material-kit/index.html">打开</a></article>
-      <article class="card"><h2>Products</h2><p>独立 products 路由，包含产品列表、sort menu、filter drawer、dirty badge 和 reset action。</p><span class="source">源码: demos/mui_material_kit_products.sax</span><span class="source">Layout: mui/material_kit_layout.sax</span><span class="source">输出: dist/material-kit/products/index.html</span><a class="button" href="dist/material-kit/products/index.html">打开</a></article>
-      <article class="card"><h2>Blog</h2><p>独立 blog 路由，包含搜索输入、文章排序菜单和分页区域。</p><span class="source">源码: demos/mui_material_kit_blog.sax</span><span class="source">Layout: mui/material_kit_layout.sax</span><span class="source">输出: dist/material-kit/blog/index.html</span><a class="button" href="dist/material-kit/blog/index.html">打开</a></article>
-      <article class="card"><h2>Users</h2><p>独立 users 路由，包含用户表格、全选、排序、行级菜单和分页按钮。</p><span class="source">源码: demos/mui_material_kit_users.sax</span><span class="source">Layout: mui/material_kit_layout.sax</span><span class="source">输出: dist/material-kit/users/index.html</span><a class="button" href="dist/material-kit/users/index.html">打开</a></article>
-      <article class="card"><h2>Sign In</h2><p>独立认证页面，Sign in/Register 在同一页面内部切换，不刷新路由。</p><span class="source">源码: demos/mui_material_kit_sign_in.sax</span><span class="source">Layout: mui/material_kit_layout.sax</span><span class="source">输出: dist/material-kit/sign-in/index.html</span><a class="button" href="dist/material-kit/sign-in/index.html">打开</a></article>
-      <article class="card"><h2>Register</h2><p>独立注册页面，和登录页同属 auth layout 风格，同页切换到 Sign in。</p><span class="source">源码: demos/mui_material_kit_register.sax</span><span class="source">Layout: mui/material_kit_layout.sax</span><span class="source">输出: dist/material-kit/register/index.html</span><a class="button" href="dist/material-kit/register/index.html">打开</a></article>
-      <article class="card"><h2>404</h2><p>独立 404 页面，对齐原版 NotFoundView：固定 Logo、居中说明、404 illustration，以及返回首页 Link/Button 组合。</p><span class="source">源码: demos/mui_material_kit_404.sax</span><span class="source">组件: Link.href + Button fullWidth/size/color classes</span><span class="source">输出: dist/material-kit/404/index.html</span><a class="button" href="dist/material-kit/404/index.html">打开</a></article>
+      <article class="card"><h2>Dashboard</h2><p>SA state-driven dashboard shell with in-page Products/Blog/Users/Sign In/Register switches and click-away top-right popovers.</p><span class="source">Source: demos/mui_material_kit_demo.sax</span><span class="source">Layout: mui/material_kit_layout.sax + mui/material_kit_views.sax</span><span class="source">Output: dist/material-kit/index.html</span><a class="button" href="dist/material-kit/index.html">Open</a></article>
+      <article class="card"><h2>Products</h2><p>Standalone products route with product list, sort menu, filter drawer, dirty badge, and reset action.</p><span class="source">Source: demos/mui_material_kit_products.sax</span><span class="source">Layout: mui/material_kit_layout.sax</span><span class="source">Output: dist/material-kit/products/index.html</span><a class="button" href="dist/material-kit/products/index.html">Open</a></article>
+      <article class="card"><h2>Blog</h2><p>Standalone blog route with search input, article sort menu, and pagination area.</p><span class="source">Source: demos/mui_material_kit_blog.sax</span><span class="source">Layout: mui/material_kit_layout.sax</span><span class="source">Output: dist/material-kit/blog/index.html</span><a class="button" href="dist/material-kit/blog/index.html">Open</a></article>
+      <article class="card"><h2>Users</h2><p>Standalone users route with table selection, sorting, row menu, and pagination buttons.</p><span class="source">Source: demos/mui_material_kit_users.sax</span><span class="source">Layout: mui/material_kit_layout.sax</span><span class="source">Output: dist/material-kit/users/index.html</span><a class="button" href="dist/material-kit/users/index.html">Open</a></article>
+      <article class="card"><h2>Sign In</h2><p>Standalone auth page with Sign in/Register switching inside the page without route refresh.</p><span class="source">Source: demos/mui_material_kit_sign_in.sax</span><span class="source">Layout: mui/material_kit_layout.sax</span><span class="source">Output: dist/material-kit/sign-in/index.html</span><a class="button" href="dist/material-kit/sign-in/index.html">Open</a></article>
+      <article class="card"><h2>Register</h2><p>Standalone register page sharing the auth layout style and switching back to Sign in in-page.</p><span class="source">Source: demos/mui_material_kit_register.sax</span><span class="source">Layout: mui/material_kit_layout.sax</span><span class="source">Output: dist/material-kit/register/index.html</span><a class="button" href="dist/material-kit/register/index.html">Open</a></article>
+      <article class="card"><h2>404</h2><p>Standalone 404 page aligned with the original NotFoundView structure: fixed logo, centered copy, illustration, and home Link/Button action.</p><span class="source">Source: demos/mui_material_kit_404.sax</span><span class="source">Components: Link.href + Button fullWidth/size/color classes</span><span class="source">Output: dist/material-kit/404/index.html</span><a class="button" href="dist/material-kit/404/index.html">Open</a></article>
     </div>
 
     <div class="sla-nav-section">
-      <h2>Sla Material Kit Navigation</h2>
-      <p>下面是同一套 Material Kit 页面入口的 Sla handler 版本；SA 版本保留在上方，输出目录独立为 <code>dist/material-kit-sla</code>。</p>
-      <div class="grid" aria-label="Sla Material Kit navigation">
-        <article class="card"><h2>Sla Dashboard</h2><p>Dashboard shell、内部页面切换、click-away popover、auth 切换和计数逻辑均由 Sla handler 编译。</p><span class="source">源码: demos/mui_material_kit_demo_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">输出: dist/material-kit-sla/index.html</span><a class="button" href="dist/material-kit-sla/index.html">打开</a></article>
-        <article class="card"><h2>Sla Products</h2><p>Products 独立路由使用 Sla 版 sort menu、filter drawer、dirty badge 和 reset action。</p><span class="source">源码: demos/mui_material_kit_products_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">输出: dist/material-kit-sla/products/index.html</span><a class="button" href="dist/material-kit-sla/products/index.html">打开</a></article>
-        <article class="card"><h2>Sla Blog</h2><p>Blog 独立路由使用 Sla 版搜索输入、文章排序菜单和分页状态。</p><span class="source">源码: demos/mui_material_kit_blog_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">输出: dist/material-kit-sla/blog/index.html</span><a class="button" href="dist/material-kit-sla/blog/index.html">打开</a></article>
-        <article class="card"><h2>Sla Users</h2><p>Users 独立路由使用 Sla 版表格选择、排序、行级菜单和分页按钮。</p><span class="source">源码: demos/mui_material_kit_users_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">输出: dist/material-kit-sla/users/index.html</span><a class="button" href="dist/material-kit-sla/users/index.html">打开</a></article>
-        <article class="card"><h2>Sla Sign In</h2><p>Sign in 独立认证页面的页面切换、密码显示和提交计数均由 Sla handler 编译。</p><span class="source">源码: demos/mui_material_kit_sign_in_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">输出: dist/material-kit-sla/sign-in/index.html</span><a class="button" href="dist/material-kit-sla/sign-in/index.html">打开</a></article>
-        <article class="card"><h2>Sla Register</h2><p>Register 独立认证页面使用 Sla 版 terms toggle、密码显示和提交计数。</p><span class="source">源码: demos/mui_material_kit_register_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">输出: dist/material-kit-sla/register/index.html</span><a class="button" href="dist/material-kit-sla/register/index.html">打开</a></article>
-        <article class="card"><h2>Sla 404</h2><p>404 独立页面使用 Sla 版 Stay here action 计数，保留原 Link/Button 输出结构。</p><span class="source">源码: demos/mui_material_kit_404_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">输出: dist/material-kit-sla/404/index.html</span><a class="button" href="dist/material-kit-sla/404/index.html">打开</a></article>
+      <h2>New SLA Version</h2>
+      <p>These seven entries come from the matching <code>_sla.sax</code> files. Event logic uses <code>fn handler() { ... }</code>, and output is independent under <code>dist/material-kit-sla</code>. The generated <code>app.sa</code> files in that dist are the SA intermediate layer compiled from SLA handlers and can be compared with the original SA version above.</p>
+      <div class="grid" aria-label="SLA Material Kit navigation">
+        <article class="card"><h2>SLA Dashboard</h2><p>Dashboard shell, in-page route switches, click-away popovers, auth toggles, and counters are compiled from SLA handlers.</p><span class="source">Source: demos/mui_material_kit_demo_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">Output: dist/material-kit-sla/index.html</span><a class="button" href="dist/material-kit-sla/index.html">Open</a></article>
+        <article class="card"><h2>SLA Products</h2><p>Products standalone route with SLA sort menu, filter drawer, dirty badge, and reset action.</p><span class="source">Source: demos/mui_material_kit_products_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">Output: dist/material-kit-sla/products/index.html</span><a class="button" href="dist/material-kit-sla/products/index.html">Open</a></article>
+        <article class="card"><h2>SLA Blog</h2><p>Blog standalone route with SLA search input, article sort menu, and pagination state.</p><span class="source">Source: demos/mui_material_kit_blog_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">Output: dist/material-kit-sla/blog/index.html</span><a class="button" href="dist/material-kit-sla/blog/index.html">Open</a></article>
+        <article class="card"><h2>SLA Users</h2><p>Users standalone route with SLA table selection, sorting, row menu, and pagination buttons.</p><span class="source">Source: demos/mui_material_kit_users_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">Output: dist/material-kit-sla/users/index.html</span><a class="button" href="dist/material-kit-sla/users/index.html">Open</a></article>
+        <article class="card"><h2>SLA Sign In</h2><p>Sign in standalone auth page with SLA page switching, password visibility, and submit count.</p><span class="source">Source: demos/mui_material_kit_sign_in_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">Output: dist/material-kit-sla/sign-in/index.html</span><a class="button" href="dist/material-kit-sla/sign-in/index.html">Open</a></article>
+        <article class="card"><h2>SLA Register</h2><p>Register standalone auth page with SLA terms toggle, password visibility, and submit count.</p><span class="source">Source: demos/mui_material_kit_register_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">Output: dist/material-kit-sla/register/index.html</span><a class="button" href="dist/material-kit-sla/register/index.html">Open</a></article>
+        <article class="card"><h2>SLA 404</h2><p>404 standalone page with SLA Stay here action count while preserving the Link/Button output structure.</p><span class="source">Source: demos/mui_material_kit_404_sla.sax</span><span class="source">Layout: mui/material_kit_layout_sla.sax + mui/material_kit_views_sla.sax</span><span class="source">Output: dist/material-kit-sla/404/index.html</span><a class="button" href="dist/material-kit-sla/404/index.html">Open</a></article>
       </div>
     </div>
 
@@ -107,7 +125,7 @@ mkdir -p .zig-cache/material-kit-public && cp -R dist/material-kit/assets .zig-c
 
     <section>
       <h2>Build Results</h2>
-      <p>Current Sla Material Kit full-route <code>sa vite build</code> refresh took 256.54s across dashboard, products, blog, users, sign-in, register, and 404. The same-input Sla dashboard manifest hit took 0.44s after a 108.91s refreshed build. Current output sizes are <code>dist/material-kit</code> 37M, <code>dist/material-kit-sla</code> 39M, <code>dist/theme-lab-smoke-sla</code> 5.7M, <code>dist/all-components-library</code> 12M, and <code>dist/all-components-library-sla</code> 15M. The React browser WASM cache keys generated SA, DCE mode, exports, optimization, <code>sa_std</code>, SA host binary when available, and <code>SA_PLUGINS_PATH</code> plugin library content; the Vite build cache additionally keys SAX inputs, explicit includes, title/CSS/public options, <code>sa_std</code>, and plugin library content.</p>
+      <p>The first seven rows are the original SA/SAX Material Kit outputs under <code>dist/material-kit</code>. The next seven rows are the new SLA Material Kit outputs under <code>dist/material-kit-sla</code>. Both dist trees are kept at the same time. Current SLA Material Kit full-route <code>sa vite build</code> refresh took 256.54s across dashboard, products, blog, users, sign-in, register, and 404. The same-input SLA dashboard manifest hit took 0.44s after a 108.91s refreshed build. Current output sizes are <code>dist/material-kit</code> 37M, <code>dist/material-kit-sla</code> 39M, <code>dist/theme-lab-smoke-sla</code> 5.7M, <code>dist/all-components-library</code> 12M, and <code>dist/all-components-library-sla</code> 15M. The React browser WASM cache keys generated SA, DCE mode, exports, optimization, <code>sa_std</code>, SA host binary when available, and <code>SA_PLUGINS_PATH</code> plugin library content; the Vite build cache additionally keys SAX inputs, explicit includes, title/CSS/public options, <code>sa_std</code>, and plugin library content.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Page</th><th>Compiled At</th><th>Route dist</th><th>app.sa</th><th>app.wasm</th><th>airlock.js</th><th>CSS</th><th>Build result</th></tr></thead>
@@ -119,16 +137,16 @@ mkdir -p .zig-cache/material-kit-public && cp -R dist/material-kit/assets .zig-c
             <tr><td>Sign In</td><td>2026-06-18 23:33 UTC</td><td>4.0M</td><td>563,547 bytes / 9,959 lines / 182 exports</td><td>73,230 bytes</td><td>30,621 bytes</td><td>51,494 bytes</td><td>auth page with internal register switch and fullWidth Button class</td></tr>
             <tr><td>Register</td><td>2026-06-18 23:33 UTC</td><td>4.0M</td><td>566,583 bytes / 9,959 lines / 182 exports</td><td>73,330 bytes</td><td>30,621 bytes</td><td>51,494 bytes</td><td>auth page with internal sign-in switch and fullWidth Button class</td></tr>
             <tr><td>404</td><td>2026-06-18 23:33 UTC</td><td>3.4M</td><td>286,257 bytes / 5,075 lines / 101 exports</td><td>35,430 bytes</td><td>30,621 bytes</td><td>51,494 bytes</td><td>NotFoundView-style independent route with Link href and MUI button classes</td></tr>
-            <tr><td>Sla Material Kit Dashboard</td><td>2026-06-20 07:24 UTC</td><td>39M</td><td>3,982,946 bytes / 71,602 lines / 1,120 exports</td><td>517,432 bytes</td><td>30,979 bytes</td><td>51,486 bytes</td><td>Sla handlers for navigation, popovers, auth toggles, counters</td></tr>
-            <tr><td>Sla Products</td><td>2026-06-20 07:24 UTC</td><td>5.6M</td><td>1,484,981 bytes / 26,118 lines / 446 exports</td><td>187,205 bytes</td><td>30,979 bytes</td><td>51,486 bytes</td><td>Sla sort menu, filter drawer, dirty badge, reset action</td></tr>
-            <tr><td>Sla Blog</td><td>2026-06-20 07:25 UTC</td><td>5.3M</td><td>1,335,318 bytes / 24,566 lines / 508 exports</td><td>169,994 bytes</td><td>30,979 bytes</td><td>51,486 bytes</td><td>Sla search input, article sort menu, pagination state</td></tr>
-            <tr><td>Sla Users</td><td>2026-06-20 07:26 UTC</td><td>5.6M</td><td>1,424,872 bytes / 26,663 lines / 503 exports</td><td>178,009 bytes</td><td>30,979 bytes</td><td>51,486 bytes</td><td>Sla table selection, sort, row menu, pagination</td></tr>
-            <tr><td>Sla Sign In</td><td>2026-06-20 07:26 UTC</td><td>4.1M</td><td>666,636 bytes / 11,694 lines / 198 exports</td><td>81,415 bytes</td><td>30,979 bytes</td><td>51,486 bytes</td><td>Sla auth page toggle, password visibility, submit count</td></tr>
-            <tr><td>Sla Register</td><td>2026-06-20 07:26 UTC</td><td>4.1M</td><td>669,696 bytes / 11,694 lines / 198 exports</td><td>81,515 bytes</td><td>30,979 bytes</td><td>51,486 bytes</td><td>Sla terms toggle, password visibility, submit count</td></tr>
-            <tr><td>Sla 404</td><td>2026-06-20 07:26 UTC</td><td>3.5M</td><td>349,704 bytes / 6,093 lines / 115 exports</td><td>41,469 bytes</td><td>30,979 bytes</td><td>51,486 bytes</td><td>Sla Stay here action counter with Link/Button output</td></tr>
+            <tr><td>SLA Material Kit Dashboard</td><td>2026-06-20 07:24 UTC</td><td>39M</td><td>3,982,946 bytes / 71,602 lines / 1,120 exports</td><td>517,432 bytes</td><td>30,979 bytes</td><td>51,486 bytes</td><td>SLA handlers for navigation, popovers, auth toggles, counters</td></tr>
+            <tr><td>SLA Products</td><td>2026-06-20 07:24 UTC</td><td>5.6M</td><td>1,484,981 bytes / 26,118 lines / 446 exports</td><td>187,205 bytes</td><td>30,979 bytes</td><td>51,486 bytes</td><td>SLA sort menu, filter drawer, dirty badge, reset action</td></tr>
+            <tr><td>SLA Blog</td><td>2026-06-20 07:25 UTC</td><td>5.3M</td><td>1,335,318 bytes / 24,566 lines / 508 exports</td><td>169,994 bytes</td><td>30,979 bytes</td><td>51,486 bytes</td><td>SLA search input, article sort menu, pagination state</td></tr>
+            <tr><td>SLA Users</td><td>2026-06-20 07:26 UTC</td><td>5.6M</td><td>1,424,872 bytes / 26,663 lines / 503 exports</td><td>178,009 bytes</td><td>30,979 bytes</td><td>51,486 bytes</td><td>SLA table selection, sort, row menu, pagination</td></tr>
+            <tr><td>SLA Sign In</td><td>2026-06-20 07:26 UTC</td><td>4.1M</td><td>666,636 bytes / 11,694 lines / 198 exports</td><td>81,415 bytes</td><td>30,979 bytes</td><td>51,486 bytes</td><td>SLA auth page toggle, password visibility, submit count</td></tr>
+            <tr><td>SLA Register</td><td>2026-06-20 07:26 UTC</td><td>4.1M</td><td>669,696 bytes / 11,694 lines / 198 exports</td><td>81,515 bytes</td><td>30,979 bytes</td><td>51,486 bytes</td><td>SLA terms toggle, password visibility, submit count</td></tr>
+            <tr><td>SLA 404</td><td>2026-06-20 07:26 UTC</td><td>3.5M</td><td>349,704 bytes / 6,093 lines / 115 exports</td><td>41,469 bytes</td><td>30,979 bytes</td><td>51,486 bytes</td><td>SLA Stay here action counter with Link/Button output</td></tr>
             <tr><td>All Components Library Demo</td><td>2026-06-18 23:33 UTC</td><td>12M</td><td>5,545,792 bytes / 101,348 lines / 1,985 exports</td><td>729,095 bytes</td><td>30,621 bytes</td><td>28,231 bytes</td><td>SA library-consumption all-components baseline</td></tr>
-            <tr><td>Sla All Components Library Demo</td><td>2026-06-20 07:39 UTC</td><td>15M</td><td>8,064,245 bytes / 141,726 lines / 2,527 exports</td><td>957,739 bytes</td><td>30,979 bytes</td><td>32,997 bytes</td><td>Sla library-consumption all-components demo</td></tr>
-            <tr><td>Sla Theme Lab Smoke</td><td>2026-06-20 07:30 UTC</td><td>5.7M</td><td>5,036,273 bytes / 85,532 lines / 1,583 exports</td><td>593,414 bytes</td><td>30,979 bytes</td><td>-</td><td>Sla theme/provider and overlay smoke demo</td></tr>
+            <tr><td>SLA All Components Library Demo</td><td>2026-06-20 07:39 UTC</td><td>15M</td><td>8,064,245 bytes / 141,726 lines / 2,527 exports</td><td>957,739 bytes</td><td>30,979 bytes</td><td>32,997 bytes</td><td>SLA library-consumption all-components demo</td></tr>
+            <tr><td>SLA Theme Lab Smoke</td><td>2026-06-20 07:30 UTC</td><td>5.7M</td><td>5,036,273 bytes / 85,532 lines / 1,583 exports</td><td>593,414 bytes</td><td>30,979 bytes</td><td>-</td><td>SLA theme/provider and overlay smoke demo</td></tr>
           </tbody>
         </table>
       </div>
@@ -137,12 +155,12 @@ mkdir -p .zig-cache/material-kit-public && cp -R dist/material-kit/assets .zig-c
     <section>
       <h2>Additional Demo Links</h2>
       <ul>
-        <li><a href="dist/dashboard/index.html">All Components Dashboard</a> - 源码 <code>demos/mui_dashboard.sax</code></li>
-        <li><a href="dist/all-components-library/index.html">All Components Library Demo</a> - 源码 <code>demos/mui_all_components_from_library.sax</code></li>
-        <li><a href="dist/all-components-inlined/index.html">All Components Inlined Baseline</a> - 源码 <code>demos/mui_all_components.sax</code></li>
-        <li><a href="dist/basic-inlined/index.html">Basic Inlined Baseline</a> - 源码 <code>demos/mui_basic_inlined.sax</code></li>
-        <li><a href="dist/all-components-library-sla/index.html">Sla All Components Library Demo</a> - 源码 <code>demos/mui_all_components_from_library_sla.sax</code></li>
-        <li><a href="dist/theme-lab-smoke-sla/index.html">Sla Theme Lab Smoke</a> - 源码 <code>demos/mui_theme_lab_smoke_sla.sax</code></li>
+        <li><a href="dist/dashboard/index.html">All Components Dashboard</a> - source <code>demos/mui_dashboard.sax</code></li>
+        <li><a href="dist/all-components-library/index.html">All Components Library Demo</a> - source <code>demos/mui_all_components_from_library.sax</code></li>
+        <li><a href="dist/all-components-inlined/index.html">All Components Inlined Baseline</a> - source <code>demos/mui_all_components.sax</code></li>
+        <li><a href="dist/basic-inlined/index.html">Basic Inlined Baseline</a> - source <code>demos/mui_basic_inlined.sax</code></li>
+        <li><a href="dist/all-components-library-sla/index.html">SLA All Components Library Demo</a> - source <code>demos/mui_all_components_from_library_sla.sax</code></li>
+        <li><a href="dist/theme-lab-smoke-sla/index.html">SLA Theme Lab Smoke</a> - source <code>demos/mui_theme_lab_smoke_sla.sax</code></li>
       </ul>
     </section>
   </main>
