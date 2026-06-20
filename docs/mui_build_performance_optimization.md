@@ -256,3 +256,54 @@ It does not remove:
 
 So if the goal is “first build should feel instant,” the answer is not just “more caching.” The build graph itself needs to be made more reusable.
 
+
+
+## Evaluation of Cache Compilation Optimization Scheme (Phase 1 Results)
+
+Following the implementation of Phase 1 (Stage Timers & Cache Hit Counter Instrumentation) in `sa_plugin_react/src/react/build.zig`, we compiled the SLA Material Kit Dashboard and sibling routes. The measured execution details are analyzed below:
+
+### Measured Route Timings (Cold vs. Sibling Build)
+
+1. **Dashboard Cold Build** (No Cache):
+   - **Total Time**: 92,173 ms
+   - **Lowering/Emission (`compileSourceText` & LLVM C-API `emitLlvmcToFile`)**: 78,013 ms (84.6%)
+   - **Object File Compilation (`zig build-obj` on each shard)**: 10,295 ms (11.2%)
+   - **Final WASM Linking (`zig build-exe` over `.sa.o` set)**: 96 ms (0.1%)
+
+2. **Products Sibling Build** (Hot Cache for Shared Components):
+   - **Total Time**: 26,526 ms (3.4x speedup)
+   - **Lowering/Emission**: 19,091 ms (71.9%)
+   - **Object File Compilation**: 4,077 ms (15.3%)
+   - **Final WASM Linking**: 59 ms (0.2%)
+
+### Scheme Evaluation
+
+- **WASM Linking bottleneck is resolved**: Linking `.sa.o` object files directly via `zig build-exe` takes **< 100ms** (reduced from tens of seconds to virtually instant).
+- **Object caching is effective**: Sibling route builds benefit significantly from compiled `.sa.o` object files, compiling only route-specific changes/uncached parts (4.0s vs 10.3s).
+- **New Bottleneck Identified**: **Lowering & LLVM Bitcode Emission** represents **70% to 85%** of compile time. Parsing, semantic checking, and calling LLVM APIs sequentially for each component is the primary limiter.
+
+---
+
+## Cache Build Optimization Development Plan
+
+Based on the Phase 1 performance profile, we formulate the following multi-stage development plan:
+
+### Stage 1: Parallelize Component/Unit Compilation
+- **Problem**: The unit/component loop in `buildBrowserWasmFromSourceUnits` / `buildBrowserWasmFromSourceText` compiles components sequentially. LLVM emission and object generation are CPU-bound and run on a single thread.
+- **Action**: Introduce a multi-threaded compilation pipeline in Zig (using a thread pool or task queue) to process multiple `units` or `functions` in parallel.
+- **Estimated Gain**: **2x - 4x speedup** on multi-core systems during cold builds (bringing the 78s emission phase down to 20-30s).
+
+### Stage 2: Cache LLVM Contexts / Avoid Re-initialization
+- **Problem**: Each unit currently initializes and disposes of the LLVM C API context and module structure sequentially.
+- **Action**: Reuse LLVM builder instances or keep a worker-pool of LLVM contexts to avoid setup/teardown overhead.
+- **Estimated Gain**: **5% - 10%** reduction in emission overhead.
+
+### Stage 3: Fine-Grained Semantic Verification Caching
+- **Problem**: Changes to the entry file trigger re-verification of the entire reachable AST, even when shared modules (`mui/material.sax`, etc.) are unchanged.
+- **Action**: Cache checked module ASTs. If dependency modules are unmodified, skip the semantic verification stage for those AST nodes and only check the entry-specific nodes.
+- **Estimated Gain**: **30% - 50%** reduction in lowering/checking time on hot builds.
+
+### Stage 4: Release vs. Development Mode Split
+- **Problem**: Dev builds currently pay the compilation and optimization penalties of `ReleaseSmall` or `ReleaseFast`.
+- **Action**: Configure the compiler to run in `-O Debug` with minimum LLVM optimizations during local development/watch mode, and only trigger full compilation for production exports.
+- **Estimated Gain**: **3x - 5x speedup** for local development loop.

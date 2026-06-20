@@ -1,3 +1,4 @@
+{% raw %}
 # sa_plugin_mui Progress
 
 Overall progress: 100%
@@ -189,3 +190,5 @@ Overall progress: 100%
 ## Remaining Scope Notes
 
 - Not complete yet: React hook/context primitives required by original MUI, full keyed/dynamic children reconciliation beyond the current projected text/element lifecycle coverage, and full dynamic MUI ownerState/default-props/slots/styled/theme semantics. Current SA/SAX seed inventory covers all 130 upstream material component exports in the locked manifest and completed demo/share delivery without moving behavior into Zig.
+
+{% endraw %}
