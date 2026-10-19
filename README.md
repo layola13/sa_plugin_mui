@@ -1,5 +1,9 @@
 # sa_plugin_mui
 
+> **Build requirement: Zig 0.17** — this plugin targets and is verified against **Zig 0.17.0**. Build and test with Zig 0.17; older toolchains such as 0.14.x are not supported.
+> 本插件需使用 **Zig 0.17** 编译与测试。
+
+
 `sa_plugin_mui` is the SA/SAX Material UI component library for `sa_plugin_react`.
 
 The implementation direction is SA-first: MUI components live in `mui/material.sax`, and React/SAX compilation should consume that source through an SA/SAX library mechanism. Zig in this plugin is limited to the plugin descriptor and installation of share assets; it must not implement MUI component behavior, theme logic, class generation, source rewriting, or CLI commands.
